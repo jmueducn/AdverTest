@@ -51,18 +51,18 @@ config.py目前只用来改log的名字。
         #         break
         #     break
 ```
-因为写死了一些命名格式所以
-把bug版本的项目放在./defects4j_bug/{projname}/{projname}_{id}_bug里
-把修复版本的项目放在./defects4j_fixed/{projname}/{projname}_{id}_fixed里（不用手动操作，可能需要新建文件夹）
-使用download.py下载项目（在defects4j安装完后）
+因为写死了一些命名格式所以  
+把bug版本的项目放在./defects4j_bug/{projname}/{projname}_{id}_bug里  
+把修复版本的项目放在./defects4j_fixed/{projname}/{projname}_{id}_fixed里（不用手动操作，可能需要新建文件夹）  
+使用download.py下载项目（在defects4j安装完后）   
 
-使用copy_files.py把生成后的测试另存
+使用copy_files.py把生成后的测试另存   
 
-其他有用的文件：
-enhance_mutants.py
-enhance_testcase.py
-function.py
-test.py: 可以跑保存下来的测试用例+把覆盖率报告存到指定的位置。
+其他有用的文件：  
+enhance_mutants.py  
+enhance_testcase.py  
+function.py  
+test.py: 可以跑保存下来的测试用例+把覆盖率报告存到指定的位置。    
 aggregate_coverage.py和analyse_coverage.py用来分析覆盖率的
 model.py 是设置模型给Langchain的。目前只有gpt和 deepseek-v3（可以增加一些）
 
