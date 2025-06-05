@@ -15,7 +15,7 @@ dependency: defects4j v2.0.1 我修改过一点（当时改的但是不知道要
 最后也没用junit5,所以可以把junit5相关的删了。
 
 
-usage：generate.py  跑实验的，目前再跑消融实验所以有更改 修改 18行的 projname = 'Math' 可以更改跑的项目
+usage：generate.py  跑实验的，目前在跑消融实验所以有更改 修改 18行的 projname = 'Math' 可以更改跑的项目
 
 ```
 with ThreadPoolExecutor(max_workers=8) as executor:
@@ -23,7 +23,7 @@ with ThreadPoolExecutor(max_workers=8) as executor:
     for future in as_completed(futures):
         future.result() 
 ``` 
-range 更改 你要在哪些bug上实验。（其实理论上应该搞个参数或者config文件的。）
+range 更改 你要在哪些bug上实验。（其实理论上应该搞个参数或者config文件的，但是没搞）
 config.py目前只用来改log的名字。
 
 如果要正常跑就把下面的注释去掉：
@@ -48,5 +48,20 @@ config.py目前只用来改log的名字。
         #         our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, Round:{cnt_T+cnt_M}, result: {result}')
         #         break
         #     break
+因为写死了一些命名格式所以
+把bug版本的项目放在./defects4j_bug/{projname}/{projname}_{id}_bug里
+把修复版本的项目放在./defects4j_fixed/{projname}/{projname}_{id}_fixed里（不用手动操作，可能需要新建文件夹）
+使用download.py下载项目（在defects4j安装完后）
 
+使用copy_files.py把生成后的测试另存
 
+其他有用的文件：
+enhance_mutants.py
+enhance_testcase.py
+function.py
+
+test.py 可以跑保存下来的测试用例+把覆盖率报告存到指定的位置。
+aggregate_coverage.py和analyse_coverage.py用来分析覆盖率的
+model.py 是设置模型给Langchain的。目前只有gpt和 deepseek-v3（可以增加一些）
+=========================
+我把还要做的事情写在issue里
