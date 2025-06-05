@@ -1,0 +1,142 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 211,
+        "filepath": "./defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "precode": "String timezoneOffset = date.substring(offset);",
+        "aftercode": "String timezoneOffset = date.substring(offset + 1);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_PartialMilliseconds\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_InvalidDateThrowsException\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithShortOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithMillis\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTime\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_LeapSecondsHandling\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithNegativeOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithPositiveOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_TwoDigitMilliseconds\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 211,
+        "filepath": "./defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "precode": "String timezoneOffset = date.substring(offset);",
+        "aftercode": "String timezoneOffset = \"\";",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_PartialMilliseconds\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_InvalidDateThrowsException\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithShortOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithMillis\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTime\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_LeapSecondsHandling\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithNegativeOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithPositiveOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_TwoDigitMilliseconds\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 214,
+        "filepath": "./defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "precode": "timezoneOffset = timezoneOffset.length() >= 5 ? timezoneOffset : timezoneOffset + \"00\";",
+        "aftercode": "timezoneOffset = timezoneOffset.length() >= 5 ? timezoneOffset : timezoneOffset + \"000\";",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_PartialMilliseconds\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_InvalidDateThrowsException\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithShortOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithMillis\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTime\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_LeapSecondsHandling\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_TwoDigitMilliseconds\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 4,
+        "line": 214,
+        "filepath": "./defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "precode": "timezoneOffset = timezoneOffset.length() >= 5 ? timezoneOffset : timezoneOffset + \"00\";",
+        "aftercode": "timezoneOffset = timezoneOffset.length() >= 5 ? timezoneOffset : \"00\" + timezoneOffset;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_PartialMilliseconds\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_InvalidDateThrowsException\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithShortOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithMillis\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTime\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_LeapSecondsHandling\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_TwoDigitMilliseconds\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 5,
+        "line": 214,
+        "filepath": "./defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "precode": "timezoneOffset = timezoneOffset.length() >= 5 ? timezoneOffset : timezoneOffset + \"00\";",
+        "aftercode": "timezoneOffset = timezoneOffset.length() >= 5 ? timezoneOffset : timezoneOffset;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_PartialMilliseconds\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_InvalidDateThrowsException\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithShortOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithMillis\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTime\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_LeapSecondsHandling\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_TwoDigitMilliseconds\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 6,
+        "line": 214,
+        "filepath": "./defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "precode": "timezoneOffset = timezoneOffset.length() >= 5 ? timezoneOffset : timezoneOffset + \"00\";",
+        "aftercode": "timezoneOffset = timezoneOffset.length() > 5 ? timezoneOffset : timezoneOffset + \"00\";",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_PartialMilliseconds\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_InvalidDateThrowsException\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithShortOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithMillis\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTime\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_LeapSecondsHandling\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_TwoDigitMilliseconds\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 7,
+        "line": 214,
+        "filepath": "./defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "precode": "timezoneOffset = timezoneOffset.length() >= 5 ? timezoneOffset : timezoneOffset + \"00\";",
+        "aftercode": "timezoneOffset = timezoneOffset.length() >= 4 ? timezoneOffset : timezoneOffset + \"00\";",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_PartialMilliseconds\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_InvalidDateThrowsException\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithShortOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithMillis\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTime\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_LeapSecondsHandling\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_TwoDigitMilliseconds\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 8,
+        "line": 216,
+        "filepath": "./defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "precode": "offset += timezoneOffset.length();",
+        "aftercode": "offset += timezoneOffset.length() + 1;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_PartialMilliseconds\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_InvalidDateThrowsException\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithMillis\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTime\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_LeapSecondsHandling\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithNegativeOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithPositiveOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_TwoDigitMilliseconds\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 216,
+        "filepath": "./defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "precode": "offset += timezoneOffset.length();",
+        "aftercode": "offset += 0;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_PartialMilliseconds\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_InvalidDateThrowsException\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithShortOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithMillis\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTime\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_LeapSecondsHandling\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithNegativeOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithPositiveOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_TwoDigitMilliseconds\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 216,
+        "filepath": "./defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "precode": "offset += timezoneOffset.length();",
+        "aftercode": "offset -= timezoneOffset.length();",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_PartialMilliseconds\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_InvalidDateThrowsException\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithShortOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithMillis\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTime\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_LeapSecondsHandling\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithNegativeOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithPositiveOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_TwoDigitMilliseconds\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 216,
+        "filepath": "./defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "precode": "offset += timezoneOffset.length();",
+        "aftercode": "offset = timezoneOffset.length();",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_PartialMilliseconds\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_InvalidDateThrowsException\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithShortOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithMillis\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTime\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_LeapSecondsHandling\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithNegativeOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithPositiveOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_TwoDigitMilliseconds\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 214,
+        "filepath": "./defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "precode": "timezoneOffset = timezoneOffset.length() >= 5 ? timezoneOffset : timezoneOffset + \"00\";",
+        "aftercode": "timezoneOffset = timezoneOffset.length() >= 5 ? timezoneOffset + \"00\" : timezoneOffset + \"00\";",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_PartialMilliseconds\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_InvalidDateThrowsException\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithShortOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithMillis\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTime\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_LeapSecondsHandling\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithNegativeOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithPositiveOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_TwoDigitMilliseconds\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 211,
+        "filepath": "./defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "precode": "String timezoneOffset = date.substring(offset);",
+        "aftercode": "String timezoneOffset = date.substring(offset, offset + 1);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_PartialMilliseconds\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_InvalidDateThrowsException\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithShortOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithMillis\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTime\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_LeapSecondsHandling\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithNegativeOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithPositiveOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_TwoDigitMilliseconds\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 214,
+        "filepath": "./defects4j_fixed/Gson/Gson_5_fixed/gson/src/main/java/com/google/gson/internal/bind/util/ISO8601Utils.java",
+        "precode": "timezoneOffset = timezoneOffset.length() >= 5 ? timezoneOffset : timezoneOffset + \"00\";",
+        "aftercode": "timezoneOffset = timezoneOffset.length() >= 5 ? \"\" : timezoneOffset + \"00\";",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_PartialMilliseconds\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_InvalidDateThrowsException\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithShortOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithMillis\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTime\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_LeapSecondsHandling\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithNegativeOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_DateTimeWithPositiveOffset\n  - gentest.com.google.gson.internal.bind.util.tests.ISO8601UtilsTest::testParse_TwoDigitMilliseconds\n",
+        "survived": false
+    }
+]

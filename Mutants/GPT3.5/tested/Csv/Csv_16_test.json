@@ -1,0 +1,422 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 525,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "return csvRecordIterator;",
+        "aftercode": "return null;",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_RemoveThrowsUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithEmptyInput\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_NoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_NextReturnsCorrectRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ReturnsNonNullIterator\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_HasNextReturnsTrueWhenRecordsExist\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 525,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "return csvRecordIterator;",
+        "aftercode": "return new CSVRecordIterator();",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ReturnsSameInstanceOnMultipleCalls\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 529,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "private CSVRecord current;",
+        "aftercode": "private CSVRecord current = null;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 7,
+        "line": 534,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "} catch (final IOException e) {",
+        "aftercode": "} catch (final Exception e) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 9,
+        "line": 535,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "throw new IllegalStateException(",
+        "aftercode": "throw new RuntimeException(",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 11,
+        "line": 536,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "e.getClass().getSimpleName() + \" reading next record: \" + e.toString(), e);",
+        "aftercode": "\"Error reading next record\", e);",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 12,
+        "line": 536,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "e.getClass().getSimpleName() + \" reading next record: \" + e.toString(), e);",
+        "aftercode": "e.toString(), e);",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 13,
+        "line": 554,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (CSVParser.this.isClosed()) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_NoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_NextReturnsCorrectRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 554,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (CSVParser.this.isClosed()) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 15,
+        "line": 543,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "return false;",
+        "aftercode": "return true;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 16,
+        "line": 543,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "return false;",
+        "aftercode": "throw new IllegalStateException();",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 17,
+        "line": 545,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (this.current == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 18,
+        "line": 545,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (this.current == null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_HasNextReturnsTrueWhenRecordsExist\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 546,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "this.current = this.getNextRecord();",
+        "aftercode": "this.current = null;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_HasNextReturnsTrueWhenRecordsExist\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 549,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "return this.current != null;",
+        "aftercode": "return true;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithEmptyInput\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_NoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 22,
+        "line": 549,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "return this.current != null;",
+        "aftercode": "return false;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_HasNextReturnsTrueWhenRecordsExist\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 23,
+        "line": 549,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "return this.current != null;",
+        "aftercode": "return this.current == null;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithEmptyInput\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_NoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_HasNextReturnsTrueWhenRecordsExist\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 24,
+        "line": 554,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (CSVParser.this.isClosed()) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_NoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_NextReturnsCorrectRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 25,
+        "line": 554,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (CSVParser.this.isClosed()) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 26,
+        "line": 555,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "throw new NoSuchElementException(\"CSVParser has been closed\");",
+        "aftercode": "return null;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 27,
+        "line": 555,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "throw new NoSuchElementException(\"CSVParser has been closed\");",
+        "aftercode": "throw new IllegalStateException(\"CSVParser has been closed\");",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 28,
+        "line": 557,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "CSVRecord next = this.current;",
+        "aftercode": "CSVRecord next = null;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 30,
+        "line": 558,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "this.current = null;",
+        "aftercode": "this.current = this.current;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 31,
+        "line": 558,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "this.current = null;",
+        "aftercode": "// this.current = null;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 32,
+        "line": 563,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (next == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_NoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_NextReturnsCorrectRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 33,
+        "line": 563,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (next == null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 34,
+        "line": 562,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "next = this.getNextRecord();",
+        "aftercode": "next = null;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_NoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_NextReturnsCorrectRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 36,
+        "line": 563,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (next == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_NoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_NextReturnsCorrectRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 37,
+        "line": 563,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (next == null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 38,
+        "line": 564,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "throw new NoSuchElementException(\"No more CSV records available\");",
+        "aftercode": "return null;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 39,
+        "line": 564,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "throw new NoSuchElementException(\"No more CSV records available\");",
+        "aftercode": "throw new IllegalStateException(\"No more CSV records available\");",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 40,
+        "line": 568,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "return next;",
+        "aftercode": "return null;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_NextReturnsCorrectRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 42,
+        "line": 573,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "throw new UnsupportedOperationException();",
+        "aftercode": "return;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_RemoveThrowsUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 43,
+        "line": 573,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "throw new UnsupportedOperationException();",
+        "aftercode": "throw new IllegalStateException();",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_RemoveThrowsUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 45,
+        "line": 554,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (CSVParser.this.isClosed()) {",
+        "aftercode": "if (!CSVParser.this.isClosed()) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_NoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_NextReturnsCorrectRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 46,
+        "line": 545,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (this.current == null) {",
+        "aftercode": "if (this.current != null) {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_HasNextReturnsTrueWhenRecordsExist\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 47,
+        "line": 549,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "return this.current != null;",
+        "aftercode": "return this.current == current;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithEmptyInput\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_NoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 48,
+        "line": 554,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (CSVParser.this.isClosed()) {",
+        "aftercode": "if (!CSVParser.this.isClosed()) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_SuccessfulRead\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_NoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_NextReturnsCorrectRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 49,
+        "line": 563,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (next == null) {",
+        "aftercode": "if (next != null) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_NoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_NextReturnsCorrectRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 50,
+        "line": 563,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (next == null) {",
+        "aftercode": "if (next != null) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_NoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_NextReturnsCorrectRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 53,
+        "line": 529,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "private CSVRecord current;",
+        "aftercode": "protected CSVRecord current;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 54,
+        "line": 529,
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "private CSVRecord current;",
+        "aftercode": "public CSVRecord current;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_OnlyHeader\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksWithOnlyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testRemove_ShouldThrowUnsupportedOperationException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_WorksAfterParserIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_IOException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_AfterClose\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIterator_ThrowsNoSuchElementExceptionWhenNoMoreRecords\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testGetNextRecord_EmptyInput\n",
+        "survived": true
+    }
+]

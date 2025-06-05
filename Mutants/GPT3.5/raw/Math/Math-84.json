@@ -1,0 +1,352 @@
+[
+    {
+        "id": 1,
+        "line": 61,
+        "precode": "protected void iterateSimplex(final Comparator<RealPointValuePair> comparator)",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "protected void iterateSimplex(final Comparator<RealPointValuePair> comparator) throws FunctionEvaluationException {"
+    },
+    {
+        "id": 2,
+        "line": 64,
+        "precode": "final RealConvergenceChecker checker = getConvergenceChecker();",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "final RealConvergenceChecker checker = null;"
+    },
+    {
+        "id": 3,
+        "line": 65,
+        "precode": "while (true) {",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "while (false) {"
+    },
+    {
+        "id": 4,
+        "line": 67,
+        "precode": "incrementIterationsCounter();",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "// incrementIterationsCounter();"
+    },
+    {
+        "id": 5,
+        "line": 70,
+        "precode": "final RealPointValuePair[] original = simplex;",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "final RealPointValuePair[] original = new RealPointValuePair[0];"
+    },
+    {
+        "id": 6,
+        "line": 71,
+        "precode": "final RealPointValuePair best = original[0];",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "final RealPointValuePair best = original[original.length-1];"
+    },
+    {
+        "id": 7,
+        "line": 74,
+        "precode": "final RealPointValuePair reflected = evaluateNewSimplex(original, 1.0, comparator);",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "final RealPointValuePair reflected = evaluateNewSimplex(original, 2.0, comparator);"
+    },
+    {
+        "id": 8,
+        "line": 75,
+        "precode": "if (comparator.compare(reflected, best) < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "if (comparator.compare(reflected, best) <= 0) {"
+    },
+    {
+        "id": 9,
+        "line": 75,
+        "precode": "if (comparator.compare(reflected, best) < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "if (comparator.compare(best, reflected) < 0) {"
+    },
+    {
+        "id": 10,
+        "line": 78,
+        "precode": "final RealPointValuePair[] reflectedSimplex = simplex;",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "final RealPointValuePair[] reflectedSimplex = original;"
+    },
+    {
+        "id": 11,
+        "line": 79,
+        "precode": "final RealPointValuePair expanded = evaluateNewSimplex(original, khi, comparator);",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "final RealPointValuePair expanded = evaluateNewSimplex(original, -khi, comparator);"
+    },
+    {
+        "id": 12,
+        "line": 80,
+        "precode": "if (comparator.compare(reflected, expanded) <= 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "if (comparator.compare(reflected, expanded) < 0) {"
+    },
+    {
+        "id": 13,
+        "line": 82,
+        "precode": "simplex = reflectedSimplex;",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "simplex = original;"
+    },
+    {
+        "id": 14,
+        "line": 103,
+        "precode": "return;",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "// return;"
+    },
+    {
+        "id": 15,
+        "line": 90,
+        "precode": "final RealPointValuePair contracted = evaluateNewSimplex(original, gamma, comparator);",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "final RealPointValuePair contracted = evaluateNewSimplex(original, 0.5*gamma, comparator);"
+    },
+    {
+        "id": 16,
+        "line": 91,
+        "precode": "if (comparator.compare(contracted, best) < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "if (comparator.compare(contracted, best) <= 0) {"
+    },
+    {
+        "id": 17,
+        "line": 103,
+        "precode": "return;",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "break;"
+    },
+    {
+        "id": 18,
+        "line": 97,
+        "precode": "final int iter = getIterations();",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "final int iter = 0;"
+    },
+    {
+        "id": 19,
+        "line": 98,
+        "precode": "boolean converged = true;",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "boolean converged = false;"
+    },
+    {
+        "id": 20,
+        "line": 99,
+        "precode": "for (int i = 0; i < simplex.length; ++i) {",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "for (int i = 0; i <= simplex.length; ++i) {"
+    },
+    {
+        "id": 21,
+        "line": 100,
+        "precode": "converged &= checker.converged(iter, original[i], simplex[i]);",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "converged |= checker.converged(iter, original[i], simplex[i]);"
+    },
+    {
+        "id": 22,
+        "line": 100,
+        "precode": "converged &= checker.converged(iter, original[i], simplex[i]);",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "converged = checker.converged(iter, original[i], simplex[i]);"
+    },
+    {
+        "id": 23,
+        "line": 102,
+        "precode": "if (converged) {",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "if (!converged) {"
+    },
+    {
+        "id": 24,
+        "line": 61,
+        "precode": "protected void iterateSimplex(final Comparator<RealPointValuePair> comparator)",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "public void iterateSimplex(final Comparator<RealPointValuePair> comparator)"
+    },
+    {
+        "id": 25,
+        "line": 64,
+        "precode": "final RealConvergenceChecker checker = getConvergenceChecker();",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "RealConvergenceChecker checker = getConvergenceChecker();"
+    },
+    {
+        "id": 26,
+        "line": 67,
+        "precode": "incrementIterationsCounter();",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "incrementIterationsCounter(); incrementIterationsCounter();"
+    },
+    {
+        "id": 27,
+        "line": 70,
+        "precode": "final RealPointValuePair[] original = simplex;",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "RealPointValuePair[] original = simplex;"
+    },
+    {
+        "id": 28,
+        "line": 71,
+        "precode": "final RealPointValuePair best = original[0];",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "RealPointValuePair best = original[0];"
+    },
+    {
+        "id": 29,
+        "line": 74,
+        "precode": "final RealPointValuePair reflected = evaluateNewSimplex(original, 1.0, comparator);",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "RealPointValuePair reflected = evaluateNewSimplex(original, 1.0, comparator);"
+    },
+    {
+        "id": 30,
+        "line": 75,
+        "precode": "if (comparator.compare(reflected, best) < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "if (comparator.compare(reflected, best) > 0) {"
+    },
+    {
+        "id": 31,
+        "line": 78,
+        "precode": "final RealPointValuePair[] reflectedSimplex = simplex;",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "RealPointValuePair[] reflectedSimplex = simplex;"
+    },
+    {
+        "id": 32,
+        "line": 79,
+        "precode": "final RealPointValuePair expanded = evaluateNewSimplex(original, khi, comparator);",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "RealPointValuePair expanded = evaluateNewSimplex(original, khi, comparator);"
+    },
+    {
+        "id": 33,
+        "line": 80,
+        "precode": "if (comparator.compare(reflected, expanded) <= 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "if (comparator.compare(expanded, reflected) <= 0) {"
+    },
+    {
+        "id": 34,
+        "line": 82,
+        "precode": "simplex = reflectedSimplex;",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "simplex = reflectedSimplex.clone();"
+    },
+    {
+        "id": 35,
+        "line": 90,
+        "precode": "final RealPointValuePair contracted = evaluateNewSimplex(original, gamma, comparator);",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "RealPointValuePair contracted = evaluateNewSimplex(original, gamma, comparator);"
+    },
+    {
+        "id": 36,
+        "line": 91,
+        "precode": "if (comparator.compare(contracted, best) < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "if (comparator.compare(best, contracted) < 0) {"
+    },
+    {
+        "id": 37,
+        "line": 97,
+        "precode": "final int iter = getIterations();",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "int iter = getIterations();"
+    },
+    {
+        "id": 38,
+        "line": 98,
+        "precode": "boolean converged = true;",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "boolean converged = checker != null;"
+    },
+    {
+        "id": 39,
+        "line": 99,
+        "precode": "for (int i = 0; i < simplex.length; ++i) {",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "for (int i = 1; i < simplex.length; ++i) {"
+    },
+    {
+        "id": 40,
+        "line": 100,
+        "precode": "converged &= checker.converged(iter, original[i], simplex[i]);",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "if (checker != null) converged &= checker.converged(iter, original[i], simplex[i]);"
+    },
+    {
+        "id": 41,
+        "line": 102,
+        "precode": "if (converged) {",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "if (converged || iter > 1000) {"
+    },
+    {
+        "id": 42,
+        "line": 61,
+        "precode": "protected void iterateSimplex(final Comparator<RealPointValuePair> comparator)",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "private void iterateSimplex(final Comparator<RealPointValuePair> comparator)"
+    },
+    {
+        "id": 43,
+        "line": 64,
+        "precode": "final RealConvergenceChecker checker = getConvergenceChecker();",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "final RealConvergenceChecker checker = this.checker;"
+    },
+    {
+        "id": 44,
+        "line": 65,
+        "precode": "while (true) {",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "for (int i = 0; i < 100; i++) {"
+    },
+    {
+        "id": 45,
+        "line": 67,
+        "precode": "incrementIterationsCounter();",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "if (getIterations() < 100) incrementIterationsCounter();"
+    },
+    {
+        "id": 46,
+        "line": 70,
+        "precode": "final RealPointValuePair[] original = simplex;",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "final RealPointValuePair[] original = Arrays.copyOf(simplex, simplex.length);"
+    },
+    {
+        "id": 47,
+        "line": 71,
+        "precode": "final RealPointValuePair best = original[0];",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "final RealPointValuePair best = Collections.min(Arrays.asList(original), comparator);"
+    },
+    {
+        "id": 48,
+        "line": 74,
+        "precode": "final RealPointValuePair reflected = evaluateNewSimplex(original, 1.0, comparator);",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "final RealPointValuePair reflected = evaluateNewSimplex(original, 0.5, comparator);"
+    },
+    {
+        "id": 49,
+        "line": 75,
+        "precode": "if (comparator.compare(reflected, best) < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "if (reflected != null && comparator.compare(reflected, best) < 0) {"
+    },
+    {
+        "id": 50,
+        "line": 78,
+        "precode": "final RealPointValuePair[] reflectedSimplex = simplex;",
+        "filepath": "./defects4j_fixed/Math/Math_84_fixed/src/main/java/org/apache/commons/math/optimization/direct/MultiDirectional.java",
+        "aftercode": "final RealPointValuePair[] reflectedSimplex = new RealPointValuePair[simplex.length];"
+    }
+]

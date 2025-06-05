@@ -1,0 +1,182 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 374,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "int n = getImaginaryCharacter().length();",
+        "aftercode": "int n = getImaginaryCharacter().length() + 1;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 374,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "int n = getImaginaryCharacter().length();",
+        "aftercode": "int n = getImaginaryCharacter().length() - 1;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 374,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "int n = getImaginaryCharacter().length();",
+        "aftercode": "int n = 0;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 375,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "startIndex = pos.getIndex();",
+        "aftercode": "startIndex = pos.getIndex() + 1;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 375,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "startIndex = pos.getIndex();",
+        "aftercode": "startIndex = pos.getIndex() - 1;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 375,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "startIndex = pos.getIndex();",
+        "aftercode": "startIndex = 0;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 376,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "int endIndex = startIndex + n;",
+        "aftercode": "int endIndex = startIndex - n;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 376,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "int endIndex = startIndex + n;",
+        "aftercode": "int endIndex = startIndex;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 377,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "if ((startIndex >= source.length()) ||",
+        "aftercode": "if ((startIndex > source.length()) ||",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 10,
+        "line": 377,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "if ((startIndex >= source.length()) ||",
+        "aftercode": "if ((startIndex < source.length()) ||",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 378,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "(endIndex > source.length()) ||",
+        "aftercode": "(endIndex >= source.length()) ||",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 378,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "(endIndex > source.length()) ||",
+        "aftercode": "(endIndex < source.length()) ||",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 379,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "source.substring(startIndex, endIndex).compareTo(",
+        "aftercode": "source.substring(startIndex, startIndex).compareTo(",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 379,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "source.substring(startIndex, endIndex).compareTo(",
+        "aftercode": "source.substring(endIndex, startIndex).compareTo(",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 380,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "getImaginaryCharacter()) != 0) {",
+        "aftercode": "getImaginaryCharacter()) == 0) {",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 380,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "getImaginaryCharacter()) != 0) {",
+        "aftercode": "getImaginaryCharacter()) > 0) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 377,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "if ((startIndex >= source.length()) ||",
+        "aftercode": "if ((startIndex != source.length()) ||",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 377,
+        "filepath": "./defects4j_fixed/Math/Math_101_fixed/src/java/org/apache/commons/math/complex/ComplexFormat.java",
+        "precode": "if ((startIndex >= source.length()) ||",
+        "aftercode": "if ((startIndex < source.length()) ||",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithCustomNumberFormat\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidImaginaryOnly\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithParentheses\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber1\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithScientificNotation\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithWhitespace\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WithDifferentNumberFormats\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParseWithMissingImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_CustomImaginaryCharacter\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidNegativeComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_ValidComplexNumber\n  - gentest.org.apache.commons.math.complex.tests.ComplexFormatTest::testParse_WhitespaceHandling\n",
+        "survived": false
+    }
+]

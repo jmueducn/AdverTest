@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "line": 144,
+        "precode": "super();",
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "aftercode": "//super();"
+    },
+    {
+        "id": 2,
+        "line": 144,
+        "precode": "super();",
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "aftercode": "super(null);"
+    },
+    {
+        "id": 3,
+        "line": 145,
+        "precode": "setDataset(dataset);",
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "aftercode": "//setDataset(dataset);"
+    },
+    {
+        "id": 4,
+        "line": 145,
+        "precode": "setDataset(dataset);",
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "aftercode": "setDataset(null);"
+    },
+    {
+        "id": 5,
+        "line": 146,
+        "precode": "PiePlot piePlot = new PiePlot(null);",
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "aftercode": "PiePlot piePlot = new PiePlot(dataset);"
+    },
+    {
+        "id": 6,
+        "line": 146,
+        "precode": "PiePlot piePlot = new PiePlot(null);",
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "aftercode": "PiePlot piePlot = null;"
+    },
+    {
+        "id": 7,
+        "line": 147,
+        "precode": "this.pieChart = new JFreeChart(piePlot);",
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "aftercode": "this.pieChart = null;"
+    },
+    {
+        "id": 8,
+        "line": 147,
+        "precode": "this.pieChart = new JFreeChart(piePlot);",
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "aftercode": "this.pieChart = new JFreeChart(null);"
+    },
+    {
+        "id": 9,
+        "line": 148,
+        "precode": "this.pieChart.removeLegend();",
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "aftercode": "//this.pieChart.removeLegend();"
+    },
+    {
+        "id": 10,
+        "line": 148,
+        "precode": "this.pieChart.removeLegend();",
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "aftercode": "this.pieChart.addLegend();"
+    },
+    {
+        "id": 11,
+        "line": 144,
+        "precode": "super();",
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "aftercode": "super(); super();"
+    },
+    {
+        "id": 12,
+        "line": 145,
+        "precode": "setDataset(dataset);",
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "aftercode": "setDataset(new DefaultCategoryDataset());"
+    },
+    {
+        "id": 13,
+        "line": 146,
+        "precode": "PiePlot piePlot = new PiePlot(null);",
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "aftercode": "PiePlot piePlot = new PiePlot();"
+    },
+    {
+        "id": 14,
+        "line": 147,
+        "precode": "this.pieChart = new JFreeChart(piePlot);",
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "aftercode": "this.pieChart = new JFreeChart(new PiePlot(null));"
+    }
+]

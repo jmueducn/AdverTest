@@ -1,0 +1,187 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 55,
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "precode": "optionMap.put(option.getKey(), option);",
+        "aftercode": "optionMap.put(option.getValue(), option);",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_OptionWithNullKeyThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_DuplicateKeyOverwrites\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesOriginalKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_NullOptionThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldCallPutExactlyOnce\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 55,
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "precode": "optionMap.put(option.getKey(), option);",
+        "aftercode": "optionMap.put(option.getKey(), null);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_OptionWithNullKeyThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldStoreWithOptionKeyNotNull\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldAddExactlyOneEntry\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_DuplicateKeyOverwrites\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_SingleOption\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesOriginalKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_NullOptionThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldCallPutExactlyOnce\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 55,
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "precode": "optionMap.put(option.getKey(), option);",
+        "aftercode": "optionMap.put(null, option);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_OptionWithNullKeyThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_DuplicateKeyOverwrites\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesOriginalKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldCallPutExactlyOnce\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 55,
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "precode": "optionMap.put(option.getKey(), option);",
+        "aftercode": "optionMap.remove(option.getKey());",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_OptionWithNullKeyThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldStoreWithOptionKeyNotNull\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldAddExactlyOneEntry\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_DuplicateKeyOverwrites\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_SingleOption\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesOriginalKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_NullOptionThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldCallPutExactlyOnce\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 55,
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "precode": "optionMap.put(option.getKey(), option);",
+        "aftercode": "optionMap.clear();",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_OptionWithNullKeyThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldStoreWithOptionKeyNotNull\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldAddExactlyOneEntry\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_DuplicateKeyOverwrites\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_SingleOption\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesOriginalKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldCallPutExactlyOnce\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 55,
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "precode": "optionMap.put(option.getKey(), option);",
+        "aftercode": "optionMap.put(option.getKey(), option); optionMap.put(option.getKey(), option);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_OptionWithNullKeyThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_DuplicateKeyOverwrites\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesOriginalKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_NullOptionThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldCallPutExactlyOnce\n",
+        "survived": true,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 55,
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "precode": "optionMap.put(option.getKey(), option);",
+        "aftercode": "optionMap.put(option.getKey().toLowerCase(), option);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_OptionWithNullKeyThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_DuplicateKeyOverwrites\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesOriginalKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_NullOptionThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldCallPutExactlyOnce\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 55,
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "precode": "optionMap.put(option.getKey(), option);",
+        "aftercode": "optionMap.put(option.getKey().toUpperCase(), option);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_OptionWithNullKeyThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_DuplicateKeyOverwrites\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesOriginalKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_NullOptionThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldCallPutExactlyOnce\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 55,
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "precode": "optionMap.put(option.getKey(), option);",
+        "aftercode": "optionMap.put(option.getKey(), option).toString();",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_OptionWithNullKeyThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldStoreWithOptionKeyNotNull\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldAddExactlyOneEntry\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_DuplicateKeyOverwrites\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_SingleOption\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesOriginalKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_NullOptionThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldCallPutExactlyOnce\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 57,
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "precode": "return this;",
+        "aftercode": "return null;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_OptionWithNullKeyThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldStoreWithOptionKeyNotNull\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_DuplicateKeyOverwrites\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_SingleOption\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesOriginalKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_NullOptionThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldCallPutExactlyOnce\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 57,
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "precode": "return this;",
+        "aftercode": "return new OptionGroup();",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_OptionWithNullKeyThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldStoreWithOptionKeyNotNull\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_DuplicateKeyOverwrites\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_SingleOption\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesOriginalKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_NullOptionThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldCallPutExactlyOnce\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 13,
+        "line": 55,
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "precode": "optionMap.put(option.getKey(), option);",
+        "aftercode": "optionMap.put(option.getKey(), null);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_OptionWithNullKeyThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldStoreWithOptionKeyNotNull\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldAddExactlyOneEntry\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_DuplicateKeyOverwrites\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_SingleOption\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesOriginalKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_NullOptionThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldCallPutExactlyOnce\n",
+        "survived": false,
+        "id": 12
+    },
+    {
+        "mutant_id:": 14,
+        "line": 57,
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "precode": "return this;",
+        "aftercode": "return null;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_OptionWithNullKeyThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldStoreWithOptionKeyNotNull\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_DuplicateKeyOverwrites\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_SingleOption\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionPreservesOriginalKeyCase\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOption_NullOptionThrowsException\n  - gentest.org.apache.commons.cli.tests.OptionGroupTest::testAddOptionShouldCallPutExactlyOnce\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "id": 14,
+        "line": 55,
+        "precode": "optionMap.put(option.getKey(), option);",
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "optionMap.put(option, option.getKey());"
+    },
+    {
+        "id": 15,
+        "line": 55,
+        "precode": "optionMap.put(option.getKey(), option);",
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "optionMap.put(option.getKey(), null);"
+    },
+    {
+        "id": 16,
+        "line": 57,
+        "precode": "return this;",
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 17,
+        "line": 57,
+        "precode": "return this;",
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "return new Object();"
+    },
+    {
+        "id": 18,
+        "line": 52,
+        "precode": "{",
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 19,
+        "line": 52,
+        "precode": "{",
+        "filepath": "./defects4j_fixed/Cli/Cli_36_fixed/src/main/java/org/apache/commons/cli/OptionGroup.java",
+        "aftercode": "};"
+    }
+]

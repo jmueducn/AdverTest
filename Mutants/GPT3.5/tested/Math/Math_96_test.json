@@ -1,0 +1,212 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 248,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "if (this == other) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 2,
+        "line": 248,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "if (this == other) {",
+        "aftercode": "if (other == this) {",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 3,
+        "line": 249,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "ret = true;",
+        "aftercode": "ret = false;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_Infinity\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NaNComparison\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_SameObject\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithBothNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsSameObject\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithSameObject\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsAllCodePaths\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 250,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "} else if (other == null) {",
+        "aftercode": "} else if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_SpecialConstants\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsAllCodePaths\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_RegularNumbers\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 250,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "} else if (other == null) {",
+        "aftercode": "} else if (other != null) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NullComparison\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNullShouldReturnFalse\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_SpecialConstants\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsAllCodePaths\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_RegularNumbers\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 262,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "ret = false;",
+        "aftercode": "ret = true;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_DifferentClass\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNonComplexObject\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNonComplexObjectWhenNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNonComplexObjectShouldReturnFalse\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsAllCodePaths\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 254,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "Complex rhs = (Complex)other;",
+        "aftercode": "Complex rhs = null;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_DifferentClass\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_Infinity\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithOtherNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NaNComparison\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNonComplexObject\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNonComplexObjectWhenNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_FloatingPointPrecision\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_SpecialConstants\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNonComplexObjectShouldReturnFalse\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsAllCodePaths\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_RegularNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 255,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "if (rhs.isNaN()) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 255,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "if (rhs.isNaN()) {",
+        "aftercode": "if (this.isNaN()) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NaNComparison\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsAllCodePaths\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 256,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "ret = this.isNaN();",
+        "aftercode": "ret = false;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 256,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "ret = this.isNaN();",
+        "aftercode": "ret = true;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithOtherNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NaNComparison\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsAllCodePaths\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 258,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "ret = (real == rhs.real) && (imaginary == rhs.imaginary);",
+        "aftercode": "ret = (real != rhs.real) && (imaginary == rhs.imaginary);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_FloatingPointPrecision\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_SpecialConstants\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsAllCodePaths\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_RegularNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 258,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "ret = (real == rhs.real) && (imaginary == rhs.imaginary);",
+        "aftercode": "ret = (real == rhs.real) || (imaginary == rhs.imaginary);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_FloatingPointPrecision\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_SpecialConstants\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_RegularNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 258,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "ret = (real == rhs.real) && (imaginary == rhs.imaginary);",
+        "aftercode": "ret = (real == rhs.real);",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_RegularNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 258,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "ret = (real == rhs.real) && (imaginary == rhs.imaginary);",
+        "aftercode": "ret = (imaginary == rhs.imaginary);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_FloatingPointPrecision\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_SpecialConstants\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_RegularNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 258,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "ret = (real == rhs.real) && (imaginary == rhs.imaginary);",
+        "aftercode": "ret = true;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_Infinity\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NaNComparison\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_FloatingPointPrecision\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_SpecialConstants\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsAllCodePaths\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_RegularNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 258,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "ret = (real == rhs.real) && (imaginary == rhs.imaginary);",
+        "aftercode": "ret = false;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_SpecialConstants\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsAllCodePaths\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_RegularNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 262,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "ret = false;",
+        "aftercode": "ret = true;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_DifferentClass\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNonComplexObject\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNonComplexObjectWhenNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNonComplexObjectShouldReturnFalse\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsAllCodePaths\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 262,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "ret = false;",
+        "aftercode": "ret = this.isNaN();",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNonComplexObjectWhenNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 246,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "boolean ret;",
+        "aftercode": "boolean ret = true;",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 22,
+        "line": 246,
+        "filepath": "./defects4j_fixed/Math/Math_96_fixed/src/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "boolean ret;",
+        "aftercode": "boolean ret = false;",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEquals_NoneOfConditionsMet\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testEqualsWithNaN\n",
+        "survived": true
+    }
+]

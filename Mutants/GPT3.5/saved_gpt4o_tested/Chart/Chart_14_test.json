@@ -1,0 +1,632 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 6,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(index));",
+        "aftercode": "markers = (ArrayList) this.backgroundDomainMarkers.get(index);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 2,
+        "line": 6,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(index));",
+        "aftercode": "markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(index + 1));",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 3,
+        "line": 6,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(index));",
+        "aftercode": "markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(index - 1));",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 4,
+        "line": 2166,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "if (markers == null) {",
+        "aftercode": "if (markers != null) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 5,
+        "line": 2166,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "if (markers == null) {",
+        "aftercode": "if (markers.isEmpty()) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 6,
+        "line": 2167,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "return false;",
+        "aftercode": "return true;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 7,
+        "line": 2167,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "return false;",
+        "aftercode": "return notify;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 8,
+        "line": 2169,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "boolean removed = markers.remove(marker);",
+        "aftercode": "boolean removed = !markers.remove(marker);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 9,
+        "line": 2169,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "boolean removed = markers.remove(marker);",
+        "aftercode": "boolean removed = markers.contains(marker);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 10,
+        "line": 2169,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "boolean removed = markers.remove(marker);",
+        "aftercode": "boolean removed = markers.add(marker);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 11,
+        "line": 2170,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "if (removed && notify) {",
+        "aftercode": "if (removed || notify) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 12,
+        "line": 2170,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "if (removed && notify) {",
+        "aftercode": "if (!removed && notify) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 13,
+        "line": 2170,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "if (removed && notify) {",
+        "aftercode": "if (removed) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 14,
+        "line": 2171,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "fireChangeEvent();",
+        "aftercode": "// fireChangeEvent();",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 15,
+        "line": 2171,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "fireChangeEvent();",
+        "aftercode": "System.out.println(\"Change event fired\");",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 16,
+        "line": 2171,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "fireChangeEvent();",
+        "aftercode": "fireChangeEvent(); fireChangeEvent();",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 17,
+        "line": 6,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(index));",
+        "aftercode": "markers = new ArrayList();",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 18,
+        "line": 2169,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "boolean removed = markers.remove(marker);",
+        "aftercode": "boolean removed = markers.removeAll(Collections.singleton(marker));",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 19,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "markers = (ArrayList) this.backgroundRangeMarkers.get(new Integer(index));",
+        "aftercode": "markers = (ArrayList) this.backgroundRangeMarkers.get(index);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 20,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "markers = (ArrayList) this.backgroundRangeMarkers.get(new Integer(index));",
+        "aftercode": "markers = (ArrayList) this.backgroundRangeMarkers.get(new Double(index));",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 21,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "markers = (ArrayList) this.backgroundRangeMarkers.get(new Integer(index));",
+        "aftercode": "markers = (ArrayList) this.backgroundRangeMarkers.get(new Integer(index + 1));",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 22,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "markers = (ArrayList) this.backgroundRangeMarkers.get(new Integer(index));",
+        "aftercode": "markers = (ArrayList) this.backgroundRangeMarkers.get(new Integer(index - 1));",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 23,
+        "line": 2451,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "if (markers == null) {",
+        "aftercode": "if (markers != null) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 24,
+        "line": 2451,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "if (markers == null) {",
+        "aftercode": "if (markers.isEmpty()) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 25,
+        "line": 2452,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "return false;",
+        "aftercode": "return true;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 26,
+        "line": 2452,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "return false;",
+        "aftercode": "return markers.isEmpty();",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 27,
+        "line": 2454,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "boolean removed = markers.remove(marker);",
+        "aftercode": "boolean removed = markers.contains(marker);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 28,
+        "line": 2454,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "boolean removed = markers.remove(marker);",
+        "aftercode": "boolean removed = !markers.remove(marker);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 29,
+        "line": 2454,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "boolean removed = markers.remove(marker);",
+        "aftercode": "boolean removed = markers.remove(null);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 30,
+        "line": 2455,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "if (removed && notify) {",
+        "aftercode": "if (!removed && notify) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 31,
+        "line": 2455,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "if (removed && notify) {",
+        "aftercode": "if (removed || notify) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 32,
+        "line": 2455,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "if (removed && notify) {",
+        "aftercode": "if (removed) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 33,
+        "line": 2455,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "if (removed && notify) {",
+        "aftercode": "if (notify) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 34,
+        "line": 2456,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "fireChangeEvent();",
+        "aftercode": "// fireChangeEvent();",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 36,
+        "line": 2456,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "fireChangeEvent();",
+        "aftercode": "System.out.println(\"Change event fired\");",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 38,
+        "line": 2284,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "Iterator iterator = keys.iterator();",
+        "aftercode": "Iterator iterator = Collections.emptyIterator();",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 40,
+        "line": 2287,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "clearRangeMarkers(key.intValue());",
+        "aftercode": "clearRangeMarkers(0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 41,
+        "line": 2280,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "this.backgroundRangeMarkers.clear();",
+        "aftercode": "// this.backgroundRangeMarkers.clear();",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 43,
+        "line": 2284,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "Iterator iterator = keys.iterator();",
+        "aftercode": "Iterator iterator = null;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 45,
+        "line": 2287,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "clearRangeMarkers(key.intValue());",
+        "aftercode": "clearRangeMarkers(1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 46,
+        "line": 2289,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "this.foregroundRangeMarkers.clear();",
+        "aftercode": "// this.foregroundRangeMarkers.clear();",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 47,
+        "line": 2291,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "fireChangeEvent();",
+        "aftercode": "// fireChangeEvent();",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 48,
+        "line": 2274,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "Set keys = this.backgroundRangeMarkers.keySet();",
+        "aftercode": "Set keys = null;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 50,
+        "line": 2287,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "clearRangeMarkers(key.intValue());",
+        "aftercode": "continue;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 53,
+        "line": 2287,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "clearRangeMarkers(key.intValue());",
+        "aftercode": "break;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 55,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value, false);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 56,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value + 1, true);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 57,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value - 1, true);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 58,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(0, true);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 59,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value * 2, true);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 60,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value / 2, true);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 61,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(-value, true);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 62,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value, false);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 63,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value, value > 0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 64,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value, !true);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 65,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value, value < 0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 66,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value, value == 0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 67,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value, value != 0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 68,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value, value >= 0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 69,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value, value <= 0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 70,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value, value == 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 71,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value, value != 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 72,
+        "line": 2535,
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "precode": "setRangeCrosshairValue(value, true);",
+        "aftercode": "setRangeCrosshairValue(value, value > 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.plot.tests.CategoryPlotTest\n",
+        "survived": true
+    }
+]

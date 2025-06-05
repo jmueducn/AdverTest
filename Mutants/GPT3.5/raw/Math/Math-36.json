@@ -1,0 +1,212 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 685,
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "precode": "double result = numerator.doubleValue() / denominator.doubleValue();",
+        "aftercode": "double result = numerator.doubleValue() * denominator.doubleValue();",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsNanCheckMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithExtremeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_NormalFractions\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_WithPrecisionIssues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueHandlesInfiniteCorrectly\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_UsingClassConstants\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNaNResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers1\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers2\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers3\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNormalResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ExtremeValues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithInfiniteResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_EdgeCases\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 685,
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "precode": "double result = numerator.doubleValue() / denominator.doubleValue();",
+        "aftercode": "double result = numerator.doubleValue() + denominator.doubleValue();",
+        "fail_test_number": 20,
+        "fail_test": "Failing tests: 20\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsNanCheckMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_VeryLargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithExtremeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_NormalFractions\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_WholeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithExtremelyLargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_WithPrecisionIssues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueHandlesInfiniteCorrectly\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_UsingClassConstants\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNaNResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers1\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers2\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers3\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNormalResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ExtremeValues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithInfiniteResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_LargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_EdgeCases\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 686,
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "precode": "if (Double.isNaN(result)) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithExtremeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueHandlesInfiniteCorrectly\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNaNResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers1\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers2\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers3\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ExtremeValues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithInfiniteResult\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 686,
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "precode": "if (Double.isNaN(result)) {",
+        "aftercode": "if (Double.isInfinite(result)) {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithExtremeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueHandlesInfiniteCorrectly\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNaNResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers1\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers2\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers3\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ExtremeValues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithInfiniteResult\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 685,
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "precode": "double result = numerator.doubleValue() / denominator.doubleValue();",
+        "aftercode": "double result = denominator.doubleValue() / numerator.doubleValue();",
+        "fail_test_number": 18,
+        "fail_test": "Failing tests: 18\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsNanCheckMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_VeryLargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_NormalFractions\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_WholeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithExtremelyLargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_WithPrecisionIssues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueHandlesInfiniteCorrectly\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_UsingClassConstants\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNaNResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers1\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers2\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers3\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNormalResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ExtremeValues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithInfiniteResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_LargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_EdgeCases\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 686,
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "precode": "if (Double.isNaN(result)) {",
+        "aftercode": "if (Double.isNaN(result) || Double.isInfinite(result)) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueHandlesInfiniteCorrectly\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNaNResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers1\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers2\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers3\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ExtremeValues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithInfiniteResult\n",
+        "survived": true,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 694,
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "precode": "return result;",
+        "aftercode": "return 0.0;",
+        "fail_test_number": 20,
+        "fail_test": "Failing tests: 20\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsNanCheckMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_VeryLargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithExtremeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_NormalFractions\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_WholeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithExtremelyLargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_WithPrecisionIssues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueHandlesInfiniteCorrectly\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_UsingClassConstants\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNaNResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers1\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers2\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers3\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNormalResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ExtremeValues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithInfiniteResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_LargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValue_EdgeCases\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 738,
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "precode": "float result = numerator.floatValue() / denominator.floatValue();",
+        "aftercode": "float result = numerator.floatValue() * denominator.floatValue();",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_VerySmallNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueHandlesInfiniteCorrectly\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNaNResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers1\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers2\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers3\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ExtremeValues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_PredefinedConstants\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithInfiniteResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_NormalFractions\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 738,
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "precode": "float result = numerator.floatValue() / denominator.floatValue();",
+        "aftercode": "float result = numerator.floatValue() + denominator.floatValue();",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_WholeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ZeroNumerator\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_VerySmallNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueHandlesInfiniteCorrectly\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_EqualLargeNumeratorDenominator\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNaNResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers1\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers2\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers3\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ExtremeValues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_PredefinedConstants\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithInfiniteResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_LargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_NormalFractions\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 738,
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "precode": "float result = numerator.floatValue() / denominator.floatValue();",
+        "aftercode": "float result = numerator.floatValue() - denominator.floatValue();",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_WholeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ZeroNumerator\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_VerySmallNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueHandlesInfiniteCorrectly\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_EqualLargeNumeratorDenominator\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNaNResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers1\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers2\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers3\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ExtremeValues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_PredefinedConstants\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithInfiniteResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_LargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_NormalFractions\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 739,
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "precode": "if (Double.isNaN(result)) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueHandlesInfiniteCorrectly\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNaNResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers1\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers2\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers3\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ExtremeValues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithInfiniteResult\n",
+        "survived": true,
+        "id": 11
+    },
+    {
+        "mutant_id:": 12,
+        "line": 739,
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "precode": "if (Double.isNaN(result)) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueHandlesInfiniteCorrectly\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNaNResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers1\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers2\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers3\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ExtremeValues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithInfiniteResult\n",
+        "survived": true,
+        "id": 12
+    },
+    {
+        "mutant_id:": 13,
+        "line": 747,
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "precode": "return result;",
+        "aftercode": "return 0.0f;",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_OneDenominator\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_WholeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueHandlesInfiniteCorrectly\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_EqualLargeNumeratorDenominator\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNaNResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers1\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers2\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers3\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ExtremeValues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_PredefinedConstants\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithInfiniteResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_LargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_NormalFractions\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "mutant_id:": 14,
+        "line": 747,
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "precode": "return result;",
+        "aftercode": "return 1.0f;",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_OneDenominator\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_WholeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ZeroNumerator\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_VerySmallNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueHandlesInfiniteCorrectly\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithNaNResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers1\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers2\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithLargeNumbers3\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_ExtremeValues\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_PredefinedConstants\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testDoubleValueWithInfiniteResult\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_LargeNumbers\n  - gentest.org.apache.commons.math.fraction.tests.BigFractionTest::testFloatValue_NormalFractions\n",
+        "survived": false,
+        "id": 14
+    },
+    {
+        "id": 15,
+        "line": 686,
+        "precode": "if (Double.isNaN(result)) {",
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "if (result != result) {"
+    },
+    {
+        "id": 16,
+        "line": 686,
+        "precode": "if (Double.isNaN(result)) {",
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 17,
+        "line": 739,
+        "precode": "if (Double.isNaN(result)) {",
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "if (!Double.isNaN(result)) {"
+    },
+    {
+        "id": 18,
+        "line": 739,
+        "precode": "if (Double.isNaN(result)) {",
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "if (Double.isInfinite(result)) {"
+    },
+    {
+        "id": 19,
+        "line": 744,
+        "precode": "result = numerator.shiftRight(shift).floatValue() /",
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "result = numerator.shiftLeft(shift).floatValue() /"
+    },
+    {
+        "id": 20,
+        "line": 744,
+        "precode": "result = numerator.shiftRight(shift).floatValue() /",
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "result = numerator.shiftRight(shift).intValue() /"
+    },
+    {
+        "id": 21,
+        "line": 742,
+        "precode": "int shift = Math.max(numerator.bitLength(),",
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "int shift = Math.min(numerator.bitLength(),"
+    },
+    {
+        "id": 22,
+        "line": 742,
+        "precode": "int shift = Math.max(numerator.bitLength(),",
+        "filepath": "./defects4j_fixed/Math/Math_36_fixed/src/main/java/org/apache/commons/math/fraction/BigFraction.java",
+        "aftercode": "int shift = numerator.bitLength();"
+    }
+]

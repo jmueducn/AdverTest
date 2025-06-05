@@ -1,0 +1,338 @@
+[
+    {
+        "id": 1,
+        "line": 102,
+        "precode": "clearResult();",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "// clearResult();"
+    },
+    {
+        "id": 2,
+        "line": 103,
+        "precode": "verifySequence(min, initial, max);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "// verifySequence(min, initial, max);"
+    },
+    {
+        "id": 3,
+        "line": 106,
+        "precode": "double yInitial = f.value(initial);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "double yInitial = 0.0;"
+    },
+    {
+        "id": 4,
+        "line": 107,
+        "precode": "if (Math.abs(yInitial) <= functionValueAccuracy) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 5,
+        "line": 107,
+        "precode": "if (Math.abs(yInitial) <= functionValueAccuracy) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (Math.abs(yInitial) < functionValueAccuracy) {"
+    },
+    {
+        "id": 6,
+        "line": 107,
+        "precode": "if (Math.abs(yInitial) <= functionValueAccuracy) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (Math.abs(yInitial) >= functionValueAccuracy) {"
+    },
+    {
+        "id": 7,
+        "line": 108,
+        "precode": "setResult(initial, 0);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "setResult(initial, 1);"
+    },
+    {
+        "id": 8,
+        "line": 128,
+        "precode": "return result;",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "return initial;"
+    },
+    {
+        "id": 9,
+        "line": 113,
+        "precode": "double yMin = f.value(min);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "double yMin = yInitial;"
+    },
+    {
+        "id": 10,
+        "line": 114,
+        "precode": "if (Math.abs(yMin) <= functionValueAccuracy) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 11,
+        "line": 114,
+        "precode": "if (Math.abs(yMin) <= functionValueAccuracy) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (Math.abs(yMin) < functionValueAccuracy) {"
+    },
+    {
+        "id": 12,
+        "line": 115,
+        "precode": "setResult(yMin, 0);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "setResult(min, 0);"
+    },
+    {
+        "id": 13,
+        "line": 128,
+        "precode": "return result;",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "return min;"
+    },
+    {
+        "id": 14,
+        "line": 120,
+        "precode": "if (yInitial * yMin < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (yInitial * yMin <= 0) {"
+    },
+    {
+        "id": 15,
+        "line": 120,
+        "precode": "if (yInitial * yMin < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (yInitial * yMin > 0) {"
+    },
+    {
+        "id": 16,
+        "line": 121,
+        "precode": "return solve(f, min, yMin, initial, yInitial, min, yMin);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "return solve(f, min, yMin, initial, yInitial, max, yMax);"
+    },
+    {
+        "id": 17,
+        "line": 125,
+        "precode": "double yMax = f.value(max);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "double yMax = yInitial;"
+    },
+    {
+        "id": 18,
+        "line": 126,
+        "precode": "if (Math.abs(yMax) <= functionValueAccuracy) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 19,
+        "line": 126,
+        "precode": "if (Math.abs(yMax) <= functionValueAccuracy) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (Math.abs(yMax) < functionValueAccuracy) {"
+    },
+    {
+        "id": 20,
+        "line": 127,
+        "precode": "setResult(yMax, 0);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "setResult(max, 0);"
+    },
+    {
+        "id": 21,
+        "line": 128,
+        "precode": "return result;",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "return max;"
+    },
+    {
+        "id": 22,
+        "line": 132,
+        "precode": "if (yInitial * yMax < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (yInitial * yMax <= 0) {"
+    },
+    {
+        "id": 23,
+        "line": 132,
+        "precode": "if (yInitial * yMax < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (yInitial * yMax > 0) {"
+    },
+    {
+        "id": 24,
+        "line": 133,
+        "precode": "return solve(f, initial, yInitial, max, yMax, initial, yInitial);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "return solve(f, initial, yInitial, max, yMax, min, yMin);"
+    },
+    {
+        "id": 25,
+        "line": 136,
+        "precode": "if (yMin * yMax > 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (yMin * yMax >= 0) {"
+    },
+    {
+        "id": 26,
+        "line": 136,
+        "precode": "if (yMin * yMax > 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (yMin * yMax < 0) {"
+    },
+    {
+        "id": 27,
+        "line": 137,
+        "precode": "throw MathRuntimeException.createIllegalArgumentException(",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "// throw MathRuntimeException.createIllegalArgumentException("
+    },
+    {
+        "id": 28,
+        "line": 138,
+        "precode": "NON_BRACKETING_MESSAGE, min, max, yMin, yMax);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "NON_BRACKETING_MESSAGE, max, min, yMax, yMin);"
+    },
+    {
+        "id": 29,
+        "line": 142,
+        "precode": "return solve(f, min, yMin, max, yMax, initial, yInitial);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "return solve(f, min, yMin, max, yMax, max, yMax);"
+    },
+    {
+        "id": 30,
+        "line": 102,
+        "precode": "clearResult();",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "clearResult(); clearResult();"
+    },
+    {
+        "id": 31,
+        "line": 103,
+        "precode": "verifySequence(min, initial, max);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "verifySequence(max, initial, min);"
+    },
+    {
+        "id": 32,
+        "line": 106,
+        "precode": "double yInitial = f.value(initial);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "double yInitial = f.value(min);"
+    },
+    {
+        "id": 33,
+        "line": 107,
+        "precode": "if (Math.abs(yInitial) <= functionValueAccuracy) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (Math.abs(yInitial) == functionValueAccuracy) {"
+    },
+    {
+        "id": 34,
+        "line": 108,
+        "precode": "setResult(initial, 0);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "setResult(initial, -1);"
+    },
+    {
+        "id": 35,
+        "line": 113,
+        "precode": "double yMin = f.value(min);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "double yMin = f.value(max);"
+    },
+    {
+        "id": 36,
+        "line": 114,
+        "precode": "if (Math.abs(yMin) <= functionValueAccuracy) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (Math.abs(yMin) == functionValueAccuracy) {"
+    },
+    {
+        "id": 37,
+        "line": 115,
+        "precode": "setResult(yMin, 0);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "setResult(yMin, 1);"
+    },
+    {
+        "id": 38,
+        "line": 120,
+        "precode": "if (yInitial * yMin < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (yInitial + yMin < 0) {"
+    },
+    {
+        "id": 39,
+        "line": 121,
+        "precode": "return solve(f, min, yMin, initial, yInitial, min, yMin);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "return solve(f, initial, yInitial, min, yMin, min, yMin);"
+    },
+    {
+        "id": 40,
+        "line": 125,
+        "precode": "double yMax = f.value(max);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "double yMax = f.value(min);"
+    },
+    {
+        "id": 41,
+        "line": 126,
+        "precode": "if (Math.abs(yMax) <= functionValueAccuracy) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (Math.abs(yMax) == functionValueAccuracy) {"
+    },
+    {
+        "id": 42,
+        "line": 127,
+        "precode": "setResult(yMax, 0);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "setResult(yMax, 1);"
+    },
+    {
+        "id": 43,
+        "line": 132,
+        "precode": "if (yInitial * yMax < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (yInitial + yMax < 0) {"
+    },
+    {
+        "id": 44,
+        "line": 133,
+        "precode": "return solve(f, initial, yInitial, max, yMax, initial, yInitial);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "return solve(f, max, yMax, initial, yInitial, initial, yInitial);"
+    },
+    {
+        "id": 45,
+        "line": 136,
+        "precode": "if (yMin * yMax > 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "if (yMin + yMax > 0) {"
+    },
+    {
+        "id": 46,
+        "line": 137,
+        "precode": "throw MathRuntimeException.createIllegalArgumentException(",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "throw new IllegalArgumentException("
+    },
+    {
+        "id": 47,
+        "line": 142,
+        "precode": "return solve(f, min, yMin, max, yMax, initial, yInitial);",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "return solve(f, max, yMax, min, yMin, initial, yInitial);"
+    },
+    {
+        "id": 48,
+        "line": 128,
+        "precode": "return result;",
+        "filepath": "./defects4j_fixed/Math/Math_73_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BrentSolver.java",
+        "aftercode": "return 0.0;"
+    }
+]

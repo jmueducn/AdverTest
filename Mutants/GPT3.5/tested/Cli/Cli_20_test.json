@@ -1,0 +1,372 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 112,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (token.startsWith(\"--\"))",
+        "aftercode": "if (token.startsWith(\"-\"))",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShortOptionGroup\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 2,
+        "line": 112,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (token.startsWith(\"--\"))",
+        "aftercode": "if (true)",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShortOptionGroup\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 3,
+        "line": 112,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (token.startsWith(\"--\"))",
+        "aftercode": "if (false)",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOption_ProcessesFullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "int pos = token.indexOf('=');",
+        "aftercode": "int pos = token.lastIndexOf('=');",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "int pos = token.indexOf('=');",
+        "aftercode": "int pos = 0;",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithoutValue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "int pos = token.indexOf('=');",
+        "aftercode": "int pos = -1;",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 115,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "String opt = pos == -1 ? token : token.substring(0, pos);",
+        "aftercode": "String opt = pos != -1 ? token : token.substring(0, pos);",
+        "fail_test_number": 18,
+        "fail_test": "Failing tests: 18\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOption_ProcessesFullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithoutValue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 115,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "String opt = pos == -1 ? token : token.substring(0, pos);",
+        "aftercode": "String opt = token;",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 115,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "String opt = pos == -1 ? token : token.substring(0, pos);",
+        "aftercode": "String opt = pos == -1 ? token.substring(1) : token.substring(0, pos);",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithoutValue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 117,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (!options.hasOption(opt) && stopAtNonOption)",
+        "aftercode": "if (options.hasOption(opt) && stopAtNonOption)",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 117,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (!options.hasOption(opt) && stopAtNonOption)",
+        "aftercode": "if (!options.hasOption(opt) || stopAtNonOption)",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 117,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (!options.hasOption(opt) && stopAtNonOption)",
+        "aftercode": "if (!options.hasOption(opt))",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 117,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (!options.hasOption(opt) && stopAtNonOption)",
+        "aftercode": "if (stopAtNonOption)",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 117,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (!options.hasOption(opt) && stopAtNonOption)",
+        "aftercode": "if (false)",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 153,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "process(token);",
+        "aftercode": "process(token.substring(1));",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 17,
+        "line": 153,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "process(token);",
+        "aftercode": "tokens.add(token);",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 153,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "process(token);",
+        "aftercode": "// process(token);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 19,
+        "line": 123,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "tokens.add(opt);",
+        "aftercode": "tokens.add(token);",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 20,
+        "line": 123,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "tokens.add(opt);",
+        "aftercode": "tokens.add(opt.substring(1));",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithoutValue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 123,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "tokens.add(opt);",
+        "aftercode": "// tokens.add(opt);",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithoutValue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 22,
+        "line": 124,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (pos != -1) {",
+        "aftercode": "if (pos == -1) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithoutValue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 23,
+        "line": 124,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (pos != -1) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithoutValue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 24,
+        "line": 124,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (pos != -1) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 25,
+        "line": 124,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (pos != -1) {",
+        "aftercode": "if (pos > 0) {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 26,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "tokens.add(token.substring(pos + 1));",
+        "aftercode": "tokens.add(token.substring(pos));",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 27,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "tokens.add(token.substring(pos + 1));",
+        "aftercode": "tokens.add(token.substring(0));",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 28,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "tokens.add(token.substring(pos + 1));",
+        "aftercode": "tokens.add(token);",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 29,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "tokens.add(token.substring(pos + 1));",
+        "aftercode": "// tokens.add(token.substring(pos + 1));",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 30,
+        "line": 112,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (token.startsWith(\"--\"))",
+        "aftercode": "if (token.endsWith(\"--\"))",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOption_ProcessesFullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 31,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "int pos = token.indexOf('=');",
+        "aftercode": "int pos = token.indexOf(' ');",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 32,
+        "line": 115,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "String opt = pos == -1 ? token : token.substring(0, pos);",
+        "aftercode": "String opt = pos == -1 ? \"\" : token.substring(0, pos);",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithoutValue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 33,
+        "line": 117,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (!options.hasOption(opt) && stopAtNonOption)",
+        "aftercode": "if (!options.hasOption(opt) && !stopAtNonOption)",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 34,
+        "line": 153,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "process(token);",
+        "aftercode": "process(token + \" \");",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 35,
+        "line": 123,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "tokens.add(opt);",
+        "aftercode": "tokens.add(opt + \" \");",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithoutValue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 36,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "tokens.add(token.substring(pos + 1));",
+        "aftercode": "tokens.add(token.substring(pos + 1) + \" \");",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_HandlesEqualsAtStartOfLongOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_WithMultipleEqualsInLongOption_ShouldSplitAtFirstEqual\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithValue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectMutant_ExistingLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 37,
+        "line": 115,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "String opt = pos == -1 ? token : token.substring(0, pos);",
+        "aftercode": "String opt = pos == -1 ? token.substring(2) : token.substring(0, pos);",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWhenStopAtNonOptionFalse_ShouldAddToTokens\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsMutant_WhenOptionExistsAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_LongOptionWithoutValue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 38,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "int pos = token.indexOf('=');",
+        "aftercode": "int pos = token.indexOf('=', 2);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_MixedArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnknownLongOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ProcessTokenWithoutSpaceWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOption_ShouldProcessToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_DetectsEqualsSignAtStartOfToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_NonOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_ShouldProcessUnknownLongOptionWhenStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testFlatten_UnrecognizedLongOptionWithStopAtNonOptionTrue\n",
+        "survived": true
+    }
+]

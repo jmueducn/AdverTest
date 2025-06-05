@@ -1,0 +1,112 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 93,
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "precode": "public ValueMarker(double value, Paint paint, Stroke stroke,",
+        "aftercode": "public ValueMarker(double val, Paint paint, Stroke stroke,",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NegativeValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_DifferentOutline\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testGetSetValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_NaNComparison\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlineStrokeToParent1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ValidParameters1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_PositiveInfinityValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_MaxDoubleValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NegativeInfinityValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValue1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NaNValue1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlineStrokeToParent\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ValidParameters\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 95,
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "precode": "        super(paint, stroke, outlinePaint, outlineStroke, alpha);",
+        "aftercode": "        super(paint, stroke, outlinePaint, null, alpha);",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_DifferentOutline\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_NaNComparison\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorSetsOutlineStroke\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 95,
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "precode": "        super(paint, stroke, outlinePaint, outlineStroke, alpha);",
+        "aftercode": "        super(paint, stroke, outlinePaint, outlineStroke, 1.0f);",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValueIsPassedCorrectly\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_DifferentOutline\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_NaNComparison\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValueIsPassedCorrectly1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorSetsCorrectAlpha\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValueIsUsed\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 95,
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "precode": "        super(paint, stroke, outlinePaint, outlineStroke, alpha);",
+        "aftercode": "        super(null, stroke, outlinePaint, outlineStroke, alpha);",
+        "fail_test_number": 28,
+        "fail_test": "Failing tests: 28\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValueIsPassedCorrectly\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_DifferentAlpha\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NegativeValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NullStroke\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_DifferentOutline\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testGetSetValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_NaNComparison\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlinePaintToParent\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlineStrokeToParent1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ValidParameters1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_PositiveInfinityValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_MaxDoubleValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NegativeInfinityValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorSetsOutlinePaintCorrectly\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValueIsPassedCorrectly1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValue1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NaNValue1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_MinDoubleValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorSetsCorrectAlpha\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorSetsOutlineStroke\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorSetsOutlinePaint\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ZeroValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValueIsUsed\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NullStroke1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlineStrokeToParent\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ValidParameters\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 95,
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "precode": "        super(paint, stroke, outlinePaint, outlineStroke, alpha);",
+        "aftercode": "        super(paint, null, outlinePaint, outlineStroke, alpha);",
+        "fail_test_number": 26,
+        "fail_test": "Failing tests: 26\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValueIsPassedCorrectly\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_DifferentAlpha\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NegativeValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_DifferentOutline\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testGetSetValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_NaNComparison\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlinePaintToParent\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlineStrokeToParent1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ValidParameters1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_PositiveInfinityValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_MaxDoubleValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NegativeInfinityValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorSetsOutlinePaintCorrectly\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValueIsPassedCorrectly1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValue1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NaNValue1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_MinDoubleValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorSetsCorrectAlpha\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorSetsOutlineStroke\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorSetsOutlinePaint\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ZeroValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValueIsUsed\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlineStrokeToParent\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ValidParameters\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 95,
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "precode": "        super(paint, stroke, outlinePaint, outlineStroke, alpha);",
+        "aftercode": "        super(paint, stroke, null, outlineStroke, alpha);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_DifferentOutline\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_NaNComparison\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlinePaintToParent\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorSetsOutlinePaintCorrectly\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorSetsOutlinePaint\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 95,
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "precode": "        super(paint, stroke, outlinePaint, outlineStroke, alpha);",
+        "aftercode": "        super(paint, stroke, outlinePaint, outlineStroke, 0.0f);",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValueIsPassedCorrectly\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_DifferentOutline\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_NaNComparison\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValueIsPassedCorrectly1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValue1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorSetsCorrectAlpha\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValueIsUsed\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 96,
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "precode": "        this.value = value;",
+        "aftercode": "        this.value = 0.0;",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NegativeValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_DifferentOutline\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testGetSetValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_NaNComparison\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlineStrokeToParent1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ValidParameters1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_PositiveInfinityValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_MaxDoubleValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NegativeInfinityValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValue1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NaNValue1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlineStrokeToParent\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ValidParameters\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 96,
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "precode": "        this.value = value;",
+        "aftercode": "        this.value = Double.MAX_VALUE;",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NegativeValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_DifferentOutline\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testGetSetValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_NaNComparison\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlineStrokeToParent1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ValidParameters1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_PositiveInfinityValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NegativeInfinityValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValue1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NaNValue1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_MinDoubleValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ZeroValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlineStrokeToParent\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ValidParameters\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 96,
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "precode": "        this.value = value;",
+        "aftercode": "        this.value = -value;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NegativeValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_DifferentOutline\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testGetSetValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_NaNComparison\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlineStrokeToParent1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ValidParameters1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_PositiveInfinityValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_MaxDoubleValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NegativeInfinityValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValue1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlineStrokeToParent\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ValidParameters\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 96,
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "precode": "        this.value = value;",
+        "aftercode": "        this.value = value + 1;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_NegativeValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_DifferentOutline\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testGetSetValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testEquals_NaNComparison\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlineStrokeToParent1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ValidParameters1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorAlphaValue1\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_MinDoubleValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ZeroValue\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructorPassesOutlineStrokeToParent\n  - gentest.org.jfree.chart.plot.tests.ValueMarkerTest::testConstructor_ValidParameters\n",
+        "survived": false
+    }
+]

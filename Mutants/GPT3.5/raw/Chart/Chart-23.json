@@ -1,0 +1,1239 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 436,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (obj == this) {",
+        "aftercode": "if (obj != this) {",
+        "fail_test_number": 21,
+        "fail_test": "Failing tests: 21\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentClass\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_NullObject\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 436,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (obj == this) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 21,
+        "fail_test": "Failing tests: 21\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentClass\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_NullObject\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 436,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (obj == this) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": true,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 439,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!(obj instanceof MinMaxCategoryRenderer)) {",
+        "aftercode": "if ((obj instanceof MinMaxCategoryRenderer)) {",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentClass\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_NullObject\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 439,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!(obj instanceof MinMaxCategoryRenderer)) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 439,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!(obj instanceof MinMaxCategoryRenderer)) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentClass\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_NullObject\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 443,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (this.plotLines != that.plotLines) {",
+        "aftercode": "if (this.plotLines == that.plotLines) {",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 443,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (this.plotLines != that.plotLines) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 443,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (this.plotLines != that.plotLines) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 446,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!PaintUtilities.equal(this.groupPaint, that.groupPaint)) {",
+        "aftercode": "if (PaintUtilities.equal(this.groupPaint, that.groupPaint)) {",
+        "fail_test_number": 18,
+        "fail_test": "Failing tests: 18\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 446,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!PaintUtilities.equal(this.groupPaint, that.groupPaint)) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 12,
+        "line": 446,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!PaintUtilities.equal(this.groupPaint, that.groupPaint)) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse\n",
+        "survived": false,
+        "id": 12
+    },
+    {
+        "mutant_id:": 13,
+        "line": 449,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!this.groupStroke.equals(that.groupStroke)) {",
+        "aftercode": "if (this.groupStroke.equals(that.groupStroke)) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "mutant_id:": 14,
+        "line": 449,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!this.groupStroke.equals(that.groupStroke)) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 14
+    },
+    {
+        "mutant_id:": 15,
+        "line": 449,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!this.groupStroke.equals(that.groupStroke)) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 15
+    },
+    {
+        "mutant_id:": 16,
+        "line": 452,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "return super.equals(obj);",
+        "aftercode": "return true;",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": true,
+        "id": 16
+    },
+    {
+        "mutant_id:": 17,
+        "line": 452,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "return super.equals(obj);",
+        "aftercode": "return false;",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 17
+    },
+    {
+        "mutant_id:": 18,
+        "line": 452,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "return super.equals(obj);",
+        "aftercode": "return this.equals(obj);",
+        "fail_test_number": 20,
+        "fail_test": "Failing tests: 20\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 18
+    },
+    {
+        "mutant_id:": 21,
+        "line": 442,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "MinMaxCategoryRenderer that = (MinMaxCategoryRenderer) obj;",
+        "aftercode": "MinMaxCategoryRenderer that = null;",
+        "fail_test_number": 23,
+        "fail_test": "Failing tests: 23\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse\n",
+        "survived": false,
+        "id": 19
+    },
+    {
+        "mutant_id:": 22,
+        "line": 442,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "MinMaxCategoryRenderer that = (MinMaxCategoryRenderer) obj;",
+        "aftercode": "MinMaxCategoryRenderer that = this;",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse\n",
+        "survived": false,
+        "id": 20
+    },
+    {
+        "mutant_id:": 23,
+        "line": 443,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (this.plotLines != that.plotLines) {",
+        "aftercode": "if (this.plotLines != this.plotLines) {",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 21
+    },
+    {
+        "mutant_id:": 24,
+        "line": 446,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!PaintUtilities.equal(this.groupPaint, that.groupPaint)) {",
+        "aftercode": "if (!PaintUtilities.equal(this.groupPaint, this.groupPaint)) {",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse\n",
+        "survived": false,
+        "id": 22
+    },
+    {
+        "mutant_id:": 25,
+        "line": 449,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!this.groupStroke.equals(that.groupStroke)) {",
+        "aftercode": "if (!this.groupStroke.equals(this.groupStroke)) {",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 23
+    },
+    {
+        "mutant_id:": 26,
+        "line": 436,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (obj == this) {",
+        "aftercode": "if (obj == null) {",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_NullObject\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 24
+    },
+    {
+        "mutant_id:": 27,
+        "line": 439,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!(obj instanceof MinMaxCategoryRenderer)) {",
+        "aftercode": "if (!(obj instanceof Object)) {",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentClass\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 25
+    },
+    {
+        "mutant_id:": 28,
+        "line": 443,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (this.plotLines != that.plotLines) {",
+        "aftercode": "if (this.plotLines != !that.plotLines) {",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 26
+    },
+    {
+        "mutant_id:": 29,
+        "line": 446,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!PaintUtilities.equal(this.groupPaint, that.groupPaint)) {",
+        "aftercode": "if (!PaintUtilities.equal(that.groupPaint, this.groupPaint)) {",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": true,
+        "id": 27
+    },
+    {
+        "mutant_id:": 30,
+        "line": 449,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!this.groupStroke.equals(that.groupStroke)) {",
+        "aftercode": "if (!that.groupStroke.equals(this.groupStroke)) {",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": true,
+        "id": 28
+    },
+    {
+        "mutant_id:": 31,
+        "line": 452,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "return super.equals(obj);",
+        "aftercode": "return that.equals(obj);",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 29
+    },
+    {
+        "mutant_id:": 32,
+        "line": 436,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (obj == this) {",
+        "aftercode": "if (obj.equals(this)) {",
+        "fail_test_number": 26,
+        "fail_test": "Failing tests: 26\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_NullObject\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsSameInstance\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_Reflexive\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse\n",
+        "survived": false,
+        "id": 30
+    },
+    {
+        "mutant_id:": 33,
+        "line": 439,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!(obj instanceof MinMaxCategoryRenderer)) {",
+        "aftercode": "if ((obj == null)) {",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentClass\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 31
+    },
+    {
+        "mutant_id:": 34,
+        "line": 443,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (this.plotLines != that.plotLines) {",
+        "aftercode": "if (this.plotLines) {",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 32
+    },
+    {
+        "mutant_id:": 35,
+        "line": 446,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!PaintUtilities.equal(this.groupPaint, that.groupPaint)) {",
+        "aftercode": "if (this.groupPaint == that.groupPaint) {",
+        "fail_test_number": 18,
+        "fail_test": "Failing tests: 18\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse\n",
+        "survived": false,
+        "id": 33
+    },
+    {
+        "mutant_id:": 36,
+        "line": 449,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!this.groupStroke.equals(that.groupStroke)) {",
+        "aftercode": "if (this.groupStroke == that.groupStroke) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 34
+    },
+    {
+        "mutant_id:": 37,
+        "line": 452,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "return super.equals(obj);",
+        "aftercode": "return !super.equals(obj);",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 35
+    },
+    {
+        "mutant_id:": 38,
+        "line": 436,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (obj == this) {",
+        "aftercode": "if (this == obj) {",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": true,
+        "id": 36
+    },
+    {
+        "mutant_id:": 39,
+        "line": 439,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!(obj instanceof MinMaxCategoryRenderer)) {",
+        "aftercode": "if (obj.getClass() != this.getClass()) {",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_NullObject\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 37
+    },
+    {
+        "mutant_id:": 40,
+        "line": 443,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (this.plotLines != that.plotLines) {",
+        "aftercode": "if (that.plotLines != this.plotLines) {",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": true,
+        "id": 38
+    },
+    {
+        "mutant_id:": 41,
+        "line": 446,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!PaintUtilities.equal(this.groupPaint, that.groupPaint)) {",
+        "aftercode": "if (this.groupPaint.equals(that.groupPaint)) {",
+        "fail_test_number": 18,
+        "fail_test": "Failing tests: 18\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse\n",
+        "survived": false,
+        "id": 39
+    },
+    {
+        "mutant_id:": 42,
+        "line": 449,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!this.groupStroke.equals(that.groupStroke)) {",
+        "aftercode": "if (that.groupStroke.equals(this.groupStroke)) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 40
+    },
+    {
+        "mutant_id:": 43,
+        "line": 452,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "return super.equals(obj);",
+        "aftercode": "return super.equals(that);",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": true,
+        "id": 41
+    },
+    {
+        "mutant_id:": 46,
+        "line": 443,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (this.plotLines != that.plotLines) {",
+        "aftercode": "if (this.plotLines != !that.plotLines) {",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentPlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 42
+    },
+    {
+        "mutant_id:": 47,
+        "line": 446,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!PaintUtilities.equal(this.groupPaint, that.groupPaint)) {",
+        "aftercode": "if (!that.groupPaint.equals(this.groupPaint)) {",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": true,
+        "id": 43
+    },
+    {
+        "mutant_id:": 48,
+        "line": 449,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "if (!this.groupStroke.equals(that.groupStroke)) {",
+        "aftercode": "if (!that.groupStroke.equals(this.groupStroke)) {",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": true,
+        "id": 44
+    },
+    {
+        "mutant_id:": 49,
+        "line": 452,
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "precode": "return super.equals(obj);",
+        "aftercode": "return that.equals(this);",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperClassBehavior\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsIdentityCheck\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithSamePlotLines\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupStroke1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentSuperclassProperties\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaintShouldReturnFalse1\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SymmetricProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithDifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithAsymmetricPaintComparison\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_SameValues\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_TransitiveProperty\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNonNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentGroupPaint\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEquals_DifferentSuperClassFields\n  - gentest.org.jfree.chart.renderer.category.tests.MinMaxCategoryRendererTest::testEqualsWithNullGroupStroke1\n",
+        "survived": false,
+        "id": 45
+    },
+    {
+        "id": 46,
+        "line": 436,
+        "precode": "if (obj == this) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (obj != this) {"
+    },
+    {
+        "id": 47,
+        "line": 436,
+        "precode": "if (obj == this) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 48,
+        "line": 449,
+        "precode": "if (!this.groupStroke.equals(that.groupStroke)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (this.groupStroke.equals(that.groupStroke)) {"
+    },
+    {
+        "id": 49,
+        "line": 449,
+        "precode": "if (!this.groupStroke.equals(that.groupStroke)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (!this.groupStroke.equals(this.groupStroke)) {"
+    },
+    {
+        "id": 50,
+        "line": 443,
+        "precode": "if (this.plotLines != that.plotLines) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (this.plotLines == that.plotLines) {"
+    },
+    {
+        "id": 51,
+        "line": 443,
+        "precode": "if (this.plotLines != that.plotLines) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 52,
+        "line": 386,
+        "precode": "this.lastCategory = column;",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.lastCategory = null;"
+    },
+    {
+        "id": 53,
+        "line": 386,
+        "precode": "this.lastCategory = column;",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.lastCategory = this.lastCategory;"
+    },
+    {
+        "id": 54,
+        "line": 387,
+        "precode": "this.min = value.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.min = value.floatValue();"
+    },
+    {
+        "id": 55,
+        "line": 387,
+        "precode": "this.min = value.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.min = value.intValue();"
+    },
+    {
+        "id": 56,
+        "line": 388,
+        "precode": "this.max = value.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.max = value.floatValue();"
+    },
+    {
+        "id": 57,
+        "line": 388,
+        "precode": "this.max = value.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.max = value.intValue();"
+    },
+    {
+        "id": 58,
+        "line": 392,
+        "precode": "if (this.plotLines) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (!this.plotLines) {"
+    },
+    {
+        "id": 59,
+        "line": 392,
+        "precode": "if (this.plotLines) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 60,
+        "line": 393,
+        "precode": "if (column != 0) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (column == 0) {"
+    },
+    {
+        "id": 61,
+        "line": 393,
+        "precode": "if (column != 0) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (column > 0) {"
+    },
+    {
+        "id": 62,
+        "line": 394,
+        "precode": "Number previousValue = dataset.getValue(row, column - 1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "Number previousValue = dataset.getValue(row, column);"
+    },
+    {
+        "id": 63,
+        "line": 394,
+        "precode": "Number previousValue = dataset.getValue(row, column - 1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "Number previousValue = dataset.getValue(row - 1, column - 1);"
+    },
+    {
+        "id": 64,
+        "line": 395,
+        "precode": "if (previousValue != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (previousValue == null) {"
+    },
+    {
+        "id": 65,
+        "line": 395,
+        "precode": "if (previousValue != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 66,
+        "line": 397,
+        "precode": "double previous = previousValue.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "double previous = previousValue.floatValue();"
+    },
+    {
+        "id": 67,
+        "line": 397,
+        "precode": "double previous = previousValue.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "double previous = previousValue.intValue();"
+    },
+    {
+        "id": 68,
+        "line": 398,
+        "precode": "double x0 = domainAxis.getCategoryMiddle(column - 1, ",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "double x0 = domainAxis.getCategoryMiddle(column + 1, "
+    },
+    {
+        "id": 69,
+        "line": 398,
+        "precode": "double x0 = domainAxis.getCategoryMiddle(column - 1, ",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "double x0 = domainAxis.getCategoryMiddle(column, "
+    },
+    {
+        "id": 70,
+        "line": 401,
+        "precode": "double y0 = rangeAxis.valueToJava2D(previous, dataArea,",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "double y0 = rangeAxis.valueToJava2D(0.0, dataArea,"
+    },
+    {
+        "id": 71,
+        "line": 401,
+        "precode": "double y0 = rangeAxis.valueToJava2D(previous, dataArea,",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "double y0 = rangeAxis.valueToJava2D(previous, null,"
+    },
+    {
+        "id": 72,
+        "line": 403,
+        "precode": "g2.setPaint(getItemPaint(row, column));",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.setPaint(null);"
+    },
+    {
+        "id": 73,
+        "line": 403,
+        "precode": "g2.setPaint(getItemPaint(row, column));",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.setPaint(getItemPaint(column, row));"
+    },
+    {
+        "id": 74,
+        "line": 404,
+        "precode": "g2.setStroke(getItemStroke(row, column));",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.setStroke(null);"
+    },
+    {
+        "id": 75,
+        "line": 404,
+        "precode": "g2.setStroke(getItemStroke(row, column));",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.setStroke(getItemStroke(column, row));"
+    },
+    {
+        "id": 76,
+        "line": 406,
+        "precode": "if (orient == PlotOrientation.VERTICAL) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (orient != PlotOrientation.VERTICAL) {"
+    },
+    {
+        "id": 77,
+        "line": 406,
+        "precode": "if (orient == PlotOrientation.VERTICAL) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 78,
+        "line": 407,
+        "precode": "line = new Line2D.Double(x0, y0, x1, y1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "line = new Line2D.Double(x1, y0, x0, y1);"
+    },
+    {
+        "id": 79,
+        "line": 407,
+        "precode": "line = new Line2D.Double(x0, y0, x1, y1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "line = new Line2D.Double(x0, y1, x1, y0);"
+    },
+    {
+        "id": 80,
+        "line": 410,
+        "precode": "line = new Line2D.Double(y0, x0, y1, x1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "line = new Line2D.Double(x0, y0, x1, y1);"
+    },
+    {
+        "id": 81,
+        "line": 410,
+        "precode": "line = new Line2D.Double(y0, x0, y1, x1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "line = new Line2D.Double(y0, x0, y0, x0);"
+    },
+    {
+        "id": 82,
+        "line": 412,
+        "precode": "g2.draw(line);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.fill(line);"
+    },
+    {
+        "id": 83,
+        "line": 412,
+        "precode": "g2.draw(line);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.draw(null);"
+    },
+    {
+        "id": 84,
+        "line": 418,
+        "precode": "EntityCollection entities = state.getEntityCollection();",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "EntityCollection entities = null;"
+    },
+    {
+        "id": 85,
+        "line": 418,
+        "precode": "EntityCollection entities = state.getEntityCollection();",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "EntityCollection entities = new EntityCollection();"
+    },
+    {
+        "id": 86,
+        "line": 419,
+        "precode": "if (entities != null && shape != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (entities == null && shape != null) {"
+    },
+    {
+        "id": 87,
+        "line": 419,
+        "precode": "if (entities != null && shape != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (entities != null || shape != null) {"
+    },
+    {
+        "id": 88,
+        "line": 420,
+        "precode": "addItemEntity(entities, dataset, row, column, shape);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "addItemEntity(entities, dataset, column, row, shape);"
+    },
+    {
+        "id": 89,
+        "line": 420,
+        "precode": "addItemEntity(entities, dataset, row, column, shape);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "addItemEntity(entities, dataset, row, column, null);"
+    },
+    {
+        "id": 90,
+        "line": 423,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "});"
+    },
+    {
+        "id": 91,
+        "line": 423,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 92,
+        "line": 336,
+        "precode": "Number value = dataset.getValue(row, column);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "Number value = dataset.getValue(column, row);"
+    },
+    {
+        "id": 93,
+        "line": 336,
+        "precode": "Number value = dataset.getValue(row, column);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "Number value = null;"
+    },
+    {
+        "id": 94,
+        "line": 337,
+        "precode": "if (value != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (value == null) {"
+    },
+    {
+        "id": 95,
+        "line": 337,
+        "precode": "if (value != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 96,
+        "line": 339,
+        "precode": "double x1 = domainAxis.getCategoryMiddle(column, getColumnCount(),",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "double x1 = domainAxis.getCategoryMiddle(column + 1, getColumnCount(),"
+    },
+    {
+        "id": 97,
+        "line": 339,
+        "precode": "double x1 = domainAxis.getCategoryMiddle(column, getColumnCount(),",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "double x1 = domainAxis.getCategoryMiddle(column, getColumnCount() + 1,"
+    },
+    {
+        "id": 98,
+        "line": 341,
+        "precode": "double y1 = rangeAxis.valueToJava2D(value.doubleValue(), dataArea, ",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "double y1 = rangeAxis.valueToJava2D(value.floatValue(), dataArea, "
+    },
+    {
+        "id": 99,
+        "line": 341,
+        "precode": "double y1 = rangeAxis.valueToJava2D(value.doubleValue(), dataArea, ",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "double y1 = rangeAxis.valueToJava2D(value.doubleValue() + 1.0, dataArea, "
+    },
+    {
+        "id": 100,
+        "line": 343,
+        "precode": "g2.setPaint(getItemPaint(row, column));",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.setPaint(getItemPaint(column, row));"
+    },
+    {
+        "id": 101,
+        "line": 343,
+        "precode": "g2.setPaint(getItemPaint(row, column));",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.setPaint(null);"
+    },
+    {
+        "id": 102,
+        "line": 344,
+        "precode": "g2.setStroke(getItemStroke(row, column));",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.setStroke(null);"
+    },
+    {
+        "id": 103,
+        "line": 344,
+        "precode": "g2.setStroke(getItemStroke(row, column));",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.setStroke(getItemStroke(column, row));"
+    },
+    {
+        "id": 104,
+        "line": 345,
+        "precode": "Shape shape = null;",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "Shape shape = new Shape();"
+    },
+    {
+        "id": 105,
+        "line": 345,
+        "precode": "Shape shape = null;",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "Object shape = null;"
+    },
+    {
+        "id": 106,
+        "line": 346,
+        "precode": "shape = new Rectangle2D.Double(x1 - 4, y1 - 4, 8.0, 8.0);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "shape = new Rectangle2D.Double(x1 - 4, y1 - 4, 4.0, 8.0);"
+    },
+    {
+        "id": 107,
+        "line": 346,
+        "precode": "shape = new Rectangle2D.Double(x1 - 4, y1 - 4, 8.0, 8.0);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "shape = new Rectangle2D.Double(x1 - 2, y1 - 2, 8.0, 8.0);"
+    },
+    {
+        "id": 108,
+        "line": 348,
+        "precode": "PlotOrientation orient = plot.getOrientation();",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "PlotOrientation orient = null;"
+    },
+    {
+        "id": 109,
+        "line": 348,
+        "precode": "PlotOrientation orient = plot.getOrientation();",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "PlotOrientation orient = PlotOrientation.HORIZONTAL;"
+    },
+    {
+        "id": 110,
+        "line": 349,
+        "precode": "if (orient == PlotOrientation.VERTICAL) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (orient != PlotOrientation.VERTICAL) {"
+    },
+    {
+        "id": 111,
+        "line": 349,
+        "precode": "if (orient == PlotOrientation.VERTICAL) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 112,
+        "line": 350,
+        "precode": "this.objectIcon.paintIcon(null, g2, (int) x1, (int) y1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.objectIcon.paintIcon(null, g2, (int) y1, (int) x1);"
+    },
+    {
+        "id": 113,
+        "line": 350,
+        "precode": "this.objectIcon.paintIcon(null, g2, (int) x1, (int) y1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.objectIcon.paintIcon(g2, null, (int) x1, (int) y1);"
+    },
+    {
+        "id": 114,
+        "line": 353,
+        "precode": "this.objectIcon.paintIcon(null, g2, (int) y1, (int) x1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.objectIcon.paintIcon(null, g2, (int) x1, (int) y1);"
+    },
+    {
+        "id": 115,
+        "line": 353,
+        "precode": "this.objectIcon.paintIcon(null, g2, (int) y1, (int) x1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.objectIcon.paintIcon(g2, null, (int) y1, (int) x1);"
+    },
+    {
+        "id": 116,
+        "line": 356,
+        "precode": "if (this.lastCategory == column) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (this.lastCategory != column) {"
+    },
+    {
+        "id": 117,
+        "line": 356,
+        "precode": "if (this.lastCategory == column) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 118,
+        "line": 357,
+        "precode": "if (this.min > value.doubleValue()) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (this.min >= value.doubleValue()) {"
+    },
+    {
+        "id": 119,
+        "line": 357,
+        "precode": "if (this.min > value.doubleValue()) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (this.min < value.doubleValue()) {"
+    },
+    {
+        "id": 120,
+        "line": 358,
+        "precode": "this.min = value.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.min = value.floatValue();"
+    },
+    {
+        "id": 121,
+        "line": 358,
+        "precode": "this.min = value.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.min = value.intValue();"
+    },
+    {
+        "id": 122,
+        "line": 360,
+        "precode": "if (this.max < value.doubleValue()) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (this.max <= value.doubleValue()) {"
+    },
+    {
+        "id": 123,
+        "line": 360,
+        "precode": "if (this.max < value.doubleValue()) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (this.max > value.doubleValue()) {"
+    },
+    {
+        "id": 124,
+        "line": 361,
+        "precode": "this.max = value.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.max = value.floatValue();"
+    },
+    {
+        "id": 125,
+        "line": 361,
+        "precode": "this.max = value.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.max = value.intValue();"
+    },
+    {
+        "id": 126,
+        "line": 365,
+        "precode": "if (dataset.getRowCount() - 1 == row) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (dataset.getRowCount() + 1 == row) {"
+    },
+    {
+        "id": 127,
+        "line": 365,
+        "precode": "if (dataset.getRowCount() - 1 == row) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (dataset.getRowCount() - 1 != row) {"
+    },
+    {
+        "id": 128,
+        "line": 366,
+        "precode": "g2.setPaint(this.groupPaint);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.setPaint(null);"
+    },
+    {
+        "id": 129,
+        "line": 366,
+        "precode": "g2.setPaint(this.groupPaint);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.setPaint(Color.WHITE);"
+    },
+    {
+        "id": 130,
+        "line": 367,
+        "precode": "g2.setStroke(this.groupStroke);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.setStroke(null);"
+    },
+    {
+        "id": 131,
+        "line": 367,
+        "precode": "g2.setStroke(this.groupStroke);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.setStroke(new BasicStroke());"
+    },
+    {
+        "id": 132,
+        "line": 368,
+        "precode": "double minY = rangeAxis.valueToJava2D(this.min, dataArea, ",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "double minY = rangeAxis.valueToJava2D(this.max, dataArea, "
+    },
+    {
+        "id": 133,
+        "line": 368,
+        "precode": "double minY = rangeAxis.valueToJava2D(this.min, dataArea, ",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "double minY = rangeAxis.valueToJava2D(0, dataArea, "
+    },
+    {
+        "id": 134,
+        "line": 370,
+        "precode": "double maxY = rangeAxis.valueToJava2D(this.max, dataArea, ",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "double maxY = rangeAxis.valueToJava2D(this.min, dataArea, "
+    },
+    {
+        "id": 135,
+        "line": 370,
+        "precode": "double maxY = rangeAxis.valueToJava2D(this.max, dataArea, ",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "double maxY = rangeAxis.valueToJava2D(this.max, null, "
+    },
+    {
+        "id": 136,
+        "line": 373,
+        "precode": "if (orient == PlotOrientation.VERTICAL) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (orient != PlotOrientation.VERTICAL) {"
+    },
+    {
+        "id": 137,
+        "line": 373,
+        "precode": "if (orient == PlotOrientation.VERTICAL) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 138,
+        "line": 374,
+        "precode": "g2.draw(new Line2D.Double(x1, minY, x1, maxY));",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.draw(new Line2D.Double(x1, minY, x1, minY));"
+    },
+    {
+        "id": 139,
+        "line": 374,
+        "precode": "g2.draw(new Line2D.Double(x1, minY, x1, maxY));",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.draw(new Line2D.Double(x1, maxY, x1, maxY));"
+    },
+    {
+        "id": 140,
+        "line": 375,
+        "precode": "this.minIcon.paintIcon(null, g2, (int) x1, (int) minY);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.minIcon.paintIcon(null, g2, (int) x1, (int) (minY + 1));"
+    },
+    {
+        "id": 141,
+        "line": 375,
+        "precode": "this.minIcon.paintIcon(null, g2, (int) x1, (int) minY);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.minIcon.paintIcon(null, g2, (int) x1, (int) minY);"
+    },
+    {
+        "id": 142,
+        "line": 376,
+        "precode": "this.maxIcon.paintIcon(null, g2, (int) x1, (int) maxY);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.maxIcon.paintIcon(null, g2, (int) maxY, (int) x1);"
+    },
+    {
+        "id": 143,
+        "line": 376,
+        "precode": "this.maxIcon.paintIcon(null, g2, (int) x1, (int) maxY);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.maxIcon.paintIcon(null, null, (int) x1, (int) maxY);"
+    },
+    {
+        "id": 144,
+        "line": 379,
+        "precode": "g2.draw(new Line2D.Double(minY, x1, maxY, x1));",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.draw(new Line2D.Double(minY, x1, minY, x1));"
+    },
+    {
+        "id": 145,
+        "line": 379,
+        "precode": "g2.draw(new Line2D.Double(minY, x1, maxY, x1));",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "g2.draw(new Line2D.Double(x1, minY, x1, maxY));"
+    },
+    {
+        "id": 146,
+        "line": 380,
+        "precode": "this.minIcon.paintIcon(null, g2, (int) minY, (int) x1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.minIcon.paintIcon(null, g2, (int) x1, (int) minY);"
+    },
+    {
+        "id": 147,
+        "line": 380,
+        "precode": "this.minIcon.paintIcon(null, g2, (int) minY, (int) x1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.minIcon.paintIcon(null, g2, (int) minY, 0);"
+    },
+    {
+        "id": 148,
+        "line": 381,
+        "precode": "this.maxIcon.paintIcon(null, g2, (int) maxY, (int) x1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.maxIcon.paintIcon(null, g2, (int) x1, (int) maxY);"
+    },
+    {
+        "id": 149,
+        "line": 381,
+        "precode": "this.maxIcon.paintIcon(null, g2, (int) maxY, (int) x1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "this.maxIcon.paintIcon(null, g2, (int) maxY, (int) x1);"
+    },
+    {
+        "id": 150,
+        "line": 383,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 151,
+        "line": 383,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Chart/Chart_23_fixed/source/org/jfree/chart/renderer/category/MinMaxCategoryRenderer.java",
+        "aftercode": "} // end of block"
+    }
+]

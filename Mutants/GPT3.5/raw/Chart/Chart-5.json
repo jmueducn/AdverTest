@@ -1,0 +1,212 @@
+[
+    {
+        "id": 1,
+        "line": 541,
+        "precode": "if (x == null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "if (x != null) {"
+    },
+    {
+        "id": 2,
+        "line": 541,
+        "precode": "if (x == null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 3,
+        "line": 541,
+        "precode": "if (x == null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 4,
+        "line": 542,
+        "precode": "throw new IllegalArgumentException(\"Null 'x' argument.\");",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "throw new NullPointerException(\"Null 'x' argument.\");"
+    },
+    {
+        "id": 5,
+        "line": 542,
+        "precode": "throw new IllegalArgumentException(\"Null 'x' argument.\");",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 6,
+        "line": 544,
+        "precode": "if (this.allowDuplicateXValues) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "if (!this.allowDuplicateXValues) {"
+    },
+    {
+        "id": 7,
+        "line": 544,
+        "precode": "if (this.allowDuplicateXValues) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 8,
+        "line": 544,
+        "precode": "if (this.allowDuplicateXValues) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 9,
+        "line": 545,
+        "precode": "add(x, y);",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "add(y, x);"
+    },
+    {
+        "id": 10,
+        "line": 545,
+        "precode": "add(x, y);",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "add(x, null);"
+    },
+    {
+        "id": 11,
+        "line": 546,
+        "precode": "return null;",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "return overwritten;"
+    },
+    {
+        "id": 12,
+        "line": 546,
+        "precode": "return null;",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "return new XYDataItem(x, y);"
+    },
+    {
+        "id": 13,
+        "line": 550,
+        "precode": "XYDataItem overwritten = null;",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "XYDataItem overwritten = new XYDataItem(x, y);"
+    },
+    {
+        "id": 14,
+        "line": 551,
+        "precode": "int index = indexOf(x);",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "int index = indexOf(y);"
+    },
+    {
+        "id": 15,
+        "line": 551,
+        "precode": "int index = indexOf(x);",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "int index = -1;"
+    },
+    {
+        "id": 16,
+        "line": 552,
+        "precode": "if (index >= 0) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "if (index > 0) {"
+    },
+    {
+        "id": 17,
+        "line": 552,
+        "precode": "if (index >= 0) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "if (index <= 0) {"
+    },
+    {
+        "id": 18,
+        "line": 552,
+        "precode": "if (index >= 0) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 19,
+        "line": 553,
+        "precode": "XYDataItem existing = (XYDataItem) this.data.get(index);",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "XYDataItem existing = (XYDataItem) this.data.get(0);"
+    },
+    {
+        "id": 20,
+        "line": 553,
+        "precode": "XYDataItem existing = (XYDataItem) this.data.get(index);",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "XYDataItem existing = null;"
+    },
+    {
+        "id": 21,
+        "line": 554,
+        "precode": "try {",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 22,
+        "line": 555,
+        "precode": "overwritten = (XYDataItem) existing.clone();",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "overwritten = existing;"
+    },
+    {
+        "id": 23,
+        "line": 555,
+        "precode": "overwritten = (XYDataItem) existing.clone();",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "overwritten = new XYDataItem(x, y);"
+    },
+    {
+        "id": 24,
+        "line": 580,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "} finally {"
+    },
+    {
+        "id": 25,
+        "line": 557,
+        "precode": "catch (CloneNotSupportedException e) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "catch (Exception e) {"
+    },
+    {
+        "id": 26,
+        "line": 557,
+        "precode": "catch (CloneNotSupportedException e) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 27,
+        "line": 558,
+        "precode": "throw new SeriesException(\"Couldn't clone XYDataItem!\");",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "throw new RuntimeException(\"Couldn't clone XYDataItem!\");"
+    },
+    {
+        "id": 28,
+        "line": 558,
+        "precode": "throw new SeriesException(\"Couldn't clone XYDataItem!\");",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 29,
+        "line": 580,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "} finally {"
+    },
+    {
+        "id": 30,
+        "line": 560,
+        "precode": "existing.setY(y);",
+        "filepath": "./defects4j_fixed/Chart/Chart_5_fixed/source/org/jfree/data/xy/XYSeries.java",
+        "aftercode": "existing.setY(null);"
+    }
+]

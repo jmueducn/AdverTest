@@ -1,0 +1,349 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 154,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "optima = new UnivariateRealPointValuePair[starts];",
+        "aftercode": "optima = new UnivariateRealPointValuePair[starts + 1];",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": true,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 154,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "optima = new UnivariateRealPointValuePair[starts];",
+        "aftercode": "optima = new UnivariateRealPointValuePair[0];",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMaximization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_UpdatesEvaluationsCorrectly\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMinimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_VerifiesStartValueCalculation\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_FirstStartValueUsedForFirstAttempt\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_MaximizationWithValidRange\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_MinimizationWithValidRange\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_RandomValuesUsedForSubsequentAttempts\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_SuccessfulOptimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_WithSingleStart\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesFunctionEvaluationException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 155,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "totalEvaluations = 0;",
+        "aftercode": "totalEvaluations = 1;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_UpdatesEvaluationsCorrectly\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 158,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "for (int i = 0; i < starts; ++i) {",
+        "aftercode": "for (int i = 0; i <= starts; ++i) {",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMaximization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_UpdatesEvaluationsCorrectly\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMinimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_VerifiesStartValueCalculation\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_FirstStartValueUsedForFirstAttempt\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_MaximizationWithValidRange\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_MinimizationWithValidRange\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_RandomValuesUsedForSubsequentAttempts\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_SuccessfulOptimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_WithSingleStart\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesFunctionEvaluationException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 158,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "for (int i = 0; i < starts; ++i) {",
+        "aftercode": "for (int i = 1; i < starts; ++i) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMaximization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_UpdatesEvaluationsCorrectly\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_VerifiesStartValueCalculation\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_FirstStartValueUsedForFirstAttempt\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_MaximizationWithValidRange\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_MinimizationWithValidRange\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_SuccessfulOptimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_WithSingleStart\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesFunctionEvaluationException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 158,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "for (int i = 0; i < starts; ++i) {",
+        "aftercode": "for (int i = 0; i < starts; i++) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": true,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 160,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "final double s = (i == 0) ? startValue : min + generator.nextDouble() * (max - min);",
+        "aftercode": "final double s = (i != 0) ? startValue : min + generator.nextDouble() * (max - min);",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_VerifiesStartValueCalculation\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_FirstStartValueUsedForFirstAttempt\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_RandomValuesUsedForSubsequentAttempts\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_WithSingleStart\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 160,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "final double s = (i == 0) ? startValue : min + generator.nextDouble() * (max - min);",
+        "aftercode": "final double s = (i == 0) ? min : min + generator.nextDouble() * (max - min);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_VerifiesStartValueCalculation\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_FirstStartValueUsedForFirstAttempt\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_WithSingleStart\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 160,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "final double s = (i == 0) ? startValue : min + generator.nextDouble() * (max - min);",
+        "aftercode": "final double s = (i == 0) ? startValue : max + generator.nextDouble() * (max - min);",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_RandomValuesUsedForSubsequentAttempts\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 160,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "final double s = (i == 0) ? startValue : min + generator.nextDouble() * (max - min);",
+        "aftercode": "final double s = (i == 0) ? startValue : min - generator.nextDouble() * (max - min);",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_RandomValuesUsedForSubsequentAttempts\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 161,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "optima[i] = optimizer.optimize(f, goal, min, max, s);",
+        "aftercode": "optima[i] = optimizer.optimize(f, goal, max, min, s);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_VerifiesStartValueCalculation\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_FirstStartValueUsedForFirstAttempt\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_MaximizationWithValidRange\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_MinimizationWithValidRange\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_RandomValuesUsedForSubsequentAttempts\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_WithSingleStart\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 12,
+        "line": 161,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "optima[i] = optimizer.optimize(f, goal, min, max, s);",
+        "aftercode": "optima[i] = optimizer.optimize(f, goal, min, max, startValue);",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_RandomValuesUsedForSubsequentAttempts\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 12
+    },
+    {
+        "mutant_id:": 15,
+        "line": 165,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "optima[i] = null;",
+        "aftercode": "optima[i] = optima[0];",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": true,
+        "id": 13
+    },
+    {
+        "mutant_id:": 16,
+        "line": 164,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "} catch (ConvergenceException ce) {",
+        "aftercode": "} catch (Exception ce) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": true,
+        "id": 14
+    },
+    {
+        "mutant_id:": 17,
+        "line": 165,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "optima[i] = null;",
+        "aftercode": "optima[i] = new UnivariateRealPointValuePair(0, 0);",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": true,
+        "id": 15
+    },
+    {
+        "mutant_id:": 18,
+        "line": 168,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "final int usedEvaluations = optimizer.getEvaluations();",
+        "aftercode": "final int usedEvaluations = 0;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_UpdatesEvaluationsCorrectly\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 16
+    },
+    {
+        "mutant_id:": 19,
+        "line": 168,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "final int usedEvaluations = optimizer.getEvaluations();",
+        "aftercode": "final int usedEvaluations = optimizer.getEvaluations() + 1;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_UpdatesEvaluationsCorrectly\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 17
+    },
+    {
+        "mutant_id:": 20,
+        "line": 169,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "optimizer.setMaxEvaluations(optimizer.getMaxEvaluations() - usedEvaluations);",
+        "aftercode": "optimizer.setMaxEvaluations(optimizer.getMaxEvaluations() + usedEvaluations);",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_UpdatesEvaluationsCorrectly\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 18
+    },
+    {
+        "mutant_id:": 21,
+        "line": 169,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "optimizer.setMaxEvaluations(optimizer.getMaxEvaluations() - usedEvaluations);",
+        "aftercode": "optimizer.setMaxEvaluations(usedEvaluations);",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_UpdatesEvaluationsCorrectly\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 19
+    },
+    {
+        "mutant_id:": 22,
+        "line": 170,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "totalEvaluations += usedEvaluations;",
+        "aftercode": "totalEvaluations -= usedEvaluations;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_UpdatesEvaluationsCorrectly\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 20
+    },
+    {
+        "mutant_id:": 23,
+        "line": 170,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "totalEvaluations += usedEvaluations;",
+        "aftercode": "totalEvaluations = usedEvaluations;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_UpdatesEvaluationsCorrectly\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 21
+    },
+    {
+        "mutant_id:": 24,
+        "line": 170,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "totalEvaluations += usedEvaluations;",
+        "aftercode": "totalEvaluations += 1;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_UpdatesEvaluationsCorrectly\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 22
+    },
+    {
+        "mutant_id:": 25,
+        "line": 173,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "sortPairs(goal);",
+        "aftercode": "sortPairs(null);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMinimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_SuccessfulOptimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 23
+    },
+    {
+        "mutant_id:": 26,
+        "line": 173,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "sortPairs(goal);",
+        "aftercode": "// sortPairs(goal);",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMaximization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMinimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_SuccessfulOptimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesFunctionEvaluationException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 24
+    },
+    {
+        "mutant_id:": 27,
+        "line": 175,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "if (optima[0] == null) {",
+        "aftercode": "if (optima[0] != null) {",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMaximization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_UpdatesEvaluationsCorrectly\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMinimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_VerifiesStartValueCalculation\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_FirstStartValueUsedForFirstAttempt\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_MaximizationWithValidRange\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_MinimizationWithValidRange\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_RandomValuesUsedForSubsequentAttempts\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_SuccessfulOptimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_WithSingleStart\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesFunctionEvaluationException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 25
+    },
+    {
+        "mutant_id:": 28,
+        "line": 175,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "if (optima[0] == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMaximization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_UpdatesEvaluationsCorrectly\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMinimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_VerifiesStartValueCalculation\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_FirstStartValueUsedForFirstAttempt\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_MaximizationWithValidRange\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_MinimizationWithValidRange\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_RandomValuesUsedForSubsequentAttempts\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_SuccessfulOptimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_WithSingleStart\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesFunctionEvaluationException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 26
+    },
+    {
+        "mutant_id:": 29,
+        "line": 175,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "if (optima[0] == null) {",
+        "aftercode": "if (optima[1] == null) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_VerifiesStartValueCalculation\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_FirstStartValueUsedForFirstAttempt\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_WithSingleStart\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesFunctionEvaluationException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 27
+    },
+    {
+        "mutant_id:": 30,
+        "line": 181,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "return optima[0];",
+        "aftercode": "return null;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMaximization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMinimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_VerifiesStartValueCalculation\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_MaximizationWithValidRange\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_MinimizationWithValidRange\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_SuccessfulOptimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_WithSingleStart\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesFunctionEvaluationException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 28
+    },
+    {
+        "mutant_id:": 31,
+        "line": 181,
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "precode": "return optima[0];",
+        "aftercode": "return optima[1];",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMaximization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_InvalidRangeThrowsException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesConvergenceException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_ReturnsBestResultForMinimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_VerifiesStartValueCalculation\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_FirstStartValueUsedForFirstAttempt\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_SuccessfulOptimization\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_WithSingleStart\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_HandlesFunctionEvaluationException\n  - gentest.org.apache.commons.math.optimization.univariate.tests.MultiStartUnivariateRealOptimizerTest::testOptimize_AllAttemptsFailThrowsConvergenceException\n",
+        "survived": false,
+        "id": 29
+    },
+    {
+        "id": 30,
+        "line": 154,
+        "precode": "optima = new UnivariateRealPointValuePair[starts];",
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "optima = new UnivariateRealPointValuePair[starts - 1];"
+    },
+    {
+        "id": 31,
+        "line": 154,
+        "precode": "optima = new UnivariateRealPointValuePair[starts];",
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "optima = new UnivariateRealPointValuePair[0];"
+    },
+    {
+        "id": 32,
+        "line": 158,
+        "precode": "for (int i = 0; i < starts; ++i) {",
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "for (int i = 0; i <= starts; ++i) {"
+    },
+    {
+        "id": 33,
+        "line": 158,
+        "precode": "for (int i = 0; i < starts; ++i) {",
+        "filepath": "./defects4j_fixed/Math/Math_62_fixed/src/main/java/org/apache/commons/math/optimization/univariate/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "for (int i = 1; i < starts; ++i) {"
+    }
+]

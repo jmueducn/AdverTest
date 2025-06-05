@@ -1,0 +1,380 @@
+[
+    {
+        "id": 1,
+        "line": 525,
+        "precode": "return csvRecordIterator;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 2,
+        "line": 525,
+        "precode": "return csvRecordIterator;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return new CSVRecordIterator();"
+    },
+    {
+        "id": 3,
+        "line": 529,
+        "precode": "private CSVRecord current;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "private CSVRecord current = new CSVRecord();"
+    },
+    {
+        "id": 4,
+        "line": 529,
+        "precode": "private CSVRecord current;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "private CSVRecord current = null;"
+    },
+    {
+        "id": 5,
+        "line": 533,
+        "precode": "return CSVParser.this.nextRecord();",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 6,
+        "line": 533,
+        "precode": "return CSVParser.this.nextRecord();",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return new CSVRecord();"
+    },
+    {
+        "id": 7,
+        "line": 534,
+        "precode": "} catch (final IOException e) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "} catch (final Exception e) {"
+    },
+    {
+        "id": 8,
+        "line": 534,
+        "precode": "} catch (final IOException e) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "} catch (final RuntimeException e) {"
+    },
+    {
+        "id": 9,
+        "line": 535,
+        "precode": "throw new IllegalStateException(",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "throw new RuntimeException("
+    },
+    {
+        "id": 10,
+        "line": 535,
+        "precode": "throw new IllegalStateException(",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 11,
+        "line": 536,
+        "precode": "e.getClass().getSimpleName() + \" reading next record: \" + e.toString(), e);",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "\"Error reading next record\", e);"
+    },
+    {
+        "id": 12,
+        "line": 536,
+        "precode": "e.getClass().getSimpleName() + \" reading next record: \" + e.toString(), e);",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "e.toString(), e);"
+    },
+    {
+        "id": 13,
+        "line": 554,
+        "precode": "if (CSVParser.this.isClosed()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 14,
+        "line": 554,
+        "precode": "if (CSVParser.this.isClosed()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 15,
+        "line": 543,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 16,
+        "line": 543,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "throw new IllegalStateException();"
+    },
+    {
+        "id": 17,
+        "line": 545,
+        "precode": "if (this.current == null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 18,
+        "line": 545,
+        "precode": "if (this.current == null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 19,
+        "line": 546,
+        "precode": "this.current = this.getNextRecord();",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.current = null;"
+    },
+    {
+        "id": 20,
+        "line": 546,
+        "precode": "this.current = this.getNextRecord();",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.current = new CSVRecord();"
+    },
+    {
+        "id": 21,
+        "line": 549,
+        "precode": "return this.current != null;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 22,
+        "line": 549,
+        "precode": "return this.current != null;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 23,
+        "line": 549,
+        "precode": "return this.current != null;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return this.current == null;"
+    },
+    {
+        "id": 24,
+        "line": 554,
+        "precode": "if (CSVParser.this.isClosed()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 25,
+        "line": 554,
+        "precode": "if (CSVParser.this.isClosed()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 26,
+        "line": 555,
+        "precode": "throw new NoSuchElementException(\"CSVParser has been closed\");",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 27,
+        "line": 555,
+        "precode": "throw new NoSuchElementException(\"CSVParser has been closed\");",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "throw new IllegalStateException(\"CSVParser has been closed\");"
+    },
+    {
+        "id": 28,
+        "line": 557,
+        "precode": "CSVRecord next = this.current;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "CSVRecord next = null;"
+    },
+    {
+        "id": 29,
+        "line": 557,
+        "precode": "CSVRecord next = this.current;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "CSVRecord next = new CSVRecord();"
+    },
+    {
+        "id": 30,
+        "line": 558,
+        "precode": "this.current = null;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.current = this.current;"
+    },
+    {
+        "id": 31,
+        "line": 558,
+        "precode": "this.current = null;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "// this.current = null;"
+    },
+    {
+        "id": 32,
+        "line": 563,
+        "precode": "if (next == null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 33,
+        "line": 563,
+        "precode": "if (next == null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 34,
+        "line": 562,
+        "precode": "next = this.getNextRecord();",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "next = null;"
+    },
+    {
+        "id": 35,
+        "line": 562,
+        "precode": "next = this.getNextRecord();",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "next = new CSVRecord();"
+    },
+    {
+        "id": 36,
+        "line": 563,
+        "precode": "if (next == null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 37,
+        "line": 563,
+        "precode": "if (next == null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 38,
+        "line": 564,
+        "precode": "throw new NoSuchElementException(\"No more CSV records available\");",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 39,
+        "line": 564,
+        "precode": "throw new NoSuchElementException(\"No more CSV records available\");",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "throw new IllegalStateException(\"No more CSV records available\");"
+    },
+    {
+        "id": 40,
+        "line": 568,
+        "precode": "return next;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 41,
+        "line": 568,
+        "precode": "return next;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return new CSVRecord();"
+    },
+    {
+        "id": 42,
+        "line": 573,
+        "precode": "throw new UnsupportedOperationException();",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 43,
+        "line": 573,
+        "precode": "throw new UnsupportedOperationException();",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "throw new IllegalStateException();"
+    },
+    {
+        "id": 44,
+        "line": 533,
+        "precode": "return CSVParser.this.nextRecord();",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return CSVParser.this.current;"
+    },
+    {
+        "id": 45,
+        "line": 554,
+        "precode": "if (CSVParser.this.isClosed()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (!CSVParser.this.isClosed()) {"
+    },
+    {
+        "id": 46,
+        "line": 545,
+        "precode": "if (this.current == null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (this.current != null) {"
+    },
+    {
+        "id": 47,
+        "line": 549,
+        "precode": "return this.current != null;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return this.current == current;"
+    },
+    {
+        "id": 48,
+        "line": 554,
+        "precode": "if (CSVParser.this.isClosed()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (!CSVParser.this.isClosed()) {"
+    },
+    {
+        "id": 49,
+        "line": 563,
+        "precode": "if (next == null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (next != null) {"
+    },
+    {
+        "id": 50,
+        "line": 563,
+        "precode": "if (next == null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (next != null) {"
+    },
+    {
+        "id": 51,
+        "line": 546,
+        "precode": "this.current = this.getNextRecord();",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.current = CSVParser.this.current;"
+    },
+    {
+        "id": 52,
+        "line": 562,
+        "precode": "next = this.getNextRecord();",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "next = CSVParser.this.current;"
+    },
+    {
+        "id": 53,
+        "line": 529,
+        "precode": "private CSVRecord current;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "protected CSVRecord current;"
+    },
+    {
+        "id": 54,
+        "line": 529,
+        "precode": "private CSVRecord current;",
+        "filepath": "./defects4j_fixed/Csv/Csv_16_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "public CSVRecord current;"
+    }
+]

@@ -1,0 +1,82 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 139,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_2_fixed/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+        "precode": "return iterator.hasNext();",
+        "aftercode": "return true;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenCurrentNodePointerIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_ShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNoNext_ShouldReturnFalse\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsOtherObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue1\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue2\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextWithPointerObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenRootContextIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsNodeSet\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 2,
+        "line": 139,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_2_fixed/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+        "precode": "return iterator.hasNext();",
+        "aftercode": "return false;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenCurrentNodePointerIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_ShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNoNext_ShouldReturnFalse\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsOtherObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue1\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue2\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextWithPointerObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenRootContextIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsNodeSet\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 3,
+        "line": 123,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_2_fixed/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+        "precode": "return o instanceof Pointer ? o : NodePointer.newNodePointer(qname, o, locale);",
+        "aftercode": "return o;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenCurrentNodePointerIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_ShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNoNext_ShouldReturnFalse\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsOtherObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue1\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue2\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextWithPointerObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenRootContextIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsNodeSet\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 4,
+        "line": 123,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_2_fixed/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+        "precode": "return o instanceof Pointer ? o : NodePointer.newNodePointer(qname, o, locale);",
+        "aftercode": "return NodePointer.newNodePointer(qname, o, locale);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenCurrentNodePointerIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_ShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNoNext_ShouldReturnFalse\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsOtherObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue1\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue2\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextWithPointerObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenRootContextIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsNodeSet\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 5,
+        "line": 151,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_2_fixed/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+        "precode": "throw new UnsupportedOperationException();",
+        "aftercode": "iterator.remove();",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenCurrentNodePointerIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_ShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNoNext_ShouldReturnFalse\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsOtherObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue1\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue2\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextWithPointerObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenRootContextIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsNodeSet\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 6,
+        "line": 139,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_2_fixed/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+        "precode": "return iterator.hasNext();",
+        "aftercode": "return !iterator.hasNext();",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenCurrentNodePointerIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_ShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNoNext_ShouldReturnFalse\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsOtherObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue1\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue2\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextWithPointerObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenRootContextIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsNodeSet\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 7,
+        "line": 144,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_2_fixed/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+        "precode": "if (o instanceof Pointer) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenCurrentNodePointerIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_ShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNoNext_ShouldReturnFalse\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsOtherObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue1\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue2\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextWithPointerObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenRootContextIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsNodeSet\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 8,
+        "line": 151,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_2_fixed/src/java/org/apache/commons/jxpath/ri/compiler/Expression.java",
+        "precode": "throw new UnsupportedOperationException();",
+        "aftercode": "return;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenCurrentNodePointerIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_ShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNoNext_ShouldReturnFalse\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsOtherObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue1\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNext_WhenIteratorHasNext_ShouldReturnTrue2\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextWithPointerObject\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testHasNextShouldNotModifyIterator\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenRootContextIsNull\n  - gentest.org.apache.commons.jxpath.ri.compiler.tests.ExpressionTest::testIteratePointers_WhenComputeReturnsNodeSet\n",
+        "survived": true
+    }
+]

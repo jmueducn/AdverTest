@@ -1,0 +1,172 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 504,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "return getName().endsWith(\"/\");",
+        "aftercode": "return getName().startsWith(\"/\");",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory3\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDifferentPathSeparators\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDirectoryName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithTrailingSlashShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 504,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "return getName().endsWith(\"/\");",
+        "aftercode": "return getName().contains(\"/\");",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithSlashInMiddleShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory3\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDifferentPathSeparators\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 504,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "return getName().endsWith(\"/\");",
+        "aftercode": "return getName().equals(\"/\");",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory3\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDifferentPathSeparators\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDirectoryName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithTrailingSlashShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 504,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "return getName().endsWith(\"/\");",
+        "aftercode": "return getName().endsWith(\"\\\\\");",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory3\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDifferentPathSeparators\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDirectoryName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithTrailingSlashShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 504,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "return getName().endsWith(\"/\");",
+        "aftercode": "return getName().endsWith(\"\");",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithSlashInMiddleShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithoutSlashShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory3\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDifferentPathSeparators\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithFileName\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 504,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "return getName().endsWith(\"/\");",
+        "aftercode": "return getName().endsWith(\".\");",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory3\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDifferentPathSeparators\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDirectoryName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithTrailingSlashShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 504,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "return getName().endsWith(\"/\");",
+        "aftercode": "return getName().length() > 0;",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithSlashInMiddleShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithoutSlashShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory3\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDifferentPathSeparators\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithFileName\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 504,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "return getName().endsWith(\"/\");",
+        "aftercode": "return true;",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithSlashInMiddleShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithoutSlashShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory3\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDifferentPathSeparators\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithFileName\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 504,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "return getName().endsWith(\"/\");",
+        "aftercode": "return false;",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory3\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectory\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDifferentPathSeparators\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDirectoryName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithTrailingSlashShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 512,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (name != null && getPlatform() == PLATFORM_FAT",
+        "aftercode": "if (name == null && getPlatform() == PLATFORM_FAT",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMultipleBackslashesOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_ThroughConstructor\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 512,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (name != null && getPlatform() == PLATFORM_FAT",
+        "aftercode": "if (name != null || getPlatform() == PLATFORM_FAT",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnUnixPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDifferentPathSeparators\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 512,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (name != null && getPlatform() == PLATFORM_FAT",
+        "aftercode": "if (name != null && getPlatform() != PLATFORM_FAT",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnUnixPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMultipleBackslashesOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_ThroughConstructor\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 513,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& name.indexOf(\"/\") == -1) {",
+        "aftercode": "&& name.indexOf(\"/\") != -1) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMultipleBackslashesOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_ThroughConstructor\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 513,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& name.indexOf(\"/\") == -1) {",
+        "aftercode": "&& name.indexOf(\"\\\\\") == -1) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMultipleBackslashesOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_ThroughConstructor\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 513,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& name.indexOf(\"/\") == -1) {",
+        "aftercode": "&& name.indexOf(\".\") == -1) {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testIsDirectoryWithDifferentPathSeparators\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMultipleBackslashesOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_ThroughConstructor\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 514,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "name = name.replace('\\\\', '/');",
+        "aftercode": "name = name.replace('/', '\\\\');",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMultipleBackslashesOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_ThroughConstructor\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 514,
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "name = name.replace('\\\\', '/');",
+        "aftercode": "name = name.replace('\\\\', '.');",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtStartOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashAtEndOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMultipleBackslashesOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithBackslashOnFATPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetNameWithNameAndRawName_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_ThroughConstructor\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testSetName_WithMixedSlashesOnFATPlatform\n",
+        "survived": false
+    }
+]

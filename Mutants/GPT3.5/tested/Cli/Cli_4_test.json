@@ -1,0 +1,212 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 295,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "if (requiredOptions.size() > 0)",
+        "aftercode": "if (requiredOptions.size() >= 0)",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList1\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyList_NoExceptionThrown\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 295,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "if (requiredOptions.size() > 0)",
+        "aftercode": "if (requiredOptions.size() != 0)",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 3,
+        "line": 295,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "if (requiredOptions.size() > 0)",
+        "aftercode": "if (requiredOptions.size() == 0)",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList1\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyList_NoExceptionThrown\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 295,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "if (requiredOptions.size() > 0)",
+        "aftercode": "if (requiredOptions.size() < 0)",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 295,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "if (requiredOptions.size() > 0)",
+        "aftercode": "if (true)",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList1\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyList_NoExceptionThrown\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 295,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "if (requiredOptions.size() > 0)",
+        "aftercode": "if (false)",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 297,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "Iterator iter = requiredOptions.iterator();",
+        "aftercode": "Iterator iter = null;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 298,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "StringBuffer buff = new StringBuffer(\"Missing required option\");",
+        "aftercode": "StringBuffer buff = new StringBuffer(\"\");",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 298,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "StringBuffer buff = new StringBuffer(\"Missing required option\");",
+        "aftercode": "StringBuffer buff = new StringBuffer(\"Missing option\");",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 299,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "buff.append(requiredOptions.size() == 1 ? \"\" : \"s\");",
+        "aftercode": "buff.append(\"\");",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 299,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "buff.append(requiredOptions.size() == 1 ? \"\" : \"s\");",
+        "aftercode": "buff.append(\"s\");",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 299,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "buff.append(requiredOptions.size() == 1 ? \"\" : \"s\");",
+        "aftercode": "buff.append(requiredOptions.size() != 1 ? \"\" : \"s\");",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 299,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "buff.append(requiredOptions.size() == 1 ? \"\" : \"s\");",
+        "aftercode": "buff.append(requiredOptions.size() > 1 ? \"\" : \"s\");",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 300,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "buff.append(\": \");",
+        "aftercode": "buff.append(\" \");",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 300,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "buff.append(\": \");",
+        "aftercode": "buff.append(\"\");",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 300,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "buff.append(\": \");",
+        "aftercode": "buff.append(\". \");",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 300,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "buff.append(\": \");",
+        "aftercode": "// buff.append(\": \");",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 295,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "if (requiredOptions.size() > 0)",
+        "aftercode": "if (requiredOptions.size() >= 0)",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList1\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyList_NoExceptionThrown\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 295,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "if (requiredOptions.size() > 0)",
+        "aftercode": "if (requiredOptions.size() < 1)",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList1\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyList_NoExceptionThrown\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 20,
+        "line": 299,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "buff.append(requiredOptions.size() == 1 ? \"\" : \"s\");",
+        "aftercode": "buff.append(requiredOptions.size() != 1 ? \"\" : \"s\");",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 299,
+        "filepath": "./defects4j_fixed/Cli/Cli_4_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "buff.append(requiredOptions.size() == 1 ? \"\" : \"s\");",
+        "aftercode": "buff.append(requiredOptions.size() == 1 ? \"s\" : \"\");",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithNonEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithEmptyList\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_EmptyStringOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_SingleOption_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormatWithSingleOption\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptionsMessageFormat\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_MultipleOptions_ProperExceptionMessage\n  - gentest.org.apache.commons.cli.tests.ParserTest::testCheckRequiredOptions_NullList_NoExceptionThrown\n",
+        "survived": false
+    }
+]

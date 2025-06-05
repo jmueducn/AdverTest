@@ -1,0 +1,461 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 96,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "        throws NonSquareMatrixException,",
+        "aftercode": "        throws NotSymmetricMatrixException,",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 99,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "        if (!matrix.isSquare()) {",
+        "aftercode": "        if (matrix.isSquare()) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 101,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                                               matrix.getColumnDimension());",
+        "aftercode": "                                               0);",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 104,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "        final int order = matrix.getRowDimension();",
+        "aftercode": "        final int order = matrix.getColumnDimension();",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 105,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "        lTData   = matrix.getData();",
+        "aftercode": "        lTData   = new double[order][order];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 106,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "        cachedL  = null;",
+        "aftercode": "        cachedL  = matrix;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 107,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "        cachedLT = null;",
+        "aftercode": "        cachedLT = matrix;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 129,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "        for (int i = 0; i < order; ++i) {",
+        "aftercode": "        for (int i = 0; i <= order; ++i) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 112,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            final double[] lI = lTData[i];",
+        "aftercode": "            final double[] lI = lTData[0];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 115,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            for (int j = i + 1; j < order; ++j) {",
+        "aftercode": "            for (int j = i; j < order; ++j) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 116,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                final double[] lJ = lTData[j];",
+        "aftercode": "                final double[] lJ = lTData[i];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 117,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                final double lIJ = lI[j];",
+        "aftercode": "                final double lIJ = lI[i];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 118,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                final double lJI = lJ[i];",
+        "aftercode": "                final double lJI = lJ[j];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 120,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                    relativeSymmetryThreshold * Math.max(Math.abs(lIJ), Math.abs(lJI));",
+        "aftercode": "                    relativeSymmetryThreshold * Math.min(Math.abs(lIJ), Math.abs(lJI));",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 121,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                if (Math.abs(lIJ - lJI) > maxDelta) {",
+        "aftercode": "                if (Math.abs(lIJ - lJI) >= maxDelta) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 122,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                    throw new NotSymmetricMatrixException();",
+        "aftercode": "                    throw new NonSquareMatrixException(0, 0);",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 124,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                lJ[i] = 0;",
+        "aftercode": "                lJ[i] = 1;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 20,
+        "line": 131,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            final double[] ltI = lTData[i];",
+        "aftercode": "            final double[] ltI = lTData[0];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 134,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            if (ltI[i] < absolutePositivityThreshold) {",
+        "aftercode": "            if (ltI[i] <= absolutePositivityThreshold) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 22,
+        "line": 135,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                throw new NotPositiveDefiniteMatrixException();",
+        "aftercode": "                throw new NotSymmetricMatrixException();",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 23,
+        "line": 138,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            ltI[i] = Math.sqrt(ltI[i]);",
+        "aftercode": "            ltI[i] = ltI[i];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 24,
+        "line": 139,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            final double inverse = 1.0 / ltI[i];",
+        "aftercode": "            final double inverse = 1.0;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 25,
+        "line": 141,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            for (int q = order - 1; q > i; --q) {",
+        "aftercode": "            for (int q = order; q > i; --q) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 26,
+        "line": 142,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                ltI[q] *= inverse;",
+        "aftercode": "                ltI[q] += inverse;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 27,
+        "line": 143,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                final double[] ltQ = lTData[q];",
+        "aftercode": "                final double[] ltQ = lTData[i];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 28,
+        "line": 144,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                for (int p = q; p < order; ++p) {",
+        "aftercode": "                for (int p = q + 1; p < order; ++p) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 29,
+        "line": 145,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                    ltQ[p] -= ltI[q] * ltI[p];",
+        "aftercode": "                    ltQ[p] += ltI[q] * ltI[p];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 30,
+        "line": 96,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "        throws NonSquareMatrixException,",
+        "aftercode": "        throws NullPointerException,",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 31,
+        "line": 99,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "        if (!matrix.isSquare()) {",
+        "aftercode": "        if (matrix == null) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 33,
+        "line": 104,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "        final int order = matrix.getRowDimension();",
+        "aftercode": "        final int order = 0;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 34,
+        "line": 129,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "        for (int i = 0; i < order; ++i) {",
+        "aftercode": "        for (int i = 0; i < order; i++) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 35,
+        "line": 115,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            for (int j = i + 1; j < order; ++j) {",
+        "aftercode": "            for (int j = i + 1; j <= order; ++j) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 36,
+        "line": 120,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                    relativeSymmetryThreshold * Math.max(Math.abs(lIJ), Math.abs(lJI));",
+        "aftercode": "                    relativeSymmetryThreshold * (Math.abs(lIJ) + Math.abs(lJI));",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 37,
+        "line": 121,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                if (Math.abs(lIJ - lJI) > maxDelta) {",
+        "aftercode": "                if (Math.abs(lIJ + lJI) > maxDelta) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 38,
+        "line": 134,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            if (ltI[i] < absolutePositivityThreshold) {",
+        "aftercode": "            if (-ltI[i] > absolutePositivityThreshold) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 39,
+        "line": 138,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            ltI[i] = Math.sqrt(ltI[i]);",
+        "aftercode": "            ltI[i] = Math.abs(ltI[i]);",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 40,
+        "line": 139,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            final double inverse = 1.0 / ltI[i];",
+        "aftercode": "            final double inverse = 0.0;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 41,
+        "line": 141,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            for (int q = order - 1; q > i; --q) {",
+        "aftercode": "            for (int q = order - 1; q >= i; --q) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 42,
+        "line": 142,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                ltI[q] *= inverse;",
+        "aftercode": "                ltI[q] = inverse;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 43,
+        "line": 144,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                for (int p = q; p < order; ++p) {",
+        "aftercode": "                for (int p = 0; p < order; ++p) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 44,
+        "line": 145,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                    ltQ[p] -= ltI[q] * ltI[p];",
+        "aftercode": "                    ltQ[p] = ltI[q] * ltI[p];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 45,
+        "line": 99,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "        if (!matrix.isSquare()) {",
+        "aftercode": "        if (matrix.getRowDimension() != matrix.getColumnDimension()) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 46,
+        "line": 105,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "        lTData   = matrix.getData();",
+        "aftercode": "        lTData   = matrix.transpose().getData();",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 47,
+        "line": 129,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "        for (int i = 0; i < order; ++i) {",
+        "aftercode": "        for (int i = 1; i < order; ++i) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 48,
+        "line": 115,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            for (int j = i + 1; j < order; ++j) {",
+        "aftercode": "            for (int j = 0; j < order; ++j) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 50,
+        "line": 121,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                if (Math.abs(lIJ - lJI) > maxDelta) {",
+        "aftercode": "                if (Math.abs(lIJ - lJI) < maxDelta) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 51,
+        "line": 134,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            if (ltI[i] < absolutePositivityThreshold) {",
+        "aftercode": "            if (ltI[i] > absolutePositivityThreshold) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 52,
+        "line": 138,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            ltI[i] = Math.sqrt(ltI[i]);",
+        "aftercode": "            ltI[i] = ltI[i] * ltI[i];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 53,
+        "line": 141,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "            for (int q = order - 1; q > i; --q) {",
+        "aftercode": "            for (int q = i; q < order; ++q) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 54,
+        "line": 142,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                ltI[q] *= inverse;",
+        "aftercode": "                ltI[q] /= ltI[i];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 55,
+        "line": 145,
+        "filepath": "./defects4j_fixed/Math/Math_86_fixed/src/java/org/apache/commons/math/linear/CholeskyDecompositionImpl.java",
+        "precode": "                    ltQ[p] -= ltI[q] * ltI[p];",
+        "aftercode": "                    ltQ[p] = ltQ[p] - ltI[q] * ltI[p];",
+        "time out": true,
+        "survived": false
+    }
+]

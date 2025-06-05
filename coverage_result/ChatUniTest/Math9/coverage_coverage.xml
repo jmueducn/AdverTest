@@ -1,0 +1,242 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.3829787234042553" branch-rate="0.0625" lines-covered="18" lines-valid="47" branches-covered="1" branches-valid="16" complexity="1.5294117647058822" version="2.0.3" timestamp="1747571561088">
+	<sources>
+		<source>src/main/java</source>
+	</sources>
+	<packages>
+		<package name="org.apache.commons.math3.geometry.euclidean.threed" line-rate="0.3829787234042553" branch-rate="0.0625" complexity="1.5294117647058822">
+			<classes>
+				<class name="org.apache.commons.math3.geometry.euclidean.threed.Line" filename="org/apache/commons/math3/geometry/euclidean/threed/Line.java" line-rate="0.3829787234042553" branch-rate="0.0625" complexity="1.5294117647058822">
+					<methods>
+						<method name="&lt;init&gt;" signature="(Lorg/apache/commons/math3/geometry/euclidean/threed/Line;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="63" hits="5" branch="false"/>
+								<line number="64" hits="5" branch="false"/>
+								<line number="65" hits="5" branch="false"/>
+								<line number="66" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Lorg/apache/commons/math3/geometry/euclidean/threed/Vector3D;Lorg/apache/commons/math3/geometry/euclidean/threed/Vector3D;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="54" hits="2" branch="false"/>
+								<line number="55" hits="2" branch="false"/>
+								<line number="56" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="closestPoint" signature="(Lorg/apache/commons/math3/geometry/euclidean/threed/Line;)Lorg/apache/commons/math3/geometry/euclidean/threed/Vector3D;" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="195" hits="0" branch="false"/>
+								<line number="196" hits="0" branch="false"/>
+								<line number="197" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="199" hits="0" branch="false"/>
+								<line number="202" hits="0" branch="false"/>
+								<line number="203" hits="0" branch="false"/>
+								<line number="204" hits="0" branch="false"/>
+								<line number="206" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="contains" signature="(Lorg/apache/commons/math3/geometry/euclidean/threed/Vector3D;)Z" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="156" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="distance" signature="(Lorg/apache/commons/math3/geometry/euclidean/threed/Line;)D" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="175" hits="0" branch="false"/>
+								<line number="176" hits="0" branch="false"/>
+								<line number="177" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="179" hits="0" branch="false"/>
+								<line number="183" hits="0" branch="false"/>
+								<line number="185" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="distance" signature="(Lorg/apache/commons/math3/geometry/euclidean/threed/Vector3D;)D" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="164" hits="0" branch="false"/>
+								<line number="165" hits="0" branch="false"/>
+								<line number="166" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getAbscissa" signature="(Lorg/apache/commons/math3/geometry/euclidean/threed/Vector3D;)D" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="114" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDirection" signature="()Lorg/apache/commons/math3/geometry/euclidean/threed/Vector3D;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="96" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="getOrigin" signature="()Lorg/apache/commons/math3/geometry/euclidean/threed/Vector3D;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="103" hits="4" branch="false"/>
+							</lines>
+						</method>
+						<method name="intersection" signature="(Lorg/apache/commons/math3/geometry/euclidean/threed/Line;)Lorg/apache/commons/math3/geometry/euclidean/threed/Vector3D;" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="216" hits="0" branch="false"/>
+								<line number="217" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="isSimilarTo" signature="(Lorg/apache/commons/math3/geometry/euclidean/threed/Line;)Z" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="147" hits="0" branch="false"/>
+								<line number="148" hits="0" branch="true" condition-coverage="0% (0/6)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+										<condition number="2" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+							</lines>
+						</method>
+						<method name="pointAt" signature="(D)Lorg/apache/commons/math3/geometry/euclidean/threed/Vector3D;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="122" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="reset" signature="(Lorg/apache/commons/math3/geometry/euclidean/threed/Vector3D;Lorg/apache/commons/math3/geometry/euclidean/threed/Vector3D;)V" line-rate="0.8571428571428571" branch-rate="0.5">
+							<lines>
+								<line number="74" hits="2" branch="false"/>
+								<line number="75" hits="2" branch="false"/>
+								<line number="76" hits="2" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="77" hits="0" branch="false"/>
+								<line number="79" hits="2" branch="false"/>
+								<line number="80" hits="2" branch="false"/>
+								<line number="81" hits="2" branch="false"/>
+							</lines>
+						</method>
+						<method name="revert" signature="()Lorg/apache/commons/math3/geometry/euclidean/threed/Line;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="87" hits="4" branch="false"/>
+								<line number="88" hits="4" branch="false"/>
+								<line number="89" hits="3" branch="false"/>
+							</lines>
+						</method>
+						<method name="toSpace" signature="(Lorg/apache/commons/math3/geometry/Vector;)Lorg/apache/commons/math3/geometry/Vector;" line-rate="1.0" branch-rate="1.0">
+							<lines>
+							</lines>
+						</method>
+						<method name="toSpace" signature="(Lorg/apache/commons/math3/geometry/Vector;)Lorg/apache/commons/math3/geometry/euclidean/threed/Vector3D;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="136" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="toSubSpace" signature="(Lorg/apache/commons/math3/geometry/Vector;)Lorg/apache/commons/math3/geometry/Vector;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="41" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="toSubSpace" signature="(Lorg/apache/commons/math3/geometry/Vector;)Lorg/apache/commons/math3/geometry/euclidean/oned/Vector1D;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="129" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="wholeLine" signature="()Lorg/apache/commons/math3/geometry/euclidean/threed/SubLine;" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="224" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="41" hits="0" branch="false"/>
+						<line number="54" hits="2" branch="false"/>
+						<line number="55" hits="2" branch="false"/>
+						<line number="56" hits="2" branch="false"/>
+						<line number="63" hits="5" branch="false"/>
+						<line number="64" hits="5" branch="false"/>
+						<line number="65" hits="5" branch="false"/>
+						<line number="66" hits="5" branch="false"/>
+						<line number="74" hits="2" branch="false"/>
+						<line number="75" hits="2" branch="false"/>
+						<line number="76" hits="2" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="77" hits="0" branch="false"/>
+						<line number="79" hits="2" branch="false"/>
+						<line number="80" hits="2" branch="false"/>
+						<line number="81" hits="2" branch="false"/>
+						<line number="87" hits="4" branch="false"/>
+						<line number="88" hits="4" branch="false"/>
+						<line number="89" hits="3" branch="false"/>
+						<line number="96" hits="5" branch="false"/>
+						<line number="103" hits="4" branch="false"/>
+						<line number="114" hits="0" branch="false"/>
+						<line number="122" hits="0" branch="false"/>
+						<line number="129" hits="0" branch="false"/>
+						<line number="136" hits="0" branch="false"/>
+						<line number="147" hits="0" branch="false"/>
+						<line number="148" hits="0" branch="true" condition-coverage="0% (0/6)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+								<condition number="2" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="156" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="164" hits="0" branch="false"/>
+						<line number="165" hits="0" branch="false"/>
+						<line number="166" hits="0" branch="false"/>
+						<line number="175" hits="0" branch="false"/>
+						<line number="176" hits="0" branch="false"/>
+						<line number="177" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="179" hits="0" branch="false"/>
+						<line number="183" hits="0" branch="false"/>
+						<line number="185" hits="0" branch="false"/>
+						<line number="195" hits="0" branch="false"/>
+						<line number="196" hits="0" branch="false"/>
+						<line number="197" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="199" hits="0" branch="false"/>
+						<line number="202" hits="0" branch="false"/>
+						<line number="203" hits="0" branch="false"/>
+						<line number="204" hits="0" branch="false"/>
+						<line number="206" hits="0" branch="false"/>
+						<line number="216" hits="0" branch="false"/>
+						<line number="217" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="224" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>

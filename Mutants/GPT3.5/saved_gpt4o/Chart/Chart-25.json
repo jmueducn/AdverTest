@@ -1,0 +1,702 @@
+[
+    {
+        "id": 1,
+        "line": 258,
+        "precode": "Number meanValue = dataset.getMeanValue(row, column);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "Number meanValue = dataset.getMeanValue(column, row);"
+    },
+    {
+        "id": 2,
+        "line": 259,
+        "precode": "if (meanValue == null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "if (meanValue != null) {"
+    },
+    {
+        "id": 3,
+        "line": 289,
+        "precode": "return;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "continue;"
+    },
+    {
+        "id": 4,
+        "line": 263,
+        "precode": "double value = meanValue.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double value = meanValue.intValue();"
+    },
+    {
+        "id": 5,
+        "line": 263,
+        "precode": "double value = meanValue.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double value = meanValue.floatValue();"
+    },
+    {
+        "id": 6,
+        "line": 264,
+        "precode": "double base = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double base = 1.0;"
+    },
+    {
+        "id": 7,
+        "line": 264,
+        "precode": "double base = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double base = -1.0;"
+    },
+    {
+        "id": 8,
+        "line": 258,
+        "precode": "Number meanValue = dataset.getMeanValue(row, column);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "Number meanValue = dataset.getStdDevValue(row, column);"
+    },
+    {
+        "id": 9,
+        "line": 259,
+        "precode": "if (meanValue == null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "if (meanValue == 0) {"
+    },
+    {
+        "id": 10,
+        "line": 289,
+        "precode": "return;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "throw new IllegalArgumentException();"
+    },
+    {
+        "id": 11,
+        "line": 263,
+        "precode": "double value = meanValue.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double value = Math.abs(meanValue.doubleValue());"
+    },
+    {
+        "id": 12,
+        "line": 264,
+        "precode": "double base = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double base = Double.MIN_VALUE;"
+    },
+    {
+        "id": 13,
+        "line": 264,
+        "precode": "double base = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double base = Double.MAX_VALUE;"
+    },
+    {
+        "id": 14,
+        "line": 263,
+        "precode": "double value = meanValue.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double value = -meanValue.doubleValue();"
+    },
+    {
+        "id": 15,
+        "line": 258,
+        "precode": "Number meanValue = dataset.getMeanValue(row, column);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "Number meanValue = dataset.getMeanValue(row, column + 1);"
+    },
+    {
+        "id": 16,
+        "line": 259,
+        "precode": "if (meanValue == null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "if (meanValue != 0) {"
+    },
+    {
+        "id": 17,
+        "line": 289,
+        "precode": "return;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "break;"
+    },
+    {
+        "id": 18,
+        "line": 263,
+        "precode": "double value = meanValue.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double value = meanValue.doubleValue() + 1;"
+    },
+    {
+        "id": 19,
+        "line": 319,
+        "precode": "if (n != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "if (n == null) {"
+    },
+    {
+        "id": 20,
+        "line": 320,
+        "precode": "double valueDelta = n.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double valueDelta = -n.doubleValue();"
+    },
+    {
+        "id": 21,
+        "line": 4,
+        "precode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 22,
+        "line": 4,
+        "precode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue(), dataArea, yAxisLocation);"
+    },
+    {
+        "id": 23,
+        "line": 5,
+        "precode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 24,
+        "line": 5,
+        "precode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue(), dataArea, yAxisLocation);"
+    },
+    {
+        "id": 25,
+        "line": 320,
+        "precode": "double valueDelta = n.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double valueDelta = n.doubleValue() * 2;"
+    },
+    {
+        "id": 26,
+        "line": 320,
+        "precode": "double valueDelta = n.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double valueDelta = n.doubleValue() / 2;"
+    },
+    {
+        "id": 27,
+        "line": 4,
+        "precode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + 2 * valueDelta, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 28,
+        "line": 5,
+        "precode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - 2 * valueDelta, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 29,
+        "line": 319,
+        "precode": "if (n != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "if (n == null || n.doubleValue() == 0) {"
+    },
+    {
+        "id": 30,
+        "line": 320,
+        "precode": "double valueDelta = n.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double valueDelta = Math.abs(n.doubleValue());"
+    },
+    {
+        "id": 31,
+        "line": 4,
+        "precode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta / 2, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 32,
+        "line": 5,
+        "precode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta / 2, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 33,
+        "line": 4,
+        "precode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta * 1.5, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 34,
+        "line": 5,
+        "precode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta * 1.5, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 35,
+        "line": 319,
+        "precode": "if (n != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "if (n == null || n.doubleValue() < 0) {"
+    },
+    {
+        "id": 36,
+        "line": 320,
+        "precode": "double valueDelta = n.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double valueDelta = n.doubleValue() * 0.5;"
+    },
+    {
+        "id": 37,
+        "line": 94,
+        "precode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25, lowVal, rectY + rectHeight * 0.75);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.3, lowVal, rectY + rectHeight * 0.7);"
+    },
+    {
+        "id": 38,
+        "line": 94,
+        "precode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25, lowVal, rectY + rectHeight * 0.75);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.2, lowVal, rectY + rectHeight * 0.8);"
+    },
+    {
+        "id": 39,
+        "line": 94,
+        "precode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25, lowVal, rectY + rectHeight * 0.75);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(lowVal, rectY, lowVal, rectY + rectHeight);"
+    },
+    {
+        "id": 40,
+        "line": 94,
+        "precode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25, lowVal, rectY + rectHeight * 0.75);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.5, lowVal, rectY + rectHeight * 0.5);"
+    },
+    {
+        "id": 41,
+        "line": 94,
+        "precode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25, lowVal, rectY + rectHeight * 0.75);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.1, lowVal, rectY + rectHeight * 0.9);"
+    },
+    {
+        "id": 42,
+        "line": 94,
+        "precode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25, lowVal, rectY + rectHeight * 0.75);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.4, lowVal, rectY + rectHeight * 0.6);"
+    },
+    {
+        "id": 43,
+        "line": 94,
+        "precode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25, lowVal, rectY + rectHeight * 0.75);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.15, lowVal, rectY + rectHeight * 0.85);"
+    },
+    {
+        "id": 44,
+        "line": 94,
+        "precode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25, lowVal, rectY + rectHeight * 0.75);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.35, lowVal, rectY + rectHeight * 0.65);"
+    },
+    {
+        "id": 45,
+        "line": 94,
+        "precode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25, lowVal, rectY + rectHeight * 0.75);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.05, lowVal, rectY + rectHeight * 0.95);"
+    },
+    {
+        "id": 46,
+        "line": 94,
+        "precode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25, lowVal, rectY + rectHeight * 0.75);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.45, lowVal, rectY + rectHeight * 0.55);"
+    },
+    {
+        "id": 47,
+        "line": 94,
+        "precode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25, lowVal, rectY + rectHeight * 0.75);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.2, lowVal, rectY + rectHeight * 0.6);"
+    },
+    {
+        "id": 48,
+        "line": 94,
+        "precode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25, lowVal, rectY + rectHeight * 0.75);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.3, lowVal, rectY + rectHeight * 0.9);"
+    },
+    {
+        "id": 49,
+        "line": 94,
+        "precode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25, lowVal, rectY + rectHeight * 0.75);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.1, lowVal, rectY + rectHeight * 0.7);"
+    },
+    {
+        "id": 50,
+        "line": 94,
+        "precode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.25, lowVal, rectY + rectHeight * 0.75);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(lowVal, rectY + rectHeight * 0.05, lowVal, rectY + rectHeight * 0.85);"
+    },
+    {
+        "id": 51,
+        "line": 408,
+        "precode": "Number meanValue = dataset.getMeanValue(row, column);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "Number meanValue = dataset.getMeanValue(column, row);"
+    },
+    {
+        "id": 52,
+        "line": 409,
+        "precode": "if (meanValue == null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "if (meanValue != null) {"
+    },
+    {
+        "id": 53,
+        "line": 439,
+        "precode": "return;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "throw new RuntimeException(\"Mean value is null\");"
+    },
+    {
+        "id": 54,
+        "line": 413,
+        "precode": "double value = meanValue.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double value = meanValue.floatValue();"
+    },
+    {
+        "id": 55,
+        "line": 413,
+        "precode": "double value = meanValue.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double value = meanValue.intValue();"
+    },
+    {
+        "id": 56,
+        "line": 413,
+        "precode": "double value = meanValue.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double value = meanValue.doubleValue() + 1;"
+    },
+    {
+        "id": 57,
+        "line": 413,
+        "precode": "double value = meanValue.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double value = meanValue.doubleValue() - 1;"
+    },
+    {
+        "id": 58,
+        "line": 413,
+        "precode": "double value = meanValue.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double value = Math.abs(meanValue.doubleValue());"
+    },
+    {
+        "id": 59,
+        "line": 413,
+        "precode": "double value = meanValue.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double value = -meanValue.doubleValue();"
+    },
+    {
+        "id": 60,
+        "line": 414,
+        "precode": "double base = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double base = 1.0;"
+    },
+    {
+        "id": 61,
+        "line": 414,
+        "precode": "double base = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double base = -1.0;"
+    },
+    {
+        "id": 62,
+        "line": 414,
+        "precode": "double base = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double base = value;"
+    },
+    {
+        "id": 63,
+        "line": 414,
+        "precode": "double base = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double base = meanValue.doubleValue();"
+    },
+    {
+        "id": 64,
+        "line": 414,
+        "precode": "double base = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double base = Math.random();"
+    },
+    {
+        "id": 65,
+        "line": 414,
+        "precode": "double base = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double base = Double.MAX_VALUE;"
+    },
+    {
+        "id": 66,
+        "line": 414,
+        "precode": "double base = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double base = Double.MIN_VALUE;"
+    },
+    {
+        "id": 67,
+        "line": 414,
+        "precode": "double base = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double base = -value;"
+    },
+    {
+        "id": 68,
+        "line": 414,
+        "precode": "double base = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double base = Math.sqrt(value);"
+    },
+    {
+        "id": 69,
+        "line": 468,
+        "precode": "Number n = dataset.getStdDevValue(row, column);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "Number n = dataset.getMeanValue(row, column);"
+    },
+    {
+        "id": 70,
+        "line": 469,
+        "precode": "if (n != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "if (n == null) {"
+    },
+    {
+        "id": 71,
+        "line": 470,
+        "precode": "double valueDelta = n.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double valueDelta = Math.abs(n.doubleValue());"
+    },
+    {
+        "id": 72,
+        "line": 4,
+        "precode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 73,
+        "line": 4,
+        "precode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() * valueDelta, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 74,
+        "line": 4,
+        "precode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue(), dataArea, yAxisLocation);"
+    },
+    {
+        "id": 75,
+        "line": 5,
+        "precode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 76,
+        "line": 5,
+        "precode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() * valueDelta, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 77,
+        "line": 5,
+        "precode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue(), dataArea, yAxisLocation);"
+    },
+    {
+        "id": 78,
+        "line": 470,
+        "precode": "double valueDelta = n.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double valueDelta = n.doubleValue() / 2;"
+    },
+    {
+        "id": 79,
+        "line": 470,
+        "precode": "double valueDelta = n.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double valueDelta = n.doubleValue() * 2;"
+    },
+    {
+        "id": 80,
+        "line": 469,
+        "precode": "if (n != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "if (n != null && n.doubleValue() > 0) {"
+    },
+    {
+        "id": 81,
+        "line": 469,
+        "precode": "if (n != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "if (n != null && n.doubleValue() < 0) {"
+    },
+    {
+        "id": 82,
+        "line": 4,
+        "precode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double highVal = rangeAxis.valueToJava2D(valueDelta, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 83,
+        "line": 5,
+        "precode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double lowVal = rangeAxis.valueToJava2D(0, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 84,
+        "line": 470,
+        "precode": "double valueDelta = n.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double valueDelta = -n.doubleValue();"
+    },
+    {
+        "id": 85,
+        "line": 4,
+        "precode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double highVal = rangeAxis.valueToJava2D(meanValue.doubleValue() + valueDelta + 10, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 86,
+        "line": 5,
+        "precode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta, dataArea, yAxisLocation);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "double lowVal = rangeAxis.valueToJava2D(meanValue.doubleValue() - valueDelta - 10, dataArea, yAxisLocation);"
+    },
+    {
+        "id": 87,
+        "line": 495,
+        "precode": "line = new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d, lowVal,",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(rectX + rectWidth / 2.0d - 4.0d, lowVal,"
+    },
+    {
+        "id": 88,
+        "line": 495,
+        "precode": "line = new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d, lowVal,",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(rectX + rectWidth / 2.0d - 6.0d, lowVal,"
+    },
+    {
+        "id": 89,
+        "line": 495,
+        "precode": "line = new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d, lowVal,",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(rectX + rectWidth / 2.0d, lowVal,"
+    },
+    {
+        "id": 90,
+        "line": 495,
+        "precode": "line = new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d, lowVal,",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(rectX + rectWidth / 2.0d - 10.0d, lowVal,"
+    },
+    {
+        "id": 91,
+        "line": 496,
+        "precode": "rectX + rectWidth / 2.0d + 5.0d, lowVal);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "rectX + rectWidth / 2.0d + 4.0d, lowVal);"
+    },
+    {
+        "id": 92,
+        "line": 496,
+        "precode": "rectX + rectWidth / 2.0d + 5.0d, lowVal);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "rectX + rectWidth / 2.0d + 6.0d, lowVal);"
+    },
+    {
+        "id": 93,
+        "line": 496,
+        "precode": "rectX + rectWidth / 2.0d + 5.0d, lowVal);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "rectX + rectWidth / 2.0d, lowVal);"
+    },
+    {
+        "id": 94,
+        "line": 496,
+        "precode": "rectX + rectWidth / 2.0d + 5.0d, lowVal);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "rectX + rectWidth / 2.0d + 10.0d, lowVal);"
+    },
+    {
+        "id": 95,
+        "line": 495,
+        "precode": "line = new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d, lowVal,",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d, highVal,"
+    },
+    {
+        "id": 96,
+        "line": 496,
+        "precode": "rectX + rectWidth / 2.0d + 5.0d, lowVal);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "rectX + rectWidth / 2.0d + 5.0d, highVal);"
+    },
+    {
+        "id": 97,
+        "line": 495,
+        "precode": "line = new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d, lowVal,",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d, lowVal - 1.0d,"
+    },
+    {
+        "id": 98,
+        "line": 496,
+        "precode": "rectX + rectWidth / 2.0d + 5.0d, lowVal);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "rectX + rectWidth / 2.0d + 5.0d, lowVal + 1.0d);"
+    },
+    {
+        "id": 99,
+        "line": 495,
+        "precode": "line = new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d, lowVal,",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "line = new Line2D.Double(rectX + rectWidth / 2.0d - 5.0d, lowVal - 2.0d,"
+    },
+    {
+        "id": 100,
+        "line": 496,
+        "precode": "rectX + rectWidth / 2.0d + 5.0d, lowVal);",
+        "filepath": "./defects4j_fixed/Chart/Chart_25_fixed/source/org/jfree/chart/renderer/category/StatisticalBarRenderer.java",
+        "aftercode": "rectX + rectWidth / 2.0d + 5.0d, lowVal + 2.0d);"
+    }
+]

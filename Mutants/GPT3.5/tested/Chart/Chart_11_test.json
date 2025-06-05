@@ -1,0 +1,282 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 289,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "return false;",
+        "aftercode": "return true;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_GeneralPathShapes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualGeneralPath\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesDifferentPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 289,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "return false;",
+        "aftercode": "return p1 == p2;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 3,
+        "line": 274,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "PathIterator iterator1 = p1.getPathIterator(null);",
+        "aftercode": "PathIterator iterator1 = p2.getPathIterator(null);",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_GeneralPathShapes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualGeneralPath\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesDifferentPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithEmptyShapes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 274,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "PathIterator iterator1 = p1.getPathIterator(null);",
+        "aftercode": "PathIterator iterator1 = null;",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_GeneralPathShapes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualGeneralPath\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesDifferentPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithEmptyShapes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 275,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "PathIterator iterator2 = p2.getPathIterator(null);",
+        "aftercode": "PathIterator iterator2 = p1.getPathIterator(null);",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_GeneralPathShapes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualGeneralPath\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesDifferentPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithEmptyShapes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 275,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "PathIterator iterator2 = p2.getPathIterator(null);",
+        "aftercode": "PathIterator iterator2 = null;",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_GeneralPathShapes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualGeneralPath\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesDifferentPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithEmptyShapes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 276,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "double[] d1 = new double[6];",
+        "aftercode": "double[] d1 = new double[5];",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_GeneralPathShapes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualGeneralPath\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 276,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "double[] d1 = new double[6];",
+        "aftercode": "double[] d1 = null;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_GeneralPathShapes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualGeneralPath\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesDifferentPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 277,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "double[] d2 = new double[6];",
+        "aftercode": "double[] d2 = new double[7];",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_GeneralPathShapes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualGeneralPath\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 277,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "double[] d2 = new double[6];",
+        "aftercode": "double[] d2 = null;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_GeneralPathShapes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualGeneralPath\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesDifferentPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 278,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "boolean done = iterator1.isDone() && iterator2.isDone();",
+        "aftercode": "boolean done = iterator1.isDone() || iterator2.isDone();",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithEmptyShapes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 278,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "boolean done = iterator1.isDone() && iterator2.isDone();",
+        "aftercode": "boolean done = true;",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_GeneralPathShapes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualGeneralPath\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesDifferentPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithEmptyShapes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 278,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "boolean done = iterator1.isDone() && iterator2.isDone();",
+        "aftercode": "boolean done = false;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 14,
+        "line": 278,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "boolean done = iterator1.isDone() && iterator2.isDone();",
+        "aftercode": "boolean done = iterator2.isDone() && iterator1.isDone();",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 15,
+        "line": 289,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "return false;",
+        "aftercode": "return true;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_GeneralPathShapes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualGeneralPath\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesDifferentPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 289,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "return false;",
+        "aftercode": "return !false;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_GeneralPathShapes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualGeneralPath\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesDifferentPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 278,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "boolean done = iterator1.isDone() && iterator2.isDone();",
+        "aftercode": "boolean done = iterator1.isDone() & iterator2.isDone();",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 18,
+        "line": 278,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "boolean done = iterator1.isDone() && iterator2.isDone();",
+        "aftercode": "boolean done = !iterator1.isDone() && !iterator2.isDone();",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_GeneralPathShapes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualGeneralPath\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesDifferentPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 266,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "return (p2 == null);",
+        "aftercode": "return (p2 != null);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 20,
+        "line": 266,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "return (p2 == null);",
+        "aftercode": "return true;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 21,
+        "line": 269,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "return false;",
+        "aftercode": "return true;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 22,
+        "line": 269,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "return false;",
+        "aftercode": "return !false;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 23,
+        "line": 272,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "return false;",
+        "aftercode": "return true;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 24,
+        "line": 272,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "return false;",
+        "aftercode": "return !false;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 25,
+        "line": 281,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "return false;",
+        "aftercode": "return true;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithEmptyShapes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 26,
+        "line": 281,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "return false;",
+        "aftercode": "return !false;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithEmptyShapes\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 27,
+        "line": 286,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "return false;",
+        "aftercode": "return true;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 28,
+        "line": 286,
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "precode": "return false;",
+        "aftercode": "return !false;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_UnsupportedShapeType\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_EmptyPaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_BothHaveNullFrames\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithUnsupportedShapeTypes\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithUnhandledShapeType_ShouldReturnFalse1\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_FirstHasNullFrame\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_SameWindingRulesSamePaths\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqual_WithNullInput_ShouldReturnFalse\n  - gentest.org.jfree.chart.util.tests.ShapeUtilitiesTest::testEqualWithNonHandledShapeTypes\n",
+        "survived": true
+    }
+]

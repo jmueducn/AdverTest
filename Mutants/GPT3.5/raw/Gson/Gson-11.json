@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "line": 813,
+        "precode": "if (in.peek() == JsonToken.NULL) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "if (in.peek() != JsonToken.NULL) {"
+    },
+    {
+        "id": 2,
+        "line": 814,
+        "precode": "in.nextNull();",
+        "filepath": "./defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "in.nextString();"
+    },
+    {
+        "id": 3,
+        "line": 830,
+        "precode": "return null;",
+        "filepath": "./defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return 0;"
+    },
+    {
+        "id": 4,
+        "line": 720,
+        "precode": "case NUMBER:",
+        "filepath": "./defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "case BOOLEAN:"
+    },
+    {
+        "id": 5,
+        "line": 718,
+        "precode": "case STRING:",
+        "filepath": "./defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "case NULL:"
+    },
+    {
+        "id": 6,
+        "line": 372,
+        "precode": "return new LazilyParsedNumber(in.nextString());",
+        "filepath": "./defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return new LazilyParsedNumber(\"0\");"
+    },
+    {
+        "id": 7,
+        "line": 372,
+        "precode": "return new LazilyParsedNumber(in.nextString());",
+        "filepath": "./defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 8,
+        "line": 748,
+        "precode": "default:",
+        "filepath": "./defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "case BEGIN_OBJECT:"
+    },
+    {
+        "id": 9,
+        "line": 374,
+        "precode": "throw new JsonSyntaxException(\"Expecting number, got: \" + jsonToken);",
+        "filepath": "./defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "throw new JsonSyntaxException(\"Invalid input\");"
+    },
+    {
+        "id": 10,
+        "line": 374,
+        "precode": "throw new JsonSyntaxException(\"Expecting number, got: \" + jsonToken);",
+        "filepath": "./defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 11,
+        "line": 813,
+        "precode": "if (in.peek() == JsonToken.NULL) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 12,
+        "line": 372,
+        "precode": "return new LazilyParsedNumber(in.nextString());",
+        "filepath": "./defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return new LazilyParsedNumber(in.nextString() + \"0\");"
+    },
+    {
+        "id": 13,
+        "line": 830,
+        "precode": "return null;",
+        "filepath": "./defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "return new LazilyParsedNumber(\"0\");"
+    },
+    {
+        "id": 14,
+        "line": 374,
+        "precode": "throw new JsonSyntaxException(\"Expecting number, got: \" + jsonToken);",
+        "filepath": "./defects4j_fixed/Gson/Gson_11_fixed/gson/src/main/java/com/google/gson/internal/bind/TypeAdapters.java",
+        "aftercode": "throw new IOException(\"Expecting number, got: \" + jsonToken);"
+    }
+]

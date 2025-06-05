@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "line": 120,
+        "precode": "final double[] guess = (new ParameterGuesser(getObservations())).guess();",
+        "filepath": "./defects4j_fixed/Math/Math_58_fixed/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java",
+        "aftercode": "final double[] guess = (new ParameterGuesser(null)).guess();"
+    },
+    {
+        "id": 2,
+        "line": 120,
+        "precode": "final double[] guess = (new ParameterGuesser(getObservations())).guess();",
+        "filepath": "./defects4j_fixed/Math/Math_58_fixed/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java",
+        "aftercode": "final double[] guess = new double[0];"
+    },
+    {
+        "id": 3,
+        "line": 121,
+        "precode": "return fit(guess);",
+        "filepath": "./defects4j_fixed/Math/Math_58_fixed/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 4,
+        "line": 120,
+        "precode": "final double[] guess = (new ParameterGuesser(getObservations())).guess();",
+        "filepath": "./defects4j_fixed/Math/Math_58_fixed/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java",
+        "aftercode": "final double[] guess = getObservations();"
+    },
+    {
+        "id": 5,
+        "line": 121,
+        "precode": "return fit(guess);",
+        "filepath": "./defects4j_fixed/Math/Math_58_fixed/src/main/java/org/apache/commons/math/optimization/fitting/GaussianFitter.java",
+        "aftercode": "return guess;"
+    }
+]

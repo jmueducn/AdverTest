@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "line": 175,
+        "precode": "if (encoding != null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (encoding == null) {"
+    },
+    {
+        "id": 2,
+        "line": 175,
+        "precode": "if (encoding != null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 3,
+        "line": 175,
+        "precode": "if (encoding != null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 4,
+        "line": 176,
+        "precode": "throw new IllegalStateException(\"Cannot overide encoding set by the constructor\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "throw new IllegalArgumentException(\"Cannot overide encoding set by the constructor\");"
+    },
+    {
+        "id": 5,
+        "line": 176,
+        "precode": "throw new IllegalStateException(\"Cannot overide encoding set by the constructor\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 6,
+        "line": 178,
+        "precode": "this.entryEncoding = entryEncoding;",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "this.entryEncoding = null;"
+    },
+    {
+        "id": 7,
+        "line": 178,
+        "precode": "this.entryEncoding = entryEncoding;",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "this.entryEncoding = \"UTF-8\";"
+    },
+    {
+        "id": 8,
+        "line": 194,
+        "precode": "final String archiverName, final InputStream in)",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "final String archiverName, final InputStream in) throws IOException"
+    },
+    {
+        "id": 9,
+        "line": 197,
+        "precode": "if (archiverName == null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (archiverName != null) {"
+    },
+    {
+        "id": 10,
+        "line": 197,
+        "precode": "if (archiverName == null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 11,
+        "line": 198,
+        "precode": "throw new IllegalArgumentException(\"Archivername must not be null.\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "throw new IllegalStateException(\"Archivername must not be null.\");"
+    },
+    {
+        "id": 12,
+        "line": 198,
+        "precode": "throw new IllegalArgumentException(\"Archivername must not be null.\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 13,
+        "line": 201,
+        "precode": "if (in == null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (in != null) {"
+    },
+    {
+        "id": 14,
+        "line": 201,
+        "precode": "if (in == null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 15,
+        "line": 202,
+        "precode": "throw new IllegalArgumentException(\"InputStream must not be null.\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "throw new IllegalStateException(\"InputStream must not be null.\");"
+    },
+    {
+        "id": 16,
+        "line": 202,
+        "precode": "throw new IllegalArgumentException(\"InputStream must not be null.\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 17,
+        "line": 205,
+        "precode": "if (AR.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 18,
+        "line": 205,
+        "precode": "if (AR.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (AR.equals(archiverName)) {"
+    },
+    {
+        "id": 19,
+        "line": 206,
+        "precode": "return new ArArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 20,
+        "line": 206,
+        "precode": "return new ArArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new ArArchiveInputStream(null);"
+    },
+    {
+        "id": 21,
+        "line": 208,
+        "precode": "if (ARJ.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 22,
+        "line": 244,
+        "precode": "if (entryEncoding != null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (entryEncoding == null) {"
+    },
+    {
+        "id": 23,
+        "line": 210,
+        "precode": "return new ArjArchiveInputStream(in, entryEncoding);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new ArjArchiveInputStream(in, \"UTF-8\");"
+    },
+    {
+        "id": 24,
+        "line": 212,
+        "precode": "return new ArjArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 25,
+        "line": 215,
+        "precode": "if (ZIP.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 26,
+        "line": 244,
+        "precode": "if (entryEncoding != null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 27,
+        "line": 217,
+        "precode": "return new ZipArchiveInputStream(in, entryEncoding);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new ZipArchiveInputStream(in, \"UTF-8\");"
+    },
+    {
+        "id": 28,
+        "line": 219,
+        "precode": "return new ZipArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 29,
+        "line": 222,
+        "precode": "if (TAR.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 30,
+        "line": 244,
+        "precode": "if (entryEncoding != null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (entryEncoding == null) {"
+    },
+    {
+        "id": 31,
+        "line": 224,
+        "precode": "return new TarArchiveInputStream(in, entryEncoding);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new TarArchiveInputStream(in, \"UTF-8\");"
+    },
+    {
+        "id": 32,
+        "line": 226,
+        "precode": "return new TarArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 33,
+        "line": 229,
+        "precode": "if (JAR.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 34,
+        "line": 244,
+        "precode": "if (entryEncoding != null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 35,
+        "line": 231,
+        "precode": "return new JarArchiveInputStream(in, entryEncoding);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new JarArchiveInputStream(in, \"UTF-8\");"
+    },
+    {
+        "id": 36,
+        "line": 233,
+        "precode": "return new JarArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 37,
+        "line": 236,
+        "precode": "if (CPIO.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 38,
+        "line": 244,
+        "precode": "if (entryEncoding != null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (entryEncoding == null) {"
+    },
+    {
+        "id": 39,
+        "line": 238,
+        "precode": "return new CpioArchiveInputStream(in, entryEncoding);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new CpioArchiveInputStream(in, \"UTF-8\");"
+    },
+    {
+        "id": 40,
+        "line": 240,
+        "precode": "return new CpioArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 41,
+        "line": 243,
+        "precode": "if (DUMP.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 42,
+        "line": 244,
+        "precode": "if (entryEncoding != null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 43,
+        "line": 245,
+        "precode": "return new DumpArchiveInputStream(in, entryEncoding);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new DumpArchiveInputStream(in, \"UTF-8\");"
+    },
+    {
+        "id": 44,
+        "line": 247,
+        "precode": "return new DumpArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 45,
+        "line": 250,
+        "precode": "if (SEVEN_Z.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 46,
+        "line": 251,
+        "precode": "throw new StreamingNotSupportedException(SEVEN_Z);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 47,
+        "line": 251,
+        "precode": "throw new StreamingNotSupportedException(SEVEN_Z);",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "throw new ArchiveException(SEVEN_Z);"
+    },
+    {
+        "id": 48,
+        "line": 254,
+        "precode": "throw new ArchiveException(\"Archiver: \" + archiverName + \" not found.\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 49,
+        "line": 254,
+        "precode": "throw new ArchiveException(\"Archiver: \" + archiverName + \" not found.\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "throw new IllegalArgumentException(\"Archiver: \" + archiverName + \" not found.\");"
+    },
+    {
+        "id": 50,
+        "line": 205,
+        "precode": "if (AR.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (archiverName.equalsIgnoreCase(AR)) {"
+    },
+    {
+        "id": 51,
+        "line": 208,
+        "precode": "if (ARJ.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (archiverName.equalsIgnoreCase(ARJ)) {"
+    },
+    {
+        "id": 52,
+        "line": 215,
+        "precode": "if (ZIP.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (archiverName.equalsIgnoreCase(ZIP)) {"
+    },
+    {
+        "id": 53,
+        "line": 222,
+        "precode": "if (TAR.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (archiverName.equalsIgnoreCase(TAR)) {"
+    },
+    {
+        "id": 54,
+        "line": 229,
+        "precode": "if (JAR.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (archiverName.equalsIgnoreCase(JAR)) {"
+    },
+    {
+        "id": 55,
+        "line": 236,
+        "precode": "if (CPIO.equalsIgnoreCase(archiverName)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_29_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (archiverName.equalsIgnoreCase(CPIO)) {"
+    }
+]

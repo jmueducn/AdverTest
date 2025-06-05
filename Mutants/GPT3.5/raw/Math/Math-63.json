@@ -1,0 +1,114 @@
+[
+    {
+        "id": 1,
+        "line": 405,
+        "precode": "return (FastMath.exp(x) + FastMath.exp(-x)) / 2.0;",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return (FastMath.exp(x) - FastMath.exp(-x)) / 2.0;"
+    },
+    {
+        "id": 2,
+        "line": 405,
+        "precode": "return (FastMath.exp(x) + FastMath.exp(-x)) / 2.0;",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return (FastMath.exp(x) + FastMath.exp(-x)) * 2.0;"
+    },
+    {
+        "id": 3,
+        "line": 405,
+        "precode": "return (FastMath.exp(x) + FastMath.exp(-x)) / 2.0;",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return (FastMath.exp(x) + FastMath.exp(x)) / 2.0;"
+    },
+    {
+        "id": 4,
+        "line": 405,
+        "precode": "return (FastMath.exp(x) + FastMath.exp(-x)) / 2.0;",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return (FastMath.exp(-x) + FastMath.exp(-x)) / 2.0;"
+    },
+    {
+        "id": 5,
+        "line": 405,
+        "precode": "return (FastMath.exp(x) + FastMath.exp(-x)) / 2.0;",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return (FastMath.exp(x) + FastMath.exp(-x)) / 1.0;"
+    },
+    {
+        "id": 6,
+        "line": 405,
+        "precode": "return (FastMath.exp(x) + FastMath.exp(-x)) / 2.0;",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return (FastMath.exp(x) + FastMath.exp(-x)) / 0.0;"
+    },
+    {
+        "id": 7,
+        "line": 405,
+        "precode": "return (FastMath.exp(x) + FastMath.exp(-x)) / 2.0;",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return (FastMath.exp(x) + FastMath.exp(-x)) + 2.0;"
+    },
+    {
+        "id": 8,
+        "line": 405,
+        "precode": "return (FastMath.exp(x) + FastMath.exp(-x)) / 2.0;",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return (FastMath.exp(x) * FastMath.exp(-x)) / 2.0;"
+    },
+    {
+        "id": 9,
+        "line": 405,
+        "precode": "return (FastMath.exp(x) + FastMath.exp(-x)) / 2.0;",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return (FastMath.exp(x) + FastMath.exp(-x));"
+    },
+    {
+        "id": 10,
+        "line": 405,
+        "precode": "return (FastMath.exp(x) + FastMath.exp(-x)) / 2.0;",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return (FastMath.exp(x) + FastMath.exp(-x)) / -2.0;"
+    },
+    {
+        "id": 11,
+        "line": 417,
+        "precode": "return equals(x, y, 1);",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return equals(x, y, 0);"
+    },
+    {
+        "id": 12,
+        "line": 417,
+        "precode": "return equals(x, y, 1);",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return equals(x, y, 2);"
+    },
+    {
+        "id": 13,
+        "line": 417,
+        "precode": "return equals(x, y, 1);",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return equals(y, x, 1);"
+    },
+    {
+        "id": 14,
+        "line": 417,
+        "precode": "return equals(x, y, 1);",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return equals(x, x, 1);"
+    },
+    {
+        "id": 15,
+        "line": 417,
+        "precode": "return equals(x, y, 1);",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return equals(y, y, 1);"
+    },
+    {
+        "id": 16,
+        "line": 417,
+        "precode": "return equals(x, y, 1);",
+        "filepath": "./defects4j_fixed/Math/Math_63_fixed/src/main/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "return false;"
+    }
+]

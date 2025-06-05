@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "line": 160,
+        "precode": "if (currentEntry != null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (currentEntry == null) {"
+    },
+    {
+        "id": 2,
+        "line": 161,
+        "precode": "final long entryEnd = entryOffset + currentEntry.getLength();",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "final long entryEnd = entryOffset - currentEntry.getLength();"
+    },
+    {
+        "id": 3,
+        "line": 64,
+        "precode": "while (offset < entryEnd) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "while (offset <= entryEnd) {"
+    },
+    {
+        "id": 4,
+        "line": 65,
+        "precode": "int x = read();",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "int x = 0;"
+    },
+    {
+        "id": 5,
+        "line": 66,
+        "precode": "if (x == -1) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (x != -1) {"
+    },
+    {
+        "id": 6,
+        "line": 145,
+        "precode": "currentEntry = null;",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "// currentEntry = null;"
+    },
+    {
+        "id": 7,
+        "line": 76,
+        "precode": "final byte[] expected = ArArchiveEntry.HEADER.getBytes();",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "final byte[] expected = new byte[0];"
+    },
+    {
+        "id": 8,
+        "line": 116,
+        "precode": "final byte[] realized = new byte[expected.length];",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "final byte[] realized = new byte[expected.length + 1];"
+    },
+    {
+        "id": 9,
+        "line": 117,
+        "precode": "final int read = read(realized);",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "final int read = 0;"
+    },
+    {
+        "id": 10,
+        "line": 118,
+        "precode": "if (read != expected.length) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (read == expected.length) {"
+    },
+    {
+        "id": 11,
+        "line": 121,
+        "precode": "for (int i = 0; i < expected.length; i++) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "for (int i = 0; i <= expected.length; i++) {"
+    },
+    {
+        "id": 12,
+        "line": 122,
+        "precode": "if (expected[i] != realized[i]) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (expected[i] == realized[i]) {"
+    },
+    {
+        "id": 13,
+        "line": 84,
+        "precode": "throw new IOException(\"invalid header \" + new String(realized));",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "// throw new IOException(\"invalid header \" + new String(realized));"
+    },
+    {
+        "id": 14,
+        "line": 89,
+        "precode": "if (offset % 2 != 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (offset % 2 == 0) {"
+    },
+    {
+        "id": 15,
+        "line": 90,
+        "precode": "if (read() < 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (read() > 0) {"
+    },
+    {
+        "id": 16,
+        "line": 96,
+        "precode": "if (input.available() == 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (input.available() != 0) {"
+    },
+    {
+        "id": 17,
+        "line": 107,
+        "precode": "read(name);",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "// read(name);"
+    },
+    {
+        "id": 18,
+        "line": 108,
+        "precode": "read(lastmodified);",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "// read(lastmodified);"
+    },
+    {
+        "id": 19,
+        "line": 109,
+        "precode": "read(userid);",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "// read(userid);"
+    },
+    {
+        "id": 20,
+        "line": 110,
+        "precode": "read(groupid);",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "// read(groupid);"
+    },
+    {
+        "id": 21,
+        "line": 111,
+        "precode": "read(filemode);",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "// read(filemode);"
+    },
+    {
+        "id": 22,
+        "line": 112,
+        "precode": "read(length);",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "// read(length);"
+    },
+    {
+        "id": 23,
+        "line": 115,
+        "precode": "final byte[] expected = ArArchiveEntry.TRAILER.getBytes();",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "final byte[] expected = new byte[0];"
+    },
+    {
+        "id": 24,
+        "line": 116,
+        "precode": "final byte[] realized = new byte[expected.length];",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "final byte[] realized = new byte[expected.length + 1];"
+    },
+    {
+        "id": 25,
+        "line": 117,
+        "precode": "final int read = read(realized);",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "final int read = 0;"
+    },
+    {
+        "id": 26,
+        "line": 118,
+        "precode": "if (read != expected.length) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (read == expected.length) {"
+    },
+    {
+        "id": 27,
+        "line": 121,
+        "precode": "for (int i = 0; i < expected.length; i++) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "for (int i = 0; i <= expected.length; i++) {"
+    },
+    {
+        "id": 28,
+        "line": 122,
+        "precode": "if (expected[i] != realized[i]) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (expected[i] == realized[i]) {"
+    },
+    {
+        "id": 29,
+        "line": 123,
+        "precode": "throw new IOException(\"invalid entry header. not read the content?\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "// throw new IOException(\"invalid entry header. not read the content?\");"
+    },
+    {
+        "id": 30,
+        "line": 128,
+        "precode": "entryOffset = offset;",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "entryOffset = offset + 1;"
+    },
+    {
+        "id": 31,
+        "line": 129,
+        "precode": "currentEntry = new ArArchiveEntry(new String(name).trim(),",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "currentEntry = new ArArchiveEntry(new String(name),"
+    },
+    {
+        "id": 32,
+        "line": 130,
+        "precode": "Long.parseLong(new String(length)",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "Long.parseLong(\"0\")"
+    },
+    {
+        "id": 33,
+        "line": 137,
+        "precode": "return getNextArEntry();",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 34,
+        "line": 141,
+        "precode": "if (!closed) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (closed) {"
+    },
+    {
+        "id": 35,
+        "line": 142,
+        "precode": "closed = true;",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "closed = false;"
+    },
+    {
+        "id": 36,
+        "line": 143,
+        "precode": "input.close();",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "// input.close();"
+    },
+    {
+        "id": 37,
+        "line": 145,
+        "precode": "currentEntry = null;",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "// currentEntry = null;"
+    },
+    {
+        "id": 38,
+        "line": 149,
+        "precode": "byte[] single = new byte[1];",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "byte[] single = new byte[2];"
+    },
+    {
+        "id": 39,
+        "line": 150,
+        "precode": "int num = read(single, 0, 1);",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "int num = 0;"
+    },
+    {
+        "id": 40,
+        "line": 151,
+        "precode": "return num == -1 ? -1 : single[0] & 0xff;",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "return num == -1 ? 0 : single[0] & 0xff;"
+    },
+    {
+        "id": 41,
+        "line": 155,
+        "precode": "return read(b, 0, b.length);",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "return read(b, 1, b.length);"
+    },
+    {
+        "id": 42,
+        "line": 159,
+        "precode": "int toRead = len;",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "int toRead = len + 1;"
+    },
+    {
+        "id": 43,
+        "line": 160,
+        "precode": "if (currentEntry != null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (currentEntry == null) {"
+    },
+    {
+        "id": 44,
+        "line": 161,
+        "precode": "final long entryEnd = entryOffset + currentEntry.getLength();",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "final long entryEnd = entryOffset - currentEntry.getLength();"
+    },
+    {
+        "id": 45,
+        "line": 162,
+        "precode": "if (len > 0 && entryEnd > offset) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (len > 0 || entryEnd > offset) {"
+    },
+    {
+        "id": 46,
+        "line": 163,
+        "precode": "toRead = (int) Math.min(len, entryEnd - offset);",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "toRead = (int) Math.max(len, entryEnd - offset);"
+    },
+    {
+        "id": 47,
+        "line": 165,
+        "precode": "return -1;",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "return 0;"
+    },
+    {
+        "id": 48,
+        "line": 168,
+        "precode": "final int ret = this.input.read(b, off, toRead);",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "final int ret = 0;"
+    },
+    {
+        "id": 49,
+        "line": 169,
+        "precode": "offset += (ret > 0 ? ret : 0);",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "offset += (ret > 0 ? ret + 1 : 0);"
+    },
+    {
+        "id": 50,
+        "line": 176,
+        "precode": "if (length < 8) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (length <= 8) {"
+    },
+    {
+        "id": 51,
+        "line": 179,
+        "precode": "if (signature[0] != 0x21) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (signature[0] == 0x21) {"
+    },
+    {
+        "id": 52,
+        "line": 182,
+        "precode": "if (signature[1] != 0x3c) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (signature[1] == 0x3c) {"
+    },
+    {
+        "id": 53,
+        "line": 185,
+        "precode": "if (signature[2] != 0x61) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (signature[2] == 0x61) {"
+    },
+    {
+        "id": 54,
+        "line": 188,
+        "precode": "if (signature[3] != 0x72) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (signature[3] == 0x72) {"
+    },
+    {
+        "id": 55,
+        "line": 191,
+        "precode": "if (signature[4] != 0x63) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_2_fixed/src/main/java/org/apache/commons/compress/archivers/ar/ArArchiveInputStream.java",
+        "aftercode": "if (signature[4] == 0x63) {"
+    }
+]

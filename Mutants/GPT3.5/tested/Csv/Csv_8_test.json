@@ -1,0 +1,312 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 642,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (quoteChar != null && delimiter == quoteChar.charValue()) {",
+        "aftercode": "if (quoteChar != null || delimiter == quoteChar.charValue()) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteNoneAndEscape\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteAll\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationMinimal\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationNoSpecialChars\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 642,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (quoteChar != null && delimiter == quoteChar.charValue()) {",
+        "aftercode": "if (quoteChar == null && delimiter == quoteChar.charValue()) {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteNoneAndEscape\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationMinimal\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationNoSpecialChars\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 642,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (quoteChar != null && delimiter == quoteChar.charValue()) {",
+        "aftercode": "if (quoteChar != null && delimiter != quoteChar.charValue()) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteAll\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 642,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (quoteChar != null && delimiter == quoteChar.charValue()) {",
+        "aftercode": "if (quoteChar != null && delimiter == escape.charValue()) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 6,
+        "line": 647,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (escape != null && delimiter == escape.charValue()) {",
+        "aftercode": "if (escape != null || delimiter == escape.charValue()) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteNoneAndEscape\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteAll\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationMinimal\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationNoSpecialChars\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 647,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (escape != null && delimiter == escape.charValue()) {",
+        "aftercode": "if (escape == null && delimiter == escape.charValue()) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationMinimal\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationNoSpecialChars\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 647,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (escape != null && delimiter == escape.charValue()) {",
+        "aftercode": "if (escape != null && delimiter != escape.charValue()) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteNoneAndEscape\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteAll\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 647,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (escape != null && delimiter == escape.charValue()) {",
+        "aftercode": "if (escape != null && delimiter == quoteChar.charValue()) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteNoneAndEscape\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 652,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (commentStart != null && delimiter == commentStart.charValue()) {",
+        "aftercode": "if (commentStart != null || delimiter == commentStart.charValue()) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteNoneAndEscape\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteAll\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationMinimal\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationNoSpecialChars\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 652,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (commentStart != null && delimiter == commentStart.charValue()) {",
+        "aftercode": "if (commentStart == null && delimiter == commentStart.charValue()) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationMinimal\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationNoSpecialChars\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 652,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (commentStart != null && delimiter == commentStart.charValue()) {",
+        "aftercode": "if (commentStart != null && delimiter != commentStart.charValue()) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteNoneAndEscape\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteAll\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 652,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (commentStart != null && delimiter == commentStart.charValue()) {",
+        "aftercode": "if (commentStart != null && delimiter == escape.charValue()) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 14,
+        "line": 657,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (quoteChar != null && quoteChar.equals(commentStart)) {",
+        "aftercode": "if (quoteChar != null || quoteChar.equals(commentStart)) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteNoneAndEscape\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteAll\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationMinimal\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationNoSpecialChars\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 657,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (quoteChar != null && quoteChar.equals(commentStart)) {",
+        "aftercode": "if (quoteChar == null && quoteChar.equals(commentStart)) {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteNoneAndEscape\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationMinimal\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationNoSpecialChars\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 657,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (quoteChar != null && quoteChar.equals(commentStart)) {",
+        "aftercode": "if (quoteChar != null && !quoteChar.equals(commentStart)) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteAll\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 657,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (quoteChar != null && quoteChar.equals(commentStart)) {",
+        "aftercode": "if (quoteChar != null && escape.equals(commentStart)) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 18,
+        "line": 662,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (escape != null && escape.equals(commentStart)) {",
+        "aftercode": "if (escape != null || escape.equals(commentStart)) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteNoneAndEscape\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteAll\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationMinimal\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationNoSpecialChars\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 662,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (escape != null && escape.equals(commentStart)) {",
+        "aftercode": "if (escape == null && escape.equals(commentStart)) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationMinimal\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationNoSpecialChars\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 20,
+        "line": 662,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (escape != null && escape.equals(commentStart)) {",
+        "aftercode": "if (escape != null && !escape.equals(commentStart)) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteNoneAndEscape\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteAll\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 662,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (escape != null && escape.equals(commentStart)) {",
+        "aftercode": "if (escape != null && quoteChar.equals(commentStart)) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteNoneAndEscape\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 22,
+        "line": 667,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (escape == null && quotePolicy == Quote.NONE) {",
+        "aftercode": "if (escape == null || quotePolicy == Quote.NONE) {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteNoneAndEscape\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationMinimal\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationNoSpecialChars\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 23,
+        "line": 667,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (escape == null && quotePolicy == Quote.NONE) {",
+        "aftercode": "if (escape != null && quotePolicy == Quote.NONE) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationWithQuoteNoneAndEscape\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 24,
+        "line": 667,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (escape == null && quotePolicy == Quote.NONE) {",
+        "aftercode": "if (escape == null && quotePolicy != Quote.NONE) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationMinimal\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_ValidConfigurationNoSpecialChars\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 25,
+        "line": 667,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (escape == null && quotePolicy == Quote.NONE) {",
+        "aftercode": "if (escape == null && quotePolicy == Quote.ALL) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 26,
+        "line": 668,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "throw new IllegalStateException(",
+        "aftercode": "return;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 27,
+        "line": 668,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "throw new IllegalStateException(",
+        "aftercode": "return;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 28,
+        "line": 668,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "throw new IllegalStateException(",
+        "aftercode": "return;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 29,
+        "line": 668,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "throw new IllegalStateException(",
+        "aftercode": "return;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 30,
+        "line": 668,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "throw new IllegalStateException(",
+        "aftercode": "return;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 31,
+        "line": 668,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "throw new IllegalStateException(",
+        "aftercode": "return;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 32,
+        "line": 667,
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (escape == null && quotePolicy == Quote.NONE) {",
+        "aftercode": "if (escape == null && quotePolicy == Quote.NONE && quoteChar != null) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_QuoteCharSameAsCommentStart\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_EscapeSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_CommentStartSameAsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testValidate_NoEscapeWithQuoteNone\n",
+        "survived": true
+    }
+]

@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "line": 289,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 2,
+        "line": 289,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "aftercode": "return p1 != null;"
+    },
+    {
+        "id": 3,
+        "line": 289,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "aftercode": "return p2 == null;"
+    },
+    {
+        "id": 4,
+        "line": 274,
+        "precode": "PathIterator iterator1 = p1.getPathIterator(null);",
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "aftercode": "PathIterator iterator1 = p1.getPathIterator(new AffineTransform());"
+    },
+    {
+        "id": 5,
+        "line": 275,
+        "precode": "PathIterator iterator2 = p2.getPathIterator(null);",
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "aftercode": "PathIterator iterator2 = p2.getPathIterator(new AffineTransform());"
+    },
+    {
+        "id": 6,
+        "line": 276,
+        "precode": "double[] d1 = new double[6];",
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "aftercode": "double[] d1 = new double[3];"
+    },
+    {
+        "id": 7,
+        "line": 277,
+        "precode": "double[] d2 = new double[6];",
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "aftercode": "double[] d2 = new double[3];"
+    },
+    {
+        "id": 8,
+        "line": 278,
+        "precode": "boolean done = iterator1.isDone() && iterator2.isDone();",
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "aftercode": "boolean done = iterator1.isDone() || iterator2.isDone();"
+    },
+    {
+        "id": 9,
+        "line": 278,
+        "precode": "boolean done = iterator1.isDone() && iterator2.isDone();",
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "aftercode": "boolean done = !iterator1.isDone() && !iterator2.isDone();"
+    },
+    {
+        "id": 10,
+        "line": 278,
+        "precode": "boolean done = iterator1.isDone() && iterator2.isDone();",
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "aftercode": "boolean done = iterator1.isDone();"
+    },
+    {
+        "id": 11,
+        "line": 278,
+        "precode": "boolean done = iterator1.isDone() && iterator2.isDone();",
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "aftercode": "boolean done = iterator2.isDone();"
+    },
+    {
+        "id": 12,
+        "line": 278,
+        "precode": "boolean done = iterator1.isDone() && iterator2.isDone();",
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "aftercode": "boolean done = false;"
+    },
+    {
+        "id": 13,
+        "line": 278,
+        "precode": "boolean done = iterator1.isDone() && iterator2.isDone();",
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "aftercode": "boolean done = true;"
+    },
+    {
+        "id": 14,
+        "line": 278,
+        "precode": "boolean done = iterator1.isDone() && iterator2.isDone();",
+        "filepath": "./defects4j_fixed/Chart/Chart_11_fixed/source/org/jfree/chart/util/ShapeUtilities.java",
+        "aftercode": "boolean done = iterator1.isDone() != iterator2.isDone();"
+    }
+]

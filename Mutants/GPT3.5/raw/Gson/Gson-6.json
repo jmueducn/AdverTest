@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "line": 67,
+        "precode": "if (typeAdapter != null) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "if (typeAdapter == null) {"
+    },
+    {
+        "id": 2,
+        "line": 67,
+        "precode": "if (typeAdapter != null) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 3,
+        "line": 67,
+        "precode": "if (typeAdapter != null) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 4,
+        "line": 67,
+        "precode": "if (typeAdapter != null) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "if (typeAdapter != null && gson != null) {"
+    },
+    {
+        "id": 5,
+        "line": 68,
+        "precode": "typeAdapter = typeAdapter.nullSafe();",
+        "filepath": "./defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "typeAdapter = typeAdapter;"
+    },
+    {
+        "id": 6,
+        "line": 68,
+        "precode": "typeAdapter = typeAdapter.nullSafe();",
+        "filepath": "./defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "typeAdapter = null;"
+    },
+    {
+        "id": 7,
+        "line": 68,
+        "precode": "typeAdapter = typeAdapter.nullSafe();",
+        "filepath": "./defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "typeAdapter = typeAdapter.nullSafe().nullSafe();"
+    },
+    {
+        "id": 8,
+        "line": 68,
+        "precode": "typeAdapter = typeAdapter.nullSafe();",
+        "filepath": "./defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "typeAdapter = gson.getAdapter(fieldType);"
+    },
+    {
+        "id": 9,
+        "line": 70,
+        "precode": "return typeAdapter;",
+        "filepath": "./defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 10,
+        "line": 70,
+        "precode": "return typeAdapter;",
+        "filepath": "./defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "return typeAdapter.nullSafe();"
+    },
+    {
+        "id": 11,
+        "line": 70,
+        "precode": "return typeAdapter;",
+        "filepath": "./defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "return new TypeAdapter();"
+    },
+    {
+        "id": 12,
+        "line": 70,
+        "precode": "return typeAdapter;",
+        "filepath": "./defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "return typeAdapter == null ? null : typeAdapter;"
+    },
+    {
+        "id": 13,
+        "line": 67,
+        "precode": "if (typeAdapter != null) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_6_fixed/gson/src/main/java/com/google/gson/internal/bind/JsonAdapterAnnotationTypeAdapterFactory.java",
+        "aftercode": "if (typeAdapter != null && typeAdapter.getClass() != null) {"
+    }
+]

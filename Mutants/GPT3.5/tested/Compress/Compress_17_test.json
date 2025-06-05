@@ -1,0 +1,470 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 103,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "long    result = 0;",
+        "aftercode": "long    result = 1;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 103,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "long    result = 0;",
+        "aftercode": "long    result = -1;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 104,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "int     end = offset + length;",
+        "aftercode": "int     end = offset - length;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 104,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "int     end = offset + length;",
+        "aftercode": "int     end = offset;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 105,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "int     start = offset;",
+        "aftercode": "int     start = offset + 1;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 107,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (length < 2){",
+        "aftercode": "if (length <= 2){",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 107,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (length < 2){",
+        "aftercode": "if (length < 1){",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 107,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (length < 2){",
+        "aftercode": "if (length > 2){",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 111,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (buffer[start] == 0) {",
+        "aftercode": "if (buffer[start] != 0) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 111,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (buffer[start] == 0) {",
+        "aftercode": "if (buffer[start] == '0') {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 112,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "return 0L;",
+        "aftercode": "return 1L;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 116,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "while (start < end){",
+        "aftercode": "while (start <= end){",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 116,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "while (start < end){",
+        "aftercode": "while (true){",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 117,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (buffer[start] == ' '){",
+        "aftercode": "if (buffer[start] != ' '){",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 117,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (buffer[start] == ' '){",
+        "aftercode": "if (buffer[start] == 0){",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 118,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "start++;",
+        "aftercode": "start--;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 118,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "start++;",
+        "aftercode": "start += 2;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 126,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "trailer = buffer[end-1];",
+        "aftercode": "trailer = buffer[end];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (trailer == 0 || trailer == ' '){",
+        "aftercode": "if (trailer == 0 && trailer == ' '){",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 20,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (trailer == 0 || trailer == ' '){",
+        "aftercode": "if (trailer != 0 && trailer != ' '){",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 128,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "end--;",
+        "aftercode": "end++;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 22,
+        "line": 128,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "end--;",
+        "aftercode": "end -= 2;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 23,
+        "line": 137,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "trailer = buffer[end - 1];",
+        "aftercode": "trailer = buffer[end];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 24,
+        "line": 135,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "while (start < end - 1 && (trailer == 0 || trailer == ' ')) {",
+        "aftercode": "while (start < end - 1 || (trailer == 0 || trailer == ' ')) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 25,
+        "line": 135,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "while (start < end - 1 && (trailer == 0 || trailer == ' ')) {",
+        "aftercode": "while (start < end - 1 && (trailer != 0 && trailer != ' ')) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 26,
+        "line": 136,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "end = end;",
+        "aftercode": "end = start;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 27,
+        "line": 136,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "end = end;",
+        "aftercode": "end = end + 1;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 28,
+        "line": 137,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "trailer = buffer[end - 1];",
+        "aftercode": "trailer = buffer[end];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 29,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "for ( ;start < end; start++) {",
+        "aftercode": "for ( ;start <= end; start++) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 30,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "for ( ;start < end; start++) {",
+        "aftercode": "for ( ;start < end; start--) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 31,
+        "line": 141,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "final byte currentByte = buffer[start];",
+        "aftercode": "final byte currentByte = buffer[end];",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 32,
+        "line": 143,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (currentByte < '0' || currentByte > '7'){",
+        "aftercode": "if (currentByte < '0' && currentByte > '7'){",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 33,
+        "line": 143,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (currentByte < '0' || currentByte > '7'){",
+        "aftercode": "if (currentByte >= '0' && currentByte <= '7'){",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 34,
+        "line": 143,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (currentByte < '0' || currentByte > '7'){",
+        "aftercode": "if (currentByte < '0' || currentByte > '8'){",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 35,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 2) + (currentByte - '0');",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 36,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) - (currentByte - '0');",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 37,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + (currentByte - '1');",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 38,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result >> 3) + (currentByte - '0');",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 39,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + currentByte;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 40,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 4) + (currentByte - '0');",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 41,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) * (currentByte - '0');",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 42,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + ('0' - currentByte);",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 43,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 1) + (currentByte - '0');",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 44,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + (currentByte - '0') + 1;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 45,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + (currentByte - '0') - 1;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 46,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + (currentByte - '0') * 2;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 47,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + (currentByte - '0') / 2;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 48,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) | (currentByte - '0');",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 49,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) ^ (currentByte - '0');",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 50,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) & (currentByte - '0');",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 51,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) % (currentByte - '0');",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 52,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_17_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result + 3) + (currentByte - '0');",
+        "time out": true,
+        "survived": false
+    }
+]

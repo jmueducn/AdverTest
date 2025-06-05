@@ -1,0 +1,242 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 308,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "int pos = token.indexOf(\"=\");",
+        "aftercode": "int pos = token.lastIndexOf(\"=\");",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithMultipleEqualsSigns\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 308,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "int pos = token.indexOf(\"=\");",
+        "aftercode": "int pos = token.indexOf(\" \");",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithMultipleEqualsSigns\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 308,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "int pos = token.indexOf(\"=\");",
+        "aftercode": "int pos = 0;",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_DetectsMutatedOptionCheck\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnTrueForValidOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleEqualsSigns\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithMultipleEqualsSigns\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidConcatenatedOptions\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ShouldDetectSingleCharacterOption_WhenOptionExists\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = pos == -1 ? token.substring(0) : token.substring(1, pos);",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_DetectsMutatedOptionCheck\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnTrueForValidOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidConcatenatedOptions\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ShouldDetectSingleCharacterOption_WhenOptionExists\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = pos == -1 ? token.substring(2) : token.substring(1, pos);",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_DetectsMutatedOptionCheck\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnTrueForValidOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidConcatenatedOptions\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ShouldDetectSingleCharacterOption_WhenOptionExists\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = pos == -1 ? token.substring(1) : token.substring(0, pos);",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleEqualsSigns\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithMultipleEqualsSigns\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos+1);",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithMultipleEqualsSigns\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = pos != -1 ? token.substring(1) : token.substring(1, pos);",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_DetectsMutatedOptionCheck\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnTrueForValidOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithMultipleEqualsSigns\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidConcatenatedOptions\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ShouldDetectSingleCharacterOption_WhenOptionExists\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 310,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "if (options.hasShortOption(optName))",
+        "aftercode": "if (true)",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_DetectsMutatedOptionCheck\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnTrueForValidOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithMultipleEqualsSigns\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidConcatenatedOptions\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ShouldDetectSingleCharacterOption_WhenOptionExists\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 310,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "if (options.hasShortOption(optName))",
+        "aftercode": "if (false)",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 310,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "if (options.hasShortOption(optName))",
+        "aftercode": "if (options.hasShortOption(\"\"))",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithMultipleEqualsSigns\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 12,
+        "line": 310,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "if (options.hasShortOption(optName))",
+        "aftercode": "if (options.hasShortOption(optName.substring(0)))",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 13,
+        "line": 312,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return true;",
+        "aftercode": "return false;",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_DetectsMutatedOptionCheck\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnTrueForValidOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleEqualsSigns\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithMultipleEqualsSigns\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ShouldDetectSingleCharacterOption_WhenOptionExists\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 312,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return true;",
+        "aftercode": "return optName.length() > 0;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 15,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "aftercode": "return optName.length() > 0 || options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidConcatenatedOptions\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "aftercode": "return optName.length() > 1 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "aftercode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(1)));",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidConcatenatedOptions\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "aftercode": "return optName.length() > 0 && options.hasShortOption(optName);",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidConcatenatedOptions\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "aftercode": "return optName.length() >= 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 20,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "aftercode": "return optName.length() > 0 && true;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidConcatenatedOptions\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "aftercode": "return optName.length() > 0 && false;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidConcatenatedOptions\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 22,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "aftercode": "return true;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidConcatenatedOptions\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 23,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "aftercode": "return false;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidConcatenatedOptions\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 24,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "aftercode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(optName.length()-1)));",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithSpace_ShouldNotBeTreatedAsValueSeparator\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_NoValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_shouldReturnFalseForInvalidOption_whenMutated\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldDetectOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NullInput\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NonExistentOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OptionWithEmptyName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_WithEqualsSign_ShouldNotIncludeEqualsInOptionName\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidSingleOption_WithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOptionWithEmptyOptionName1\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidConcatenatedOptions\n",
+        "survived": false
+    }
+]

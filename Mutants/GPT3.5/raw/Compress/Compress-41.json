@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "line": 205,
+        "precode": "public ZipArchiveInputStream(final InputStream inputStream,",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "public ZipArchiveInputStream(final InputStream inputStream,"
+    },
+    {
+        "id": 2,
+        "line": 206,
+        "precode": "                                 final String encoding,",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "                                 final String encoding,"
+    },
+    {
+        "id": 3,
+        "line": 207,
+        "precode": "                                 final boolean useUnicodeExtraFields,",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "                                 final boolean useUnicodeExtraFields,"
+    },
+    {
+        "id": 4,
+        "line": 208,
+        "precode": "                                 final boolean allowStoredEntriesWithDataDescriptor) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "                                 final boolean allowStoredEntriesWithDataDescriptor) {"
+    },
+    {
+        "id": 5,
+        "line": 209,
+        "precode": "        this.encoding = encoding;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        this.encoding = null;"
+    },
+    {
+        "id": 6,
+        "line": 210,
+        "precode": "        zipEncoding = ZipEncodingHelper.getZipEncoding(encoding);",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        zipEncoding = null;"
+    },
+    {
+        "id": 7,
+        "line": 211,
+        "precode": "        this.useUnicodeExtraFields = useUnicodeExtraFields;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        this.useUnicodeExtraFields = false;"
+    },
+    {
+        "id": 8,
+        "line": 212,
+        "precode": "        in = new PushbackInputStream(inputStream, buf.capacity());",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        in = null;"
+    },
+    {
+        "id": 9,
+        "line": 213,
+        "precode": "        this.allowStoredEntriesWithDataDescriptor =",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        this.allowStoredEntriesWithDataDescriptor = false;"
+    },
+    {
+        "id": 10,
+        "line": 214,
+        "precode": "            allowStoredEntriesWithDataDescriptor;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            false;"
+    },
+    {
+        "id": 11,
+        "line": 216,
+        "precode": "        buf.limit(0);",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        buf.limit(1);"
+    },
+    {
+        "id": 12,
+        "line": 220,
+        "precode": "        boolean firstEntry = true;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        boolean firstEntry = false;"
+    },
+    {
+        "id": 13,
+        "line": 221,
+        "precode": "        if (closed || hitCentralDirectory) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        if (closed && hitCentralDirectory) {"
+    },
+    {
+        "id": 14,
+        "line": 247,
+        "precode": "            return null;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            return current.entry;"
+    },
+    {
+        "id": 15,
+        "line": 224,
+        "precode": "        if (current != null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        if (current == null) {"
+    },
+    {
+        "id": 16,
+        "line": 225,
+        "precode": "            closeEntry();",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            // closeEntry();"
+    },
+    {
+        "id": 17,
+        "line": 226,
+        "precode": "            firstEntry = false;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            firstEntry = true;"
+    },
+    {
+        "id": 18,
+        "line": 230,
+        "precode": "            if (firstEntry) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            if (!firstEntry) {"
+    },
+    {
+        "id": 19,
+        "line": 235,
+        "precode": "                readFirstLocalFileHeader(LFH_BUF);",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "                readFully(LFH_BUF);"
+    },
+    {
+        "id": 20,
+        "line": 237,
+        "precode": "                readFully(LFH_BUF);",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "                readFirstLocalFileHeader(LFH_BUF);"
+    },
+    {
+        "id": 21,
+        "line": 247,
+        "precode": "            return null;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            throw e;"
+    },
+    {
+        "id": 22,
+        "line": 243,
+        "precode": "        final ZipLong sig = new ZipLong(LFH_BUF);",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        final ZipLong sig = null;"
+    },
+    {
+        "id": 23,
+        "line": 244,
+        "precode": "        if (sig.equals(ZipLong.CFH_SIG) || sig.equals(ZipLong.AED_SIG)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        if (sig.equals(ZipLong.CFH_SIG) && sig.equals(ZipLong.AED_SIG)) {"
+    },
+    {
+        "id": 24,
+        "line": 245,
+        "precode": "            hitCentralDirectory = true;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            hitCentralDirectory = false;"
+    },
+    {
+        "id": 25,
+        "line": 246,
+        "precode": "            skipRemainderOfArchive();",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            // skipRemainderOfArchive();"
+    },
+    {
+        "id": 26,
+        "line": 247,
+        "precode": "            return null;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            return current.entry;"
+    },
+    {
+        "id": 27,
+        "line": 249,
+        "precode": "        if (!sig.equals(ZipLong.LFH_SIG)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        if (sig.equals(ZipLong.LFH_SIG)) {"
+    },
+    {
+        "id": 28,
+        "line": 250,
+        "precode": "            throw new ZipException(String.format(\"Unexpected record signature: 0X%X\", sig.getValue()));",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            return null;"
+    },
+    {
+        "id": 29,
+        "line": 253,
+        "precode": "        int off = WORD;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        int off = 0;"
+    },
+    {
+        "id": 30,
+        "line": 254,
+        "precode": "        current = new CurrentEntry();",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        current = null;"
+    },
+    {
+        "id": 31,
+        "line": 256,
+        "precode": "        final int versionMadeBy = ZipShort.getValue(LFH_BUF, off);",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        final int versionMadeBy = 0;"
+    },
+    {
+        "id": 32,
+        "line": 294,
+        "precode": "        off += SHORT;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        off += WORD;"
+    },
+    {
+        "id": 33,
+        "line": 258,
+        "precode": "        current.entry.setPlatform((versionMadeBy >> ZipFile.BYTE_SHIFT) & ZipFile.NIBLET_MASK);",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        current.entry.setPlatform(0);"
+    },
+    {
+        "id": 34,
+        "line": 260,
+        "precode": "        final GeneralPurposeBit gpFlag = GeneralPurposeBit.parse(LFH_BUF, off);",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        final GeneralPurposeBit gpFlag = null;"
+    },
+    {
+        "id": 35,
+        "line": 261,
+        "precode": "        final boolean hasUTF8Flag = gpFlag.usesUTF8ForNames();",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        final boolean hasUTF8Flag = false;"
+    },
+    {
+        "id": 36,
+        "line": 262,
+        "precode": "        final ZipEncoding entryEncoding = hasUTF8Flag ? ZipEncodingHelper.UTF8_ZIP_ENCODING : zipEncoding;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        final ZipEncoding entryEncoding = zipEncoding;"
+    },
+    {
+        "id": 37,
+        "line": 263,
+        "precode": "        current.hasDataDescriptor = gpFlag.usesDataDescriptor();",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        current.hasDataDescriptor = false;"
+    },
+    {
+        "id": 38,
+        "line": 264,
+        "precode": "        current.entry.setGeneralPurposeBit(gpFlag);",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        // current.entry.setGeneralPurposeBit(gpFlag);"
+    },
+    {
+        "id": 39,
+        "line": 294,
+        "precode": "        off += SHORT;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        off += WORD;"
+    },
+    {
+        "id": 40,
+        "line": 268,
+        "precode": "        current.entry.setMethod(ZipShort.getValue(LFH_BUF, off));",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        current.entry.setMethod(0);"
+    },
+    {
+        "id": 41,
+        "line": 294,
+        "precode": "        off += SHORT;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        off += WORD;"
+    },
+    {
+        "id": 42,
+        "line": 271,
+        "precode": "        final long time = ZipUtil.dosToJavaTime(ZipLong.getValue(LFH_BUF, off));",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        final long time = 0;"
+    },
+    {
+        "id": 43,
+        "line": 272,
+        "precode": "        current.entry.setTime(time);",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        // current.entry.setTime(time);"
+    },
+    {
+        "id": 44,
+        "line": 284,
+        "precode": "        off += WORD;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        off += SHORT;"
+    },
+    {
+        "id": 45,
+        "line": 275,
+        "precode": "        ZipLong size = null, cSize = null;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        ZipLong size = new ZipLong(0), cSize = new ZipLong(0);"
+    },
+    {
+        "id": 46,
+        "line": 276,
+        "precode": "        if (!current.hasDataDescriptor) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        if (current.hasDataDescriptor) {"
+    },
+    {
+        "id": 47,
+        "line": 277,
+        "precode": "            current.entry.setCrc(ZipLong.getValue(LFH_BUF, off));",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            current.entry.setCrc(0);"
+    },
+    {
+        "id": 48,
+        "line": 284,
+        "precode": "            off += WORD;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            off += SHORT;"
+    },
+    {
+        "id": 49,
+        "line": 280,
+        "precode": "            cSize = new ZipLong(LFH_BUF, off);",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            cSize = null;"
+    },
+    {
+        "id": 50,
+        "line": 284,
+        "precode": "            off += WORD;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            off += SHORT;"
+    },
+    {
+        "id": 51,
+        "line": 283,
+        "precode": "            size = new ZipLong(LFH_BUF, off);",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            size = null;"
+    },
+    {
+        "id": 52,
+        "line": 284,
+        "precode": "            off += WORD;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            off += SHORT;"
+    },
+    {
+        "id": 53,
+        "line": 286,
+        "precode": "            off += 3 * WORD;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "            off += 2 * WORD;"
+    },
+    {
+        "id": 54,
+        "line": 289,
+        "precode": "        final int fileNameLen = ZipShort.getValue(LFH_BUF, off);",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        final int fileNameLen = 0;"
+    },
+    {
+        "id": 55,
+        "line": 294,
+        "precode": "        off += SHORT;",
+        "filepath": "./defects4j_fixed/Compress/Compress_41_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveInputStream.java",
+        "aftercode": "        off += WORD;"
+    }
+]

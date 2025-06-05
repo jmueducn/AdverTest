@@ -1,0 +1,772 @@
+[
+    {
+        "id": 1,
+        "line": 982,
+        "precode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).sqrt();",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        return createComplex(1.0, 0.0).add(this.multiply(this)).sqrt();"
+    },
+    {
+        "id": 2,
+        "line": 982,
+        "precode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).sqrt();",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        return createComplex(1.0, 0.0).subtract(this.divide(this)).sqrt();"
+    },
+    {
+        "id": 3,
+        "line": 982,
+        "precode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).sqrt();",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).pow(2);"
+    },
+    {
+        "id": 4,
+        "line": 982,
+        "precode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).sqrt();",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        return createComplex(0.0, 1.0).subtract(this.multiply(this)).sqrt();"
+    },
+    {
+        "id": 5,
+        "line": 982,
+        "precode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).sqrt();",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        return createComplex(1.0, 1.0).subtract(this.multiply(this)).sqrt();"
+    },
+    {
+        "id": 6,
+        "line": 982,
+        "precode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).sqrt();",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        return createComplex(1.0, 0.0).subtract(this).sqrt();"
+    },
+    {
+        "id": 7,
+        "line": 982,
+        "precode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).sqrt();",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).sqrt();"
+    },
+    {
+        "id": 8,
+        "line": 982,
+        "precode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).sqrt();",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).abs();"
+    },
+    {
+        "id": 9,
+        "line": 982,
+        "precode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).sqrt();",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).log();"
+    },
+    {
+        "id": 10,
+        "line": 982,
+        "precode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).sqrt();",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        return createComplex(1.0, 0.0).subtract(this.multiply(this)).exp();"
+    },
+    {
+        "id": 11,
+        "line": 1018,
+        "precode": "        if (isNaN || Double.isInfinite(real)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (isNaN && Double.isInfinite(real)) {"
+    },
+    {
+        "id": 12,
+        "line": 1018,
+        "precode": "        if (isNaN || Double.isInfinite(real)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (isNaN || Double.isNaN(real)) {"
+    },
+    {
+        "id": 13,
+        "line": 1018,
+        "precode": "        if (isNaN || Double.isInfinite(real)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (isNaN || Double.isFinite(real)) {"
+    },
+    {
+        "id": 14,
+        "line": 1018,
+        "precode": "        if (isNaN || Double.isInfinite(real)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (isNaN) {"
+    },
+    {
+        "id": 15,
+        "line": 1018,
+        "precode": "        if (isNaN || Double.isInfinite(real)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (Double.isInfinite(real)) {"
+    },
+    {
+        "id": 16,
+        "line": 1018,
+        "precode": "        if (isNaN || Double.isInfinite(real)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (true) {"
+    },
+    {
+        "id": 17,
+        "line": 1018,
+        "precode": "        if (isNaN || Double.isInfinite(real)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (false) {"
+    },
+    {
+        "id": 18,
+        "line": 1018,
+        "precode": "        if (isNaN || Double.isInfinite(real)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (isNaN || !Double.isInfinite(real)) {"
+    },
+    {
+        "id": 19,
+        "line": 1018,
+        "precode": "        if (isNaN || Double.isInfinite(real)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (isNaN || Double.isInfinite(imaginary)) {"
+    },
+    {
+        "id": 20,
+        "line": 1018,
+        "precode": "        if (isNaN || Double.isInfinite(real)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (isNaN || Double.isInfinite(real) || Double.isInfinite(imaginary)) {"
+    },
+    {
+        "id": 21,
+        "line": 1021,
+        "precode": "        if (imaginary > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (imaginary >= 20.0) {"
+    },
+    {
+        "id": 22,
+        "line": 1021,
+        "precode": "        if (imaginary > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (imaginary > 10.0) {"
+    },
+    {
+        "id": 23,
+        "line": 1021,
+        "precode": "        if (imaginary > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (imaginary > 30.0) {"
+    },
+    {
+        "id": 24,
+        "line": 1021,
+        "precode": "        if (imaginary > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (imaginary < 20.0) {"
+    },
+    {
+        "id": 25,
+        "line": 1021,
+        "precode": "        if (imaginary > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (imaginary == 20.0) {"
+    },
+    {
+        "id": 26,
+        "line": 1021,
+        "precode": "        if (imaginary > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (real > 20.0) {"
+    },
+    {
+        "id": 27,
+        "line": 1021,
+        "precode": "        if (imaginary > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (imaginary > 20.0 && real > 0) {"
+    },
+    {
+        "id": 28,
+        "line": 1021,
+        "precode": "        if (imaginary > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (Math.abs(imaginary) > 20.0) {"
+    },
+    {
+        "id": 29,
+        "line": 1021,
+        "precode": "        if (imaginary > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (true) {"
+    },
+    {
+        "id": 30,
+        "line": 1021,
+        "precode": "        if (imaginary > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (false) {"
+    },
+    {
+        "id": 31,
+        "line": 1024,
+        "precode": "        if (imaginary < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (imaginary <= -20.0) {"
+    },
+    {
+        "id": 32,
+        "line": 1024,
+        "precode": "        if (imaginary < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (imaginary < -10.0) {"
+    },
+    {
+        "id": 33,
+        "line": 1024,
+        "precode": "        if (imaginary < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (imaginary < -30.0) {"
+    },
+    {
+        "id": 34,
+        "line": 1024,
+        "precode": "        if (imaginary < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (imaginary > -20.0) {"
+    },
+    {
+        "id": 35,
+        "line": 1024,
+        "precode": "        if (imaginary < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (imaginary == -20.0) {"
+    },
+    {
+        "id": 36,
+        "line": 1024,
+        "precode": "        if (imaginary < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (real < -20.0) {"
+    },
+    {
+        "id": 37,
+        "line": 1024,
+        "precode": "        if (imaginary < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (imaginary < -20.0 && real < 0) {"
+    },
+    {
+        "id": 38,
+        "line": 1024,
+        "precode": "        if (imaginary < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (Math.abs(imaginary) > 20.0) {"
+    },
+    {
+        "id": 39,
+        "line": 1024,
+        "precode": "        if (imaginary < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (true) {"
+    },
+    {
+        "id": 40,
+        "line": 1024,
+        "precode": "        if (imaginary < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        if (false) {"
+    },
+    {
+        "id": 41,
+        "line": 1028,
+        "precode": "        double real2 = 2.0 * real;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double real2 = 1.0 * real;"
+    },
+    {
+        "id": 42,
+        "line": 1028,
+        "precode": "        double real2 = 2.0 * real;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double real2 = 3.0 * real;"
+    },
+    {
+        "id": 43,
+        "line": 1028,
+        "precode": "        double real2 = 2.0 * real;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double real2 = 2.0 + real;"
+    },
+    {
+        "id": 44,
+        "line": 1028,
+        "precode": "        double real2 = 2.0 * real;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double real2 = 2.0 - real;"
+    },
+    {
+        "id": 45,
+        "line": 1028,
+        "precode": "        double real2 = 2.0 * real;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double real2 = real * 2.0;"
+    },
+    {
+        "id": 46,
+        "line": 1028,
+        "precode": "        double real2 = 2.0 * real;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double real2 = 2.0 * imaginary;"
+    },
+    {
+        "id": 47,
+        "line": 1028,
+        "precode": "        double real2 = 2.0 * real;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double real2 = real;"
+    },
+    {
+        "id": 48,
+        "line": 1029,
+        "precode": "        double imaginary2 = 2.0 * imaginary;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double imaginary2 = 1.0 * imaginary;"
+    },
+    {
+        "id": 49,
+        "line": 1029,
+        "precode": "        double imaginary2 = 2.0 * imaginary;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double imaginary2 = 3.0 * imaginary;"
+    },
+    {
+        "id": 50,
+        "line": 1029,
+        "precode": "        double imaginary2 = 2.0 * imaginary;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double imaginary2 = 2.0 + imaginary;"
+    },
+    {
+        "id": 51,
+        "line": 1029,
+        "precode": "        double imaginary2 = 2.0 * imaginary;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double imaginary2 = 2.0 - imaginary;"
+    },
+    {
+        "id": 52,
+        "line": 1029,
+        "precode": "        double imaginary2 = 2.0 * imaginary;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double imaginary2 = imaginary * 2.0;"
+    },
+    {
+        "id": 53,
+        "line": 1029,
+        "precode": "        double imaginary2 = 2.0 * imaginary;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double imaginary2 = 2.0 * real;"
+    },
+    {
+        "id": 54,
+        "line": 1029,
+        "precode": "        double imaginary2 = 2.0 * imaginary;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double imaginary2 = imaginary;"
+    },
+    {
+        "id": 55,
+        "line": 1030,
+        "precode": "        double d = FastMath.cos(real2) + FastMath.cosh(imaginary2);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "        double d = FastMath.cos(real2) - FastMath.cosh(imaginary2);"
+    },
+    {
+        "id": 56,
+        "line": 1018,
+        "precode": "if (isNaN || Double.isInfinite(real)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (isNaN && Double.isInfinite(real)) {"
+    },
+    {
+        "id": 57,
+        "line": 1018,
+        "precode": "if (isNaN || Double.isInfinite(real)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (Double.isInfinite(real)) {"
+    },
+    {
+        "id": 58,
+        "line": 1070,
+        "precode": "return NaN;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(Double.NaN, Double.NaN);"
+    },
+    {
+        "id": 59,
+        "line": 1021,
+        "precode": "if (imaginary > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (imaginary >= 20.0) {"
+    },
+    {
+        "id": 60,
+        "line": 1021,
+        "precode": "if (imaginary > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (imaginary > 10.0) {"
+    },
+    {
+        "id": 61,
+        "line": 1022,
+        "precode": "return createComplex(0.0, 1.0);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(1.0, 0.0);"
+    },
+    {
+        "id": 62,
+        "line": 1024,
+        "precode": "if (imaginary < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (imaginary <= -20.0) {"
+    },
+    {
+        "id": 63,
+        "line": 1024,
+        "precode": "if (imaginary < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (imaginary < -10.0) {"
+    },
+    {
+        "id": 64,
+        "line": 1025,
+        "precode": "return createComplex(0.0, -1.0);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(-1.0, 0.0);"
+    },
+    {
+        "id": 65,
+        "line": 1078,
+        "precode": "double real2 = 2.0 * real;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double real2 = 1.0 * real;"
+    },
+    {
+        "id": 66,
+        "line": 1078,
+        "precode": "double real2 = 2.0 * real;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double real2 = 3.0 * real;"
+    },
+    {
+        "id": 67,
+        "line": 1079,
+        "precode": "double imaginary2 = 2.0 * imaginary;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double imaginary2 = 1.0 * imaginary;"
+    },
+    {
+        "id": 68,
+        "line": 1079,
+        "precode": "double imaginary2 = 2.0 * imaginary;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double imaginary2 = 3.0 * imaginary;"
+    },
+    {
+        "id": 69,
+        "line": 1030,
+        "precode": "double d = FastMath.cos(real2) + FastMath.cosh(imaginary2);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double d = FastMath.cos(real2) - FastMath.cosh(imaginary2);"
+    },
+    {
+        "id": 70,
+        "line": 1030,
+        "precode": "double d = FastMath.cos(real2) + FastMath.cosh(imaginary2);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double d = FastMath.sin(real2) + FastMath.cosh(imaginary2);"
+    },
+    {
+        "id": 71,
+        "line": 1032,
+        "precode": "return createComplex(FastMath.sin(real2) / d,",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(FastMath.sin(real2) * d,"
+    },
+    {
+        "id": 72,
+        "line": 1032,
+        "precode": "return createComplex(FastMath.sin(real2) / d,",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(FastMath.cos(real2) / d,"
+    },
+    {
+        "id": 73,
+        "line": 1033,
+        "precode": "FastMath.sinh(imaginary2) / d);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "FastMath.sinh(imaginary2) * d);"
+    },
+    {
+        "id": 74,
+        "line": 1033,
+        "precode": "FastMath.sinh(imaginary2) / d);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "FastMath.cosh(imaginary2) / d);"
+    },
+    {
+        "id": 75,
+        "line": 1069,
+        "precode": "if (isNaN || Double.isInfinite(imaginary)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (isNaN && Double.isInfinite(imaginary)) {"
+    },
+    {
+        "id": 76,
+        "line": 1069,
+        "precode": "if (isNaN || Double.isInfinite(imaginary)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (Double.isInfinite(imaginary)) {"
+    },
+    {
+        "id": 77,
+        "line": 1070,
+        "precode": "return NaN;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(Double.NaN, Double.NaN);"
+    },
+    {
+        "id": 78,
+        "line": 1072,
+        "precode": "if (real > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (real >= 20.0) {"
+    },
+    {
+        "id": 79,
+        "line": 1072,
+        "precode": "if (real > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (real > 10.0) {"
+    },
+    {
+        "id": 80,
+        "line": 1073,
+        "precode": "return createComplex(1.0, 0.0);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(0.0, 1.0);"
+    },
+    {
+        "id": 81,
+        "line": 1075,
+        "precode": "if (real < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (real <= -20.0) {"
+    },
+    {
+        "id": 82,
+        "line": 1075,
+        "precode": "if (real < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (real < -10.0) {"
+    },
+    {
+        "id": 83,
+        "line": 1076,
+        "precode": "return createComplex(-1.0, 0.0);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(0.0, -1.0);"
+    },
+    {
+        "id": 84,
+        "line": 1078,
+        "precode": "double real2 = 2.0 * real;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double real2 = 1.0 * real;"
+    },
+    {
+        "id": 85,
+        "line": 1078,
+        "precode": "double real2 = 2.0 * real;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double real2 = 3.0 * real;"
+    },
+    {
+        "id": 86,
+        "line": 1079,
+        "precode": "double imaginary2 = 2.0 * imaginary;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double imaginary2 = 1.0 * imaginary;"
+    },
+    {
+        "id": 87,
+        "line": 1079,
+        "precode": "double imaginary2 = 2.0 * imaginary;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double imaginary2 = 3.0 * imaginary;"
+    },
+    {
+        "id": 88,
+        "line": 1080,
+        "precode": "double d = FastMath.cosh(real2) + FastMath.cos(imaginary2);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double d = FastMath.cosh(real2) - FastMath.cos(imaginary2);"
+    },
+    {
+        "id": 89,
+        "line": 1080,
+        "precode": "double d = FastMath.cosh(real2) + FastMath.cos(imaginary2);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double d = FastMath.sinh(real2) + FastMath.cos(imaginary2);"
+    },
+    {
+        "id": 90,
+        "line": 1082,
+        "precode": "return createComplex(FastMath.sinh(real2) / d,",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(FastMath.sinh(real2) * d,"
+    },
+    {
+        "id": 91,
+        "line": 1082,
+        "precode": "return createComplex(FastMath.sinh(real2) / d,",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(FastMath.cosh(real2) / d,"
+    },
+    {
+        "id": 92,
+        "line": 1083,
+        "precode": "FastMath.sin(imaginary2) / d);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "FastMath.sin(imaginary2) * d);"
+    },
+    {
+        "id": 93,
+        "line": 1083,
+        "precode": "FastMath.sin(imaginary2) / d);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "FastMath.cos(imaginary2) / d);"
+    },
+    {
+        "id": 94,
+        "line": 1018,
+        "precode": "if (isNaN || Double.isInfinite(real)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (isNaN) {"
+    },
+    {
+        "id": 95,
+        "line": 1021,
+        "precode": "if (imaginary > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (imaginary > 20.0 && real > 0) {"
+    },
+    {
+        "id": 96,
+        "line": 1024,
+        "precode": "if (imaginary < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (imaginary < -20.0 && real < 0) {"
+    },
+    {
+        "id": 97,
+        "line": 1078,
+        "precode": "double real2 = 2.0 * real;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double real2 = 2.0 + real;"
+    },
+    {
+        "id": 98,
+        "line": 1079,
+        "precode": "double imaginary2 = 2.0 * imaginary;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double imaginary2 = 2.0 + imaginary;"
+    },
+    {
+        "id": 99,
+        "line": 1030,
+        "precode": "double d = FastMath.cos(real2) + FastMath.cosh(imaginary2);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double d = FastMath.cos(real2) * FastMath.cosh(imaginary2);"
+    },
+    {
+        "id": 100,
+        "line": 1069,
+        "precode": "if (isNaN || Double.isInfinite(imaginary)) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (isNaN) {"
+    },
+    {
+        "id": 101,
+        "line": 1072,
+        "precode": "if (real > 20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (real > 20.0 && imaginary > 0) {"
+    },
+    {
+        "id": 102,
+        "line": 1075,
+        "precode": "if (real < -20.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "if (real < -20.0 && imaginary < 0) {"
+    },
+    {
+        "id": 103,
+        "line": 1078,
+        "precode": "double real2 = 2.0 * real;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double real2 = 2.0 + real;"
+    },
+    {
+        "id": 104,
+        "line": 1079,
+        "precode": "double imaginary2 = 2.0 * imaginary;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double imaginary2 = 2.0 + imaginary;"
+    },
+    {
+        "id": 105,
+        "line": 1080,
+        "precode": "double d = FastMath.cosh(real2) + FastMath.cos(imaginary2);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "double d = FastMath.cosh(real2) * FastMath.cos(imaginary2);"
+    },
+    {
+        "id": 106,
+        "line": 1070,
+        "precode": "return NaN;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 107,
+        "line": 1070,
+        "precode": "return NaN;",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 108,
+        "line": 1022,
+        "precode": "return createComplex(0.0, 1.0);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(1.0, 1.0);"
+    },
+    {
+        "id": 109,
+        "line": 1025,
+        "precode": "return createComplex(0.0, -1.0);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(-1.0, -1.0);"
+    },
+    {
+        "id": 110,
+        "line": 1073,
+        "precode": "return createComplex(1.0, 0.0);",
+        "filepath": "./defects4j_fixed/Math/Math_37_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "aftercode": "return createComplex(1.0, 1.0);"
+    }
+]

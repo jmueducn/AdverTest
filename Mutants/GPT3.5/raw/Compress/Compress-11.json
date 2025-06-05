@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "line": 197,
+        "precode": "public ArchiveInputStream createArchiveInputStream(final InputStream in)",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "public ArchiveInputStream createArchiveInputStream(final InputStream in, int dummy)"
+    },
+    {
+        "id": 2,
+        "line": 198,
+        "precode": "throws ArchiveException {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "throws Exception {"
+    },
+    {
+        "id": 3,
+        "line": 199,
+        "precode": "if (in == null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (in != null) {"
+    },
+    {
+        "id": 4,
+        "line": 200,
+        "precode": "throw new IllegalArgumentException(\"Stream must not be null.\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "throw new NullPointerException(\"Stream must not be null.\");"
+    },
+    {
+        "id": 5,
+        "line": 203,
+        "precode": "if (!in.markSupported()) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (in.markSupported()) {"
+    },
+    {
+        "id": 6,
+        "line": 204,
+        "precode": "throw new IllegalArgumentException(\"Mark is not supported.\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "throw new UnsupportedOperationException(\"Mark is not supported.\");"
+    },
+    {
+        "id": 7,
+        "line": 207,
+        "precode": "final byte[] signature = new byte[12];",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "final byte[] signature = new byte[11];"
+    },
+    {
+        "id": 8,
+        "line": 208,
+        "precode": "in.mark(signature.length);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "in.mark(signature.length + 1);"
+    },
+    {
+        "id": 9,
+        "line": 210,
+        "precode": "int signatureLength = in.read(signature);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "int signatureLength = in.read(signature, 0, 6);"
+    },
+    {
+        "id": 10,
+        "line": 235,
+        "precode": "in.reset();",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "// in.reset();"
+    },
+    {
+        "id": 11,
+        "line": 212,
+        "precode": "if (ZipArchiveInputStream.matches(signature, signatureLength)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (ZipArchiveInputStream.matches(signature, signatureLength + 1)) {"
+    },
+    {
+        "id": 12,
+        "line": 213,
+        "precode": "return new ZipArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new ZipArchiveInputStream(new BufferedInputStream(in));"
+    },
+    {
+        "id": 13,
+        "line": 214,
+        "precode": "} else if (JarArchiveInputStream.matches(signature, signatureLength)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "} if (JarArchiveInputStream.matches(signature, signatureLength)) {"
+    },
+    {
+        "id": 14,
+        "line": 215,
+        "precode": "return new JarArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new JarArchiveInputStream(in, true);"
+    },
+    {
+        "id": 15,
+        "line": 216,
+        "precode": "} else if (ArArchiveInputStream.matches(signature, signatureLength)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "} else if (ArArchiveInputStream.matches(signature, 0)) {"
+    },
+    {
+        "id": 16,
+        "line": 217,
+        "precode": "return new ArArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 17,
+        "line": 218,
+        "precode": "} else if (CpioArchiveInputStream.matches(signature, signatureLength)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "} else if (CpioArchiveInputStream.matches(signature, signatureLength - 1)) {"
+    },
+    {
+        "id": 18,
+        "line": 219,
+        "precode": "return new CpioArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new CpioArchiveInputStream(in, 1024);"
+    },
+    {
+        "id": 19,
+        "line": 223,
+        "precode": "final byte[] dumpsig = new byte[32];",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "final byte[] dumpsig = new byte[31];"
+    },
+    {
+        "id": 20,
+        "line": 224,
+        "precode": "in.mark(dumpsig.length);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "in.mark(dumpsig.length - 1);"
+    },
+    {
+        "id": 21,
+        "line": 225,
+        "precode": "signatureLength = in.read(dumpsig);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "signatureLength = in.read(dumpsig, 0, 16);"
+    },
+    {
+        "id": 22,
+        "line": 235,
+        "precode": "in.reset();",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "// in.reset();"
+    },
+    {
+        "id": 23,
+        "line": 227,
+        "precode": "if (DumpArchiveInputStream.matches(dumpsig, signatureLength)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (DumpArchiveInputStream.matches(dumpsig, 0)) {"
+    },
+    {
+        "id": 24,
+        "line": 228,
+        "precode": "return new DumpArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new DumpArchiveInputStream(in, \"UTF-8\");"
+    },
+    {
+        "id": 25,
+        "line": 232,
+        "precode": "final byte[] tarheader = new byte[512];",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "final byte[] tarheader = new byte[511];"
+    },
+    {
+        "id": 26,
+        "line": 233,
+        "precode": "in.mark(tarheader.length);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "in.mark(tarheader.length + 1);"
+    },
+    {
+        "id": 27,
+        "line": 234,
+        "precode": "signatureLength = in.read(tarheader);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "signatureLength = in.read(tarheader, 0, 256);"
+    },
+    {
+        "id": 28,
+        "line": 235,
+        "precode": "in.reset();",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "// in.reset();"
+    },
+    {
+        "id": 29,
+        "line": 236,
+        "precode": "if (TarArchiveInputStream.matches(tarheader, signatureLength)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (TarArchiveInputStream.matches(tarheader, 0)) {"
+    },
+    {
+        "id": 30,
+        "line": 244,
+        "precode": "return new TarArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new TarArchiveInputStream(in, \"UTF-8\");"
+    },
+    {
+        "id": 31,
+        "line": 240,
+        "precode": "if (signatureLength >= 512) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (signatureLength > 512) {"
+    },
+    {
+        "id": 32,
+        "line": 241,
+        "precode": "try {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "// try {"
+    },
+    {
+        "id": 33,
+        "line": 242,
+        "precode": "TarArchiveInputStream tais = new TarArchiveInputStream(new ByteArrayInputStream(tarheader));",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "TarArchiveInputStream tais = new TarArchiveInputStream(new ByteArrayInputStream(new byte[0]));"
+    },
+    {
+        "id": 34,
+        "line": 243,
+        "precode": "tais.getNextEntry();",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "// tais.getNextEntry();"
+    },
+    {
+        "id": 35,
+        "line": 244,
+        "precode": "return new TarArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 36,
+        "line": 245,
+        "precode": "} catch (Exception e) { // NOPMD",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "} catch (IOException e) { // NOPMD"
+    },
+    {
+        "id": 37,
+        "line": 252,
+        "precode": "throw new ArchiveException(\"Could not use reset and mark operations.\", e);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "throw new RuntimeException(\"Could not use reset and mark operations.\", e);"
+    },
+    {
+        "id": 38,
+        "line": 255,
+        "precode": "throw new ArchiveException(\"No Archiver found for the stream signature\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "throw new IllegalArgumentException(\"No Archiver found for the stream signature\");"
+    },
+    {
+        "id": 39,
+        "line": 199,
+        "precode": "if (in == null) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (in == null || !in.markSupported()) {"
+    },
+    {
+        "id": 40,
+        "line": 207,
+        "precode": "final byte[] signature = new byte[12];",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "byte[] signature = new byte[12];"
+    },
+    {
+        "id": 41,
+        "line": 210,
+        "precode": "int signatureLength = in.read(signature);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "int signatureLength = in.read(signature, 0, signature.length);"
+    },
+    {
+        "id": 42,
+        "line": 212,
+        "precode": "if (ZipArchiveInputStream.matches(signature, signatureLength)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (false && ZipArchiveInputStream.matches(signature, signatureLength)) {"
+    },
+    {
+        "id": 43,
+        "line": 214,
+        "precode": "} else if (JarArchiveInputStream.matches(signature, signatureLength)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "} else if (false && JarArchiveInputStream.matches(signature, signatureLength)) {"
+    },
+    {
+        "id": 44,
+        "line": 216,
+        "precode": "} else if (ArArchiveInputStream.matches(signature, signatureLength)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "} else if (false && ArArchiveInputStream.matches(signature, signatureLength)) {"
+    },
+    {
+        "id": 45,
+        "line": 218,
+        "precode": "} else if (CpioArchiveInputStream.matches(signature, signatureLength)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "} else if (false && CpioArchiveInputStream.matches(signature, signatureLength)) {"
+    },
+    {
+        "id": 46,
+        "line": 227,
+        "precode": "if (DumpArchiveInputStream.matches(dumpsig, signatureLength)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (false && DumpArchiveInputStream.matches(dumpsig, signatureLength)) {"
+    },
+    {
+        "id": 47,
+        "line": 236,
+        "precode": "if (TarArchiveInputStream.matches(tarheader, signatureLength)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (false && TarArchiveInputStream.matches(tarheader, signatureLength)) {"
+    },
+    {
+        "id": 48,
+        "line": 240,
+        "precode": "if (signatureLength >= 512) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "if (false && signatureLength >= 512) {"
+    },
+    {
+        "id": 49,
+        "line": 200,
+        "precode": "throw new IllegalArgumentException(\"Stream must not be null.\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "throw new IllegalArgumentException(\"Stream is null.\");"
+    },
+    {
+        "id": 50,
+        "line": 204,
+        "precode": "throw new IllegalArgumentException(\"Mark is not supported.\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "throw new IllegalArgumentException(\"Mark not supported.\");"
+    },
+    {
+        "id": 51,
+        "line": 213,
+        "precode": "return new ZipArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new ZipArchiveInputStream(in, \"UTF-8\");"
+    },
+    {
+        "id": 52,
+        "line": 215,
+        "precode": "return new JarArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new JarArchiveInputStream(in, false);"
+    },
+    {
+        "id": 53,
+        "line": 217,
+        "precode": "return new ArArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new ArArchiveInputStream(in, 1024);"
+    },
+    {
+        "id": 54,
+        "line": 219,
+        "precode": "return new CpioArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new CpioArchiveInputStream(in, \"UTF-8\");"
+    },
+    {
+        "id": 55,
+        "line": 228,
+        "precode": "return new DumpArchiveInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_11_fixed/src/main/java/org/apache/commons/compress/archivers/ArchiveStreamFactory.java",
+        "aftercode": "return new DumpArchiveInputStream(in, 1024);"
+    }
+]

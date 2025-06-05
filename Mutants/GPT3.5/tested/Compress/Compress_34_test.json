@@ -1,0 +1,182 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 133,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "int uidSize = trimLeadingZeroesForceMinLength(uid.toByteArray()).length;",
+        "aftercode": "int uidSize = 0;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsGIDLengthMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 133,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "int uidSize = trimLeadingZeroesForceMinLength(uid.toByteArray()).length;",
+        "aftercode": "int uidSize = trimLeadingZeroesForceMinLength(gid.toByteArray()).length;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 133,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "int uidSize = trimLeadingZeroesForceMinLength(uid.toByteArray()).length;",
+        "aftercode": "int uidSize = uid.toByteArray().length;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsGIDLengthMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 134,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "int gidSize = trimLeadingZeroesForceMinLength(gid.toByteArray()).length;",
+        "aftercode": "int gidSize = 0;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsGIDLengthMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 134,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "int gidSize = trimLeadingZeroesForceMinLength(gid.toByteArray()).length;",
+        "aftercode": "int gidSize = trimLeadingZeroesForceMinLength(uid.toByteArray()).length;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 134,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "int gidSize = trimLeadingZeroesForceMinLength(gid.toByteArray()).length;",
+        "aftercode": "int gidSize = gid.toByteArray().length;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsGIDLengthMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 137,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "return new ZipShort(3 + uidSize + gidSize);",
+        "aftercode": "return new ZipShort(uidSize + gidSize);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsGIDLengthMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 137,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "return new ZipShort(3 + uidSize + gidSize);",
+        "aftercode": "return new ZipShort(3);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsGIDLengthMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 137,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "return new ZipShort(3 + uidSize + gidSize);",
+        "aftercode": "return new ZipShort(3 + uidSize);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsGIDLengthMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 137,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "return new ZipShort(3 + uidSize + gidSize);",
+        "aftercode": "return new ZipShort(3 + gidSize);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsGIDLengthMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 137,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "return new ZipShort(3 + uidSize + gidSize);",
+        "aftercode": "return new ZipShort(uidSize);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsGIDLengthMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 137,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "return new ZipShort(3 + uidSize + gidSize);",
+        "aftercode": "return new ZipShort(gidSize);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsGIDLengthMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 137,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "return new ZipShort(3 + uidSize + gidSize);",
+        "aftercode": "return new ZipShort(3 * uidSize + gidSize);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsGIDLengthMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 137,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "return new ZipShort(3 + uidSize + gidSize);",
+        "aftercode": "return new ZipShort(3 + uidSize * gidSize);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsGIDLengthMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 137,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "return new ZipShort(3 + uidSize + gidSize);",
+        "aftercode": "return new ZipShort(3 - uidSize + gidSize);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsGIDLengthMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 137,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "return new ZipShort(3 + uidSize + gidSize);",
+        "aftercode": "return new ZipShort(3 + uidSize - gidSize);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsUntrimmedUid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLength_DetectsGIDLengthMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsUidGidMutation\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "return ZERO;",
+        "aftercode": "return new ZipShort(0);",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetCentralDirectoryLength\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Compress/Compress_34_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X7875_NewUnix.java",
+        "precode": "return ZERO;",
+        "aftercode": "return null;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMutant2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthWithDifferentUidGid\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetCentralDirectoryLength\n  - gentest.org.apache.commons.compress.archivers.zip.tests.X7875_NewUnixTest::testGetLocalFileDataLengthDetectsMultiplicationMutant\n",
+        "survived": false
+    }
+]

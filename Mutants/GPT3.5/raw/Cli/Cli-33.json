@@ -1,0 +1,352 @@
+[
+    {
+        "id": 1,
+        "line": 851,
+        "precode": "        int pos = findWrapPos(text, width, 0);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        int pos = findWrapPos(text, width, 1);"
+    },
+    {
+        "id": 2,
+        "line": 875,
+        "precode": "        if (pos == -1)",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        if (pos == 0)"
+    },
+    {
+        "id": 3,
+        "line": 855,
+        "precode": "            sb.append(rtrim(text));",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            sb.append(text);"
+    },
+    {
+        "id": 4,
+        "line": 887,
+        "precode": "        sb.append(rtrim(text.substring(0, pos))).append(defaultNewLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        sb.append(text.substring(0, pos))).append(defaultNewLine);"
+    },
+    {
+        "id": 5,
+        "line": 861,
+        "precode": "        if (nextLineTabStop >= width)",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        if (nextLineTabStop > width)"
+    },
+    {
+        "id": 6,
+        "line": 864,
+        "precode": "            nextLineTabStop = 1;",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            nextLineTabStop = 0;"
+    },
+    {
+        "id": 7,
+        "line": 868,
+        "precode": "        final String padding = createPadding(nextLineTabStop);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        final String padding = \"\";"
+    },
+    {
+        "id": 8,
+        "line": 872,
+        "precode": "            text = padding + text.substring(pos).trim();",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            text = padding + text.substring(pos);"
+    },
+    {
+        "id": 9,
+        "line": 873,
+        "precode": "            pos = findWrapPos(text, width, 0);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            pos = findWrapPos(text, width, 1);"
+    },
+    {
+        "id": 10,
+        "line": 875,
+        "precode": "            if (pos == -1)",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            if (pos <= 0)"
+    },
+    {
+        "id": 11,
+        "line": 877,
+        "precode": "                sb.append(text);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "                sb.append(text.trim());"
+    },
+    {
+        "id": 12,
+        "line": 882,
+        "precode": "            if ((text.length() > width) || (pos == nextLineTabStop - 1))",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            if ((text.length() >= width) || (pos == nextLineTabStop - 1))"
+    },
+    {
+        "id": 13,
+        "line": 884,
+        "precode": "                pos = width;",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "                pos = width - 1;"
+    },
+    {
+        "id": 14,
+        "line": 887,
+        "precode": "            sb.append(rtrim(text.substring(0, pos))).append(defaultNewLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            sb.append(text.substring(0, pos))).append(defaultNewLine);"
+    },
+    {
+        "id": 15,
+        "line": 902,
+        "precode": "            BufferedReader in = new BufferedReader(new StringReader(text));",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            BufferedReader in = new BufferedReader(new StringReader(text.trim()));"
+    },
+    {
+        "id": 16,
+        "line": 904,
+        "precode": "            boolean firstLine = true;",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            boolean firstLine = false;"
+    },
+    {
+        "id": 17,
+        "line": 905,
+        "precode": "            while ((line = in.readLine()) != null) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            while ((line = in.readLine()) == null) {"
+    },
+    {
+        "id": 18,
+        "line": 906,
+        "precode": "                if (!firstLine) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "                if (firstLine) {"
+    },
+    {
+        "id": 19,
+        "line": 907,
+        "precode": "                    sb.append(getNewLine());",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "                    sb.append(\" \");"
+    },
+    {
+        "id": 20,
+        "line": 909,
+        "precode": "                    firstLine = false;",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "                    firstLine = true;"
+    },
+    {
+        "id": 21,
+        "line": 911,
+        "precode": "                renderWrappedText(sb, width, nextLineTabStop, line);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "                renderWrappedText(sb, width + 1, nextLineTabStop, line);"
+    },
+    {
+        "id": 22,
+        "line": 913,
+        "precode": "        } catch (IOException e) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        } catch (Exception e) {"
+    },
+    {
+        "id": 23,
+        "line": 914,
+        "precode": "            // cannot happen",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            throw new RuntimeException(e);"
+    },
+    {
+        "id": 24,
+        "line": 851,
+        "precode": "        int pos = findWrapPos(text, width, 0);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        int pos = findWrapPos(text, width + 1, 0);"
+    },
+    {
+        "id": 25,
+        "line": 875,
+        "precode": "        if (pos == -1)",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        if (pos <= -1)"
+    },
+    {
+        "id": 26,
+        "line": 855,
+        "precode": "            sb.append(rtrim(text));",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            sb.append(rtrim(text + \" \"));"
+    },
+    {
+        "id": 27,
+        "line": 887,
+        "precode": "        sb.append(rtrim(text.substring(0, pos))).append(defaultNewLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        sb.append(rtrim(text.substring(0, pos))).append(\"\\n\");"
+    },
+    {
+        "id": 28,
+        "line": 861,
+        "precode": "        if (nextLineTabStop >= width)",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        if (nextLineTabStop == width)"
+    },
+    {
+        "id": 29,
+        "line": 864,
+        "precode": "            nextLineTabStop = 1;",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            nextLineTabStop = width;"
+    },
+    {
+        "id": 30,
+        "line": 868,
+        "precode": "        final String padding = createPadding(nextLineTabStop);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        final String padding = createPadding(nextLineTabStop + 1);"
+    },
+    {
+        "id": 31,
+        "line": 872,
+        "precode": "            text = padding + text.substring(pos).trim();",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            text = padding + text.substring(pos + 1).trim();"
+    },
+    {
+        "id": 32,
+        "line": 873,
+        "precode": "            pos = findWrapPos(text, width, 0);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            pos = findWrapPos(text, width - 1, 0);"
+    },
+    {
+        "id": 33,
+        "line": 875,
+        "precode": "            if (pos == -1)",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            if (pos < 0)"
+    },
+    {
+        "id": 34,
+        "line": 877,
+        "precode": "                sb.append(text);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "                sb.append(text + \" \");"
+    },
+    {
+        "id": 35,
+        "line": 882,
+        "precode": "            if ((text.length() > width) || (pos == nextLineTabStop - 1))",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            if ((text.length() > width) && (pos == nextLineTabStop - 1))"
+    },
+    {
+        "id": 36,
+        "line": 884,
+        "precode": "                pos = width;",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "                pos = width + 1;"
+    },
+    {
+        "id": 37,
+        "line": 887,
+        "precode": "            sb.append(rtrim(text.substring(0, pos))).append(defaultNewLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            sb.append(rtrim(text.substring(0, pos))).append(\"\");"
+    },
+    {
+        "id": 38,
+        "line": 902,
+        "precode": "            BufferedReader in = new BufferedReader(new StringReader(text));",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            BufferedReader in = new BufferedReader(new StringReader(\"\"));"
+    },
+    {
+        "id": 39,
+        "line": 904,
+        "precode": "            boolean firstLine = true;",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            boolean firstLine = !true;"
+    },
+    {
+        "id": 40,
+        "line": 905,
+        "precode": "            while ((line = in.readLine()) != null) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            while ((line = in.readLine()) != \"\") {"
+    },
+    {
+        "id": 41,
+        "line": 906,
+        "precode": "                if (!firstLine) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "                if (!(!firstLine)) {"
+    },
+    {
+        "id": 42,
+        "line": 907,
+        "precode": "                    sb.append(getNewLine());",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "                    sb.append(getNewLine() + \" \");"
+    },
+    {
+        "id": 43,
+        "line": 909,
+        "precode": "                    firstLine = false;",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "                    firstLine = !false;"
+    },
+    {
+        "id": 44,
+        "line": 911,
+        "precode": "                renderWrappedText(sb, width, nextLineTabStop, line);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "                renderWrappedText(sb, width, nextLineTabStop + 1, line);"
+    },
+    {
+        "id": 45,
+        "line": 913,
+        "precode": "        } catch (IOException e) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        } catch (IOException ignored) {"
+    },
+    {
+        "id": 46,
+        "line": 914,
+        "precode": "            // cannot happen",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            System.err.println(e);"
+    },
+    {
+        "id": 47,
+        "line": 851,
+        "precode": "        int pos = findWrapPos(text, width, 0);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        int pos = findWrapPos(text, width, width);"
+    },
+    {
+        "id": 48,
+        "line": 875,
+        "precode": "        if (pos == -1)",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        if (pos != -1)"
+    },
+    {
+        "id": 49,
+        "line": 855,
+        "precode": "            sb.append(rtrim(text));",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "            sb.append(rtrim(text) + \"\\n\");"
+    },
+    {
+        "id": 50,
+        "line": 887,
+        "precode": "        sb.append(rtrim(text.substring(0, pos))).append(defaultNewLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_33_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "        sb.append(rtrim(text.substring(0, pos))).append(\"\");"
+    }
+]

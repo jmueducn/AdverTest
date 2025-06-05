@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "line": 172,
+        "precode": "forward = interpolator.isForward();",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "forward = !interpolator.isForward();"
+    },
+    {
+        "id": 2,
+        "line": 173,
+        "precode": "final double t1 = interpolator.getCurrentTime();",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "final double t1 = t0;"
+    },
+    {
+        "id": 3,
+        "line": 174,
+        "precode": "final int    n  = Math.max(1, (int) Math.ceil(Math.abs(t1 - t0) / maxCheckInterval));",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "final int    n  = 1;"
+    },
+    {
+        "id": 4,
+        "line": 174,
+        "precode": "final int    n  = Math.max(1, (int) Math.ceil(Math.abs(t1 - t0) / maxCheckInterval));",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "final int    n  = (int) Math.ceil(Math.abs(t1 - t0) / maxCheckInterval);"
+    },
+    {
+        "id": 5,
+        "line": 175,
+        "precode": "final double h  = (t1 - t0) / n;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "final double h  = (t1 - t0) * n;"
+    },
+    {
+        "id": 6,
+        "line": 177,
+        "precode": "double ta = t0;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "double ta = t1;"
+    },
+    {
+        "id": 7,
+        "line": 178,
+        "precode": "double ga = g0;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "double ga = 0;"
+    },
+    {
+        "id": 8,
+        "line": 179,
+        "precode": "double tb = t0 + (interpolator.isForward() ? convergence : -convergence);",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "double tb = t0;"
+    },
+    {
+        "id": 9,
+        "line": 179,
+        "precode": "double tb = t0 + (interpolator.isForward() ? convergence : -convergence);",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "double tb = t0 + (interpolator.isForward() ? -convergence : convergence);"
+    },
+    {
+        "id": 10,
+        "line": 180,
+        "precode": "for (int i = 0; i < n; ++i) {",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "for (int i = 0; i <= n; ++i) {"
+    },
+    {
+        "id": 11,
+        "line": 183,
+        "precode": "tb += h;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "tb -= h;"
+    },
+    {
+        "id": 12,
+        "line": 184,
+        "precode": "interpolator.setInterpolatedTime(tb);",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "interpolator.setInterpolatedTime(ta);"
+    },
+    {
+        "id": 13,
+        "line": 185,
+        "precode": "final double gb = handler.g(tb, interpolator.getInterpolatedState());",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "final double gb = 0;"
+    },
+    {
+        "id": 14,
+        "line": 188,
+        "precode": "if (g0Positive ^ (gb >= 0)) {",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "if (g0Positive && (gb >= 0)) {"
+    },
+    {
+        "id": 15,
+        "line": 188,
+        "precode": "if (g0Positive ^ (gb >= 0)) {",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 16,
+        "line": 205,
+        "precode": "if (ga * gb > 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "if (ga * gb >= 0) {"
+    },
+    {
+        "id": 17,
+        "line": 205,
+        "precode": "if (ga * gb > 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 18,
+        "line": 199,
+        "precode": "final double epsilon = (forward ? 0.25 : -0.25) * convergence;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "final double epsilon = (forward ? -0.25 : 0.25) * convergence;"
+    },
+    {
+        "id": 19,
+        "line": 200,
+        "precode": "for (int k = 0; (k < 4) && (ga * gb > 0); ++k) {",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "for (int k = 0; (k < 4); ++k) {"
+    },
+    {
+        "id": 20,
+        "line": 201,
+        "precode": "ta += epsilon;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "ta -= epsilon;"
+    },
+    {
+        "id": 21,
+        "line": 202,
+        "precode": "interpolator.setInterpolatedTime(ta);",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "interpolator.setInterpolatedTime(tb);"
+    },
+    {
+        "id": 22,
+        "line": 203,
+        "precode": "ga = handler.g(ta, interpolator.getInterpolatedState());",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "ga = gb;"
+    },
+    {
+        "id": 23,
+        "line": 207,
+        "precode": "throw MathRuntimeException.createInternalError(null);",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "// throw MathRuntimeException.createInternalError(null);"
+    },
+    {
+        "id": 24,
+        "line": 212,
+        "precode": "increasing = gb >= ga;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "increasing = gb > ga;"
+    },
+    {
+        "id": 25,
+        "line": 212,
+        "precode": "increasing = gb >= ga;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "increasing = false;"
+    },
+    {
+        "id": 26,
+        "line": 227,
+        "precode": "solver.setAbsoluteAccuracy(convergence);",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "solver.setAbsoluteAccuracy(0);"
+    },
+    {
+        "id": 27,
+        "line": 228,
+        "precode": "solver.setMaximalIterationCount(maxIterationCount);",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "solver.setMaximalIterationCount(0);"
+    },
+    {
+        "id": 28,
+        "line": 229,
+        "precode": "final double root = (ta <= tb) ? solver.solve(f, ta, tb) : solver.solve(f, tb, ta);",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "final double root = solver.solve(f, ta, tb);"
+    },
+    {
+        "id": 29,
+        "line": 230,
+        "precode": "if ((Math.abs(root - ta) <= convergence) &&",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "if ((Math.abs(root - ta) <= 0) &&"
+    },
+    {
+        "id": 30,
+        "line": 231,
+        "precode": "(Math.abs(root - previousEventTime) <= convergence)) {",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "(Math.abs(root - previousEventTime) <= 0)) {"
+    },
+    {
+        "id": 31,
+        "line": 253,
+        "precode": "ta = tb;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "ta = root;"
+    },
+    {
+        "id": 32,
+        "line": 254,
+        "precode": "ga = gb;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "ga = 0;"
+    },
+    {
+        "id": 33,
+        "line": 235,
+        "precode": "} else if (Double.isNaN(previousEventTime) ||",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "} else if (true ||"
+    },
+    {
+        "id": 34,
+        "line": 236,
+        "precode": "(Math.abs(previousEventTime - root) > convergence)) {",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "(Math.abs(previousEventTime - root) > 0)) {"
+    },
+    {
+        "id": 35,
+        "line": 237,
+        "precode": "pendingEventTime = root;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "pendingEventTime = ta;"
+    },
+    {
+        "id": 36,
+        "line": 238,
+        "precode": "if (pendingEvent && (Math.abs(t1 - pendingEventTime) <= convergence)) {",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "if (pendingEvent || (Math.abs(t1 - pendingEventTime) <= convergence)) {"
+    },
+    {
+        "id": 37,
+        "line": 262,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 38,
+        "line": 247,
+        "precode": "pendingEvent = true;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "pendingEvent = false;"
+    },
+    {
+        "id": 39,
+        "line": 248,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 40,
+        "line": 253,
+        "precode": "ta = tb;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "ta = t0;"
+    },
+    {
+        "id": 41,
+        "line": 254,
+        "precode": "ga = gb;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "ga = g0;"
+    },
+    {
+        "id": 42,
+        "line": 260,
+        "precode": "pendingEvent     = false;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "pendingEvent     = true;"
+    },
+    {
+        "id": 43,
+        "line": 261,
+        "precode": "pendingEventTime = Double.NaN;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "pendingEventTime = t0;"
+    },
+    {
+        "id": 44,
+        "line": 262,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 45,
+        "line": 265,
+        "precode": "final Throwable cause = e.getCause();",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "final Throwable cause = null;"
+    },
+    {
+        "id": 46,
+        "line": 266,
+        "precode": "if ((cause != null) && (cause instanceof DerivativeException)) {",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "if ((cause == null) && (cause instanceof DerivativeException)) {"
+    },
+    {
+        "id": 47,
+        "line": 267,
+        "precode": "throw (DerivativeException) cause;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "throw new DerivativeException();"
+    },
+    {
+        "id": 48,
+        "line": 268,
+        "precode": "} else if ((cause != null) && (cause instanceof EventException)) {",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "} else if ((cause == null) && (cause instanceof EventException)) {"
+    },
+    {
+        "id": 49,
+        "line": 269,
+        "precode": "throw (EventException) cause;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "throw new EventException();"
+    },
+    {
+        "id": 50,
+        "line": 271,
+        "precode": "throw new EventException(e);",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "// throw new EventException(e);"
+    },
+    {
+        "id": 51,
+        "line": 174,
+        "precode": "final int    n  = Math.max(1, (int) Math.ceil(Math.abs(t1 - t0) / maxCheckInterval));",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "final int    n  = Math.max(0, (int) Math.ceil(Math.abs(t1 - t0) / maxCheckInterval));"
+    },
+    {
+        "id": 52,
+        "line": 175,
+        "precode": "final double h  = (t1 - t0) / n;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "final double h  = (t1 + t0) / n;"
+    },
+    {
+        "id": 53,
+        "line": 188,
+        "precode": "if (g0Positive ^ (gb >= 0)) {",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "if (false ^ (gb >= 0)) {"
+    },
+    {
+        "id": 54,
+        "line": 205,
+        "precode": "if (ga * gb > 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "if (ga + gb > 0) {"
+    },
+    {
+        "id": 55,
+        "line": 212,
+        "precode": "increasing = gb >= ga;",
+        "filepath": "./defects4j_fixed/Math/Math_78_fixed/src/main/java/org/apache/commons/math/ode/events/EventState.java",
+        "aftercode": "increasing = ga >= gb;"
+    }
+]

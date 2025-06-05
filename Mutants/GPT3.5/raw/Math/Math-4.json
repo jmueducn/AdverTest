@@ -1,0 +1,985 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 113,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "Vector3D v1D = line.intersection(subLine.line);",
+        "aftercode": "Vector3D v1D = null;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_NullSubLineParameter\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 113,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "Vector3D v1D = line.intersection(subLine.line);",
+        "aftercode": "Vector3D v1D = subLine.line.intersection(line);",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (v1D == null) {",
+        "aftercode": "if (v1D != null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (v1D == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 119,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "Location loc1 = remainingRegion.checkPoint(line.toSubSpace(v1D));",
+        "aftercode": "Location loc1 = Location.OUTSIDE;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 119,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "Location loc1 = remainingRegion.checkPoint(line.toSubSpace(v1D));",
+        "aftercode": "Location loc1 = remainingRegion.checkPoint(subLine.line.toSubSpace(v1D));",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 122,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "Location loc2 = subLine.remainingRegion.checkPoint(subLine.line.toSubSpace(v1D));",
+        "aftercode": "Location loc2 = Location.INSIDE;",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 122,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "Location loc2 = subLine.remainingRegion.checkPoint(subLine.line.toSubSpace(v1D));",
+        "aftercode": "Location loc2 = remainingRegion.checkPoint(subLine.line.toSubSpace(v1D));",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 124,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (includeEndPoints) {",
+        "aftercode": "if (!includeEndPoints) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 124,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (includeEndPoints) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 == Location.OUTSIDE) && (loc2 == Location.OUTSIDE)) ? v1D : null;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOutsideBothRegions\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 12,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 != Location.OUTSIDE) || (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n",
+        "survived": false,
+        "id": 12
+    },
+    {
+        "mutant_id:": 13,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "aftercode": "return v1D;",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOutsideBothRegions\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "mutant_id:": 14,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "aftercode": "return null;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 14
+    },
+    {
+        "mutant_id:": 15,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 != Location.INSIDE) && (loc2 != Location.INSIDE)) ? v1D : null;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOutsideBothRegions\n",
+        "survived": false,
+        "id": 15
+    },
+    {
+        "mutant_id:": 16,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 == Location.INSIDE) || (loc2 == Location.INSIDE)) ? v1D : null;",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 16
+    },
+    {
+        "mutant_id:": 17,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "aftercode": "return v1D;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOutsideBothRegions\n",
+        "survived": false,
+        "id": 17
+    },
+    {
+        "mutant_id:": 18,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "aftercode": "return null;",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n",
+        "survived": false,
+        "id": 18
+    },
+    {
+        "mutant_id:": 19,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (v1D == null) {",
+        "aftercode": "if (v1D == null && false) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 19
+    },
+    {
+        "mutant_id:": 20,
+        "line": 124,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (includeEndPoints) {",
+        "aftercode": "if (includeEndPoints && false) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 20
+    },
+    {
+        "mutant_id:": 21,
+        "line": 113,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "Vector3D v1D = line.intersection(subLine.line);",
+        "aftercode": "Vector3D v1D = null;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_NullSubLineParameter\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 21
+    },
+    {
+        "mutant_id:": 22,
+        "line": 113,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "Vector3D v1D = line.intersection(subLine.line);",
+        "aftercode": "Vector3D v1D = subLine.line.intersection(line);",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 22
+    },
+    {
+        "mutant_id:": 23,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (v1D == null) {",
+        "aftercode": "if (v1D != null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 23
+    },
+    {
+        "mutant_id:": 24,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (v1D == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 24
+    },
+    {
+        "mutant_id:": 25,
+        "line": 119,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "Location loc1 = remainingRegion.checkPoint(line.toSubSpace(v1D));",
+        "aftercode": "Location loc1 = Location.OUTSIDE;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 25
+    },
+    {
+        "mutant_id:": 26,
+        "line": 122,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "Location loc2 = subLine.remainingRegion.checkPoint(subLine.line.toSubSpace(v1D));",
+        "aftercode": "Location loc2 = Location.INSIDE;",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 26
+    },
+    {
+        "mutant_id:": 27,
+        "line": 124,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (includeEndPoints) {",
+        "aftercode": "if (!includeEndPoints) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 27
+    },
+    {
+        "mutant_id:": 28,
+        "line": 124,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (includeEndPoints) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 28
+    },
+    {
+        "mutant_id:": 29,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 == Location.OUTSIDE) && (loc2 == Location.OUTSIDE)) ? v1D : null;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOutsideBothRegions\n",
+        "survived": false,
+        "id": 29
+    },
+    {
+        "mutant_id:": 30,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 != Location.OUTSIDE) || (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n",
+        "survived": false,
+        "id": 30
+    },
+    {
+        "mutant_id:": 31,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "aftercode": "return v1D;",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOutsideBothRegions\n",
+        "survived": false,
+        "id": 31
+    },
+    {
+        "mutant_id:": 32,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "aftercode": "return null;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 32
+    },
+    {
+        "mutant_id:": 33,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 != Location.INSIDE) && (loc2 != Location.INSIDE)) ? v1D : null;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOutsideBothRegions\n",
+        "survived": false,
+        "id": 33
+    },
+    {
+        "mutant_id:": 34,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 == Location.INSIDE) || (loc2 == Location.INSIDE)) ? v1D : null;",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 34
+    },
+    {
+        "mutant_id:": 35,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "aftercode": "return v1D;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOutsideBothRegions\n",
+        "survived": false,
+        "id": 35
+    },
+    {
+        "mutant_id:": 36,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "aftercode": "return null;",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n",
+        "survived": false,
+        "id": 36
+    },
+    {
+        "mutant_id:": 37,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 == Location.OUTSIDE) || (loc2 == Location.OUTSIDE)) ? null : v1D;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 37
+    },
+    {
+        "mutant_id:": 38,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 != Location.INSIDE) || (loc2 != Location.INSIDE)) ? null : v1D;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 38
+    },
+    {
+        "mutant_id:": 39,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (v1D == null) {",
+        "aftercode": "if (v1D != null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 39
+    },
+    {
+        "mutant_id:": 40,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (v1D == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 40
+    },
+    {
+        "mutant_id:": 41,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 != Location.OUTSIDE) || (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n",
+        "survived": false,
+        "id": 41
+    },
+    {
+        "mutant_id:": 42,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 != Location.OUTSIDE) && (loc2 == Location.OUTSIDE)) ? v1D : null;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 42
+    },
+    {
+        "mutant_id:": 43,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 43
+    },
+    {
+        "mutant_id:": 44,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 == Location.INSIDE) || (loc2 == Location.INSIDE)) ? v1D : null;",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 44
+    },
+    {
+        "mutant_id:": 45,
+        "line": 113,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "Vector3D v1D = line.intersection(subLine.line);",
+        "aftercode": "Vector3D v1D = subLine.line.intersection(line);",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 45
+    },
+    {
+        "mutant_id:": 46,
+        "line": 113,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "Vector3D v1D = line.intersection(subLine.line);",
+        "aftercode": "Vector3D v1D = line.intersection(line);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_NullSubLineParameter\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 46
+    },
+    {
+        "mutant_id:": 47,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (v1D == null) {",
+        "aftercode": "if (v1D != null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 47
+    },
+    {
+        "mutant_id:": 48,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (v1D == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 48
+    },
+    {
+        "mutant_id:": 49,
+        "line": 118,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "// check location of point with respect to first sub-line",
+        "aftercode": "// check position of point with respect to first sub-line",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 49
+    },
+    {
+        "mutant_id:": 50,
+        "line": 118,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "// check location of point with respect to first sub-line",
+        "aftercode": "// check location of point regarding first sub-line",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 50
+    },
+    {
+        "mutant_id:": 51,
+        "line": 126,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "} else {",
+        "aftercode": "} {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 51
+    },
+    {
+        "mutant_id:": 52,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (v1D == null) {",
+        "aftercode": "if (v1D != null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 52
+    },
+    {
+        "mutant_id:": 53,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (v1D == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 53
+    },
+    {
+        "mutant_id:": 54,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 != Location.OUTSIDE) || (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n",
+        "survived": false,
+        "id": 54
+    },
+    {
+        "mutant_id:": 55,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 == Location.OUTSIDE) && (loc2 == Location.OUTSIDE)) ? v1D : null;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOutsideBothRegions\n",
+        "survived": false,
+        "id": 55
+    },
+    {
+        "mutant_id:": 56,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 != Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n",
+        "survived": false,
+        "id": 56
+    },
+    {
+        "mutant_id:": 57,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "aftercode": "return ((loc1 == Location.INSIDE) || (loc2 == Location.INSIDE)) ? v1D : null;",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_OneInsideOneOutside\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 57
+    },
+    {
+        "mutant_id:": 58,
+        "line": 118,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "// check location of point with respect to first sub-line",
+        "aftercode": "// verify location of point relative to first sub-line",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 58
+    },
+    {
+        "mutant_id:": 59,
+        "line": 118,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "// check location of point with respect to first sub-line",
+        "aftercode": "// examine point position concerning initial sub-line",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 59
+    },
+    {
+        "mutant_id:": 61,
+        "line": 128,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "}",
+        "aftercode": "} // dummy comment",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 60
+    },
+    {
+        "mutant_id:": 64,
+        "line": 131,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "public int add(int a, int b) { return a + b; }",
+        "aftercode": "public int add(int a, int b) { return a - b; }",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 61
+    },
+    {
+        "mutant_id:": 65,
+        "line": 131,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "public int add(int a, int b) { return a + b; }",
+        "aftercode": "public int add(int a, int b) { return a * b; }",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 62
+    },
+    {
+        "mutant_id:": 66,
+        "line": 113,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "Vector3D v1D = line.intersection(subLine.line);",
+        "aftercode": "Vector3D v1D = subLine.line.intersection(line);",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 63
+    },
+    {
+        "mutant_id:": 67,
+        "line": 113,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "Vector3D v1D = line.intersection(subLine.line);",
+        "aftercode": "Vector3D v1D = line.intersection(subLine.line);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 64
+    },
+    {
+        "mutant_id:": 68,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (v1D == null) {",
+        "aftercode": "if (v1D != null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 65
+    },
+    {
+        "mutant_id:": 69,
+        "line": 114,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "if (v1D == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionOnBoundaryIncludeEndpoints\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_IntersectionInsideBothRegions\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_MixedLocationsIncludeEndpoints\n",
+        "survived": false,
+        "id": 66
+    },
+    {
+        "mutant_id:": 72,
+        "line": 118,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "// check location of point with respect to first sub-line",
+        "aftercode": "// check position of point with respect to first sub-line",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 67
+    },
+    {
+        "mutant_id:": 73,
+        "line": 118,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "// check location of point with respect to first sub-line",
+        "aftercode": "// check location of point with respect to second sub-line",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 68
+    },
+    {
+        "mutant_id:": 79,
+        "line": 126,
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "precode": "} else {",
+        "aftercode": "} {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math3.geometry.euclidean.threed.tests.SubLineTest::testIntersection_RealWorldExample\n",
+        "survived": true,
+        "id": 69
+    },
+    {
+        "id": 70,
+        "line": 125,
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "return ((loc1 == Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;"
+    },
+    {
+        "id": 71,
+        "line": 125,
+        "precode": "return ((loc1 != Location.OUTSIDE) && (loc2 != Location.OUTSIDE)) ? v1D : null;",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "return ((loc1 != Location.OUTSIDE) || (loc2 != Location.OUTSIDE)) ? v1D : null;"
+    },
+    {
+        "id": 72,
+        "line": 127,
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "return ((loc1 == Location.INSIDE) || (loc2 == Location.INSIDE)) ? v1D : null;"
+    },
+    {
+        "id": 73,
+        "line": 127,
+        "precode": "return ((loc1 == Location.INSIDE) && (loc2 == Location.INSIDE)) ? v1D : null;",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "return ((loc1 != Location.INSIDE) && (loc2 != Location.INSIDE)) ? v1D : null;"
+    },
+    {
+        "id": 74,
+        "line": 118,
+        "precode": "// check location of point with respect to first sub-line",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "// check point location relative to first sub-line"
+    },
+    {
+        "id": 75,
+        "line": 118,
+        "precode": "// check location of point with respect to first sub-line",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "// check location of point with respect to primary sub-line"
+    },
+    {
+        "id": 76,
+        "line": 128,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "} // additional closing bracket"
+    },
+    {
+        "id": 77,
+        "line": 128,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 78,
+        "line": 131,
+        "precode": "public int add(int a, int b) { return a + b; }",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "public int add(int a, int b) { return a / b; }"
+    },
+    {
+        "id": 79,
+        "line": 131,
+        "precode": "public int add(int a, int b) { return a + b; }",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "public int add(int a, int b) { return a + b + 1; }"
+    },
+    {
+        "id": 80,
+        "line": 113,
+        "precode": "Vector3D v1D = line.intersection(subLine.line);",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "Vector3D v1D = subLine.line.intersection(line);"
+    },
+    {
+        "id": 81,
+        "line": 113,
+        "precode": "Vector3D v1D = line.intersection(subLine.line);",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "Vector3D v1D = line.intersection(null);"
+    },
+    {
+        "id": 82,
+        "line": 128,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 83,
+        "line": 128,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "} // dummy comment"
+    },
+    {
+        "id": 84,
+        "line": 129,
+        "precode": "return a + b;",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "return a - b;"
+    },
+    {
+        "id": 85,
+        "line": 129,
+        "precode": "return a + b;",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "return a * b;"
+    },
+    {
+        "id": 86,
+        "line": 131,
+        "precode": "return a + b;",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "return a - b;"
+    },
+    {
+        "id": 87,
+        "line": 131,
+        "precode": "return a + b;",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "return b + a;"
+    },
+    {
+        "id": 88,
+        "line": 113,
+        "precode": "Vector3D v1D = line.intersection(subLine.line);",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "Vector3D v1D = subLine.line.intersection(line);"
+    },
+    {
+        "id": 89,
+        "line": 113,
+        "precode": "Vector3D v1D = line.intersection(subLine.line);",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "Vector3D v1D = line.intersection(null);"
+    },
+    {
+        "id": 90,
+        "line": 114,
+        "precode": "if (v1D == null) {",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "if (v1D != null) {"
+    },
+    {
+        "id": 91,
+        "line": 114,
+        "precode": "if (v1D == null) {",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 92,
+        "line": 117,
+        "precode": "return a + b;",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "return a - b;"
+    },
+    {
+        "id": 93,
+        "line": 117,
+        "precode": "return a + b;",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "return a * b;"
+    },
+    {
+        "id": 94,
+        "line": 118,
+        "precode": "// check location of point with respect to first sub-line",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "// check position of point with respect to first sub-line"
+    },
+    {
+        "id": 95,
+        "line": 118,
+        "precode": "// check location of point with respect to first sub-line",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "// check location of point regarding first sub-line"
+    },
+    {
+        "id": 96,
+        "line": 119,
+        "precode": "Location loc1 = remainingRegion.checkPoint(line.toSubSpace(v1D));",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "Location loc1 = remainingRegion.checkPoint(v1D);"
+    },
+    {
+        "id": 97,
+        "line": 119,
+        "precode": "Location loc1 = remainingRegion.checkPoint(line.toSubSpace(v1D));",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "Location loc1 = line.toSubSpace(remainingRegion.checkPoint(v1D));"
+    },
+    {
+        "id": 98,
+        "line": 123,
+        "precode": "return a + b;",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "return a - b;"
+    },
+    {
+        "id": 99,
+        "line": 123,
+        "precode": "return a + b;",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "return a * b;"
+    },
+    {
+        "id": 100,
+        "line": 126,
+        "precode": "} else {",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "} else if (true) {"
+    },
+    {
+        "id": 101,
+        "line": 126,
+        "precode": "} else {",
+        "filepath": "./defects4j_fixed/Math/Math_4_fixed/src/main/java/org/apache/commons/math3/geometry/euclidean/threed/SubLine.java",
+        "aftercode": "} {"
+    }
+]

@@ -1,0 +1,182 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 173,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final double n1n2prod = n1 * n2;",
+        "aftercode": "final double n1n2prod = n1 + n2;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_LargeSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_UminEqualsEU\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 173,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final double n1n2prod = n1 * n2;",
+        "aftercode": "final double n1n2prod = n1 / n2;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_LargeSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_UminEqualsEU\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 176,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final double EU = n1n2prod / 2.0;",
+        "aftercode": "final double EU = n1n2prod * 2.0;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_LargeSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_UminEqualsEU\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 176,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final double EU = n1n2prod / 2.0;",
+        "aftercode": "final double EU = n1n2prod + 2.0;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_LargeSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_UminEqualsEU\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 177,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final double VarU = n1n2prod * (n1 + n2 + 1) / 12.0;",
+        "aftercode": "final double VarU = n1n2prod * (n1 - n2 - 1) / 12.0;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_LargeSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_UminEqualsEU\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 177,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final double VarU = n1n2prod * (n1 + n2 + 1) / 12.0;",
+        "aftercode": "final double VarU = n1n2prod * (n1 + n2 + 1) * 12.0;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 179,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final double z = (Umin - EU) / FastMath.sqrt(VarU);",
+        "aftercode": "final double z = (Umin + EU) / FastMath.sqrt(VarU);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_LargeSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_UminEqualsEU\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 179,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final double z = (Umin - EU) / FastMath.sqrt(VarU);",
+        "aftercode": "final double z = (Umin - EU) * FastMath.sqrt(VarU);",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 179,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final double z = (Umin - EU) / FastMath.sqrt(VarU);",
+        "aftercode": "final double z = (Umin - EU) / VarU;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 181,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final NormalDistribution standardNormal = new NormalDistribution(0, 1);",
+        "aftercode": "final NormalDistribution standardNormal = new NormalDistribution(1, 0);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_LargeSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_UminEqualsEU\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 181,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final NormalDistribution standardNormal = new NormalDistribution(0, 1);",
+        "aftercode": "final NormalDistribution standardNormal = new NormalDistribution(0, 2);",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 183,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "return 2 * standardNormal.cumulativeProbability(z);",
+        "aftercode": "return standardNormal.cumulativeProbability(z);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_LargeSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_UminEqualsEU\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 183,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "return 2 * standardNormal.cumulativeProbability(z);",
+        "aftercode": "return 3 * standardNormal.cumulativeProbability(z);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_LargeSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_UminEqualsEU\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 183,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "return 2 * standardNormal.cumulativeProbability(z);",
+        "aftercode": "return 2 + standardNormal.cumulativeProbability(z);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_LargeSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_UminEqualsEU\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 173,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final double n1n2prod = n1 * n2;",
+        "aftercode": "final double n1n2prod = n1 * n2 * 2;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_LargeSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_UminEqualsEU\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 176,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final double EU = n1n2prod / 2.0;",
+        "aftercode": "final double EU = n1n2prod / 1.0;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_LargeSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_UminEqualsEU\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 177,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final double VarU = n1n2prod * (n1 + n2 + 1) / 12.0;",
+        "aftercode": "final double VarU = n1n2prod * (n1 + n2) / 12.0;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 179,
+        "filepath": "./defects4j_fixed/Math/Math_30_fixed/src/main/java/org/apache/commons/math3/stat/inference/MannWhitneyUTest.java",
+        "precode": "final double z = (Umin - EU) / FastMath.sqrt(VarU);",
+        "aftercode": "final double z = (Umin - EU) / (VarU + 1);",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_TypicalCase\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeN1\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_SmallSamples\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ZeroN\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_OneSampleSizeOne\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_NegativeUmin\n  - gentest.org.apache.commons.math3.stat.inference.tests.MannWhitneyUTestTest::testCalculateAsymptoticPValue_ExtremeUmin\n",
+        "survived": false
+    }
+]

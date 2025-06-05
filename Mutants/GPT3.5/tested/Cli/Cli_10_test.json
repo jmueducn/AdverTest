@@ -1,0 +1,112 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 46,
+        "filepath": "./defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "this.options = options;",
+        "aftercode": "this.options = null;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsInitializesRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullShouldClearOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_ValidOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithValidRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsShouldCopyRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_ReturnsDefensiveCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_AfterSettingNull_ReturnsNull\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_AfterSetting_ReturnsSetOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_EmptyRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_NullOptions\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 46,
+        "filepath": "./defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "this.options = options;",
+        "aftercode": "this.options = new Options();",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsInitializesRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullShouldClearOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_ValidOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithValidRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsShouldCopyRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_ReturnsDefensiveCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_AfterSettingNull_ReturnsNull\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_AfterSetting_ReturnsSetOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_EmptyRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_NullOptions\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 46,
+        "filepath": "./defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "this.options = options;",
+        "aftercode": "// this.options = options;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsInitializesRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullShouldClearOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_ValidOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithValidRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsShouldCopyRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_ReturnsDefensiveCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_AfterSettingNull_ReturnsNull\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_AfterSetting_ReturnsSetOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_EmptyRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_NullOptions\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 47,
+        "filepath": "./defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "this.requiredOptions = new ArrayList(options.getRequiredOptions());",
+        "aftercode": "this.requiredOptions = null;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsInitializesRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullShouldClearOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_ValidOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithValidRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsShouldCopyRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_VerifyDeepCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_ReturnsDefensiveCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_EmptyRequiredOptions\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 47,
+        "filepath": "./defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "this.requiredOptions = new ArrayList(options.getRequiredOptions());",
+        "aftercode": "this.requiredOptions = options.getRequiredOptions();",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullShouldClearOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_VerifyDeepCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_ReturnsDefensiveCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_AfterSettingNull_ReturnsNull\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_NullOptions\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 47,
+        "filepath": "./defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "this.requiredOptions = new ArrayList(options.getRequiredOptions());",
+        "aftercode": "this.requiredOptions = new ArrayList();",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsInitializesRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_ValidOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithValidRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsShouldCopyRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_VerifyDeepCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_ReturnsDefensiveCopy\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 47,
+        "filepath": "./defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "this.requiredOptions = new ArrayList(options.getRequiredOptions());",
+        "aftercode": "// this.requiredOptions = new ArrayList(options.getRequiredOptions());",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsInitializesRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullShouldClearOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_ValidOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithValidRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsShouldCopyRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_VerifyDeepCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_ReturnsDefensiveCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_EmptyRequiredOptions\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 47,
+        "filepath": "./defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "this.requiredOptions = new ArrayList(options.getRequiredOptions());",
+        "aftercode": "this.requiredOptions = new ArrayList(options.getRequiredOptions().subList(0,0));",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsInitializesRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullShouldClearOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_ValidOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithValidRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsShouldCopyRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_VerifyDeepCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_ReturnsDefensiveCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_AfterSettingNull_ReturnsNull\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_NullOptions\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 46,
+        "filepath": "./defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "this.options = options;",
+        "aftercode": "this.options = options; this.requiredOptions = null;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullShouldClearOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_ReturnsDefensiveCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_AfterSettingNull_ReturnsNull\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_NullOptions\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 13,
+        "line": 47,
+        "filepath": "./defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "this.requiredOptions = new ArrayList(options.getRequiredOptions());",
+        "aftercode": "this.requiredOptions = new ArrayList(); this.requiredOptions.addAll(options.getRequiredOptions());",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullShouldClearOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_ReturnsDefensiveCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_AfterSettingNull_ReturnsNull\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_NullOptions\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 14,
+        "line": 46,
+        "filepath": "./defects4j_fixed/Cli/Cli_10_fixed/src/java/org/apache/commons/cli/Parser.java",
+        "precode": "this.options = options;",
+        "aftercode": "if (options != null) this.options = options;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullShouldClearOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptionsWithNullRequiredOptions\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_ReturnsDefensiveCopy\n  - gentest.org.apache.commons.cli.tests.ParserTest::testGetOptions_AfterSettingNull_ReturnsNull\n  - gentest.org.apache.commons.cli.tests.ParserTest::testSetOptions_NullOptions\n",
+        "survived": true
+    }
+]

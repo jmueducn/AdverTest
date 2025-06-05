@@ -1,0 +1,162 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 124,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "double v = Math.max(value, this.lowerBound);",
+        "aftercode": "double v = Math.min(value, this.lowerBound);",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant1\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant2\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant3\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant4\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant5\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant6\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant7\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant8\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant9\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant10\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant12\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectsMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_detectMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_MutantDetection\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 124,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "double v = Math.max(value, this.lowerBound);",
+        "aftercode": "double v = value;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant2\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant5\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant6\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant8\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant9\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant10\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectsMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "v = Math.min(v, this.upperBound);",
+        "aftercode": "v = Math.max(v, this.upperBound);",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant1\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant2\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant3\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant4\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant5\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant6\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant7\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant8\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant9\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant10\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant12\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectsMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_detectMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_MutantDetection\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "v = Math.min(v, this.upperBound);",
+        "aftercode": "v = this.upperBound;",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant2\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant3\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant4\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant5\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant6\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant7\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant8\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant9\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant10\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant12\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectsMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_detectMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_MutantDetection\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 4,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);",
+        "aftercode": "int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 128.0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 6,
+        "line": 4,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);",
+        "aftercode": "int g = (int) ((v - this.lowerBound) * 255.0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 7,
+        "line": 4,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);",
+        "aftercode": "int g = (int) ((this.upperBound - v) / (this.upperBound - this.lowerBound) * 255.0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 8,
+        "line": 4,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);",
+        "aftercode": "int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound));",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 9,
+        "line": 128,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "return new Color(g, g, g);",
+        "aftercode": "return new Color(255 - g, 255 - g, 255 - g);",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant1\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant2\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant3\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant4\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant5\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant6\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant7\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant8\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant9\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant10\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant12\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectsMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_detectMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_MutantDetection\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 128,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "return new Color(g, g, g);",
+        "aftercode": "return new Color(g, 0, 0);",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant1\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant2\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant3\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant4\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant5\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant6\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant7\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant8\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant9\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant10\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant12\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_detectMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_MutantDetection\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 128,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "return new Color(g, g, g);",
+        "aftercode": "return new Color(0, g, 0);",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant1\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant2\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant3\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant4\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant5\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant6\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant7\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant8\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant9\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant10\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant12\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_detectMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_MutantDetection\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 128,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "return new Color(g, g, g);",
+        "aftercode": "return new Color(0, 0, g);",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant1\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant2\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant3\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant4\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant5\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant6\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant7\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant8\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant9\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant10\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant12\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_detectMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_MutantDetection\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 128,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "return new Color(g, g, g);",
+        "aftercode": "return new Color(g / 2, g / 2, g / 2);",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant1\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant2\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant3\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant4\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant5\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant6\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant7\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant8\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant9\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant10\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant12\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_detectMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_MutantDetection\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 128,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "return new Color(g, g, g);",
+        "aftercode": "return new Color(g, g, 255);",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant2\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant3\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant4\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant5\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant6\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant7\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant8\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant9\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant10\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant12\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectsMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_detectMutant\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaint_MutantDetection\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 4,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 128.0);",
+        "aftercode": "int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 255.0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 16,
+        "line": 4,
+        "filepath": "./defects4j_fixed/Chart/Chart_24_fixed/source/org/jfree/chart/renderer/GrayPaintScale.java",
+        "precode": "int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 128.0);",
+        "aftercode": "int g = (int) ((v - this.lowerBound) / (this.upperBound - this.lowerBound) * 64.0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.renderer.tests.GrayPaintScaleTest::testGetPaintDetectMutant11\n",
+        "survived": true
+    }
+]

@@ -1,0 +1,374 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 302,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "if (!token.startsWith(\"-\") || token.length() == 1)",
+        "aftercode": "if (token.startsWith(\"-\") || token.length() == 1)",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NotStartingWithDash\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 302,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "if (!token.startsWith(\"-\") || token.length() == 1)",
+        "aftercode": "if (!token.startsWith(\"-\") && token.length() == 1)",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NotStartingWithDash\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_SingleDash\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 302,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "if (!token.startsWith(\"-\") || token.length() == 1)",
+        "aftercode": "if (!token.startsWith(\"+\") || token.length() == 1)",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": true,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 302,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "if (!token.startsWith(\"-\") || token.length() == 1)",
+        "aftercode": "if (!token.startsWith(\"-\") || token.length() != 1)",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_SingleDash\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 302,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "if (!token.startsWith(\"-\") || token.length() == 1)",
+        "aftercode": "if (!token.startsWith(\"-\") || token.length() == 2)",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_SingleDash\n",
+        "survived": true,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 302,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "if (!token.startsWith(\"-\") || token.length() == 1)",
+        "aftercode": "if (true)",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": true,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 302,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "if (!token.startsWith(\"-\") || token.length() == 1)",
+        "aftercode": "if (false)",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_NotStartingWithDash\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_SingleDash\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 308,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "int pos = token.indexOf(\"=\");",
+        "aftercode": "int pos = token.lastIndexOf(\"=\");",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n",
+        "survived": true,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 308,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "int pos = token.indexOf(\"=\");",
+        "aftercode": "int pos = token.indexOf(\"!\");",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 308,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "int pos = token.indexOf(\"=\");",
+        "aftercode": "int pos = 0;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_EmptyStringAfterDash\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 308,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "int pos = token.indexOf(\"=\");",
+        "aftercode": "int pos = -1;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 12,
+        "line": 308,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "int pos = token.indexOf(\"=\");",
+        "aftercode": "int pos = token.length();",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": false,
+        "id": 12
+    },
+    {
+        "mutant_id:": 13,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = pos != -1 ? token.substring(1) : token.substring(1, pos);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "mutant_id:": 14,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = pos == -1 ? token.substring(0) : token.substring(1, pos);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n",
+        "survived": false,
+        "id": 14
+    },
+    {
+        "mutant_id:": 15,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = pos == -1 ? token.substring(1) : token.substring(0, pos);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": false,
+        "id": 15
+    },
+    {
+        "mutant_id:": 16,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = pos == -1 ? token.substring(2) : token.substring(1, pos);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n",
+        "survived": false,
+        "id": 16
+    },
+    {
+        "mutant_id:": 17,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos+1);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": false,
+        "id": 17
+    },
+    {
+        "mutant_id:": 18,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = token.substring(1);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": false,
+        "id": 18
+    },
+    {
+        "mutant_id:": 19,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = token.substring(1, pos);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n",
+        "survived": false,
+        "id": 19
+    },
+    {
+        "mutant_id:": 20,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = \"\";",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": false,
+        "id": 20
+    },
+    {
+        "mutant_id:": 21,
+        "line": 310,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return options.hasShortOption(optName);",
+        "aftercode": "return true;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_EmptyStringAfterDash\n",
+        "survived": false,
+        "id": 21
+    },
+    {
+        "mutant_id:": 22,
+        "line": 310,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return options.hasShortOption(optName);",
+        "aftercode": "return false;",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": true,
+        "id": 22
+    },
+    {
+        "mutant_id:": 23,
+        "line": 310,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return options.hasShortOption(optName);",
+        "aftercode": "return !options.hasShortOption(optName);",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_EmptyStringAfterDash\n",
+        "survived": false,
+        "id": 23
+    },
+    {
+        "mutant_id:": 24,
+        "line": 310,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return options.hasShortOption(optName);",
+        "aftercode": "return options.hasShortOption(\"\");",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": false,
+        "id": 24
+    },
+    {
+        "mutant_id:": 25,
+        "line": 310,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return options.hasShortOption(optName);",
+        "aftercode": "return options.hasShortOption(optName + \"X\");",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": false,
+        "id": 25
+    },
+    {
+        "mutant_id:": 26,
+        "line": 310,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "return options.hasShortOption(optName);",
+        "aftercode": "return options.hasLongOption(optName);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": false,
+        "id": 26
+    },
+    {
+        "mutant_id:": 27,
+        "line": 302,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "if (!token.startsWith(\"-\") || token.length() == 1)",
+        "aftercode": "if (!token.startsWith(\"-\") || token.length() <= 1)",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n",
+        "survived": true,
+        "id": 27
+    },
+    {
+        "mutant_id:": 28,
+        "line": 302,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "if (!token.startsWith(\"-\") || token.length() == 1)",
+        "aftercode": "if (!token.startsWith(\"-\") || token.length() >= 1)",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithValue\n",
+        "survived": true,
+        "id": 28
+    },
+    {
+        "mutant_id:": 29,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = pos == 0 ? token.substring(1) : token.substring(1, pos);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n",
+        "survived": false,
+        "id": 29
+    },
+    {
+        "mutant_id:": 30,
+        "line": 309,
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "aftercode": "String optName = pos == 1 ? token.substring(1) : token.substring(1, pos);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithoutValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_OnlyEqualsSign\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_InvalidShortOptionWithValue\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_MultipleCharacterOption\n  - gentest.org.apache.commons.cli.tests.DefaultParserTest::testIsShortOption_ValidShortOptionWithoutValue\n",
+        "survived": false,
+        "id": 30
+    },
+    {
+        "id": 31,
+        "line": 302,
+        "precode": "if (!token.startsWith(\"-\") || token.length() == 1)",
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "if (!token.startsWith(\"-\") && token.length() == 1)"
+    },
+    {
+        "id": 32,
+        "line": 302,
+        "precode": "if (!token.startsWith(\"-\") || token.length() == 1)",
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "if (token.startsWith(\"-\") || token.length() == 1)"
+    },
+    {
+        "id": 33,
+        "line": 308,
+        "precode": "int pos = token.indexOf(\"=\");",
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "int pos = token.indexOf(\"=\", 1);"
+    },
+    {
+        "id": 34,
+        "line": 308,
+        "precode": "int pos = token.indexOf(\"=\");",
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "int pos = token.indexOf(\"==\");"
+    },
+    {
+        "id": 35,
+        "line": 310,
+        "precode": "return options.hasShortOption(optName);",
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 36,
+        "line": 310,
+        "precode": "return options.hasShortOption(optName);",
+        "filepath": "./defects4j_fixed/Cli/Cli_37_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return options.hasShortOption(\"\");"
+    }
+]

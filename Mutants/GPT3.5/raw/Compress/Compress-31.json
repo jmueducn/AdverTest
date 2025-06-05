@@ -1,0 +1,606 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 102,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "long    result = 0;",
+        "aftercode": "long    result = 1;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_EmptyAfterTrimming\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 102,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "long    result = 0;",
+        "aftercode": "long    result = -1;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_EmptyAfterTrimming\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 103,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "int     end = offset + length;",
+        "aftercode": "int     end = offset - length;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_EmptyAfterTrimming\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 103,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "int     end = offset + length;",
+        "aftercode": "int     end = offset;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_EmptyAfterTrimming\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 104,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "int     start = offset;",
+        "aftercode": "int     start = offset + 1;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 106,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (length < 2){",
+        "aftercode": "if (length <= 2){",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": true,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 106,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (length < 2){",
+        "aftercode": "if (length < 1){",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidLength\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 110,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (buffer[start] == 0) {",
+        "aftercode": "if (buffer[start] != 0) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 110,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (buffer[start] == 0) {",
+        "aftercode": "if (buffer[start] == '0') {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": true,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 111,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "return 0L;",
+        "aftercode": "return 1L;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": true,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 115,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "while (start < end){",
+        "aftercode": "while (start <= end){",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_EmptyAfterTrimming\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 12,
+        "line": 116,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (buffer[start] == ' '){",
+        "aftercode": "if (buffer[start] != ' '){",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_EmptyAfterTrimming\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 12
+    },
+    {
+        "mutant_id:": 13,
+        "line": 116,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (buffer[start] == ' '){",
+        "aftercode": "if (buffer[start] == 0){",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_EmptyAfterTrimming\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "mutant_id:": 14,
+        "line": 117,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "start++;",
+        "aftercode": "start--;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_EmptyAfterTrimming\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 14
+    },
+    {
+        "mutant_id:": 15,
+        "line": 117,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "start++;",
+        "aftercode": "start += 2;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 15
+    },
+    {
+        "mutant_id:": 16,
+        "line": 127,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "byte trailer = buffer[end - 1];",
+        "aftercode": "byte trailer = buffer[start];",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_EmptyAfterTrimming\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 16
+    },
+    {
+        "mutant_id:": 17,
+        "line": 128,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "while (start < end && (trailer == 0 || trailer == ' ')) {",
+        "aftercode": "while (start < end && (trailer != 0 && trailer != ' ')) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 17
+    },
+    {
+        "mutant_id:": 18,
+        "line": 128,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "while (start < end && (trailer == 0 || trailer == ' ')) {",
+        "aftercode": "while (start <= end && (trailer == 0 || trailer == ' ')) {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": true,
+        "id": 18
+    },
+    {
+        "mutant_id:": 19,
+        "line": 129,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "end--;",
+        "aftercode": "end++;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 19
+    },
+    {
+        "mutant_id:": 20,
+        "line": 130,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "trailer = buffer[end - 1];",
+        "aftercode": "trailer = buffer[end];",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 20
+    },
+    {
+        "mutant_id:": 21,
+        "line": 133,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "for ( ;start < end; start++) {",
+        "aftercode": "for ( ;start <= end; start++) {",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_EmptyAfterTrimming\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 21
+    },
+    {
+        "mutant_id:": 22,
+        "line": 133,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "for ( ;start < end; start++) {",
+        "aftercode": "for ( ;start < end; start--) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 22
+    },
+    {
+        "mutant_id:": 23,
+        "line": 134,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "final byte currentByte = buffer[start];",
+        "aftercode": "final byte currentByte = buffer[end];",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 23
+    },
+    {
+        "mutant_id:": 24,
+        "line": 136,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (currentByte < '0' && currentByte > '7'){",
+        "aftercode": "if (currentByte < '0' || currentByte > '7'){",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n",
+        "survived": false,
+        "id": 24
+    },
+    {
+        "mutant_id:": 25,
+        "line": 136,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (currentByte < '0' && currentByte > '7'){",
+        "aftercode": "if (currentByte <= '0' && currentByte >= '7'){",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": true,
+        "id": 25
+    },
+    {
+        "mutant_id:": 26,
+        "line": 136,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (currentByte < '0' && currentByte > '7'){",
+        "aftercode": "if (currentByte < '0' && currentByte > '9'){",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": true,
+        "id": 26
+    },
+    {
+        "mutant_id:": 27,
+        "line": 136,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (currentByte < '0' && currentByte > '7'){",
+        "aftercode": "if (currentByte < '1' && currentByte > '8'){",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": true,
+        "id": 27
+    },
+    {
+        "mutant_id:": 28,
+        "line": 136,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (currentByte < '0' && currentByte > '7'){",
+        "aftercode": "if (true){",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n",
+        "survived": false,
+        "id": 28
+    },
+    {
+        "mutant_id:": 29,
+        "line": 136,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "if (currentByte < '0' && currentByte > '7'){",
+        "aftercode": "if (false){",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": true,
+        "id": 29
+    },
+    {
+        "mutant_id:": 30,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 2) + (currentByte - '0');",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 30
+    },
+    {
+        "mutant_id:": 31,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 4) + (currentByte - '0');",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 31
+    },
+    {
+        "mutant_id:": 32,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) - (currentByte - '0');",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 32
+    },
+    {
+        "mutant_id:": 33,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + (currentByte - '1');",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 33
+    },
+    {
+        "mutant_id:": 34,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + currentByte;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 34
+    },
+    {
+        "mutant_id:": 35,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result >> 3) + (currentByte - '0');",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 35
+    },
+    {
+        "mutant_id:": 36,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) * (currentByte - '0');",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 36
+    },
+    {
+        "mutant_id:": 37,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) / (currentByte - '0');",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 37
+    },
+    {
+        "mutant_id:": 38,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + (currentByte - '0') + 1;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 38
+    },
+    {
+        "mutant_id:": 39,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + (currentByte - '0') - 1;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 39
+    },
+    {
+        "mutant_id:": 40,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + (currentByte - '0') * 2;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 40
+    },
+    {
+        "mutant_id:": 41,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3);",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 41
+    },
+    {
+        "mutant_id:": 42,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (currentByte - '0');",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 42
+    },
+    {
+        "mutant_id:": 43,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = 0;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 43
+    },
+    {
+        "mutant_id:": 44,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + ('0' - currentByte);",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 44
+    },
+    {
+        "mutant_id:": 45,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + (currentByte + '0');",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 45
+    },
+    {
+        "mutant_id:": 46,
+        "line": 140,
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "precode": "result = (result << 3) + (currentByte - '0');",
+        "aftercode": "result = (result << 3) + (currentByte - ' ');",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_WithOffset\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_SingleDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MixedTrailingChars\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NegativeNumber\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_ValidInput\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_NonOctalDigit\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_AllZeros\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_MaximumOctalValue\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_LeadingAndTrailingSpaces\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_TrailingNulls\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarUtilsTest::testParseOctal_InvalidCharacter\n",
+        "survived": false,
+        "id": 46
+    },
+    {
+        "id": 47,
+        "line": 106,
+        "precode": "if (length < 2){",
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "aftercode": "if (length < 1){"
+    },
+    {
+        "id": 48,
+        "line": 106,
+        "precode": "if (length < 2){",
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "aftercode": "if (length > 2){"
+    },
+    {
+        "id": 49,
+        "line": 110,
+        "precode": "if (buffer[start] == 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "aftercode": "if (buffer[start] != 0) {"
+    },
+    {
+        "id": 50,
+        "line": 110,
+        "precode": "if (buffer[start] == 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "aftercode": "if (buffer[0] == 0) {"
+    },
+    {
+        "id": 51,
+        "line": 111,
+        "precode": "return 0L;",
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "aftercode": "return -1L;"
+    },
+    {
+        "id": 52,
+        "line": 111,
+        "precode": "return 0L;",
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "aftercode": "return Long.MAX_VALUE;"
+    },
+    {
+        "id": 53,
+        "line": 128,
+        "precode": "while (start < end && (trailer == 0 || trailer == ' ')) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "aftercode": "while (start < end && (trailer != 0 && trailer != ' ')) {"
+    },
+    {
+        "id": 54,
+        "line": 128,
+        "precode": "while (start < end && (trailer == 0 || trailer == ' ')) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "aftercode": "while (start < end && (trailer == 0 && trailer == ' ')) {"
+    },
+    {
+        "id": 55,
+        "line": 136,
+        "precode": "if (currentByte < '0' && currentByte > '7'){",
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "aftercode": "if (currentByte < '0' || currentByte > '7'){"
+    },
+    {
+        "id": 56,
+        "line": 136,
+        "precode": "if (currentByte < '0' && currentByte > '7'){",
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "aftercode": "if (currentByte <= '0' && currentByte > '7'){"
+    },
+    {
+        "id": 57,
+        "line": 137,
+        "precode": "throw new IllegalArgumentException(",
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "aftercode": "throw new RuntimeException("
+    },
+    {
+        "id": 58,
+        "line": 137,
+        "precode": "throw new IllegalArgumentException(",
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "aftercode": "throw new NullPointerException("
+    },
+    {
+        "id": 59,
+        "line": 111,
+        "precode": "return 0L;",
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "aftercode": "return 1L;"
+    },
+    {
+        "id": 60,
+        "line": 111,
+        "precode": "return 0L;",
+        "filepath": "./defects4j_fixed/Compress/Compress_31_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarUtils.java",
+        "aftercode": "return -1L;"
+    }
+]

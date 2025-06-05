@@ -1,0 +1,627 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
+import org.junit.jupiter.api.Test;
+import org.mockito.junit.jupiter.MockitoExtension; 
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.jfree.chart.renderer.categoryboxandwhiskerrenderer
+package org.jfree.chart.renderer.category.tests
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Paint;
+import java.awt.Shape;
+import java.awt.Stroke;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Line2D;
+import java.awt.geom.Point2D;
+import java.awt.geom.Rectangle2D;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
+import org.jfree.chart.LegendItem;
+import org.jfree.chart.axis.CategoryAxis;
+import org.jfree.chart.axis.ValueAxis;
+import org.jfree.chart.entity.EntityCollection;
+import org.jfree.chart.event.RendererChangeEvent;
+import org.jfree.chart.plot.CategoryPlot;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.PlotRenderingInfo;
+import org.jfree.chart.renderer.Outlier;
+import org.jfree.chart.renderer.OutlierList;
+import org.jfree.chart.renderer.OutlierListCollection;
+import org.jfree.chart.util.PaintUtilities;
+import org.jfree.chart.util.PublicCloneable;
+import org.jfree.chart.util.RectangleEdge;
+import org.jfree.chart.util.SerialUtilities;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.statistics.BoxAndWhiskerCategoryDataset;
+ 
+public class BoxAndWhiskerRendererTest {
+    private final BoxAndWhiskerRenderer boxandwhiskerrenderer = new BoxAndWhiskerRenderer();
+
+    @Test
+    public void testGetArtifactPaint() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        
+        // Test when artifactPaint is null
+        assertNull(renderer.getArtifactPaint());
+        
+        // Test when artifactPaint is set
+        Paint testPaint = Color.RED;
+        renderer.setArtifactPaint(testPaint);
+        assertEquals(testPaint, renderer.getArtifactPaint());
+        
+        // Add more test cases as needed based on possible scenarios
+    }
+
+    @Test
+    public void testSetArtifactPaint_NullPaintArgument() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        IllegalArgumentException exception = assertThrows(
+            IllegalArgumentException.class, 
+            () -> renderer.setArtifactPaint(null)
+        );
+        assertEquals("Null 'paint' argument.", exception.getMessage());
+    }
+
+    @Test
+    public void testSetArtifactPaint_ValidPaint() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        renderer.setArtifactPaint(new Color(255, 0, 0)); // Example of valid paint object
+    
+        // Add assertions here to validate the state of the object after setting artifact paint
+    }
+
+    @Test
+        public void testGetFillBox_DefaultValueFalse() {
+            assertFalse(renderer.getFillBox());
+        }
+
+    @Test
+        public void testSetGetFillBox_True() {
+            renderer.setFillBox(true);
+            assertTrue(renderer.getFillBox());
+        }
+
+    @Test
+        public void testSetGetFillBox_False() {
+            renderer.setFillBox(false);
+            assertFalse(renderer.getFillBox());
+        }
+
+    @Test
+    public void testSetFillBox() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+    
+        // Test if fillBox is set to true
+        renderer.setFillBox(true);
+        assertTrue(renderer.isFillBox());
+    
+        // Test if fillBox is set to false
+        renderer.setFillBox(false);
+        assertFalse(renderer.isFillBox());
+    
+        // Test if fireChangeEvent() is invoked after setting fillBox to true
+        renderer.setFillBox(true);
+        // Add assertion here to verify the event was fired
+    
+        // Test if fireChangeEvent() is invoked after setting fillBox to false
+        renderer.setFillBox(false);
+        // Add assertion here to verify the event was fired
+    }
+
+    @Test
+    public void testGetItemMargin() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        
+        // Test for default itemMargin value (0.0)
+        assertEquals(0.0, renderer.getItemMargin(), 0.001);
+        
+        // Positive value scenario
+        renderer.setItemMargin(1.5); // Set itemMargin to 1.5
+        assertEquals(1.5, renderer.getItemMargin(), 0.001);
+        
+        // Negative value scenario
+        renderer.setItemMargin(-1.0); // Set itemMargin to -1.0
+        assertEquals(-1.0, renderer.getItemMargin(), 0.001);
+        
+        // Test for extreme edge cases
+        renderer.setItemMargin(Double.MAX_VALUE); // Set itemMargin to maximum double value
+        assertEquals(Double.MAX_VALUE, renderer.getItemMargin(), 0.001);
+        
+        renderer.setItemMargin(Double.MIN_VALUE); // Set itemMargin to minimum positive double value
+        assertEquals(Double.MIN_VALUE, renderer.getItemMargin(), 0.001);
+        
+        // Test for rounding errors
+        renderer.setItemMargin(0.1 + 0.2); // Set itemMargin to a value with a known rounding issue
+        assertEquals(0.3, renderer.getItemMargin(), 0.001);
+        
+        // Additional tests can be added based on specific requirements or conditions
+        
+    }
+
+    @Test
+    public void testSetItemMargin() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+    
+        // Typical case
+        double typicalMargin = 1.0;
+        renderer.setItemMargin(typicalMargin);
+        assertEquals(typicalMargin, renderer.getItemMargin());
+    
+        // Edge case: Zero margin
+        double zeroMargin = 0.0;
+        renderer.setItemMargin(zeroMargin);
+        assertEquals(zeroMargin, renderer.getItemMargin());
+    
+        // Edge case: Negative margin
+        double negativeMargin = -1.5;
+        renderer.setItemMargin(negativeMargin);
+        assertEquals(negativeMargin, renderer.getItemMargin());
+    
+        // Additional assertions can be added based on specific constraints or requirements
+    }
+
+    @Test
+    public void testGetMaximumBarWidth() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+    
+        // Test when maximumBarWidth is a positive value
+        renderer.setMaximumBarWidth(5.0);
+        assertEquals(5.0, renderer.getMaximumBarWidth(), 0.001);
+    
+        // Test when maximumBarWidth is a negative value
+        renderer.setMaximumBarWidth(-3.0);
+        assertEquals(-3.0, renderer.getMaximumBarWidth(), 0.001);
+    
+        // Test when maximumBarWidth is zero
+        renderer.setMaximumBarWidth(0.0);
+        assertEquals(0.0, renderer.getMaximumBarWidth(), 0.001);
+    
+        // Test when maximumBarWidth is a large value
+        renderer.setMaximumBarWidth(1000.0);
+        assertEquals(1000.0, renderer.getMaximumBarWidth(), 0.001);
+        
+        // Test when maximumBarWidth is a decimal value
+        renderer.setMaximumBarWidth(4.23);
+        assertEquals(4.23, renderer.getMaximumBarWidth(), 0.001);
+    
+        // Test equality when setting and getting maximumBarWidth
+        double maxBarWidth = 7.5;
+        renderer.setMaximumBarWidth(maxBarWidth);
+        assertEquals(maxBarWidth, renderer.getMaximumBarWidth(), 0.001);
+    }
+
+    @Test
+    public void testSetMaximumBarWidth_SetsToValidValue_FiresChangeEvent() {
+        // Given
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        
+        // When
+        renderer.setMaximumBarWidth(0.5);
+        
+        // Then
+        assertEquals(0.5, renderer.getMaximumBarWidth(), 0.001);
+        // You may need to implement the fireChangeEvent method in the BoxAndWhiskerRenderer class for proper testing
+    }
+
+    @Test
+    public void testIsMeanVisible() {
+        // Test when meanVisible is true
+        BoxAndWhiskerRenderer renderer1 = new BoxAndWhiskerRenderer();
+        renderer1.setMeanVisible(true);
+        assertTrue(renderer1.isMeanVisible());
+    
+        // Test when meanVisible is false
+        BoxAndWhiskerRenderer renderer2 = new BoxAndWhiskerRenderer();
+        renderer2.setMeanVisible(false);
+        assertFalse(renderer2.isMeanVisible());
+    
+        // Testing for edge cases (if applicable)
+        // Add additional test cases here if needed
+    }
+
+    @Test 
+    public void testSetMeanVisible_WhenAlreadyVisible() 
+    { 
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+    
+        // Scenario: Given meanVisible is already set to true
+        // Expected: No change should occur
+        renderer.setMeanVisible(true);
+        assertEquals(true, renderer.getMeanVisible());
+    }
+
+    @Test 
+    public void testSetMeanVisible_WhenNotVisible() 
+    { 
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+    
+        // Scenario: Given meanVisible is set to false
+        // Expected: meanVisible should be set to true
+        renderer.setMeanVisible(false);
+        assertEquals(true, renderer.getMeanVisible());
+    }
+
+    @Test 
+    public void testSetMeanVisible_WhenVisible() 
+    { 
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+    
+        // Scenario: Given meanVisible is set to false
+        // Expected: meanVisible should remain true
+        renderer.setMeanVisible(false); // Start with false
+        renderer.setMeanVisible(true); // Set to true
+        assertEquals(true, renderer.getMeanVisible());
+    }
+
+    @Test 
+    public void testSetMeanVisible_NullCheck() 
+    { 
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+    
+        // Scenario: Passing null to setMeanVisible method
+        // Expected: No change should occur
+        renderer.setMeanVisible(null);
+        assertEquals(false, renderer.getMeanVisible());
+    }
+
+    @Test
+    public void testIsMedianVisible_True() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        renderer.setMedianVisible(true);
+        assertTrue(renderer.isMedianVisible());
+    }
+
+    @Test
+    public void testIsMedianVisible_False() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        renderer.setMedianVisible(false);
+        assertFalse(renderer.isMedianVisible());
+    }
+
+    @Test
+    public void testIsMedianVisible_DefaultValue() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        assertFalse(renderer.isMedianVisible());
+    }
+
+    @Test
+        public void testSetMedianVisible_True() {
+            BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+            renderer.setMedianVisible(true);
+            assertTrue(renderer.isMedianVisible());
+        }
+
+    @Test
+        public void testSetMedianVisible_False() {
+            BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+            renderer.setMedianVisible(false);
+            assertFalse(renderer.isMedianVisible());
+        }
+
+    @Test
+    public void testGetLegendItem() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer(); // Instantiate the class
+    
+        // Test for null plot
+        CategoryPlot plot = null;
+        renderer.setPlot(plot);
+        assertNull("Should return null if CategoryPlot is null", renderer.getLegendItem());
+    
+        // Test for series not visible
+        renderer.setSeriesVisible(0, false);
+        renderer.setSeriesVisibleInLegend(0, true);
+        assertNull("Should return null if series is not visible", renderer.getLegendItem());
+    
+        // Test for series not visible in legend
+        renderer.setSeriesVisible(0, true);
+        renderer.setSeriesVisibleInLegend(0, false);
+        assertNull("Should return null if series is not visible in legend", renderer.getLegendItem());
+    
+        // Test with a valid series
+        renderer.setSeriesVisible(0, true);
+        renderer.setSeriesVisibleInLegend(0, true);
+        LegendItem result = renderer.getLegendItem(); // Get the result
+    
+        assertNotNull("LegendItem should not be null for a valid series", result);
+        assertEquals("Label should be as expected", "Series 1", result.getLabel());
+        // Add more assertions here based on the LegendItem properties being set
+    }
+
+    @Test
+    public void testInitialise_TypicalValues() {
+        CategoryItemRendererState state = new CategoryItemRendererState();
+        
+        // Prepare required parameters
+        Graphics2D g2 = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB).createGraphics();
+        Rectangle2D dataArea = new Rectangle2D.Double(10, 10, 100, 100);
+        CategoryPlot plot = new CategoryPlot();
+        CategoryDataset dataset = new DefaultCategoryDataset();
+        ChartRenderingInfo info = new ChartRenderingInfo();
+        
+        // Execute the method
+        state = new BoxAndWhiskerRenderer().initialise(g2, dataArea, plot, dataset, info);
+        
+        // Test expected outcomes
+        assertNotNull(state); // Check if state is not null
+        
+        // Test additional assertions or scenarios based on the method functionality
+        // You can add more assertions to cover more specific cases and edge scenarios
+        
+        // Clean up or necessary post-testing steps
+    }
+
+    @Test
+    public void testDrawItem_ValidData() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        Plot plot = new Plot();
+        Graphics2D g2 = new Graphics2D();
+        ItemRendererState state = new ItemRendererState();
+        Rectangle2D dataArea = new Rectangle2D();
+        CategoryPlot categoryPlot = new CategoryPlot();
+        CategoryDataset dataset = new BoxAndWhiskerCategoryDatasetImpl();
+        int row = 0;
+        int column = 0;
+        boolean selected = false;
+        int pass = 0;
+    
+        // Test for valid data scenario when item is visible and dataset is BoxAndWhiskerCategoryDataset
+        renderer.setItemVisible(true);
+        assertEquals(PlotOrientation.HORIZONTAL, plot.getOrientation());
+        assertEquals(null, renderer.drawItem(g2, state, dataArea, categoryPlot, null, null, dataset, row, column, selected, pass));
+    
+        plot.setOrientation(PlotOrientation.VERTICAL);
+        assertEquals(null, renderer.drawItem(g2, state, dataArea, categoryPlot, null, null, dataset, row, column, selected, pass));
+    
+        // Add more test cases for different scenarios and edge cases
+        // Test for when item is not visible
+        renderer.setItemVisible(false);
+        assertEquals(null, renderer.drawItem(g2, state, dataArea, categoryPlot, null, null, dataset, row, column, selected, pass));
+    
+        // Test for when dataset is not BoxAndWhiskerCategoryDataset
+        dataset = new CategoryDatasetImpl(); // not BoxAndWhiskerCategoryDataset
+        assertThrows(IllegalArgumentException.class, () -> renderer.drawItem(g2, state, dataArea, categoryPlot, null, null, dataset, row, column, selected, pass));
+    }
+
+    @Test
+    public void testDrawHorizontalItem() {
+        // Prepare the necessary test data and objects
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        BoxAndWhiskerCategoryDataset dataset = new BoxAndWhiskerCategoryDatasetMock(); // Mock dataset for testing
+        
+        // Setup required objects for drawing
+        CategoryPlot plot = new CategoryPlot();
+        ChartRenderingInfo info = new ChartRenderingInfo();
+        Graphics2D g2 = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB).createGraphics();
+        RectangleEdge location = RectangleEdge.BOTTOM;
+        PlotOrientation orientation = PlotOrientation.HORIZONTAL;
+        
+        // Method logic testing
+        int rowCount = 2; // Sample row count
+        int columnCount = 3; // Sample column count
+        for (int row = 0; row < rowCount; row++) {
+            for (int column = 0; column < columnCount; column++) {
+                renderer.drawHorizontalItem(g2, renderer, plot, dataset, row, column,
+                        new Rectangle(0, 0, 100, 100), info, orientation);
+                // Add your assertions here to validate the drawing process
+                assertNotNull(plot.getDataset());
+                assertNotNull(plot.getRenderer());
+                assertEquals(100, plot.getOrientation().getAngle());
+            }
+        }
+    }
+
+    @Test
+    public void testDrawVerticalItem_WithTypicalValues() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        
+        // Setting up necessary variables
+        BoxAndWhiskerCategoryDataset bawDataset = mock(BoxAndWhiskerCategoryDataset.class);
+        Graphics2D g2 = mock(Graphics2D.class);
+        Rectangle2D dataArea = new Rectangle2D.Double(0, 0, 100, 100);
+        CategoryPlot plot = mock(CategoryPlot.class);
+        CategoryAxis domainAxis = mock(CategoryAxis.class);
+        ValueAxis rangeAxis = mock(ValueAxis.class);
+        int column = 0;
+        int row = 0;
+        BarRendererState state = mock(BarRendererState.class);
+        
+        when(plot.getDomainAxisEdge()).thenReturn(RectangleEdge.BOTTOM);
+        when(plot.getRangeAxisEdge()).thenReturn(RectangleEdge.LEFT);
+        when(domainAxis.getCategoryEnd(eq(column), anyInt(), eq(dataArea), eq(RectangleEdge.BOTTOM))).thenReturn(10.0);
+        when(domainAxis.getCategoryStart(eq(column), anyInt(), eq(dataArea), eq(RectangleEdge.BOTTOM))).thenReturn(0.0);
+        when(rangeAxis.valueToJava2D(anyDouble(), eq(dataArea), eq(RectangleEdge.LEFT))).thenReturn(50.0);
+    
+        // Test case based on typical values
+        // Add more test cases based on different scenarios and edge cases
+        // Ensure to cover all the different code paths
+        // Use appropriate assertions to validate the outcomes
+    
+        // Example assertions:
+        // assertEquals(expectedValue, actualValue);
+        // assertTrue(condition);
+    
+        // assertEquals(..., ...);
+    
+    }
+
+    @Test
+    public void testDrawEllipse_TypicalValues() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        Ellipse2D dot = new Ellipse2D.Double(10.0, 20.0, 30.0, 30.0); // Example values for illustration
+        Graphics2D g = createGraphics(); // You should implement this method to create a Graphics2D instance for testing
+    
+        renderer.drawEllipse(dot, g);
+    
+        // Add assertions here to validate the expected outcome of the drawEllipse method
+        // For example, you can assert that the ellipse is drawn at the correct position and size
+    }
+
+    @Test
+    public void testDrawEllipse_EdgeCases() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        Ellipse2D dot = new Ellipse2D.Double(0.0, 0.0, 0.0, 0.0); // Edge case values for illustration
+        Graphics2D g = createGraphics(); // You should implement this method to create a Graphics2D instance for testing
+    
+        renderer.drawEllipse(dot, g);
+    
+        // Add assertions here to validate edge cases for the drawEllipse method
+        // Make sure to test cases such as zero radius, negative values, etc.
+    }
+
+    @Test
+    public void testDrawEllipse_Exceptions() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        Ellipse2D dot = null;
+        Graphics2D g = createGraphics(); // You should implement this method to create a Graphics2D instance for testing
+    
+        // Exception handling testing
+        assertThrows(NullPointerException.class, () -> {
+            renderer.drawEllipse(dot, g);
+        });
+        
+        // Add more exception handling assertions here if the method can throw other exceptions
+    }
+
+    @Test
+    public void testDrawMultipleEllipse() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        Graphics2D g2 = createMock(Graphics2D.class);
+        Point point = new Point(100, 100);
+        double boxWidth = 50.0;
+        double oRadius = 5.0;
+        
+        Ellipse2D expectedDot1 = new Ellipse2D.Double(point.getX() - (boxWidth / 2) + oRadius, point.getY(), oRadius, oRadius);
+        Ellipse2D expectedDot2 = new Ellipse2D.Double(point.getX() + (boxWidth / 2), point.getY(), oRadius, oRadius);
+        
+        renderer.drawMultipleEllipse(g2, point, boxWidth, oRadius);
+        
+        ArgumentCaptor<Shape> shapeCaptor = ArgumentCaptor.forClass(Shape.class);
+        verify(g2, times(2)).draw(shapeCaptor.capture());
+        
+        List<Shape> capturedShapes = shapeCaptor.getAllValues();
+        
+        assertEquals("Shape 1 matches", expectedDot1, capturedShapes.get(0));
+        assertEquals("Shape 2 matches", expectedDot2, capturedShapes.get(1));
+    }
+
+    @Test
+    public void testDrawHighFarOut_TypicalValues() {
+        BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+        Graphics2D g2 = createMock(Graphics2D.class); // Mocking the Graphics2D object
+        double aRadius = 5.0; // Using typical value for aRadius
+        double xx = 10.0; // Using typical value for xx
+        double m = 20.0; // Using typical value for m
+        
+        double side = aRadius * 2;
+        renderer.drawHighFarOut(g2, renderer, xx, m, aRadius); // Assuming drawHighFarOut is a void method that draws lines
+        
+        // You may add assertions here to validate the drawing results or behavior based on the method implementation
+    }
+
+    @Test
+    public void testDrawLowFarOut() {
+        BoxAndWhiskerRenderer boxAndWhiskerRenderer = new BoxAndWhiskerRenderer();
+        
+        // Typical Case
+        // Test that the method draws the lines as expected with given parameters
+        double aRadius = 5.0;
+        double xx = 10.0;
+        double m = 15.0;
+        double side = aRadius * 2;
+        Graphics2D g2 = // Create a new Graphics2D object to simulate graphics environment
+    
+        // Verify that the lines are drawn correctly
+        boxAndWhiskerRenderer.drawLowFarOut(g2, boxAndWhiskerRenderer.getPaint(), xx, m, aRadius);
+        
+        // Edge Case
+        // Test with very small radius
+        aRadius = 0.1;
+        side = aRadius * 2;
+        // Verify that the lines are still drawn without errors
+        boxAndWhiskerRenderer.drawLowFarOut(g2, boxAndWhiskerRenderer.getPaint(), xx, m, aRadius);
+        
+        // Edge Case
+        // Test with negative radius
+        aRadius = -5.0;
+        side = aRadius * 2;
+        // Verify that the lines are still drawn without errors
+        boxAndWhiskerRenderer.drawLowFarOut(g2, boxAndWhiskerRenderer.getPaint(), xx, m, aRadius);
+    
+        // Exception Handling
+        // Test null Graphics2D object
+        NullPointerException thrown = assertThrows(NullPointerException.class, () -> {
+            boxAndWhiskerRenderer.drawLowFarOut(null, boxAndWhiskerRenderer.getPaint(), xx, m, aRadius);
+        });
+        assertNotNull(thrown);
+        
+        // Test with differing radius and xx values
+        aRadius = 2.0;
+        xx = 5.0;
+        side = aRadius * 2;
+        // Verify that the lines are drawn correctly with different parameters
+        boxAndWhiskerRenderer.drawLowFarOut(g2, boxAndWhiskerRenderer.getPaint(), xx, m, aRadius);
+    }
+
+    @Test
+        public void testEquals_SameObject() {
+            BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+            assertTrue(renderer.equals(renderer));
+        }
+
+    @Test
+        public void testEquals_NullObject() {
+            BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+            assertFalse(renderer.equals(null));
+        }
+
+    @Test
+        public void testEquals_DifferentClass() {
+            BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+            Object obj = new Object();
+            assertFalse(renderer.equals(obj));
+        }
+
+    @Test
+        public void testEquals_DifferentFillBox() {
+            BoxAndWhiskerRenderer renderer1 = new BoxAndWhiskerRenderer();
+            renderer1.setFillBox(true);
+    
+            BoxAndWhiskerRenderer renderer2 = new BoxAndWhiskerRenderer();
+            renderer2.setFillBox(false);
+    
+            assertFalse(renderer1.equals(renderer2));
+        }
+
+    @Test
+        public void testWriteObject_DefaultCase() {
+            BoxAndWhiskerRenderer renderer = new BoxAndWhiskerRenderer();
+            
+            // Since stream.defaultWriteObject() and SerialUtilities.writePaint() methods are called,
+            // we can use mocks or verify proper calls using frameworks like Mockito
+            
+            // Assert an example output or verify method invocations if possible
+        }
+
+    @Test
+        public void testReadObject_Default() {
+            BoxAndWhiskerRenderer instance = new BoxAndWhiskerRenderer();
+            // Perform necessary setup if needed
+    
+            // Invoke the method
+            // Sample setup for stream
+            ObjectInputStream stream = null;
+            instance.readObject(stream);
+    
+            // Add assertions for the actual testing
+            // Sample assertion for artifactPaint
+            assertNotNull(instance.getArtifactPaint());
+        }
+
+}

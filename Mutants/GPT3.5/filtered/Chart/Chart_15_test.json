@@ -1,0 +1,65 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 1796,
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "precode": "CategoryDataset dataset = this.plot.getDataset(index);",
+        "aftercode": "CategoryDataset dataset = this.plot.getDataset(index + 1);",
+        "fail_test_number:": 2,
+        "fail_test:": "Failing tests: 2\n  - org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests::test2947660\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 2,
+        "line": 1800,
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "precode": "int seriesCount = dataset.getRowCount();",
+        "aftercode": "int seriesCount = dataset.getColumnCount();",
+        "fail_test_number:": 11,
+        "fail_test:": "Failing tests: 11\n  - org.jfree.chart.junit.GanttChartTests::testDrawWithNullInfo2\n  - org.jfree.chart.plot.junit.CombinedDomainCategoryPlotTests::testNotification\n  - org.jfree.chart.plot.junit.CombinedRangeCategoryPlotTests::testNotification\n  - org.jfree.chart.renderer.category.junit.IntervalBarRendererTests::testDrawWithNullInfo\n  - org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests::testDrawWithNullInfo\n  - org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests::testDrawWithNullMeanVertical\n  - org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests::testDrawWithNullDeviationVertical\n  - org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests::testDrawWithNullMeanHorizontal\n  - org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests::testDrawWithNullDeviationHorizontal\n  - org.jfree.chart.renderer.category.junit.StatisticalLineAndShapeRendererTests::testDrawWithNullInfo\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 3,
+        "line": 1801,
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "precode": "if (plot.getRowRenderingOrder().equals(SortOrder.ASCENDING)) {",
+        "aftercode": "if (plot.getRowRenderingOrder().equals(SortOrder.DESCENDING)) {",
+        "fail_test_number:": 1,
+        "fail_test:": "Failing tests: 1\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 4,
+        "line": 1802,
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "precode": "for (int i = 0; i < seriesCount; i++) {",
+        "aftercode": "for (int i = 0; i <= seriesCount; i++) {",
+        "fail_test_number:": 39,
+        "fail_test:": "Failing tests: 39\n  - org.jfree.chart.junit.AreaChartTests::testDrawWithNullInfo\n  - org.jfree.chart.junit.BarChart3DTests::testDrawWithNullInfo\n  - org.jfree.chart.junit.BarChartTests::testDrawWithNullInfo\n  - org.jfree.chart.junit.GanttChartTests::testDrawWithNullInfo2\n  - org.jfree.chart.junit.LineChart3DTests::testDrawWithNullInfo\n  - org.jfree.chart.junit.LineChartTests::testDrawWithNullInfo\n  - org.jfree.chart.junit.StackedAreaChartTests::testDrawWithNullInfo\n  - org.jfree.chart.junit.StackedBarChart3DTests::testDrawWithNullInfo\n  - org.jfree.chart.junit.StackedBarChartTests::testDrawWithNullInfo\n  - org.jfree.chart.junit.WaterfallChartTests::testDrawWithNullInfo\n  - org.jfree.chart.plot.junit.CategoryPlotTests::test1654215\n  - org.jfree.chart.plot.junit.CategoryPlotTests::testSerialization3\n  - org.jfree.chart.plot.junit.CategoryPlotTests::testSerialization4\n  - org.jfree.chart.plot.junit.CombinedDomainCategoryPlotTests::testNotification\n  - org.jfree.chart.plot.junit.CombinedRangeCategoryPlotTests::testNotification\n  - org.jfree.chart.renderer.category.junit.AbstractCategoryItemRendererTests::test2947660\n  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testDrawWithNullInfo\n  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testDrawWithNullMean\n  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testDrawWithNullMinRegular\n  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testBug1572478Vertical\n  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testDrawWithNullMedian\n  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testDrawWithNullMaxRegular\n  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testDrawWithNullMinOutlier\n  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testDrawWithNullQ1\n  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testDrawWithNullQ3\n  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testBug1572478Horizontal\n  - org.jfree.chart.renderer.category.junit.BoxAndWhiskerRendererTests::testDrawWithNullMaxOutlier\n  - org.jfree.chart.renderer.category.junit.GroupedStackedBarRendererTests::testDrawWithNullInfo\n  - org.jfree.chart.renderer.category.junit.IntervalBarRendererTests::testDrawWithNullInfo\n  - org.jfree.chart.renderer.category.junit.LayeredBarRendererTests::testDrawWithNullInfo\n  - org.jfree.chart.renderer.category.junit.LevelRendererTests::testDrawWithNullInfo\n  - org.jfree.chart.renderer.category.junit.MinMaxCategoryRendererTests::testDrawWithNullInfo\n  - org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests::testDrawWithNullInfo\n  - org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests::testDrawWithNullMeanVertical\n  - org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests::testDrawWithNullDeviationVertical\n  - org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests::testDrawWithNullMeanHorizontal\n  - org.jfree.chart.renderer.category.junit.StatisticalBarRendererTests::testDrawWithNullDeviationHorizontal\n  - org.jfree.chart.renderer.category.junit.StatisticalLineAndShapeRendererTests::testDrawWithNullInfo\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 5,
+        "line": 1812,
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "precode": "for (int i = seriesCount - 1; i >= 0; i--) {",
+        "aftercode": "for (int i = seriesCount; i >= 0; i--) {",
+        "fail_test_number:": 1,
+        "fail_test:": "Failing tests: 1\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 6,
+        "line": 1813,
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "precode": "if (isSeriesVisibleInLegend(i)) {",
+        "aftercode": "if (!isSeriesVisibleInLegend(i)) {",
+        "fail_test_number:": 1,
+        "fail_test:": "Failing tests: 1\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 7,
+        "line": 1815,
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "precode": "if (item != null) {",
+        "aftercode": "if (item == null) {",
+        "fail_test_number:": 1,
+        "fail_test:": "Failing tests: 1\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    }
+]

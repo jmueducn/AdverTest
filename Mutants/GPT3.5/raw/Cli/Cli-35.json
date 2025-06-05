@@ -1,0 +1,195 @@
+[
+    {
+        "mutant_id:": 2,
+        "line": 237,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "List<String> matchingOpts = new ArrayList<String>();",
+        "aftercode": "List<String> matchingOpts = null;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_PartialMatch\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_CaseSensitive\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_EmptyOptionsMap\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_NoMatch\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 3,
+        "line": 240,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "if(longOpts.keySet().contains(opt)) {",
+        "aftercode": "if(longOpts.values().contains(opt)) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_CaseSensitive\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_EmptyInput\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 4,
+        "line": 240,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "if(longOpts.keySet().contains(opt)) {",
+        "aftercode": "if(true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_PartialMatch\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_EmptyOptionsMap\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_NoMatch\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 5,
+        "line": 240,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "if(longOpts.keySet().contains(opt)) {",
+        "aftercode": "if(false) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_CaseSensitive\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_EmptyInput\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 6,
+        "line": 240,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "if(longOpts.keySet().contains(opt)) {",
+        "aftercode": "if(longOpts.containsKey(opt)) {",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_CaseSensitive\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n",
+        "survived": true,
+        "id": 5
+    },
+    {
+        "mutant_id:": 7,
+        "line": 241,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "return Collections.singletonList(opt);",
+        "aftercode": "return new ArrayList<String>();",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_PerfectMatch\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_CaseSensitive\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_EmptyInput\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_StripsLeadingHyphens\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 8,
+        "line": 241,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "return Collections.singletonList(opt);",
+        "aftercode": "return Collections.emptyList();",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_PerfectMatch\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_CaseSensitive\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_EmptyInput\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_StripsLeadingHyphens\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 9,
+        "line": 241,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "return Collections.singletonList(opt);",
+        "aftercode": "return null;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_PerfectMatch\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_CaseSensitive\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_EmptyInput\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_StripsLeadingHyphens\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 11,
+        "line": 244,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "for (String longOpt : longOpts.keySet())",
+        "aftercode": "for (String longOpt : new ArrayList<String>())",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_PartialMatch\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_CaseSensitive\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 13,
+        "line": 246,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "if (longOpt.startsWith(opt))",
+        "aftercode": "if (longOpt.endsWith(opt))",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_PartialMatch\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_CaseSensitive\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 14,
+        "line": 246,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "if (longOpt.startsWith(opt))",
+        "aftercode": "if (longOpt.contains(opt))",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_CaseSensitive\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n",
+        "survived": true,
+        "id": 11
+    },
+    {
+        "mutant_id:": 15,
+        "line": 246,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "if (longOpt.startsWith(opt))",
+        "aftercode": "if (true)",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_PartialMatch\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_CaseSensitive\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n",
+        "survived": false,
+        "id": 12
+    },
+    {
+        "mutant_id:": 16,
+        "line": 246,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "if (longOpt.startsWith(opt))",
+        "aftercode": "if (false)",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_PartialMatch\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_CaseSensitive\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "mutant_id:": 17,
+        "line": 246,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "if (longOpt.startsWith(opt))",
+        "aftercode": "if (opt.startsWith(longOpt))",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_PartialMatch\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_CaseSensitive\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n",
+        "survived": false,
+        "id": 14
+    },
+    {
+        "mutant_id:": 18,
+        "line": 248,
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "precode": "matchingOpts.add(longOpt);",
+        "aftercode": "matchingOpts.add(opt);",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_PartialMatch\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_CaseSensitive\n  - gentest.org.apache.commons.cli.tests.OptionsTest::testGetMatchingOptions_MultipleMatches\n",
+        "survived": false,
+        "id": 15
+    },
+    {
+        "id": 16,
+        "line": 240,
+        "precode": "if(longOpts.keySet().contains(opt)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "aftercode": "if(longOpts.keySet().equals(opt)) {"
+    },
+    {
+        "id": 17,
+        "line": 240,
+        "precode": "if(longOpts.keySet().contains(opt)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "aftercode": "if(longOpts.values().contains(opt)) {"
+    },
+    {
+        "id": 18,
+        "line": 246,
+        "precode": "if (longOpt.startsWith(opt))",
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "aftercode": "if (longOpt.endsWith(opt))"
+    },
+    {
+        "id": 19,
+        "line": 246,
+        "precode": "if (longOpt.startsWith(opt))",
+        "filepath": "./defects4j_fixed/Cli/Cli_35_fixed/src/main/java/org/apache/commons/cli/Options.java",
+        "aftercode": "if (longOpt.equals(opt))"
+    }
+]

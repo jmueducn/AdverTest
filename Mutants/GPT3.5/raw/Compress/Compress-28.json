@@ -1,0 +1,205 @@
+[
+    {
+        "id": 1,
+        "line": 570,
+        "precode": "int totalRead = 0;",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "int totalRead = 1;"
+    },
+    {
+        "id": 2,
+        "line": 572,
+        "precode": "if (hasHitEOF || entryOffset >= entrySize) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "if (hasHitEOF && entryOffset >= entrySize) {"
+    },
+    {
+        "id": 3,
+        "line": 572,
+        "precode": "if (hasHitEOF || entryOffset >= entrySize) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 4,
+        "line": 572,
+        "precode": "if (hasHitEOF || entryOffset >= entrySize) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "if (hasHitEOF) {"
+    },
+    {
+        "id": 5,
+        "line": 573,
+        "precode": "return -1;",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "return 0;"
+    },
+    {
+        "id": 6,
+        "line": 577,
+        "precode": "throw new IllegalStateException(\"No current tar entry\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "throw new IOException(\"No current tar entry\");"
+    },
+    {
+        "id": 7,
+        "line": 580,
+        "precode": "numToRead = Math.min(numToRead, available());",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "numToRead = Math.max(numToRead, available());"
+    },
+    {
+        "id": 8,
+        "line": 580,
+        "precode": "numToRead = Math.min(numToRead, available());",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "numToRead = available();"
+    },
+    {
+        "id": 9,
+        "line": 582,
+        "precode": "totalRead = is.read(buf, offset, numToRead);",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "totalRead = is.read(buf, 0, numToRead);"
+    },
+    {
+        "id": 10,
+        "line": 582,
+        "precode": "totalRead = is.read(buf, offset, numToRead);",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "totalRead = is.read(buf, offset, 1);"
+    },
+    {
+        "id": 11,
+        "line": 584,
+        "precode": "if (totalRead == -1) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "if (totalRead <= 0) {"
+    },
+    {
+        "id": 12,
+        "line": 584,
+        "precode": "if (totalRead == -1) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 13,
+        "line": 585,
+        "precode": "if (numToRead > 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "if (numToRead >= 0) {"
+    },
+    {
+        "id": 14,
+        "line": 585,
+        "precode": "if (numToRead > 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 15,
+        "line": 586,
+        "precode": "throw new IOException(\"Truncated TAR archive\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "throw new IllegalStateException(\"Truncated TAR archive\");"
+    },
+    {
+        "id": 16,
+        "line": 588,
+        "precode": "hasHitEOF = true;",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "hasHitEOF = false;"
+    },
+    {
+        "id": 17,
+        "line": 590,
+        "precode": "count(totalRead);",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "count(0);"
+    },
+    {
+        "id": 18,
+        "line": 590,
+        "precode": "count(totalRead);",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "count(totalRead + 1);"
+    },
+    {
+        "id": 19,
+        "line": 591,
+        "precode": "entryOffset += totalRead;",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "entryOffset = totalRead;"
+    },
+    {
+        "id": 20,
+        "line": 591,
+        "precode": "entryOffset += totalRead;",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "entryOffset += 1;"
+    },
+    {
+        "id": 21,
+        "line": 594,
+        "precode": "return totalRead;",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "return 0;"
+    },
+    {
+        "id": 22,
+        "line": 594,
+        "precode": "return totalRead;",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "return -1;"
+    },
+    {
+        "id": 23,
+        "line": 572,
+        "precode": "if (hasHitEOF || entryOffset >= entrySize) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "if (entryOffset >= entrySize) {"
+    },
+    {
+        "id": 24,
+        "line": 580,
+        "precode": "numToRead = Math.min(numToRead, available());",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "numToRead = numToRead;"
+    },
+    {
+        "id": 25,
+        "line": 582,
+        "precode": "totalRead = is.read(buf, offset, numToRead);",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "totalRead = 0;"
+    },
+    {
+        "id": 26,
+        "line": 584,
+        "precode": "if (totalRead == -1) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "if (totalRead != -1) {"
+    },
+    {
+        "id": 27,
+        "line": 588,
+        "precode": "hasHitEOF = true;",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "hasHitEOF = hasHitEOF;"
+    },
+    {
+        "id": 28,
+        "line": 590,
+        "precode": "count(totalRead);",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "count(totalRead - 1);"
+    },
+    {
+        "id": 29,
+        "line": 591,
+        "precode": "entryOffset += totalRead;",
+        "filepath": "./defects4j_fixed/Compress/Compress_28_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveInputStream.java",
+        "aftercode": "entryOffset -= totalRead;"
+    }
+]

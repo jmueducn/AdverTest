@@ -1,0 +1,268 @@
+[
+    {
+        "id": 1,
+        "line": 112,
+        "precode": "if (token.startsWith(\"--\"))",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "if (token.startsWith(\"-\"))"
+    },
+    {
+        "id": 2,
+        "line": 112,
+        "precode": "if (token.startsWith(\"--\"))",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "if (true)"
+    },
+    {
+        "id": 3,
+        "line": 112,
+        "precode": "if (token.startsWith(\"--\"))",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "if (false)"
+    },
+    {
+        "id": 4,
+        "line": 114,
+        "precode": "int pos = token.indexOf('=');",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "int pos = token.lastIndexOf('=');"
+    },
+    {
+        "id": 5,
+        "line": 114,
+        "precode": "int pos = token.indexOf('=');",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "int pos = 0;"
+    },
+    {
+        "id": 6,
+        "line": 114,
+        "precode": "int pos = token.indexOf('=');",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "int pos = -1;"
+    },
+    {
+        "id": 7,
+        "line": 115,
+        "precode": "String opt = pos == -1 ? token : token.substring(0, pos);",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "String opt = pos != -1 ? token : token.substring(0, pos);"
+    },
+    {
+        "id": 8,
+        "line": 115,
+        "precode": "String opt = pos == -1 ? token : token.substring(0, pos);",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "String opt = token;"
+    },
+    {
+        "id": 9,
+        "line": 115,
+        "precode": "String opt = pos == -1 ? token : token.substring(0, pos);",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "String opt = pos == -1 ? token.substring(1) : token.substring(0, pos);"
+    },
+    {
+        "id": 10,
+        "line": 117,
+        "precode": "if (!options.hasOption(opt) && stopAtNonOption)",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "if (options.hasOption(opt) && stopAtNonOption)"
+    },
+    {
+        "id": 11,
+        "line": 117,
+        "precode": "if (!options.hasOption(opt) && stopAtNonOption)",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "if (!options.hasOption(opt) || stopAtNonOption)"
+    },
+    {
+        "id": 12,
+        "line": 117,
+        "precode": "if (!options.hasOption(opt) && stopAtNonOption)",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "if (!options.hasOption(opt))"
+    },
+    {
+        "id": 13,
+        "line": 117,
+        "precode": "if (!options.hasOption(opt) && stopAtNonOption)",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "if (stopAtNonOption)"
+    },
+    {
+        "id": 14,
+        "line": 117,
+        "precode": "if (!options.hasOption(opt) && stopAtNonOption)",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "if (false)"
+    },
+    {
+        "id": 15,
+        "line": 153,
+        "precode": "process(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "process(opt);"
+    },
+    {
+        "id": 16,
+        "line": 153,
+        "precode": "process(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "process(token.substring(1));"
+    },
+    {
+        "id": 17,
+        "line": 153,
+        "precode": "process(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "tokens.add(token);"
+    },
+    {
+        "id": 18,
+        "line": 153,
+        "precode": "process(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "// process(token);"
+    },
+    {
+        "id": 19,
+        "line": 123,
+        "precode": "tokens.add(opt);",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "tokens.add(token);"
+    },
+    {
+        "id": 20,
+        "line": 123,
+        "precode": "tokens.add(opt);",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "tokens.add(opt.substring(1));"
+    },
+    {
+        "id": 21,
+        "line": 123,
+        "precode": "tokens.add(opt);",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "// tokens.add(opt);"
+    },
+    {
+        "id": 22,
+        "line": 124,
+        "precode": "if (pos != -1) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "if (pos == -1) {"
+    },
+    {
+        "id": 23,
+        "line": 124,
+        "precode": "if (pos != -1) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 24,
+        "line": 124,
+        "precode": "if (pos != -1) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 25,
+        "line": 124,
+        "precode": "if (pos != -1) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "if (pos > 0) {"
+    },
+    {
+        "id": 26,
+        "line": 125,
+        "precode": "tokens.add(token.substring(pos + 1));",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "tokens.add(token.substring(pos));"
+    },
+    {
+        "id": 27,
+        "line": 125,
+        "precode": "tokens.add(token.substring(pos + 1));",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "tokens.add(token.substring(0));"
+    },
+    {
+        "id": 28,
+        "line": 125,
+        "precode": "tokens.add(token.substring(pos + 1));",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "tokens.add(token);"
+    },
+    {
+        "id": 29,
+        "line": 125,
+        "precode": "tokens.add(token.substring(pos + 1));",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "// tokens.add(token.substring(pos + 1));"
+    },
+    {
+        "id": 30,
+        "line": 112,
+        "precode": "if (token.startsWith(\"--\"))",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "if (token.endsWith(\"--\"))"
+    },
+    {
+        "id": 31,
+        "line": 114,
+        "precode": "int pos = token.indexOf('=');",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "int pos = token.indexOf(' ');"
+    },
+    {
+        "id": 32,
+        "line": 115,
+        "precode": "String opt = pos == -1 ? token : token.substring(0, pos);",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "String opt = pos == -1 ? \"\" : token.substring(0, pos);"
+    },
+    {
+        "id": 33,
+        "line": 117,
+        "precode": "if (!options.hasOption(opt) && stopAtNonOption)",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "if (!options.hasOption(opt) && !stopAtNonOption)"
+    },
+    {
+        "id": 34,
+        "line": 153,
+        "precode": "process(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "process(token + \" \");"
+    },
+    {
+        "id": 35,
+        "line": 123,
+        "precode": "tokens.add(opt);",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "tokens.add(opt + \" \");"
+    },
+    {
+        "id": 36,
+        "line": 125,
+        "precode": "tokens.add(token.substring(pos + 1));",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "tokens.add(token.substring(pos + 1) + \" \");"
+    },
+    {
+        "id": 37,
+        "line": 115,
+        "precode": "String opt = pos == -1 ? token : token.substring(0, pos);",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "String opt = pos == -1 ? token.substring(2) : token.substring(0, pos);"
+    },
+    {
+        "id": 38,
+        "line": 114,
+        "precode": "int pos = token.indexOf('=');",
+        "filepath": "./defects4j_fixed/Cli/Cli_20_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "aftercode": "int pos = token.indexOf('=', 2);"
+    }
+]

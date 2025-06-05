@@ -1,0 +1,779 @@
+[
+    {
+        "id": 1,
+        "line": 80,
+        "precode": "public class FastMath {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "public class FastMath2 {"
+    },
+    {
+        "id": 2,
+        "line": 385,
+        "precode": "if (x != x) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x == x) {"
+    },
+    {
+        "id": 3,
+        "line": 385,
+        "precode": "if (x != x) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 4,
+        "line": 385,
+        "precode": "if (x != x) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 5,
+        "line": 386,
+        "precode": "return x;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return 0;"
+    },
+    {
+        "id": 6,
+        "line": 386,
+        "precode": "return x;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return Double.NaN;"
+    },
+    {
+        "id": 7,
+        "line": 394,
+        "precode": "if (x > 20) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x >= 20) {"
+    },
+    {
+        "id": 8,
+        "line": 394,
+        "precode": "if (x > 20) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x > 10) {"
+    },
+    {
+        "id": 9,
+        "line": 394,
+        "precode": "if (x > 20) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x > 30) {"
+    },
+    {
+        "id": 10,
+        "line": 395,
+        "precode": "if (x >= LOG_MAX_VALUE) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x > LOG_MAX_VALUE) {"
+    },
+    {
+        "id": 11,
+        "line": 395,
+        "precode": "if (x >= LOG_MAX_VALUE) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 12,
+        "line": 397,
+        "precode": "final double t = exp(0.5 * x);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "final double t = exp(x);"
+    },
+    {
+        "id": 13,
+        "line": 397,
+        "precode": "final double t = exp(0.5 * x);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "final double t = exp(0.25 * x);"
+    },
+    {
+        "id": 14,
+        "line": 406,
+        "precode": "return (0.5 * t) * t;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return t * t;"
+    },
+    {
+        "id": 15,
+        "line": 406,
+        "precode": "return (0.5 * t) * t;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return 0.25 * t * t;"
+    },
+    {
+        "id": 16,
+        "line": 400,
+        "precode": "return 0.5 * exp(x);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return exp(x);"
+    },
+    {
+        "id": 17,
+        "line": 400,
+        "precode": "return 0.5 * exp(x);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return 0.25 * exp(x);"
+    },
+    {
+        "id": 18,
+        "line": 402,
+        "precode": "} else if (x < -20) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "} else if (x <= -20) {"
+    },
+    {
+        "id": 19,
+        "line": 402,
+        "precode": "} else if (x < -20) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "} else if (x < -10) {"
+    },
+    {
+        "id": 20,
+        "line": 402,
+        "precode": "} else if (x < -20) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "} else if (x < -30) {"
+    },
+    {
+        "id": 21,
+        "line": 403,
+        "precode": "if (x <= -LOG_MAX_VALUE) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x < -LOG_MAX_VALUE) {"
+    },
+    {
+        "id": 22,
+        "line": 403,
+        "precode": "if (x <= -LOG_MAX_VALUE) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 23,
+        "line": 405,
+        "precode": "final double t = exp(-0.5 * x);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "final double t = exp(-x);"
+    },
+    {
+        "id": 24,
+        "line": 405,
+        "precode": "final double t = exp(-0.5 * x);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "final double t = exp(-0.25 * x);"
+    },
+    {
+        "id": 25,
+        "line": 406,
+        "precode": "return (0.5 * t) * t;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return t * t;"
+    },
+    {
+        "id": 26,
+        "line": 406,
+        "precode": "return (0.5 * t) * t;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return 0.25 * t * t;"
+    },
+    {
+        "id": 27,
+        "line": 408,
+        "precode": "return 0.5 * exp(-x);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return exp(-x);"
+    },
+    {
+        "id": 28,
+        "line": 408,
+        "precode": "return 0.5 * exp(-x);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return 0.25 * exp(-x);"
+    },
+    {
+        "id": 29,
+        "line": 413,
+        "precode": "if (x < 0.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x <= 0.0) {"
+    },
+    {
+        "id": 30,
+        "line": 413,
+        "precode": "if (x < 0.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 31,
+        "line": 414,
+        "precode": "x = -x;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "x = x;"
+    },
+    {
+        "id": 32,
+        "line": 414,
+        "precode": "x = -x;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "x = 0;"
+    },
+    {
+        "id": 33,
+        "line": 418,
+        "precode": "double ya = hiPrec[0] + hiPrec[1];",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double ya = hiPrec[0];"
+    },
+    {
+        "id": 34,
+        "line": 418,
+        "precode": "double ya = hiPrec[0] + hiPrec[1];",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double ya = hiPrec[0] - hiPrec[1];"
+    },
+    {
+        "id": 35,
+        "line": 419,
+        "precode": "double yb = -(ya - hiPrec[0] - hiPrec[1]);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double yb = 0;"
+    },
+    {
+        "id": 36,
+        "line": 419,
+        "precode": "double yb = -(ya - hiPrec[0] - hiPrec[1]);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double yb = ya - hiPrec[0] - hiPrec[1];"
+    },
+    {
+        "id": 37,
+        "line": 421,
+        "precode": "double temp = ya * HEX_40000000;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double temp = ya;"
+    },
+    {
+        "id": 38,
+        "line": 421,
+        "precode": "double temp = ya * HEX_40000000;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double temp = ya * 2;"
+    },
+    {
+        "id": 39,
+        "line": 422,
+        "precode": "double yaa = ya + temp - temp;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double yaa = ya;"
+    },
+    {
+        "id": 40,
+        "line": 422,
+        "precode": "double yaa = ya + temp - temp;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double yaa = temp;"
+    },
+    {
+        "id": 41,
+        "line": 423,
+        "precode": "double yab = ya - yaa;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double yab = 0;"
+    },
+    {
+        "id": 42,
+        "line": 426,
+        "precode": "double recip = 1.0/ya;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double recip = 1.0;"
+    },
+    {
+        "id": 43,
+        "line": 426,
+        "precode": "double recip = 1.0/ya;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double recip = 2.0/ya;"
+    },
+    {
+        "id": 44,
+        "line": 427,
+        "precode": "temp = recip * HEX_40000000;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "temp = recip;"
+    },
+    {
+        "id": 45,
+        "line": 427,
+        "precode": "temp = recip * HEX_40000000;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "temp = recip * 2;"
+    },
+    {
+        "id": 46,
+        "line": 428,
+        "precode": "double recipa = recip + temp - temp;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double recipa = recip;"
+    },
+    {
+        "id": 47,
+        "line": 428,
+        "precode": "double recipa = recip + temp - temp;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double recipa = temp;"
+    },
+    {
+        "id": 48,
+        "line": 429,
+        "precode": "double recipb = recip - recipa;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double recipb = 0;"
+    },
+    {
+        "id": 49,
+        "line": 432,
+        "precode": "recipb += (1.0 - yaa*recipa - yaa*recipb - yab*recipa - yab*recipb) * recip;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "recipb += (1.0 - yaa*recipa) * recip;"
+    },
+    {
+        "id": 50,
+        "line": 434,
+        "precode": "recipb += -yb * recip * recip;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "recipb += yb * recip * recip;"
+    },
+    {
+        "id": 51,
+        "line": 434,
+        "precode": "recipb += -yb * recip * recip;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "recipb += -yb * recip;"
+    },
+    {
+        "id": 52,
+        "line": 437,
+        "precode": "temp = ya + recipa;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "temp = ya;"
+    },
+    {
+        "id": 53,
+        "line": 438,
+        "precode": "yb += -(temp - ya - recipa);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "yb += temp - ya - recipa;"
+    },
+    {
+        "id": 54,
+        "line": 440,
+        "precode": "temp = ya + recipb;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "temp = ya;"
+    },
+    {
+        "id": 55,
+        "line": 441,
+        "precode": "yb += -(temp - ya - recipb);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "yb += temp - ya - recipb;"
+    },
+    {
+        "id": 56,
+        "line": 445,
+        "precode": "result *= 0.5;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "result *= 0.25;"
+    },
+    {
+        "id": 57,
+        "line": 454,
+        "precode": "boolean negate = false;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "boolean negate = true;"
+    },
+    {
+        "id": 58,
+        "line": 455,
+        "precode": "if (x != x) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x == x) {"
+    },
+    {
+        "id": 59,
+        "line": 455,
+        "precode": "if (x != x) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 60,
+        "line": 464,
+        "precode": "if (x > 20) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x >= 20) {"
+    },
+    {
+        "id": 61,
+        "line": 464,
+        "precode": "if (x > 20) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x > 10) {"
+    },
+    {
+        "id": 62,
+        "line": 465,
+        "precode": "if (x >= LOG_MAX_VALUE) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x > LOG_MAX_VALUE) {"
+    },
+    {
+        "id": 63,
+        "line": 467,
+        "precode": "final double t = exp(0.5 * x);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "final double t = exp(x);"
+    },
+    {
+        "id": 64,
+        "line": 468,
+        "precode": "return (0.5 * t) * t;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return t * t;"
+    },
+    {
+        "id": 65,
+        "line": 470,
+        "precode": "return 0.5 * exp(x);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return exp(x);"
+    },
+    {
+        "id": 66,
+        "line": 472,
+        "precode": "} else if (x < -20) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "} else if (x <= -20) {"
+    },
+    {
+        "id": 67,
+        "line": 472,
+        "precode": "} else if (x < -20) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "} else if (x < -10) {"
+    },
+    {
+        "id": 68,
+        "line": 473,
+        "precode": "if (x <= -LOG_MAX_VALUE) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x < -LOG_MAX_VALUE) {"
+    },
+    {
+        "id": 69,
+        "line": 475,
+        "precode": "final double t = exp(-0.5 * x);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "final double t = exp(-x);"
+    },
+    {
+        "id": 70,
+        "line": 476,
+        "precode": "return (-0.5 * t) * t;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return t * t;"
+    },
+    {
+        "id": 71,
+        "line": 478,
+        "precode": "return -0.5 * exp(-x);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return exp(-x);"
+    },
+    {
+        "id": 72,
+        "line": 482,
+        "precode": "if (x == 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 73,
+        "line": 483,
+        "precode": "return x;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "return 0;"
+    },
+    {
+        "id": 74,
+        "line": 486,
+        "precode": "if (x < 0.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x <= 0.0) {"
+    },
+    {
+        "id": 75,
+        "line": 487,
+        "precode": "x = -x;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "x = x;"
+    },
+    {
+        "id": 76,
+        "line": 488,
+        "precode": "negate = true;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "negate = false;"
+    },
+    {
+        "id": 77,
+        "line": 493,
+        "precode": "if (x > 0.25) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x >= 0.25) {"
+    },
+    {
+        "id": 78,
+        "line": 493,
+        "precode": "if (x > 0.25) {",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "if (x > 0.5) {"
+    },
+    {
+        "id": 79,
+        "line": 530,
+        "precode": "double hiPrec[] = new double[2];",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double hiPrec[] = new double[1];"
+    },
+    {
+        "id": 80,
+        "line": 495,
+        "precode": "exp(x, 0.0, hiPrec);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "exp(x, 1.0, hiPrec);"
+    },
+    {
+        "id": 81,
+        "line": 533,
+        "precode": "double ya = hiPrec[0] + hiPrec[1];",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double ya = hiPrec[0];"
+    },
+    {
+        "id": 82,
+        "line": 534,
+        "precode": "double yb = -(ya - hiPrec[0] - hiPrec[1]);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double yb = 0;"
+    },
+    {
+        "id": 83,
+        "line": 500,
+        "precode": "double temp = ya * HEX_40000000;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double temp = ya;"
+    },
+    {
+        "id": 84,
+        "line": 501,
+        "precode": "double yaa = ya + temp - temp;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double yaa = ya;"
+    },
+    {
+        "id": 85,
+        "line": 502,
+        "precode": "double yab = ya - yaa;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double yab = 0;"
+    },
+    {
+        "id": 86,
+        "line": 505,
+        "precode": "double recip = 1.0/ya;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double recip = 1.0;"
+    },
+    {
+        "id": 87,
+        "line": 506,
+        "precode": "temp = recip * HEX_40000000;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "temp = recip;"
+    },
+    {
+        "id": 88,
+        "line": 507,
+        "precode": "double recipa = recip + temp - temp;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double recipa = recip;"
+    },
+    {
+        "id": 89,
+        "line": 508,
+        "precode": "double recipb = recip - recipa;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double recipb = 0;"
+    },
+    {
+        "id": 90,
+        "line": 511,
+        "precode": "recipb += (1.0 - yaa*recipa - yaa*recipb - yab*recipa - yab*recipb) * recip;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "recipb = 0;"
+    },
+    {
+        "id": 91,
+        "line": 513,
+        "precode": "recipb += -yb * recip * recip;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "recipb = -yb * recip * recip;"
+    },
+    {
+        "id": 92,
+        "line": 515,
+        "precode": "recipa = -recipa;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "recipa = recipa;"
+    },
+    {
+        "id": 93,
+        "line": 516,
+        "precode": "recipb = -recipb;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "recipb = recipb;"
+    },
+    {
+        "id": 94,
+        "line": 519,
+        "precode": "temp = ya + recipa;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "temp = ya;"
+    },
+    {
+        "id": 95,
+        "line": 520,
+        "precode": "yb += -(temp - ya - recipa);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "yb = 0;"
+    },
+    {
+        "id": 96,
+        "line": 561,
+        "precode": "ya = temp;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "ya = ya;"
+    },
+    {
+        "id": 97,
+        "line": 522,
+        "precode": "temp = ya + recipb;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "temp = ya;"
+    },
+    {
+        "id": 98,
+        "line": 523,
+        "precode": "yb += -(temp - ya - recipb);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "yb = 0;"
+    },
+    {
+        "id": 99,
+        "line": 561,
+        "precode": "ya = temp;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "ya = ya;"
+    },
+    {
+        "id": 100,
+        "line": 563,
+        "precode": "result = ya + yb;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "result = ya;"
+    },
+    {
+        "id": 101,
+        "line": 564,
+        "precode": "result *= 0.5;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "result *= 1.0;"
+    },
+    {
+        "id": 102,
+        "line": 530,
+        "precode": "double hiPrec[] = new double[2];",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double hiPrec[] = new double[1];"
+    },
+    {
+        "id": 103,
+        "line": 531,
+        "precode": "expm1(x, hiPrec);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "exp(x, hiPrec);"
+    },
+    {
+        "id": 104,
+        "line": 533,
+        "precode": "double ya = hiPrec[0] + hiPrec[1];",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double ya = hiPrec[0];"
+    },
+    {
+        "id": 105,
+        "line": 534,
+        "precode": "double yb = -(ya - hiPrec[0] - hiPrec[1]);",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double yb = 0;"
+    },
+    {
+        "id": 106,
+        "line": 537,
+        "precode": "double denom = 1.0 + ya;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double denom = ya;"
+    },
+    {
+        "id": 107,
+        "line": 538,
+        "precode": "double denomr = 1.0 / denom;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double denomr = 0;"
+    },
+    {
+        "id": 108,
+        "line": 539,
+        "precode": "double denomb = -(denom - 1.0 - ya) + yb;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double denomb = yb;"
+    },
+    {
+        "id": 109,
+        "line": 540,
+        "precode": "double ratio = ya * denomr;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double ratio = ya;"
+    },
+    {
+        "id": 110,
+        "line": 541,
+        "precode": "double temp = ratio * HEX_40000000;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double temp = ratio;"
+    },
+    {
+        "id": 111,
+        "line": 542,
+        "precode": "double ra = ratio + temp - temp;",
+        "filepath": "./defects4j_fixed/Math/Math_16_fixed/src/main/java/org/apache/commons/math3/util/FastMath.java",
+        "aftercode": "double ra = ratio;"
+    }
+]

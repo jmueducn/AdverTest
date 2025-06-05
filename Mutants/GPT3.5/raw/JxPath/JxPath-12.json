@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "line": 107,
+        "precode": "String nodeNS = DOMNodePointer.getNamespaceURI(node);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_12_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "String nodeNS = null;"
+    },
+    {
+        "id": 2,
+        "line": 107,
+        "precode": "String nodeNS = DOMNodePointer.getNamespaceURI(node);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_12_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "String nodeNS = \"\";"
+    },
+    {
+        "id": 3,
+        "line": 108,
+        "precode": "return equalStrings(namespaceURI, nodeNS) || nodeNS == null",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_12_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return equalStrings(namespaceURI, nodeNS) && nodeNS == null"
+    },
+    {
+        "id": 4,
+        "line": 108,
+        "precode": "return equalStrings(namespaceURI, nodeNS) || nodeNS == null",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_12_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return equalStrings(namespaceURI, nodeNS)"
+    },
+    {
+        "id": 5,
+        "line": 108,
+        "precode": "return equalStrings(namespaceURI, nodeNS) || nodeNS == null",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_12_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return true"
+    },
+    {
+        "id": 6,
+        "line": 108,
+        "precode": "return equalStrings(namespaceURI, nodeNS) || nodeNS == null",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_12_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return false"
+    },
+    {
+        "id": 7,
+        "line": 109,
+        "precode": "&& equalStrings(testPrefix, getPrefix(node));",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_12_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "|| equalStrings(testPrefix, getPrefix(node));"
+    },
+    {
+        "id": 8,
+        "line": 109,
+        "precode": "&& equalStrings(testPrefix, getPrefix(node));",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_12_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "&& !equalStrings(testPrefix, getPrefix(node));"
+    },
+    {
+        "id": 9,
+        "line": 109,
+        "precode": "&& equalStrings(testPrefix, getPrefix(node));",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_12_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "&& true;"
+    },
+    {
+        "id": 10,
+        "line": 109,
+        "precode": "&& equalStrings(testPrefix, getPrefix(node));",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_12_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "&& false;"
+    },
+    {
+        "id": 11,
+        "line": 274,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_12_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 12,
+        "line": 274,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_12_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return nodeNS != null;"
+    }
+]

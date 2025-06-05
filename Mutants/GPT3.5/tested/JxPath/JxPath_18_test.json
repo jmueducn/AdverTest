@@ -1,0 +1,72 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 99,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "precode": "currentNodePointer = iterator.getNodePointer();",
+        "aftercode": "currentNodePointer = null;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant1\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant2\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldReturnTrueWhenPositionSetButPointerNull_DetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeTypeTest_NonNodeType_ReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldSetCurrentNodePointerFromIterator_NotParentContext\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeTypeTest_NodeTypeNode_UsesWildcard\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsCurrentNodePointerMutation\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldSetCurrentNodePointerToActualNodeNotParent\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldReturnTrueWhenIteratorAdvancesAtPositionZero\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_IteratorNullAfterSetup_ReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_AfterReset_ReinitializesIterator\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_SubsequentCalls_UseExistingIterator\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 99,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "precode": "currentNodePointer = iterator.getNodePointer();",
+        "aftercode": "currentNodePointer = parentContext.getCurrentNodePointer();",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant1\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant2\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldReturnTrueWhenPositionSetButPointerNull_DetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeTypeTest_NonNodeType_ReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldSetCurrentNodePointerFromIterator_NotParentContext\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeTypeTest_NodeTypeNode_UsesWildcard\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsCurrentNodePointerMutation\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldSetCurrentNodePointerToActualNodeNotParent\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldReturnTrueWhenIteratorAdvancesAtPositionZero\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_IteratorNullAfterSetup_ReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_AfterReset_ReinitializesIterator\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_SubsequentCalls_UseExistingIterator\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 100,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "precode": "return true;",
+        "aftercode": "return false;",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant1\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant2\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldReturnTrueWhenPositionSetButPointerNull_DetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeTypeTest_NonNodeType_ReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldSetCurrentNodePointerFromIterator_NotParentContext\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeTypeTest_NodeTypeNode_UsesWildcard\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeNameTest_SuccessfulIteration\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsCurrentNodePointerMutation\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldReturnTrueWhenSuccessRegardlessOfPosition\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldSetCurrentNodePointerToActualNodeNotParent\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldReturnTrueWhenIteratorAdvancesAtPositionZero\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_IteratorNullAfterSetup_ReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_AfterReset_ReinitializesIterator\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_SubsequentCalls_UseExistingIterator\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldReturnTrueWhenIteratorAdvances_EvenAtPositionZero\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 100,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "precode": "return true;",
+        "aftercode": "return iterator != null;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant1\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldReturnTrueWhenPositionSetButPointerNull_DetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeTypeTest_NonNodeType_ReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeTypeTest_NodeTypeNode_UsesWildcard\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_IteratorNullAfterSetup_ReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_AfterReset_ReinitializesIterator\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_SubsequentCalls_UseExistingIterator\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 5,
+        "line": 99,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "precode": "currentNodePointer = iterator.getNodePointer();",
+        "aftercode": "currentNodePointer = iterator.getNodePointer().getParent();",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant1\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant2\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldReturnTrueWhenPositionSetButPointerNull_DetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeTypeTest_NonNodeType_ReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldSetCurrentNodePointerFromIterator_NotParentContext\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeTypeTest_NodeTypeNode_UsesWildcard\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsCurrentNodePointerMutation\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldSetCurrentNodePointerToActualNodeNotParent\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_IteratorNullAfterSetup_ReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_AfterReset_ReinitializesIterator\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_SubsequentCalls_UseExistingIterator\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 100,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "precode": "return true;",
+        "aftercode": "return currentNodePointer != null;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant1\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant2\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldReturnTrueWhenPositionSetButPointerNull_DetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeTypeTest_NonNodeType_ReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeTypeTest_NodeTypeNode_UsesWildcard\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_IteratorNullAfterSetup_ReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_AfterReset_ReinitializesIterator\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_SubsequentCalls_UseExistingIterator\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 100,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "precode": "return true;",
+        "aftercode": "return getCurrentPosition() > 0;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant1\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_ShouldReturnTrueWhenPositionSetButPointerNull_DetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeTypeTest_NonNodeType_ReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_WithNodeTypeTest_NodeTypeNode_UsesWildcard\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_IteratorNullAfterSetup_ReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_DetectsReturnTrueMutant\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_AfterReset_ReinitializesIterator\n  - gentest.org.apache.commons.jxpath.ri.axes.tests.AttributeContextTest::testNextNode_SubsequentCalls_UseExistingIterator\n",
+        "survived": true
+    }
+]

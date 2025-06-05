@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "line": 130,
+        "precode": "        double x0 = getMin();",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "        double x0 = getMax();"
+    },
+    {
+        "id": 2,
+        "line": 131,
+        "precode": "        double x1 = getMax();",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "        double x1 = getMin();"
+    },
+    {
+        "id": 3,
+        "line": 132,
+        "precode": "        double f0 = computeObjectiveValue(x0);",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "        double f0 = 0.0;"
+    },
+    {
+        "id": 4,
+        "line": 133,
+        "precode": "        double f1 = computeObjectiveValue(x1);",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "        double f1 = 0.0;"
+    },
+    {
+        "id": 5,
+        "line": 138,
+        "precode": "        if (f0 == 0.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "        if (f0 != 0.0) {"
+    },
+    {
+        "id": 6,
+        "line": 141,
+        "precode": "        if (f1 == 0.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "        if (f1 != 0.0) {"
+    },
+    {
+        "id": 7,
+        "line": 149,
+        "precode": "        final double ftol = getFunctionValueAccuracy();",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "        final double ftol = 0.0;"
+    },
+    {
+        "id": 8,
+        "line": 150,
+        "precode": "        final double atol = getAbsoluteAccuracy();",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "        final double atol = 0.0;"
+    },
+    {
+        "id": 9,
+        "line": 151,
+        "precode": "        final double rtol = getRelativeAccuracy();",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "        final double rtol = 0.0;"
+    },
+    {
+        "id": 10,
+        "line": 155,
+        "precode": "        boolean inverted = false;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "        boolean inverted = true;"
+    },
+    {
+        "id": 11,
+        "line": 160,
+        "precode": "            final double x = x1 - ((f1 * (x1 - x0)) / (f1 - f0));",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            final double x = x1 + ((f1 * (x1 - x0)) / (f1 - f0));"
+    },
+    {
+        "id": 12,
+        "line": 160,
+        "precode": "            final double x = x1 - ((f1 * (x1 - x0)) / (f1 - f0));",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            final double x = x0 - ((f1 * (x1 - x0)) / (f1 - f0));"
+    },
+    {
+        "id": 13,
+        "line": 160,
+        "precode": "            final double x = x1 - ((f1 * (x1 - x0)) / (f1 - f0));",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            final double x = x1 - ((f0 * (x1 - x0)) / (f1 - f0));"
+    },
+    {
+        "id": 14,
+        "line": 160,
+        "precode": "            final double x = x1 - ((f1 * (x1 - x0)) / (f1 - f0));",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            final double x = x1 - ((f1 * (x0 - x1)) / (f1 - f0));"
+    },
+    {
+        "id": 15,
+        "line": 160,
+        "precode": "            final double x = x1 - ((f1 * (x1 - x0)) / (f1 - f0));",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            final double x = x1 - ((f1 * (x1 - x0)) / (f0 - f1));"
+    },
+    {
+        "id": 16,
+        "line": 161,
+        "precode": "            final double fx = computeObjectiveValue(x);",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            final double fx = 0.0;"
+    },
+    {
+        "id": 17,
+        "line": 166,
+        "precode": "            if (fx == 0.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            if (fx != 0.0) {"
+    },
+    {
+        "id": 18,
+        "line": 171,
+        "precode": "            if (f1 * fx < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            if (f1 * fx > 0) {"
+    },
+    {
+        "id": 19,
+        "line": 171,
+        "precode": "            if (f1 * fx < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            if (f0 * fx < 0) {"
+    },
+    {
+        "id": 20,
+        "line": 171,
+        "precode": "            if (f1 * fx < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            if (f1 * fx <= 0) {"
+    },
+    {
+        "id": 21,
+        "line": 176,
+        "precode": "                inverted = !inverted;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                inverted = inverted;"
+    },
+    {
+        "id": 22,
+        "line": 180,
+        "precode": "                    f0 *= 0.5;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                    f0 *= 1.5;"
+    },
+    {
+        "id": 23,
+        "line": 180,
+        "precode": "                    f0 *= 0.5;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                    f0 /= 0.5;"
+    },
+    {
+        "id": 24,
+        "line": 183,
+        "precode": "                    f0 *= f1 / (f1 + fx);",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                    f0 *= f1 / (f1 - fx);"
+    },
+    {
+        "id": 25,
+        "line": 183,
+        "precode": "                    f0 *= f1 / (f1 + fx);",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                    f0 *= fx / (f1 + fx);"
+    },
+    {
+        "id": 26,
+        "line": 186,
+        "precode": "                    if (x == x1) {",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                    if (x != x1) {"
+    },
+    {
+        "id": 27,
+        "line": 187,
+        "precode": "                        final double delta = FastMath.max(rtol * FastMath.abs(x1),",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                        final double delta = FastMath.min(rtol * FastMath.abs(x1),"
+    },
+    {
+        "id": 28,
+        "line": 187,
+        "precode": "                        final double delta = FastMath.max(rtol * FastMath.abs(x1),",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                        final double delta = rtol * FastMath.abs(x1);"
+    },
+    {
+        "id": 29,
+        "line": 188,
+        "precode": "                                                          atol);",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                                                          0.0);"
+    },
+    {
+        "id": 30,
+        "line": 191,
+        "precode": "                        x0 = 0.5 * (x0 + x1 - delta);",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                        x0 = 0.5 * (x0 + x1 + delta);"
+    },
+    {
+        "id": 31,
+        "line": 191,
+        "precode": "                        x0 = 0.5 * (x0 + x1 - delta);",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                        x0 = x0 + x1 - delta;"
+    },
+    {
+        "id": 32,
+        "line": 192,
+        "precode": "                        f0 = computeObjectiveValue(x0);",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                        f0 = 0.0;"
+    },
+    {
+        "id": 33,
+        "line": 201,
+        "precode": "            x1 = x;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            x1 = x0;"
+    },
+    {
+        "id": 34,
+        "line": 202,
+        "precode": "            f1 = fx;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            f1 = f0;"
+    },
+    {
+        "id": 35,
+        "line": 207,
+        "precode": "            if (FastMath.abs(f1) <= ftol) {",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            if (FastMath.abs(f1) > ftol) {"
+    },
+    {
+        "id": 36,
+        "line": 207,
+        "precode": "            if (FastMath.abs(f1) <= ftol) {",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            if (FastMath.abs(f0) <= ftol) {"
+    },
+    {
+        "id": 37,
+        "line": 242,
+        "precode": "                    return x1;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                    return x0;"
+    },
+    {
+        "id": 38,
+        "line": 228,
+        "precode": "                        return x1;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                        return x0;"
+    },
+    {
+        "id": 39,
+        "line": 228,
+        "precode": "                        return x1;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                        return x0;"
+    },
+    {
+        "id": 40,
+        "line": 228,
+        "precode": "                        return x1;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                        return x0;"
+    },
+    {
+        "id": 41,
+        "line": 228,
+        "precode": "                        return x1;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                        return x0;"
+    },
+    {
+        "id": 42,
+        "line": 238,
+        "precode": "            if (FastMath.abs(x1 - x0) < FastMath.max(rtol * FastMath.abs(x1),",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            if (FastMath.abs(x1 - x0) > FastMath.max(rtol * FastMath.abs(x1),"
+    },
+    {
+        "id": 43,
+        "line": 238,
+        "precode": "            if (FastMath.abs(x1 - x0) < FastMath.max(rtol * FastMath.abs(x1),",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            if (FastMath.abs(x1 - x0) < FastMath.min(rtol * FastMath.abs(x1),"
+    },
+    {
+        "id": 44,
+        "line": 239,
+        "precode": "                                                     atol)) {",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                                                     0.0)) {"
+    },
+    {
+        "id": 45,
+        "line": 242,
+        "precode": "                    return x1;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                    return x0;"
+    },
+    {
+        "id": 46,
+        "line": 244,
+        "precode": "                    return inverted ? x1 : x0;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                    return inverted ? x0 : x1;"
+    },
+    {
+        "id": 47,
+        "line": 246,
+        "precode": "                    return inverted ? x0 : x1;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                    return inverted ? x1 : x0;"
+    },
+    {
+        "id": 48,
+        "line": 248,
+        "precode": "                    return (f1 <= 0) ? x1 : x0;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                    return (f1 > 0) ? x1 : x0;"
+    },
+    {
+        "id": 49,
+        "line": 250,
+        "precode": "                    return (f1 >= 0) ? x1 : x0;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                    return (f1 < 0) ? x1 : x0;"
+    },
+    {
+        "id": 50,
+        "line": 160,
+        "precode": "            final double x = x1 - ((f1 * (x1 - x0)) / (f1 - f0));",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            final double x = x1;"
+    },
+    {
+        "id": 51,
+        "line": 171,
+        "precode": "            if (f1 * fx < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            if (false) {"
+    },
+    {
+        "id": 52,
+        "line": 180,
+        "precode": "                    f0 *= 0.5;",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                    f0 = 0.0;"
+    },
+    {
+        "id": 53,
+        "line": 183,
+        "precode": "                    f0 *= f1 / (f1 + fx);",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                    f0 = 0.0;"
+    },
+    {
+        "id": 54,
+        "line": 191,
+        "precode": "                        x0 = 0.5 * (x0 + x1 - delta);",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "                        x0 = x1;"
+    },
+    {
+        "id": 55,
+        "line": 207,
+        "precode": "            if (FastMath.abs(f1) <= ftol) {",
+        "filepath": "./defects4j_fixed/Math/Math_51_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BaseSecantSolver.java",
+        "aftercode": "            if (true) {"
+    }
+]

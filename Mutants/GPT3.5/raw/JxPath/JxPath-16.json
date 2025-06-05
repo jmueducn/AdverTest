@@ -1,0 +1,789 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 381,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "precode": "String current = getLanguage();",
+        "aftercode": "String current = null;",
+        "fail_test_number": 31,
+        "fail_test": "Failing tests: 31\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsTrue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant1\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleAttributesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWhenCurrentLanguageIsNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithActualLanguageAttribute\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithEmptyOrNullAttributes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCheckCurrentLanguage_WhenGetLanguageReturnsNonNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameAndNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithExceptionInTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeNotFound\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeInGrandParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_EndsWithBehavior\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithNullTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_InstanceMethodDelegatesToStaticMethod\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithDifferentPointerInstances\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_NullCase\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonEmptyAttr_ShouldReturnValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ExactMatch\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInCurrentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NoAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameNullNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_DetectsElementCastMutation\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleLevels_ShouldFindFirstNonEmpty\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_CurrentLanguageNotNull_ShouldCompareLanguages\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldReturnAttributeValueWhenExists\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonElementNodesInHierarchy\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 382,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "precode": "return current == null ? super.isLanguage(lang)",
+        "aftercode": "return true ? super.isLanguage(lang)",
+        "fail_test_number": 31,
+        "fail_test": "Failing tests: 31\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsTrue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant1\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleAttributesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWhenCurrentLanguageIsNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithActualLanguageAttribute\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithEmptyOrNullAttributes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCheckCurrentLanguage_WhenGetLanguageReturnsNonNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameAndNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithExceptionInTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeNotFound\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeInGrandParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_EndsWithBehavior\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithNullTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_InstanceMethodDelegatesToStaticMethod\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithDifferentPointerInstances\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_NullCase\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonEmptyAttr_ShouldReturnValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ExactMatch\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInCurrentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NoAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameNullNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_DetectsElementCastMutation\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleLevels_ShouldFindFirstNonEmpty\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_CurrentLanguageNotNull_ShouldCompareLanguages\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldReturnAttributeValueWhenExists\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonElementNodesInHierarchy\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 383,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "precode": ": current.toUpperCase().startsWith(lang.toUpperCase());",
+        "aftercode": ": current.equals(lang);",
+        "fail_test_number": 34,
+        "fail_test": "Failing tests: 34\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsTrue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant1\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleAttributesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWhenCurrentLanguageIsNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithActualLanguageAttribute\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithEmptyOrNullAttributes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCheckCurrentLanguage_WhenGetLanguageReturnsNonNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameAndNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithExceptionInTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeNotFound\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeInGrandParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_EndsWithBehavior\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithNullTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_InstanceMethodDelegatesToStaticMethod\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithDifferentPointerInstances\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_NullCase\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonEmptyAttr_ShouldReturnValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ExactMatch\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInCurrentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NoAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameNullNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_StartsWithBehavior\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_DetectsElementCastMutation\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleLevels_ShouldFindFirstNonEmpty\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_WhenLanguageExists_ShouldCompareStrings\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_CurrentLanguageNotNull_ShouldCompareLanguages\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldReturnAttributeValueWhenExists\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonElementNodesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCompareLanguages_WhenCurrentLanguageExists\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 5,
+        "line": 394,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "precode": "while (n != null) {",
+        "aftercode": "while (n == null) {",
+        "fail_test_number": 32,
+        "fail_test": "Failing tests: 32\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NullNodeInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsTrue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldTraverseParentNodes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_LanguageDetection\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant1\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleAttributesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWhenCurrentLanguageIsNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithActualLanguageAttribute\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithEmptyOrNullAttributes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCheckCurrentLanguage_WhenGetLanguageReturnsNonNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameAndNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithExceptionInTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeInGrandParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithNullTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_InstanceMethodDelegatesToStaticMethod\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithDifferentPointerInstances\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_NullCase\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonEmptyAttr_ShouldReturnValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ExactMatch\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInCurrentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NoAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameNullNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleLevels_ShouldFindFirstNonEmpty\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeReturnsActualAttributeValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_CurrentLanguageNotNull_ShouldCompareLanguages\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldReturnAttributeValueWhenExists\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonElementNodesInHierarchy\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 6,
+        "line": 395,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "precode": "if (n.getNodeType() == Node.ELEMENT_NODE) {",
+        "aftercode": "if (n.getNodeType() != Node.ELEMENT_NODE) {",
+        "fail_test_number": 34,
+        "fail_test": "Failing tests: 34\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsTrue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldTraverseParentNodes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_LanguageDetection\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant1\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleAttributesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWhenCurrentLanguageIsNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithActualLanguageAttribute\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithEmptyOrNullAttributes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCheckCurrentLanguage_WhenGetLanguageReturnsNonNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameAndNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithExceptionInTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeInGrandParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_EndsWithBehavior\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithNullTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_InstanceMethodDelegatesToStaticMethod\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithDifferentPointerInstances\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_NullCase\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonEmptyAttr_ShouldReturnValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ExactMatch\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInCurrentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NoAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameNullNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_DetectsElementCastMutation\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleLevels_ShouldFindFirstNonEmpty\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeReturnsActualAttributeValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NullAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_CurrentLanguageNotNull_ShouldCompareLanguages\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldReturnAttributeValueWhenExists\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonElementNodesInHierarchy\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 7,
+        "line": 396,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "precode": "Element e = (Element) n;",
+        "aftercode": "Element e = null;",
+        "fail_test_number": 33,
+        "fail_test": "Failing tests: 33\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsTrue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldTraverseParentNodes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_LanguageDetection\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant1\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleAttributesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWhenCurrentLanguageIsNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithActualLanguageAttribute\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithEmptyOrNullAttributes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCheckCurrentLanguage_WhenGetLanguageReturnsNonNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameAndNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithExceptionInTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeNotFound\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeInGrandParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithNullTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_InstanceMethodDelegatesToStaticMethod\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithDifferentPointerInstances\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_NullCase\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonEmptyAttr_ShouldReturnValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ExactMatch\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInCurrentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NoAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameNullNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_DetectsElementCastMutation\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleLevels_ShouldFindFirstNonEmpty\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeReturnsActualAttributeValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_CurrentLanguageNotNull_ShouldCompareLanguages\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldReturnAttributeValueWhenExists\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonElementNodesInHierarchy\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 8,
+        "line": 397,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "precode": "String attr = e.getAttribute(attrName);",
+        "aftercode": "String attr = \"\";",
+        "fail_test_number": 33,
+        "fail_test": "Failing tests: 33\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsTrue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldTraverseParentNodes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_LanguageDetection\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant1\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleAttributesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWhenCurrentLanguageIsNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithActualLanguageAttribute\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithEmptyOrNullAttributes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCheckCurrentLanguage_WhenGetLanguageReturnsNonNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameAndNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithExceptionInTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeNotFound\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeInGrandParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithNullTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_InstanceMethodDelegatesToStaticMethod\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithDifferentPointerInstances\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_NullCase\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonEmptyAttr_ShouldReturnValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ExactMatch\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInCurrentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NoAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameNullNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_DetectsElementCastMutation\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleLevels_ShouldFindFirstNonEmpty\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeReturnsActualAttributeValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_CurrentLanguageNotNull_ShouldCompareLanguages\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldReturnAttributeValueWhenExists\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonElementNodesInHierarchy\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 9,
+        "line": 398,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "precode": "if (attr != null && !attr.equals(\"\")) {",
+        "aftercode": "if (attr == null || attr.equals(\"\")) {",
+        "fail_test_number": 33,
+        "fail_test": "Failing tests: 33\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsTrue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldTraverseParentNodes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_LanguageDetection\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant1\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleAttributesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWhenCurrentLanguageIsNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithActualLanguageAttribute\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithEmptyOrNullAttributes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCheckCurrentLanguage_WhenGetLanguageReturnsNonNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameAndNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithExceptionInTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeNotFound\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeInGrandParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithNullTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_InstanceMethodDelegatesToStaticMethod\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithDifferentPointerInstances\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_NullCase\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonEmptyAttr_ShouldReturnValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ExactMatch\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInCurrentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NoAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameNullNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_DetectsElementCastMutation\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleLevels_ShouldFindFirstNonEmpty\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeReturnsActualAttributeValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_CurrentLanguageNotNull_ShouldCompareLanguages\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldReturnAttributeValueWhenExists\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonElementNodesInHierarchy\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 10,
+        "line": 399,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "precode": "return attr;",
+        "aftercode": "return null;",
+        "fail_test_number": 33,
+        "fail_test": "Failing tests: 33\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsTrue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldTraverseParentNodes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_LanguageDetection\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant1\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleAttributesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWhenCurrentLanguageIsNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithActualLanguageAttribute\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithEmptyOrNullAttributes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCheckCurrentLanguage_WhenGetLanguageReturnsNonNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameAndNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithExceptionInTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeNotFound\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeInGrandParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithNullTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_InstanceMethodDelegatesToStaticMethod\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithDifferentPointerInstances\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_NullCase\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonEmptyAttr_ShouldReturnValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ExactMatch\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInCurrentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NoAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameNullNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_DetectsElementCastMutation\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleLevels_ShouldFindFirstNonEmpty\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeReturnsActualAttributeValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_CurrentLanguageNotNull_ShouldCompareLanguages\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldReturnAttributeValueWhenExists\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonElementNodesInHierarchy\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 11,
+        "line": 402,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "precode": "n = n.getParentNode();",
+        "aftercode": "n = null;",
+        "fail_test_number": 33,
+        "fail_test": "Failing tests: 33\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsTrue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldTraverseParentNodes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_LanguageDetection\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant1\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleAttributesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWhenCurrentLanguageIsNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithActualLanguageAttribute\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithEmptyOrNullAttributes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCheckCurrentLanguage_WhenGetLanguageReturnsNonNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameAndNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithExceptionInTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeNotFound\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeInGrandParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithNullTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_InstanceMethodDelegatesToStaticMethod\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithDifferentPointerInstances\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_NullCase\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonEmptyAttr_ShouldReturnValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ExactMatch\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInCurrentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NoAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameNullNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_DetectsElementCastMutation\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleLevels_ShouldFindFirstNonEmpty\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeReturnsActualAttributeValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_CurrentLanguageNotNull_ShouldCompareLanguages\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldReturnAttributeValueWhenExists\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonElementNodesInHierarchy\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 12,
+        "line": 404,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "precode": "return null;",
+        "aftercode": "return \"\";",
+        "fail_test_number": 32,
+        "fail_test": "Failing tests: 32\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NullNodeInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsTrue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_LanguageDetection\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant1\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleAttributesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWhenCurrentLanguageIsNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithActualLanguageAttribute\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithEmptyOrNullAttributes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCheckCurrentLanguage_WhenGetLanguageReturnsNonNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameAndNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithExceptionInTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeNotFound\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeInGrandParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithNullTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_InstanceMethodDelegatesToStaticMethod\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithDifferentPointerInstances\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonEmptyAttr_ShouldReturnValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ExactMatch\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInCurrentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NoAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameNullNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_DetectsElementCastMutation\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleLevels_ShouldFindFirstNonEmpty\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NullAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_CurrentLanguageNotNull_ShouldCompareLanguages\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldReturnAttributeValueWhenExists\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonElementNodesInHierarchy\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 13,
+        "line": 382,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "precode": "return current == null ? super.isLanguage(lang)",
+        "aftercode": "return false ? super.isLanguage(lang)",
+        "fail_test_number": 30,
+        "fail_test": "Failing tests: 30\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsTrue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant1\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleAttributesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWhenCurrentLanguageIsNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithActualLanguageAttribute\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithEmptyOrNullAttributes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCheckCurrentLanguage_WhenGetLanguageReturnsNonNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameAndNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithExceptionInTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeNotFound\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeInGrandParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithNullTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_InstanceMethodDelegatesToStaticMethod\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithDifferentPointerInstances\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_NullCase\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonEmptyAttr_ShouldReturnValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ExactMatch\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInCurrentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NoAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameNullNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_DetectsElementCastMutation\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleLevels_ShouldFindFirstNonEmpty\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_CurrentLanguageNotNull_ShouldCompareLanguages\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldReturnAttributeValueWhenExists\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonElementNodesInHierarchy\n",
+        "survived": true,
+        "id": 12
+    },
+    {
+        "mutant_id:": 14,
+        "line": 383,
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "precode": ": current.toUpperCase().startsWith(lang.toUpperCase());",
+        "aftercode": ": current.toUpperCase().endsWith(lang.toUpperCase());",
+        "fail_test_number": 34,
+        "fail_test": "Failing tests: 34\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsTrue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant1\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleAttributesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWhenCurrentLanguageIsNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithActualLanguageAttribute\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageWithEmptyOrNullAttributes\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCheckCurrentLanguage_WhenGetLanguageReturnsNonNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameAndNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithExceptionInTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WhenTestReturnsFalse\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeNotFound\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeInGrandParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_EndsWithBehavior\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithNullTest\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_InstanceMethodDelegatesToStaticMethod\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInParentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_EmptyAttrNameInput\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_WithDifferentPointerInstances\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_NullCase\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonEmptyAttr_ShouldReturnValue\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ExactMatch\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_AttributeFoundInCurrentNode\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NoAttr_ShouldReturnNull\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testTestNode_NodeNameTest_MatchingNameNullNamespace\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_StartsWithBehavior\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_DetectsElementCastMutation\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_MultipleLevels_ShouldFindFirstNonEmpty\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_WhenLanguageExists_ShouldCompareStrings\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_CurrentLanguageNotNull_ShouldCompareLanguages\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguageDetectsMutant\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttributeShouldReturnAttributeValueWhenExists\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testFindEnclosingAttribute_NonElementNodesInHierarchy\n  - gentest.org.apache.commons.jxpath.ri.model.dom.tests.DOMNodePointerTest::testIsLanguage_ShouldCompareLanguages_WhenCurrentLanguageExists\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "id": 14,
+        "line": 128,
+        "precode": "String namespaceURI = nodeNameTest.getNamespaceURI();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "String namespaceURI = null;"
+    },
+    {
+        "id": 15,
+        "line": 128,
+        "precode": "String namespaceURI = nodeNameTest.getNamespaceURI();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "String namespaceURI = nodeNameTest.toString();"
+    },
+    {
+        "id": 16,
+        "line": 130,
+        "precode": "String testPrefix = testName.getPrefix();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "String testPrefix = testName.toString();"
+    },
+    {
+        "id": 17,
+        "line": 130,
+        "precode": "String testPrefix = testName.getPrefix();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "String testPrefix = \"\";"
+    },
+    {
+        "id": 18,
+        "line": 131,
+        "precode": "if (wildcard && testPrefix == null) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "if (wildcard || testPrefix == null) {"
+    },
+    {
+        "id": 19,
+        "line": 131,
+        "precode": "if (wildcard && testPrefix == null) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "if (wildcard && testPrefix != null) {"
+    },
+    {
+        "id": 20,
+        "line": 132,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 21,
+        "line": 132,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return (1 == 1);"
+    },
+    {
+        "id": 22,
+        "line": 386,
+        "precode": "/**",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "/*"
+    },
+    {
+        "id": 23,
+        "line": 386,
+        "precode": "/**",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "/***"
+    },
+    {
+        "id": 24,
+        "line": 134,
+        "precode": "if (wildcard",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "if (!wildcard"
+    },
+    {
+        "id": 25,
+        "line": 134,
+        "precode": "if (wildcard",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "if (true)"
+    },
+    {
+        "id": 26,
+        "line": 135,
+        "precode": "testName.getName()",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "testName.name"
+    },
+    {
+        "id": 27,
+        "line": 135,
+        "precode": "testName.getName()",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "testName.toString()"
+    },
+    {
+        "id": 28,
+        "line": 383,
+        "precode": "current.toUpperCase().startsWith(lang.toUpperCase());",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "current.toLowerCase().startsWith(lang.toUpperCase());"
+    },
+    {
+        "id": 29,
+        "line": 383,
+        "precode": "current.toUpperCase().startsWith(lang.toUpperCase());",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "current.toUpperCase().endsWith(lang.toUpperCase());"
+    },
+    {
+        "id": 30,
+        "line": 137,
+        "precode": "String nodeNS = DOMNodePointer.getNamespaceURI(node);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "String nodeNS = node.getNamespaceURI();"
+    },
+    {
+        "id": 31,
+        "line": 137,
+        "precode": "String nodeNS = DOMNodePointer.getNamespaceURI(node);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "String nodeNS = DOMNodePointer.getNamespaceURI(null);"
+    },
+    {
+        "id": 32,
+        "line": 138,
+        "precode": "return equalStrings(namespaceURI, nodeNS) || nodeNS == null",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return equalStrings(namespaceURI, nodeNS) && nodeNS == null"
+    },
+    {
+        "id": 33,
+        "line": 138,
+        "precode": "return equalStrings(namespaceURI, nodeNS) || nodeNS == null",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return equalStrings(namespaceURI, nodeNS)"
+    },
+    {
+        "id": 34,
+        "line": 388,
+        "precode": "* on the specified and enclosing elements.",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "* on the specified or enclosing elements."
+    },
+    {
+        "id": 35,
+        "line": 388,
+        "precode": "* on the specified and enclosing elements.",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "* on the specified enclosing elements."
+    },
+    {
+        "id": 36,
+        "line": 140,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "});"
+    },
+    {
+        "id": 37,
+        "line": 140,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "} // dummy comment"
+    },
+    {
+        "id": 38,
+        "line": 141,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 39,
+        "line": 141,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return !false;"
+    },
+    {
+        "id": 40,
+        "line": 389,
+        "precode": "* @param n current node",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "* @param node current node"
+    },
+    {
+        "id": 41,
+        "line": 389,
+        "precode": "* @param n current node",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "* @param n currentNode"
+    },
+    {
+        "id": 42,
+        "line": 391,
+        "precode": "* @return attribute value",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "* @return value"
+    },
+    {
+        "id": 43,
+        "line": 391,
+        "precode": "* @return attribute value",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "* @return attr value"
+    },
+    {
+        "id": 44,
+        "line": 393,
+        "precode": "protected static String findEnclosingAttribute(Node n, String attrName) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "protected static String findEnclosingAttribute(Node n, String name) {"
+    },
+    {
+        "id": 45,
+        "line": 393,
+        "precode": "protected static String findEnclosingAttribute(Node n, String attrName) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "protected String findEnclosingAttribute(Node n, String attrName) {"
+    },
+    {
+        "id": 46,
+        "line": 395,
+        "precode": "if (n.getNodeType() == Node.ELEMENT_NODE) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "if (n.getNodeType() != Node.ELEMENT_NODE) {"
+    },
+    {
+        "id": 47,
+        "line": 395,
+        "precode": "if (n.getNodeType() == Node.ELEMENT_NODE) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "if (n.getNodeType() == Node.TEXT_NODE) {"
+    },
+    {
+        "id": 48,
+        "line": 397,
+        "precode": "String attr = e.getAttribute(attrName);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "String attr = e.getAttribute(\"\");"
+    },
+    {
+        "id": 49,
+        "line": 397,
+        "precode": "String attr = e.getAttribute(attrName);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "String attr = null;"
+    },
+    {
+        "id": 50,
+        "line": 399,
+        "precode": "return attr;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 51,
+        "line": 399,
+        "precode": "return attr;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return new Object();"
+    },
+    {
+        "id": 52,
+        "line": 148,
+        "precode": "case Compiler.NODE_TYPE_TEXT :",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "case Compiler.NODE_TYPE_ELEMENT :"
+    },
+    {
+        "id": 53,
+        "line": 148,
+        "precode": "case Compiler.NODE_TYPE_TEXT :",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "case 0 :"
+    },
+    {
+        "id": 54,
+        "line": 149,
+        "precode": "return nodeType == Node.CDATA_SECTION_NODE",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return nodeType != Node.CDATA_SECTION_NODE"
+    },
+    {
+        "id": 55,
+        "line": 149,
+        "precode": "return nodeType == Node.CDATA_SECTION_NODE",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return true"
+    },
+    {
+        "id": 56,
+        "line": 150,
+        "precode": "|| nodeType == Node.TEXT_NODE;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "&& nodeType == Node.TEXT_NODE;"
+    },
+    {
+        "id": 57,
+        "line": 150,
+        "precode": "|| nodeType == Node.TEXT_NODE;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "|| nodeType != Node.TEXT_NODE;"
+    },
+    {
+        "id": 58,
+        "line": 151,
+        "precode": "case Compiler.NODE_TYPE_COMMENT :",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "case Compiler.NODE_TYPE_COMMENT : // mutated comment"
+    },
+    {
+        "id": 59,
+        "line": 151,
+        "precode": "case Compiler.NODE_TYPE_COMMENT :",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "case Compiler.NODE_TYPE_TEXT :"
+    },
+    {
+        "id": 60,
+        "line": 401,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 61,
+        "line": 401,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "} // dummy comment"
+    },
+    {
+        "id": 62,
+        "line": 402,
+        "precode": "n = n.getParentNode();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "n = n;"
+    },
+    {
+        "id": 63,
+        "line": 402,
+        "precode": "n = n.getParentNode();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "n = n.getParentNode().getParentNode();"
+    },
+    {
+        "id": 64,
+        "line": 154,
+        "precode": "return nodeType == Node.PROCESSING_INSTRUCTION_NODE;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return nodeType != Node.PROCESSING_INSTRUCTION_NODE;"
+    },
+    {
+        "id": 65,
+        "line": 154,
+        "precode": "return nodeType == Node.PROCESSING_INSTRUCTION_NODE;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 66,
+        "line": 155,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "});"
+    },
+    {
+        "id": 67,
+        "line": 155,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "} // dummy comment added"
+    },
+    {
+        "id": 68,
+        "line": 156,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 69,
+        "line": 156,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return !false;"
+    },
+    {
+        "id": 70,
+        "line": 157,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "});"
+    },
+    {
+        "id": 71,
+        "line": 157,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "} // missing implementation"
+    },
+    {
+        "id": 72,
+        "line": 406,
+        "precode": "You are a talented Java programmer and experienced in software testing. Your ability of writing unit tests is excellent. And you have the knowledge on Everything about Java & JUnit. Also, you have the ability of critical thinking and logical reasoning. That will help you to write bugless code and help debugging.",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "You are a talented Java programmer and experienced in software testing. Your ability of writing unit tests is excellent. And you have the knowledge on Everything about Java & JUnit. Also, you have the ability of critical thinking and logical reasoning. That will help you to write buggy code and help debugging."
+    },
+    {
+        "id": 73,
+        "line": 406,
+        "precode": "You are a talented Java programmer and experienced in software testing. Your ability of writing unit tests is excellent. And you have the knowledge on Everything about Java & JUnit. Also, you have the ability of critical thinking and logical reasoning. That will help you to write bugless code and help debugging.",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "You are a talented Java programmer and experienced in software testing. Your ability of writing unit tests is poor. And you have the knowledge on Everything about Java & JUnit. Also, you have the ability of critical thinking and logical reasoning. That will help you to write bugless code and help debugging."
+    },
+    {
+        "id": 74,
+        "line": 159,
+        "precode": "if (node.getNodeType() == Node.PROCESSING_INSTRUCTION_NODE) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "if (node.getNodeType() != Node.PROCESSING_INSTRUCTION_NODE) {"
+    },
+    {
+        "id": 75,
+        "line": 159,
+        "precode": "if (node.getNodeType() == Node.PROCESSING_INSTRUCTION_NODE) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 76,
+        "line": 161,
+        "precode": "String nodePI = ((ProcessingInstruction) node).getTarget();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "String nodePI = node.getTarget();"
+    },
+    {
+        "id": 77,
+        "line": 161,
+        "precode": "String nodePI = ((ProcessingInstruction) node).getTarget();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "String nodePI = ((ProcessingInstruction) node).toString();"
+    },
+    {
+        "id": 78,
+        "line": 163,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 79,
+        "line": 163,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "} "
+    },
+    {
+        "id": 80,
+        "line": 164,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 81,
+        "line": 164,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "} // dummy comment"
+    },
+    {
+        "id": 82,
+        "line": 165,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 83,
+        "line": 165,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return !false;"
+    },
+    {
+        "id": 84,
+        "line": 166,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 85,
+        "line": 166,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 86,
+        "line": 167,
+        "precode": "You are a talented Java programmer and experienced in software testing. Your ability of writing unit tests is excellent. And you have the knowledge on Everything about Java & JUnit. Also, you have the ability of critical thinking and logical reasoning. That will help you to write bugless code and help debugging.",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "You are a talented Java programmer and experienced in software testing. Your ability of writing unit tests is excellent. And you have the knowledge on Everything about Java & JUnit. Also, you have the ability of critical thinking and logical reasoning. That will help you to write bugless code and help debugging."
+    },
+    {
+        "id": 87,
+        "line": 167,
+        "precode": "You are a talented Java programmer and experienced in software testing. Your ability of writing unit tests is excellent. And you have the knowledge on Everything about Java & JUnit. Also, you have the ability of critical thinking and logical reasoning. That will help you to write bugless code and help debugging.",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "You are a talented Java programmer and experienced in software testing. Your ability of writing unit tests is excellent. And you have the knowledge on Everything about Java & JUnit. Also, you have the ability of critical thinking and logical reasoning. That will help you to write code and help debugging."
+    },
+    {
+        "id": 88,
+        "line": 403,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "});"
+    },
+    {
+        "id": 89,
+        "line": 403,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "} // dummy comment"
+    },
+    {
+        "id": 90,
+        "line": 404,
+        "precode": "return null;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 91,
+        "line": 404,
+        "precode": "return null;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "throw new RuntimeException();"
+    },
+    {
+        "id": 92,
+        "line": 379,
+        "precode": "                 */",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "                 *"
+    },
+    {
+        "id": 93,
+        "line": 379,
+        "precode": "                 */",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "                 /*"
+    },
+    {
+        "id": 94,
+        "line": 119,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 95,
+        "line": 119,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return (1 == 1);"
+    },
+    {
+        "id": 96,
+        "line": 120,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 97,
+        "line": 120,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "} // dummy comment"
+    },
+    {
+        "id": 98,
+        "line": 121,
+        "precode": "if (test instanceof NodeNameTest) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "if (test != null && test instanceof NodeNameTest) {"
+    },
+    {
+        "id": 99,
+        "line": 121,
+        "precode": "if (test instanceof NodeNameTest) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "if (test instanceof Object) {"
+    },
+    {
+        "id": 100,
+        "line": 123,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 101,
+        "line": 123,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return !false;"
+    },
+    {
+        "id": 102,
+        "line": 382,
+        "precode": "return current == null ? super.isLanguage(lang)",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return current != null ? super.isLanguage(lang)"
+    },
+    {
+        "id": 103,
+        "line": 382,
+        "precode": "return current == null ? super.isLanguage(lang)",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "return true ? super.isLanguage(lang)"
+    },
+    {
+        "id": 104,
+        "line": 127,
+        "precode": "QName testName = nodeNameTest.getNodeName();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "QName testName = null;"
+    },
+    {
+        "id": 105,
+        "line": 127,
+        "precode": "QName testName = nodeNameTest.getNodeName();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_16_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "QName testName = nodeNameTest.toString();"
+    }
+]

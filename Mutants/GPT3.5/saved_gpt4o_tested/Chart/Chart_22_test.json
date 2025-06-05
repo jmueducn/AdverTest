@@ -1,0 +1,1082 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 6,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "throw new UnknownKeyException(\"Column key (\" + columnKey + \") not recognised.\");",
+        "aftercode": "throw new IllegalArgumentException(\"Column key (\" + columnKey + \") not recognised.\");",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 2,
+        "line": 6,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "throw new UnknownKeyException(\"Column key (\" + columnKey + \") not recognised.\");",
+        "aftercode": "throw new RuntimeException(\"Column key (\" + columnKey + \") not recognised.\");",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 3,
+        "line": 6,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "throw new UnknownKeyException(\"Column key (\" + columnKey + \") not recognised.\");",
+        "aftercode": "throw new UnknownKeyException(\"Key (\" + columnKey + \") not found.\");",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 4,
+        "line": 6,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "throw new UnknownKeyException(\"Column key (\" + columnKey + \") not recognised.\");",
+        "aftercode": "throw new UnknownKeyException(\"Unrecognized column key: \" + columnKey);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 5,
+        "line": 6,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "throw new UnknownKeyException(\"Column key (\" + columnKey + \") not recognised.\");",
+        "aftercode": "throw new UnknownKeyException(\"Error: Column key \" + columnKey + \" is invalid.\");",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 6,
+        "line": 231,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "KeyedObjects rowData = (KeyedObjects) this.rows.get(row);",
+        "aftercode": "KeyedObjects rowData = (KeyedObjects) this.rows.get(row + 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 7,
+        "line": 231,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "KeyedObjects rowData = (KeyedObjects) this.rows.get(row);",
+        "aftercode": "KeyedObjects rowData = (KeyedObjects) this.rows.get(row - 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 8,
+        "line": 231,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "KeyedObjects rowData = (KeyedObjects) this.rows.get(row);",
+        "aftercode": "KeyedObjects rowData = null;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 9,
+        "line": 231,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "KeyedObjects rowData = (KeyedObjects) this.rows.get(row);",
+        "aftercode": "KeyedObjects rowData = (KeyedObjects) this.rows.get(0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 10,
+        "line": 231,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "KeyedObjects rowData = (KeyedObjects) this.rows.get(row);",
+        "aftercode": "KeyedObjects rowData = (KeyedObjects) this.rows.get(this.rows.size() - 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 11,
+        "line": 232,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int index = rowData.getIndex(columnKey);",
+        "aftercode": "int index = rowData.getIndex(rowKey);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 12,
+        "line": 232,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int index = rowData.getIndex(columnKey);",
+        "aftercode": "int index = -1;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 13,
+        "line": 232,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int index = rowData.getIndex(columnKey);",
+        "aftercode": "int index = rowData.getIndex(null);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 14,
+        "line": 232,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int index = rowData.getIndex(columnKey);",
+        "aftercode": "int index = rowData.getIndex(\"defaultKey\");",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 15,
+        "line": 232,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int index = rowData.getIndex(columnKey);",
+        "aftercode": "int index = rowData.getIndex(columnKey) + 1;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 16,
+        "line": 233,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (index >= 0) {",
+        "aftercode": "if (index > 0) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 17,
+        "line": 233,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (index >= 0) {",
+        "aftercode": "if (index != 0) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 18,
+        "line": 233,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (index >= 0) {",
+        "aftercode": "if (index < 0) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 19,
+        "line": 234,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "return rowData.getObject(index);",
+        "aftercode": "return rowData.getObject(index + 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 20,
+        "line": 234,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "return rowData.getObject(index);",
+        "aftercode": "return null;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 21,
+        "line": 325,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (columnIndex >= 0 && row.getObject(columnIndex) != null) {",
+        "aftercode": "if (columnIndex < 0 || row.getObject(columnIndex) == null) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 22,
+        "line": 325,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (columnIndex >= 0 && row.getObject(columnIndex) != null) {",
+        "aftercode": "if (columnIndex >= 0 || row.getObject(columnIndex) != null) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 23,
+        "line": 325,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (columnIndex >= 0 && row.getObject(columnIndex) != null) {",
+        "aftercode": "if (columnIndex >= 0 && row.getObject(columnIndex) == null) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 24,
+        "line": 325,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (columnIndex >= 0 && row.getObject(columnIndex) != null) {",
+        "aftercode": "if (columnIndex >= 0) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 25,
+        "line": 325,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (columnIndex >= 0 && row.getObject(columnIndex) != null) {",
+        "aftercode": "if (row.getObject(columnIndex) != null) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 26,
+        "line": 325,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (columnIndex >= 0 && row.getObject(columnIndex) != null) {",
+        "aftercode": "if (columnIndex >= 0 && row.getObject(columnIndex) == null) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 27,
+        "line": 326,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "allNull = false;",
+        "aftercode": "allNull = true;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 28,
+        "line": 326,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "allNull = false;",
+        "aftercode": "allNull = !allNull;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 29,
+        "line": 326,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "allNull = false;",
+        "aftercode": "// allNull = false;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 30,
+        "line": 327,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "break;",
+        "aftercode": "// break;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 31,
+        "line": 327,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "break;",
+        "aftercode": "continue;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 32,
+        "line": 331,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (allNull) {",
+        "aftercode": "if (!allNull) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 33,
+        "line": 331,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (allNull) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 34,
+        "line": 331,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (allNull) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 36,
+        "line": 17,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "for (int item = 0, itemCount = this.rows.size(); item < itemCount; item++) {",
+        "aftercode": "for (int item = 0; item < this.rows.size(); item++) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 37,
+        "line": 17,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "for (int item = 0, itemCount = this.rows.size(); item < itemCount; item++) {",
+        "aftercode": "for (int item = 0, itemCount = this.rows.size(); item <= itemCount; item++) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 38,
+        "line": 17,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "for (int item = 0, itemCount = this.rows.size(); item < itemCount; item++) {",
+        "aftercode": "for (int item = 0, itemCount = this.rows.size(); item < itemCount - 1; item++) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 39,
+        "line": 17,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "for (int item = 0, itemCount = this.rows.size(); item < itemCount; item++) {",
+        "aftercode": "for (int item = 1, itemCount = this.rows.size(); item < itemCount; item++) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 40,
+        "line": 17,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "for (int item = 0, itemCount = this.rows.size(); item < itemCount; item++) {",
+        "aftercode": "for (int item = 0, itemCount = this.rows.size(); item > itemCount; item++) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 41,
+        "line": 334,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "row = (KeyedObjects) this.rows.get(item);",
+        "aftercode": "row = (KeyedObjects) this.rows.get(item + 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 42,
+        "line": 334,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "row = (KeyedObjects) this.rows.get(item);",
+        "aftercode": "row = (KeyedObjects) this.rows.get(item - 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 43,
+        "line": 334,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "row = (KeyedObjects) this.rows.get(item);",
+        "aftercode": "// row = (KeyedObjects) this.rows.get(item);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 44,
+        "line": 335,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int columnIndex = row.getIndex(columnKey);",
+        "aftercode": "int columnIndex = row.getIndex(rowKey);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 45,
+        "line": 335,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int columnIndex = row.getIndex(columnKey);",
+        "aftercode": "int columnIndex = row.getIndex(null);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 46,
+        "line": 335,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int columnIndex = row.getIndex(columnKey);",
+        "aftercode": "int columnIndex = -1;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 48,
+        "line": 336,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (columnIndex >= 0) {",
+        "aftercode": "if (columnIndex < 0) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 49,
+        "line": 336,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (columnIndex >= 0) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 50,
+        "line": 336,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (columnIndex >= 0) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 52,
+        "line": 337,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "row.removeValue(columnIndex);",
+        "aftercode": "// row.removeValue(columnIndex);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 53,
+        "line": 337,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "row.removeValue(columnIndex);",
+        "aftercode": "row.removeValue(columnIndex + 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 54,
+        "line": 337,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "row.removeValue(columnIndex);",
+        "aftercode": "row.removeValue(columnIndex - 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 55,
+        "line": 337,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "row.removeValue(columnIndex);",
+        "aftercode": "row.removeValue(0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 56,
+        "line": 337,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "row.removeValue(columnIndex);",
+        "aftercode": "row.removeValue(row.getItemCount() - 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 58,
+        "line": 340,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "this.columnKeys.remove(columnKey);",
+        "aftercode": "// this.columnKeys.remove(columnKey);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 59,
+        "line": 340,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "this.columnKeys.remove(columnKey);",
+        "aftercode": "this.columnKeys.clear();",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 60,
+        "line": 340,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "this.columnKeys.remove(columnKey);",
+        "aftercode": "this.columnKeys.remove(rowKey);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 61,
+        "line": 340,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "this.columnKeys.remove(columnKey);",
+        "aftercode": "this.columnKeys.remove(null);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 62,
+        "line": 340,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "this.columnKeys.remove(columnKey);",
+        "aftercode": "this.columnKeys.remove(this.columnKeys.size() - 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 63,
+        "line": 325,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (columnIndex >= 0 && row.getObject(columnIndex) != null) {",
+        "aftercode": "if (columnIndex >= 0 && row.getObject(columnIndex) == null) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 64,
+        "line": 326,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "allNull = false;",
+        "aftercode": "allNull = true;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 65,
+        "line": 327,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "break;",
+        "aftercode": "continue;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 66,
+        "line": 331,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (allNull) {",
+        "aftercode": "if (!allNull) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 67,
+        "line": 17,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "for (int item = 0, itemCount = this.rows.size(); item < itemCount; item++) {",
+        "aftercode": "for (int item = 0; item < this.rows.size(); item++) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 68,
+        "line": 334,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "row = (KeyedObjects) this.rows.get(item);",
+        "aftercode": "row = (KeyedObjects) this.rows.get(item + 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 69,
+        "line": 335,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int columnIndex = row.getIndex(columnKey);",
+        "aftercode": "int columnIndex = row.getIndex(rowKey);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 70,
+        "line": 336,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (columnIndex >= 0) {",
+        "aftercode": "if (columnIndex < 0) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 71,
+        "line": 337,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "row.removeValue(columnIndex);",
+        "aftercode": "row.removeValue(columnIndex + 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 72,
+        "line": 340,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "this.columnKeys.remove(columnKey);",
+        "aftercode": "this.columnKeys.remove(rowKey);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 73,
+        "line": 326,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "allNull = false;",
+        "aftercode": "allNull = !allNull;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 74,
+        "line": 331,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (allNull) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 75,
+        "line": 17,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "for (int item = 0, itemCount = this.rows.size(); item < itemCount; item++) {",
+        "aftercode": "for (int item = 1, itemCount = this.rows.size(); item < itemCount; item++) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 76,
+        "line": 334,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "row = (KeyedObjects) this.rows.get(item);",
+        "aftercode": "// row = (KeyedObjects) this.rows.get(item);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 79,
+        "line": 366,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int index = getRowIndex(rowKey);",
+        "aftercode": "int index = -1;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 80,
+        "line": 367,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (index < 0) {",
+        "aftercode": "if (index <= 0) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 81,
+        "line": 367,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (index < 0) {",
+        "aftercode": "if (index == 0) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 82,
+        "line": 367,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (index < 0) {",
+        "aftercode": "if (index > 0) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 83,
+        "line": 4,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "throw new UnknownKeyException(\"Row key (\" + rowKey + \") not recognised.\");",
+        "aftercode": "throw new IllegalArgumentException(\"Row key (\" + rowKey + \") not recognised.\");",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 84,
+        "line": 4,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "throw new UnknownKeyException(\"Row key (\" + rowKey + \") not recognised.\");",
+        "aftercode": "throw new RuntimeException(\"Row key (\" + rowKey + \") not recognised.\");",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 85,
+        "line": 4,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "throw new UnknownKeyException(\"Row key (\" + rowKey + \") not recognised.\");",
+        "aftercode": "System.out.println(\"Row key (\" + rowKey + \") not recognised.\");",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 86,
+        "line": 4,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "throw new UnknownKeyException(\"Row key (\" + rowKey + \") not recognised.\");",
+        "aftercode": "return;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 87,
+        "line": 371,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "removeRow(index);",
+        "aftercode": "removeRow(index + 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 88,
+        "line": 371,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "removeRow(index);",
+        "aftercode": "removeRow(index - 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 89,
+        "line": 371,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "removeRow(index);",
+        "aftercode": "// removeRow(index);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 90,
+        "line": 371,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "removeRow(index);",
+        "aftercode": "removeRow(0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 91,
+        "line": 371,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "removeRow(index);",
+        "aftercode": "removeRow(getRowCount() - 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 92,
+        "line": 366,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int index = getRowIndex(rowKey);",
+        "aftercode": "int index = getRowIndex(null);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 93,
+        "line": 366,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int index = getRowIndex(rowKey);",
+        "aftercode": "int index = getRowIndex(\"default\");",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 94,
+        "line": 367,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (index < 0) {",
+        "aftercode": "if (index != 0) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 95,
+        "line": 367,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (index < 0) {",
+        "aftercode": "if (index == -1) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 96,
+        "line": 371,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "removeRow(index);",
+        "aftercode": "removeRow(getRowIndex(rowKey));",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 97,
+        "line": 371,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "removeRow(index);",
+        "aftercode": "removeRow(getRowIndex(\"unknown\"));",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 98,
+        "line": 366,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int index = getRowIndex(rowKey);",
+        "aftercode": "int index = 0;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 100,
+        "line": 402,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "while (iterator.hasNext()) {",
+        "aftercode": "while (!iterator.hasNext()) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 102,
+        "line": 404,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int i = rowData.getIndex(columnKey);",
+        "aftercode": "int i = rowData.getIndex(null);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 103,
+        "line": 405,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (i >= 0) {",
+        "aftercode": "if (i > 0) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 104,
+        "line": 406,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "rowData.removeValue(i);",
+        "aftercode": "rowData.removeValue(i + 1);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 106,
+        "line": 401,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "Iterator iterator = this.rows.iterator();",
+        "aftercode": "Iterator iterator = Collections.emptyIterator();",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 107,
+        "line": 403,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "KeyedObjects rowData = (KeyedObjects) iterator.next();",
+        "aftercode": "KeyedObjects rowData = null;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 108,
+        "line": 404,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int i = rowData.getIndex(columnKey);",
+        "aftercode": "int i = -1;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 109,
+        "line": 405,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (i >= 0) {",
+        "aftercode": "if (i != 0) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 110,
+        "line": 406,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "rowData.removeValue(i);",
+        "aftercode": "//rowData.removeValue(i);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 111,
+        "line": 403,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "KeyedObjects rowData = (KeyedObjects) iterator.next();",
+        "aftercode": "KeyedObjects rowData = (KeyedObjects) this.rows.get(0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 112,
+        "line": 404,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "int i = rowData.getIndex(columnKey);",
+        "aftercode": "int i = rowData.getIndex(\"dummyKey\");",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 113,
+        "line": 405,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "if (i >= 0) {",
+        "aftercode": "if (i < 0) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 114,
+        "line": 406,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "rowData.removeValue(i);",
+        "aftercode": "rowData.removeValue(0);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 115,
+        "line": 402,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "while (iterator.hasNext()) {",
+        "aftercode": "while (this.rows.size() > 0) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 116,
+        "line": 401,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "Iterator iterator = this.rows.iterator();",
+        "aftercode": "Iterator iterator = null;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 118,
+        "line": 406,
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "precode": "rowData.removeValue(i);",
+        "aftercode": "rowData.removeValue(rowData.getIndex(columnKey));",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.tests.KeyedObjects2DTest\n",
+        "survived": true
+    }
+]

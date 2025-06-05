@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "line": 262,
+        "precode": "return !isOption(token) || isNegativeNumber(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return isOption(token) || isNegativeNumber(token);"
+    },
+    {
+        "id": 2,
+        "line": 262,
+        "precode": "return !isOption(token) || isNegativeNumber(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return !isOption(token) && isNegativeNumber(token);"
+    },
+    {
+        "id": 3,
+        "line": 262,
+        "precode": "return !isOption(token) || isNegativeNumber(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return isOption(token) && isNegativeNumber(token);"
+    },
+    {
+        "id": 4,
+        "line": 262,
+        "precode": "return !isOption(token) || isNegativeNumber(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return !isOption(token);"
+    },
+    {
+        "id": 5,
+        "line": 262,
+        "precode": "return !isOption(token) || isNegativeNumber(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return isNegativeNumber(token);"
+    },
+    {
+        "id": 6,
+        "line": 262,
+        "precode": "return !isOption(token) || isNegativeNumber(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 7,
+        "line": 262,
+        "precode": "return !isOption(token) || isNegativeNumber(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 8,
+        "line": 262,
+        "precode": "return !isOption(token) || isNegativeNumber(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return !isOption(token) || !isNegativeNumber(token);"
+    },
+    {
+        "id": 9,
+        "line": 262,
+        "precode": "return !isOption(token) || isNegativeNumber(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return !isOption(token) || true;"
+    },
+    {
+        "id": 10,
+        "line": 262,
+        "precode": "return !isOption(token) || isNegativeNumber(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return !isOption(token) || false;"
+    },
+    {
+        "id": 11,
+        "line": 262,
+        "precode": "return !isOption(token) || isNegativeNumber(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return !isOption(token) || isOption(token);"
+    },
+    {
+        "id": 12,
+        "line": 262,
+        "precode": "return !isOption(token) || isNegativeNumber(token);",
+        "filepath": "./defects4j_fixed/Cli/Cli_30_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return isNegativeNumber(token) || !isOption(token);"
+    }
+]

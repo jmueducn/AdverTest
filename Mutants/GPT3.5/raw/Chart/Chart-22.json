@@ -1,0 +1,142 @@
+[
+    {
+        "id": 1,
+        "line": 401,
+        "precode": "Iterator iterator = this.rows.iterator();",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "Iterator iterator = null;"
+    },
+    {
+        "id": 2,
+        "line": 401,
+        "precode": "Iterator iterator = this.rows.iterator();",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "Iterator iterator = this.rows.listIterator();"
+    },
+    {
+        "id": 3,
+        "line": 402,
+        "precode": "while (iterator.hasNext()) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "while (true) {"
+    },
+    {
+        "id": 4,
+        "line": 402,
+        "precode": "while (iterator.hasNext()) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "while (false) {"
+    },
+    {
+        "id": 5,
+        "line": 403,
+        "precode": "KeyedObjects rowData = (KeyedObjects) iterator.next();",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "KeyedObjects rowData = null;"
+    },
+    {
+        "id": 6,
+        "line": 403,
+        "precode": "KeyedObjects rowData = (KeyedObjects) iterator.next();",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "Object rowData = iterator.next();"
+    },
+    {
+        "id": 7,
+        "line": 404,
+        "precode": "int i = rowData.getIndex(columnKey);",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "int i = -1;"
+    },
+    {
+        "id": 8,
+        "line": 404,
+        "precode": "int i = rowData.getIndex(columnKey);",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "int i = rowData.getIndex(null);"
+    },
+    {
+        "id": 9,
+        "line": 405,
+        "precode": "if (i >= 0) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "if (i > 0) {"
+    },
+    {
+        "id": 10,
+        "line": 405,
+        "precode": "if (i >= 0) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "if (i <= 0) {"
+    },
+    {
+        "id": 11,
+        "line": 405,
+        "precode": "if (i >= 0) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 12,
+        "line": 405,
+        "precode": "if (i >= 0) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 13,
+        "line": 406,
+        "precode": "rowData.removeValue(i);",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "rowData.removeValue(0);"
+    },
+    {
+        "id": 14,
+        "line": 406,
+        "precode": "rowData.removeValue(i);",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "rowData.removeValue(-1);"
+    },
+    {
+        "id": 15,
+        "line": 406,
+        "precode": "rowData.removeValue(i);",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "rowData.removeValue(Integer.MAX_VALUE);"
+    },
+    {
+        "id": 16,
+        "line": 406,
+        "precode": "rowData.removeValue(i);",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "rowData.removeValue(i + 1);"
+    },
+    {
+        "id": 17,
+        "line": 409,
+        "precode": "this.columnKeys.remove(columnKey);",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "this.columnKeys.remove(null);"
+    },
+    {
+        "id": 18,
+        "line": 409,
+        "precode": "this.columnKeys.remove(columnKey);",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "this.columnKeys.add(columnKey);"
+    },
+    {
+        "id": 19,
+        "line": 409,
+        "precode": "this.columnKeys.remove(columnKey);",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "this.columnKeys.clear();"
+    },
+    {
+        "id": 20,
+        "line": 409,
+        "precode": "this.columnKeys.remove(columnKey);",
+        "filepath": "./defects4j_fixed/Chart/Chart_22_fixed/source/org/jfree/data/KeyedObjects2D.java",
+        "aftercode": "this.columnKeys.remove(columnKey + \"1\");"
+    }
+]

@@ -1,0 +1,338 @@
+[
+    {
+        "id": 1,
+        "line": 808,
+        "precode": "        Map<ZipArchiveEntry, OffsetEntry> origMap =",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "        Map<ZipArchiveEntry, OffsetEntry> origMap = null;"
+    },
+    {
+        "id": 2,
+        "line": 808,
+        "precode": "        Map<ZipArchiveEntry, OffsetEntry> origMap =",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "        Map<ZipArchiveEntry, OffsetEntry> origMap = new HashMap<ZipArchiveEntry, OffsetEntry>(entries);"
+    },
+    {
+        "id": 3,
+        "line": 809,
+        "precode": "            new LinkedHashMap<ZipArchiveEntry, OffsetEntry>(entries);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            new TreeMap<ZipArchiveEntry, OffsetEntry>(entries);"
+    },
+    {
+        "id": 4,
+        "line": 810,
+        "precode": "        entries.clear();",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "        // entries.clear();"
+    },
+    {
+        "id": 5,
+        "line": 810,
+        "precode": "        entries.clear();",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "        entries = new LinkedHashMap<ZipArchiveEntry, OffsetEntry>();"
+    },
+    {
+        "id": 6,
+        "line": 811,
+        "precode": "        for (ZipArchiveEntry ze : origMap.keySet()) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "        for (ZipArchiveEntry ze : entries.keySet()) {"
+    },
+    {
+        "id": 7,
+        "line": 811,
+        "precode": "        for (ZipArchiveEntry ze : origMap.keySet()) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "        for (ZipArchiveEntry ze : origMap.values()) {"
+    },
+    {
+        "id": 8,
+        "line": 812,
+        "precode": "            OffsetEntry offsetEntry = origMap.get(ze);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            OffsetEntry offsetEntry = entries.get(ze);"
+    },
+    {
+        "id": 9,
+        "line": 813,
+        "precode": "            long offset = offsetEntry.headerOffset;",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            long offset = 0;"
+    },
+    {
+        "id": 10,
+        "line": 814,
+        "precode": "            archive.seek(offset + LFH_OFFSET_FOR_FILENAME_LENGTH);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            archive.seek(offset);"
+    },
+    {
+        "id": 11,
+        "line": 814,
+        "precode": "            archive.seek(offset + LFH_OFFSET_FOR_FILENAME_LENGTH);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            archive.seek(offset - LFH_OFFSET_FOR_FILENAME_LENGTH);"
+    },
+    {
+        "id": 12,
+        "line": 815,
+        "precode": "            byte[] b = new byte[SHORT];",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            byte[] b = new byte[0];"
+    },
+    {
+        "id": 13,
+        "line": 815,
+        "precode": "            byte[] b = new byte[SHORT];",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            byte[] b = null;"
+    },
+    {
+        "id": 14,
+        "line": 818,
+        "precode": "            archive.readFully(b);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            // archive.readFully(b);"
+    },
+    {
+        "id": 15,
+        "line": 817,
+        "precode": "            int fileNameLen = ZipShort.getValue(b);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            int fileNameLen = 0;"
+    },
+    {
+        "id": 16,
+        "line": 818,
+        "precode": "            archive.readFully(b);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            archive.skipBytes(SHORT);"
+    },
+    {
+        "id": 17,
+        "line": 819,
+        "precode": "            int extraFieldLen = ZipShort.getValue(b);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            int extraFieldLen = fileNameLen;"
+    },
+    {
+        "id": 18,
+        "line": 820,
+        "precode": "            int lenToSkip = fileNameLen;",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            int lenToSkip = fileNameLen + extraFieldLen;"
+    },
+    {
+        "id": 19,
+        "line": 821,
+        "precode": "            while (lenToSkip > 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            while (lenToSkip >= 0) {"
+    },
+    {
+        "id": 20,
+        "line": 822,
+        "precode": "                int skipped = archive.skipBytes(lenToSkip);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                int skipped = archive.skipBytes(0);"
+    },
+    {
+        "id": 21,
+        "line": 823,
+        "precode": "                if (skipped <= 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                if (skipped < 0) {"
+    },
+    {
+        "id": 22,
+        "line": 824,
+        "precode": "                    throw new RuntimeException(\"failed to skip file name in\"",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                    throw new IOException(\"failed to skip file name in\""
+    },
+    {
+        "id": 23,
+        "line": 827,
+        "precode": "                lenToSkip -= skipped;",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                lenToSkip += skipped;"
+    },
+    {
+        "id": 24,
+        "line": 829,
+        "precode": "            byte[] localExtraData = new byte[extraFieldLen];",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            byte[] localExtraData = new byte[fileNameLen];"
+    },
+    {
+        "id": 25,
+        "line": 830,
+        "precode": "            archive.readFully(localExtraData);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            // archive.readFully(localExtraData);"
+    },
+    {
+        "id": 26,
+        "line": 831,
+        "precode": "            ze.setExtra(localExtraData);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            ze.setExtra(null);"
+    },
+    {
+        "id": 27,
+        "line": 832,
+        "precode": "            offsetEntry.dataOffset = offset + LFH_OFFSET_FOR_FILENAME_LENGTH",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            offsetEntry.dataOffset = offset - LFH_OFFSET_FOR_FILENAME_LENGTH"
+    },
+    {
+        "id": 28,
+        "line": 833,
+        "precode": "                + SHORT + SHORT + fileNameLen + extraFieldLen;",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                + SHORT + fileNameLen + extraFieldLen;"
+    },
+    {
+        "id": 29,
+        "line": 835,
+        "precode": "            if (entriesWithoutUTF8Flag.containsKey(ze)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            if (!entriesWithoutUTF8Flag.containsKey(ze)) {"
+    },
+    {
+        "id": 30,
+        "line": 836,
+        "precode": "                String orig = ze.getName();",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                String orig = \"\";"
+    },
+    {
+        "id": 31,
+        "line": 837,
+        "precode": "                NameAndComment nc = entriesWithoutUTF8Flag.get(ze);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                NameAndComment nc = null;"
+    },
+    {
+        "id": 32,
+        "line": 838,
+        "precode": "                ZipUtil.setNameAndCommentFromExtraFields(ze, nc.name,",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                ZipUtil.setNameAndCommentFromExtraFields(ze, \"\","
+    },
+    {
+        "id": 33,
+        "line": 839,
+        "precode": "                                                         nc.comment);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                                                         \"\");"
+    },
+    {
+        "id": 34,
+        "line": 840,
+        "precode": "                if (!orig.equals(ze.getName())) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                if (orig.equals(ze.getName())) {"
+    },
+    {
+        "id": 35,
+        "line": 841,
+        "precode": "                    nameMap.remove(orig);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                    // nameMap.remove(orig);"
+    },
+    {
+        "id": 36,
+        "line": 842,
+        "precode": "                    nameMap.put(ze.getName(), ze);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                    nameMap.put(orig, ze);"
+    },
+    {
+        "id": 37,
+        "line": 845,
+        "precode": "            entries.put(ze, offsetEntry);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            entries.put(ze, null);"
+    },
+    {
+        "id": 38,
+        "line": 808,
+        "precode": "        Map<ZipArchiveEntry, OffsetEntry> origMap =",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "        Map<ZipArchiveEntry, OffsetEntry> origMap = new LinkedHashMap<ZipArchiveEntry, OffsetEntry>();"
+    },
+    {
+        "id": 39,
+        "line": 811,
+        "precode": "        for (ZipArchiveEntry ze : origMap.keySet()) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "        for (ZipArchiveEntry ze : new ArrayList<ZipArchiveEntry>(origMap.keySet())) {"
+    },
+    {
+        "id": 40,
+        "line": 813,
+        "precode": "            long offset = offsetEntry.headerOffset;",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            long offset = offsetEntry.headerOffset + 1;"
+    },
+    {
+        "id": 41,
+        "line": 815,
+        "precode": "            byte[] b = new byte[SHORT];",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            byte[] b = new byte[SHORT * 2];"
+    },
+    {
+        "id": 42,
+        "line": 817,
+        "precode": "            int fileNameLen = ZipShort.getValue(b);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            int fileNameLen = ZipShort.getValue(b) + 1;"
+    },
+    {
+        "id": 43,
+        "line": 819,
+        "precode": "            int extraFieldLen = ZipShort.getValue(b);",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            int extraFieldLen = ZipShort.getValue(b) * 2;"
+    },
+    {
+        "id": 44,
+        "line": 821,
+        "precode": "            while (lenToSkip > 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            while (lenToSkip != 0) {"
+    },
+    {
+        "id": 45,
+        "line": 823,
+        "precode": "                if (skipped <= 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                if (skipped == 0) {"
+    },
+    {
+        "id": 46,
+        "line": 832,
+        "precode": "            offsetEntry.dataOffset = offset + LFH_OFFSET_FOR_FILENAME_LENGTH",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "            offsetEntry.dataOffset = offset + LFH_OFFSET_FOR_FILENAME_LENGTH + 1"
+    },
+    {
+        "id": 47,
+        "line": 833,
+        "precode": "                + SHORT + SHORT + fileNameLen + extraFieldLen;",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                + SHORT + SHORT + fileNameLen - extraFieldLen;"
+    },
+    {
+        "id": 48,
+        "line": 840,
+        "precode": "                if (!orig.equals(ze.getName())) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_10_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipFile.java",
+        "aftercode": "                if (orig != ze.getName()) {"
+    }
+]

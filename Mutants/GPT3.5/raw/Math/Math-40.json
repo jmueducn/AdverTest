@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "line": 146,
+        "precode": "final double[] x = new double[maximalOrder + 1];",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "final double[] x = new double[maximalOrder];"
+    },
+    {
+        "id": 2,
+        "line": 147,
+        "precode": "final double[] y = new double[maximalOrder + 1];",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "final double[] y = new double[maximalOrder];"
+    },
+    {
+        "id": 3,
+        "line": 148,
+        "precode": "x[0] = getMin();",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "x[0] = getMax();"
+    },
+    {
+        "id": 4,
+        "line": 149,
+        "precode": "x[1] = getStartValue();",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "x[1] = getMin();"
+    },
+    {
+        "id": 5,
+        "line": 150,
+        "precode": "x[2] = getMax();",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "x[2] = getStartValue();"
+    },
+    {
+        "id": 6,
+        "line": 154,
+        "precode": "y[1] = computeObjectiveValue(x[1]);",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "y[1] = computeObjectiveValue(x[0]);"
+    },
+    {
+        "id": 7,
+        "line": 155,
+        "precode": "if (Precision.equals(y[1], 0.0, 1)) {",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "if (Precision.equals(y[1], 0.0, 0)) {"
+    },
+    {
+        "id": 8,
+        "line": 161,
+        "precode": "y[0] = computeObjectiveValue(x[0]);",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "y[0] = computeObjectiveValue(x[2]);"
+    },
+    {
+        "id": 9,
+        "line": 162,
+        "precode": "if (Precision.equals(y[0], 0.0, 1)) {",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "if (Precision.equals(y[0], 0.0, 2)) {"
+    },
+    {
+        "id": 10,
+        "line": 169,
+        "precode": "if (y[0] * y[1] < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "if (y[0] * y[1] > 0) {"
+    },
+    {
+        "id": 11,
+        "line": 172,
+        "precode": "nbPoints        = 2;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "nbPoints        = 3;"
+    },
+    {
+        "id": 12,
+        "line": 173,
+        "precode": "signChangeIndex = 1;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "signChangeIndex = 0;"
+    },
+    {
+        "id": 13,
+        "line": 178,
+        "precode": "y[2] = computeObjectiveValue(x[2]);",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "y[2] = computeObjectiveValue(x[1]);"
+    },
+    {
+        "id": 14,
+        "line": 179,
+        "precode": "if (Precision.equals(y[2], 0.0, 1)) {",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "if (Precision.equals(y[2], 0.0, 1)) {"
+    },
+    {
+        "id": 15,
+        "line": 184,
+        "precode": "if (y[1] * y[2] < 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "if (y[1] * y[2] <= 0) {"
+    },
+    {
+        "id": 16,
+        "line": 186,
+        "precode": "nbPoints        = 3;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "nbPoints        = 2;"
+    },
+    {
+        "id": 17,
+        "line": 187,
+        "precode": "signChangeIndex = 2;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "signChangeIndex = 1;"
+    },
+    {
+        "id": 18,
+        "line": 195,
+        "precode": "final double[] tmpX = new double[x.length];",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "final double[] tmpX = new double[y.length];"
+    },
+    {
+        "id": 19,
+        "line": 198,
+        "precode": "double xA    = x[signChangeIndex - 1];",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "double xA    = x[signChangeIndex];"
+    },
+    {
+        "id": 20,
+        "line": 199,
+        "precode": "double yA    = y[signChangeIndex - 1];",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "double yA    = y[signChangeIndex];"
+    },
+    {
+        "id": 21,
+        "line": 200,
+        "precode": "double absYA = FastMath.abs(yA);",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "double absYA = yA;"
+    },
+    {
+        "id": 22,
+        "line": 201,
+        "precode": "int agingA   = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "int agingA   = 1;"
+    },
+    {
+        "id": 23,
+        "line": 202,
+        "precode": "double xB    = x[signChangeIndex];",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "double xB    = x[signChangeIndex - 1];"
+    },
+    {
+        "id": 24,
+        "line": 203,
+        "precode": "double yB    = y[signChangeIndex];",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "double yB    = y[signChangeIndex - 1];"
+    },
+    {
+        "id": 25,
+        "line": 204,
+        "precode": "double absYB = FastMath.abs(yB);",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "double absYB = yB;"
+    },
+    {
+        "id": 26,
+        "line": 205,
+        "precode": "int agingB   = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "int agingB   = 1;"
+    },
+    {
+        "id": 27,
+        "line": 211,
+        "precode": "final double xTol = getAbsoluteAccuracy() +",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "final double xTol = getAbsoluteAccuracy() -"
+    },
+    {
+        "id": 28,
+        "line": 212,
+        "precode": "getRelativeAccuracy() * FastMath.max(FastMath.abs(xA), FastMath.abs(xB));",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "getRelativeAccuracy() * FastMath.min(FastMath.abs(xA), FastMath.abs(xB));"
+    },
+    {
+        "id": 29,
+        "line": 213,
+        "precode": "if (((xB - xA) <= xTol) || (FastMath.max(absYA, absYB) < getFunctionValueAccuracy())) {",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "if (((xB - xA) >= xTol) || (FastMath.max(absYA, absYB) < getFunctionValueAccuracy())) {"
+    },
+    {
+        "id": 30,
+        "line": 214,
+        "precode": "switch (allowed) {",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "switch (allowed + 1) {"
+    },
+    {
+        "id": 31,
+        "line": 216,
+        "precode": "return absYA < absYB ? xA : xB;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "return absYA > absYB ? xA : xB;"
+    },
+    {
+        "id": 32,
+        "line": 218,
+        "precode": "return xA;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "return xB;"
+    },
+    {
+        "id": 33,
+        "line": 220,
+        "precode": "return xB;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "return xA;"
+    },
+    {
+        "id": 34,
+        "line": 222,
+        "precode": "return (yA <= 0) ? xA : xB;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "return (yA >= 0) ? xA : xB;"
+    },
+    {
+        "id": 35,
+        "line": 224,
+        "precode": "return (yA <  0) ? xB : xA;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "return (yA >  0) ? xB : xA;"
+    },
+    {
+        "id": 36,
+        "line": 236,
+        "precode": "final double weightA = (1 << p) - 1;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "final double weightA = (1 << p);"
+    },
+    {
+        "id": 37,
+        "line": 237,
+        "precode": "final double weightB = p + 1;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "final double weightB = p;"
+    },
+    {
+        "id": 38,
+        "line": 238,
+        "precode": "targetY = (weightA * yA - weightB * REDUCTION_FACTOR * yB) / (weightA + weightB);",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "targetY = (weightA * yA + weightB * REDUCTION_FACTOR * yB) / (weightA + weightB);"
+    },
+    {
+        "id": 39,
+        "line": 242,
+        "precode": "final double weightA = p + 1;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "final double weightA = p;"
+    },
+    {
+        "id": 40,
+        "line": 243,
+        "precode": "final double weightB = (1 << p) - 1;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "final double weightB = (1 << p);"
+    },
+    {
+        "id": 41,
+        "line": 244,
+        "precode": "targetY = (weightB * yB - weightA * REDUCTION_FACTOR * yA) / (weightA + weightB);",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "targetY = (weightB * yB + weightA * REDUCTION_FACTOR * yA) / (weightA + weightB);"
+    },
+    {
+        "id": 42,
+        "line": 247,
+        "precode": "targetY = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "targetY = 1;"
+    },
+    {
+        "id": 43,
+        "line": 257,
+        "precode": "System.arraycopy(x, start, tmpX, start, end - start);",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "System.arraycopy(y, start, tmpX, start, end - start);"
+    },
+    {
+        "id": 44,
+        "line": 258,
+        "precode": "nextX = guessX(targetY, tmpX, y, start, end);",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "nextX = guessX(targetY, x, y, start, end);"
+    },
+    {
+        "id": 45,
+        "line": 260,
+        "precode": "if (!((nextX > xA) && (nextX < xB))) {",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "if (!((nextX >= xA) && (nextX <= xB))) {"
+    },
+    {
+        "id": 46,
+        "line": 266,
+        "precode": "if (signChangeIndex - start >= end - signChangeIndex) {",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "if (signChangeIndex - start > end - signChangeIndex) {"
+    },
+    {
+        "id": 47,
+        "line": 268,
+        "precode": "++start;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "start += 2;"
+    },
+    {
+        "id": 48,
+        "line": 271,
+        "precode": "--end;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "end -= 2;"
+    },
+    {
+        "id": 49,
+        "line": 283,
+        "precode": "nextX = xA + 0.5 * (xB - xA);",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "nextX = xA + 0.25 * (xB - xA);"
+    },
+    {
+        "id": 50,
+        "line": 289,
+        "precode": "final double nextY = computeObjectiveValue(nextX);",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "final double nextY = computeObjectiveValue(xA);"
+    },
+    {
+        "id": 51,
+        "line": 290,
+        "precode": "if (Precision.equals(nextY, 0.0, 1)) {",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "if (Precision.equals(nextY, 0.0, 2)) {"
+    },
+    {
+        "id": 52,
+        "line": 296,
+        "precode": "if ((nbPoints > 2) && (end - start != nbPoints)) {",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "if ((nbPoints > 1) && (end - start != nbPoints)) {"
+    },
+    {
+        "id": 53,
+        "line": 300,
+        "precode": "nbPoints = end - start;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "nbPoints = end - start + 1;"
+    },
+    {
+        "id": 54,
+        "line": 329,
+        "precode": "if (nextY * yA <= 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "if (nextY * yA < 0) {"
+    },
+    {
+        "id": 55,
+        "line": 345,
+        "precode": "signChangeIndex++;",
+        "filepath": "./defects4j_fixed/Math/Math_40_fixed/src/main/java/org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.java",
+        "aftercode": "signChangeIndex += 2;"
+    }
+]

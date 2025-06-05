@@ -1,0 +1,552 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 8,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "if ((this.maximumRangeValueRow == r && this.maximumRangeValueColumn == c) || (this.minimumRangeValueRow == r && this.minimumRangeValueColumn == c)) {",
+        "aftercode": "if ((this.maximumRangeValueRow == r || this.maximumRangeValueColumn == c) || (this.minimumRangeValueRow == r && this.minimumRangeValueColumn == c)) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 2,
+        "line": 8,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "if ((this.maximumRangeValueRow == r && this.maximumRangeValueColumn == c) || (this.minimumRangeValueRow == r && this.minimumRangeValueColumn == c)) {",
+        "aftercode": "if ((this.maximumRangeValueRow != r && this.maximumRangeValueColumn == c) || (this.minimumRangeValueRow == r && this.minimumRangeValueColumn == c)) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 3,
+        "line": 155,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "updateBounds();",
+        "aftercode": "// updateBounds();",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 4,
+        "line": 159,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "double minval = Double.NaN;",
+        "aftercode": "double minval = 0.0;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 5,
+        "line": 160,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "if (item.getMinOutlier() != null) {",
+        "aftercode": "if (item.getMinOutlier() == null) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 6,
+        "line": 163,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "double maxval = Double.NaN;",
+        "aftercode": "double maxval = 0.0;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 7,
+        "line": 164,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "if (item.getMaxOutlier() != null) {",
+        "aftercode": "if (item.getMaxOutlier() == null) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 8,
+        "line": 168,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "if (Double.isNaN(this.maximumRangeValue)) {",
+        "aftercode": "if (!Double.isNaN(this.maximumRangeValue)) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 9,
+        "line": 173,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "else if (maxval > this.maximumRangeValue) {",
+        "aftercode": "else if (maxval >= this.maximumRangeValue) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 10,
+        "line": 179,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "if (Double.isNaN(this.minimumRangeValue)) {",
+        "aftercode": "if (!Double.isNaN(this.minimumRangeValue)) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 11,
+        "line": 184,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "else if (minval < this.minimumRangeValue) {",
+        "aftercode": "else if (minval <= this.minimumRangeValue) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 12,
+        "line": 36,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.rangeBounds = new Range(this.minimumRangeValue, this.maximumRangeValue);",
+        "aftercode": "this.rangeBounds = new Range(this.maximumRangeValue, this.minimumRangeValue);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 13,
+        "line": 193,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "fireDatasetChanged();",
+        "aftercode": "// fireDatasetChanged();",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 15,
+        "line": 186,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValueRow = r;",
+        "aftercode": "this.minimumRangeValueRow = c;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 16,
+        "line": 186,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValueRow = r;",
+        "aftercode": "this.minimumRangeValueRow = -1;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 17,
+        "line": 186,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValueRow = r;",
+        "aftercode": "this.minimumRangeValueRow = 0;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 18,
+        "line": 186,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValueRow = r;",
+        "aftercode": "this.minimumRangeValueRow = this.maximumRangeValueRow;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 19,
+        "line": 186,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValueRow = r;",
+        "aftercode": "this.minimumRangeValueRow = this.minimumRangeValueColumn;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 20,
+        "line": 187,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValueColumn = c;",
+        "aftercode": "this.minimumRangeValueColumn = r;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 21,
+        "line": 187,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValueColumn = c;",
+        "aftercode": "this.minimumRangeValueColumn = -1;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 22,
+        "line": 187,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValueColumn = c;",
+        "aftercode": "this.minimumRangeValueColumn = 0;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 23,
+        "line": 187,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValueColumn = c;",
+        "aftercode": "this.minimumRangeValueColumn = this.maximumRangeValueColumn;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 24,
+        "line": 187,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValueColumn = c;",
+        "aftercode": "this.minimumRangeValueColumn = this.minimumRangeValueRow;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 25,
+        "line": 28,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.rangeBounds = new Range(this.minimumRangeValue, this.maximumRangeValue);",
+        "aftercode": "this.rangeBounds = new Range(this.maximumRangeValue, this.minimumRangeValue);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 26,
+        "line": 28,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.rangeBounds = new Range(this.minimumRangeValue, this.maximumRangeValue);",
+        "aftercode": "this.rangeBounds = new Range(0, this.maximumRangeValue);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 27,
+        "line": 28,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.rangeBounds = new Range(this.minimumRangeValue, this.maximumRangeValue);",
+        "aftercode": "this.rangeBounds = new Range(this.minimumRangeValue, Double.POSITIVE_INFINITY);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 28,
+        "line": 28,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.rangeBounds = new Range(this.minimumRangeValue, this.maximumRangeValue);",
+        "aftercode": "this.rangeBounds = new Range(Double.NEGATIVE_INFINITY, this.maximumRangeValue);",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 29,
+        "line": 742,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValue = Double.NaN;",
+        "aftercode": "this.minimumRangeValue = Double.POSITIVE_INFINITY;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 30,
+        "line": 743,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValueRow = -1;",
+        "aftercode": "this.minimumRangeValueRow = 0;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 31,
+        "line": 744,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValueColumn = -1;",
+        "aftercode": "this.minimumRangeValueColumn = 0;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 32,
+        "line": 745,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.maximumRangeValue = Double.NaN;",
+        "aftercode": "this.maximumRangeValue = Double.NEGATIVE_INFINITY;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 33,
+        "line": 746,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.maximumRangeValueRow = -1;",
+        "aftercode": "this.maximumRangeValueRow = 0;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 34,
+        "line": 747,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.maximumRangeValueColumn = -1;",
+        "aftercode": "this.maximumRangeValueColumn = 0;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 35,
+        "line": 748,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "int rowCount = getRowCount();",
+        "aftercode": "int rowCount = getRowCount() - 1;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 36,
+        "line": 749,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "int columnCount = getColumnCount();",
+        "aftercode": "int columnCount = getColumnCount() - 1;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 37,
+        "line": 750,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "for (int r = 0; r < rowCount; r++) {",
+        "aftercode": "for (int r = 0; r <= rowCount; r++) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 38,
+        "line": 751,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "for (int c = 0; c < columnCount; c++) {",
+        "aftercode": "for (int c = 0; c <= columnCount; c++) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 39,
+        "line": 752,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "BoxAndWhiskerItem item = getItem(r, c);",
+        "aftercode": "BoxAndWhiskerItem item = null;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 40,
+        "line": 753,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "if (item != null) {",
+        "aftercode": "if (item == null) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 41,
+        "line": 754,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "Number min = item.getMinOutlier();",
+        "aftercode": "Number min = null;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 42,
+        "line": 755,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "if (min != null) {",
+        "aftercode": "if (min == null) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 43,
+        "line": 756,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "double minv = min.doubleValue();",
+        "aftercode": "double minv = 0.0;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 44,
+        "line": 757,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "if (!Double.isNaN(minv)) {",
+        "aftercode": "if (Double.isNaN(minv)) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 45,
+        "line": 19,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "if (minv < this.minimumRangeValue || Double.isNaN(this.minimumRangeValue)) {",
+        "aftercode": "if (minv <= this.minimumRangeValue && !Double.isNaN(this.minimumRangeValue)) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 46,
+        "line": 760,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValue = minv;",
+        "aftercode": "this.minimumRangeValue = Double.NaN;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 47,
+        "line": 761,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValueRow = r;",
+        "aftercode": "this.minimumRangeValueRow = -1;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 48,
+        "line": 762,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.minimumRangeValueColumn = c;",
+        "aftercode": "this.minimumRangeValueColumn = -1;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 49,
+        "line": 766,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "Number max = item.getMaxOutlier();",
+        "aftercode": "Number max = null;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 50,
+        "line": 767,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "if (max != null) {",
+        "aftercode": "if (max == null) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 51,
+        "line": 768,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "double maxv = max.doubleValue();",
+        "aftercode": "double maxv = 0.0;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 52,
+        "line": 769,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "if (!Double.isNaN(maxv)) {",
+        "aftercode": "if (Double.isNaN(maxv)) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 53,
+        "line": 28,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "if (maxv > this.maximumRangeValue || Double.isNaN(this.maximumRangeValue)) {",
+        "aftercode": "if (maxv >= this.maximumRangeValue && !Double.isNaN(this.maximumRangeValue)) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 54,
+        "line": 772,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.maximumRangeValue = maxv;",
+        "aftercode": "this.maximumRangeValue = Double.NaN;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 55,
+        "line": 773,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.maximumRangeValueRow = r;",
+        "aftercode": "this.maximumRangeValueRow = -1;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 56,
+        "line": 774,
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "precode": "this.maximumRangeValueColumn = c;",
+        "aftercode": "this.maximumRangeValueColumn = -1;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.statistics.tests.DefaultBoxAndWhiskerCategoryDatasetTest\n",
+        "survived": true
+    }
+]

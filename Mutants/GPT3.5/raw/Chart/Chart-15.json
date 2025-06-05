@@ -1,0 +1,212 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 2052,
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "precode": "PiePlotState state = new PiePlotState(info);",
+        "aftercode": "PiePlotState state = null;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithoutDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithEmptyDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlotArea\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlot\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNegativeIndex\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_NegativeValues\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullGraphics\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_SomeNullValues\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 2052,
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "precode": "PiePlotState state = new PiePlotState(info);",
+        "aftercode": "PiePlotState state = new PiePlotState(null);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlotArea\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlot\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_NegativeValues\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullGraphics\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_SomeNullValues\n",
+        "survived": true,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 2053,
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "precode": "state.setPassesRequired(2);",
+        "aftercode": "state.setPassesRequired(1);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithoutDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithEmptyDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlotArea\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlot\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNegativeIndex\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_NegativeValues\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullGraphics\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_SomeNullValues\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 2053,
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "precode": "state.setPassesRequired(2);",
+        "aftercode": "state.setPassesRequired(0);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithoutDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithEmptyDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlotArea\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlot\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNegativeIndex\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_NegativeValues\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullGraphics\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_SomeNullValues\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 2054,
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "precode": "if (this.dataset != null) {",
+        "aftercode": "if (this.dataset == null) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithoutDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlotArea\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlot\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNegativeIndex\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_NegativeValues\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullGraphics\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_SomeNullValues\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 2054,
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "precode": "if (this.dataset != null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithoutDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlotArea\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlot\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNegativeIndex\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_NegativeValues\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullGraphics\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_SomeNullValues\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 9,
+        "line": 2056,
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "precode": "plot.getDataset()));",
+        "aftercode": "null));",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithEmptyDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlotArea\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlot\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_NegativeValues\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullGraphics\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_SomeNullValues\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 11,
+        "line": 2058,
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "precode": "state.setLatestAngle(plot.getStartAngle());",
+        "aftercode": "state.setLatestAngle(0);",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithoutDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithEmptyDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlotArea\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlot\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_NegativeValues\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullGraphics\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_SomeNullValues\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 12,
+        "line": 2058,
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "precode": "state.setLatestAngle(plot.getStartAngle());",
+        "aftercode": "state.setLatestAngle(Double.MAX_VALUE);",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithoutDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithEmptyDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlotArea\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlot\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_NegativeValues\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullGraphics\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_SomeNullValues\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 14,
+        "line": 2059,
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "precode": "return state;",
+        "aftercode": "return null;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithoutDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithEmptyDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlotArea\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlot\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNegativeIndex\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_NegativeValues\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullGraphics\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_SomeNullValues\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 16,
+        "line": 2053,
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "precode": "state.setPassesRequired(2);",
+        "aftercode": "state.setPassesRequired(Integer.MAX_VALUE);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithoutDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithEmptyDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlotArea\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlot\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNegativeIndex\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_NegativeValues\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullGraphics\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_SomeNullValues\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 17,
+        "line": 2054,
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "precode": "if (this.dataset != null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlotArea\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlot\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_NegativeValues\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullGraphics\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_SomeNullValues\n",
+        "survived": true,
+        "id": 12
+    },
+    {
+        "mutant_id:": 19,
+        "line": 2058,
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "precode": "state.setLatestAngle(plot.getStartAngle());",
+        "aftercode": "state.setLatestAngle(plot.getStartAngle() + 10);",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithoutDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithEmptyDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlotArea\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlot\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_NegativeValues\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullGraphics\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_SomeNullValues\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "mutant_id:": 20,
+        "line": 2059,
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "precode": "return state;",
+        "aftercode": "return new PiePlotState(info);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithoutDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithEmptyDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlotArea\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullPlot\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNegativeIndex\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_NegativeValues\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithDataset\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testInitialise_WithNullGraphics\n  - gentest.org.jfree.chart.plot.tests.PiePlotTest::testGetMaximumExplodePercent_SomeNullValues\n",
+        "survived": false,
+        "id": 14
+    },
+    {
+        "id": 15,
+        "line": 2052,
+        "precode": "PiePlotState state = new PiePlotState(info);",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "PiePlotState state = null;"
+    },
+    {
+        "id": 16,
+        "line": 2052,
+        "precode": "PiePlotState state = new PiePlotState(info);",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "PiePlotState state = new PiePlotState(new PlotRenderingInfo());"
+    },
+    {
+        "id": 17,
+        "line": 2054,
+        "precode": "if (this.dataset != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "if (this.dataset != null) {"
+    },
+    {
+        "id": 18,
+        "line": 2054,
+        "precode": "if (this.dataset != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "if (this.dataset == null) {"
+    },
+    {
+        "id": 19,
+        "line": 1363,
+        "precode": "throw new IllegalArgumentException(\"Null 'key' argument.\");",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "throw new NullPointerException(\"Null 'key' argument.\");"
+    },
+    {
+        "id": 20,
+        "line": 1363,
+        "precode": "throw new IllegalArgumentException(\"Null 'key' argument.\");",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "throw new IllegalArgumentException(\"Invalid 'key' argument.\");"
+    },
+    {
+        "id": 21,
+        "line": 1366,
+        "precode": "this.explodePercentages = new TreeMap();",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "this.explodePercentages = new HashMap();"
+    },
+    {
+        "id": 22,
+        "line": 1366,
+        "precode": "this.explodePercentages = new TreeMap();",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "this.explodePercentages = null;"
+    }
+]

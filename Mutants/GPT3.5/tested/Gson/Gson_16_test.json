@@ -1,0 +1,202 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 340,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "if (toResolve instanceof TypeVariable) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 2,
+        "line": 340,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "if (toResolve instanceof TypeVariable) {",
+        "aftercode": "if (toResolve != null) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithWildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_SimpleType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithClass\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithParameterizedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ClassArray\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithGenericArrayType\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 341,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "TypeVariable<?> typeVariable = (TypeVariable<?>) toResolve;",
+        "aftercode": "TypeVariable<?> typeVariable = null;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_RecursionDetected\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 342,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "if (visitedTypeVariables.contains(typeVariable)) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 5,
+        "line": 342,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "if (visitedTypeVariables.contains(typeVariable)) {",
+        "aftercode": "if (!visitedTypeVariables.contains(typeVariable)) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 6,
+        "line": 410,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "return toResolve;",
+        "aftercode": "return null;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithWildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_SimpleType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithClass\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithParameterizedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ClassArray\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithGenericArrayType\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 346,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "visitedTypeVariables.add(typeVariable);",
+        "aftercode": "// visitedTypeVariables.add(typeVariable);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 9,
+        "line": 346,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "visitedTypeVariables.add(typeVariable);",
+        "aftercode": "visitedTypeVariables.add(null);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 10,
+        "line": 348,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "toResolve = resolveTypeVariable(context, contextRawType, typeVariable);",
+        "aftercode": "toResolve = typeVariable;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 11,
+        "line": 348,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "toResolve = resolveTypeVariable(context, contextRawType, typeVariable);",
+        "aftercode": "toResolve = resolveTypeVariable(null, contextRawType, typeVariable);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 12,
+        "line": 348,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "toResolve = resolveTypeVariable(context, contextRawType, typeVariable);",
+        "aftercode": "toResolve = resolveTypeVariable(context, null, typeVariable);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 13,
+        "line": 348,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "toResolve = resolveTypeVariable(context, contextRawType, typeVariable);",
+        "aftercode": "toResolve = resolveTypeVariable(context, contextRawType, null);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 14,
+        "line": 349,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "if (toResolve == typeVariable) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 15,
+        "line": 349,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "if (toResolve == typeVariable) {",
+        "aftercode": "if (toResolve != typeVariable) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 16,
+        "line": 349,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "if (toResolve == typeVariable) {",
+        "aftercode": "if (toResolve.equals(typeVariable)) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 17,
+        "line": 410,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "return toResolve;",
+        "aftercode": "return null;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithWildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_SimpleType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithClass\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithParameterizedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ClassArray\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithGenericArrayType\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 20,
+        "line": 339,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "while (true) {",
+        "aftercode": "for (;;) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 22,
+        "line": 342,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "if (visitedTypeVariables.contains(typeVariable)) {",
+        "aftercode": "if (visitedTypeVariables == null) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 23,
+        "line": 346,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "visitedTypeVariables.add(typeVariable);",
+        "aftercode": "if (typeVariable != null) visitedTypeVariables.add(typeVariable);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 24,
+        "line": 348,
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "precode": "toResolve = resolveTypeVariable(context, contextRawType, typeVariable);",
+        "aftercode": "toResolve = resolveTypeVariable(context, contextRawType, null);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_GenericArrayType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_TypeVariable_NoRecursion\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithUnsupportedType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WildcardType\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_WithTypeVariable\n  - gentest.com.google.gson.internal.tests.$Gson$TypesTest::testResolve_ParameterizedType\n",
+        "survived": true
+    }
+]

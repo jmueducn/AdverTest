@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "line": 324,
+        "precode": "final String recordSeparator = format.getRecordSeparator();",
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "final String recordSeparator = null;"
+    },
+    {
+        "id": 2,
+        "line": 325,
+        "precode": "if (recordSeparator != null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (recordSeparator == null) {"
+    },
+    {
+        "id": 3,
+        "line": 326,
+        "precode": "out.append(recordSeparator);",
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "out.append(\"\");"
+    },
+    {
+        "id": 4,
+        "line": 326,
+        "precode": "out.append(recordSeparator);",
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "//out.append(recordSeparator);"
+    },
+    {
+        "id": 5,
+        "line": 328,
+        "precode": "newRecord = true;",
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "newRecord = false;"
+    },
+    {
+        "id": 6,
+        "line": 328,
+        "precode": "newRecord = true;",
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "//newRecord = true;"
+    },
+    {
+        "id": 7,
+        "line": 324,
+        "precode": "final String recordSeparator = format.getRecordSeparator();",
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "final String recordSeparator = \"\";"
+    },
+    {
+        "id": 8,
+        "line": 325,
+        "precode": "if (recordSeparator != null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (false) {"
+    }
+]

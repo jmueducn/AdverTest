@@ -1,0 +1,172 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 144,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "super();",
+        "aftercode": "// Removed super() call",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 2,
+        "line": 145,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "setDataset(dataset);",
+        "aftercode": "setDataset(null);",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitializesFieldsCorrectly\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitialization1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_TypicalValues\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "this.pieChart = new JFreeChart(piePlot);",
+        "aftercode": "this.pieChart = new JFreeChart(\"Title\", piePlot);",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 4,
+        "line": 148,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "this.pieChart.removeLegend();",
+        "aftercode": "// Commented out removeLegend()",
+        "fail_test_number": 18,
+        "fail_test": "Failing tests: 18\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitializesFieldsCorrectly\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_NullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitialization1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_TypicalValues\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 149,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "this.dataExtractOrder = TableOrder.BY_COLUMN;",
+        "aftercode": "this.dataExtractOrder = TableOrder.BY_ROW;",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitializesFieldsCorrectly\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_NullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitialization1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_TypicalValues\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 150,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "this.pieChart.setBackgroundPaint(null);",
+        "aftercode": "this.pieChart.setBackgroundPaint(Color.white);",
+        "fail_test_number": 18,
+        "fail_test": "Failing tests: 18\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitializesFieldsCorrectly\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_NullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitialization1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_TypicalValues\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 10,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "TextTitle seriesTitle = new TextTitle(\"Series Title\", new Font(\"SansSerif\", Font.BOLD, 12));",
+        "aftercode": "TextTitle seriesTitle = new TextTitle(\"Modified Title\", new Font(\"SansSerif\", Font.PLAIN, 12));",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 8,
+        "line": 153,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "seriesTitle.setPosition(RectangleEdge.TOP);",
+        "aftercode": "seriesTitle.setPosition(RectangleEdge.BOTTOM);",
+        "fail_test_number": 20,
+        "fail_test": "Failing tests: 20\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitializesFieldsCorrectly\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_NullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testDetectMutatedFontStyleInTextTitle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_TypicalValues\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 154,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "this.pieChart.setTitle(seriesTitle);",
+        "aftercode": "// Removed setTitle() call",
+        "fail_test_number": 24,
+        "fail_test": "Failing tests: 24\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitializesFieldsCorrectly\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testDetectMutantInTextTitleFont\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_NullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testDetectMutatedFontStyleInTextTitle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testChartTitle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitialization1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_TypicalValues\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 155,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "this.aggregatedItemsKey = \"Other\";",
+        "aftercode": "this.aggregatedItemsKey = \"Miscellaneous\";",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitializesFieldsCorrectly\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_NullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitialization1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_TypicalValues\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 156,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "this.aggregatedItemsPaint = Color.lightGray;",
+        "aftercode": "this.aggregatedItemsPaint = Color.darkGray;",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitializesFieldsCorrectly\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_NullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitialization1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_TypicalValues\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 146,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "PiePlot piePlot = new PiePlot(null);",
+        "aftercode": "PiePlot piePlot = null;",
+        "fail_test_number": 25,
+        "fail_test": "Failing tests: 25\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitializesFieldsCorrectly\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testDetectMutantInTextTitleFont\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_NullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testDetectMutatedFontStyleInTextTitle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testChartTitle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorInitialization1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_TypicalValues\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 144,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "super();",
+        "aftercode": "// super();",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 14,
+        "line": 144,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "super();",
+        "aftercode": "super(); // Call to superclass constructor",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 15,
+        "line": 147,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "this.pieChart = new JFreeChart(piePlot);",
+        "aftercode": "this.pieChart = new JFreeChart(null, piePlot);",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 17,
+        "line": 10,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "TextTitle seriesTitle = new TextTitle(\"Modified Title\", new Font(\"SansSerif\", Font.PLAIN, 12));",
+        "aftercode": "TextTitle seriesTitle = new TextTitle(\"Modified Title\", new Font(\"Serif\", Font.PLAIN, 12));",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 18,
+        "line": 10,
+        "filepath": "./defects4j_fixed/Chart/Chart_12_fixed/source/org/jfree/chart/plot/MultiplePiePlot.java",
+        "precode": "TextTitle seriesTitle = new TextTitle(\"Modified Title\", new Font(\"SansSerif\", Font.PLAIN, 12));",
+        "aftercode": "TextTitle seriesTitle = new TextTitle(\"Modified Title\", new Font(\"SansSerif\", Font.BOLD, 12));",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testSeriesTitleMutation\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithoutSuperCall\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructor_ExceptionHandling\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontStyle2\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testTextTitleFontFamily1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartInitialization\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testConstructorWithNullDataset\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation1\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testMultiplePiePlot_DefaultConstructor\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleIsNull\n  - gentest.org.jfree.chart.plot.tests.MultiplePiePlotTest::testPieChartTitleMutation\n",
+        "survived": true
+    }
+]

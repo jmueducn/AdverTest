@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "line": 82,
+        "precode": "if (count < 0 || count > MAXIMUM_CACHE_SIZE) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "if (count <= 0 || count > MAXIMUM_CACHE_SIZE) {"
+    },
+    {
+        "id": 2,
+        "line": 82,
+        "precode": "if (count < 0 || count > MAXIMUM_CACHE_SIZE) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "if (count < 0 && count > MAXIMUM_CACHE_SIZE) {"
+    },
+    {
+        "id": 3,
+        "line": 83,
+        "precode": "throw new IllegalArgumentException(\"count must not be negative or greater than \" + MAXIMUM_CACHE_SIZE);",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "throw new IllegalArgumentException(\"invalid count\");"
+    },
+    {
+        "id": 4,
+        "line": 85,
+        "precode": "while (bitsCachedSize < count && bitsCachedSize < 57) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "while (bitsCachedSize <= count && bitsCachedSize < 57) {"
+    },
+    {
+        "id": 5,
+        "line": 85,
+        "precode": "while (bitsCachedSize < count && bitsCachedSize < 57) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "while (bitsCachedSize < count || bitsCachedSize < 57) {"
+    },
+    {
+        "id": 6,
+        "line": 85,
+        "precode": "while (bitsCachedSize < count && bitsCachedSize < 57) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "while (bitsCachedSize < count && bitsCachedSize <= 57) {"
+    },
+    {
+        "id": 7,
+        "line": 104,
+        "precode": "final long nextByte = in.read();",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "final int nextByte = in.read();"
+    },
+    {
+        "id": 8,
+        "line": 105,
+        "precode": "if (nextByte < 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "if (nextByte <= 0) {"
+    },
+    {
+        "id": 9,
+        "line": 106,
+        "precode": "return nextByte;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "return -1;"
+    },
+    {
+        "id": 10,
+        "line": 123,
+        "precode": "if (byteOrder == ByteOrder.LITTLE_ENDIAN) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "if (byteOrder != ByteOrder.LITTLE_ENDIAN) {"
+    },
+    {
+        "id": 11,
+        "line": 91,
+        "precode": "bitsCached |= (nextByte << bitsCachedSize);",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCached = (nextByte << bitsCachedSize);"
+    },
+    {
+        "id": 12,
+        "line": 91,
+        "precode": "bitsCached |= (nextByte << bitsCachedSize);",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCached |= (nextByte >> bitsCachedSize);"
+    },
+    {
+        "id": 13,
+        "line": 93,
+        "precode": "bitsCached <<= 8;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCached <<= 7;"
+    },
+    {
+        "id": 14,
+        "line": 94,
+        "precode": "bitsCached |= nextByte;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCached = nextByte;"
+    },
+    {
+        "id": 15,
+        "line": 96,
+        "precode": "bitsCachedSize += 8;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCachedSize += 7;"
+    },
+    {
+        "id": 16,
+        "line": 99,
+        "precode": "long overflow = 0l;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "long overflow = 1l;"
+    },
+    {
+        "id": 17,
+        "line": 100,
+        "precode": "if (bitsCachedSize < count) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "if (bitsCachedSize <= count) {"
+    },
+    {
+        "id": 18,
+        "line": 102,
+        "precode": "int bitsToAddCount = count - bitsCachedSize;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "int bitsToAddCount = count + bitsCachedSize;"
+    },
+    {
+        "id": 19,
+        "line": 103,
+        "precode": "overflowBits = 8 - bitsToAddCount;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "overflowBits = 7 - bitsToAddCount;"
+    },
+    {
+        "id": 20,
+        "line": 104,
+        "precode": "final long nextByte = in.read();",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "final int nextByte = in.read();"
+    },
+    {
+        "id": 21,
+        "line": 105,
+        "precode": "if (nextByte < 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "if (nextByte <= 0) {"
+    },
+    {
+        "id": 22,
+        "line": 106,
+        "precode": "return nextByte;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "return -1;"
+    },
+    {
+        "id": 23,
+        "line": 123,
+        "precode": "if (byteOrder == ByteOrder.LITTLE_ENDIAN) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "if (byteOrder != ByteOrder.LITTLE_ENDIAN) {"
+    },
+    {
+        "id": 24,
+        "line": 109,
+        "precode": "long bitsToAdd = nextByte & MASKS[bitsToAddCount];",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "long bitsToAdd = nextByte | MASKS[bitsToAddCount];"
+    },
+    {
+        "id": 25,
+        "line": 110,
+        "precode": "bitsCached |= (bitsToAdd << bitsCachedSize);",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCached = (bitsToAdd << bitsCachedSize);"
+    },
+    {
+        "id": 26,
+        "line": 111,
+        "precode": "overflow = (nextByte >>> bitsToAddCount) & MASKS[overflowBits];",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "overflow = (nextByte >> bitsToAddCount) & MASKS[overflowBits];"
+    },
+    {
+        "id": 27,
+        "line": 113,
+        "precode": "bitsCached <<= bitsToAddCount;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCached <<= (bitsToAddCount + 1);"
+    },
+    {
+        "id": 28,
+        "line": 114,
+        "precode": "long bitsToAdd = (nextByte >>> (overflowBits)) & MASKS[bitsToAddCount];",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "long bitsToAdd = (nextByte >> (overflowBits)) & MASKS[bitsToAddCount];"
+    },
+    {
+        "id": 29,
+        "line": 115,
+        "precode": "bitsCached |= bitsToAdd;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCached = bitsToAdd;"
+    },
+    {
+        "id": 30,
+        "line": 116,
+        "precode": "overflow = nextByte & MASKS[overflowBits];",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "overflow = nextByte | MASKS[overflowBits];"
+    },
+    {
+        "id": 31,
+        "line": 118,
+        "precode": "bitsCachedSize = count;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCachedSize = count + 1;"
+    },
+    {
+        "id": 32,
+        "line": 122,
+        "precode": "if (overflowBits == 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "if (overflowBits <= 0) {"
+    },
+    {
+        "id": 33,
+        "line": 123,
+        "precode": "if (byteOrder == ByteOrder.LITTLE_ENDIAN) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "if (byteOrder != ByteOrder.LITTLE_ENDIAN) {"
+    },
+    {
+        "id": 34,
+        "line": 124,
+        "precode": "bitsOut = (bitsCached & MASKS[count]);",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsOut = (bitsCached | MASKS[count]);"
+    },
+    {
+        "id": 35,
+        "line": 125,
+        "precode": "bitsCached >>>= count;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCached >>= count;"
+    },
+    {
+        "id": 36,
+        "line": 127,
+        "precode": "bitsOut = (bitsCached >> (bitsCachedSize - count)) & MASKS[count];",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsOut = (bitsCached >>> (bitsCachedSize - count)) & MASKS[count];"
+    },
+    {
+        "id": 37,
+        "line": 129,
+        "precode": "bitsCachedSize -= count;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCachedSize = count;"
+    },
+    {
+        "id": 38,
+        "line": 131,
+        "precode": "bitsOut = bitsCached & MASKS[count];",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsOut = bitsCached | MASKS[count];"
+    },
+    {
+        "id": 39,
+        "line": 132,
+        "precode": "bitsCached = overflow;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCached = 0;"
+    },
+    {
+        "id": 40,
+        "line": 133,
+        "precode": "bitsCachedSize = overflowBits;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCachedSize = 0;"
+    },
+    {
+        "id": 41,
+        "line": 85,
+        "precode": "while (bitsCachedSize < count && bitsCachedSize < 57) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "while (bitsCachedSize < count && bitsCachedSize < 56) {"
+    },
+    {
+        "id": 42,
+        "line": 91,
+        "precode": "bitsCached |= (nextByte << bitsCachedSize);",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCached ^= (nextByte << bitsCachedSize);"
+    },
+    {
+        "id": 43,
+        "line": 94,
+        "precode": "bitsCached |= nextByte;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCached ^= nextByte;"
+    },
+    {
+        "id": 44,
+        "line": 110,
+        "precode": "bitsCached |= (bitsToAdd << bitsCachedSize);",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCached ^= (bitsToAdd << bitsCachedSize);"
+    },
+    {
+        "id": 45,
+        "line": 115,
+        "precode": "bitsCached |= bitsToAdd;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsCached ^= bitsToAdd;"
+    },
+    {
+        "id": 46,
+        "line": 124,
+        "precode": "bitsOut = (bitsCached & MASKS[count]);",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsOut = (bitsCached ^ MASKS[count]);"
+    },
+    {
+        "id": 47,
+        "line": 127,
+        "precode": "bitsOut = (bitsCached >> (bitsCachedSize - count)) & MASKS[count];",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsOut = (bitsCached >> (bitsCachedSize - count)) | MASKS[count];"
+    },
+    {
+        "id": 48,
+        "line": 131,
+        "precode": "bitsOut = bitsCached & MASKS[count];",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "bitsOut = bitsCached ^ MASKS[count];"
+    },
+    {
+        "id": 49,
+        "line": 105,
+        "precode": "if (nextByte < 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "if (nextByte == -1) {"
+    },
+    {
+        "id": 50,
+        "line": 105,
+        "precode": "if (nextByte < 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "if (nextByte == -1) {"
+    },
+    {
+        "id": 51,
+        "line": 123,
+        "precode": "if (byteOrder == ByteOrder.LITTLE_ENDIAN) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "if (byteOrder.equals(ByteOrder.LITTLE_ENDIAN)) {"
+    },
+    {
+        "id": 52,
+        "line": 123,
+        "precode": "if (byteOrder == ByteOrder.LITTLE_ENDIAN) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "if (byteOrder.equals(ByteOrder.LITTLE_ENDIAN)) {"
+    },
+    {
+        "id": 53,
+        "line": 123,
+        "precode": "if (byteOrder == ByteOrder.LITTLE_ENDIAN) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "if (byteOrder.equals(ByteOrder.LITTLE_ENDIAN)) {"
+    },
+    {
+        "id": 54,
+        "line": 98,
+        "precode": "int overflowBits = 0;",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "int overflowBits = 1;"
+    },
+    {
+        "id": 55,
+        "line": 83,
+        "precode": "throw new IllegalArgumentException(\"count must not be negative or greater than \" + MAXIMUM_CACHE_SIZE);",
+        "filepath": "./defects4j_fixed/Compress/Compress_40_fixed/src/main/java/org/apache/commons/compress/utils/BitInputStream.java",
+        "aftercode": "throw new IllegalArgumentException(\"invalid count: \" + count);"
+    }
+]

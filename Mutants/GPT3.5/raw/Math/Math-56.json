@@ -1,0 +1,317 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 217,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "if (index < 0 ||",
+        "aftercode": "if (index <= 0 ||",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ReturnsCopyOfCounter\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions1\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 217,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "if (index < 0 ||",
+        "aftercode": "if (index > 0 ||",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooLow\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 218,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "index >= totalSize) {",
+        "aftercode": "index > totalSize) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": true,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 218,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "index >= totalSize) {",
+        "aftercode": "index == totalSize) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": true,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 219,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "throw new OutOfRangeException(index, 0, totalSize);",
+        "aftercode": "throw new OutOfRangeException(0, index, totalSize);",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": true,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 222,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "final int[] indices = new int[dimension];",
+        "aftercode": "final int[] indices = new int[dimension + 1];",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ReturnsCopyOfCounter\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions1\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 222,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "final int[] indices = new int[dimension];",
+        "aftercode": "final int[] indices = new int[0];",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ReturnsCopyOfCounter\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions1\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 224,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "int count = 0;",
+        "aftercode": "int count = 1;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ReturnsCopyOfCounter\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions1\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 225,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "for (int i = 0; i < last; i++) {",
+        "aftercode": "for (int i = 1; i < last; i++) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 225,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "for (int i = 0; i < last; i++) {",
+        "aftercode": "for (int i = 0; i <= last; i++) {",
+        "time out": true,
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 226,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "int idx = 0;",
+        "aftercode": "int idx = 1;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions1\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 12,
+        "line": 227,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "final int offset = uniCounterOffset[i];",
+        "aftercode": "final int offset = uniCounterOffset[i] + 1;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 12
+    },
+    {
+        "mutant_id:": 13,
+        "line": 228,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "while (count <= index) {",
+        "aftercode": "while (count < index) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions1\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "mutant_id:": 15,
+        "line": 229,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "count += offset;",
+        "aftercode": "count -= offset;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions1\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 14
+    },
+    {
+        "mutant_id:": 16,
+        "line": 229,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "count += offset;",
+        "aftercode": "count = offset;",
+        "time out": true,
+        "survived": false,
+        "id": 15
+    },
+    {
+        "mutant_id:": 17,
+        "line": 230,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "++idx;",
+        "aftercode": "--idx;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions1\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 16
+    },
+    {
+        "mutant_id:": 18,
+        "line": 230,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "++idx;",
+        "aftercode": "idx++;",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": true,
+        "id": 17
+    },
+    {
+        "mutant_id:": 19,
+        "line": 232,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "--idx;",
+        "aftercode": "idx--;",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": true,
+        "id": 18
+    },
+    {
+        "mutant_id:": 20,
+        "line": 232,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "--idx;",
+        "aftercode": "idx = 0;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 19
+    },
+    {
+        "mutant_id:": 21,
+        "line": 233,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "count -= offset;",
+        "aftercode": "count += offset;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions1\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 20
+    },
+    {
+        "mutant_id:": 22,
+        "line": 233,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "count -= offset;",
+        "aftercode": "count = 0;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 21
+    },
+    {
+        "mutant_id:": 23,
+        "line": 234,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "indices[i] = idx;",
+        "aftercode": "indices[i] = idx + 1;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions1\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 22
+    },
+    {
+        "mutant_id:": 24,
+        "line": 234,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "indices[i] = idx;",
+        "aftercode": "indices[i] = 0;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 23
+    },
+    {
+        "mutant_id:": 25,
+        "line": 237,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "indices[last] = index - count;",
+        "aftercode": "indices[last] = index + count;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 24
+    },
+    {
+        "mutant_id:": 26,
+        "line": 237,
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "precode": "indices[last] = index - count;",
+        "aftercode": "indices[last] = 0;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterModification\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_EdgeCases\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex2D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_ValidIndex3D\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_WithDifferentDimensions\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_AfterInternalStateChange\n  - gentest.org.apache.commons.math.util.tests.MultidimensionalCounterTest::testGetCounts_IndexTooHigh\n",
+        "survived": false,
+        "id": 25
+    },
+    {
+        "id": 26,
+        "line": 218,
+        "precode": "index >= totalSize) {",
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "aftercode": "index < totalSize) {"
+    },
+    {
+        "id": 27,
+        "line": 218,
+        "precode": "index >= totalSize) {",
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "aftercode": "index != totalSize) {"
+    },
+    {
+        "id": 28,
+        "line": 230,
+        "precode": "++idx;",
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "aftercode": "idx += 2;"
+    },
+    {
+        "id": 29,
+        "line": 230,
+        "precode": "++idx;",
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "aftercode": "idx = idx + 1;"
+    },
+    {
+        "id": 30,
+        "line": 232,
+        "precode": "--idx;",
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "aftercode": "idx = idx - 2;"
+    },
+    {
+        "id": 31,
+        "line": 232,
+        "precode": "--idx;",
+        "filepath": "./defects4j_fixed/Math/Math_56_fixed/src/main/java/org/apache/commons/math/util/MultidimensionalCounter.java",
+        "aftercode": "idx += 1;"
+    }
+]

@@ -1,0 +1,142 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_10_fixed/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java",
+        "precode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\"\";",
+        "aftercode": "return \" title=\\\"\" + toolTipText + \"\\\" alt=\\\"\\\"\";",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.imagemap.tests.StandardToolTipTagFragmentGeneratorTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 2,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_10_fixed/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java",
+        "precode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\"\";",
+        "aftercode": "return \" title=\\\"\\\" alt=\\\"\\\"\";",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.imagemap.tests.StandardToolTipTagFragmentGeneratorTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 3,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_10_fixed/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java",
+        "precode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\"\";",
+        "aftercode": "return \" alt=\\\"\\\" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\"\";",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.imagemap.tests.StandardToolTipTagFragmentGeneratorTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 4,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_10_fixed/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java",
+        "precode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\"\";",
+        "aftercode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText.toUpperCase()) + \"\\\" alt=\\\"\\\"\";",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.imagemap.tests.StandardToolTipTagFragmentGeneratorTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 5,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_10_fixed/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java",
+        "precode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\"\";",
+        "aftercode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText.trim()) + \"\\\" alt=\\\"\\\"\";",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.imagemap.tests.StandardToolTipTagFragmentGeneratorTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 6,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_10_fixed/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java",
+        "precode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\"\";",
+        "aftercode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\"\";",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.imagemap.tests.StandardToolTipTagFragmentGeneratorTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 7,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_10_fixed/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java",
+        "precode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\"\";",
+        "aftercode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"default\\\"\";",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.imagemap.tests.StandardToolTipTagFragmentGeneratorTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 8,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_10_fixed/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java",
+        "precode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\"\";",
+        "aftercode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\"\";",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.imagemap.tests.StandardToolTipTagFragmentGeneratorTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 9,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_10_fixed/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java",
+        "precode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\"\";",
+        "aftercode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"tooltip\\\"\";",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.imagemap.tests.StandardToolTipTagFragmentGeneratorTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 10,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_10_fixed/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java",
+        "precode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\"\";",
+        "aftercode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\" + toolTipText;\";",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.imagemap.tests.StandardToolTipTagFragmentGeneratorTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 11,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_10_fixed/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java",
+        "precode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\"\";",
+        "aftercode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\" + ImageMapUtilities.htmlEscape(toolTipText);\";",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.imagemap.tests.StandardToolTipTagFragmentGeneratorTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 12,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_10_fixed/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java",
+        "precode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\"\";",
+        "aftercode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\"\";",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.imagemap.tests.StandardToolTipTagFragmentGeneratorTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 13,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_10_fixed/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java",
+        "precode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\"\";",
+        "aftercode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"empty\\\"\";",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.imagemap.tests.StandardToolTipTagFragmentGeneratorTest\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 14,
+        "line": 7,
+        "filepath": "./defects4j_fixed/Chart/Chart_10_fixed/source/org/jfree/chart/imagemap/StandardToolTipTagFragmentGenerator.java",
+        "precode": "return \" title=\\\"\" + ImageMapUtilities.htmlEscape(toolTipText) + \"\\\" alt=\\\"\\\"\";",
+        "aftercode": "return \"\";",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.chart.imagemap.tests.StandardToolTipTagFragmentGeneratorTest\n",
+        "survived": true
+    }
+]

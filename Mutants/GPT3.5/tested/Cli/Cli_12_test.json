@@ -1,0 +1,262 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 81,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "if (opt.indexOf('=') != -1 && options.hasOption(opt.substring(0, opt.indexOf('=')))",
+        "aftercode": "if (opt.indexOf('=') == -1 && options.hasOption(opt.substring(0, opt.indexOf('='))))",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_OptionWithEqualsValue\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_UnknownOptionWithoutStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_UnknownOptionWithStopAtNonOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 81,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "if (opt.indexOf('=') != -1 && options.hasOption(opt.substring(0, opt.indexOf('=')))",
+        "aftercode": "if (true && options.hasOption(opt.substring(0, opt.indexOf('='))))",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_UnknownOptionWithoutStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_UnknownOptionWithStopAtNonOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 84,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(0, arg.indexOf('='))); // --foo",
+        "aftercode": "tokens.add(arg.substring(1, arg.indexOf('='))); // --foo",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_OptionWithEqualsValue\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 84,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(0, arg.indexOf('='))); // --foo",
+        "aftercode": "tokens.add(arg.substring(0, arg.indexOf('=')+1)); // --foo",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_OptionWithEqualsValue\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 84,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(0, arg.indexOf('='))); // --foo",
+        "aftercode": "tokens.add(\"\"); // --foo",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_OptionWithEqualsValue\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 85,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(arg.indexOf('=') + 1)); // value",
+        "aftercode": "tokens.add(arg.substring(arg.indexOf('='))); // value",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_OptionWithEqualsValue\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 85,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(arg.indexOf('=') + 1)); // value",
+        "aftercode": "tokens.add(arg.substring(0)); // value",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_OptionWithEqualsValue\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 85,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(arg.indexOf('=') + 1)); // value",
+        "aftercode": "tokens.add(\"\"); // value",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_OptionWithEqualsValue\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 87,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "else if (options.hasOption(arg.substring(0, 2)))",
+        "aftercode": "else if (options.hasOption(arg.substring(1, 3)))",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_UnknownOptionWithoutStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_UnknownOptionWithStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_SpecialPropertyOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 87,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "else if (options.hasOption(arg.substring(0, 2)))",
+        "aftercode": "else if (false)",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_SpecialPropertyOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 87,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "else if (options.hasOption(arg.substring(0, 2)))",
+        "aftercode": "else if (true)",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_UnknownOptionWithoutStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_UnknownOptionWithStopAtNonOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 90,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(0, 2)); // -D",
+        "aftercode": "tokens.add(arg.substring(0, 1)); // -D",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_SpecialPropertyOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 90,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(0, 2)); // -D",
+        "aftercode": "tokens.add(\"\"); // -D",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_SpecialPropertyOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 90,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(0, 2)); // -D",
+        "aftercode": "tokens.add(arg.substring(1, 3)); // -D",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_SpecialPropertyOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 91,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(2)); // property=value",
+        "aftercode": "tokens.add(arg.substring(1)); // property=value",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_SpecialPropertyOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 91,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(2)); // property=value",
+        "aftercode": "tokens.add(\"\"); // property=value",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_SpecialPropertyOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 91,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(2)); // property=value",
+        "aftercode": "tokens.add(arg.substring(3)); // property=value",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_SpecialPropertyOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 81,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "if (opt.indexOf('=') != -1 && options.hasOption(opt.substring(0, opt.indexOf('='))))",
+        "aftercode": "if (opt.indexOf('=') != 0 && options.hasOption(opt.substring(0, opt.indexOf('='))))",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_UnknownOptionWithoutStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_UnknownOptionWithStopAtNonOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 81,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "if (opt.indexOf('=') != -1 && options.hasOption(opt.substring(0, opt.indexOf('='))))",
+        "aftercode": "if (opt.indexOf('=') != -1 && !options.hasOption(opt.substring(0, opt.indexOf('='))))",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_OptionWithEqualsValue\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_SpecialPropertyOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 20,
+        "line": 84,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(0, arg.indexOf('='))); // --foo",
+        "aftercode": "tokens.add(arg); // --foo",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_OptionWithEqualsValue\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 85,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(arg.indexOf('=') + 1)); // value",
+        "aftercode": "tokens.add(arg); // value",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_OptionWithEqualsValue\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 22,
+        "line": 87,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "else if (options.hasOption(arg.substring(0, 2)))",
+        "aftercode": "else if (options.hasOption(arg))",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_SpecialPropertyOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 23,
+        "line": 90,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(0, 2)); // -D",
+        "aftercode": "tokens.add(arg); // -D",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_SpecialPropertyOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 24,
+        "line": 91,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "tokens.add(arg.substring(2)); // property=value",
+        "aftercode": "tokens.add(arg); // property=value",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_SpecialPropertyOption\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 25,
+        "line": 81,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "if (opt.indexOf('=') != -1 && options.hasOption(opt.substring(0, opt.indexOf('='))))",
+        "aftercode": "if (opt.indexOf('=') != -1 && options.hasOption(opt.substring(0, opt.indexOf('=')+1)))",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_OptionWithEqualsValue\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 26,
+        "line": 87,
+        "filepath": "./defects4j_fixed/Cli/Cli_12_fixed/src/java/org/apache/commons/cli/GnuParser.java",
+        "precode": "else if (options.hasOption(arg.substring(0, 2)))",
+        "aftercode": "else if (options.hasOption(arg.substring(0, 1)))",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_NullArguments\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_ComplexScenario\n  - gentest.org.apache.commons.cli.tests.GnuParserTest::testFlatten_SpecialPropertyOption\n",
+        "survived": false
+    }
+]

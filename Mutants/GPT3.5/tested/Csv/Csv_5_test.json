@@ -1,0 +1,82 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 324,
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "precode": "final String recordSeparator = format.getRecordSeparator();",
+        "aftercode": "final String recordSeparator = null;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testNewRecordFlagAfterPrintln\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_MultipleCalls\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_IOExceptionOnAppend\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_NewRecordFlagSet\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithoutRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnWithNonNullRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 325,
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "precode": "if (recordSeparator != null) {",
+        "aftercode": "if (recordSeparator == null) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testNewRecordFlagAfterPrintln\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_MultipleCalls\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_IOExceptionOnAppend\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_NewRecordFlagSet\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithoutRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnWithNonNullRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 326,
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "precode": "out.append(recordSeparator);",
+        "aftercode": "out.append(\"\");",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testNewRecordFlagAfterPrintln\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_MultipleCalls\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_IOExceptionOnAppend\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_NewRecordFlagSet\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithoutRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnWithNonNullRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 326,
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "precode": "out.append(recordSeparator);",
+        "aftercode": "//out.append(recordSeparator);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testNewRecordFlagAfterPrintln\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_MultipleCalls\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_IOExceptionOnAppend\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_NewRecordFlagSet\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithoutRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnWithNonNullRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 328,
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "precode": "newRecord = true;",
+        "aftercode": "newRecord = false;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testNewRecordFlagAfterPrintln\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_MultipleCalls\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_IOExceptionOnAppend\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_NewRecordFlagSet\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithoutRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent1\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 6,
+        "line": 328,
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "precode": "newRecord = true;",
+        "aftercode": "//newRecord = true;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testNewRecordFlagAfterPrintln\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_MultipleCalls\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_IOExceptionOnAppend\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_NewRecordFlagSet\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithoutRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent1\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 7,
+        "line": 324,
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "precode": "final String recordSeparator = format.getRecordSeparator();",
+        "aftercode": "final String recordSeparator = \"\";",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testNewRecordFlagAfterPrintln\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_MultipleCalls\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_IOExceptionOnAppend\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnWithNullRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_NewRecordFlagSet\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithoutRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnWithNonNullRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 325,
+        "filepath": "./defects4j_fixed/Csv/Csv_5_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "precode": "if (recordSeparator != null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testNewRecordFlagAfterPrintln\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_MultipleCalls\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_IOExceptionOnAppend\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_NewRecordFlagSet\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testAppendRecordSeparatorWhenPresent\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintln_WithoutRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnWithNonNullRecordSeparator\n  - gentest.org.apache.commons.csv.tests.CSVPrinterTest::testPrintlnShouldAppendRecordSeparatorWhenPresent1\n",
+        "survived": false
+    }
+]

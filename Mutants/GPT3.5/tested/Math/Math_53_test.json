@@ -1,0 +1,122 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 152,
+        "filepath": "./defects4j_fixed/Math/Math_53_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "MathUtils.checkNotNull(rhs);",
+        "aftercode": "// MathUtils.checkNotNull(rhs);",
+        "fail_test_number": 0,
+        "fail_test": "Failing tests: 0\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 153,
+        "filepath": "./defects4j_fixed/Math/Math_53_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "if (isNaN || rhs.isNaN) {",
+        "aftercode": "if (isNaN && rhs.isNaN) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNull\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 3,
+        "line": 153,
+        "filepath": "./defects4j_fixed/Math/Math_53_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "if (isNaN || rhs.isNaN) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNull\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithZero\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNegativeValues\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWhenBothAreValid\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithInfinity\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWithOneNaNShouldReturnNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_TypicalComplexNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithStaticI\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 154,
+        "filepath": "./defects4j_fixed/Math/Math_53_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "return NaN;",
+        "aftercode": "return createComplex(0, 0);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNull\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWithOneNaNShouldReturnNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWhenCurrentIsNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWhenRhsIsNaN\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 156,
+        "filepath": "./defects4j_fixed/Math/Math_53_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "return createComplex(real + rhs.getReal(),",
+        "aftercode": "return createComplex(real - rhs.getReal(),",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNull\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNegativeValues\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWhenBothAreValid\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWithOneNaNShouldReturnNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_TypicalComplexNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_CommutativeProperty\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_AssociativeProperty\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 156,
+        "filepath": "./defects4j_fixed/Math/Math_53_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "return createComplex(real + rhs.getReal(),",
+        "aftercode": "return createComplex(rhs.getReal(),",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNull\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithZero\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNegativeValues\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWhenBothAreValid\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithInfinity\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWithOneNaNShouldReturnNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_TypicalComplexNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_CommutativeProperty\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithStaticI\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 157,
+        "filepath": "./defects4j_fixed/Math/Math_53_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "imaginary + rhs.getImaginary());",
+        "aftercode": "imaginary - rhs.getImaginary());",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNull\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNegativeValues\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWhenBothAreValid\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithInfinity\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWithOneNaNShouldReturnNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_TypicalComplexNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_CommutativeProperty\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_AssociativeProperty\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithStaticI\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 157,
+        "filepath": "./defects4j_fixed/Math/Math_53_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "imaginary + rhs.getImaginary());",
+        "aftercode": "rhs.getImaginary());",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNull\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithZero\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNegativeValues\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWhenBothAreValid\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithInfinity\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWithOneNaNShouldReturnNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_TypicalComplexNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_CommutativeProperty\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithStaticI\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 156,
+        "filepath": "./defects4j_fixed/Math/Math_53_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "return createComplex(real + rhs.getReal(),",
+        "aftercode": "return createComplex(real * rhs.getReal(),",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNull\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithZero\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNegativeValues\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWhenBothAreValid\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWithOneNaNShouldReturnNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_TypicalComplexNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithStaticI\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 157,
+        "filepath": "./defects4j_fixed/Math/Math_53_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "imaginary + rhs.getImaginary());",
+        "aftercode": "imaginary * rhs.getImaginary());",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNull\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithZero\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNegativeValues\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWhenBothAreValid\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithInfinity\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_TypicalComplexNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithStaticI\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 153,
+        "filepath": "./defects4j_fixed/Math/Math_53_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "if (isNaN || rhs.isNaN) {",
+        "aftercode": "if (isNaN) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNull\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 12,
+        "line": 153,
+        "filepath": "./defects4j_fixed/Math/Math_53_fixed/src/main/java/org/apache/commons/math/complex/Complex.java",
+        "precode": "if (isNaN || rhs.isNaN) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNull\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithZero\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithNegativeValues\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWhenBothAreValid\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithInfinity\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAddWithOneNaNShouldReturnNaN\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_TypicalComplexNumbers\n  - gentest.org.apache.commons.math.complex.tests.ComplexTest::testAdd_WithStaticI\n",
+        "survived": false
+    }
+]

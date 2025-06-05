@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "line": 374,
+        "precode": "if (index == WHOLE_COLLECTION) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_1_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "if (index != WHOLE_COLLECTION) {"
+    },
+    {
+        "id": 2,
+        "line": 375,
+        "precode": "index = 0;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_1_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "index = 1;"
+    },
+    {
+        "id": 3,
+        "line": 378,
+        "precode": "getAbstractFactory(context).createObject(",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_1_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "getAbstractFactory(null).createObject("
+    },
+    {
+        "id": 4,
+        "line": 412,
+        "precode": "context,",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_1_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "null,"
+    },
+    {
+        "id": 5,
+        "line": 422,
+        "precode": "name.toString(),",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_1_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "\"\","
+    },
+    {
+        "id": 6,
+        "line": 609,
+        "precode": "index);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_1_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "0);"
+    },
+    {
+        "id": 7,
+        "line": 384,
+        "precode": "if (success) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_1_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "if (!success) {"
+    },
+    {
+        "id": 8,
+        "line": 415,
+        "precode": "String prefix = name.getPrefix();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_1_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "String prefix = null;"
+    },
+    {
+        "id": 9,
+        "line": 387,
+        "precode": "String namespaceURI = prefix != null ",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_1_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "String namespaceURI = prefix == null "
+    },
+    {
+        "id": 10,
+        "line": 388,
+        "precode": "? context.getNamespaceURI(prefix) ",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_1_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "? \"\" "
+    },
+    {
+        "id": 11,
+        "line": 389,
+        "precode": ": context.getDefaultNamespaceURI();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_1_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": ": \"\";"
+    },
+    {
+        "id": 12,
+        "line": 390,
+        "precode": "nodeTest = new NodeNameTest(name, namespaceURI);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_1_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "nodeTest = null;"
+    },
+    {
+        "id": 13,
+        "line": 392,
+        "precode": "NodeIterator it = childIterator(nodeTest, false, null);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_1_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "NodeIterator it = null;"
+    },
+    {
+        "id": 14,
+        "line": 393,
+        "precode": "if (it != null && it.setPosition(index + 1)) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_1_fixed/src/java/org/apache/commons/jxpath/ri/model/dom/DOMNodePointer.java",
+        "aftercode": "if (it == null || it.setPosition(index + 1)) {"
+    }
+]

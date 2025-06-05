@@ -1,0 +1,162 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 632,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (option.hasArg() && option.hasArgName())",
+        "aftercode": "if (option.hasArg() || option.hasArgName())",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_ShouldNotShowArgNameWhenOptionDoesNotTakeArgument\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithArgNoArgName\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 632,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (option.hasArg() && option.hasArgName())",
+        "aftercode": "if (option.hasArg())",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithArgNoArgName\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 632,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (option.hasArg() && option.hasArgName())",
+        "aftercode": "if (option.hasArgName())",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_ShouldNotShowArgNameWhenOptionDoesNotTakeArgument\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 632,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (option.hasArg() && option.hasArgName())",
+        "aftercode": "if (true)",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_ShouldNotShowArgNameWhenOptionDoesNotTakeArgument\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithLongOptNoArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithLongOptNoArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithShortOptNoArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithArgNoArgName\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithShortOptNoArg\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 632,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (option.hasArg() && option.hasArgName())",
+        "aftercode": "if (false)",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithBothOptsAndArg\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 634,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "buff.append(\" <\").append(option.getArgName()).append(\">\");",
+        "aftercode": "buff.append(\" \").append(option.getArgName());",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithBothOptsAndArg\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 634,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "buff.append(\" <\").append(option.getArgName()).append(\">\");",
+        "aftercode": "buff.append(\"<\").append(option.getArgName()).append(\">\");",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithBothOptsAndArg\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 634,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "buff.append(\" <\").append(option.getArgName()).append(\">\");",
+        "aftercode": "buff.append(\" <\").append(option.getArgName()).append(\" \");",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithBothOptsAndArg\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 634,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "buff.append(\" <\").append(option.getArgName()).append(\">\");",
+        "aftercode": "buff.append(\" \");",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithBothOptsAndArg\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 634,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "buff.append(\" <\").append(option.getArgName()).append(\">\");",
+        "aftercode": "buff.append(option.getArgName());",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithBothOptsAndArg\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 634,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "buff.append(\" <\").append(option.getArgName()).append(\">\");",
+        "aftercode": "buff.append(\" <\").append(\"\").append(\">\");",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithBothOptsAndArg\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 634,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "buff.append(\" <\").append(option.getArgName()).append(\">\");",
+        "aftercode": "buff.append(\" <\").append(option.getArgName().toUpperCase()).append(\">\");",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithBothOptsAndArg\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 634,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "buff.append(\" <\").append(option.getArgName()).append(\">\");",
+        "aftercode": "buff.append(\" <\").append(option.getArgName()).append(\"/>\");",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithBothOptsAndArg\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 634,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "buff.append(\" <\").append(option.getArgName()).append(\">\");",
+        "aftercode": "buff.append(\"[\").append(option.getArgName()).append(\"]\");",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_RequiredWithLongOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithShortOptAndArg\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithBothOptsAndArg\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 632,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (option.hasArg() && option.hasArgName())",
+        "aftercode": "if (option.hasArg() || option.hasArgName())",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_ShouldNotShowArgNameWhenOptionDoesNotTakeArgument\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithArgNoArgName\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 632,
+        "filepath": "./defects4j_fixed/Cli/Cli_11_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (option.hasArg() && option.hasArgName())",
+        "aftercode": "if (option.hasArg())",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testAppendOption_OptionalWithArgNoArgName\n",
+        "survived": false
+    }
+]

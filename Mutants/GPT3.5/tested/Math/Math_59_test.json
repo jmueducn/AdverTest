@@ -1,0 +1,92 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 3473,
+        "filepath": "./defects4j_fixed/Math/Math_59_fixed/src/main/java/org/apache/commons/math/util/FastMath.java",
+        "precode": "return (a <= b) ? b : a;",
+        "aftercode": "return (a < b) ? b : a;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_ExtremeValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_DoubleSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_FloatSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_InfinityCases\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 2,
+        "line": 3473,
+        "filepath": "./defects4j_fixed/Math/Math_59_fixed/src/main/java/org/apache/commons/math/util/FastMath.java",
+        "precode": "return (a <= b) ? b : a;",
+        "aftercode": "return (a >= b) ? b : a;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_ExtremeValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongTypicalValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_DoubleSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_FloatSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongEdgeCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_InfinityCases\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 3473,
+        "filepath": "./defects4j_fixed/Math/Math_59_fixed/src/main/java/org/apache/commons/math/util/FastMath.java",
+        "precode": "return (a <= b) ? b : a;",
+        "aftercode": "return (a == b) ? b : a;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_ExtremeValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongTypicalValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_DoubleSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_FloatSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongEdgeCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_InfinityCases\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 3473,
+        "filepath": "./defects4j_fixed/Math/Math_59_fixed/src/main/java/org/apache/commons/math/util/FastMath.java",
+        "precode": "return (a <= b) ? b : a;",
+        "aftercode": "return (a != b) ? b : a;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_ExtremeValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongTypicalValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_DoubleSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_FloatSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongEdgeCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_InfinityCases\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 3473,
+        "filepath": "./defects4j_fixed/Math/Math_59_fixed/src/main/java/org/apache/commons/math/util/FastMath.java",
+        "precode": "return (a <= b) ? b : a;",
+        "aftercode": "return (a <= b) ? a : b;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_ExtremeValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongTypicalValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_DoubleSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_FloatSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongEdgeCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_InfinityCases\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 3473,
+        "filepath": "./defects4j_fixed/Math/Math_59_fixed/src/main/java/org/apache/commons/math/util/FastMath.java",
+        "precode": "return (a <= b) ? b : a;",
+        "aftercode": "return (a <= b) ? b : b;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_ExtremeValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongTypicalValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_DoubleSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_FloatSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongEdgeCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_InfinityCases\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 3473,
+        "filepath": "./defects4j_fixed/Math/Math_59_fixed/src/main/java/org/apache/commons/math/util/FastMath.java",
+        "precode": "return (a <= b) ? b : a;",
+        "aftercode": "return (a <= b) ? a : a;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_ExtremeValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongTypicalValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_DoubleSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_FloatSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongEdgeCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_InfinityCases\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 3473,
+        "filepath": "./defects4j_fixed/Math/Math_59_fixed/src/main/java/org/apache/commons/math/util/FastMath.java",
+        "precode": "return (a <= b) ? b : a;",
+        "aftercode": "return (a >= b) ? b : a;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_ExtremeValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongTypicalValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_DoubleSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_FloatSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongEdgeCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_InfinityCases\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 3473,
+        "filepath": "./defects4j_fixed/Math/Math_59_fixed/src/main/java/org/apache/commons/math/util/FastMath.java",
+        "precode": "return (a <= b) ? b : a;",
+        "aftercode": "return (a <= b) ? a : b;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_ExtremeValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongTypicalValues\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_DoubleSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_FloatSpecialCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_LongEdgeCases\n  - gentest.org.apache.commons.math.util.tests.FastMathTest::testMax_InfinityCases\n",
+        "survived": false
+    }
+]

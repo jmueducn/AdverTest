@@ -1,0 +1,149 @@
+[
+    {
+        "id": 1,
+        "line": 340,
+        "precode": "double[] coefficients = new double[getOriginalNumDecisionVariables()];",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "double[] coefficients = new double[0];"
+    },
+    {
+        "id": 2,
+        "line": 341,
+        "precode": "Integer negativeVarBasicRow = getBasicRowForSolution(getNegativeDecisionVariableOffset());",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "Integer negativeVarBasicRow = null;"
+    },
+    {
+        "id": 3,
+        "line": 342,
+        "precode": "double mostNegative = negativeVarBasicRow == null ? 0 : getEntry(negativeVarBasicRow, getRhsOffset());",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "double mostNegative = 0;"
+    },
+    {
+        "id": 4,
+        "line": 342,
+        "precode": "double mostNegative = negativeVarBasicRow == null ? 0 : getEntry(negativeVarBasicRow, getRhsOffset());",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "double mostNegative = negativeVarBasicRow != null ? 0 : getEntry(negativeVarBasicRow, getRhsOffset());"
+    },
+    {
+        "id": 5,
+        "line": 343,
+        "precode": "Set<Integer> basicRows = new HashSet<Integer>();",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "Set<Integer> basicRows = null;"
+    },
+    {
+        "id": 6,
+        "line": 344,
+        "precode": "for (int i = 0; i < coefficients.length; i++) {",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "for (int i = 0; i <= coefficients.length; i++) {"
+    },
+    {
+        "id": 7,
+        "line": 344,
+        "precode": "for (int i = 0; i < coefficients.length; i++) {",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "for (int i = 1; i < coefficients.length; i++) {"
+    },
+    {
+        "id": 8,
+        "line": 345,
+        "precode": "Integer basicRow = getBasicRowForSolution(getNumObjectiveFunctions() + i);",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "Integer basicRow = null;"
+    },
+    {
+        "id": 9,
+        "line": 346,
+        "precode": "if (basicRows.contains(basicRow)) {",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "if (basicRow != null && basicRows.contains(basicRow)) {"
+    },
+    {
+        "id": 10,
+        "line": 349,
+        "precode": "coefficients[i] = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "coefficients[i] = 1;"
+    },
+    {
+        "id": 11,
+        "line": 351,
+        "precode": "basicRows.add(basicRow);",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "// basicRows.add(basicRow);"
+    },
+    {
+        "id": 12,
+        "line": 352,
+        "precode": "coefficients[i] =",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "// coefficients[i] ="
+    },
+    {
+        "id": 13,
+        "line": 353,
+        "precode": "(basicRow == null ? 0 : getEntry(basicRow, getRhsOffset())) -",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "(basicRow != null ? 0 : getEntry(basicRow, getRhsOffset())) -"
+    },
+    {
+        "id": 14,
+        "line": 353,
+        "precode": "(basicRow == null ? 0 : getEntry(basicRow, getRhsOffset())) -",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "0 -"
+    },
+    {
+        "id": 15,
+        "line": 354,
+        "precode": "(restrictToNonNegative ? 0 : mostNegative);",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "(restrictToNonNegative ? mostNegative : 0);"
+    },
+    {
+        "id": 16,
+        "line": 354,
+        "precode": "(restrictToNonNegative ? 0 : mostNegative);",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "0;"
+    },
+    {
+        "id": 17,
+        "line": 357,
+        "precode": "return new RealPointValuePair(coefficients, f.getValue(coefficients));",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 18,
+        "line": 357,
+        "precode": "return new RealPointValuePair(coefficients, f.getValue(coefficients));",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "return new RealPointValuePair(new double[0], f.getValue(coefficients));"
+    },
+    {
+        "id": 19,
+        "line": 357,
+        "precode": "return new RealPointValuePair(coefficients, f.getValue(coefficients));",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "return new RealPointValuePair(coefficients, 0);"
+    },
+    {
+        "id": 20,
+        "line": 344,
+        "precode": "for (int i = 0; i < coefficients.length; i++) {",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "for (int i = 0; i < coefficients.length; ++i) {"
+    },
+    {
+        "id": 21,
+        "line": 342,
+        "precode": "double mostNegative = negativeVarBasicRow == null ? 0 : getEntry(negativeVarBasicRow, getRhsOffset());",
+        "filepath": "./defects4j_fixed/Math/Math_83_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexTableau.java",
+        "aftercode": "double mostNegative = negativeVarBasicRow == null ? 1 : getEntry(negativeVarBasicRow, getRhsOffset());"
+    }
+]

@@ -1,0 +1,1143 @@
+[
+    {
+        "id": 1,
+        "line": 116,
+        "precode": "final boolean isMinim = getGoalType() == GoalType.MINIMIZE;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final boolean isMinim = getGoalType() != GoalType.MINIMIZE;"
+    },
+    {
+        "id": 2,
+        "line": 117,
+        "precode": "final double lo = getMin();",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double lo = getMax();"
+    },
+    {
+        "id": 3,
+        "line": 118,
+        "precode": "final double mid = getStartValue();",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double mid = getMin();"
+    },
+    {
+        "id": 4,
+        "line": 127,
+        "precode": "if (lo < hi) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (lo > hi) {"
+    },
+    {
+        "id": 5,
+        "line": 128,
+        "precode": "a = lo;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "a = hi;"
+    },
+    {
+        "id": 6,
+        "line": 129,
+        "precode": "b = hi;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "b = lo;"
+    },
+    {
+        "id": 7,
+        "line": 131,
+        "precode": "a = hi;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "a = lo;"
+    },
+    {
+        "id": 8,
+        "line": 132,
+        "precode": "b = lo;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "b = hi;"
+    },
+    {
+        "id": 9,
+        "line": 135,
+        "precode": "double x = mid;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double x = lo;"
+    },
+    {
+        "id": 10,
+        "line": 136,
+        "precode": "double v = x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double v = mid;"
+    },
+    {
+        "id": 11,
+        "line": 137,
+        "precode": "double w = x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double w = mid;"
+    },
+    {
+        "id": 12,
+        "line": 138,
+        "precode": "double d = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double d = 1;"
+    },
+    {
+        "id": 13,
+        "line": 139,
+        "precode": "double e = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double e = 1;"
+    },
+    {
+        "id": 14,
+        "line": 228,
+        "precode": "if (!isMinim) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (isMinim) {"
+    },
+    {
+        "id": 15,
+        "line": 142,
+        "precode": "fx = -fx;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "fx = fx;"
+    },
+    {
+        "id": 16,
+        "line": 149,
+        "precode": "= new UnivariatePointValuePair(x, isMinim ? fx : -fx);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "= new UnivariatePointValuePair(x, isMinim ? -fx : fx);"
+    },
+    {
+        "id": 17,
+        "line": 155,
+        "precode": "final double m = 0.5 * (a + b);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double m = (a + b);"
+    },
+    {
+        "id": 18,
+        "line": 156,
+        "precode": "final double tol1 = relativeThreshold * FastMath.abs(x) + absoluteThreshold;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double tol1 = relativeThreshold * FastMath.abs(x);"
+    },
+    {
+        "id": 19,
+        "line": 157,
+        "precode": "final double tol2 = 2 * tol1;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double tol2 = tol1;"
+    },
+    {
+        "id": 20,
+        "line": 160,
+        "precode": "final boolean stop = FastMath.abs(x - m) <= tol2 - 0.5 * (b - a);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final boolean stop = FastMath.abs(x - m) <= tol2;"
+    },
+    {
+        "id": 21,
+        "line": 161,
+        "precode": "if (!stop) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (stop) {"
+    },
+    {
+        "id": 22,
+        "line": 167,
+        "precode": "if (FastMath.abs(e) > tol1) { // Fit parabola.",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (FastMath.abs(e) < tol1) { // Fit parabola."
+    },
+    {
+        "id": 23,
+        "line": 168,
+        "precode": "r = (x - w) * (fx - fv);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "r = (x - w) * (fx + fv);"
+    },
+    {
+        "id": 24,
+        "line": 169,
+        "precode": "q = (x - v) * (fx - fw);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "q = (x - v) * (fx + fw);"
+    },
+    {
+        "id": 25,
+        "line": 170,
+        "precode": "p = (x - v) * q - (x - w) * r;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "p = (x - v) * q + (x - w) * r;"
+    },
+    {
+        "id": 26,
+        "line": 171,
+        "precode": "q = 2 * (q - r);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "q = (q - r);"
+    },
+    {
+        "id": 27,
+        "line": 173,
+        "precode": "if (q > 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (q < 0) {"
+    },
+    {
+        "id": 28,
+        "line": 174,
+        "precode": "p = -p;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "p = p;"
+    },
+    {
+        "id": 29,
+        "line": 182,
+        "precode": "if (p > q * (a - x) &&",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (p < q * (a - x) &&"
+    },
+    {
+        "id": 30,
+        "line": 183,
+        "precode": "p < q * (b - x) &&",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "p > q * (b - x) &&"
+    },
+    {
+        "id": 31,
+        "line": 184,
+        "precode": "FastMath.abs(p) < FastMath.abs(0.5 * q * r)) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "FastMath.abs(p) > FastMath.abs(0.5 * q * r)) {"
+    },
+    {
+        "id": 32,
+        "line": 186,
+        "precode": "d = p / q;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "d = p * q;"
+    },
+    {
+        "id": 33,
+        "line": 224,
+        "precode": "u = x + d;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "u = x - d;"
+    },
+    {
+        "id": 34,
+        "line": 191,
+        "precode": "if (x <= m) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (x >= m) {"
+    },
+    {
+        "id": 35,
+        "line": 192,
+        "precode": "d = tol1;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "d = tol2;"
+    },
+    {
+        "id": 36,
+        "line": 194,
+        "precode": "d = -tol1;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "d = -tol2;"
+    },
+    {
+        "id": 37,
+        "line": 208,
+        "precode": "if (x < m) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (x > m) {"
+    },
+    {
+        "id": 38,
+        "line": 209,
+        "precode": "e = b - x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "e = a - x;"
+    },
+    {
+        "id": 39,
+        "line": 211,
+        "precode": "e = a - x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "e = b - x;"
+    },
+    {
+        "id": 40,
+        "line": 213,
+        "precode": "d = GOLDEN_SECTION * e;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "d = e;"
+    },
+    {
+        "id": 41,
+        "line": 208,
+        "precode": "if (x < m) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (x <= m) {"
+    },
+    {
+        "id": 42,
+        "line": 209,
+        "precode": "e = b - x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "e = x - b;"
+    },
+    {
+        "id": 43,
+        "line": 211,
+        "precode": "e = a - x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "e = x - a;"
+    },
+    {
+        "id": 44,
+        "line": 213,
+        "precode": "d = GOLDEN_SECTION * e;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "d = 0.5 * e;"
+    },
+    {
+        "id": 45,
+        "line": 217,
+        "precode": "if (FastMath.abs(d) < tol1) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (FastMath.abs(d) > tol1) {"
+    },
+    {
+        "id": 46,
+        "line": 218,
+        "precode": "if (d >= 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (d > 0) {"
+    },
+    {
+        "id": 47,
+        "line": 219,
+        "precode": "u = x + tol1;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "u = x - tol1;"
+    },
+    {
+        "id": 48,
+        "line": 221,
+        "precode": "u = x - tol1;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "u = x + tol1;"
+    },
+    {
+        "id": 49,
+        "line": 224,
+        "precode": "u = x + d;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "u = x - d;"
+    },
+    {
+        "id": 50,
+        "line": 228,
+        "precode": "if (!isMinim) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (isMinim) {"
+    },
+    {
+        "id": 51,
+        "line": 229,
+        "precode": "fu = -fu;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "fu = fu;"
+    },
+    {
+        "id": 52,
+        "line": 235,
+        "precode": "best = best(best,",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "best = current;"
+    },
+    {
+        "id": 53,
+        "line": 283,
+        "precode": "isMinim),",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "!isMinim),"
+    },
+    {
+        "id": 54,
+        "line": 116,
+        "precode": "final boolean isMinim = getGoalType() == GoalType.MINIMIZE;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final boolean isMinim = getGoalType() != GoalType.MINIMIZE;"
+    },
+    {
+        "id": 55,
+        "line": 117,
+        "precode": "final double lo = getMin();",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double lo = getMax();"
+    },
+    {
+        "id": 56,
+        "line": 118,
+        "precode": "final double mid = getStartValue();",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double mid = getMin();"
+    },
+    {
+        "id": 57,
+        "line": 119,
+        "precode": "final double hi = getMax();",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double hi = getMin();"
+    },
+    {
+        "id": 58,
+        "line": 123,
+        "precode": "= getConvergenceChecker();",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "= null;"
+    },
+    {
+        "id": 59,
+        "line": 127,
+        "precode": "if (lo < hi) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (lo > hi) {"
+    },
+    {
+        "id": 60,
+        "line": 128,
+        "precode": "a = lo;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "a = hi;"
+    },
+    {
+        "id": 61,
+        "line": 129,
+        "precode": "b = hi;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "b = lo;"
+    },
+    {
+        "id": 62,
+        "line": 131,
+        "precode": "a = hi;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "a = lo;"
+    },
+    {
+        "id": 63,
+        "line": 132,
+        "precode": "b = lo;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "b = hi;"
+    },
+    {
+        "id": 64,
+        "line": 135,
+        "precode": "double x = mid;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double x = lo;"
+    },
+    {
+        "id": 65,
+        "line": 136,
+        "precode": "double v = x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double v = 0;"
+    },
+    {
+        "id": 66,
+        "line": 137,
+        "precode": "double w = x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double w = 0;"
+    },
+    {
+        "id": 67,
+        "line": 138,
+        "precode": "double d = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double d = 1;"
+    },
+    {
+        "id": 68,
+        "line": 139,
+        "precode": "double e = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double e = 1;"
+    },
+    {
+        "id": 69,
+        "line": 228,
+        "precode": "if (!isMinim) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (isMinim) {"
+    },
+    {
+        "id": 70,
+        "line": 142,
+        "precode": "fx = -fx;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "fx = fx;"
+    },
+    {
+        "id": 71,
+        "line": 144,
+        "precode": "double fv = fx;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double fv = 0;"
+    },
+    {
+        "id": 72,
+        "line": 145,
+        "precode": "double fw = fx;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double fw = 0;"
+    },
+    {
+        "id": 73,
+        "line": 149,
+        "precode": "= new UnivariatePointValuePair(x, isMinim ? fx : -fx);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "= new UnivariatePointValuePair(x, isMinim ? -fx : fx);"
+    },
+    {
+        "id": 74,
+        "line": 151,
+        "precode": "UnivariatePointValuePair best = current;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "UnivariatePointValuePair best = null;"
+    },
+    {
+        "id": 75,
+        "line": 155,
+        "precode": "final double m = 0.5 * (a + b);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double m = (a + b);"
+    },
+    {
+        "id": 76,
+        "line": 156,
+        "precode": "final double tol1 = relativeThreshold * FastMath.abs(x) + absoluteThreshold;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double tol1 = relativeThreshold * FastMath.abs(x);"
+    },
+    {
+        "id": 77,
+        "line": 157,
+        "precode": "final double tol2 = 2 * tol1;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double tol2 = tol1;"
+    },
+    {
+        "id": 78,
+        "line": 160,
+        "precode": "final boolean stop = FastMath.abs(x - m) <= tol2 - 0.5 * (b - a);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final boolean stop = true;"
+    },
+    {
+        "id": 79,
+        "line": 161,
+        "precode": "if (!stop) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (stop) {"
+    },
+    {
+        "id": 80,
+        "line": 167,
+        "precode": "if (FastMath.abs(e) > tol1) { // Fit parabola.",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (FastMath.abs(e) < tol1) {"
+    },
+    {
+        "id": 81,
+        "line": 168,
+        "precode": "r = (x - w) * (fx - fv);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "r = (x - v) * (fx - fv);"
+    },
+    {
+        "id": 82,
+        "line": 169,
+        "precode": "q = (x - v) * (fx - fw);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "q = (x - w) * (fx - fw);"
+    },
+    {
+        "id": 83,
+        "line": 170,
+        "precode": "p = (x - v) * q - (x - w) * r;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "p = (x - v) * q + (x - w) * r;"
+    },
+    {
+        "id": 84,
+        "line": 171,
+        "precode": "q = 2 * (q - r);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "q = (q - r);"
+    },
+    {
+        "id": 85,
+        "line": 174,
+        "precode": "p = -p;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "p = p;"
+    },
+    {
+        "id": 86,
+        "line": 176,
+        "precode": "q = -q;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "q = q;"
+    },
+    {
+        "id": 87,
+        "line": 179,
+        "precode": "r = e;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "r = d;"
+    },
+    {
+        "id": 88,
+        "line": 180,
+        "precode": "e = d;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "e = e;"
+    },
+    {
+        "id": 89,
+        "line": 182,
+        "precode": "if (p > q * (a - x) &&",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (p < q * (a - x) &&"
+    },
+    {
+        "id": 90,
+        "line": 183,
+        "precode": "p < q * (b - x) &&",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "p > q * (b - x) &&"
+    },
+    {
+        "id": 91,
+        "line": 184,
+        "precode": "FastMath.abs(p) < FastMath.abs(0.5 * q * r)) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "FastMath.abs(p) > FastMath.abs(0.5 * q * r)) {"
+    },
+    {
+        "id": 92,
+        "line": 186,
+        "precode": "d = p / q;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "d = p * q;"
+    },
+    {
+        "id": 93,
+        "line": 224,
+        "precode": "u = x + d;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "u = x - d;"
+    },
+    {
+        "id": 94,
+        "line": 190,
+        "precode": "if (u - a < tol2 || b - u < tol2) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (u - a > tol2 && b - u > tol2) {"
+    },
+    {
+        "id": 95,
+        "line": 191,
+        "precode": "if (x <= m) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (x >= m) {"
+    },
+    {
+        "id": 96,
+        "line": 192,
+        "precode": "d = tol1;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "d = tol2;"
+    },
+    {
+        "id": 97,
+        "line": 194,
+        "precode": "d = -tol1;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "d = -tol2;"
+    },
+    {
+        "id": 98,
+        "line": 209,
+        "precode": "e = b - x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "e = a - x;"
+    },
+    {
+        "id": 99,
+        "line": 211,
+        "precode": "e = a - x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "e = b - x;"
+    },
+    {
+        "id": 100,
+        "line": 213,
+        "precode": "d = GOLDEN_SECTION * e;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "d = e;"
+    },
+    {
+        "id": 101,
+        "line": 217,
+        "precode": "if (FastMath.abs(d) < tol1) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (FastMath.abs(d) > tol1) {"
+    },
+    {
+        "id": 102,
+        "line": 218,
+        "precode": "if (d >= 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (d > 0) {"
+    },
+    {
+        "id": 103,
+        "line": 219,
+        "precode": "u = x + tol1;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "u = x - tol1;"
+    },
+    {
+        "id": 104,
+        "line": 221,
+        "precode": "u = x - tol1;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "u = x + tol1;"
+    },
+    {
+        "id": 105,
+        "line": 224,
+        "precode": "u = x + d;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "u = x - d;"
+    },
+    {
+        "id": 106,
+        "line": 228,
+        "precode": "if (!isMinim) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (isMinim) {"
+    },
+    {
+        "id": 107,
+        "line": 229,
+        "precode": "fu = -fu;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "fu = fu;"
+    },
+    {
+        "id": 108,
+        "line": 235,
+        "precode": "best = best(best,",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "best = current;"
+    },
+    {
+        "id": 109,
+        "line": 117,
+        "precode": "final double lo = getMin();",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double lo = getMax();"
+    },
+    {
+        "id": 110,
+        "line": 118,
+        "precode": "final double mid = getStartValue();",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double mid = getMin();"
+    },
+    {
+        "id": 111,
+        "line": 119,
+        "precode": "final double hi = getMax();",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double hi = getMin();"
+    },
+    {
+        "id": 112,
+        "line": 123,
+        "precode": "= getConvergenceChecker();",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "= null;"
+    },
+    {
+        "id": 113,
+        "line": 127,
+        "precode": "if (lo < hi) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (lo > hi) {"
+    },
+    {
+        "id": 114,
+        "line": 127,
+        "precode": "if (lo < hi) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (lo <= hi) {"
+    },
+    {
+        "id": 115,
+        "line": 128,
+        "precode": "a = lo;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "a = hi;"
+    },
+    {
+        "id": 116,
+        "line": 129,
+        "precode": "b = hi;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "b = lo;"
+    },
+    {
+        "id": 117,
+        "line": 131,
+        "precode": "a = hi;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "a = lo;"
+    },
+    {
+        "id": 118,
+        "line": 132,
+        "precode": "b = lo;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "b = hi;"
+    },
+    {
+        "id": 119,
+        "line": 135,
+        "precode": "double x = mid;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double x = lo;"
+    },
+    {
+        "id": 120,
+        "line": 136,
+        "precode": "double v = x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double v = mid;"
+    },
+    {
+        "id": 121,
+        "line": 137,
+        "precode": "double w = x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double w = hi;"
+    },
+    {
+        "id": 122,
+        "line": 138,
+        "precode": "double d = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double d = 1;"
+    },
+    {
+        "id": 123,
+        "line": 139,
+        "precode": "double e = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double e = 1;"
+    },
+    {
+        "id": 124,
+        "line": 140,
+        "precode": "double fx = computeObjectiveValue(x);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double fx = 0;"
+    },
+    {
+        "id": 125,
+        "line": 228,
+        "precode": "if (!isMinim) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (isMinim) {"
+    },
+    {
+        "id": 126,
+        "line": 142,
+        "precode": "fx = -fx;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "fx = fx;"
+    },
+    {
+        "id": 127,
+        "line": 144,
+        "precode": "double fv = fx;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double fv = 0;"
+    },
+    {
+        "id": 128,
+        "line": 145,
+        "precode": "double fw = fx;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "double fw = 0;"
+    },
+    {
+        "id": 129,
+        "line": 149,
+        "precode": "= new UnivariatePointValuePair(x, isMinim ? fx : -fx);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "= new UnivariatePointValuePair(x, fx);"
+    },
+    {
+        "id": 130,
+        "line": 151,
+        "precode": "UnivariatePointValuePair best = current;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "UnivariatePointValuePair best = previous;"
+    },
+    {
+        "id": 131,
+        "line": 154,
+        "precode": "while (true) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "while (false) {"
+    },
+    {
+        "id": 132,
+        "line": 155,
+        "precode": "final double m = 0.5 * (a + b);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double m = (a + b);"
+    },
+    {
+        "id": 133,
+        "line": 156,
+        "precode": "final double tol1 = relativeThreshold * FastMath.abs(x) + absoluteThreshold;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double tol1 = relativeThreshold * FastMath.abs(x);"
+    },
+    {
+        "id": 134,
+        "line": 157,
+        "precode": "final double tol2 = 2 * tol1;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final double tol2 = tol1;"
+    },
+    {
+        "id": 135,
+        "line": 160,
+        "precode": "final boolean stop = FastMath.abs(x - m) <= tol2 - 0.5 * (b - a);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "final boolean stop = false;"
+    },
+    {
+        "id": 136,
+        "line": 161,
+        "precode": "if (!stop) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (stop) {"
+    },
+    {
+        "id": 137,
+        "line": 167,
+        "precode": "if (FastMath.abs(e) > tol1) { // Fit parabola.",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (FastMath.abs(e) < tol1) {"
+    },
+    {
+        "id": 138,
+        "line": 168,
+        "precode": "r = (x - w) * (fx - fv);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "r = (x - v) * (fx - fv);"
+    },
+    {
+        "id": 139,
+        "line": 169,
+        "precode": "q = (x - v) * (fx - fw);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "q = (x - w) * (fx - fw);"
+    },
+    {
+        "id": 140,
+        "line": 170,
+        "precode": "p = (x - v) * q - (x - w) * r;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "p = (x - v) * q + (x - w) * r;"
+    },
+    {
+        "id": 141,
+        "line": 171,
+        "precode": "q = 2 * (q - r);",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "q = (q - r);"
+    },
+    {
+        "id": 142,
+        "line": 173,
+        "precode": "if (q > 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (q < 0) {"
+    },
+    {
+        "id": 143,
+        "line": 174,
+        "precode": "p = -p;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "p = p;"
+    },
+    {
+        "id": 144,
+        "line": 176,
+        "precode": "q = -q;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "q = q;"
+    },
+    {
+        "id": 145,
+        "line": 179,
+        "precode": "r = e;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "r = d;"
+    },
+    {
+        "id": 146,
+        "line": 180,
+        "precode": "e = d;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "e = e;"
+    },
+    {
+        "id": 147,
+        "line": 182,
+        "precode": "if (p > q * (a - x) &&",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (p < q * (a - x) &&"
+    },
+    {
+        "id": 148,
+        "line": 183,
+        "precode": "p < q * (b - x) &&",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "p > q * (b - x) &&"
+    },
+    {
+        "id": 149,
+        "line": 184,
+        "precode": "FastMath.abs(p) < FastMath.abs(0.5 * q * r)) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "FastMath.abs(p) > FastMath.abs(0.5 * q * r)) {"
+    },
+    {
+        "id": 150,
+        "line": 186,
+        "precode": "d = p / q;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "d = p * q;"
+    },
+    {
+        "id": 151,
+        "line": 224,
+        "precode": "u = x + d;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "u = x - d;"
+    },
+    {
+        "id": 152,
+        "line": 190,
+        "precode": "if (u - a < tol2 || b - u < tol2) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (u - a > tol2 && b - u > tol2) {"
+    },
+    {
+        "id": 153,
+        "line": 191,
+        "precode": "if (x <= m) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (x >= m) {"
+    },
+    {
+        "id": 154,
+        "line": 192,
+        "precode": "d = tol1;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "d = tol2;"
+    },
+    {
+        "id": 155,
+        "line": 194,
+        "precode": "d = -tol1;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "d = -tol2;"
+    },
+    {
+        "id": 156,
+        "line": 208,
+        "precode": "if (x < m) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (x > m) {"
+    },
+    {
+        "id": 157,
+        "line": 209,
+        "precode": "e = b - x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "e = a - x;"
+    },
+    {
+        "id": 158,
+        "line": 211,
+        "precode": "e = a - x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "e = b - x;"
+    },
+    {
+        "id": 159,
+        "line": 213,
+        "precode": "d = GOLDEN_SECTION * e;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "d = e;"
+    },
+    {
+        "id": 160,
+        "line": 208,
+        "precode": "if (x < m) {",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "if (x <= m) {"
+    },
+    {
+        "id": 161,
+        "line": 209,
+        "precode": "e = b - x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "e = x - b;"
+    },
+    {
+        "id": 162,
+        "line": 211,
+        "precode": "e = a - x;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "e = x - a;"
+    },
+    {
+        "id": 163,
+        "line": 213,
+        "precode": "d = GOLDEN_SECTION * e;",
+        "filepath": "./defects4j_fixed/Math/Math_23_fixed/src/main/java/org/apache/commons/math3/optimization/univariate/BrentOptimizer.java",
+        "aftercode": "d = 0.5 * e;"
+    }
+]

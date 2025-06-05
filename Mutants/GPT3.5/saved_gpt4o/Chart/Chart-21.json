@@ -1,0 +1,394 @@
+[
+    {
+        "id": 1,
+        "line": 8,
+        "precode": "if ((this.maximumRangeValueRow == r && this.maximumRangeValueColumn == c) || (this.minimumRangeValueRow == r && this.minimumRangeValueColumn == c)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "if ((this.maximumRangeValueRow == r || this.maximumRangeValueColumn == c) || (this.minimumRangeValueRow == r && this.minimumRangeValueColumn == c)) {"
+    },
+    {
+        "id": 2,
+        "line": 8,
+        "precode": "if ((this.maximumRangeValueRow == r && this.maximumRangeValueColumn == c) || (this.minimumRangeValueRow == r && this.minimumRangeValueColumn == c)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "if ((this.maximumRangeValueRow != r && this.maximumRangeValueColumn == c) || (this.minimumRangeValueRow == r && this.minimumRangeValueColumn == c)) {"
+    },
+    {
+        "id": 3,
+        "line": 155,
+        "precode": "updateBounds();",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "// updateBounds();"
+    },
+    {
+        "id": 4,
+        "line": 159,
+        "precode": "double minval = Double.NaN;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "double minval = 0.0;"
+    },
+    {
+        "id": 5,
+        "line": 160,
+        "precode": "if (item.getMinOutlier() != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "if (item.getMinOutlier() == null) {"
+    },
+    {
+        "id": 6,
+        "line": 163,
+        "precode": "double maxval = Double.NaN;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "double maxval = 0.0;"
+    },
+    {
+        "id": 7,
+        "line": 164,
+        "precode": "if (item.getMaxOutlier() != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "if (item.getMaxOutlier() == null) {"
+    },
+    {
+        "id": 8,
+        "line": 168,
+        "precode": "if (Double.isNaN(this.maximumRangeValue)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "if (!Double.isNaN(this.maximumRangeValue)) {"
+    },
+    {
+        "id": 9,
+        "line": 173,
+        "precode": "else if (maxval > this.maximumRangeValue) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "else if (maxval >= this.maximumRangeValue) {"
+    },
+    {
+        "id": 10,
+        "line": 179,
+        "precode": "if (Double.isNaN(this.minimumRangeValue)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "if (!Double.isNaN(this.minimumRangeValue)) {"
+    },
+    {
+        "id": 11,
+        "line": 184,
+        "precode": "else if (minval < this.minimumRangeValue) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "else if (minval <= this.minimumRangeValue) {"
+    },
+    {
+        "id": 12,
+        "line": 36,
+        "precode": "this.rangeBounds = new Range(this.minimumRangeValue, this.maximumRangeValue);",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.rangeBounds = new Range(this.maximumRangeValue, this.minimumRangeValue);"
+    },
+    {
+        "id": 13,
+        "line": 193,
+        "precode": "fireDatasetChanged();",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "// fireDatasetChanged();"
+    },
+    {
+        "id": 14,
+        "line": 160,
+        "precode": "if (item.getMinOutlier() != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "if (item.getMinOutlier() != null && item.getMinOutlier() > 0) {"
+    },
+    {
+        "id": 15,
+        "line": 186,
+        "precode": "this.minimumRangeValueRow = r;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValueRow = c;"
+    },
+    {
+        "id": 16,
+        "line": 186,
+        "precode": "this.minimumRangeValueRow = r;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValueRow = -1;"
+    },
+    {
+        "id": 17,
+        "line": 186,
+        "precode": "this.minimumRangeValueRow = r;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValueRow = 0;"
+    },
+    {
+        "id": 18,
+        "line": 186,
+        "precode": "this.minimumRangeValueRow = r;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValueRow = this.maximumRangeValueRow;"
+    },
+    {
+        "id": 19,
+        "line": 186,
+        "precode": "this.minimumRangeValueRow = r;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValueRow = this.minimumRangeValueColumn;"
+    },
+    {
+        "id": 20,
+        "line": 187,
+        "precode": "this.minimumRangeValueColumn = c;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValueColumn = r;"
+    },
+    {
+        "id": 21,
+        "line": 187,
+        "precode": "this.minimumRangeValueColumn = c;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValueColumn = -1;"
+    },
+    {
+        "id": 22,
+        "line": 187,
+        "precode": "this.minimumRangeValueColumn = c;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValueColumn = 0;"
+    },
+    {
+        "id": 23,
+        "line": 187,
+        "precode": "this.minimumRangeValueColumn = c;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValueColumn = this.maximumRangeValueColumn;"
+    },
+    {
+        "id": 24,
+        "line": 187,
+        "precode": "this.minimumRangeValueColumn = c;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValueColumn = this.minimumRangeValueRow;"
+    },
+    {
+        "id": 25,
+        "line": 28,
+        "precode": "this.rangeBounds = new Range(this.minimumRangeValue, this.maximumRangeValue);",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.rangeBounds = new Range(this.maximumRangeValue, this.minimumRangeValue);"
+    },
+    {
+        "id": 26,
+        "line": 28,
+        "precode": "this.rangeBounds = new Range(this.minimumRangeValue, this.maximumRangeValue);",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.rangeBounds = new Range(0, this.maximumRangeValue);"
+    },
+    {
+        "id": 27,
+        "line": 28,
+        "precode": "this.rangeBounds = new Range(this.minimumRangeValue, this.maximumRangeValue);",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.rangeBounds = new Range(this.minimumRangeValue, Double.POSITIVE_INFINITY);"
+    },
+    {
+        "id": 28,
+        "line": 28,
+        "precode": "this.rangeBounds = new Range(this.minimumRangeValue, this.maximumRangeValue);",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.rangeBounds = new Range(Double.NEGATIVE_INFINITY, this.maximumRangeValue);"
+    },
+    {
+        "id": 29,
+        "line": 742,
+        "precode": "this.minimumRangeValue = Double.NaN;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValue = Double.POSITIVE_INFINITY;"
+    },
+    {
+        "id": 30,
+        "line": 743,
+        "precode": "this.minimumRangeValueRow = -1;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValueRow = 0;"
+    },
+    {
+        "id": 31,
+        "line": 744,
+        "precode": "this.minimumRangeValueColumn = -1;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValueColumn = 0;"
+    },
+    {
+        "id": 32,
+        "line": 745,
+        "precode": "this.maximumRangeValue = Double.NaN;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.maximumRangeValue = Double.NEGATIVE_INFINITY;"
+    },
+    {
+        "id": 33,
+        "line": 746,
+        "precode": "this.maximumRangeValueRow = -1;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.maximumRangeValueRow = 0;"
+    },
+    {
+        "id": 34,
+        "line": 747,
+        "precode": "this.maximumRangeValueColumn = -1;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.maximumRangeValueColumn = 0;"
+    },
+    {
+        "id": 35,
+        "line": 748,
+        "precode": "int rowCount = getRowCount();",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "int rowCount = getRowCount() - 1;"
+    },
+    {
+        "id": 36,
+        "line": 749,
+        "precode": "int columnCount = getColumnCount();",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "int columnCount = getColumnCount() - 1;"
+    },
+    {
+        "id": 37,
+        "line": 750,
+        "precode": "for (int r = 0; r < rowCount; r++) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "for (int r = 0; r <= rowCount; r++) {"
+    },
+    {
+        "id": 38,
+        "line": 751,
+        "precode": "for (int c = 0; c < columnCount; c++) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "for (int c = 0; c <= columnCount; c++) {"
+    },
+    {
+        "id": 39,
+        "line": 752,
+        "precode": "BoxAndWhiskerItem item = getItem(r, c);",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "BoxAndWhiskerItem item = null;"
+    },
+    {
+        "id": 40,
+        "line": 753,
+        "precode": "if (item != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "if (item == null) {"
+    },
+    {
+        "id": 41,
+        "line": 754,
+        "precode": "Number min = item.getMinOutlier();",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "Number min = null;"
+    },
+    {
+        "id": 42,
+        "line": 755,
+        "precode": "if (min != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "if (min == null) {"
+    },
+    {
+        "id": 43,
+        "line": 756,
+        "precode": "double minv = min.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "double minv = 0.0;"
+    },
+    {
+        "id": 44,
+        "line": 757,
+        "precode": "if (!Double.isNaN(minv)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "if (Double.isNaN(minv)) {"
+    },
+    {
+        "id": 45,
+        "line": 19,
+        "precode": "if (minv < this.minimumRangeValue || Double.isNaN(this.minimumRangeValue)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "if (minv <= this.minimumRangeValue && !Double.isNaN(this.minimumRangeValue)) {"
+    },
+    {
+        "id": 46,
+        "line": 760,
+        "precode": "this.minimumRangeValue = minv;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValue = Double.NaN;"
+    },
+    {
+        "id": 47,
+        "line": 761,
+        "precode": "this.minimumRangeValueRow = r;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValueRow = -1;"
+    },
+    {
+        "id": 48,
+        "line": 762,
+        "precode": "this.minimumRangeValueColumn = c;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.minimumRangeValueColumn = -1;"
+    },
+    {
+        "id": 49,
+        "line": 766,
+        "precode": "Number max = item.getMaxOutlier();",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "Number max = null;"
+    },
+    {
+        "id": 50,
+        "line": 767,
+        "precode": "if (max != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "if (max == null) {"
+    },
+    {
+        "id": 51,
+        "line": 768,
+        "precode": "double maxv = max.doubleValue();",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "double maxv = 0.0;"
+    },
+    {
+        "id": 52,
+        "line": 769,
+        "precode": "if (!Double.isNaN(maxv)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "if (Double.isNaN(maxv)) {"
+    },
+    {
+        "id": 53,
+        "line": 28,
+        "precode": "if (maxv > this.maximumRangeValue || Double.isNaN(this.maximumRangeValue)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "if (maxv >= this.maximumRangeValue && !Double.isNaN(this.maximumRangeValue)) {"
+    },
+    {
+        "id": 54,
+        "line": 772,
+        "precode": "this.maximumRangeValue = maxv;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.maximumRangeValue = Double.NaN;"
+    },
+    {
+        "id": 55,
+        "line": 773,
+        "precode": "this.maximumRangeValueRow = r;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.maximumRangeValueRow = -1;"
+    },
+    {
+        "id": 56,
+        "line": 774,
+        "precode": "this.maximumRangeValueColumn = c;",
+        "filepath": "./defects4j_fixed/Chart/Chart_21_fixed/source/org/jfree/data/statistics/DefaultBoxAndWhiskerCategoryDataset.java",
+        "aftercode": "this.maximumRangeValueColumn = -1;"
+    }
+]

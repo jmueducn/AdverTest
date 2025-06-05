@@ -1,0 +1,121 @@
+[
+    {
+        "id": 1,
+        "line": 504,
+        "precode": "return getName().endsWith(\"/\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "return getName().startsWith(\"/\");"
+    },
+    {
+        "id": 2,
+        "line": 504,
+        "precode": "return getName().endsWith(\"/\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "return getName().contains(\"/\");"
+    },
+    {
+        "id": 3,
+        "line": 504,
+        "precode": "return getName().endsWith(\"/\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "return getName().equals(\"/\");"
+    },
+    {
+        "id": 4,
+        "line": 504,
+        "precode": "return getName().endsWith(\"/\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "return getName().endsWith(\"\\\\\");"
+    },
+    {
+        "id": 5,
+        "line": 504,
+        "precode": "return getName().endsWith(\"/\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "return getName().endsWith(\"\");"
+    },
+    {
+        "id": 6,
+        "line": 504,
+        "precode": "return getName().endsWith(\"/\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "return getName().endsWith(\".\");"
+    },
+    {
+        "id": 7,
+        "line": 504,
+        "precode": "return getName().endsWith(\"/\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "return getName().length() > 0;"
+    },
+    {
+        "id": 8,
+        "line": 504,
+        "precode": "return getName().endsWith(\"/\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 9,
+        "line": 504,
+        "precode": "return getName().endsWith(\"/\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 10,
+        "line": 512,
+        "precode": "if (name != null && getPlatform() == PLATFORM_FAT",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "if (name == null && getPlatform() == PLATFORM_FAT"
+    },
+    {
+        "id": 11,
+        "line": 512,
+        "precode": "if (name != null && getPlatform() == PLATFORM_FAT",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "if (name != null || getPlatform() == PLATFORM_FAT"
+    },
+    {
+        "id": 12,
+        "line": 512,
+        "precode": "if (name != null && getPlatform() == PLATFORM_FAT",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "if (name != null && getPlatform() != PLATFORM_FAT"
+    },
+    {
+        "id": 13,
+        "line": 513,
+        "precode": "&& name.indexOf(\"/\") == -1) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "&& name.indexOf(\"/\") != -1) {"
+    },
+    {
+        "id": 14,
+        "line": 513,
+        "precode": "&& name.indexOf(\"/\") == -1) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "&& name.indexOf(\"\\\\\") == -1) {"
+    },
+    {
+        "id": 15,
+        "line": 513,
+        "precode": "&& name.indexOf(\"/\") == -1) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "&& name.indexOf(\".\") == -1) {"
+    },
+    {
+        "id": 16,
+        "line": 514,
+        "precode": "name = name.replace('\\\\', '/');",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "name = name.replace('/', '\\\\');"
+    },
+    {
+        "id": 17,
+        "line": 514,
+        "precode": "name = name.replace('\\\\', '/');",
+        "filepath": "./defects4j_fixed/Compress/Compress_13_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "aftercode": "name = name.replace('\\\\', '.');"
+    }
+]

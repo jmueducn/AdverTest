@@ -1,0 +1,1625 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 253,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "if (++present > maximum) {",
+        "aftercode": "if (++present >= maximum) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidatePassesCorrectCommandLineToOptionValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsUnexpectedOptionAssignmentMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForPresentOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions_ShouldThrowWithUnexpectedOptionName\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_OptionalOptionsPresent\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsBreakToContinueMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_ExactNumberOfRequiredOptions\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 253,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "if (++present > maximum) {",
+        "aftercode": "if (present++ > maximum) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsPreIncrementMutation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions_ShouldThrowWithUnexpectedOptionName\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsBreakToContinueMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 253,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "if (++present > maximum) {",
+        "aftercode": "if (present > maximum) {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsPreIncrementMutation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions_ShouldThrowWithUnexpectedOptionName\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsBreakToContinueMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_ExactNumberOfRequiredOptions\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 253,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "if (++present > maximum) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsPreIncrementMutation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions_ShouldThrowWithUnexpectedOptionName\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsBreakToContinueMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_ExactNumberOfRequiredOptions\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 254,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "unexpected = option;",
+        "aftercode": "unexpected = null;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsPreIncrementMutation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions_ShouldThrowWithUnexpectedOptionName\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsBreakToContinueMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 254,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "unexpected = option;",
+        "aftercode": "unexpected = unexpected;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsPreIncrementMutation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions_ShouldThrowWithUnexpectedOptionName\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsBreakToContinueMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 256,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "break;",
+        "aftercode": "continue;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsUnexpectedOptionAssignmentMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n",
+        "survived": true,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 256,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "break;",
+        "aftercode": "return;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsPreIncrementMutation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions_ShouldThrowWithUnexpectedOptionName\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsBreakToContinueMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 256,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "break;",
+        "aftercode": "// break;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsUnexpectedOptionAssignmentMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsBreakToContinueMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 258,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "validate = true;",
+        "aftercode": "validate = false;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidatePassesCorrectCommandLineToOptionValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsUnexpectedOptionAssignmentMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForPresentOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_OptionalOptionsPresent\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsBreakToContinueMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_ExactNumberOfRequiredOptions\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 258,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "validate = true;",
+        "aftercode": "validate = !validate;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidatePassesCorrectCommandLineToOptionValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsUnexpectedOptionAssignmentMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_ExactNumberOfRequiredOptions\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 12,
+        "line": 258,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "validate = true;",
+        "aftercode": "// validate = true;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsUnexpectedOptionAssignmentMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForPresentOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_OptionalOptionsPresent\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsBreakToContinueMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n",
+        "survived": false,
+        "id": 12
+    },
+    {
+        "mutant_id:": 13,
+        "line": 261,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "if (validate) {",
+        "aftercode": "if (!validate) {",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForRequiredOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_OptionalOptionsNotPresent\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidatePassesCorrectCommandLineToOptionValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsUnexpectedOptionAssignmentMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForPresentOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_GroupOptionValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateWhenRequired\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_OptionalOptionsPresent\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsBreakToContinueMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_ExactNumberOfRequiredOptions\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "mutant_id:": 14,
+        "line": 261,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "if (validate) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_OptionalOptionsNotPresent\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsUnexpectedOptionAssignmentMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n",
+        "survived": false,
+        "id": 14
+    },
+    {
+        "mutant_id:": 15,
+        "line": 261,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "if (validate) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForRequiredOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidatePassesCorrectCommandLineToOptionValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsUnexpectedOptionAssignmentMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForPresentOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_GroupOptionValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateWhenRequired\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_OptionalOptionsPresent\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsBreakToContinueMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_ExactNumberOfRequiredOptions\n",
+        "survived": false,
+        "id": 15
+    },
+    {
+        "mutant_id:": 16,
+        "line": 280,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "option.validate(commandLine);",
+        "aftercode": "// option.validate(commandLine);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsUnexpectedOptionAssignmentMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n",
+        "survived": true,
+        "id": 16
+    },
+    {
+        "mutant_id:": 18,
+        "line": 280,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "option.validate(commandLine);",
+        "aftercode": "option.validate(null);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsUnexpectedOptionAssignmentMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n",
+        "survived": true,
+        "id": 17
+    },
+    {
+        "mutant_id:": 19,
+        "line": 280,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "option.validate(commandLine);",
+        "aftercode": "return;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsUnexpectedOptionAssignmentMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n",
+        "survived": true,
+        "id": 18
+    },
+    {
+        "mutant_id:": 20,
+        "line": 280,
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "precode": "option.validate(commandLine);",
+        "aftercode": "if (option != null) option.validate(commandLine);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooFewOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateWithExcessOptionsShouldCheckMinimumAndAnonymous\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_DetectsUnexpectedOptionAssignmentMutant\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidateShouldCallOptionValidateForGroupOptions\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_AnonymousOptionsValidation\n  - gentest.org.apache.commons.cli2.option.tests.GroupImplTest::testValidate_TooManyOptions\n",
+        "survived": true,
+        "id": 19
+    },
+    {
+        "id": 20,
+        "line": 280,
+        "precode": "option.validate(commandLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (commandLine != null) option.validate(commandLine);"
+    },
+    {
+        "id": 21,
+        "line": 280,
+        "precode": "option.validate(commandLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "option.validate(new CommandLine());"
+    },
+    {
+        "id": 22,
+        "line": 94,
+        "precode": "i.remove();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "i.next();"
+    },
+    {
+        "id": 23,
+        "line": 94,
+        "precode": "i.remove();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "i.hasNext();"
+    },
+    {
+        "id": 24,
+        "line": 95,
+        "precode": "newAnonymous.add(option);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "newAnonymous.remove(option);"
+    },
+    {
+        "id": 25,
+        "line": 95,
+        "precode": "newAnonymous.add(option);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "newAnonymous.add(null);"
+    },
+    {
+        "id": 26,
+        "line": 100,
+        "precode": "newOptionMap.put(j.next(), option);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "newOptionMap.put(option, j.next());"
+    },
+    {
+        "id": 27,
+        "line": 100,
+        "precode": "newOptionMap.put(j.next(), option);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "newOptionMap.put(j.next(), null);"
+    },
+    {
+        "id": 28,
+        "line": 115,
+        "precode": "if (arg == null) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (arg != null) {"
+    },
+    {
+        "id": 29,
+        "line": 115,
+        "precode": "if (arg == null) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 30,
+        "line": 116,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 31,
+        "line": 116,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return !false;"
+    },
+    {
+        "id": 32,
+        "line": 120,
+        "precode": "if (optionMap.containsKey(arg)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (optionMap.containsValue(arg)) {"
+    },
+    {
+        "id": 33,
+        "line": 120,
+        "precode": "if (optionMap.containsKey(arg)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 34,
+        "line": 121,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 35,
+        "line": 121,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return (1 == 1);"
+    },
+    {
+        "id": 36,
+        "line": 125,
+        "precode": "final Map tailMap = optionMap.tailMap(arg);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Map tailMap = optionMap.headMap(arg);"
+    },
+    {
+        "id": 37,
+        "line": 125,
+        "precode": "final Map tailMap = optionMap.tailMap(arg);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Map tailMap = optionMap.subMap(arg, arg);"
+    },
+    {
+        "id": 38,
+        "line": 128,
+        "precode": "for (final Iterator iter = tailMap.values().iterator(); iter.hasNext();)",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "for (final Iterator iter = tailMap.values().iterator(); true;)"
+    },
+    {
+        "id": 39,
+        "line": 128,
+        "precode": "for (final Iterator iter = tailMap.values().iterator(); iter.hasNext();)",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "for (final Iterator iter = tailMap.keySet().iterator(); iter.hasNext();)"
+    },
+    {
+        "id": 40,
+        "line": 129,
+        "precode": "final Option option = (Option) iter.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Option option = iter.next();"
+    },
+    {
+        "id": 41,
+        "line": 129,
+        "precode": "final Option option = (Option) iter.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Object option = (Option) iter.next();"
+    },
+    {
+        "id": 42,
+        "line": 131,
+        "precode": "if (option.canProcess(commandLine, arg)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (option.canProcess(arg, commandLine)) {"
+    },
+    {
+        "id": 43,
+        "line": 131,
+        "precode": "if (option.canProcess(commandLine, arg)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 44,
+        "line": 132,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 45,
+        "line": 132,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return !false;"
+    },
+    {
+        "id": 46,
+        "line": 134,
+        "precode": "                    }",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "                    };"
+    },
+    {
+        "id": 47,
+        "line": 134,
+        "precode": "                    }",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "                    } // dummy comment"
+    },
+    {
+        "id": 48,
+        "line": 136,
+        "precode": "if (commandLine.looksLikeOption(arg)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (!commandLine.looksLikeOption(arg)) {"
+    },
+    {
+        "id": 49,
+        "line": 136,
+        "precode": "if (commandLine.looksLikeOption(arg)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (commandLine.looksLikeOption(null)) {"
+    },
+    {
+        "id": 50,
+        "line": 137,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 51,
+        "line": 137,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return !false;"
+    },
+    {
+        "id": 52,
+        "line": 141,
+        "precode": "if (anonymous.size() > 0) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (anonymous.size() >= 0) {"
+    },
+    {
+        "id": 53,
+        "line": 141,
+        "precode": "if (anonymous.size() > 0) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (anonymous.size() != 0) {"
+    },
+    {
+        "id": 54,
+        "line": 142,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 55,
+        "line": 142,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return Boolean.TRUE;"
+    },
+    {
+        "id": 56,
+        "line": 145,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 57,
+        "line": 145,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return !false;"
+    },
+    {
+        "id": 58,
+        "line": 149,
+        "precode": "return prefixes;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 59,
+        "line": 149,
+        "precode": "return prefixes;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return new ArrayList<>();"
+    },
+    {
+        "id": 60,
+        "line": 153,
+        "precode": "return optionMap.keySet();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return optionMap.values();"
+    },
+    {
+        "id": 61,
+        "line": 153,
+        "precode": "return optionMap.keySet();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return optionMap.entrySet();"
+    },
+    {
+        "id": 62,
+        "line": 159,
+        "precode": "String previous = null;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "String previous = \"\";"
+    },
+    {
+        "id": 63,
+        "line": 159,
+        "precode": "String previous = null;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "String previous = \"null\";"
+    },
+    {
+        "id": 64,
+        "line": 162,
+        "precode": "while (arguments.hasNext()) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "while (true) {"
+    },
+    {
+        "id": 65,
+        "line": 162,
+        "precode": "while (arguments.hasNext()) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "while (arguments.hasPrevious()) {"
+    },
+    {
+        "id": 66,
+        "line": 164,
+        "precode": "final String arg = (String) arguments.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final String arg = arguments.next().toString();"
+    },
+    {
+        "id": 67,
+        "line": 164,
+        "precode": "final String arg = (String) arguments.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Object arg = arguments.next();"
+    },
+    {
+        "id": 68,
+        "line": 167,
+        "precode": "if (arg == previous) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (arg != previous) {"
+    },
+    {
+        "id": 69,
+        "line": 167,
+        "precode": "if (arg == previous) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 70,
+        "line": 169,
+        "precode": "arguments.previous();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "arguments.next();"
+    },
+    {
+        "id": 71,
+        "line": 169,
+        "precode": "arguments.previous();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "arguments.current();"
+    },
+    {
+        "id": 72,
+        "line": 171,
+        "precode": "break;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "continue;"
+    },
+    {
+        "id": 73,
+        "line": 171,
+        "precode": "break;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 74,
+        "line": 175,
+        "precode": "previous = arg;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "previous = null;"
+    },
+    {
+        "id": 75,
+        "line": 175,
+        "precode": "previous = arg;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "previous = previous;"
+    },
+    {
+        "id": 76,
+        "line": 177,
+        "precode": "final Option opt = (Option) optionMap.get(arg);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Option opt = optionMap.get(arg);"
+    },
+    {
+        "id": 77,
+        "line": 177,
+        "precode": "final Option opt = (Option) optionMap.get(arg);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Option opt = (Option) optionMap.get(null);"
+    },
+    {
+        "id": 78,
+        "line": 180,
+        "precode": "if (opt != null) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (opt == null) {"
+    },
+    {
+        "id": 79,
+        "line": 180,
+        "precode": "if (opt != null) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 80,
+        "line": 181,
+        "precode": "arguments.previous();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "arguments.next();"
+    },
+    {
+        "id": 81,
+        "line": 181,
+        "precode": "arguments.previous();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "arguments.current();"
+    },
+    {
+        "id": 82,
+        "line": 182,
+        "precode": "opt.process(commandLine, arguments);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "opt.process(arguments, commandLine);"
+    },
+    {
+        "id": 83,
+        "line": 182,
+        "precode": "opt.process(commandLine, arguments);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "opt.process(commandLine, null);"
+    },
+    {
+        "id": 84,
+        "line": 188,
+        "precode": "if (commandLine.looksLikeOption(arg)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 85,
+        "line": 188,
+        "precode": "if (commandLine.looksLikeOption(arg)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (!commandLine.looksLikeOption(arg)) {"
+    },
+    {
+        "id": 86,
+        "line": 190,
+        "precode": "final Collection values = optionMap.tailMap(arg).values();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Collection values = optionMap.headMap(arg).values();"
+    },
+    {
+        "id": 87,
+        "line": 190,
+        "precode": "final Collection values = optionMap.tailMap(arg).values();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Collection values = optionMap.tailMap(arg, false).values();"
+    },
+    {
+        "id": 88,
+        "line": 192,
+        "precode": "boolean foundMemberOption = false;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "boolean foundMemberOption = true;"
+    },
+    {
+        "id": 89,
+        "line": 192,
+        "precode": "boolean foundMemberOption = false;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "boolean foundMemberOption = !false;"
+    },
+    {
+        "id": 90,
+        "line": 194,
+        "precode": "for (Iterator i = values.iterator(); i.hasNext() && !foundMemberOption;) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "for (Iterator i = values.iterator(); i.hasNext() || !foundMemberOption;) {"
+    },
+    {
+        "id": 91,
+        "line": 194,
+        "precode": "for (Iterator i = values.iterator(); i.hasNext() && !foundMemberOption;) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "for (Iterator i = values.iterator(); true && !foundMemberOption;) {"
+    },
+    {
+        "id": 92,
+        "line": 195,
+        "precode": "final Option option = (Option) i.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Option option = i.next();"
+    },
+    {
+        "id": 93,
+        "line": 195,
+        "precode": "final Option option = (Option) i.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Object option = (Option) i.next();"
+    },
+    {
+        "id": 94,
+        "line": 197,
+        "precode": "if (option.canProcess(commandLine, arg)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (option.canProcess(arg, commandLine)) {"
+    },
+    {
+        "id": 95,
+        "line": 197,
+        "precode": "if (option.canProcess(commandLine, arg)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 96,
+        "line": 198,
+        "precode": "foundMemberOption = true;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "foundMemberOption = false;"
+    },
+    {
+        "id": 97,
+        "line": 198,
+        "precode": "foundMemberOption = true;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "foundMemberOption = !foundMemberOption;"
+    },
+    {
+        "id": 98,
+        "line": 199,
+        "precode": "arguments.previous();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "arguments.next();"
+    },
+    {
+        "id": 99,
+        "line": 199,
+        "precode": "arguments.previous();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "arguments.current();"
+    },
+    {
+        "id": 100,
+        "line": 200,
+        "precode": "option.process(commandLine, arguments);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "option.process(arguments, commandLine);"
+    },
+    {
+        "id": 101,
+        "line": 200,
+        "precode": "option.process(commandLine, arguments);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "option.process(commandLine, null);"
+    },
+    {
+        "id": 102,
+        "line": 202,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 103,
+        "line": 202,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": " }"
+    },
+    {
+        "id": 104,
+        "line": 205,
+        "precode": "if (!foundMemberOption) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (foundMemberOption) {"
+    },
+    {
+        "id": 105,
+        "line": 205,
+        "precode": "if (!foundMemberOption) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 106,
+        "line": 206,
+        "precode": "arguments.previous();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "arguments.next();"
+    },
+    {
+        "id": 107,
+        "line": 206,
+        "precode": "arguments.previous();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "arguments.current();"
+    },
+    {
+        "id": 108,
+        "line": 208,
+        "precode": "return;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 109,
+        "line": 208,
+        "precode": "return;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "break;"
+    },
+    {
+        "id": 110,
+        "line": 210,
+        "precode": "} // [END argument may be anonymous",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "} // [END argument must be anonymous"
+    },
+    {
+        "id": 111,
+        "line": 210,
+        "precode": "} // [END argument may be anonymous",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "} // [END argument cannot be anonymous"
+    },
+    {
+        "id": 112,
+        "line": 215,
+        "precode": "arguments.previous();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "arguments.next();"
+    },
+    {
+        "id": 113,
+        "line": 215,
+        "precode": "arguments.previous();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "arguments.current();"
+    },
+    {
+        "id": 114,
+        "line": 219,
+        "precode": "if (anonymous.isEmpty()) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (anonymous != null && anonymous.isEmpty()) {"
+    },
+    {
+        "id": 115,
+        "line": 219,
+        "precode": "if (anonymous.isEmpty()) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (!anonymous.isEmpty()) {"
+    },
+    {
+        "id": 116,
+        "line": 220,
+        "precode": "break;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "continue;"
+    },
+    {
+        "id": 117,
+        "line": 220,
+        "precode": "break;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 118,
+        "line": 225,
+        "precode": "for (final Iterator i = anonymous.iterator(); i.hasNext();)",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "for (final Iterator i = anonymous.iterator(); true;)"
+    },
+    {
+        "id": 119,
+        "line": 225,
+        "precode": "for (final Iterator i = anonymous.iterator(); i.hasNext();)",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "for (final Iterator i = anonymous.iterator(); !i.hasNext();)"
+    },
+    {
+        "id": 120,
+        "line": 226,
+        "precode": "final Argument argument = (Argument) i.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Argument argument = i.next();"
+    },
+    {
+        "id": 121,
+        "line": 226,
+        "precode": "final Argument argument = (Argument) i.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Object argument = (Argument) i.next();"
+    },
+    {
+        "id": 122,
+        "line": 228,
+        "precode": "if (argument.canProcess(commandLine, arguments)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (argument.canProcess(arguments, commandLine)) {"
+    },
+    {
+        "id": 123,
+        "line": 228,
+        "precode": "if (argument.canProcess(commandLine, arguments)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 124,
+        "line": 229,
+        "precode": "argument.process(commandLine, arguments);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "arguments.process(commandLine, argument);"
+    },
+    {
+        "id": 125,
+        "line": 229,
+        "precode": "argument.process(commandLine, arguments);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "argument.process(arguments, commandLine);"
+    },
+    {
+        "id": 126,
+        "line": 231,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 127,
+        "line": 231,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "} // dummy comment"
+    },
+    {
+        "id": 128,
+        "line": 234,
+        "precode": "} // [END process each command line token",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "} // [START process each command line token"
+    },
+    {
+        "id": 129,
+        "line": 234,
+        "precode": "} // [END process each command line token",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "} // [END process command line token"
+    },
+    {
+        "id": 130,
+        "line": 235,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "}}"
+    },
+    {
+        "id": 131,
+        "line": 235,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "});"
+    },
+    {
+        "id": 132,
+        "line": 279,
+        "precode": "final Option option = (Option) i.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Option option = i.next();"
+    },
+    {
+        "id": 133,
+        "line": 279,
+        "precode": "final Option option = (Option) i.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Option option = (Option) i;"
+    },
+    {
+        "id": 134,
+        "line": 280,
+        "precode": "option.validate(commandLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "option.validate(null);"
+    },
+    {
+        "id": 135,
+        "line": 280,
+        "precode": "option.validate(commandLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "commandLine.validate(option);"
+    },
+    {
+        "id": 136,
+        "line": 281,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "}}"
+    },
+    {
+        "id": 137,
+        "line": 281,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": ""
+    },
+    {
+        "id": 138,
+        "line": 285,
+        "precode": "return name;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 139,
+        "line": 285,
+        "precode": "return name;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return \"\";"
+    },
+    {
+        "id": 140,
+        "line": 289,
+        "precode": "return description;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 141,
+        "line": 289,
+        "precode": "return description;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return \"\";"
+    },
+    {
+        "id": 142,
+        "line": 331,
+        "precode": "buffer.append(\" (\");",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "buffer.append(\" \");"
+    },
+    {
+        "id": 143,
+        "line": 331,
+        "precode": "buffer.append(\" (\");",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "buffer.append(\"()\");"
+    },
+    {
+        "id": 144,
+        "line": 337,
+        "precode": "if (!helpSettingsCopy.contains(DisplaySetting.DISPLAY_GROUP_EXPANDED)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (helpSettingsCopy.contains(DisplaySetting.DISPLAY_GROUP_EXPANDED)) {"
+    },
+    {
+        "id": 145,
+        "line": 337,
+        "precode": "if (!helpSettingsCopy.contains(DisplaySetting.DISPLAY_GROUP_EXPANDED)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (!helpSettingsCopy.isEmpty()) {"
+    },
+    {
+        "id": 146,
+        "line": 338,
+        "precode": "childSettings = DisplaySetting.NONE;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "childSettings = null;"
+    },
+    {
+        "id": 147,
+        "line": 338,
+        "precode": "childSettings = DisplaySetting.NONE;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "childSettings = DisplaySetting.DEFAULT;"
+    },
+    {
+        "id": 148,
+        "line": 340,
+        "precode": "childSettings = new HashSet(helpSettingsCopy);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "childSettings = new TreeSet(helpSettingsCopy);"
+    },
+    {
+        "id": 149,
+        "line": 340,
+        "precode": "childSettings = new HashSet(helpSettingsCopy);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "childSettings = helpSettingsCopy;"
+    },
+    {
+        "id": 150,
+        "line": 341,
+        "precode": "childSettings.remove(DisplaySetting.DISPLAY_OPTIONAL);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "childSettings.add(DisplaySetting.DISPLAY_OPTIONAL);"
+    },
+    {
+        "id": 151,
+        "line": 341,
+        "precode": "childSettings.remove(DisplaySetting.DISPLAY_OPTIONAL);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "childSettings.remove(null);"
+    },
+    {
+        "id": 152,
+        "line": 347,
+        "precode": "if (comp == null) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (comp != null) {"
+    },
+    {
+        "id": 153,
+        "line": 347,
+        "precode": "if (comp == null) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 154,
+        "line": 349,
+        "precode": "list = options;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "list = null;"
+    },
+    {
+        "id": 155,
+        "line": 349,
+        "precode": "list = options;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "list = new ArrayList();"
+    },
+    {
+        "id": 156,
+        "line": 352,
+        "precode": "list = new ArrayList(options);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "list = new ArrayList();"
+    },
+    {
+        "id": 157,
+        "line": 352,
+        "precode": "list = new ArrayList(options);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "list = options;"
+    },
+    {
+        "id": 158,
+        "line": 353,
+        "precode": "Collections.sort(list, comp);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "Collections.sort(list, null);"
+    },
+    {
+        "id": 159,
+        "line": 353,
+        "precode": "Collections.sort(list, comp);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "Collections.sort(list, Collections.reverseOrder(comp));"
+    },
+    {
+        "id": 160,
+        "line": 357,
+        "precode": "for (final Iterator i = list.iterator(); i.hasNext();)",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "for (final Iterator i = list.iterator(); true;)"
+    },
+    {
+        "id": 161,
+        "line": 357,
+        "precode": "for (final Iterator i = list.iterator(); i.hasNext();)",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "for (final Iterator i = list.iterator(); i != null;)"
+    },
+    {
+        "id": 162,
+        "line": 358,
+        "precode": "final Option option = (Option) i.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Option option = i.next();"
+    },
+    {
+        "id": 163,
+        "line": 358,
+        "precode": "final Option option = (Option) i.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Object option = (Option) i.next();"
+    },
+    {
+        "id": 164,
+        "line": 361,
+        "precode": "option.appendUsage(buffer, childSettings, comp);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "option.appendUsage(buffer, childSettings, null);"
+    },
+    {
+        "id": 165,
+        "line": 361,
+        "precode": "option.appendUsage(buffer, childSettings, comp);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "option.appendUsage(null, childSettings, comp);"
+    },
+    {
+        "id": 166,
+        "line": 364,
+        "precode": "if (i.hasNext()) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 167,
+        "line": 364,
+        "precode": "if (i.hasNext()) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (i.hasNext() && true) {"
+    },
+    {
+        "id": 168,
+        "line": 365,
+        "precode": "buffer.append(separator);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "buffer.insert(0, separator);"
+    },
+    {
+        "id": 169,
+        "line": 365,
+        "precode": "buffer.append(separator);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "buffer.append(separator + \" \");"
+    },
+    {
+        "id": 170,
+        "line": 367,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 171,
+        "line": 367,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "} // dummy comment"
+    },
+    {
+        "id": 172,
+        "line": 371,
+        "precode": "buffer.append(')');",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "buffer.append('(');"
+    },
+    {
+        "id": 173,
+        "line": 371,
+        "precode": "buffer.append(')');",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "buffer.append(' ');"
+    },
+    {
+        "id": 174,
+        "line": 379,
+        "precode": "for (final Iterator i = anonymous.iterator(); i.hasNext();)",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "for (final Iterator i = anonymous.iterator(); true;)"
+    },
+    {
+        "id": 175,
+        "line": 379,
+        "precode": "for (final Iterator i = anonymous.iterator(); i.hasNext();)",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "for (final Iterator i = anonymous.iterator(); !i.hasNext();)"
+    },
+    {
+        "id": 176,
+        "line": 380,
+        "precode": "buffer.append(' ');",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "buffer.append('\\t');"
+    },
+    {
+        "id": 177,
+        "line": 380,
+        "precode": "buffer.append(' ');",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "buffer.append('');"
+    },
+    {
+        "id": 178,
+        "line": 382,
+        "precode": "final Option option = (Option) i.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Option option = i.next();"
+    },
+    {
+        "id": 179,
+        "line": 382,
+        "precode": "final Option option = (Option) i.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Object option = (Option) i.next();"
+    },
+    {
+        "id": 180,
+        "line": 383,
+        "precode": "option.appendUsage(buffer, helpSettingsCopy, comp);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "option.appendUsage(buffer, helpSettingsCopy, null);"
+    },
+    {
+        "id": 181,
+        "line": 383,
+        "precode": "option.appendUsage(buffer, helpSettingsCopy, comp);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "option.appendUsage(null, helpSettingsCopy, comp);"
+    },
+    {
+        "id": 182,
+        "line": 384,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 183,
+        "line": 384,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "} // dummy comment"
+    },
+    {
+        "id": 184,
+        "line": 395,
+        "precode": "final List helpLines = new ArrayList();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final List helpLines = new LinkedList();"
+    },
+    {
+        "id": 185,
+        "line": 395,
+        "precode": "final List helpLines = new ArrayList();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "List helpLines = new ArrayList();"
+    },
+    {
+        "id": 186,
+        "line": 397,
+        "precode": "if (helpSettings.contains(DisplaySetting.DISPLAY_GROUP_NAME)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (helpSettings.contains(DisplaySetting.DISPLAY_GROUP_NAME) || true) {"
+    },
+    {
+        "id": 187,
+        "line": 397,
+        "precode": "if (helpSettings.contains(DisplaySetting.DISPLAY_GROUP_NAME)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (helpSettings.size() > 0) {"
+    },
+    {
+        "id": 188,
+        "line": 398,
+        "precode": "final HelpLine helpLine = new HelpLineImpl(this, depth);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final HelpLine helpLine = new HelpLineImpl(null, depth);"
+    },
+    {
+        "id": 189,
+        "line": 398,
+        "precode": "final HelpLine helpLine = new HelpLineImpl(this, depth);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final HelpLine helpLine = new HelpLineImpl(this, 0);"
+    },
+    {
+        "id": 190,
+        "line": 399,
+        "precode": "helpLines.add(helpLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "helpLines.add(null);"
+    },
+    {
+        "id": 191,
+        "line": 399,
+        "precode": "helpLines.add(helpLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "helpLines.add(0, helpLine);"
+    },
+    {
+        "id": 192,
+        "line": 402,
+        "precode": "if (helpSettings.contains(DisplaySetting.DISPLAY_GROUP_EXPANDED)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (helpSettings.contains(null)) {"
+    },
+    {
+        "id": 193,
+        "line": 402,
+        "precode": "if (helpSettings.contains(DisplaySetting.DISPLAY_GROUP_EXPANDED)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 194,
+        "line": 406,
+        "precode": "if (comp == null) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (comp != null) {"
+    },
+    {
+        "id": 195,
+        "line": 406,
+        "precode": "if (comp == null) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 196,
+        "line": 408,
+        "precode": "list = options;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "list = null;"
+    },
+    {
+        "id": 197,
+        "line": 408,
+        "precode": "list = options;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "list = new ArrayList();"
+    },
+    {
+        "id": 198,
+        "line": 411,
+        "precode": "list = new ArrayList(options);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "list = new ArrayList();"
+    },
+    {
+        "id": 199,
+        "line": 411,
+        "precode": "list = new ArrayList(options);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "list = options;"
+    },
+    {
+        "id": 200,
+        "line": 412,
+        "precode": "Collections.sort(list, comp);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "Collections.sort(list, null);"
+    },
+    {
+        "id": 201,
+        "line": 412,
+        "precode": "Collections.sort(list, comp);",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "Collections.reverse(list);"
+    },
+    {
+        "id": 202,
+        "line": 416,
+        "precode": "for (final Iterator i = list.iterator(); i.hasNext();)",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "for (final Iterator i = list.iterator(); true;)"
+    },
+    {
+        "id": 203,
+        "line": 416,
+        "precode": "for (final Iterator i = list.iterator(); i.hasNext();)",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "for (final Iterator i = list.iterator(); i.hasNext() != false;)"
+    },
+    {
+        "id": 204,
+        "line": 417,
+        "precode": "final Option option = (Option) i.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Option option = i.next();"
+    },
+    {
+        "id": 205,
+        "line": 417,
+        "precode": "final Option option = (Option) i.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Object option = (Option) i.next();"
+    },
+    {
+        "id": 206,
+        "line": 418,
+        "precode": "helpLines.addAll(option.helpLines(depth + 1, helpSettings, comp));",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "helpLines.add(option.helpLines(depth + 1, helpSettings, comp));"
+    },
+    {
+        "id": 207,
+        "line": 418,
+        "precode": "helpLines.addAll(option.helpLines(depth + 1, helpSettings, comp));",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "helpLines.addAll(option.helpLines(depth, helpSettings, comp));"
+    },
+    {
+        "id": 208,
+        "line": 419,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 209,
+        "line": 419,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "} // end"
+    },
+    {
+        "id": 210,
+        "line": 422,
+        "precode": "if (helpSettings.contains(DisplaySetting.DISPLAY_GROUP_ARGUMENT)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (helpSettings != null && helpSettings.contains(DisplaySetting.DISPLAY_GROUP_ARGUMENT)) {"
+    },
+    {
+        "id": 211,
+        "line": 422,
+        "precode": "if (helpSettings.contains(DisplaySetting.DISPLAY_GROUP_ARGUMENT)) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 212,
+        "line": 423,
+        "precode": "for (final Iterator i = anonymous.iterator(); i.hasNext();)",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "for (final Iterator i = anonymous.iterator(); true;)"
+    },
+    {
+        "id": 213,
+        "line": 423,
+        "precode": "for (final Iterator i = anonymous.iterator(); i.hasNext();)",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "for (final Iterator i = anonymous.iterator(); !i.hasNext();)"
+    },
+    {
+        "id": 214,
+        "line": 424,
+        "precode": "final Option option = (Option) i.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Option option = (Option) i;"
+    },
+    {
+        "id": 215,
+        "line": 424,
+        "precode": "final Option option = (Option) i.next();",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "final Option option = i.next();"
+    },
+    {
+        "id": 216,
+        "line": 425,
+        "precode": "helpLines.addAll(option.helpLines(depth + 1, helpSettings, comp));",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "helpLines.add(option.helpLines(depth + 1, helpSettings, comp));"
+    },
+    {
+        "id": 217,
+        "line": 425,
+        "precode": "helpLines.addAll(option.helpLines(depth + 1, helpSettings, comp));",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "helpLines.addAll(option.helpLines(depth, helpSettings, comp));"
+    },
+    {
+        "id": 218,
+        "line": 426,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 219,
+        "line": 426,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "} // end of block"
+    },
+    {
+        "id": 220,
+        "line": 429,
+        "precode": "return helpLines;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 221,
+        "line": 429,
+        "precode": "return helpLines;",
+        "filepath": "./defects4j_fixed/Cli/Cli_14_fixed/src/java/org/apache/commons/cli2/option/GroupImpl.java",
+        "aftercode": "return new ArrayList<>();"
+    }
+]

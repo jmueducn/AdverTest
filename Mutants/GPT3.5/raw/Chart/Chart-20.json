@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "line": 93,
+        "precode": "public ValueMarker(double value, Paint paint, Stroke stroke,",
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "aftercode": "public ValueMarker(double val, Paint paint, Stroke stroke,"
+    },
+    {
+        "id": 2,
+        "line": 93,
+        "precode": "public ValueMarker(double value, Paint paint, Stroke stroke,",
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "aftercode": "public ValueMarker(int value, Paint paint, Stroke stroke,"
+    },
+    {
+        "id": 3,
+        "line": 94,
+        "precode": "                       Paint outlinePaint, Stroke outlineStroke, float alpha) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "aftercode": "                       Paint outlinePaint, Stroke outlineStroke, double alpha) {"
+    },
+    {
+        "id": 4,
+        "line": 94,
+        "precode": "                       Paint outlinePaint, Stroke outlineStroke, float alpha) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "aftercode": "                       Paint outlinePaint, Stroke outlineStroke, float alpha) "
+    },
+    {
+        "id": 5,
+        "line": 95,
+        "precode": "        super(paint, stroke, outlinePaint, outlineStroke, alpha);",
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "aftercode": "        super(paint, stroke, outlinePaint, null, alpha);"
+    },
+    {
+        "id": 6,
+        "line": 95,
+        "precode": "        super(paint, stroke, outlinePaint, outlineStroke, alpha);",
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "aftercode": "        super(paint, stroke, outlinePaint, outlineStroke, 1.0f);"
+    },
+    {
+        "id": 7,
+        "line": 95,
+        "precode": "        super(paint, stroke, outlinePaint, outlineStroke, alpha);",
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "aftercode": "        super(null, stroke, outlinePaint, outlineStroke, alpha);"
+    },
+    {
+        "id": 8,
+        "line": 95,
+        "precode": "        super(paint, stroke, outlinePaint, outlineStroke, alpha);",
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "aftercode": "        super(paint, null, outlinePaint, outlineStroke, alpha);"
+    },
+    {
+        "id": 9,
+        "line": 95,
+        "precode": "        super(paint, stroke, outlinePaint, outlineStroke, alpha);",
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "aftercode": "        super(paint, stroke, null, outlineStroke, alpha);"
+    },
+    {
+        "id": 10,
+        "line": 95,
+        "precode": "        super(paint, stroke, outlinePaint, outlineStroke, alpha);",
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "aftercode": "        super(paint, stroke, outlinePaint, outlineStroke, 0.0f);"
+    },
+    {
+        "id": 11,
+        "line": 96,
+        "precode": "        this.value = value;",
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "aftercode": "        this.value = 0.0;"
+    },
+    {
+        "id": 12,
+        "line": 96,
+        "precode": "        this.value = value;",
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "aftercode": "        this.value = Double.MAX_VALUE;"
+    },
+    {
+        "id": 13,
+        "line": 96,
+        "precode": "        this.value = value;",
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "aftercode": "        this.value = -value;"
+    },
+    {
+        "id": 14,
+        "line": 96,
+        "precode": "        this.value = value;",
+        "filepath": "./defects4j_fixed/Chart/Chart_20_fixed/source/org/jfree/chart/plot/ValueMarker.java",
+        "aftercode": "        this.value = value + 1;"
+    }
+]

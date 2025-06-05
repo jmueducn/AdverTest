@@ -1,0 +1,170 @@
+[
+    {
+        "id": 1,
+        "line": 835,
+        "precode": "sb.append(text);",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "sb.append(text.trim());"
+    },
+    {
+        "id": 2,
+        "line": 835,
+        "precode": "sb.append(text);",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "sb.append(text.substring(0, 1));"
+    },
+    {
+        "id": 3,
+        "line": 835,
+        "precode": "sb.append(text);",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "sb.append(\"\");"
+    },
+    {
+        "id": 4,
+        "line": 835,
+        "precode": "sb.append(text);",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "sb.append(text + \" \");"
+    },
+    {
+        "id": 5,
+        "line": 837,
+        "precode": "return sb;",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "return new StringBuffer();"
+    },
+    {
+        "id": 6,
+        "line": 837,
+        "precode": "return sb;",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 7,
+        "line": 837,
+        "precode": "return sb;",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "return sb.append(\" \");"
+    },
+    {
+        "id": 8,
+        "line": 834,
+        "precode": "if ( (text.length() > width) && (pos == nextLineTabStop - 1) ) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "if ( (text.length() >= width) && (pos == nextLineTabStop - 1) ) {"
+    },
+    {
+        "id": 9,
+        "line": 834,
+        "precode": "if ( (text.length() > width) && (pos == nextLineTabStop - 1) ) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "if ( (text.length() > width) || (pos == nextLineTabStop - 1) ) {"
+    },
+    {
+        "id": 10,
+        "line": 834,
+        "precode": "if ( (text.length() > width) && (pos == nextLineTabStop - 1) ) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "if ( (text.length() > width) && (pos == nextLineTabStop) ) {"
+    },
+    {
+        "id": 11,
+        "line": 834,
+        "precode": "if ( (text.length() > width) && (pos == nextLineTabStop - 1) ) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "if ( (text.length() > width) && (pos <= nextLineTabStop - 1) ) {"
+    },
+    {
+        "id": 12,
+        "line": 834,
+        "precode": "if ( (text.length() > width) && (pos == nextLineTabStop - 1) ) {",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "if ( (text.length() != width) && (pos == nextLineTabStop - 1) ) {"
+    },
+    {
+        "id": 13,
+        "line": 835,
+        "precode": "sb.append(text);",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "sb.append(text.toUpperCase());"
+    },
+    {
+        "id": 14,
+        "line": 835,
+        "precode": "sb.append(text);",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "sb.append(text.replace(' ', '_'));"
+    },
+    {
+        "id": 15,
+        "line": 835,
+        "precode": "sb.append(text);",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "sb.append(text.substring(0, text.length()/2));"
+    },
+    {
+        "id": 16,
+        "line": 835,
+        "precode": "sb.append(text);",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "sb.append(text + text);"
+    },
+    {
+        "id": 17,
+        "line": 837,
+        "precode": "return sb;",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "return sb.reverse();"
+    },
+    {
+        "id": 18,
+        "line": 837,
+        "precode": "return sb;",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "return sb.append(defaultNewLine);"
+    },
+    {
+        "id": 19,
+        "line": 837,
+        "precode": "return sb;",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "return new StringBuffer(text);"
+    },
+    {
+        "id": 20,
+        "line": 840,
+        "precode": "sb.append(rtrim(text.substring(0, pos))).append(defaultNewLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "sb.append(text.substring(0, pos)).append(defaultNewLine);"
+    },
+    {
+        "id": 21,
+        "line": 840,
+        "precode": "sb.append(rtrim(text.substring(0, pos))).append(defaultNewLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "sb.append(rtrim(text.substring(0, pos))).append(\"\");"
+    },
+    {
+        "id": 22,
+        "line": 840,
+        "precode": "sb.append(rtrim(text.substring(0, pos))).append(defaultNewLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "sb.append(rtrim(text.substring(0, pos)));"
+    },
+    {
+        "id": 23,
+        "line": 840,
+        "precode": "sb.append(rtrim(text.substring(0, pos))).append(defaultNewLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "sb.append(rtrim(text.substring(0, pos))).append(\"\\n\");"
+    },
+    {
+        "id": 24,
+        "line": 840,
+        "precode": "sb.append(rtrim(text.substring(0, pos))).append(defaultNewLine);",
+        "filepath": "./defects4j_fixed/Cli/Cli_23_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "sb.append(rtrim(text.substring(0, pos))).insert(0, defaultNewLine);"
+    }
+]

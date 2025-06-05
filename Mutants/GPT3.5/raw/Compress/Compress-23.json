@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "line": 47,
+        "precode": "        if (Arrays.equals(coderId.method.getId(), coder.decompressionMethodId)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "        if (Arrays.equals(coderId.method.getId(), coder.compressionMethodId)) {"
+    },
+    {
+        "id": 2,
+        "line": 47,
+        "precode": "        if (Arrays.equals(coderId.method.getId(), coder.decompressionMethodId)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "        if (Arrays.equals(coderId.method.getId(), new byte[0])) {"
+    },
+    {
+        "id": 3,
+        "line": 52,
+        "precode": "                Arrays.toString(coder.decompressionMethodId));",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                Arrays.toString(new byte[0])));"
+    },
+    {
+        "id": 4,
+        "line": 58,
+        "precode": "            if (coderId.method.equals(method)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "            if (coderId.method == method) {"
+    },
+    {
+        "id": 5,
+        "line": 58,
+        "precode": "            if (coderId.method.equals(method)) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "            if (true) {"
+    },
+    {
+        "id": 6,
+        "line": 62,
+        "precode": "        throw new IOException(\"Unsupported compression method \" + method);",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "        throw new IOException(\"Unsupported method \" + method);"
+    },
+    {
+        "id": 7,
+        "line": 66,
+        "precode": "        new CoderId(SevenZMethod.COPY, new CopyDecoder()),",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "        new CoderId(SevenZMethod.LZMA, new CopyDecoder()),"
+    },
+    {
+        "id": 8,
+        "line": 68,
+        "precode": "        new CoderId(SevenZMethod.LZMA2, new LZMA2Decoder()),",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "        new CoderId(SevenZMethod.LZMA, new LZMA2Decoder()),"
+    },
+    {
+        "id": 9,
+        "line": 70,
+        "precode": "        new CoderId(SevenZMethod.BZIP2, new BZIP2Decoder()),",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "        new CoderId(SevenZMethod.DEFLATE, new BZIP2Decoder()),"
+    },
+    {
+        "id": 10,
+        "line": 97,
+        "precode": "            return in; ",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "            return null; "
+    },
+    {
+        "id": 11,
+        "line": 101,
+        "precode": "            return out;",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "            return null;"
+    },
+    {
+        "id": 12,
+        "line": 109,
+        "precode": "            byte propsByte = coder.properties[0];",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "            byte propsByte = 0;"
+    },
+    {
+        "id": 13,
+        "line": 110,
+        "precode": "            long dictSize = coder.properties[1];",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "            long dictSize = 0;"
+    },
+    {
+        "id": 14,
+        "line": 111,
+        "precode": "            for (int i = 1; i < 4; i++) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "            for (int i = 1; i < 5; i++) {"
+    },
+    {
+        "id": 15,
+        "line": 111,
+        "precode": "            for (int i = 1; i < 4; i++) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "            for (int i = 0; i < 4; i++) {"
+    },
+    {
+        "id": 16,
+        "line": 112,
+        "precode": "                dictSize |= (coder.properties[i + 1] & 0xffl) << (8 * i);",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                dictSize |= (coder.properties[i] & 0xffl) << (8 * i);"
+    },
+    {
+        "id": 17,
+        "line": 115,
+        "precode": "                throw new IOException(\"Dictionary larger than 4GiB maximum size\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                throw new IOException(\"Dictionary too large\");"
+    },
+    {
+        "id": 18,
+        "line": 117,
+        "precode": "            return new LZMAInputStream(in, -1, propsByte, (int) dictSize);",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "            return new LZMAInputStream(in, 0, propsByte, (int) dictSize);"
+    },
+    {
+        "id": 19,
+        "line": 125,
+        "precode": "            return new InflaterInputStream(new DummyByteAddingInputStream(in),",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "            return new InflaterInputStream(in,"
+    },
+    {
+        "id": 20,
+        "line": 130,
+        "precode": "            return new DeflaterOutputStream(out, new Deflater(9, true));",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "            return new DeflaterOutputStream(out, new Deflater(0, true));"
+    },
+    {
+        "id": 21,
+        "line": 130,
+        "precode": "            return new DeflaterOutputStream(out, new Deflater(9, true));",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "            return new DeflaterOutputStream(out, new Deflater(9, false));"
+    },
+    {
+        "id": 22,
+        "line": 138,
+        "precode": "            return new BZip2CompressorInputStream(in);",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "            return in;"
+    },
+    {
+        "id": 23,
+        "line": 143,
+        "precode": "            return new BZip2CompressorOutputStream(out);",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "            return out;"
+    },
+    {
+        "id": 24,
+        "line": 152,
+        "precode": "                private boolean isInitialized = false;",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                private boolean isInitialized = true;"
+    },
+    {
+        "id": 25,
+        "line": 156,
+        "precode": "                    if (isInitialized) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    if (true) {"
+    },
+    {
+        "id": 26,
+        "line": 214,
+        "precode": "                        return cipherInputStream;",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                        return null;"
+    },
+    {
+        "id": 27,
+        "line": 224,
+        "precode": "                    }",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    } else { return null; }"
+    },
+    {
+        "id": 28,
+        "line": 159,
+        "precode": "                    final int byte0 = 0xff & coder.properties[0];",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    final int byte0 = 0;"
+    },
+    {
+        "id": 29,
+        "line": 160,
+        "precode": "                    final int numCyclesPower = byte0 & 0x3f;",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    final int numCyclesPower = 0;"
+    },
+    {
+        "id": 30,
+        "line": 161,
+        "precode": "                    final int byte1 = 0xff & coder.properties[1];",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    final int byte1 = 0;"
+    },
+    {
+        "id": 31,
+        "line": 162,
+        "precode": "                    final int ivSize = ((byte0 >> 6) & 1) + (byte1 & 0x0f);",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    final int ivSize = 0;"
+    },
+    {
+        "id": 32,
+        "line": 163,
+        "precode": "                    final int saltSize = ((byte0 >> 7) & 1) + (byte1 >> 4);",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    final int saltSize = 0;"
+    },
+    {
+        "id": 33,
+        "line": 164,
+        "precode": "                    if (2 + saltSize + ivSize > coder.properties.length) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    if (false) {"
+    },
+    {
+        "id": 34,
+        "line": 167,
+        "precode": "                    final byte[] salt = new byte[saltSize];",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    final byte[] salt = new byte[0];"
+    },
+    {
+        "id": 35,
+        "line": 168,
+        "precode": "                    System.arraycopy(coder.properties, 2, salt, 0, saltSize);",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    // System.arraycopy(coder.properties, 2, salt, 0, saltSize);"
+    },
+    {
+        "id": 36,
+        "line": 169,
+        "precode": "                    final byte[] iv = new byte[16];",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    final byte[] iv = new byte[0];"
+    },
+    {
+        "id": 37,
+        "line": 170,
+        "precode": "                    System.arraycopy(coder.properties, 2 + saltSize, iv, 0, ivSize);",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    // System.arraycopy(coder.properties, 2 + saltSize, iv, 0, ivSize);"
+    },
+    {
+        "id": 38,
+        "line": 173,
+        "precode": "                        throw new IOException(\"Cannot read encrypted files without a password\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                        throw new IOException(\"Password required\");"
+    },
+    {
+        "id": 39,
+        "line": 175,
+        "precode": "                    final byte[] aesKeyBytes;",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    byte[] aesKeyBytes = null;"
+    },
+    {
+        "id": 40,
+        "line": 176,
+        "precode": "                    if (numCyclesPower == 0x3f) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    if (false) {"
+    },
+    {
+        "id": 41,
+        "line": 177,
+        "precode": "                        aesKeyBytes = new byte[32];",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                        aesKeyBytes = new byte[16];"
+    },
+    {
+        "id": 42,
+        "line": 178,
+        "precode": "                        System.arraycopy(salt, 0, aesKeyBytes, 0, saltSize);",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                        // System.arraycopy(salt, 0, aesKeyBytes, 0, saltSize);"
+    },
+    {
+        "id": 43,
+        "line": 179,
+        "precode": "                        System.arraycopy(passwordBytes, 0, aesKeyBytes, saltSize,",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                        // System.arraycopy(passwordBytes, 0, aesKeyBytes, saltSize,"
+    },
+    {
+        "id": 44,
+        "line": 184,
+        "precode": "                            digest = MessageDigest.getInstance(\"SHA-256\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                            digest = MessageDigest.getInstance(\"MD5\");"
+    },
+    {
+        "id": 45,
+        "line": 186,
+        "precode": "                            IOException ioe = new IOException(\"SHA-256 is unsupported by your Java implementation\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                            IOException ioe = new IOException(\"Hash algorithm unsupported\");"
+    },
+    {
+        "id": 46,
+        "line": 193,
+        "precode": "                        final byte[] extra = new byte[8];",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                        final byte[] extra = new byte[0];"
+    },
+    {
+        "id": 47,
+        "line": 194,
+        "precode": "                        for (long j = 0; j < (1L << numCyclesPower); j++) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                        for (long j = 0; j < 1; j++) {"
+    },
+    {
+        "id": 48,
+        "line": 195,
+        "precode": "                            digest.update(salt);",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                            // digest.update(salt);"
+    },
+    {
+        "id": 49,
+        "line": 196,
+        "precode": "                            digest.update(passwordBytes);",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                            // digest.update(passwordBytes);"
+    },
+    {
+        "id": 50,
+        "line": 197,
+        "precode": "                            digest.update(extra);",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                            // digest.update(extra);"
+    },
+    {
+        "id": 51,
+        "line": 208,
+        "precode": "                    final SecretKey aesKey = new SecretKeySpec(aesKeyBytes, \"AES\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    final SecretKey aesKey = null;"
+    },
+    {
+        "id": 52,
+        "line": 209,
+        "precode": "                    try {",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                    {"
+    },
+    {
+        "id": 53,
+        "line": 210,
+        "precode": "                        final Cipher cipher = Cipher.getInstance(\"AES/CBC/NoPadding\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                        final Cipher cipher = null;"
+    },
+    {
+        "id": 54,
+        "line": 211,
+        "precode": "                        cipher.init(Cipher.DECRYPT_MODE, aesKey, new IvParameterSpec(iv));",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                        // cipher.init(Cipher.DECRYPT_MODE, aesKey, new IvParameterSpec(iv));"
+    },
+    {
+        "id": 55,
+        "line": 212,
+        "precode": "                        cipherInputStream = new CipherInputStream(in, cipher);",
+        "filepath": "./defects4j_fixed/Compress/Compress_23_fixed/src/main/java/org/apache/commons/compress/archivers/sevenz/Coders.java",
+        "aftercode": "                        cipherInputStream = null;"
+    }
+]

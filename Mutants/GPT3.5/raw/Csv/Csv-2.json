@@ -1,0 +1,170 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 80,
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "if (mapping == null) {",
+        "aftercode": "if (mapping != null) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithNullValuesArray_HandlesCorrectly\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_ValidIndex\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WhenNameExists_ReturnsCorrectValue\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_NullValuesArrayUsesEmptyArray\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WhenMappingIsNull_ThrowsIllegalStateException\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithEmptyValuesArray_HandlesCorrectly\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 80,
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "if (mapping == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithNullValuesArray_HandlesCorrectly\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_ValidIndex\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WhenNameExists_ReturnsCorrectValue\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_NullValuesArrayUsesEmptyArray\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithEmptyValuesArray_HandlesCorrectly\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 80,
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "if (mapping == null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_ValidIndex\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_NullValuesArrayUsesEmptyArray\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WhenMappingIsNull_ThrowsIllegalStateException\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithEmptyValuesArray_HandlesCorrectly\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 5,
+        "line": 84,
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "final Integer index = mapping.get(name);",
+        "aftercode": "final Integer index = null;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithNullValuesArray_HandlesCorrectly\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_ValidIndex\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WhenNameExists_ReturnsCorrectValue\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_NullValuesArrayUsesEmptyArray\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithEmptyValuesArray_HandlesCorrectly\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 6,
+        "line": 84,
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "final Integer index = mapping.get(name);",
+        "aftercode": "final Integer index = mapping.get(\"\");",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithNullValuesArray_HandlesCorrectly\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_ValidIndex\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WhenNameExists_ReturnsCorrectValue\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_NullValuesArrayUsesEmptyArray\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithEmptyValuesArray_HandlesCorrectly\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 7,
+        "line": 86,
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "return index != null ? values[index.intValue()] : null;",
+        "aftercode": "return index == null ? values[index.intValue()] : null;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithNullValuesArray_HandlesCorrectly\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_ValidIndex\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WhenNameExists_ReturnsCorrectValue\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_NullValuesArrayUsesEmptyArray\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithEmptyValuesArray_HandlesCorrectly\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 8,
+        "line": 86,
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "return index != null ? values[index.intValue()] : null;",
+        "aftercode": "return index != null ? null : values[index.intValue()];",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithNullValuesArray_HandlesCorrectly\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_ValidIndex\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WhenNameExists_ReturnsCorrectValue\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_NullValuesArrayUsesEmptyArray\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithEmptyValuesArray_HandlesCorrectly\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 9,
+        "line": 86,
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "return index != null ? values[index.intValue()] : null;",
+        "aftercode": "return index != null ? values[0] : null;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_ValidIndex\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WhenNameExists_ReturnsCorrectValue\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_NullValuesArrayUsesEmptyArray\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithEmptyValuesArray_HandlesCorrectly\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 10,
+        "line": 86,
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "return index != null ? values[index.intValue()] : null;",
+        "aftercode": "return index != null ? values[index.intValue()] : \"\";",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_ValidIndex\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_NullValuesArrayUsesEmptyArray\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithEmptyValuesArray_HandlesCorrectly\n",
+        "survived": true,
+        "id": 9
+    },
+    {
+        "mutant_id:": 11,
+        "line": 87,
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "} catch (ArrayIndexOutOfBoundsException e) {",
+        "aftercode": "} catch (NullPointerException e) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithNullValuesArray_HandlesCorrectly\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_ValidIndex\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_NullValuesArrayUsesEmptyArray\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithEmptyValuesArray_HandlesCorrectly\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 12,
+        "line": 87,
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "} catch (ArrayIndexOutOfBoundsException e) {",
+        "aftercode": "} catch (Exception e) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_ValidIndex\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_NullValuesArrayUsesEmptyArray\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithEmptyValuesArray_HandlesCorrectly\n",
+        "survived": true,
+        "id": 11
+    },
+    {
+        "mutant_id:": 14,
+        "line": 91,
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "name, index.intValue(), values.length));",
+        "aftercode": "\"\", index.intValue(), values.length));",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithNullValuesArray_HandlesCorrectly\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_ValidIndex\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_NullValuesArrayUsesEmptyArray\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithEmptyValuesArray_HandlesCorrectly\n",
+        "survived": false,
+        "id": 12
+    },
+    {
+        "mutant_id:": 15,
+        "line": 91,
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "name, index.intValue(), values.length));",
+        "aftercode": "name, 0, values.length));",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_ValidIndex\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_NullValuesArrayUsesEmptyArray\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithEmptyValuesArray_HandlesCorrectly\n",
+        "survived": true,
+        "id": 13
+    },
+    {
+        "mutant_id:": 16,
+        "line": 91,
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "name, index.intValue(), values.length));",
+        "aftercode": "name, index.intValue(), 0));",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_ValidIndex\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_NullValuesArrayUsesEmptyArray\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testGet_WithEmptyValuesArray_HandlesCorrectly\n",
+        "survived": true,
+        "id": 14
+    },
+    {
+        "id": 15,
+        "line": 86,
+        "precode": "return index != null ? values[index.intValue()] : null;",
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "aftercode": "return index == null ? values[index.intValue()] : null;"
+    },
+    {
+        "id": 16,
+        "line": 86,
+        "precode": "return index != null ? values[index.intValue()] : null;",
+        "filepath": "./defects4j_fixed/Csv/Csv_2_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "aftercode": "return index != null ? values[0] : null;"
+    }
+]

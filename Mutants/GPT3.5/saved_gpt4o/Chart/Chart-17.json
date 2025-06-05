@@ -1,0 +1,202 @@
+[
+    {
+        "mutant_id:": 2,
+        "line": 857,
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "TimeSeries clone = (TimeSeries) super.clone();",
+        "aftercode": "TimeSeries clone = (TimeSeries) super.clone(); clone.data.clear();",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_ModifiedDataAfterCloning\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_TypicalValues\n",
+        "survived": true,
+        "id": 1
+    },
+    {
+        "mutant_id:": 4,
+        "line": 858,
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "clone.data = (List) ObjectUtilities.deepClone(this.data);",
+        "aftercode": "clone.data = this.data;",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_ModifiedDataAfterCloning\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_NullData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_TypicalValues\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 8,
+        "line": 858,
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "clone.data = (List) ObjectUtilities.deepClone(this.data);",
+        "aftercode": "clone.data = Collections.unmodifiableList(this.data);",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_ModifiedDataAfterCloning\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_TypicalValues\n",
+        "survived": true,
+        "id": 3
+    },
+    {
+        "mutant_id:": 10,
+        "line": 858,
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "clone.data = (List) ObjectUtilities.deepClone(this.data);",
+        "aftercode": "clone.data = (List) ObjectUtilities.deepClone(this.data.subList(0, this.data.size() / 2));",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_ModifiedDataAfterCloning\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_TypicalValues\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_EmptySeries\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 11,
+        "line": 858,
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "clone.data = (List) ObjectUtilities.deepClone(this.data);",
+        "aftercode": "clone.data = (List) ObjectUtilities.deepClone(this.data.subList(this.data.size() / 2, this.data.size()));",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_ModifiedDataAfterCloning\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_TypicalValues\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_EmptySeries\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 12,
+        "line": 858,
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "clone.data = (List) ObjectUtilities.deepClone(this.data);",
+        "aftercode": "clone.data = (List) ObjectUtilities.deepClone(Collections.emptyList());",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_ModifiedDataAfterCloning\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_NullData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_TypicalValues\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_EmptySeries\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 14,
+        "line": 858,
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "clone.data = (List) ObjectUtilities.deepClone(this.data);",
+        "aftercode": "clone.data = (List) ObjectUtilities.deepClone(this.data.subList(1, this.data.size()));",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_ModifiedDataAfterCloning\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_TypicalValues\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_EmptySeries\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 15,
+        "line": 858,
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "clone.data = (List) ObjectUtilities.deepClone(this.data);",
+        "aftercode": "clone.data = (List) ObjectUtilities.deepClone(this.data.subList(0, this.data.size() - 1));",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_ModifiedDataAfterCloning\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_TypicalValues\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testClone_EmptySeries\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "id": 9,
+        "line": 857,
+        "precode": "TimeSeries clone = (TimeSeries) super.clone();",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "TimeSeries clone = new TimeSeries();"
+    },
+    {
+        "id": 10,
+        "line": 857,
+        "precode": "TimeSeries clone = (TimeSeries) super.clone();",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "TimeSeries clone = (TimeSeries) super.clone(); clone.setName(\"ClonedSeries\");"
+    },
+    {
+        "id": 11,
+        "line": 858,
+        "precode": "clone.data = (List) ObjectUtilities.deepClone(this.data);",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "clone.data = new ArrayList<>(this.data);"
+    },
+    {
+        "id": 12,
+        "line": 858,
+        "precode": "clone.data = (List) ObjectUtilities.deepClone(this.data);",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "clone.data = null;"
+    },
+    {
+        "id": 13,
+        "line": 832,
+        "precode": "if (end < start) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "if (end <= start) {"
+    },
+    {
+        "id": 14,
+        "line": 832,
+        "precode": "if (end < start) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "if (end > start) {"
+    },
+    {
+        "id": 15,
+        "line": 833,
+        "precode": "throw new IllegalArgumentException(\"Requires start <= end.\");",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "throw new IllegalArgumentException(\"Requires start < end.\");"
+    },
+    {
+        "id": 16,
+        "line": 833,
+        "precode": "throw new IllegalArgumentException(\"Requires start <= end.\");",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "throw new RuntimeException(\"Requires start <= end.\");"
+    },
+    {
+        "id": 17,
+        "line": 835,
+        "precode": "for (int i = 0; i <= (end - start); i++) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "for (int i = 0; i < (end - start); i++) {"
+    },
+    {
+        "id": 18,
+        "line": 835,
+        "precode": "for (int i = 0; i <= (end - start); i++) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "for (int i = 1; i <= (end - start); i++) {"
+    },
+    {
+        "id": 19,
+        "line": 836,
+        "precode": "this.data.remove(start);",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "this.data.clear();"
+    },
+    {
+        "id": 20,
+        "line": 836,
+        "precode": "this.data.remove(start);",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "this.data.remove(start + 1);"
+    },
+    {
+        "id": 21,
+        "line": 838,
+        "precode": "fireSeriesChanged();",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "// fireSeriesChanged();"
+    },
+    {
+        "id": 22,
+        "line": 838,
+        "precode": "fireSeriesChanged();",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "fireSeriesChanged(); // Notify listeners"
+    },
+    {
+        "id": 23,
+        "line": 839,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 24,
+        "line": 839,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Chart/Chart_17_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "} // end of block"
+    }
+]

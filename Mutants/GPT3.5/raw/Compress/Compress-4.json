@@ -1,0 +1,726 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "precode": "if (this.closed) {",
+        "aftercode": "if (!this.closed) {",
+        "fail_test_number": 21,
+        "fail_test": "Failing tests: 21\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenDoesNotThrowWhenOpen\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenNotClosed_ShouldCloseOutputStreamAndSetFlag\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenClosedVerifyMessage\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsWhenStreamClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_AfterCloseCalled_ShouldThrowIOException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_WhenStreamIsOpen_ShouldNotThrowException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsIOExceptionWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsCorrectMessageWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenCalledMultipleTimes_ShouldCloseOnlyOnce\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenOutputStreamThrowsException_ShouldPropagateException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsCorrectExceptionWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenStreamIsOpen\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_AfterFinishCalled_ShouldNotThrowException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_VerifyClosedFlagIsAlwaysSet\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenAlreadyClosed_ShouldDoNothing\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_WhenStreamIsClosed_ShouldThrowIOException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenStreamIsClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenNotClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenDoesNotThrowWhenStreamOpen\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "precode": "if (this.closed) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenDoesNotThrowWhenOpen\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenNotClosed_ShouldCloseOutputStreamAndSetFlag\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_AfterCloseCalled_ShouldThrowIOException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_WhenStreamIsOpen_ShouldNotThrowException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsIOExceptionWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsCorrectMessageWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenCalledMultipleTimes_ShouldCloseOnlyOnce\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenOutputStreamThrowsException_ShouldPropagateException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenStreamIsOpen\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_AfterFinishCalled_ShouldNotThrowException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_VerifyClosedFlagIsAlwaysSet\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenAlreadyClosed_ShouldDoNothing\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_WhenStreamIsClosed_ShouldThrowIOException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenNotClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenDoesNotThrowWhenStreamOpen\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 126,
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "precode": "throw new IOException(\"Stream closed\");",
+        "aftercode": "throw new IOException(\"Different message\");",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenNotClosed_ShouldCloseOutputStreamAndSetFlag\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenClosedVerifyMessage\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_AfterCloseCalled_ShouldThrowIOException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_WhenStreamIsOpen_ShouldNotThrowException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsIOExceptionWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsCorrectMessageWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenCalledMultipleTimes_ShouldCloseOnlyOnce\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenOutputStreamThrowsException_ShouldPropagateException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsCorrectExceptionWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_AfterFinishCalled_ShouldNotThrowException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_VerifyClosedFlagIsAlwaysSet\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenAlreadyClosed_ShouldDoNothing\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_WhenStreamIsClosed_ShouldThrowIOException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenStreamIsClosed\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 126,
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "precode": "throw new IOException(\"Stream closed\");",
+        "aftercode": "throw new RuntimeException(\"Stream closed\");",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenNotClosed_ShouldCloseOutputStreamAndSetFlag\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenClosedVerifyMessage\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsWhenStreamClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_AfterCloseCalled_ShouldThrowIOException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_WhenStreamIsOpen_ShouldNotThrowException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsIOExceptionWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsCorrectMessageWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenCalledMultipleTimes_ShouldCloseOnlyOnce\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenOutputStreamThrowsException_ShouldPropagateException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsCorrectExceptionWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_AfterFinishCalled_ShouldNotThrowException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_VerifyClosedFlagIsAlwaysSet\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenAlreadyClosed_ShouldDoNothing\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_WhenStreamIsClosed_ShouldThrowIOException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenStreamIsClosed\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "precode": "if (this.closed) {",
+        "aftercode": "if (this.closed) {",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenNotClosed_ShouldCloseOutputStreamAndSetFlag\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_AfterCloseCalled_ShouldThrowIOException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_WhenStreamIsOpen_ShouldNotThrowException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsIOExceptionWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsCorrectMessageWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenCalledMultipleTimes_ShouldCloseOnlyOnce\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenOutputStreamThrowsException_ShouldPropagateException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_AfterFinishCalled_ShouldNotThrowException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_VerifyClosedFlagIsAlwaysSet\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenAlreadyClosed_ShouldDoNothing\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_WhenStreamIsClosed_ShouldThrowIOException\n",
+        "survived": true,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 125,
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "precode": "if (this.closed) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenNotClosed_ShouldCloseOutputStreamAndSetFlag\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenClosedVerifyMessage\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsWhenStreamClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_AfterCloseCalled_ShouldThrowIOException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_WhenStreamIsOpen_ShouldNotThrowException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsIOExceptionWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsCorrectMessageWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenCalledMultipleTimes_ShouldCloseOnlyOnce\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenOutputStreamThrowsException_ShouldPropagateException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsCorrectExceptionWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_AfterFinishCalled_ShouldNotThrowException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenThrowsWhenClosed\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_VerifyClosedFlagIsAlwaysSet\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testClose_WhenAlreadyClosed_ShouldDoNothing\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpen_WhenStreamIsClosed_ShouldThrowIOException\n  - gentest.org.apache.commons.compress.archivers.cpio.tests.CpioArchiveOutputStreamTest::testEnsureOpenWhenStreamIsClosed\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "id": 7,
+        "line": 125,
+        "precode": "if (this.closed) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (!this.closed) {"
+    },
+    {
+        "id": 8,
+        "line": 125,
+        "precode": "if (this.closed) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 9,
+        "line": 384,
+        "precode": "throws IOException",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "throws Exception"
+    },
+    {
+        "id": 10,
+        "line": 384,
+        "precode": "throws IOException",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": ""
+    },
+    {
+        "id": 11,
+        "line": 385,
+        "precode": "return new CpioArchiveEntry(inputFile, entryName);",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "return new CpioArchiveEntry(null, entryName);"
+    },
+    {
+        "id": 12,
+        "line": 385,
+        "precode": "return new CpioArchiveEntry(inputFile, entryName);",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "return new CpioArchiveEntry(inputFile, \"\");"
+    },
+    {
+        "id": 13,
+        "line": 129,
+        "precode": "return a + b;",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "return a - b;"
+    },
+    {
+        "id": 14,
+        "line": 129,
+        "precode": "return a + b;",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "return a;"
+    },
+    {
+        "id": 15,
+        "line": 128,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "});"
+    },
+    {
+        "id": 16,
+        "line": 128,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 17,
+        "line": 383,
+        "precode": "public ArchiveEntry createArchiveEntry(File inputFile, String entryName)",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "public ArchiveEntry createArchiveEntry(File inputFile, String entryName) throws IOException"
+    },
+    {
+        "id": 18,
+        "line": 383,
+        "precode": "public ArchiveEntry createArchiveEntry(File inputFile, String entryName)",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "public ArchiveEntry createArchiveEntry(File inputFile, Object entryName)"
+    },
+    {
+        "id": 19,
+        "line": 335,
+        "precode": "if (!this.closed) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (this.closed) {"
+    },
+    {
+        "id": 20,
+        "line": 335,
+        "precode": "if (!this.closed) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 21,
+        "line": 336,
+        "precode": "out.close();",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "out.flush();"
+    },
+    {
+        "id": 22,
+        "line": 336,
+        "precode": "out.close();",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "//out.close();"
+    },
+    {
+        "id": 23,
+        "line": 339,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "});"
+    },
+    {
+        "id": 24,
+        "line": 339,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "} // dummy comment added"
+    },
+    {
+        "id": 25,
+        "line": 340,
+        "precode": "return x > 0 ? x : -x;",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "return x >= 0 ? x : -x;"
+    },
+    {
+        "id": 26,
+        "line": 340,
+        "precode": "return x > 0 ? x : -x;",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "return x > 0 ? x : x;"
+    },
+    {
+        "id": 27,
+        "line": 341,
+        "precode": "private void pad(int count) throws IOException{",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "private void pad(int count) {"
+    },
+    {
+        "id": 28,
+        "line": 341,
+        "precode": "private void pad(int count) throws IOException{",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "private void pad(int count) throws Exception{"
+    },
+    {
+        "id": 29,
+        "line": 342,
+        "precode": "if (count > 0){",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (count >= 0){"
+    },
+    {
+        "id": 30,
+        "line": 342,
+        "precode": "if (count > 0){",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (true){"
+    },
+    {
+        "id": 31,
+        "line": 343,
+        "precode": "byte buff[] = new byte[count];",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "byte buff[] = new byte[count + 1];"
+    },
+    {
+        "id": 32,
+        "line": 343,
+        "precode": "byte buff[] = new byte[count];",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "byte buff[] = new byte[0];"
+    },
+    {
+        "id": 33,
+        "line": 344,
+        "precode": "out.write(buff);",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "out.write(buff, 0, buff.length);"
+    },
+    {
+        "id": 34,
+        "line": 344,
+        "precode": "out.write(buff);",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "out.flush();"
+    },
+    {
+        "id": 35,
+        "line": 345,
+        "precode": "                    }",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "                    } // Added comment to potentially affect code coverage"
+    },
+    {
+        "id": 36,
+        "line": 345,
+        "precode": "                    }",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "                    }; // Added semicolon which might cause issues in some contexts"
+    },
+    {
+        "id": 37,
+        "line": 346,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 38,
+        "line": 346,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "} // dummy comment"
+    },
+    {
+        "id": 39,
+        "line": 347,
+        "precode": "int sum = a + b;",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "int sum = a - b;"
+    },
+    {
+        "id": 40,
+        "line": 347,
+        "precode": "int sum = a + b;",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "int sum = a * b;"
+    },
+    {
+        "id": 41,
+        "line": 350,
+        "precode": "byte tmp[] = CpioUtil.long2byteArray(number, length, swapHalfWord);",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "byte tmp[] = CpioUtil.long2byteArray(number, length, !swapHalfWord);"
+    },
+    {
+        "id": 42,
+        "line": 350,
+        "precode": "byte tmp[] = CpioUtil.long2byteArray(number, length, swapHalfWord);",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "byte tmp[] = CpioUtil.long2byteArray(0, length, swapHalfWord);"
+    },
+    {
+        "id": 43,
+        "line": 351,
+        "precode": "out.write(tmp);",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "out.write(tmp.toString());"
+    },
+    {
+        "id": 44,
+        "line": 351,
+        "precode": "out.write(tmp);",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "out.write(tmp + \"\");"
+    },
+    {
+        "id": 45,
+        "line": 352,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 46,
+        "line": 352,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "} // dummy comment"
+    },
+    {
+        "id": 47,
+        "line": 354,
+        "precode": "private void writeAsciiLong(final long number, final int length,",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "private void writeAsciiLong(final int number, final int length,"
+    },
+    {
+        "id": 48,
+        "line": 354,
+        "precode": "private void writeAsciiLong(final long number, final int length,",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "private void writeAsciiLong(final long number, final long length,"
+    },
+    {
+        "id": 49,
+        "line": 355,
+        "precode": "final int radix) throws IOException {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "final int radix) {"
+    },
+    {
+        "id": 50,
+        "line": 355,
+        "precode": "final int radix) throws IOException {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "int radix) throws IOException {"
+    },
+    {
+        "id": 51,
+        "line": 356,
+        "precode": "StringBuffer tmp = new StringBuffer();",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "StringBuffer tmp = new StringBuffer(\"\");"
+    },
+    {
+        "id": 52,
+        "line": 356,
+        "precode": "StringBuffer tmp = new StringBuffer();",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "StringBuffer tmp = null;"
+    },
+    {
+        "id": 53,
+        "line": 358,
+        "precode": "if (radix == 16) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (radix != 16) {"
+    },
+    {
+        "id": 54,
+        "line": 358,
+        "precode": "if (radix == 16) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (radix == 10) {"
+    },
+    {
+        "id": 55,
+        "line": 359,
+        "precode": "tmp.append(Long.toHexString(number));",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmp.append(Long.toOctalString(number));"
+    },
+    {
+        "id": 56,
+        "line": 359,
+        "precode": "tmp.append(Long.toHexString(number));",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmp.append(Integer.toHexString(number));"
+    },
+    {
+        "id": 57,
+        "line": 360,
+        "precode": "} else if (radix == 8) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "} else if (radix != 8) {"
+    },
+    {
+        "id": 58,
+        "line": 360,
+        "precode": "} else if (radix == 8) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "} else if (radix == 7) {"
+    },
+    {
+        "id": 59,
+        "line": 361,
+        "precode": "tmp.append(Long.toOctalString(number));",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmp.append(Long.toHexString(number));"
+    },
+    {
+        "id": 60,
+        "line": 361,
+        "precode": "tmp.append(Long.toOctalString(number));",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmp.append(Long.toBinaryString(number));"
+    },
+    {
+        "id": 61,
+        "line": 362,
+        "precode": "} else {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "} else if (true) {"
+    },
+    {
+        "id": 62,
+        "line": 362,
+        "precode": "} else {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "} {"
+    },
+    {
+        "id": 63,
+        "line": 363,
+        "precode": "tmp.append(Long.toString(number));",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmp.append(Integer.toString(number));"
+    },
+    {
+        "id": 64,
+        "line": 363,
+        "precode": "tmp.append(Long.toString(number));",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmp.append(String.valueOf(number));"
+    },
+    {
+        "id": 65,
+        "line": 364,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 66,
+        "line": 364,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "} // end of block"
+    },
+    {
+        "id": 67,
+        "line": 366,
+        "precode": "if (tmp.length() <= length) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (tmp.length() < length) {"
+    },
+    {
+        "id": 68,
+        "line": 366,
+        "precode": "if (tmp.length() <= length) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (tmp.length() >= length) {"
+    },
+    {
+        "id": 69,
+        "line": 367,
+        "precode": "long insertLength = length - tmp.length();",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "long insertLength = length + tmp.length();"
+    },
+    {
+        "id": 70,
+        "line": 367,
+        "precode": "long insertLength = length - tmp.length();",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "long insertLength = tmp.length() - length;"
+    },
+    {
+        "id": 71,
+        "line": 368,
+        "precode": "for (int pos = 0; pos < insertLength; pos++) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "for (int pos = 0; pos <= insertLength; pos++) {"
+    },
+    {
+        "id": 72,
+        "line": 368,
+        "precode": "for (int pos = 0; pos < insertLength; pos++) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "for (int pos = 1; pos < insertLength; pos++) {"
+    },
+    {
+        "id": 73,
+        "line": 369,
+        "precode": "tmp.insert(0, \"0\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmp.insert(1, \"0\");"
+    },
+    {
+        "id": 74,
+        "line": 369,
+        "precode": "tmp.insert(0, \"0\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmp.insert(0, \"1\");"
+    },
+    {
+        "id": 75,
+        "line": 381,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 76,
+        "line": 381,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "} // dummy comment"
+    },
+    {
+        "id": 77,
+        "line": 371,
+        "precode": "tmpStr = tmp.toString();",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmpStr = tmp;"
+    },
+    {
+        "id": 78,
+        "line": 371,
+        "precode": "tmpStr = tmp.toString();",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmpStr = tmp.toString().trim();"
+    },
+    {
+        "id": 79,
+        "line": 372,
+        "precode": "} else {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "} else if (true) {"
+    },
+    {
+        "id": 80,
+        "line": 372,
+        "precode": "} else {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "} {"
+    },
+    {
+        "id": 81,
+        "line": 373,
+        "precode": "tmpStr = tmp.substring(tmp.length() - length);",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmpStr = tmp.substring(tmp.length() - length + 1);"
+    },
+    {
+        "id": 82,
+        "line": 373,
+        "precode": "tmpStr = tmp.substring(tmp.length() - length);",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmpStr = tmp.substring(0, length);"
+    },
+    {
+        "id": 83,
+        "line": 374,
+        "precode": "                    }",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "                    };"
+    },
+    {
+        "id": 84,
+        "line": 374,
+        "precode": "                    }",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "                    } // dummy comment"
+    },
+    {
+        "id": 85,
+        "line": 375,
+        "precode": "out.write(tmpStr.getBytes()); // TODO is it correct to use the default charset here?",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "out.write(tmpStr.getBytes(\"UTF-8\")); // Explicitly specify UTF-8 charset"
+    },
+    {
+        "id": 86,
+        "line": 375,
+        "precode": "out.write(tmpStr.getBytes()); // TODO is it correct to use the default charset here?",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "out.write(tmpStr.getBytes(StandardCharsets.UTF_8)); // Use StandardCharsets constant"
+    },
+    {
+        "id": 87,
+        "line": 376,
+        "precode": "                }",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "                } else {"
+    },
+    {
+        "id": 88,
+        "line": 376,
+        "precode": "                }",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "                };"
+    },
+    {
+        "id": 89,
+        "line": 379,
+        "precode": "out.write(str.getBytes()); // TODO is it correct to use the default charset here?",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "out.write(str.getBytes(\"UTF-8\")); // Explicitly specifying charset"
+    },
+    {
+        "id": 90,
+        "line": 379,
+        "precode": "out.write(str.getBytes()); // TODO is it correct to use the default charset here?",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "out.write(str.getBytes(StandardCharsets.UTF_8)); // Using StandardCharsets constant"
+    },
+    {
+        "id": 91,
+        "line": 123,
+        "precode": "                 */",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "                 *"
+    },
+    {
+        "id": 92,
+        "line": 123,
+        "precode": "                 */",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "                 /*"
+    },
+    {
+        "id": 93,
+        "line": 124,
+        "precode": "private void ensureOpen() throws IOException {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "private void ensureOpen() {"
+    },
+    {
+        "id": 94,
+        "line": 124,
+        "precode": "private void ensureOpen() throws IOException {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "private boolean ensureOpen() throws IOException {"
+    },
+    {
+        "id": 95,
+        "line": 125,
+        "precode": "if (this.closed) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (!this.closed) {"
+    },
+    {
+        "id": 96,
+        "line": 125,
+        "precode": "if (this.closed) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 97,
+        "line": 126,
+        "precode": "throw new IOException(\"Stream closed\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "throw new RuntimeException(\"Stream closed\");"
+    },
+    {
+        "id": 98,
+        "line": 126,
+        "precode": "throw new IOException(\"Stream closed\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "throw new IOException(\"Connection closed\");"
+    },
+    {
+        "id": 99,
+        "line": 127,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "});"
+    },
+    {
+        "id": 100,
+        "line": 127,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Compress/Compress_4_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "}"
+    }
+]

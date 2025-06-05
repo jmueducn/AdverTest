@@ -1,0 +1,202 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 36,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "if (str == null) {",
+        "aftercode": "if (str != null) {",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphenOnly\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NullInput\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenOnly\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenInMiddle\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NoHyphen1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_WhitespaceWithHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphen1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NullInput1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithDoubleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_EmptyString\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithSingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithNoHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_MultipleHyphens\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithNullInput\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NoHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenAtEnd\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 36,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "if (str == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphenOnly\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenOnly\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenInMiddle\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NoHyphen1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_WhitespaceWithHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphen1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithDoubleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_EmptyString\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithSingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithNoHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_MultipleHyphens\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NoHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenAtEnd\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 37,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "return null;",
+        "aftercode": "return \"\";",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NullInput\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NullInput1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithNullInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 37,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "return null;",
+        "aftercode": "return str;",
+        "fail_test_number": 0,
+        "fail_test": "Failing tests: 0\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 5,
+        "line": 39,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "if (str.startsWith(\"--\"))",
+        "aftercode": "if (str.startsWith(\"-\"))",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenOnly\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_WhitespaceWithHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithSingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 39,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "if (str.startsWith(\"--\"))",
+        "aftercode": "if (str.endsWith(\"--\"))",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphen1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithDoubleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_MultipleHyphens\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphen\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 39,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "if (str.startsWith(\"--\"))",
+        "aftercode": "if (false)",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphenOnly\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphen1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithDoubleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_MultipleHyphens\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphen\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 41,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "return str.substring(2, str.length());",
+        "aftercode": "return str.substring(1, str.length());",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphenOnly\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphen1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithDoubleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_MultipleHyphens\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphen\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 41,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "return str.substring(2, str.length());",
+        "aftercode": "return str.substring(0, str.length());",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphenOnly\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphen1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithDoubleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_MultipleHyphens\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphen\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 41,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "return str.substring(2, str.length());",
+        "aftercode": "return str.substring(2, str.length()-1);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphenOnly\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphen1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithDoubleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_MultipleHyphens\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_DoubleHyphen\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 43,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "else if (str.startsWith(\"-\"))",
+        "aftercode": "else if (str.startsWith(\"--\"))",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenOnly\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_WhitespaceWithHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithSingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 43,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "else if (str.startsWith(\"-\"))",
+        "aftercode": "else if (false)",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenOnly\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_WhitespaceWithHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithSingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 43,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "else if (str.startsWith(\"-\"))",
+        "aftercode": "if (str.startsWith(\"-\"))",
+        "fail_test_number": 0,
+        "fail_test": "Failing tests: 0\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 14,
+        "line": 45,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "return str.substring(1, str.length());",
+        "aftercode": "return str.substring(0, str.length());",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenOnly\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_WhitespaceWithHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithSingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 45,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "return str.substring(1, str.length());",
+        "aftercode": "return str.substring(2, str.length());",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenOnly\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_WhitespaceWithHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithSingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 45,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "return str.substring(1, str.length());",
+        "aftercode": "return str.substring(1, str.length()-1);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenOnly\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_WhitespaceWithHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithSingleHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_SingleHyphen1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 48,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "return str;",
+        "aftercode": "return \"\";",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenInMiddle\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NoHyphen1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithNoHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NoHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenAtEnd\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 48,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "return str;",
+        "aftercode": "return null;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenInMiddle\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NoHyphen1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_EmptyString\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithNoHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NoHyphen\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_HyphenAtEnd\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 37,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "return null;",
+        "aftercode": "return \"\";",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NullInput\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NullInput1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithNullInput\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 20,
+        "line": 37,
+        "filepath": "./defects4j_fixed/Cli/Cli_5_fixed/src/java/org/apache/commons/cli/Util.java",
+        "precode": "return null;",
+        "aftercode": "throw new RuntimeException();",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NullInput\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphens_NullInput1\n  - gentest.org.apache.commons.cli.tests.UtilTest::testStripLeadingHyphensWithNullInput\n",
+        "survived": false
+    }
+]

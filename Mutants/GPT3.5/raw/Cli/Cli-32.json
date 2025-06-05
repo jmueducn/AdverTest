@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "line": 936,
+        "precode": "pos = startPos + width;",
+        "filepath": "./defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "pos = startPos - width;"
+    },
+    {
+        "id": 2,
+        "line": 936,
+        "precode": "pos = startPos + width;",
+        "filepath": "./defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "pos = startPos * width;"
+    },
+    {
+        "id": 3,
+        "line": 936,
+        "precode": "pos = startPos + width;",
+        "filepath": "./defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "pos = startPos / width;"
+    },
+    {
+        "id": 4,
+        "line": 936,
+        "precode": "pos = startPos + width;",
+        "filepath": "./defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "pos = startPos;"
+    },
+    {
+        "id": 5,
+        "line": 936,
+        "precode": "pos = startPos + width;",
+        "filepath": "./defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "pos = width;"
+    },
+    {
+        "id": 6,
+        "line": 936,
+        "precode": "pos = startPos + width;",
+        "filepath": "./defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "pos = startPos + width + 1;"
+    },
+    {
+        "id": 7,
+        "line": 936,
+        "precode": "pos = startPos + width;",
+        "filepath": "./defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "pos = startPos + width - 1;"
+    },
+    {
+        "id": 8,
+        "line": 938,
+        "precode": "return pos == text.length() ? -1 : pos;",
+        "filepath": "./defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "return pos >= text.length() ? -1 : pos;"
+    },
+    {
+        "id": 9,
+        "line": 938,
+        "precode": "return pos == text.length() ? -1 : pos;",
+        "filepath": "./defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "return pos <= text.length() ? -1 : pos;"
+    },
+    {
+        "id": 10,
+        "line": 938,
+        "precode": "return pos == text.length() ? -1 : pos;",
+        "filepath": "./defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "return pos != text.length() ? -1 : pos;"
+    },
+    {
+        "id": 11,
+        "line": 938,
+        "precode": "return pos == text.length() ? -1 : pos;",
+        "filepath": "./defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "return pos == text.length() ? 0 : pos;"
+    },
+    {
+        "id": 12,
+        "line": 938,
+        "precode": "return pos == text.length() ? -1 : pos;",
+        "filepath": "./defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "return pos == text.length() ? 1 : pos;"
+    },
+    {
+        "id": 13,
+        "line": 938,
+        "precode": "return pos == text.length() ? -1 : pos;",
+        "filepath": "./defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "return pos == text.length() ? pos : -1;"
+    },
+    {
+        "id": 14,
+        "line": 938,
+        "precode": "return pos == text.length() ? -1 : pos;",
+        "filepath": "./defects4j_fixed/Cli/Cli_32_fixed/src/main/java/org/apache/commons/cli/HelpFormatter.java",
+        "aftercode": "return pos == text.length() - 1 ? -1 : pos;"
+    }
+]

@@ -1,0 +1,86 @@
+[
+    {
+        "id": 1,
+        "line": 81,
+        "precode": "this.optimizer        = optimizer;",
+        "filepath": "./defects4j_fixed/Math/Math_67_fixed/src/main/java/org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "this.optimizer        = null;"
+    },
+    {
+        "id": 2,
+        "line": 81,
+        "precode": "this.optimizer        = optimizer;",
+        "filepath": "./defects4j_fixed/Math/Math_67_fixed/src/main/java/org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "this.optimizer        = this.optimizer;"
+    },
+    {
+        "id": 3,
+        "line": 82,
+        "precode": "this.totalIterations  = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_67_fixed/src/main/java/org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "this.totalIterations  = 1;"
+    },
+    {
+        "id": 4,
+        "line": 82,
+        "precode": "this.totalIterations  = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_67_fixed/src/main/java/org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "this.totalIterations  = -1;"
+    },
+    {
+        "id": 5,
+        "line": 83,
+        "precode": "this.starts           = starts;",
+        "filepath": "./defects4j_fixed/Math/Math_67_fixed/src/main/java/org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "this.starts           = 0;"
+    },
+    {
+        "id": 6,
+        "line": 83,
+        "precode": "this.starts           = starts;",
+        "filepath": "./defects4j_fixed/Math/Math_67_fixed/src/main/java/org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "this.starts           = starts + 1;"
+    },
+    {
+        "id": 7,
+        "line": 84,
+        "precode": "this.generator        = generator;",
+        "filepath": "./defects4j_fixed/Math/Math_67_fixed/src/main/java/org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "this.generator        = null;"
+    },
+    {
+        "id": 8,
+        "line": 84,
+        "precode": "this.generator        = generator;",
+        "filepath": "./defects4j_fixed/Math/Math_67_fixed/src/main/java/org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "this.generator        = new Random();"
+    },
+    {
+        "id": 9,
+        "line": 85,
+        "precode": "this.optima           = null;",
+        "filepath": "./defects4j_fixed/Math/Math_67_fixed/src/main/java/org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "this.optima           = new ArrayList();"
+    },
+    {
+        "id": 10,
+        "line": 86,
+        "precode": "setMaximalIterationCount(Integer.MAX_VALUE);",
+        "filepath": "./defects4j_fixed/Math/Math_67_fixed/src/main/java/org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "setMaximalIterationCount(0);"
+    },
+    {
+        "id": 11,
+        "line": 86,
+        "precode": "setMaximalIterationCount(Integer.MAX_VALUE);",
+        "filepath": "./defects4j_fixed/Math/Math_67_fixed/src/main/java/org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "setMaximalIterationCount(Integer.MIN_VALUE);"
+    },
+    {
+        "id": 12,
+        "line": 87,
+        "precode": "setMaxEvaluations(Integer.MAX_VALUE);",
+        "filepath": "./defects4j_fixed/Math/Math_67_fixed/src/main/java/org/apache/commons/math/optimization/MultiStartUnivariateRealOptimizer.java",
+        "aftercode": "setMaxEvaluations(1);"
+    }
+]

@@ -1,0 +1,170 @@
+[
+    {
+        "id": 1,
+        "line": 308,
+        "precode": "int pos = token.indexOf(\"=\");",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "int pos = token.lastIndexOf(\"=\");"
+    },
+    {
+        "id": 2,
+        "line": 308,
+        "precode": "int pos = token.indexOf(\"=\");",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "int pos = token.indexOf(\" \");"
+    },
+    {
+        "id": 3,
+        "line": 308,
+        "precode": "int pos = token.indexOf(\"=\");",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "int pos = 0;"
+    },
+    {
+        "id": 4,
+        "line": 309,
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "String optName = pos == -1 ? token.substring(0) : token.substring(1, pos);"
+    },
+    {
+        "id": 5,
+        "line": 309,
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "String optName = pos == -1 ? token.substring(2) : token.substring(1, pos);"
+    },
+    {
+        "id": 6,
+        "line": 309,
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "String optName = pos == -1 ? token.substring(1) : token.substring(0, pos);"
+    },
+    {
+        "id": 7,
+        "line": 309,
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos+1);"
+    },
+    {
+        "id": 8,
+        "line": 309,
+        "precode": "String optName = pos == -1 ? token.substring(1) : token.substring(1, pos);",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "String optName = pos != -1 ? token.substring(1) : token.substring(1, pos);"
+    },
+    {
+        "id": 9,
+        "line": 310,
+        "precode": "if (options.hasShortOption(optName))",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "if (true)"
+    },
+    {
+        "id": 10,
+        "line": 310,
+        "precode": "if (options.hasShortOption(optName))",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "if (false)"
+    },
+    {
+        "id": 11,
+        "line": 310,
+        "precode": "if (options.hasShortOption(optName))",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "if (options.hasShortOption(\"\"))"
+    },
+    {
+        "id": 12,
+        "line": 310,
+        "precode": "if (options.hasShortOption(optName))",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "if (options.hasShortOption(optName.substring(0)))"
+    },
+    {
+        "id": 13,
+        "line": 312,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 14,
+        "line": 312,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return optName.length() > 0;"
+    },
+    {
+        "id": 15,
+        "line": 315,
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return optName.length() > 0 || options.hasShortOption(String.valueOf(optName.charAt(0)));"
+    },
+    {
+        "id": 16,
+        "line": 315,
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return optName.length() > 1 && options.hasShortOption(String.valueOf(optName.charAt(0)));"
+    },
+    {
+        "id": 17,
+        "line": 315,
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(1)));"
+    },
+    {
+        "id": 18,
+        "line": 315,
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return optName.length() > 0 && options.hasShortOption(optName);"
+    },
+    {
+        "id": 19,
+        "line": 315,
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return optName.length() >= 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));"
+    },
+    {
+        "id": 20,
+        "line": 315,
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return optName.length() > 0 && true;"
+    },
+    {
+        "id": 21,
+        "line": 315,
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return optName.length() > 0 && false;"
+    },
+    {
+        "id": 22,
+        "line": 315,
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 23,
+        "line": 315,
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 24,
+        "line": 315,
+        "precode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(0)));",
+        "filepath": "./defects4j_fixed/Cli/Cli_38_fixed/src/main/java/org/apache/commons/cli/DefaultParser.java",
+        "aftercode": "return optName.length() > 0 && options.hasShortOption(String.valueOf(optName.charAt(optName.length()-1)));"
+    }
+]

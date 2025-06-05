@@ -1,0 +1,252 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 229,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (options.hasOption(token))",
+        "aftercode": "if (true)",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullTokenAndStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionDoesNotExistAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotTrim\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_ShouldPreserveWhitespaceInToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullTokenAndStopAtNonOption_ShouldSetEatTheRest\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 229,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (options.hasOption(token))",
+        "aftercode": "if (false)",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotTrim\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionExists\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 3,
+        "line": 229,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (options.hasOption(token))",
+        "aftercode": "if (options.hasOption(\"\"))",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotTrim\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionExists\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 229,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (options.hasOption(token))",
+        "aftercode": "if (!options.hasOption(token))",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullTokenAndStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionDoesNotExistAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotTrim\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_ShouldPreserveWhitespaceInToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionExists\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullTokenAndStopAtNonOption_ShouldSetEatTheRest\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 231,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "currentOption = options.getOption(token);",
+        "aftercode": "currentOption = null;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionExists\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 231,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "currentOption = options.getOption(token);",
+        "aftercode": "currentOption = options.getOption(\"\");",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionExists\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 233,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "else if (stopAtNonOption)",
+        "aftercode": "else if (true)",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotMatchOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionDoesNotExistAndStopAtNonOptionFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 233,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "else if (stopAtNonOption)",
+        "aftercode": "else if (false)",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullTokenAndStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionDoesNotExistAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_ShouldPreserveWhitespaceInToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullTokenAndStopAtNonOption_ShouldSetEatTheRest\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 233,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "else if (stopAtNonOption)",
+        "aftercode": "else if (!stopAtNonOption)",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotMatchOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullTokenAndStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionDoesNotExistAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_ShouldPreserveWhitespaceInToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionDoesNotExistAndStopAtNonOptionFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullTokenAndStopAtNonOption_ShouldSetEatTheRest\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 235,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "eatTheRest = true;",
+        "aftercode": "eatTheRest = false;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullTokenAndStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionDoesNotExistAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_ShouldPreserveWhitespaceInToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullTokenAndStopAtNonOption_ShouldSetEatTheRest\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 235,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "eatTheRest = true;",
+        "aftercode": "eatTheRest = stopAtNonOption;",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 13,
+        "line": 235,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "eatTheRest = true;",
+        "aftercode": "eatTheRest = !stopAtNonOption;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullTokenAndStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionDoesNotExistAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_ShouldPreserveWhitespaceInToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullTokenAndStopAtNonOption_ShouldSetEatTheRest\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 238,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "tokens.add(token);",
+        "aftercode": "tokens.add(\"\");",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotMatchOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullTokenAndStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionDoesNotExistAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotTrim\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_VerifyTokensOrder\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_ShouldPreserveWhitespaceInToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionDoesNotExistAndStopAtNonOptionFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionExists\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullTokenAndStopAtNonOption_ShouldSetEatTheRest\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_ShouldBeCaseSensitive\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 238,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "tokens.add(token);",
+        "aftercode": "tokens.add(null);",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotMatchOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionDoesNotExistAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotTrim\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_VerifyTokensOrder\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_ShouldPreserveWhitespaceInToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionDoesNotExistAndStopAtNonOptionFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionExists\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_ShouldBeCaseSensitive\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 238,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "tokens.add(token);",
+        "aftercode": "tokens.remove(token);",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotMatchOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullTokenAndStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionDoesNotExistAndStopAtNonOptionTrue\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotTrim\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_VerifyTokensOrder\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_ShouldPreserveWhitespaceInToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionDoesNotExistAndStopAtNonOptionFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionExists\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullTokenAndStopAtNonOption_ShouldSetEatTheRest\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_ShouldBeCaseSensitive\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 229,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (options.hasOption(token))",
+        "aftercode": "if (options != null && options.hasOption(token))",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 231,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "currentOption = options.getOption(token);",
+        "aftercode": "currentOption = options.getOption(token.toLowerCase());",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 19,
+        "line": 231,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "currentOption = options.getOption(token);",
+        "aftercode": "currentOption = options.getOption(token.toUpperCase());",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WhenOptionExists\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 20,
+        "line": 233,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "else if (stopAtNonOption)",
+        "aftercode": "else if (stopAtNonOption && token != null)",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullTokenAndStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullTokenAndStopAtNonOption_ShouldSetEatTheRest\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 235,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "eatTheRest = true;",
+        "aftercode": "eatTheRest = token != null;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullTokenAndStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullTokenAndStopAtNonOption_ShouldSetEatTheRest\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 22,
+        "line": 229,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (options.hasOption(token))",
+        "aftercode": "if (token != null && options.hasOption(token))",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 23,
+        "line": 238,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "tokens.add(token);",
+        "aftercode": "if (token != null) tokens.add(token);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullTokenAndStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullTokenAndStopAtNonOption_ShouldSetEatTheRest\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 24,
+        "line": 229,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "if (options.hasOption(token))",
+        "aftercode": "if (options.hasOption(token.trim()))",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullTokenAndStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotTrim\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullTokenAndStopAtNonOption_ShouldSetEatTheRest\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 25,
+        "line": 231,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "currentOption = options.getOption(token);",
+        "aftercode": "currentOption = options.getOption(token.trim());",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 26,
+        "line": 238,
+        "filepath": "./defects4j_fixed/Cli/Cli_19_fixed/src/java/org/apache/commons/cli/PosixParser.java",
+        "precode": "tokens.add(token);",
+        "aftercode": "tokens.add(token.trim());",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotMatchOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullTokenAndStopAtNonOption\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_EatTheRestBehaviorWhenStopAtNonOptionIsFalse\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionTokenWithWhitespaceShouldNotTrim\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_ShouldPreserveWhitespaceInToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithEmptyToken\n  - gentest.org.apache.commons.cli.tests.PosixParserTest::testProcessOptionToken_WithNullTokenAndStopAtNonOption_ShouldSetEatTheRest\n",
+        "survived": false
+    }
+]

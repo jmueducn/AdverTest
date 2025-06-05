@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "line": 225,
+        "precode": "solvedCols  = Math.min(rows, cols);",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "solvedCols  = Math.max(rows, cols);"
+    },
+    {
+        "id": 2,
+        "line": 225,
+        "precode": "solvedCols  = Math.min(rows, cols);",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "solvedCols  = rows;"
+    },
+    {
+        "id": 3,
+        "line": 226,
+        "precode": "diagR       = new double[cols];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "diagR       = new double[rows];"
+    },
+    {
+        "id": 4,
+        "line": 227,
+        "precode": "jacNorm     = new double[cols];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "jacNorm     = new double[cols + 1];"
+    },
+    {
+        "id": 5,
+        "line": 228,
+        "precode": "beta        = new double[cols];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "beta        = new double[0];"
+    },
+    {
+        "id": 6,
+        "line": 229,
+        "precode": "permutation = new int[cols];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "permutation = new int[cols * 2];"
+    },
+    {
+        "id": 7,
+        "line": 230,
+        "precode": "lmDir       = new double[cols];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "lmDir       = new double[cols - 1];"
+    },
+    {
+        "id": 8,
+        "line": 233,
+        "precode": "double   delta   = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "double   delta   = 1;"
+    },
+    {
+        "id": 9,
+        "line": 234,
+        "precode": "double   xNorm   = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "double   xNorm   = 1;"
+    },
+    {
+        "id": 10,
+        "line": 235,
+        "precode": "double[] diag    = new double[cols];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "double[] diag    = new double[cols + 1];"
+    },
+    {
+        "id": 11,
+        "line": 236,
+        "precode": "double[] oldX    = new double[cols];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "double[] oldX    = new double[0];"
+    },
+    {
+        "id": 12,
+        "line": 237,
+        "precode": "double[] oldRes  = new double[rows];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "double[] oldRes  = new double[rows + 1];"
+    },
+    {
+        "id": 13,
+        "line": 238,
+        "precode": "double[] work1   = new double[cols];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "double[] work1   = new double[cols * 2];"
+    },
+    {
+        "id": 14,
+        "line": 239,
+        "precode": "double[] work2   = new double[cols];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "double[] work2   = new double[rows];"
+    },
+    {
+        "id": 15,
+        "line": 240,
+        "precode": "double[] work3   = new double[cols];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "double[] work3   = new double[0];"
+    },
+    {
+        "id": 16,
+        "line": 246,
+        "precode": "lmPar = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "lmPar = 1;"
+    },
+    {
+        "id": 17,
+        "line": 247,
+        "precode": "boolean firstIteration = true;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "boolean firstIteration = false;"
+    },
+    {
+        "id": 18,
+        "line": 248,
+        "precode": "VectorialPointValuePair current = new VectorialPointValuePair(point, objective);",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "VectorialPointValuePair current = null;"
+    },
+    {
+        "id": 19,
+        "line": 254,
+        "precode": "VectorialPointValuePair previous = current;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "VectorialPointValuePair previous = null;"
+    },
+    {
+        "id": 20,
+        "line": 275,
+        "precode": "if (dk == 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "if (dk != 0) {"
+    },
+    {
+        "id": 21,
+        "line": 276,
+        "precode": "dk = 1.0;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "dk = 0.0;"
+    },
+    {
+        "id": 22,
+        "line": 278,
+        "precode": "double xk = dk * point[k];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "double xk = dk + point[k];"
+    },
+    {
+        "id": 23,
+        "line": 279,
+        "precode": "xNorm  += xk * xk;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "xNorm  -= xk * xk;"
+    },
+    {
+        "id": 24,
+        "line": 280,
+        "precode": "diag[k] = dk;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "diag[k] = 0;"
+    },
+    {
+        "id": 25,
+        "line": 403,
+        "precode": "xNorm = Math.sqrt(xNorm);",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "xNorm = xNorm;"
+    },
+    {
+        "id": 26,
+        "line": 285,
+        "precode": "delta = (xNorm == 0) ? initialStepBoundFactor : (initialStepBoundFactor * xNorm);",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "delta = initialStepBoundFactor;"
+    },
+    {
+        "id": 27,
+        "line": 291,
+        "precode": "if (cost != 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "if (cost == 0) {"
+    },
+    {
+        "id": 28,
+        "line": 295,
+        "precode": "if (s != 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "if (s == 0) {"
+    },
+    {
+        "id": 29,
+        "line": 300,
+        "precode": "maxCosine = Math.max(maxCosine, Math.abs(sum) / (s * cost));",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "maxCosine = Math.min(maxCosine, Math.abs(sum) / (s * cost));"
+    },
+    {
+        "id": 30,
+        "line": 304,
+        "precode": "if (maxCosine <= orthoTolerance) {",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "if (maxCosine > orthoTolerance) {"
+    },
+    {
+        "id": 31,
+        "line": 311,
+        "precode": "diag[j] = Math.max(diag[j], jacNorm[j]);",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "diag[j] = Math.min(diag[j], jacNorm[j]);"
+    },
+    {
+        "id": 32,
+        "line": 315,
+        "precode": "for (double ratio = 0; ratio < 1.0e-4;) {",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "for (double ratio = 0; ratio > 1.0e-4;) {"
+    },
+    {
+        "id": 33,
+        "line": 320,
+        "precode": "oldX[pj] = point[pj];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "oldX[pj] = 0;"
+    },
+    {
+        "id": 34,
+        "line": 323,
+        "precode": "double[] tmpVec = residuals;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "double[] tmpVec = null;"
+    },
+    {
+        "id": 35,
+        "line": 412,
+        "precode": "residuals = oldRes;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "residuals = null;"
+    },
+    {
+        "id": 36,
+        "line": 413,
+        "precode": "oldRes    = tmpVec;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "oldRes    = null;"
+    },
+    {
+        "id": 37,
+        "line": 335,
+        "precode": "point[pj] = oldX[pj] + lmDir[pj];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "point[pj] = oldX[pj] - lmDir[pj];"
+    },
+    {
+        "id": 38,
+        "line": 336,
+        "precode": "double s = diag[pj] * lmDir[pj];",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "double s = diag[pj] + lmDir[pj];"
+    },
+    {
+        "id": 39,
+        "line": 337,
+        "precode": "lmNorm  += s * s;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "lmNorm  -= s * s;"
+    },
+    {
+        "id": 40,
+        "line": 342,
+        "precode": "if (firstIteration) {",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "if (!firstIteration) {"
+    },
+    {
+        "id": 41,
+        "line": 343,
+        "precode": "delta = Math.min(delta, lmNorm);",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "delta = Math.max(delta, lmNorm);"
+    },
+    {
+        "id": 42,
+        "line": 352,
+        "precode": "if (0.1 * cost < previousCost) {",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "if (0.1 * cost > previousCost) {"
+    },
+    {
+        "id": 43,
+        "line": 353,
+        "precode": "double r = cost / previousCost;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "double r = cost * previousCost;"
+    },
+    {
+        "id": 44,
+        "line": 354,
+        "precode": "actRed = 1.0 - r * r;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "actRed = 1.0 + r * r;"
+    },
+    {
+        "id": 45,
+        "line": 378,
+        "precode": "ratio = (preRed == 0) ? 0 : (actRed / preRed);",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "ratio = (preRed == 0) ? 1 : (actRed / preRed);"
+    },
+    {
+        "id": 46,
+        "line": 381,
+        "precode": "if (ratio <= 0.25) {",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "if (ratio > 0.25) {"
+    },
+    {
+        "id": 47,
+        "line": 383,
+        "precode": "(actRed < 0) ? (0.5 * dirDer / (dirDer + 0.5 * actRed)) : 0.5;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "(actRed > 0) ? (0.5 * dirDer / (dirDer + 0.5 * actRed)) : 0.5;"
+    },
+    {
+        "id": 48,
+        "line": 384,
+        "precode": "if ((0.1 * cost >= previousCost) || (tmp < 0.1)) {",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "if ((0.1 * cost < previousCost) || (tmp < 0.1)) {"
+    },
+    {
+        "id": 49,
+        "line": 385,
+        "precode": "tmp = 0.1;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "tmp = 1.0;"
+    },
+    {
+        "id": 50,
+        "line": 387,
+        "precode": "delta = tmp * Math.min(delta, 10.0 * lmNorm);",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "delta = tmp * Math.max(delta, 10.0 * lmNorm);"
+    },
+    {
+        "id": 51,
+        "line": 388,
+        "precode": "lmPar /= tmp;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "lmPar *= tmp;"
+    },
+    {
+        "id": 52,
+        "line": 389,
+        "precode": "} else if ((lmPar == 0) || (ratio >= 0.75)) {",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "} else if ((lmPar != 0) || (ratio >= 0.75)) {"
+    },
+    {
+        "id": 53,
+        "line": 390,
+        "precode": "delta = 2 * lmNorm;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "delta = 0.5 * lmNorm;"
+    },
+    {
+        "id": 54,
+        "line": 391,
+        "precode": "lmPar *= 0.5;",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "lmPar /= 0.5;"
+    },
+    {
+        "id": 55,
+        "line": 395,
+        "precode": "if (ratio >= 1.0e-4) {",
+        "filepath": "./defects4j_fixed/Math/Math_68_fixed/src/main/java/org/apache/commons/math/optimization/general/LevenbergMarquardtOptimizer.java",
+        "aftercode": "if (ratio < 1.0e-4) {"
+    }
+]

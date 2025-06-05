@@ -1,0 +1,362 @@
+[
+    {
+        "mutant_id:": 2,
+        "line": 362,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (formatHeader != null) {",
+        "aftercode": "if (formatHeader == null) {",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIsClosedReturnsTrueWhenLexerIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeaderReturnsNonNullMap\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ValuesShouldBeIntegerObjects\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIsClosedReflectsLexerState\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 365,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "String[] headerRecord = null;",
+        "aftercode": "String[] headerRecord = new String[0];",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 5,
+        "line": 366,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (formatHeader.length == 0) {",
+        "aftercode": "if (formatHeader.length != 0) {",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeaderReturnsNonNullMap\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ValuesShouldBeIntegerObjects\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 368,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "final CSVRecord nextRecord = this.nextRecord();",
+        "aftercode": "final CSVRecord nextRecord = null;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 7,
+        "line": 369,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (nextRecord != null) {",
+        "aftercode": "if (nextRecord == null) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 8,
+        "line": 370,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "headerRecord = nextRecord.values();",
+        "aftercode": "headerRecord = formatHeader;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 9,
+        "line": 373,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (this.format.getSkipHeaderRecord()) {",
+        "aftercode": "if (!this.format.getSkipHeaderRecord()) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 10,
+        "line": 374,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "this.nextRecord();",
+        "aftercode": "// this.nextRecord();",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 11,
+        "line": 376,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "headerRecord = formatHeader;",
+        "aftercode": "headerRecord = null;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeaderReturnsNonNullMap\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ValuesShouldBeIntegerObjects\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 380,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (headerRecord != null) {",
+        "aftercode": "if (headerRecord == null) {",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeaderReturnsNonNullMap\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ValuesShouldBeIntegerObjects\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 381,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "for (int i = 0; i < headerRecord.length; i++) {",
+        "aftercode": "for (int i = 0; i <= headerRecord.length; i++) {",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeaderReturnsNonNullMap\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ValuesShouldBeIntegerObjects\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 381,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "for (int i = 0; i < headerRecord.length; i++) {",
+        "aftercode": "for (int i = 1; i < headerRecord.length; i++) {",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeaderReturnsNonNullMap\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ValuesShouldBeIntegerObjects\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 382,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "final String header = headerRecord[i];",
+        "aftercode": "final String header = \"\";",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeaderReturnsNonNullMap\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ValuesShouldBeIntegerObjects\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 383,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "final boolean containsHeader = hdrMap.containsKey(header);",
+        "aftercode": "final boolean containsHeader = false;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 17,
+        "line": 384,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "final boolean emptyHeader = header == null || header.trim().isEmpty();",
+        "aftercode": "final boolean emptyHeader = true;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 18,
+        "line": 384,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "final boolean emptyHeader = header == null || header.trim().isEmpty();",
+        "aftercode": "final boolean emptyHeader = header == null;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 19,
+        "line": 384,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "final boolean emptyHeader = header == null || header.trim().isEmpty();",
+        "aftercode": "final boolean emptyHeader = header.trim().isEmpty();",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 20,
+        "line": 385,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (containsHeader && (!emptyHeader || (emptyHeader && !this.format.getIgnoreEmptyHeaders()))) {",
+        "aftercode": "if (containsHeader) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 21,
+        "line": 385,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (containsHeader && (!emptyHeader || (emptyHeader && !this.format.getIgnoreEmptyHeaders()))) {",
+        "aftercode": "if (containsHeader || (!emptyHeader || (emptyHeader && !this.format.getIgnoreEmptyHeaders()))) {",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeaderReturnsNonNullMap\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ValuesShouldBeIntegerObjects\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 22,
+        "line": 385,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "if (containsHeader && (!emptyHeader || (emptyHeader && !this.format.getIgnoreEmptyHeaders()))) {",
+        "aftercode": "if (containsHeader && emptyHeader) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 24,
+        "line": 387,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "\"\\\" in \" + Arrays.toString(headerRecord));",
+        "aftercode": "\"\\\" in \" + \"\");",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 25,
+        "line": 389,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "hdrMap.put(header, Integer.valueOf(i));",
+        "aftercode": "hdrMap.put(header, 0);",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeaderReturnsNonNullMap\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ValuesShouldBeIntegerObjects\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 26,
+        "line": 389,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "hdrMap.put(header, Integer.valueOf(i));",
+        "aftercode": "hdrMap.put(header, Integer.valueOf(i+1));",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeaderReturnsNonNullMap\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ValuesShouldBeIntegerObjects\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 27,
+        "line": 389,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "hdrMap.put(header, Integer.valueOf(i));",
+        "aftercode": "// hdrMap.put(header, Integer.valueOf(i));",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeaderReturnsNonNullMap\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ValuesShouldBeIntegerObjects\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 28,
+        "line": 393,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "return hdrMap;",
+        "aftercode": "return null;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeaderReturnsNonNullMap\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ValuesShouldBeIntegerObjects\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 30,
+        "line": 397,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "return this.lexer.isClosed();",
+        "aftercode": "return true;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIsClosedReflectsLexerState\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 31,
+        "line": 397,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "return this.lexer.isClosed();",
+        "aftercode": "return false;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIsClosedReturnsTrueWhenLexerIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIsClosedReflectsLexerState\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 32,
+        "line": 397,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "return this.lexer.isClosed();",
+        "aftercode": "return !this.lexer.isClosed();",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIsClosedReturnsTrueWhenLexerIsClosed\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testIsClosedReflectsLexerState\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 33,
+        "line": 363,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "hdrMap = new LinkedHashMap<String, Integer>();",
+        "aftercode": "hdrMap = null;",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeaderReturnsNonNullMap\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ValuesShouldBeIntegerObjects\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 34,
+        "line": 370,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "headerRecord = nextRecord.values();",
+        "aftercode": "headerRecord = new String[0];",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 35,
+        "line": 376,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "headerRecord = formatHeader;",
+        "aftercode": "headerRecord = new String[0];",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeaderReturnsNonNullMap\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ValuesShouldBeIntegerObjects\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 36,
+        "line": 381,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "for (int i = 0; i < headerRecord.length; i++) {",
+        "aftercode": "for (int i = 0; i < headerRecord.length; ++i) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 37,
+        "line": 382,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "final String header = headerRecord[i];",
+        "aftercode": "String header = headerRecord[i];",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 38,
+        "line": 383,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "final boolean containsHeader = hdrMap.containsKey(header);",
+        "aftercode": "boolean containsHeader = hdrMap.containsKey(header);",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 39,
+        "line": 384,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "final boolean emptyHeader = header == null || header.trim().isEmpty();",
+        "aftercode": "boolean emptyHeader = header == null || header.trim().isEmpty();",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 40,
+        "line": 389,
+        "filepath": "./defects4j_fixed/Csv/Csv_11_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "precode": "hdrMap.put(header, Integer.valueOf(i));",
+        "aftercode": "hdrMap.put(header, i);",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_DetectsMutantForNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyEnabled\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_WithSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithNullFormatHeader_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_ReadsFromFirstRecord\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_duplicateHeader_shouldShowFullHeaderInErrorMessage\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithDuplicateHeaders_ThrowsException\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyFormatHeader_AndNoRecords_ReturnsNull\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithPredefinedHeaders_NoSkip\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_ShouldThrowExceptionForDuplicateNonEmptyHeaders\n  - gentest.org.apache.commons.csv.tests.CSVParserTest::testInitializeHeader_WithEmptyHeaders_IgnoreEmptyDisabled_ThrowsException\n",
+        "survived": true
+    }
+]

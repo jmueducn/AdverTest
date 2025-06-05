@@ -1,0 +1,222 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 244,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "if (numerator >= 0) {",
+        "aftercode": "if (numerator > 0) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbs\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNonNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithZeroNumeratorShouldReturnSameFraction\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 244,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "if (numerator >= 0) {",
+        "aftercode": "if (numerator <= 0) {",
+        "fail_test_number": 15,
+        "fail_test": "Failing tests: 15\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsReturnThisMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsShouldReturnSameInstanceWhenNumeratorIsPositive\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbs\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithPositiveNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNonNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsNeverReturnsNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumeratorShouldReturnNegated\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumeratorShouldNotReturnNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant2\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumerator1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithPositiveNumeratorShouldReturnSameFraction\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsShouldReturnNegatedWhenNumeratorIsNegative\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 244,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "if (numerator >= 0) {",
+        "aftercode": "if (numerator < 0) {",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsReturnThisMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsShouldReturnSameInstanceWhenNumeratorIsPositive\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbs\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithPositiveNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNonNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsNeverReturnsNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumeratorShouldReturnNegated\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithZeroNumeratorShouldReturnSameFraction\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumeratorShouldNotReturnNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant2\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumerator1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithPositiveNumeratorShouldReturnSameFraction\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsShouldReturnNegatedWhenNumeratorIsNegative\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 244,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "if (numerator >= 0) {",
+        "aftercode": "if (numerator == 0) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsReturnThisMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsShouldReturnSameInstanceWhenNumeratorIsPositive\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbs\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithPositiveNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNonNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsNeverReturnsNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant2\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithPositiveNumeratorShouldReturnSameFraction\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 244,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "if (numerator >= 0) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsReturnThisMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbs\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNonNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsNeverReturnsNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumeratorShouldReturnNegated\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumeratorShouldNotReturnNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant2\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumerator1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsShouldReturnNegatedWhenNumeratorIsNegative\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 244,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "if (numerator >= 0) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsReturnThisMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsShouldReturnSameInstanceWhenNumeratorIsPositive\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbs\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithPositiveNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNonNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsNeverReturnsNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithZeroNumeratorShouldReturnSameFraction\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant2\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithPositiveNumeratorShouldReturnSameFraction\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 245,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "ret = this;",
+        "aftercode": "ret = negate();",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsReturnThisMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsShouldReturnSameInstanceWhenNumeratorIsPositive\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbs\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithPositiveNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNonNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsNeverReturnsNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithZeroNumeratorShouldReturnSameFraction\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant2\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithPositiveNumeratorShouldReturnSameFraction\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 245,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "ret = this;",
+        "aftercode": "ret = null;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsReturnThisMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsShouldReturnSameInstanceWhenNumeratorIsPositive\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbs\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithPositiveNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNonNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsNeverReturnsNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithZeroNumeratorShouldReturnSameFraction\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant2\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithPositiveNumeratorShouldReturnSameFraction\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 247,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "ret = negate();",
+        "aftercode": "ret = this;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsReturnThisMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbs\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNonNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsNeverReturnsNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumeratorShouldReturnNegated\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumeratorShouldNotReturnNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant2\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumerator1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsShouldReturnNegatedWhenNumeratorIsNegative\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 247,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "ret = negate();",
+        "aftercode": "ret = null;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsReturnThisMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbs\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNonNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsNeverReturnsNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumeratorShouldReturnNegated\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumeratorShouldNotReturnNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant2\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumerator1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsShouldReturnNegatedWhenNumeratorIsNegative\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 249,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "return ret;",
+        "aftercode": "return null;",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsReturnThisMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsShouldReturnSameInstanceWhenNumeratorIsPositive\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbs\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithPositiveNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNonNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsNeverReturnsNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumeratorShouldReturnNegated\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithZeroNumeratorShouldReturnSameFraction\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumeratorShouldNotReturnNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant2\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumerator1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithPositiveNumeratorShouldReturnSameFraction\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsShouldReturnNegatedWhenNumeratorIsNegative\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 249,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "return ret;",
+        "aftercode": "return this;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsReturnThisMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbs\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNonNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsNeverReturnsNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumeratorShouldReturnNegated\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumerator\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumeratorShouldNotReturnNull\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsDetectsMutant2\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsWithNegativeNumerator1\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testAbsShouldReturnNegatedWhenNumeratorIsNegative\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 259,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "long nOd = ((long) numerator) * object.denominator;",
+        "aftercode": "long nOd = ((long) numerator) + object.denominator;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EqualFractions\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_CurrentFractionSmaller\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_NegativeFractions\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithStaticConstants\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_SameValueDifferentDenominators\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_CurrentFractionLarger\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EquivalentForms\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithZero\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EdgeCases\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 259,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "long nOd = ((long) numerator) * object.denominator;",
+        "aftercode": "long nOd = ((long) numerator) - object.denominator;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EqualFractions\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithStaticConstants\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_SameValueDifferentDenominators\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_CurrentFractionLarger\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EquivalentForms\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithZero\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 259,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "long nOd = ((long) numerator) * object.denominator;",
+        "aftercode": "long nOd = ((long) numerator) / object.denominator;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EqualFractions\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_NegativeFractions\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_SameValueDifferentDenominators\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_CurrentFractionLarger\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EquivalentForms\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 260,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "long dOn = ((long) denominator) * object.numerator;",
+        "aftercode": "long dOn = ((long) denominator) + object.numerator;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EqualFractions\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithStaticConstants\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_SameValueDifferentDenominators\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EquivalentForms\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithZero\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 260,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "long dOn = ((long) denominator) * object.numerator;",
+        "aftercode": "long dOn = ((long) denominator) - object.numerator;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EqualFractions\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_CurrentFractionSmaller\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithStaticConstants\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_LargeDenominators\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_SameValueDifferentDenominators\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EquivalentForms\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithZero\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EdgeCases\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 260,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "long dOn = ((long) denominator) * object.numerator;",
+        "aftercode": "long dOn = ((long) denominator) / object.numerator;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithStaticConstants\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_LargeDenominators\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithZero\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EdgeCases\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 261,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);",
+        "aftercode": "return (nOd > dOn) ? -1 : ((nOd < dOn) ? +1 : 0);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_CurrentFractionSmaller\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_NegativeFractions\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_LargeDenominators\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_CurrentFractionLarger\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithZero\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EdgeCases\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 20,
+        "line": 261,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);",
+        "aftercode": "return (nOd < dOn) ? +1 : ((nOd > dOn) ? -1 : 0);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_CurrentFractionSmaller\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_NegativeFractions\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_LargeDenominators\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_CurrentFractionLarger\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithZero\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EdgeCases\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 261,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);",
+        "aftercode": "return 0;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_CurrentFractionSmaller\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_NegativeFractions\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_LargeDenominators\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_CurrentFractionLarger\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithZero\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EdgeCases\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 22,
+        "line": 261,
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "precode": "return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);",
+        "aftercode": "return 1;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EqualFractions\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_CurrentFractionSmaller\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_NegativeFractions\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithStaticConstants\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_LargeDenominators\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_SameValueDifferentDenominators\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EquivalentForms\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_WithZero\n  - gentest.org.apache.commons.math.fraction.tests.FractionTest::testCompareTo_EdgeCases\n",
+        "survived": false
+    }
+]

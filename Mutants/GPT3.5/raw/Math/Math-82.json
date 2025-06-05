@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "line": 77,
+        "precode": "double minRatio = Double.MAX_VALUE;",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "double minRatio = Double.MIN_VALUE;"
+    },
+    {
+        "id": 2,
+        "line": 77,
+        "precode": "double minRatio = Double.MAX_VALUE;",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "double minRatio = 0;"
+    },
+    {
+        "id": 3,
+        "line": 78,
+        "precode": "Integer minRatioPos = null;",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "Integer minRatioPos = 0;"
+    },
+    {
+        "id": 4,
+        "line": 79,
+        "precode": "for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getHeight(); i++) {",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "for (int i = 0; i < tableau.getHeight(); i++) {"
+    },
+    {
+        "id": 5,
+        "line": 79,
+        "precode": "for (int i = tableau.getNumObjectiveFunctions(); i < tableau.getHeight(); i++) {",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "for (int i = tableau.getNumObjectiveFunctions(); i <= tableau.getHeight(); i++) {"
+    },
+    {
+        "id": 6,
+        "line": 80,
+        "precode": "final double rhs = tableau.getEntry(i, tableau.getWidth() - 1);",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "final double rhs = tableau.getEntry(i, tableau.getWidth());"
+    },
+    {
+        "id": 7,
+        "line": 80,
+        "precode": "final double rhs = tableau.getEntry(i, tableau.getWidth() - 1);",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "final double rhs = tableau.getEntry(i, 0);"
+    },
+    {
+        "id": 8,
+        "line": 81,
+        "precode": "final double entry = tableau.getEntry(i, col);",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "final double entry = tableau.getEntry(col, i);"
+    },
+    {
+        "id": 9,
+        "line": 82,
+        "precode": "if (MathUtils.compareTo(entry, 0, epsilon) > 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "if (MathUtils.compareTo(entry, 0, epsilon) >= 0) {"
+    },
+    {
+        "id": 10,
+        "line": 82,
+        "precode": "if (MathUtils.compareTo(entry, 0, epsilon) > 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "if (MathUtils.compareTo(entry, 0, epsilon) < 0) {"
+    },
+    {
+        "id": 11,
+        "line": 82,
+        "precode": "if (MathUtils.compareTo(entry, 0, epsilon) > 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "if (MathUtils.compareTo(entry, 1, epsilon) > 0) {"
+    },
+    {
+        "id": 12,
+        "line": 83,
+        "precode": "final double ratio = rhs / entry;",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "final double ratio = rhs * entry;"
+    },
+    {
+        "id": 13,
+        "line": 83,
+        "precode": "final double ratio = rhs / entry;",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "final double ratio = entry / rhs;"
+    },
+    {
+        "id": 14,
+        "line": 84,
+        "precode": "if (ratio < minRatio) {",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "if (ratio <= minRatio) {"
+    },
+    {
+        "id": 15,
+        "line": 84,
+        "precode": "if (ratio < minRatio) {",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "if (ratio > minRatio) {"
+    },
+    {
+        "id": 16,
+        "line": 85,
+        "precode": "minRatio = ratio;",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "minRatio = minRatio;"
+    },
+    {
+        "id": 17,
+        "line": 86,
+        "precode": "minRatioPos = i;",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "minRatioPos = null;"
+    },
+    {
+        "id": 18,
+        "line": 86,
+        "precode": "minRatioPos = i;",
+        "filepath": "./defects4j_fixed/Math/Math_82_fixed/src/main/java/org/apache/commons/math/optimization/linear/SimplexSolver.java",
+        "aftercode": "minRatioPos = i + 1;"
+    }
+]

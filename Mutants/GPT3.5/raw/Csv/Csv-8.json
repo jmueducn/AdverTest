@@ -1,0 +1,226 @@
+[
+    {
+        "id": 1,
+        "line": 642,
+        "precode": "if (quoteChar != null && delimiter == quoteChar.charValue()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (quoteChar != null || delimiter == quoteChar.charValue()) {"
+    },
+    {
+        "id": 2,
+        "line": 642,
+        "precode": "if (quoteChar != null && delimiter == quoteChar.charValue()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (quoteChar == null && delimiter == quoteChar.charValue()) {"
+    },
+    {
+        "id": 3,
+        "line": 642,
+        "precode": "if (quoteChar != null && delimiter == quoteChar.charValue()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (quoteChar != null && delimiter != quoteChar.charValue()) {"
+    },
+    {
+        "id": 4,
+        "line": 642,
+        "precode": "if (quoteChar != null && delimiter == quoteChar.charValue()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (quoteChar != null && delimiter == escape.charValue()) {"
+    },
+    {
+        "id": 5,
+        "line": 668,
+        "precode": "throw new IllegalStateException(",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "throw new IllegalArgumentException("
+    },
+    {
+        "id": 6,
+        "line": 647,
+        "precode": "if (escape != null && delimiter == escape.charValue()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (escape != null || delimiter == escape.charValue()) {"
+    },
+    {
+        "id": 7,
+        "line": 647,
+        "precode": "if (escape != null && delimiter == escape.charValue()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (escape == null && delimiter == escape.charValue()) {"
+    },
+    {
+        "id": 8,
+        "line": 647,
+        "precode": "if (escape != null && delimiter == escape.charValue()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (escape != null && delimiter != escape.charValue()) {"
+    },
+    {
+        "id": 9,
+        "line": 647,
+        "precode": "if (escape != null && delimiter == escape.charValue()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (escape != null && delimiter == quoteChar.charValue()) {"
+    },
+    {
+        "id": 10,
+        "line": 652,
+        "precode": "if (commentStart != null && delimiter == commentStart.charValue()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (commentStart != null || delimiter == commentStart.charValue()) {"
+    },
+    {
+        "id": 11,
+        "line": 652,
+        "precode": "if (commentStart != null && delimiter == commentStart.charValue()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (commentStart == null && delimiter == commentStart.charValue()) {"
+    },
+    {
+        "id": 12,
+        "line": 652,
+        "precode": "if (commentStart != null && delimiter == commentStart.charValue()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (commentStart != null && delimiter != commentStart.charValue()) {"
+    },
+    {
+        "id": 13,
+        "line": 652,
+        "precode": "if (commentStart != null && delimiter == commentStart.charValue()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (commentStart != null && delimiter == escape.charValue()) {"
+    },
+    {
+        "id": 14,
+        "line": 657,
+        "precode": "if (quoteChar != null && quoteChar.equals(commentStart)) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (quoteChar != null || quoteChar.equals(commentStart)) {"
+    },
+    {
+        "id": 15,
+        "line": 657,
+        "precode": "if (quoteChar != null && quoteChar.equals(commentStart)) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (quoteChar == null && quoteChar.equals(commentStart)) {"
+    },
+    {
+        "id": 16,
+        "line": 657,
+        "precode": "if (quoteChar != null && quoteChar.equals(commentStart)) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (quoteChar != null && !quoteChar.equals(commentStart)) {"
+    },
+    {
+        "id": 17,
+        "line": 657,
+        "precode": "if (quoteChar != null && quoteChar.equals(commentStart)) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (quoteChar != null && escape.equals(commentStart)) {"
+    },
+    {
+        "id": 18,
+        "line": 662,
+        "precode": "if (escape != null && escape.equals(commentStart)) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (escape != null || escape.equals(commentStart)) {"
+    },
+    {
+        "id": 19,
+        "line": 662,
+        "precode": "if (escape != null && escape.equals(commentStart)) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (escape == null && escape.equals(commentStart)) {"
+    },
+    {
+        "id": 20,
+        "line": 662,
+        "precode": "if (escape != null && escape.equals(commentStart)) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (escape != null && !escape.equals(commentStart)) {"
+    },
+    {
+        "id": 21,
+        "line": 662,
+        "precode": "if (escape != null && escape.equals(commentStart)) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (escape != null && quoteChar.equals(commentStart)) {"
+    },
+    {
+        "id": 22,
+        "line": 667,
+        "precode": "if (escape == null && quotePolicy == Quote.NONE) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (escape == null || quotePolicy == Quote.NONE) {"
+    },
+    {
+        "id": 23,
+        "line": 667,
+        "precode": "if (escape == null && quotePolicy == Quote.NONE) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (escape != null && quotePolicy == Quote.NONE) {"
+    },
+    {
+        "id": 24,
+        "line": 667,
+        "precode": "if (escape == null && quotePolicy == Quote.NONE) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (escape == null && quotePolicy != Quote.NONE) {"
+    },
+    {
+        "id": 25,
+        "line": 667,
+        "precode": "if (escape == null && quotePolicy == Quote.NONE) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (escape == null && quotePolicy == Quote.ALL) {"
+    },
+    {
+        "id": 26,
+        "line": 668,
+        "precode": "throw new IllegalStateException(",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 27,
+        "line": 668,
+        "precode": "throw new IllegalStateException(",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 28,
+        "line": 668,
+        "precode": "throw new IllegalStateException(",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 29,
+        "line": 668,
+        "precode": "throw new IllegalStateException(",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 30,
+        "line": 668,
+        "precode": "throw new IllegalStateException(",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 31,
+        "line": 668,
+        "precode": "throw new IllegalStateException(",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 32,
+        "line": 667,
+        "precode": "if (escape == null && quotePolicy == Quote.NONE) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_8_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "aftercode": "if (escape == null && quotePolicy == Quote.NONE && quoteChar != null) {"
+    }
+]

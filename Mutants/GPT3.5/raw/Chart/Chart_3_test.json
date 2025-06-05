@@ -1,0 +1,268 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 1054,
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "throw new IllegalArgumentException(\"Requisres start <= end.\");",
+        "aftercode": "throw new IllegalArgumentException(\"Requires start >= end.\");",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidRangeWithMatchingItems_ShouldReturnCorrectCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NegativeStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EndLessThanStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_OutOfBoundsIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartGreaterThanZero\n",
+        "survived": true,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 1056,
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "TimeSeries copy = (TimeSeries) super.clone();",
+        "aftercode": "TimeSeries copy = (TimeSeries) this.clone();",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidRangeWithMatchingItems_ShouldReturnCorrectCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NegativeStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EndLessThanStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_OutOfBoundsIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartGreaterThanZero\n",
+        "survived": true,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 1057,
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "copy.data = new java.util.ArrayList();",
+        "aftercode": "copy.data.clear();",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidRangeWithMatchingItems_ShouldReturnCorrectCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NegativeStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EndLessThanStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_OutOfBoundsIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartGreaterThanZero\n",
+        "survived": true,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 1058,
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "if (this.data.size() < 0) {",
+        "aftercode": "if (this.data.size() == 0) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidRangeWithMatchingItems_ShouldReturnCorrectCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NegativeStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EndLessThanStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_OutOfBoundsIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartGreaterThanZero\n",
+        "survived": true,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 1058,
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "if (this.data.size() < 0) {",
+        "aftercode": "if (this.data.isEmpty()) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidRangeWithMatchingItems_ShouldReturnCorrectCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NegativeStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EndLessThanStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_OutOfBoundsIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartGreaterThanZero\n",
+        "survived": true,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 1058,
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "if (this.data.size() < 0) {",
+        "aftercode": "if (this.data.size() > 0) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidRangeWithMatchingItems_ShouldReturnCorrectCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NegativeStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EndLessThanStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_OutOfBoundsIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartGreaterThanZero\n",
+        "survived": true,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 1059,
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "for (int index = start; index <= end; index++) {",
+        "aftercode": "for (int index = start; index < end; index++) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidRangeWithMatchingItems_ShouldReturnCorrectCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NegativeStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EndLessThanStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_OutOfBoundsIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartGreaterThanZero\n",
+        "survived": true,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 1059,
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "for (int index = start; index <= end; index++) {",
+        "aftercode": "for (int index = end; index >= start; index--) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidRangeWithMatchingItems_ShouldReturnCorrectCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NegativeStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EndLessThanStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_OutOfBoundsIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartGreaterThanZero\n",
+        "survived": true,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 1059,
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "for (int index = start; index <= end; index++) {",
+        "aftercode": "for (int index = 0; index <= end; index++) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidRangeWithMatchingItems_ShouldReturnCorrectCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NegativeStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EndLessThanStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_OutOfBoundsIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartGreaterThanZero\n",
+        "survived": true,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 10,
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "TimeSeriesDataItem item = (TimeSeriesDataItem) this.data.get(index);",
+        "aftercode": "TimeSeriesDataItem item = new TimeSeriesDataItem();",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidRangeWithMatchingItems_ShouldReturnCorrectCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NegativeStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EndLessThanStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_OutOfBoundsIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartGreaterThanZero\n",
+        "survived": true,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 10,
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "TimeSeriesDataItem item = (TimeSeriesDataItem) this.data.get(index);",
+        "aftercode": "TimeSeriesDataItem item = this.data.get(start);",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidRangeWithMatchingItems_ShouldReturnCorrectCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NegativeStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EndLessThanStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_OutOfBoundsIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartGreaterThanZero\n",
+        "survived": true,
+        "id": 11
+    },
+    {
+        "mutant_id:": 14,
+        "line": 1064,
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "copy.add(clone);",
+        "aftercode": "copy.add(item);",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidRangeWithMatchingItems_ShouldReturnCorrectCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NegativeStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EndLessThanStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_OutOfBoundsIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartGreaterThanZero\n",
+        "survived": true,
+        "id": 12
+    },
+    {
+        "mutant_id:": 15,
+        "line": 1064,
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "copy.add(clone);",
+        "aftercode": "this.add(clone);",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidRangeWithMatchingItems_ShouldReturnCorrectCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NegativeStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EndLessThanStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_OutOfBoundsIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartGreaterThanZero\n",
+        "survived": true,
+        "id": 13
+    },
+    {
+        "mutant_id:": 16,
+        "line": 1066,
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "catch (SeriesException e) {",
+        "aftercode": "catch (Exception e) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidRangeWithMatchingItems_ShouldReturnCorrectCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NegativeStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ValidIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EndLessThanStart\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_OutOfBoundsIndices\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartGreaterThanZero\n",
+        "survived": true,
+        "id": 14
+    },
+    {
+        "id": 15,
+        "line": 1059,
+        "precode": "for (int index = start; index <= end; index++) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "for (int index = start; index < end; index++) {"
+    },
+    {
+        "id": 16,
+        "line": 1059,
+        "precode": "for (int index = start; index <= end; index++) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "for (int index = start; index <= end; index--) {"
+    },
+    {
+        "id": 17,
+        "line": 1060,
+        "precode": "TimeSeriesDataItem item;",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "TimeSeriesDataItem newItem;"
+    },
+    {
+        "id": 18,
+        "line": 1060,
+        "precode": "TimeSeriesDataItem item;",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "TimeSeriesDataItem timeSeriesItem;"
+    },
+    {
+        "id": 19,
+        "line": 1061,
+        "precode": "= (TimeSeriesDataItem) this.data.get(index);",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "= (TimeSeriesDataItem) this.data.get(index + 1);"
+    },
+    {
+        "id": 20,
+        "line": 1061,
+        "precode": "= (TimeSeriesDataItem) this.data.get(index);",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "= (TimeSeriesDataItem) this.data.get(index - 1);"
+    },
+    {
+        "id": 21,
+        "line": 1062,
+        "precode": "TimeSeriesDataItem clone = (TimeSeriesDataItem) item.clone();",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "TimeSeriesDataItem clone = new TimeSeriesDataItem(item);"
+    },
+    {
+        "id": 22,
+        "line": 1062,
+        "precode": "TimeSeriesDataItem clone = (TimeSeriesDataItem) item.clone();",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "TimeSeriesDataItem copy = (TimeSeriesDataItem) item.clone();"
+    },
+    {
+        "id": 23,
+        "line": 1064,
+        "precode": "copy.add(clone);",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "copy.add(null);"
+    },
+    {
+        "id": 24,
+        "line": 1064,
+        "precode": "copy.add(clone);",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "copy.remove(clone);"
+    },
+    {
+        "id": 25,
+        "line": 1066,
+        "precode": "catch (SeriesException e) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "catch (Exception e) {"
+    },
+    {
+        "id": 26,
+        "line": 1066,
+        "precode": "catch (SeriesException e) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "catch (SeriesException ex) {"
+    },
+    {
+        "id": 27,
+        "line": 1067,
+        "precode": "e.printStackTrace();",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "System.out.println(e);"
+    },
+    {
+        "id": 28,
+        "line": 1067,
+        "precode": "e.printStackTrace();",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "// e.printStackTrace();"
+    },
+    {
+        "id": 29,
+        "line": 1068,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "{"
+    },
+    {
+        "id": 30,
+        "line": 1068,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Chart/Chart_3_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "//}"
+    }
+]

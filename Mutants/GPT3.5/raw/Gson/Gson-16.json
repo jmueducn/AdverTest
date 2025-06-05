@@ -1,0 +1,170 @@
+[
+    {
+        "id": 1,
+        "line": 340,
+        "precode": "if (toResolve instanceof TypeVariable) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 2,
+        "line": 340,
+        "precode": "if (toResolve instanceof TypeVariable) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "if (toResolve != null) {"
+    },
+    {
+        "id": 3,
+        "line": 341,
+        "precode": "TypeVariable<?> typeVariable = (TypeVariable<?>) toResolve;",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "TypeVariable<?> typeVariable = null;"
+    },
+    {
+        "id": 4,
+        "line": 342,
+        "precode": "if (visitedTypeVariables.contains(typeVariable)) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 5,
+        "line": 342,
+        "precode": "if (visitedTypeVariables.contains(typeVariable)) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "if (!visitedTypeVariables.contains(typeVariable)) {"
+    },
+    {
+        "id": 6,
+        "line": 410,
+        "precode": "return toResolve;",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 7,
+        "line": 410,
+        "precode": "return toResolve;",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "return typeVariable;"
+    },
+    {
+        "id": 8,
+        "line": 346,
+        "precode": "visitedTypeVariables.add(typeVariable);",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "// visitedTypeVariables.add(typeVariable);"
+    },
+    {
+        "id": 9,
+        "line": 346,
+        "precode": "visitedTypeVariables.add(typeVariable);",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "visitedTypeVariables.add(null);"
+    },
+    {
+        "id": 10,
+        "line": 348,
+        "precode": "toResolve = resolveTypeVariable(context, contextRawType, typeVariable);",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "toResolve = typeVariable;"
+    },
+    {
+        "id": 11,
+        "line": 348,
+        "precode": "toResolve = resolveTypeVariable(context, contextRawType, typeVariable);",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "toResolve = resolveTypeVariable(null, contextRawType, typeVariable);"
+    },
+    {
+        "id": 12,
+        "line": 348,
+        "precode": "toResolve = resolveTypeVariable(context, contextRawType, typeVariable);",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "toResolve = resolveTypeVariable(context, null, typeVariable);"
+    },
+    {
+        "id": 13,
+        "line": 348,
+        "precode": "toResolve = resolveTypeVariable(context, contextRawType, typeVariable);",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "toResolve = resolveTypeVariable(context, contextRawType, null);"
+    },
+    {
+        "id": 14,
+        "line": 349,
+        "precode": "if (toResolve == typeVariable) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 15,
+        "line": 349,
+        "precode": "if (toResolve == typeVariable) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "if (toResolve != typeVariable) {"
+    },
+    {
+        "id": 16,
+        "line": 349,
+        "precode": "if (toResolve == typeVariable) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "if (toResolve.equals(typeVariable)) {"
+    },
+    {
+        "id": 17,
+        "line": 410,
+        "precode": "return toResolve;",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 18,
+        "line": 410,
+        "precode": "return toResolve;",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "return typeVariable;"
+    },
+    {
+        "id": 19,
+        "line": 339,
+        "precode": "while (true) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "while (false) {"
+    },
+    {
+        "id": 20,
+        "line": 339,
+        "precode": "while (true) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "for (;;) {"
+    },
+    {
+        "id": 21,
+        "line": 341,
+        "precode": "TypeVariable<?> typeVariable = (TypeVariable<?>) toResolve;",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "Object typeVariable = (Object) toResolve;"
+    },
+    {
+        "id": 22,
+        "line": 342,
+        "precode": "if (visitedTypeVariables.contains(typeVariable)) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "if (visitedTypeVariables == null) {"
+    },
+    {
+        "id": 23,
+        "line": 346,
+        "precode": "visitedTypeVariables.add(typeVariable);",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "if (typeVariable != null) visitedTypeVariables.add(typeVariable);"
+    },
+    {
+        "id": 24,
+        "line": 348,
+        "precode": "toResolve = resolveTypeVariable(context, contextRawType, typeVariable);",
+        "filepath": "./defects4j_fixed/Gson/Gson_16_fixed/gson/src/main/java/com/google/gson/internal/$Gson$Types.java",
+        "aftercode": "toResolve = resolveTypeVariable(context, contextRawType, null);"
+    }
+]

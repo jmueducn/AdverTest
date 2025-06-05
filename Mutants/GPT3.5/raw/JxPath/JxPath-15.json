@@ -1,0 +1,240 @@
+[
+    {
+        "id": 1,
+        "line": 55,
+        "precode": "while (ctx.nextNode()) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "while (true) {"
+    },
+    {
+        "id": 2,
+        "line": 55,
+        "precode": "while (ctx.nextNode()) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "while (false) {"
+    },
+    {
+        "id": 3,
+        "line": 55,
+        "precode": "while (ctx.nextNode()) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "while (ctx.nextSet()) {"
+    },
+    {
+        "id": 4,
+        "line": 56,
+        "precode": "NodePointer ptr = ctx.getCurrentNodePointer();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "NodePointer ptr = null;"
+    },
+    {
+        "id": 5,
+        "line": 56,
+        "precode": "NodePointer ptr = ctx.getCurrentNodePointer();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "NodePointer ptr = ctx.getCurrentNodePointer().clone();"
+    },
+    {
+        "id": 6,
+        "line": 57,
+        "precode": "if (!pointers.contains(ptr)) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "if (pointers.contains(ptr)) {"
+    },
+    {
+        "id": 7,
+        "line": 57,
+        "precode": "if (!pointers.contains(ptr)) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 8,
+        "line": 57,
+        "precode": "if (!pointers.contains(ptr)) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 9,
+        "line": 58,
+        "precode": "pointers.add(ptr);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "pointers.add(null);"
+    },
+    {
+        "id": 10,
+        "line": 58,
+        "precode": "pointers.add(ptr);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "pointers.add(0, ptr);"
+    },
+    {
+        "id": 11,
+        "line": 58,
+        "precode": "pointers.add(ptr);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "pointers.add(ptr); pointers.add(ptr);"
+    },
+    {
+        "id": 12,
+        "line": 63,
+        "precode": "sortPointers(pointers);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "// sortPointers(pointers);"
+    },
+    {
+        "id": 13,
+        "line": 63,
+        "precode": "sortPointers(pointers);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "Collections.sort(pointers);"
+    },
+    {
+        "id": 14,
+        "line": 65,
+        "precode": "for (Iterator it = pointers.iterator(); it.hasNext();) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "for (Iterator it = pointers.iterator(); false;) {"
+    },
+    {
+        "id": 15,
+        "line": 65,
+        "precode": "for (Iterator it = pointers.iterator(); it.hasNext();) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "for (Iterator it = pointers.iterator(); true;) {"
+    },
+    {
+        "id": 16,
+        "line": 65,
+        "precode": "for (Iterator it = pointers.iterator(); it.hasNext();) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "for (Iterator it = new ArrayList().iterator(); it.hasNext();) {"
+    },
+    {
+        "id": 17,
+        "line": 66,
+        "precode": "nodeSet.add((Pointer) it.next());",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "nodeSet.add(null);"
+    },
+    {
+        "id": 18,
+        "line": 66,
+        "precode": "nodeSet.add((Pointer) it.next());",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "nodeSet.add((Pointer) pointers.get(0));"
+    },
+    {
+        "id": 19,
+        "line": 66,
+        "precode": "nodeSet.add((Pointer) it.next());",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "nodeSet.add((Pointer) it.next()); nodeSet.add((Pointer) it.next());"
+    },
+    {
+        "id": 20,
+        "line": 66,
+        "precode": "nodeSet.add((Pointer) it.next());",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "it.next();"
+    },
+    {
+        "id": 21,
+        "line": 55,
+        "precode": "while (ctx.nextNode()) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "while (ctx.nextNode() && true) {"
+    },
+    {
+        "id": 22,
+        "line": 55,
+        "precode": "while (ctx.nextNode()) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "while (ctx.nextNode() || false) {"
+    },
+    {
+        "id": 23,
+        "line": 56,
+        "precode": "NodePointer ptr = ctx.getCurrentNodePointer();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "NodePointer ptr = new NodePointer();"
+    },
+    {
+        "id": 24,
+        "line": 57,
+        "precode": "if (!pointers.contains(ptr)) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "if (!pointers.isEmpty()) {"
+    },
+    {
+        "id": 25,
+        "line": 57,
+        "precode": "if (!pointers.contains(ptr)) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "if (!pointers.contains(ptr) && true) {"
+    },
+    {
+        "id": 26,
+        "line": 57,
+        "precode": "if (!pointers.contains(ptr)) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "if (!pointers.contains(ptr) || false) {"
+    },
+    {
+        "id": 27,
+        "line": 58,
+        "precode": "pointers.add(ptr);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "pointers.set(0, ptr);"
+    },
+    {
+        "id": 28,
+        "line": 58,
+        "precode": "pointers.add(ptr);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "pointers.remove(ptr);"
+    },
+    {
+        "id": 29,
+        "line": 63,
+        "precode": "sortPointers(pointers);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "sortPointers(new ArrayList());"
+    },
+    {
+        "id": 30,
+        "line": 63,
+        "precode": "sortPointers(pointers);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "pointers.clear();"
+    },
+    {
+        "id": 31,
+        "line": 65,
+        "precode": "for (Iterator it = pointers.iterator(); it.hasNext();) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "for (Iterator it = pointers.iterator(); !it.hasNext();) {"
+    },
+    {
+        "id": 32,
+        "line": 65,
+        "precode": "for (Iterator it = pointers.iterator(); it.hasNext();) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "for (Iterator it = null; it.hasNext();) {"
+    },
+    {
+        "id": 33,
+        "line": 66,
+        "precode": "nodeSet.add((Pointer) it.next());",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "nodeSet.add((Pointer) null);"
+    },
+    {
+        "id": 34,
+        "line": 66,
+        "precode": "nodeSet.add((Pointer) it.next());",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_15_fixed/src/java/org/apache/commons/jxpath/ri/axes/UnionContext.java",
+        "aftercode": "nodeSet.remove((Pointer) it.next());"
+    }
+]

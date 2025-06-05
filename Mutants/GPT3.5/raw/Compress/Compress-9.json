@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "line": 276,
+        "precode": "public void write(byte[] wBuf, int wOffset, int numToWrite) throws IOException {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "public void write(byte[] wBuf, int wOffset, int numToWrite) {"
+    },
+    {
+        "id": 2,
+        "line": 277,
+        "precode": "if ((currBytes + numToWrite) > currSize) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "if ((currBytes + numToWrite) >= currSize) {"
+    },
+    {
+        "id": 3,
+        "line": 277,
+        "precode": "if ((currBytes + numToWrite) > currSize) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "if ((currBytes - numToWrite) > currSize) {"
+    },
+    {
+        "id": 4,
+        "line": 277,
+        "precode": "if ((currBytes + numToWrite) > currSize) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "if ((currBytes) > currSize) {"
+    },
+    {
+        "id": 5,
+        "line": 278,
+        "precode": "throw new IOException(\"request to write '\" + numToWrite",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "throw new IOException(\"request to write '\" + currSize"
+    },
+    {
+        "id": 6,
+        "line": 279,
+        "precode": "                                  + \"' bytes exceeds size in header of '\"",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "                                  + \"' bytes equals size in header of '\""
+    },
+    {
+        "id": 7,
+        "line": 280,
+        "precode": "                                  + currSize + \"' bytes for entry '\"",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "                                  + numToWrite + \"' bytes for entry '\""
+    },
+    {
+        "id": 8,
+        "line": 281,
+        "precode": "                                  + currName + \"'\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "                                  + \"'\");"
+    },
+    {
+        "id": 9,
+        "line": 292,
+        "precode": "if (assemLen > 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "if (assemLen >= 0) {"
+    },
+    {
+        "id": 10,
+        "line": 292,
+        "precode": "if (assemLen > 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "if (assemLen < 0) {"
+    },
+    {
+        "id": 11,
+        "line": 293,
+        "precode": "if ((assemLen + numToWrite) >= recordBuf.length) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "if ((assemLen + numToWrite) > recordBuf.length) {"
+    },
+    {
+        "id": 12,
+        "line": 293,
+        "precode": "if ((assemLen + numToWrite) >= recordBuf.length) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "if ((assemLen) >= recordBuf.length) {"
+    },
+    {
+        "id": 13,
+        "line": 294,
+        "precode": "int aLen = recordBuf.length - assemLen;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "int aLen = recordBuf.length + assemLen;"
+    },
+    {
+        "id": 14,
+        "line": 294,
+        "precode": "int aLen = recordBuf.length - assemLen;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "int aLen = recordBuf.length;"
+    },
+    {
+        "id": 15,
+        "line": 296,
+        "precode": "System.arraycopy(assemBuf, 0, recordBuf, 0,",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "System.arraycopy(assemBuf, 1, recordBuf, 0,"
+    },
+    {
+        "id": 16,
+        "line": 296,
+        "precode": "System.arraycopy(assemBuf, 0, recordBuf, 0,",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "System.arraycopy(assemBuf, 0, recordBuf, 1,"
+    },
+    {
+        "id": 17,
+        "line": 297,
+        "precode": "                                 assemLen);",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "                                 assemLen + 1);"
+    },
+    {
+        "id": 18,
+        "line": 298,
+        "precode": "System.arraycopy(wBuf, wOffset, recordBuf,",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "System.arraycopy(wBuf, wOffset + 1, recordBuf,"
+    },
+    {
+        "id": 19,
+        "line": 299,
+        "precode": "                                 assemLen, aLen);",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "                                 assemLen + 1, aLen);"
+    },
+    {
+        "id": 20,
+        "line": 300,
+        "precode": "buffer.writeRecord(recordBuf);",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "buffer.writeRecord(wBuf);"
+    },
+    {
+        "id": 21,
+        "line": 302,
+        "precode": "currBytes += recordBuf.length;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "currBytes -= recordBuf.length;"
+    },
+    {
+        "id": 22,
+        "line": 302,
+        "precode": "currBytes += recordBuf.length;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "currBytes += aLen;"
+    },
+    {
+        "id": 23,
+        "line": 303,
+        "precode": "wOffset += aLen;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "wOffset -= aLen;"
+    },
+    {
+        "id": 24,
+        "line": 304,
+        "precode": "numToWrite -= aLen;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "numToWrite += aLen;"
+    },
+    {
+        "id": 25,
+        "line": 305,
+        "precode": "assemLen = 0;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "assemLen = 1;"
+    },
+    {
+        "id": 26,
+        "line": 323,
+        "precode": "System.arraycopy(wBuf, wOffset, assemBuf, assemLen,",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "System.arraycopy(wBuf, wOffset + 1, assemBuf, assemLen,"
+    },
+    {
+        "id": 27,
+        "line": 324,
+        "precode": "                                 numToWrite);",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "                                 numToWrite + 1);"
+    },
+    {
+        "id": 28,
+        "line": 310,
+        "precode": "wOffset += numToWrite;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "wOffset -= numToWrite;"
+    },
+    {
+        "id": 29,
+        "line": 326,
+        "precode": "assemLen += numToWrite;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "assemLen -= numToWrite;"
+    },
+    {
+        "id": 30,
+        "line": 312,
+        "precode": "numToWrite = 0;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "numToWrite = 1;"
+    },
+    {
+        "id": 31,
+        "line": 321,
+        "precode": "while (numToWrite > 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "while (numToWrite >= 0) {"
+    },
+    {
+        "id": 32,
+        "line": 321,
+        "precode": "while (numToWrite > 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "while (true) {"
+    },
+    {
+        "id": 33,
+        "line": 322,
+        "precode": "if (numToWrite < recordBuf.length) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "if (numToWrite <= recordBuf.length) {"
+    },
+    {
+        "id": 34,
+        "line": 322,
+        "precode": "if (numToWrite < recordBuf.length) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 35,
+        "line": 323,
+        "precode": "System.arraycopy(wBuf, wOffset, assemBuf, assemLen,",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "System.arraycopy(wBuf, wOffset + 1, assemBuf, assemLen,"
+    },
+    {
+        "id": 36,
+        "line": 324,
+        "precode": "                                 numToWrite);",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "                                 numToWrite + 1);"
+    },
+    {
+        "id": 37,
+        "line": 326,
+        "precode": "assemLen += numToWrite;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "assemLen -= numToWrite;"
+    },
+    {
+        "id": 38,
+        "line": 328,
+        "precode": "break;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "continue;"
+    },
+    {
+        "id": 39,
+        "line": 331,
+        "precode": "buffer.writeRecord(wBuf, wOffset);",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "buffer.writeRecord(wBuf, wOffset + 1);"
+    },
+    {
+        "id": 40,
+        "line": 333,
+        "precode": "int num = recordBuf.length;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "int num = recordBuf.length + 1;"
+    },
+    {
+        "id": 41,
+        "line": 333,
+        "precode": "int num = recordBuf.length;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "int num = numToWrite;"
+    },
+    {
+        "id": 42,
+        "line": 335,
+        "precode": "currBytes += num;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "currBytes -= num;"
+    },
+    {
+        "id": 43,
+        "line": 336,
+        "precode": "numToWrite -= num;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "numToWrite += num;"
+    },
+    {
+        "id": 44,
+        "line": 337,
+        "precode": "wOffset += num;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "wOffset -= num;"
+    },
+    {
+        "id": 45,
+        "line": 277,
+        "precode": "if ((currBytes + numToWrite) > currSize) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "if ((currBytes * numToWrite) > currSize) {"
+    },
+    {
+        "id": 46,
+        "line": 293,
+        "precode": "if ((assemLen + numToWrite) >= recordBuf.length) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "if ((assemLen * numToWrite) >= recordBuf.length) {"
+    },
+    {
+        "id": 47,
+        "line": 302,
+        "precode": "currBytes += recordBuf.length;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "currBytes = recordBuf.length;"
+    },
+    {
+        "id": 48,
+        "line": 326,
+        "precode": "assemLen += numToWrite;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "assemLen = numToWrite;"
+    },
+    {
+        "id": 49,
+        "line": 326,
+        "precode": "assemLen += numToWrite;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "assemLen = numToWrite;"
+    },
+    {
+        "id": 50,
+        "line": 335,
+        "precode": "currBytes += num;",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "currBytes = num;"
+    },
+    {
+        "id": 51,
+        "line": 278,
+        "precode": "throw new IOException(\"request to write '\" + numToWrite",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "throw new IOException(\"\");"
+    },
+    {
+        "id": 52,
+        "line": 300,
+        "precode": "buffer.writeRecord(recordBuf);",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "buffer.writeRecord(null);"
+    },
+    {
+        "id": 53,
+        "line": 331,
+        "precode": "buffer.writeRecord(wBuf, wOffset);",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "buffer.writeRecord(null, wOffset);"
+    },
+    {
+        "id": 54,
+        "line": 331,
+        "precode": "buffer.writeRecord(wBuf, wOffset);",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "buffer.writeRecord(wBuf, 0);"
+    },
+    {
+        "id": 55,
+        "line": 277,
+        "precode": "if ((currBytes + numToWrite) > currSize) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_9_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveOutputStream.java",
+        "aftercode": "if (false) {"
+    }
+]

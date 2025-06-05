@@ -1,0 +1,192 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 1190,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "if (plotState != null) {",
+        "aftercode": "if (plotState == null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 2,
+        "line": 1191,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "ChartRenderingInfo owner = new ChartRenderingInfo();",
+        "aftercode": "ChartRenderingInfo owner = null;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 3,
+        "line": 1192,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "if (owner == null) {",
+        "aftercode": "if (owner != null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 5,
+        "line": 1194,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "if (entities != null) {",
+        "aftercode": "if (entities == null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 7,
+        "line": 1190,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "if (plotState != null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 9,
+        "line": 1192,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "if (owner == null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 10,
+        "line": 1203,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "EntityCollection entities = null;",
+        "aftercode": "// EntityCollection entities = null;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 11,
+        "line": 1194,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "if (entities != null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 13,
+        "line": 1190,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "if (plotState != null) {",
+        "aftercode": "if (plotState == null || plotState != null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 14,
+        "line": 1191,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "ChartRenderingInfo owner = new ChartRenderingInfo();",
+        "aftercode": "ChartRenderingInfo owner = new ChartRenderingInfo(); owner = null;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 15,
+        "line": 1192,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "if (owner == null) {",
+        "aftercode": "if (owner == null && owner != null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 17,
+        "line": 1194,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "if (entities != null) {",
+        "aftercode": "if (entities != null && entities == null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 19,
+        "line": 1190,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "if (plotState != null) {",
+        "aftercode": "if (!(plotState == null)) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 20,
+        "line": 1191,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "ChartRenderingInfo owner = new ChartRenderingInfo();",
+        "aftercode": "ChartRenderingInfo owner = null; owner = new ChartRenderingInfo();",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 21,
+        "line": 1192,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "if (owner == null) {",
+        "aftercode": "if (!(owner != null)) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 23,
+        "line": 1194,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "if (entities != null) {",
+        "aftercode": "if (!(entities == null)) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 24,
+        "line": 1195,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "entities.add(new AxisLabelEntity(this, hotspot,",
+        "aftercode": "entities.add(new AxisLabelEntity(null, null,",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 25,
+        "line": 1190,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "if (plotState != null) {",
+        "aftercode": "if (plotState == null || plotState == null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 26,
+        "line": 1191,
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "precode": "ChartRenderingInfo owner = new ChartRenderingInfo();",
+        "aftercode": "ChartRenderingInfo owner = new ChartRenderingInfo(); owner = null;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_NonEmptyLabel\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_EntityCollectionInteraction\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningBottomEdge\n  - gentest.org.jfree.chart.axis.tests.AxisTest::testDrawLabel_LabelPositioningTopEdge\n",
+        "survived": true
+    }
+]

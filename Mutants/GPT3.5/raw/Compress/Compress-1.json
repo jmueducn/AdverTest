@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "line": 345,
+        "precode": "if (!this.closed) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (this.closed) {"
+    },
+    {
+        "id": 2,
+        "line": 345,
+        "precode": "if (!this.closed) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 3,
+        "line": 345,
+        "precode": "if (!this.closed) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 4,
+        "line": 346,
+        "precode": "this.finish();",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "// this.finish();"
+    },
+    {
+        "id": 5,
+        "line": 347,
+        "precode": "super.close();",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "// super.close();"
+    },
+    {
+        "id": 6,
+        "line": 348,
+        "precode": "this.closed = true;",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "this.closed = false;"
+    },
+    {
+        "id": 7,
+        "line": 348,
+        "precode": "this.closed = true;",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "// this.closed = true;"
+    },
+    {
+        "id": 8,
+        "line": 353,
+        "precode": "long skip = count % border;",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "long skip = count / border;"
+    },
+    {
+        "id": 9,
+        "line": 353,
+        "precode": "long skip = count % border;",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "long skip = count;"
+    },
+    {
+        "id": 10,
+        "line": 354,
+        "precode": "if (skip > 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (skip >= 0) {"
+    },
+    {
+        "id": 11,
+        "line": 354,
+        "precode": "if (skip > 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 12,
+        "line": 354,
+        "precode": "if (skip > 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 13,
+        "line": 355,
+        "precode": "byte tmp[] = new byte[(int) (border - skip)];",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "byte tmp[] = new byte[(int) (border + skip)];"
+    },
+    {
+        "id": 14,
+        "line": 355,
+        "precode": "byte tmp[] = new byte[(int) (border - skip)];",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "byte tmp[] = new byte[0];"
+    },
+    {
+        "id": 15,
+        "line": 363,
+        "precode": "out.write(tmp);",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "// out.write(tmp);"
+    },
+    {
+        "id": 16,
+        "line": 362,
+        "precode": "byte tmp[] = CpioUtil.long2byteArray(number, length, swapHalfWord);",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "byte tmp[] = new byte[length];"
+    },
+    {
+        "id": 17,
+        "line": 362,
+        "precode": "byte tmp[] = CpioUtil.long2byteArray(number, length, swapHalfWord);",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "byte tmp[] = null;"
+    },
+    {
+        "id": 18,
+        "line": 363,
+        "precode": "out.write(tmp);",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "// out.write(tmp);"
+    },
+    {
+        "id": 19,
+        "line": 368,
+        "precode": "StringBuffer tmp = new StringBuffer();",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "StringBuffer tmp = null;"
+    },
+    {
+        "id": 20,
+        "line": 369,
+        "precode": "String tmpStr;",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "String tmpStr = null;"
+    },
+    {
+        "id": 21,
+        "line": 370,
+        "precode": "if (radix == 16) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (radix != 16) {"
+    },
+    {
+        "id": 22,
+        "line": 370,
+        "precode": "if (radix == 16) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 23,
+        "line": 370,
+        "precode": "if (radix == 16) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 24,
+        "line": 371,
+        "precode": "tmp.append(Long.toHexString(number));",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmp.append(Long.toString(number));"
+    },
+    {
+        "id": 25,
+        "line": 371,
+        "precode": "tmp.append(Long.toHexString(number));",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "// tmp.append(Long.toHexString(number));"
+    },
+    {
+        "id": 26,
+        "line": 372,
+        "precode": "} else if (radix == 8) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "} else if (radix != 8) {"
+    },
+    {
+        "id": 27,
+        "line": 372,
+        "precode": "} else if (radix == 8) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "} else if (true) {"
+    },
+    {
+        "id": 28,
+        "line": 372,
+        "precode": "} else if (radix == 8) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "} else if (false) {"
+    },
+    {
+        "id": 29,
+        "line": 373,
+        "precode": "tmp.append(Long.toOctalString(number));",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmp.append(Long.toString(number));"
+    },
+    {
+        "id": 30,
+        "line": 373,
+        "precode": "tmp.append(Long.toOctalString(number));",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "// tmp.append(Long.toOctalString(number));"
+    },
+    {
+        "id": 31,
+        "line": 375,
+        "precode": "tmp.append(Long.toString(number));",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmp.append(\"0\");"
+    },
+    {
+        "id": 32,
+        "line": 375,
+        "precode": "tmp.append(Long.toString(number));",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "// tmp.append(Long.toString(number));"
+    },
+    {
+        "id": 33,
+        "line": 378,
+        "precode": "if (tmp.length() <= length) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (tmp.length() < length) {"
+    },
+    {
+        "id": 34,
+        "line": 378,
+        "precode": "if (tmp.length() <= length) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 35,
+        "line": 378,
+        "precode": "if (tmp.length() <= length) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 36,
+        "line": 379,
+        "precode": "long insertLength = length - tmp.length();",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "long insertLength = length;"
+    },
+    {
+        "id": 37,
+        "line": 380,
+        "precode": "for (int pos = 0; pos < insertLength; pos++) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "for (int pos = 0; pos <= insertLength; pos++) {"
+    },
+    {
+        "id": 38,
+        "line": 380,
+        "precode": "for (int pos = 0; pos < insertLength; pos++) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "for (int pos = 0; true; pos++) {"
+    },
+    {
+        "id": 39,
+        "line": 381,
+        "precode": "tmp.insert(0, \"0\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmp.insert(0, \"1\");"
+    },
+    {
+        "id": 40,
+        "line": 381,
+        "precode": "tmp.insert(0, \"0\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "// tmp.insert(0, \"0\");"
+    },
+    {
+        "id": 41,
+        "line": 383,
+        "precode": "tmpStr = tmp.toString();",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmpStr = \"\";"
+    },
+    {
+        "id": 42,
+        "line": 385,
+        "precode": "tmpStr = tmp.substring(tmp.length() - length);",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmpStr = tmp.substring(0);"
+    },
+    {
+        "id": 43,
+        "line": 385,
+        "precode": "tmpStr = tmp.substring(tmp.length() - length);",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "tmpStr = \"\";"
+    },
+    {
+        "id": 44,
+        "line": 387,
+        "precode": "out.write(tmpStr.getBytes());",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "// out.write(tmpStr.getBytes());"
+    },
+    {
+        "id": 45,
+        "line": 391,
+        "precode": "out.write(str.getBytes());",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "// out.write(str.getBytes());"
+    },
+    {
+        "id": 46,
+        "line": 392,
+        "precode": "out.write('\\0');",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "out.write('\\1');"
+    },
+    {
+        "id": 47,
+        "line": 392,
+        "precode": "out.write('\\0');",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "// out.write('\\0');"
+    },
+    {
+        "id": 48,
+        "line": 403,
+        "precode": "this.putNextEntry((CpioArchiveEntry) entry);",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "// this.putNextEntry((CpioArchiveEntry) entry);"
+    },
+    {
+        "id": 49,
+        "line": 403,
+        "precode": "this.putNextEntry((CpioArchiveEntry) entry);",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "this.putNextEntry(null);"
+    },
+    {
+        "id": 50,
+        "line": 412,
+        "precode": "out.write(b);",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "// out.write(b);"
+    },
+    {
+        "id": 51,
+        "line": 412,
+        "precode": "out.write(b);",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "out.write(0);"
+    },
+    {
+        "id": 52,
+        "line": 348,
+        "precode": "this.closed = true;",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "this.closed = !this.closed;"
+    },
+    {
+        "id": 53,
+        "line": 354,
+        "precode": "if (skip > 0) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (skip != 0) {"
+    },
+    {
+        "id": 54,
+        "line": 370,
+        "precode": "if (radix == 16) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (radix >= 16) {"
+    },
+    {
+        "id": 55,
+        "line": 378,
+        "precode": "if (tmp.length() <= length) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_1_fixed/src/main/java/org/apache/commons/compress/archivers/cpio/CpioArchiveOutputStream.java",
+        "aftercode": "if (tmp.length() != length) {"
+    }
+]

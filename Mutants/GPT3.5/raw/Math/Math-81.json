@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "line": 1433,
+        "precode": "final double cnst1 = 0.563;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "final double cnst1 = 0.5;"
+    },
+    {
+        "id": 2,
+        "line": 1434,
+        "precode": "final double cnst2 = 1.010;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "final double cnst2 = 1.0;"
+    },
+    {
+        "id": 3,
+        "line": 1435,
+        "precode": "final double cnst3 = 1.05;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "final double cnst3 = 1.0;"
+    },
+    {
+        "id": 4,
+        "line": 1439,
+        "precode": "if (dMin <= 0.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (dMin < 0.0) {"
+    },
+    {
+        "id": 5,
+        "line": 1440,
+        "precode": "tau = -dMin;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "tau = dMin;"
+    },
+    {
+        "id": 6,
+        "line": 1441,
+        "precode": "tType = -1;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "tType = 1;"
+    },
+    {
+        "id": 7,
+        "line": 1445,
+        "precode": "int nn = 4 * end + pingPong - 1;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "int nn = 4 * end + pingPong;"
+    },
+    {
+        "id": 8,
+        "line": 1449,
+        "precode": "if (dMin == dN || dMin == dN1) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (dMin == dN && dMin == dN1) {"
+    },
+    {
+        "id": 9,
+        "line": 1451,
+        "precode": "double b1 = Math.sqrt(work[nn - 3]) * Math.sqrt(work[nn - 5]);",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "double b1 = work[nn - 3] * work[nn - 5];"
+    },
+    {
+        "id": 10,
+        "line": 1452,
+        "precode": "double b2 = Math.sqrt(work[nn - 7]) * Math.sqrt(work[nn - 9]);",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "double b2 = work[nn - 7] + work[nn - 9];"
+    },
+    {
+        "id": 11,
+        "line": 1453,
+        "precode": "double a2 = work[nn - 7] + work[nn - 5];",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "double a2 = work[nn - 7] - work[nn - 5];"
+    },
+    {
+        "id": 12,
+        "line": 1455,
+        "precode": "if (dMin == dN && dMin1 == dN1) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (dMin == dN || dMin1 == dN1) {"
+    },
+    {
+        "id": 13,
+        "line": 1457,
+        "precode": "final double gap2 = dMin2 - a2 - dMin2 * 0.25;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "final double gap2 = dMin2 - a2;"
+    },
+    {
+        "id": 14,
+        "line": 1458,
+        "precode": "final double gap1 = a2 - dN - ((gap2 > 0.0 && gap2 > b2) ? (b2 / gap2) * b2 : (b1 + b2));",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "final double gap1 = a2 - dN - (b1 + b2);"
+    },
+    {
+        "id": 15,
+        "line": 1459,
+        "precode": "if (gap1 > 0.0 && gap1 > b1) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (gap1 > 0.0) {"
+    },
+    {
+        "id": 16,
+        "line": 1460,
+        "precode": "tau   = Math.max(dN - (b1 / gap1) * b1, 0.5 * dMin);",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "tau   = dN - (b1 / gap1) * b1;"
+    },
+    {
+        "id": 17,
+        "line": 1461,
+        "precode": "tType = -2;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "tType = 2;"
+    },
+    {
+        "id": 18,
+        "line": 1464,
+        "precode": "if (dN > b1) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (dN >= b1) {"
+    },
+    {
+        "id": 19,
+        "line": 1467,
+        "precode": "if (a2 > (b1 + b2)) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (a2 >= (b1 + b2)) {"
+    },
+    {
+        "id": 20,
+        "line": 1468,
+        "precode": "s = Math.min(s, a2 - (b1 + b2));",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "s = a2 - (b1 + b2);"
+    },
+    {
+        "id": 21,
+        "line": 1470,
+        "precode": "tau   = Math.max(s, 0.333 * dMin);",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "tau   = s;"
+    },
+    {
+        "id": 22,
+        "line": 1471,
+        "precode": "tType = -3;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "tType = 3;"
+    },
+    {
+        "id": 23,
+        "line": 1475,
+        "precode": "tType = -4;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "tType = 4;"
+    },
+    {
+        "id": 24,
+        "line": 1531,
+        "precode": "double s = 0.25 * dMin;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "double s = 0.5 * dMin;"
+    },
+    {
+        "id": 25,
+        "line": 1482,
+        "precode": "if (work[nn - 5]  >  work[nn - 7]) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (work[nn - 5]  >=  work[nn - 7]) {"
+    },
+    {
+        "id": 26,
+        "line": 1486,
+        "precode": "np = nn - 9;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "np = nn - 7;"
+    },
+    {
+        "id": 27,
+        "line": 1534,
+        "precode": "np = nn - 2 * pingPong;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "np = nn - pingPong;"
+    },
+    {
+        "id": 28,
+        "line": 1491,
+        "precode": "if (work[np - 4]  >  work[np - 2]) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (work[np - 4]  >=  work[np - 2]) {"
+    },
+    {
+        "id": 29,
+        "line": 1495,
+        "precode": "if (work[nn - 9]  >  work[nn - 11]) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (work[nn - 9]  >=  work[nn - 11]) {"
+    },
+    {
+        "id": 30,
+        "line": 1556,
+        "precode": "a2 = a2 + b2;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "a2 = a2 - b2;"
+    },
+    {
+        "id": 31,
+        "line": 1504,
+        "precode": "for (int i4 = np; i4 >= 4 * start + 2 + pingPong; i4 -= 4) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "for (int i4 = np; i4 > 4 * start + 2 + pingPong; i4 -= 4) {"
+    },
+    {
+        "id": 32,
+        "line": 1505,
+        "precode": "if(b2 == 0.0) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if(b2 <= 0.0) {"
+    },
+    {
+        "id": 33,
+        "line": 1552,
+        "precode": "if (work[i4]  >  work[i4 - 2]) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (work[i4]  >=  work[i4 - 2]) {"
+    },
+    {
+        "id": 34,
+        "line": 1556,
+        "precode": "a2 = a2 + b2;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "a2 = a2 * b2;"
+    },
+    {
+        "id": 35,
+        "line": 1514,
+        "precode": "if (100 * Math.max(b2, b1) < a2 || cnst1 < a2) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (100 * Math.max(b2, b1) < a2) {"
+    },
+    {
+        "id": 36,
+        "line": 1561,
+        "precode": "a2 = cnst3 * a2;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "a2 = cnst1 * a2;"
+    },
+    {
+        "id": 37,
+        "line": 1564,
+        "precode": "if (a2 < cnst1) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (a2 <= cnst1) {"
+    },
+    {
+        "id": 38,
+        "line": 1522,
+        "precode": "s = gam * (1 - Math.sqrt(a2)) / (1 + a2);",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "s = gam * (1 - a2) / (1 + a2);"
+    },
+    {
+        "id": 39,
+        "line": 1534,
+        "precode": "final int np = nn - 2 * pingPong;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "final int np = nn - pingPong;"
+    },
+    {
+        "id": 40,
+        "line": 1538,
+        "precode": "if (work[np - 8] > b2 || work[np - 4] > b1) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (work[np - 8] >= b2 || work[np - 4] >= b1) {"
+    },
+    {
+        "id": 41,
+        "line": 1544,
+        "precode": "if (end - start > 3) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (end - start >= 3) {"
+    },
+    {
+        "id": 42,
+        "line": 1564,
+        "precode": "if (a2 < cnst1) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (a2 <= cnst1) {"
+    },
+    {
+        "id": 43,
+        "line": 1565,
+        "precode": "tau = gam * (1 - Math.sqrt(a2)) / (1 + a2);",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "tau = gam * (1 - a2) / (1 + a2);"
+    },
+    {
+        "id": 44,
+        "line": 1573,
+        "precode": "if (tType == -6) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (tType == 6) {"
+    },
+    {
+        "id": 45,
+        "line": 1574,
+        "precode": "g += 0.333 * (1 - g);",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "g += 0.5 * (1 - g);"
+    },
+    {
+        "id": 46,
+        "line": 1575,
+        "precode": "} else if (tType == -18) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "} else if (tType == 18) {"
+    },
+    {
+        "id": 47,
+        "line": 1576,
+        "precode": "g = 0.25 * 0.333;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "g = 0.25 * 0.5;"
+    },
+    {
+        "id": 48,
+        "line": 1580,
+        "precode": "tau   = g * dMin;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "tau   = g * dMax;"
+    },
+    {
+        "id": 49,
+        "line": 1581,
+        "precode": "tType = -6;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "tType = 6;"
+    },
+    {
+        "id": 50,
+        "line": 1636,
+        "precode": "if (work[nn - 5] > work[nn - 7]) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (work[nn - 5] >= work[nn - 7]) {"
+    },
+    {
+        "id": 51,
+        "line": 1653,
+        "precode": "b2 = Math.sqrt(cnst3 * b2);",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "b2 = cnst3 * b2;"
+    },
+    {
+        "id": 52,
+        "line": 1611,
+        "precode": "final double a2 = dMin1 / (1 + b2 * b2);",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "final double a2 = dMin1 / (1 + b2);"
+    },
+    {
+        "id": 53,
+        "line": 1612,
+        "precode": "final double gap2 = 0.5 * dMin2 - a2;",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "final double gap2 = dMin2 - a2;"
+    },
+    {
+        "id": 54,
+        "line": 1657,
+        "precode": "if (gap2 > 0.0 && gap2 > b2 * a2) {",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "if (gap2 > 0.0) {"
+    },
+    {
+        "id": 55,
+        "line": 1658,
+        "precode": "tau = Math.max(s, a2 * (1 - cnst2 * a2 * (b2 / gap2) * b2));",
+        "filepath": "./defects4j_fixed/Math/Math_81_fixed/src/main/java/org/apache/commons/math/linear/EigenDecompositionImpl.java",
+        "aftercode": "tau = a2 * (1 - cnst2 * a2 * (b2 / gap2) * b2);"
+    }
+]

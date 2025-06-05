@@ -1,0 +1,232 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 161,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "TDistribution tDistribution = new TDistributionImpl(nObs - 2);",
+        "aftercode": "TDistribution tDistribution = new TDistributionImpl(nObs - 1);",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 161,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "TDistribution tDistribution = new TDistributionImpl(nObs - 2);",
+        "aftercode": "TDistribution tDistribution = new TDistributionImpl(nObs);",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 163,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "double[][] out = new double[nVars][nVars];",
+        "aftercode": "double[][] out = new double[nVars + 1][nVars + 1];",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_IdentityMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 164,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "for (int i = 0; i < nVars; i++) {",
+        "aftercode": "for (int i = 1; i < nVars; i++) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ZeroCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_IdentityMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_EdgeCaseMinimumObservations\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 164,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "for (int i = 0; i < nVars; i++) {",
+        "aftercode": "for (int i = 0; i <= nVars; i++) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ZeroCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ModerateCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_IdentityMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_PerfectNegativeCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_EdgeCaseMinimumObservations\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 165,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "for (int j = 0; j < nVars; j++) {",
+        "aftercode": "for (int j = 1; j < nVars; j++) {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ZeroCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_IdentityMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_EdgeCaseMinimumObservations\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 165,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "for (int j = 0; j < nVars; j++) {",
+        "aftercode": "for (int j = 0; j <= nVars; j++) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ZeroCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ModerateCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_IdentityMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_PerfectNegativeCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_EdgeCaseMinimumObservations\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 166,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "if (i == j) {",
+        "aftercode": "if (i != j) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ZeroCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_IdentityMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_EdgeCaseMinimumObservations\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 166,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "if (i == j) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ZeroCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_IdentityMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_EdgeCaseMinimumObservations\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 167,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "out[i][j] = 0d;",
+        "aftercode": "out[i][j] = 1d;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ZeroCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ModerateCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_IdentityMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_PerfectNegativeCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_EdgeCaseMinimumObservations\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 167,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "out[i][j] = 0d;",
+        "aftercode": "out[i][j] = -1d;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ZeroCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ModerateCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_IdentityMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_PerfectNegativeCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_EdgeCaseMinimumObservations\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 169,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "double r = correlationMatrix.getEntry(i, j);",
+        "aftercode": "double r = correlationMatrix.getEntry(j, i);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 13,
+        "line": 170,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 - r * r)));",
+        "aftercode": "double t = Math.abs(r * Math.sqrt((nObs - 1)/(1 - r * r)));",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 170,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 - r * r)));",
+        "aftercode": "double t = Math.abs(r * Math.sqrt((nObs - 2)/(2 - r * r)));",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_PerfectNegativeCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 170,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 - r * r)));",
+        "aftercode": "double t = r * Math.sqrt((nObs - 2)/(1 - r * r));",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_PerfectNegativeCorrelation\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 171,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "out[i][j] = 2 * tDistribution.cumulativeProbability(-t);",
+        "aftercode": "out[i][j] = tDistribution.cumulativeProbability(-t);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ZeroCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_IdentityMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 171,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "out[i][j] = 2 * tDistribution.cumulativeProbability(-t);",
+        "aftercode": "out[i][j] = 2 * tDistribution.cumulativeProbability(t);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ModerateCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_PerfectNegativeCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 171,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "out[i][j] = 2 * tDistribution.cumulativeProbability(-t);",
+        "aftercode": "out[i][j] = 0;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ZeroCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_IdentityMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_EdgeCaseMinimumObservations\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 175,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "return new BlockRealMatrix(out);",
+        "aftercode": "return null;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ZeroCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ModerateCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_IdentityMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_PerfectNegativeCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_EdgeCaseMinimumObservations\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 20,
+        "line": 161,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "TDistribution tDistribution = new TDistributionImpl(nObs - 2);",
+        "aftercode": "TDistribution tDistribution = new TDistributionImpl(nObs - 3);",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_EdgeCaseMinimumObservations\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 161,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "TDistribution tDistribution = new TDistributionImpl(nObs - 2);",
+        "aftercode": "TDistribution tDistribution = new TDistributionImpl(nObs + 2);",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 22,
+        "line": 170,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 - r * r)));",
+        "aftercode": "double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 + r * r)));",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_PerfectNegativeCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 23,
+        "line": 170,
+        "filepath": "./defects4j_fixed/Math/Math_69_fixed/src/main/java/org/apache/commons/math/stat/correlation/PearsonsCorrelation.java",
+        "precode": "double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 - r * r)));",
+        "aftercode": "double t = Math.abs(r * Math.sqrt((nObs - 2)/(1 - r / r)));",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_ZeroCorrelation\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsNonSymmetricMatrixMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_InvalidCorrelationValue\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_MockedTDistribution\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_NonSquareMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_IdentityMatrix\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValuesDetectsMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_DetectsDegreesOfFreedomMutant\n  - gentest.org.apache.commons.math.stat.correlation.tests.PearsonsCorrelationTest::testGetCorrelationPValues_EdgeCaseMinimumObservations\n",
+        "survived": false
+    }
+]

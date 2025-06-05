@@ -1,0 +1,303 @@
+[
+    {
+        "id": 1,
+        "line": 926,
+        "precode": "if (boundaries == null) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (boundaries != null) {"
+    },
+    {
+        "id": 2,
+        "line": 926,
+        "precode": "if (boundaries == null) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 3,
+        "line": 927,
+        "precode": "return x;",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 4,
+        "line": 929,
+        "precode": "double[] res = new double[x.length];",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "double[] res = new double[0];"
+    },
+    {
+        "id": 5,
+        "line": 930,
+        "precode": "for (int i = 0; i < x.length; i++) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "for (int i = 0; i <= x.length; i++) {"
+    },
+    {
+        "id": 6,
+        "line": 930,
+        "precode": "for (int i = 0; i < x.length; i++) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "for (int i = 0; false; i++) {"
+    },
+    {
+        "id": 7,
+        "line": 931,
+        "precode": "double diff = boundaries[1][i] - boundaries[0][i];",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "double diff = boundaries[0][i] - boundaries[1][i];"
+    },
+    {
+        "id": 8,
+        "line": 931,
+        "precode": "double diff = boundaries[1][i] - boundaries[0][i];",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "double diff = boundaries[1][i] + boundaries[0][i];"
+    },
+    {
+        "id": 9,
+        "line": 932,
+        "precode": "res[i] = x[i] / diff;",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "res[i] = x[i] * diff;"
+    },
+    {
+        "id": 10,
+        "line": 932,
+        "precode": "res[i] = x[i] / diff;",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "res[i] = x[i];"
+    },
+    {
+        "id": 11,
+        "line": 932,
+        "precode": "res[i] = x[i] / diff;",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "res[i] = 0;"
+    },
+    {
+        "id": 12,
+        "line": 930,
+        "precode": "for (int i = 0; i < x.length; i++) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "for (int i = 1; i < x.length; i++) {"
+    },
+    {
+        "id": 13,
+        "line": 952,
+        "precode": "if (boundaries == null) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (boundaries != null) {"
+    },
+    {
+        "id": 14,
+        "line": 952,
+        "precode": "if (boundaries == null) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 15,
+        "line": 955,
+        "precode": "double[] res = new double[x.length];",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "double[] res = new double[0];"
+    },
+    {
+        "id": 16,
+        "line": 956,
+        "precode": "for (int i = 0; i < x.length; i++) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "for (int i = 0; i <= x.length; i++) {"
+    },
+    {
+        "id": 17,
+        "line": 956,
+        "precode": "for (int i = 0; i < x.length; i++) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "for (int i = 0; false; i++) {"
+    },
+    {
+        "id": 18,
+        "line": 957,
+        "precode": "double diff = boundaries[1][i] - boundaries[0][i];",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "double diff = boundaries[0][i] - boundaries[1][i];"
+    },
+    {
+        "id": 19,
+        "line": 957,
+        "precode": "double diff = boundaries[1][i] - boundaries[0][i];",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "double diff = boundaries[1][i] + boundaries[0][i];"
+    },
+    {
+        "id": 20,
+        "line": 958,
+        "precode": "res[i] = diff * x[i];",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "res[i] = diff / x[i];"
+    },
+    {
+        "id": 21,
+        "line": 958,
+        "precode": "res[i] = diff * x[i];",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "res[i] = diff + x[i];"
+    },
+    {
+        "id": 22,
+        "line": 958,
+        "precode": "res[i] = diff * x[i];",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "res[i] = diff - x[i];"
+    },
+    {
+        "id": 23,
+        "line": 958,
+        "precode": "res[i] = diff * x[i];",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "res[i] = x[i];"
+    },
+    {
+        "id": 24,
+        "line": 958,
+        "precode": "res[i] = diff * x[i];",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "res[i] = diff;"
+    },
+    {
+        "id": 25,
+        "line": 986,
+        "precode": "if (boundaries == null) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (boundaries != null) {"
+    },
+    {
+        "id": 26,
+        "line": 986,
+        "precode": "if (boundaries == null) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 27,
+        "line": 986,
+        "precode": "if (boundaries == null) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 28,
+        "line": 1001,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 29,
+        "line": 990,
+        "precode": "final double[] bLoEnc = encode(boundaries[0]);",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "final double[] bLoEnc = encode(boundaries[1]);"
+    },
+    {
+        "id": 30,
+        "line": 991,
+        "precode": "final double[] bHiEnc = encode(boundaries[1]);",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "final double[] bHiEnc = encode(boundaries[0]);"
+    },
+    {
+        "id": 31,
+        "line": 993,
+        "precode": "for (int i = 0; i < x.length; i++) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "for (int i = 0; i <= x.length; i++) {"
+    },
+    {
+        "id": 32,
+        "line": 993,
+        "precode": "for (int i = 0; i < x.length; i++) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "for (int i = 1; i < x.length; i++) {"
+    },
+    {
+        "id": 33,
+        "line": 993,
+        "precode": "for (int i = 0; i < x.length; i++) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "for (int i = 0; i < x.length - 1; i++) {"
+    },
+    {
+        "id": 34,
+        "line": 994,
+        "precode": "if (x[i] < bLoEnc[i]) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (x[i] <= bLoEnc[i]) {"
+    },
+    {
+        "id": 35,
+        "line": 994,
+        "precode": "if (x[i] < bLoEnc[i]) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (x[i] > bLoEnc[i]) {"
+    },
+    {
+        "id": 36,
+        "line": 994,
+        "precode": "if (x[i] < bLoEnc[i]) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 37,
+        "line": 998,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 38,
+        "line": 997,
+        "precode": "if (x[i] > bHiEnc[i]) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (x[i] >= bHiEnc[i]) {"
+    },
+    {
+        "id": 39,
+        "line": 997,
+        "precode": "if (x[i] > bHiEnc[i]) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (x[i] < bHiEnc[i]) {"
+    },
+    {
+        "id": 40,
+        "line": 997,
+        "precode": "if (x[i] > bHiEnc[i]) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 41,
+        "line": 998,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 42,
+        "line": 1001,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 43,
+        "line": 993,
+        "precode": "for (int i = 0; i < x.length; i++) {",
+        "filepath": "./defects4j_fixed/Math/Math_18_fixed/src/main/java/org/apache/commons/math3/optimization/direct/CMAESOptimizer.java",
+        "aftercode": "for (int i = 0; i < x.length; ++i) {"
+    }
+]

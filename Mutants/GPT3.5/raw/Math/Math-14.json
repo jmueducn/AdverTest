@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1,
+        "line": 41,
+        "precode": "public Weight(double[] weight) {",
+        "filepath": "./defects4j_fixed/Math/Math_14_fixed/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/Weight.java",
+        "aftercode": "public Weight(double[] weight, int dummy) {"
+    },
+    {
+        "id": 2,
+        "line": 42,
+        "precode": "final int dim = weight.length;",
+        "filepath": "./defects4j_fixed/Math/Math_14_fixed/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/Weight.java",
+        "aftercode": "final int dim = 0;"
+    },
+    {
+        "id": 3,
+        "line": 42,
+        "precode": "final int dim = weight.length;",
+        "filepath": "./defects4j_fixed/Math/Math_14_fixed/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/Weight.java",
+        "aftercode": "int dim = weight.length;"
+    },
+    {
+        "id": 4,
+        "line": 43,
+        "precode": "weightMatrix = new DiagonalMatrix(weight);",
+        "filepath": "./defects4j_fixed/Math/Math_14_fixed/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/Weight.java",
+        "aftercode": "weightMatrix = null;"
+    },
+    {
+        "id": 5,
+        "line": 43,
+        "precode": "weightMatrix = new DiagonalMatrix(weight);",
+        "filepath": "./defects4j_fixed/Math/Math_14_fixed/src/main/java/org/apache/commons/math3/optim/nonlinear/vector/Weight.java",
+        "aftercode": "weightMatrix = new DiagonalMatrix(new double[0]);"
+    }
+]

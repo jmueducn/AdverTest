@@ -1,0 +1,261 @@
+[
+    {
+        "id": 1,
+        "line": 350,
+        "precode": "Map<String, Integer> hdrMap = null;",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "Map<String, Integer> hdrMap = new LinkedHashMap<>();"
+    },
+    {
+        "id": 2,
+        "line": 352,
+        "precode": "if (formatHeader != null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (formatHeader == null) {"
+    },
+    {
+        "id": 3,
+        "line": 353,
+        "precode": "hdrMap = new LinkedHashMap<String, Integer>();",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "hdrMap = new HashMap<String, Integer>();"
+    },
+    {
+        "id": 4,
+        "line": 356,
+        "precode": "if (formatHeader.length == 0) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (formatHeader.length != 0) {"
+    },
+    {
+        "id": 5,
+        "line": 358,
+        "precode": "final CSVRecord nextRecord = this.nextRecord();",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "final CSVRecord nextRecord = null;"
+    },
+    {
+        "id": 6,
+        "line": 359,
+        "precode": "if (nextRecord != null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (nextRecord == null) {"
+    },
+    {
+        "id": 7,
+        "line": 360,
+        "precode": "header = nextRecord.values();",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "header = formatHeader;"
+    },
+    {
+        "id": 8,
+        "line": 363,
+        "precode": "if (this.format.getSkipHeaderRecord()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (!this.format.getSkipHeaderRecord()) {"
+    },
+    {
+        "id": 9,
+        "line": 364,
+        "precode": "this.nextRecord();",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "// this.nextRecord();"
+    },
+    {
+        "id": 10,
+        "line": 366,
+        "precode": "header = formatHeader;",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "header = null;"
+    },
+    {
+        "id": 11,
+        "line": 370,
+        "precode": "if (header != null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (header == null) {"
+    },
+    {
+        "id": 12,
+        "line": 371,
+        "precode": "for (int i = 0; i < header.length; i++) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "for (int i = 0; i <= header.length; i++) {"
+    },
+    {
+        "id": 13,
+        "line": 371,
+        "precode": "for (int i = 0; i < header.length; i++) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "for (int i = 1; i < header.length; i++) {"
+    },
+    {
+        "id": 14,
+        "line": 372,
+        "precode": "if (hdrMap.containsKey(header[i])) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (!hdrMap.containsKey(header[i])) {"
+    },
+    {
+        "id": 15,
+        "line": 373,
+        "precode": "throw new IllegalStateException(\"The header contains duplicate names: \" + Arrays.toString(header));",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "// throw new IllegalStateException(\"The header contains duplicate names: \" + Arrays.toString(header));"
+    },
+    {
+        "id": 16,
+        "line": 375,
+        "precode": "hdrMap.put(header[i], Integer.valueOf(i));",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "hdrMap.put(header[i], Integer.valueOf(i+1));"
+    },
+    {
+        "id": 17,
+        "line": 375,
+        "precode": "hdrMap.put(header[i], Integer.valueOf(i));",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "hdrMap.put(header[i], i);"
+    },
+    {
+        "id": 18,
+        "line": 379,
+        "precode": "return hdrMap;",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 19,
+        "line": 379,
+        "precode": "return hdrMap;",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return new LinkedHashMap<>();"
+    },
+    {
+        "id": 20,
+        "line": 383,
+        "precode": "return this.lexer.isClosed();",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 21,
+        "line": 383,
+        "precode": "return this.lexer.isClosed();",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 22,
+        "line": 383,
+        "precode": "return this.lexer.isClosed();",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return !this.lexer.isClosed();"
+    },
+    {
+        "id": 23,
+        "line": 353,
+        "precode": "hdrMap = new LinkedHashMap<String, Integer>();",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "hdrMap = new TreeMap<String, Integer>();"
+    },
+    {
+        "id": 24,
+        "line": 360,
+        "precode": "header = nextRecord.values();",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "header = new String[0];"
+    },
+    {
+        "id": 25,
+        "line": 364,
+        "precode": "this.nextRecord();",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "this.nextRecord(); this.nextRecord();"
+    },
+    {
+        "id": 26,
+        "line": 371,
+        "precode": "for (int i = 0; i < header.length; i++) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "for (int i = header.length-1; i >= 0; i--) {"
+    },
+    {
+        "id": 27,
+        "line": 372,
+        "precode": "if (hdrMap.containsKey(header[i])) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (hdrMap.containsValue(i)) {"
+    },
+    {
+        "id": 28,
+        "line": 373,
+        "precode": "throw new IllegalStateException(\"The header contains duplicate names: \" + Arrays.toString(header));",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "throw new IllegalArgumentException(\"The header contains duplicate names: \" + Arrays.toString(header));"
+    },
+    {
+        "id": 29,
+        "line": 352,
+        "precode": "if (formatHeader != null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (formatHeader != null && formatHeader.length > 0) {"
+    },
+    {
+        "id": 30,
+        "line": 356,
+        "precode": "if (formatHeader.length == 0) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (formatHeader.length <= 0) {"
+    },
+    {
+        "id": 31,
+        "line": 358,
+        "precode": "final CSVRecord nextRecord = this.nextRecord();",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "CSVRecord nextRecord = this.nextRecord();"
+    },
+    {
+        "id": 32,
+        "line": 363,
+        "precode": "if (this.format.getSkipHeaderRecord()) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (this.format.getSkipHeaderRecord() && formatHeader != null) {"
+    },
+    {
+        "id": 33,
+        "line": 370,
+        "precode": "if (header != null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "if (header != null && hdrMap != null) {"
+    },
+    {
+        "id": 34,
+        "line": 371,
+        "precode": "for (int i = 0; i < header.length; i++) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "for (int i = 0; i < header.length; ++i) {"
+    },
+    {
+        "id": 35,
+        "line": 375,
+        "precode": "hdrMap.put(header[i], Integer.valueOf(i));",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "hdrMap.put(header[i].toLowerCase(), Integer.valueOf(i));"
+    },
+    {
+        "id": 36,
+        "line": 379,
+        "precode": "return hdrMap;",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return Collections.unmodifiableMap(hdrMap);"
+    },
+    {
+        "id": 37,
+        "line": 383,
+        "precode": "return this.lexer.isClosed();",
+        "filepath": "./defects4j_fixed/Csv/Csv_7_fixed/src/main/java/org/apache/commons/csv/CSVParser.java",
+        "aftercode": "return this.lexer != null && this.lexer.isClosed();"
+    }
+]

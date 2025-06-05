@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "line": 1795,
+        "precode": "int index = this.plot.getIndexOf(this);",
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "aftercode": "int index = 0;"
+    },
+    {
+        "id": 2,
+        "line": 1795,
+        "precode": "int index = this.plot.getIndexOf(this);",
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "aftercode": "int index = this.plot.getIndexOf(null);"
+    },
+    {
+        "id": 3,
+        "line": 1796,
+        "precode": "CategoryDataset dataset = null;",
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "aftercode": "CategoryDataset dataset = this.plot.getDataset();"
+    },
+    {
+        "id": 4,
+        "line": 1797,
+        "precode": "if (dataset == null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "aftercode": "if (dataset != null) {"
+    },
+    {
+        "id": 5,
+        "line": 1797,
+        "precode": "if (dataset == null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 6,
+        "line": 1797,
+        "precode": "if (dataset == null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 7,
+        "line": 1821,
+        "precode": "return result;",
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 8,
+        "line": 1821,
+        "precode": "return result;",
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "aftercode": "return new LegendItemCollection();"
+    },
+    {
+        "id": 9,
+        "line": 1800,
+        "precode": "int seriesCount = dataset.getRowCount();",
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "aftercode": "int seriesCount = 0;"
+    },
+    {
+        "id": 10,
+        "line": 1800,
+        "precode": "int seriesCount = dataset.getRowCount();",
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "aftercode": "int seriesCount = dataset.getColumnCount();"
+    },
+    {
+        "id": 11,
+        "line": 1800,
+        "precode": "int seriesCount = dataset.getRowCount();",
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "aftercode": "int seriesCount = dataset.getRowCount() + 1;"
+    },
+    {
+        "id": 12,
+        "line": 1800,
+        "precode": "int seriesCount = dataset.getRowCount();",
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "aftercode": "int seriesCount = dataset.getRowCount() - 1;"
+    },
+    {
+        "id": 13,
+        "line": 1800,
+        "precode": "int seriesCount = dataset.getRowCount();",
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "aftercode": "int seriesCount = dataset.getRowCount() * 2;"
+    },
+    {
+        "id": 14,
+        "line": 1800,
+        "precode": "int seriesCount = dataset.getRowCount();",
+        "filepath": "./defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/chart/renderer/category/AbstractCategoryItemRenderer.java",
+        "aftercode": "int seriesCount = dataset.getRowCount() / 2;"
+    }
+]

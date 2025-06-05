@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "line": 99,
+        "precode": "currentNodePointer = iterator.getNodePointer();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "aftercode": "currentNodePointer = null;"
+    },
+    {
+        "id": 2,
+        "line": 99,
+        "precode": "currentNodePointer = iterator.getNodePointer();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "aftercode": "currentNodePointer = parentContext.getCurrentNodePointer();"
+    },
+    {
+        "id": 3,
+        "line": 100,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "aftercode": "return false;"
+    },
+    {
+        "id": 4,
+        "line": 100,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "aftercode": "return iterator != null;"
+    },
+    {
+        "id": 5,
+        "line": 99,
+        "precode": "currentNodePointer = iterator.getNodePointer();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "aftercode": "currentNodePointer = iterator.getNodePointer().getParent();"
+    },
+    {
+        "id": 6,
+        "line": 100,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "aftercode": "return currentNodePointer != null;"
+    },
+    {
+        "id": 7,
+        "line": 99,
+        "precode": "currentNodePointer = iterator.getNodePointer();",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "aftercode": "currentNodePointer = iterator.getNodePointer().clone();"
+    },
+    {
+        "id": 8,
+        "line": 100,
+        "precode": "return true;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_18_fixed/src/java/org/apache/commons/jxpath/ri/axes/AttributeContext.java",
+        "aftercode": "return getCurrentPosition() > 0;"
+    }
+]

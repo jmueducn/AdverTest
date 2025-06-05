@@ -1,0 +1,500 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 1286,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "for (int series = 0; series < seriesCount; series++) {",
+        "aftercode": "for (int series = 0; series <= seriesCount; series++) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": true,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 1286,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "for (int series = 0; series < seriesCount; series++) {",
+        "aftercode": "for (int series = 1; series < seriesCount; series++) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_SingleValue\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDatasetWithNaN\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_OHLCDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_MixedPositiveNegativeValues\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 1286,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "for (int series = 0; series < seriesCount; series++) {",
+        "aftercode": "for (int series = 0; series < seriesCount; series--) {",
+        "time out": true,
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 1287,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "int itemCount = dataset.getItemCount(series);",
+        "aftercode": "int itemCount = 0;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_SingleValue\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDatasetWithNaN\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_OHLCDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_MixedPositiveNegativeValues\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 1287,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "int itemCount = dataset.getItemCount(series);",
+        "aftercode": "int itemCount = dataset.getItemCount(0);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": true,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 1288,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "for (int item = 0; item < itemCount; item++) {",
+        "aftercode": "for (int item = 0; item <= itemCount; item++) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_SingleValue\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDatasetWithNaN\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_OHLCDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_AllNaNValues\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 1288,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "for (int item = 0; item < itemCount; item++) {",
+        "aftercode": "for (int item = 1; item < itemCount; item++) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_SingleValue\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDatasetWithNaN\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_OHLCDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_MixedPositiveNegativeValues\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 1288,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "for (int item = 0; item < itemCount; item++) {",
+        "aftercode": "for (int item = 0; item < itemCount; item--) {",
+        "time out": true,
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 1249,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double value = ixyd.getYValue(series, item);",
+        "aftercode": "double value = 0.0;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_IncludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 1249,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double value = ixyd.getYValue(series, item);",
+        "aftercode": "double value = ixyd.getYValue(0, item);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": true,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 1250,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double lvalue = ixyd.getStartYValue(series, item);",
+        "aftercode": "double lvalue = 0.0;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_IncludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 12,
+        "line": 1250,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double lvalue = ixyd.getStartYValue(series, item);",
+        "aftercode": "double lvalue = ixyd.getStartYValue(0, item);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": true,
+        "id": 12
+    },
+    {
+        "mutant_id:": 13,
+        "line": 1251,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double uvalue = ixyd.getEndYValue(series, item);",
+        "aftercode": "double uvalue = 0.0;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_IncludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "mutant_id:": 14,
+        "line": 1251,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double uvalue = ixyd.getEndYValue(series, item);",
+        "aftercode": "double uvalue = ixyd.getEndYValue(0, item);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": true,
+        "id": 14
+    },
+    {
+        "mutant_id:": 15,
+        "line": 1290,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "if (!Double.isNaN(value)) {",
+        "aftercode": "if (Double.isNaN(value)) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_SingleValue\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDatasetWithNaN\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_OHLCDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_AllNaNValues\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_MixedPositiveNegativeValues\n",
+        "survived": false,
+        "id": 15
+    },
+    {
+        "mutant_id:": 16,
+        "line": 1290,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "if (!Double.isNaN(value)) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDatasetWithNaN\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_AllNaNValues\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": false,
+        "id": 16
+    },
+    {
+        "mutant_id:": 17,
+        "line": 1291,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "minimum = Math.min(minimum, value);",
+        "aftercode": "minimum = Math.max(minimum, value);",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_SingleValue\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDatasetWithNaN\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_OHLCDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_MixedPositiveNegativeValues\n",
+        "survived": false,
+        "id": 17
+    },
+    {
+        "mutant_id:": 18,
+        "line": 1291,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "minimum = Math.min(minimum, value);",
+        "aftercode": "minimum = value;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDatasetWithNaN\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_OHLCDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_MixedPositiveNegativeValues\n",
+        "survived": false,
+        "id": 18
+    },
+    {
+        "mutant_id:": 19,
+        "line": 1292,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "maximum = Math.max(maximum, value);",
+        "aftercode": "maximum = Math.min(maximum, value);",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_SingleValue\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDatasetWithNaN\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_OHLCDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_MixedPositiveNegativeValues\n",
+        "survived": false,
+        "id": 19
+    },
+    {
+        "mutant_id:": 20,
+        "line": 1292,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "maximum = Math.max(maximum, value);",
+        "aftercode": "maximum = value;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_MixedPositiveNegativeValues\n",
+        "survived": false,
+        "id": 20
+    },
+    {
+        "mutant_id:": 21,
+        "line": 1275,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "if (!Double.isNaN(lvalue)) {",
+        "aftercode": "if (Double.isNaN(lvalue)) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_OHLCDataset_IncludeInterval\n",
+        "survived": false,
+        "id": 21
+    },
+    {
+        "mutant_id:": 22,
+        "line": 1275,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "if (!Double.isNaN(lvalue)) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": true,
+        "id": 22
+    },
+    {
+        "mutant_id:": 23,
+        "line": 1276,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "minimum = Math.min(minimum, lvalue);",
+        "aftercode": "minimum = Math.max(minimum, lvalue);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_OHLCDataset_IncludeInterval\n",
+        "survived": false,
+        "id": 23
+    },
+    {
+        "mutant_id:": 24,
+        "line": 1276,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "minimum = Math.min(minimum, lvalue);",
+        "aftercode": "minimum = lvalue;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_OHLCDataset_IncludeInterval\n",
+        "survived": false,
+        "id": 24
+    },
+    {
+        "mutant_id:": 25,
+        "line": 1258,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "maximum = Math.max(maximum, lvalue);",
+        "aftercode": "maximum = Math.min(maximum, lvalue);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": true,
+        "id": 25
+    },
+    {
+        "mutant_id:": 26,
+        "line": 1258,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "maximum = Math.max(maximum, lvalue);",
+        "aftercode": "maximum = lvalue;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": true,
+        "id": 26
+    },
+    {
+        "mutant_id:": 27,
+        "line": 1278,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "if (!Double.isNaN(uvalue)) {",
+        "aftercode": "if (Double.isNaN(uvalue)) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_OHLCDataset_IncludeInterval\n",
+        "survived": false,
+        "id": 27
+    },
+    {
+        "mutant_id:": 28,
+        "line": 1278,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "if (!Double.isNaN(uvalue)) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": true,
+        "id": 28
+    },
+    {
+        "mutant_id:": 29,
+        "line": 1261,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "minimum = Math.min(minimum, uvalue);",
+        "aftercode": "minimum = Math.max(minimum, uvalue);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_IncludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": false,
+        "id": 29
+    },
+    {
+        "mutant_id:": 30,
+        "line": 1261,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "minimum = Math.min(minimum, uvalue);",
+        "aftercode": "minimum = uvalue;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_IncludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": false,
+        "id": 30
+    },
+    {
+        "mutant_id:": 31,
+        "line": 1279,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "maximum = Math.max(maximum, uvalue);",
+        "aftercode": "maximum = Math.min(maximum, uvalue);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_OHLCDataset_IncludeInterval\n",
+        "survived": false,
+        "id": 31
+    },
+    {
+        "mutant_id:": 32,
+        "line": 1279,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "maximum = Math.max(maximum, uvalue);",
+        "aftercode": "maximum = uvalue;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": true,
+        "id": 32
+    },
+    {
+        "mutant_id:": 33,
+        "line": 1286,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "for (int series = 0; series < seriesCount; series++) {",
+        "aftercode": "for (int series = 0; series < seriesCount; ) {",
+        "time out": true,
+        "survived": false,
+        "id": 33
+    },
+    {
+        "mutant_id:": 34,
+        "line": 1288,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "for (int item = 0; item < itemCount; item++) {",
+        "aftercode": "for (int item = 0; item < itemCount; ) {",
+        "time out": true,
+        "survived": false,
+        "id": 34
+    },
+    {
+        "mutant_id:": 35,
+        "line": 1249,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double value = ixyd.getYValue(series, item);",
+        "aftercode": "double value = ixyd.getYValue(item, series);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_IncludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": false,
+        "id": 35
+    },
+    {
+        "mutant_id:": 36,
+        "line": 1250,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double lvalue = ixyd.getStartYValue(series, item);",
+        "aftercode": "double lvalue = ixyd.getStartYValue(item, series);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_IncludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": false,
+        "id": 36
+    },
+    {
+        "mutant_id:": 37,
+        "line": 1251,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double uvalue = ixyd.getEndYValue(series, item);",
+        "aftercode": "double uvalue = ixyd.getEndYValue(item, series);",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_IncludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n",
+        "survived": false,
+        "id": 37
+    },
+    {
+        "mutant_id:": 38,
+        "line": 1290,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "if (!Double.isNaN(value)) {",
+        "aftercode": "if (!Double.isNaN(value) && false) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_SingleValue\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDatasetWithNaN\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_StandardXYDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_OHLCDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_NullDataset\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_IntervalXYDataset_ExcludeInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset1\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_NullDataset2\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateDomainBounds_WithInterval\n  - gentest.org.jfree.data.general.tests.DatasetUtilitiesTest::testIterateRangeBounds_MixedPositiveNegativeValues\n",
+        "survived": false,
+        "id": 38
+    },
+    {
+        "id": 39,
+        "line": 1286,
+        "precode": "for (int series = 0; series < seriesCount; series++) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "aftercode": "for (int series = 1; series < seriesCount; series++) {"
+    },
+    {
+        "id": 40,
+        "line": 1286,
+        "precode": "for (int series = 0; series < seriesCount; series++) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "aftercode": "for (int series = 0; series < seriesCount + 1; series++) {"
+    },
+    {
+        "id": 41,
+        "line": 1287,
+        "precode": "int itemCount = dataset.getItemCount(series);",
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "aftercode": "int itemCount = dataset.getItemCount(series + 1);"
+    },
+    {
+        "id": 42,
+        "line": 1287,
+        "precode": "int itemCount = dataset.getItemCount(series);",
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "aftercode": "int itemCount = dataset.getItemCount(series - 1);"
+    },
+    {
+        "id": 43,
+        "line": 1250,
+        "precode": "double lvalue = ixyd.getStartYValue(series, item);",
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "aftercode": "double lvalue = ixyd.getStartYValue(series, 0);"
+    },
+    {
+        "id": 44,
+        "line": 1250,
+        "precode": "double lvalue = ixyd.getStartYValue(series, item);",
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "aftercode": "double lvalue = ixyd.getStartYValue(item, series);"
+    },
+    {
+        "id": 45,
+        "line": 1258,
+        "precode": "maximum = Math.max(maximum, lvalue);",
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "aftercode": "maximum = Math.max(lvalue, maximum);"
+    },
+    {
+        "id": 46,
+        "line": 1258,
+        "precode": "maximum = Math.max(maximum, lvalue);",
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "aftercode": "maximum = maximum;"
+    },
+    {
+        "id": 47,
+        "line": 1278,
+        "precode": "if (!Double.isNaN(uvalue)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "aftercode": "if (Double.isNaN(uvalue)) {"
+    },
+    {
+        "id": 48,
+        "line": 1278,
+        "precode": "if (!Double.isNaN(uvalue)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 49,
+        "line": 1279,
+        "precode": "maximum = Math.max(maximum, uvalue);",
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "aftercode": "maximum = Math.max(uvalue, maximum);"
+    },
+    {
+        "id": 50,
+        "line": 1279,
+        "precode": "maximum = Math.max(maximum, uvalue);",
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "aftercode": "maximum = Math.min(maximum, uvalue);"
+    }
+]

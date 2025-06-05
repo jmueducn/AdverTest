@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "line": 1190,
+        "precode": "if (plotState != null && hotspot != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "if (plotState == null && hotspot != null) {"
+    },
+    {
+        "id": 2,
+        "line": 1190,
+        "precode": "if (plotState != null && hotspot != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "if (plotState != null || hotspot != null) {"
+    },
+    {
+        "id": 3,
+        "line": 1190,
+        "precode": "if (plotState != null && hotspot != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "if (plotState != null && hotspot == null) {"
+    },
+    {
+        "id": 4,
+        "line": 1190,
+        "precode": "if (plotState != null && hotspot != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 5,
+        "line": 1190,
+        "precode": "if (plotState != null && hotspot != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 6,
+        "line": 1191,
+        "precode": "ChartRenderingInfo owner = plotState.getOwner();",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "ChartRenderingInfo owner = null;"
+    },
+    {
+        "id": 7,
+        "line": 1191,
+        "precode": "ChartRenderingInfo owner = plotState.getOwner();",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "ChartRenderingInfo owner = plotState;"
+    },
+    {
+        "id": 8,
+        "line": 1192,
+        "precode": "if (owner != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "if (owner == null) {"
+    },
+    {
+        "id": 9,
+        "line": 1192,
+        "precode": "if (owner != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 10,
+        "line": 1192,
+        "precode": "if (owner != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 11,
+        "line": 1193,
+        "precode": "EntityCollection entities = owner.getEntityCollection();",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "EntityCollection entities = null;"
+    },
+    {
+        "id": 12,
+        "line": 1193,
+        "precode": "EntityCollection entities = owner.getEntityCollection();",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "EntityCollection entities = owner;"
+    },
+    {
+        "id": 13,
+        "line": 1194,
+        "precode": "if (entities != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "if (entities == null) {"
+    },
+    {
+        "id": 14,
+        "line": 1194,
+        "precode": "if (entities != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 15,
+        "line": 1194,
+        "precode": "if (entities != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 16,
+        "line": 1200,
+        "precode": "return state;",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 17,
+        "line": 1200,
+        "precode": "return state;",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "return new AxisState();"
+    },
+    {
+        "id": 18,
+        "line": 1200,
+        "precode": "return state;",
+        "filepath": "./defects4j_fixed/Chart/Chart_26_fixed/source/org/jfree/chart/axis/Axis.java",
+        "aftercode": "throw new RuntimeException();"
+    }
+]

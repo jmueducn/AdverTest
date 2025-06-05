@@ -1,0 +1,93 @@
+[
+    {
+        "id": 1,
+        "line": 523,
+        "precode": "if (d == null) { return null; }",
+        "filepath": "./defects4j_fixed/Compress/Compress_46_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X5455_ExtendedTimestamp.java",
+        "aftercode": "if (d != null) { return null; }"
+    },
+    {
+        "id": 2,
+        "line": 523,
+        "precode": "if (d == null) { return null; }",
+        "filepath": "./defects4j_fixed/Compress/Compress_46_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X5455_ExtendedTimestamp.java",
+        "aftercode": "if (true) { return null; }"
+    },
+    {
+        "id": 3,
+        "line": 525,
+        "precode": "return unixTimeToZipLong(d.getTime() / 1000);",
+        "filepath": "./defects4j_fixed/Compress/Compress_46_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X5455_ExtendedTimestamp.java",
+        "aftercode": "return unixTimeToZipLong(d.getTime() * 1000);"
+    },
+    {
+        "id": 4,
+        "line": 525,
+        "precode": "return unixTimeToZipLong(d.getTime() / 1000);",
+        "filepath": "./defects4j_fixed/Compress/Compress_46_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X5455_ExtendedTimestamp.java",
+        "aftercode": "return unixTimeToZipLong(d.getTime());"
+    },
+    {
+        "id": 5,
+        "line": 525,
+        "precode": "return unixTimeToZipLong(d.getTime() / 1000);",
+        "filepath": "./defects4j_fixed/Compress/Compress_46_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X5455_ExtendedTimestamp.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 6,
+        "line": 529,
+        "precode": "if (l < Integer.MIN_VALUE || l > Integer.MAX_VALUE) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_46_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X5455_ExtendedTimestamp.java",
+        "aftercode": "if (l > Integer.MIN_VALUE || l < Integer.MAX_VALUE) {"
+    },
+    {
+        "id": 7,
+        "line": 529,
+        "precode": "if (l < Integer.MIN_VALUE || l > Integer.MAX_VALUE) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_46_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X5455_ExtendedTimestamp.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 8,
+        "line": 529,
+        "precode": "if (l < Integer.MIN_VALUE || l > Integer.MAX_VALUE) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_46_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X5455_ExtendedTimestamp.java",
+        "aftercode": "if (l < Integer.MIN_VALUE && l > Integer.MAX_VALUE) {"
+    },
+    {
+        "id": 9,
+        "line": 530,
+        "precode": "throw new IllegalArgumentException(\"X5455 timestamps must fit in a signed 32 bit integer: \" + l);",
+        "filepath": "./defects4j_fixed/Compress/Compress_46_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X5455_ExtendedTimestamp.java",
+        "aftercode": "throw new NullPointerException(\"X5455 timestamps must fit in a signed 32 bit integer: \" + l);"
+    },
+    {
+        "id": 10,
+        "line": 530,
+        "precode": "throw new IllegalArgumentException(\"X5455 timestamps must fit in a signed 32 bit integer: \" + l);",
+        "filepath": "./defects4j_fixed/Compress/Compress_46_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X5455_ExtendedTimestamp.java",
+        "aftercode": "return new ZipLong(l);"
+    },
+    {
+        "id": 11,
+        "line": 532,
+        "precode": "return new ZipLong(l);",
+        "filepath": "./defects4j_fixed/Compress/Compress_46_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X5455_ExtendedTimestamp.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 12,
+        "line": 532,
+        "precode": "return new ZipLong(l);",
+        "filepath": "./defects4j_fixed/Compress/Compress_46_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X5455_ExtendedTimestamp.java",
+        "aftercode": "return new ZipLong(0);"
+    },
+    {
+        "id": 13,
+        "line": 532,
+        "precode": "return new ZipLong(l);",
+        "filepath": "./defects4j_fixed/Compress/Compress_46_fixed/src/main/java/org/apache/commons/compress/archivers/zip/X5455_ExtendedTimestamp.java",
+        "aftercode": "throw new IllegalArgumentException(\"X5455 timestamps must fit in a signed 32 bit integer: \" + l);"
+    }
+]

@@ -1,0 +1,170 @@
+[
+    {
+        "id": 1,
+        "line": 62,
+        "precode": "Assertions.notNull(out, \"out\");",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "Assertions.notNull(format, \"out\");"
+    },
+    {
+        "id": 2,
+        "line": 62,
+        "precode": "Assertions.notNull(out, \"out\");",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "// Assertions.notNull(out, \"out\");"
+    },
+    {
+        "id": 3,
+        "line": 63,
+        "precode": "Assertions.notNull(format, \"format\");",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "Assertions.notNull(out, \"format\");"
+    },
+    {
+        "id": 4,
+        "line": 63,
+        "precode": "Assertions.notNull(format, \"format\");",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "// Assertions.notNull(format, \"format\");"
+    },
+    {
+        "id": 5,
+        "line": 65,
+        "precode": "this.out = out;",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "this.out = format;"
+    },
+    {
+        "id": 6,
+        "line": 65,
+        "precode": "this.out = out;",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "// this.out = out;"
+    },
+    {
+        "id": 7,
+        "line": 66,
+        "precode": "this.format = format;",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "this.format = out;"
+    },
+    {
+        "id": 8,
+        "line": 66,
+        "precode": "this.format = format;",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "// this.format = format;"
+    },
+    {
+        "id": 9,
+        "line": 67,
+        "precode": "this.format.validate();",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "// this.format.validate();"
+    },
+    {
+        "id": 10,
+        "line": 67,
+        "precode": "this.format.validate();",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "this.out.validate();"
+    },
+    {
+        "id": 11,
+        "line": 70,
+        "precode": "if (format.getHeader() != null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (format.getHeader() == null) {"
+    },
+    {
+        "id": 12,
+        "line": 70,
+        "precode": "if (format.getHeader() != null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 13,
+        "line": 70,
+        "precode": "if (format.getHeader() != null) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 14,
+        "line": 71,
+        "precode": "this.printRecord((Object[]) format.getHeader());",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "this.printRecord((Object[]) out);"
+    },
+    {
+        "id": 15,
+        "line": 71,
+        "precode": "this.printRecord((Object[]) format.getHeader());",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "// this.printRecord((Object[]) format.getHeader());"
+    },
+    {
+        "id": 16,
+        "line": 71,
+        "precode": "this.printRecord((Object[]) format.getHeader());",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "this.printRecord(format.getHeader());"
+    },
+    {
+        "id": 17,
+        "line": 80,
+        "precode": "if (out instanceof Closeable) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 18,
+        "line": 80,
+        "precode": "if (out instanceof Closeable) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 19,
+        "line": 80,
+        "precode": "if (out instanceof Closeable) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "if (format instanceof Closeable) {"
+    },
+    {
+        "id": 20,
+        "line": 81,
+        "precode": "((Closeable) out).close();",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "((Closeable) format).close();"
+    },
+    {
+        "id": 21,
+        "line": 81,
+        "precode": "((Closeable) out).close();",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "out.close();"
+    },
+    {
+        "id": 22,
+        "line": 81,
+        "precode": "((Closeable) out).close();",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "// ((Closeable) out).close();"
+    },
+    {
+        "id": 23,
+        "line": 81,
+        "precode": "((Closeable) out).close();",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "((Closeable) out).toString();"
+    },
+    {
+        "id": 24,
+        "line": 81,
+        "precode": "((Closeable) out).close();",
+        "filepath": "./defects4j_fixed/Csv/Csv_10_fixed/src/main/java/org/apache/commons/csv/CSVPrinter.java",
+        "aftercode": "((Object) out).close();"
+    }
+]

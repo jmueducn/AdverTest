@@ -1,0 +1,482 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 250,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "for (int i = 0; i < size; i++) {",
+        "aftercode": "for (int i = 0; i <= size; i++) {",
+        "fail_test_number": 18,
+        "fail_test": "Failing tests: 18\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_PartialArrayCheck\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnTrueForAllZeros\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_EmptyArray\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZeroWithNegativeValues\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZeros\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_WithAllZeros_ShouldReturnTrue\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutatedCondition\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZerosNonEmptyArray\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutantWithExtendedLoop\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZeros_ShouldReturnTrue\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_DetectsNonZeroAtOddIndices\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnTrueWhenAllElementsAreZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldHandleEmptyArray\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_SizeEqualsArrayLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 250,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "for (int i = 0; i < size; i++) {",
+        "aftercode": "for (int i = 0; i < size + 1; i++) {",
+        "fail_test_number": 18,
+        "fail_test": "Failing tests: 18\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_PartialArrayCheck\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnTrueForAllZeros\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_EmptyArray\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZeroWithNegativeValues\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZeros\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_WithAllZeros_ShouldReturnTrue\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutatedCondition\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZerosNonEmptyArray\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutantWithExtendedLoop\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZeros_ShouldReturnTrue\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_DetectsNonZeroAtOddIndices\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnTrueWhenAllElementsAreZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldHandleEmptyArray\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_SizeEqualsArrayLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 250,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "for (int i = 0; i < size; i++) {",
+        "aftercode": "for (int i = 1; i < size; i++) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnFalseWhenNonZeroElementExists\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_FirstElementNonZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutant\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 250,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "for (int i = 0; i < size; i++) {",
+        "aftercode": "for (int i = 0; i < size; i += 2) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnFalseWhenNonZeroElementExists\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_WithMixedZeroAndNonZeroElements_ShouldReturnFalse\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZeroWithNegativeValues\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutatedCondition\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_LastElementNonZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_DetectsNonZeroAtOddIndices\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_NonZeroElements\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldNotReturnEarlyForZeroElement\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 251,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "if (a[i] != 0) {",
+        "aftercode": "if (a[i] == 0) {",
+        "fail_test_number": 18,
+        "fail_test": "Failing tests: 18\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_PartialArrayCheck\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnFalseWhenNonZeroElementExists\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnTrueForAllZeros\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZeroWithNegativeValues\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZeros\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_WithAllZeros_ShouldReturnTrue\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutatedCondition\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZerosNonEmptyArray\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutantWithExtendedLoop\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_WithAllNonZeros_ShouldReturnFalse\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZeros_ShouldReturnTrue\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_DetectsNonZeroAtOddIndices\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnTrueWhenAllElementsAreZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_SizeEqualsArrayLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 251,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "if (a[i] != 0) {",
+        "aftercode": "if (a[i] > 0) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZeroWithNegativeValues\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 251,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "if (a[i] != 0) {",
+        "aftercode": "if (a[i] < 0) {",
+        "fail_test_number": 18,
+        "fail_test": "Failing tests: 18\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnFalseWhenNonZeroElementExists\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_WithMixedZeroAndNonZeroElements_ShouldReturnFalse\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_FirstElementNonZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZeroWithNegativeValues\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutatedCondition\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_LastElementNonZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_WithAllNonZeros_ShouldReturnFalse\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnFalseWhenNonZeroElementExists1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_DetectsNonZeroAtOddIndices\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectPositiveNonZeroValues\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_NonZeroInMiddle\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutant\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_NonZeroElements\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldNotReturnEarlyForZeroElement\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 251,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "if (a[i] != 0) {",
+        "aftercode": "if (a[i] != 1) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_PartialArrayCheck\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnFalseWhenNonZeroElementExists\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnTrueForAllZeros\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZeroWithNegativeValues\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZeros\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_WithAllZeros_ShouldReturnTrue\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutatedCondition\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZerosNonEmptyArray\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutantWithExtendedLoop\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZeros_ShouldReturnTrue\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_DetectsNonZeroAtOddIndices\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnTrueWhenAllElementsAreZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_SizeEqualsArrayLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 252,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "return false;",
+        "aftercode": "return true;",
+        "fail_test_number": 18,
+        "fail_test": "Failing tests: 18\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnFalseWhenNonZeroElementExists\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_WithMixedZeroAndNonZeroElements_ShouldReturnFalse\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_FirstElementNonZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZeroWithNegativeValues\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutatedCondition\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_LastElementNonZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_WithAllNonZeros_ShouldReturnFalse\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnFalseWhenNonZeroElementExists1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_DetectsNonZeroAtOddIndices\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectPositiveNonZeroValues\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_NonZeroInMiddle\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutant\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_NonZeroElements\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldNotReturnEarlyForZeroElement\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 252,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "return false;",
+        "aftercode": "return a[i] == 0;",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 11,
+        "line": 255,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "return true;",
+        "aftercode": "return false;",
+        "fail_test_number": 18,
+        "fail_test": "Failing tests: 18\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_PartialArrayCheck\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnTrueForAllZeros\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_EmptyArray\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZeroWithNegativeValues\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZeros\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_WithAllZeros_ShouldReturnTrue\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutatedCondition\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZerosNonEmptyArray\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutantWithExtendedLoop\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZeros_ShouldReturnTrue\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_DetectsNonZeroAtOddIndices\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnTrueWhenAllElementsAreZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldHandleEmptyArray\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_SizeEqualsArrayLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 255,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "return true;",
+        "aftercode": "return size == 0;",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_PartialArrayCheck\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnTrueForAllZeros\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZeroWithNegativeValues\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZeros\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_WithAllZeros_ShouldReturnTrue\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutatedCondition\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZerosNonEmptyArray\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldDetectMutantWithExtendedLoop\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_AllZeros_ShouldReturnTrue\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_DetectsNonZeroAtOddIndices\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_ShouldReturnTrueWhenAllElementsAreZero\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero_SizeEqualsArrayLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 274,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "final char[] cs = s.toCharArray();",
+        "aftercode": "final char[] cs = s.substring(0, 1).toCharArray();",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_EmptyString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 275,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "final char[] chars = cs.length <= MAX_SANITIZED_NAME_LENGTH ? cs : Arrays.copyOf(cs, MAX_SANITIZED_NAME_LENGTH);",
+        "aftercode": "final char[] chars = cs.length < MAX_SANITIZED_NAME_LENGTH ? cs : Arrays.copyOf(cs, MAX_SANITIZED_NAME_LENGTH);",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 15,
+        "line": 275,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "final char[] chars = cs.length <= MAX_SANITIZED_NAME_LENGTH ? cs : Arrays.copyOf(cs, MAX_SANITIZED_NAME_LENGTH);",
+        "aftercode": "final char[] chars = cs.length <= MAX_SANITIZED_NAME_LENGTH + 1 ? cs : Arrays.copyOf(cs, MAX_SANITIZED_NAME_LENGTH);",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 16,
+        "line": 275,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "final char[] chars = cs.length <= MAX_SANITIZED_NAME_LENGTH ? cs : Arrays.copyOf(cs, MAX_SANITIZED_NAME_LENGTH);",
+        "aftercode": "final char[] chars = cs.length <= MAX_SANITIZED_NAME_LENGTH ? cs : Arrays.copyOf(cs, MAX_SANITIZED_NAME_LENGTH - 1);",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 276,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "if (cs.length > MAX_SANITIZED_NAME_LENGTH) {",
+        "aftercode": "if (cs.length >= MAX_SANITIZED_NAME_LENGTH) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 276,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "if (cs.length > MAX_SANITIZED_NAME_LENGTH) {",
+        "aftercode": "if (cs.length > MAX_SANITIZED_NAME_LENGTH + 1) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 19,
+        "line": 276,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "if (cs.length > MAX_SANITIZED_NAME_LENGTH) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_EmptyString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 20,
+        "line": 277,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "for (int i = MAX_SANITIZED_NAME_LENGTH - 3; i < MAX_SANITIZED_NAME_LENGTH; i++) {",
+        "aftercode": "for (int i = MAX_SANITIZED_NAME_LENGTH - 4; i < MAX_SANITIZED_NAME_LENGTH; i++) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 277,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "for (int i = MAX_SANITIZED_NAME_LENGTH - 3; i < MAX_SANITIZED_NAME_LENGTH; i++) {",
+        "aftercode": "for (int i = MAX_SANITIZED_NAME_LENGTH - 3; i <= MAX_SANITIZED_NAME_LENGTH; i++) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 22,
+        "line": 277,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "for (int i = MAX_SANITIZED_NAME_LENGTH - 3; i < MAX_SANITIZED_NAME_LENGTH; i++) {",
+        "aftercode": "for (int i = MAX_SANITIZED_NAME_LENGTH - 3; i < MAX_SANITIZED_NAME_LENGTH - 1; i++) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 23,
+        "line": 278,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "chars[i] = '.';",
+        "aftercode": "chars[i] = '?';",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 24,
+        "line": 278,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "chars[i] = '.';",
+        "aftercode": "chars[i] = ' ';",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 25,
+        "line": 278,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "chars[i] = '.';",
+        "aftercode": "chars[i] = '*';",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 26,
+        "line": 282,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "final StringBuilder sb = new StringBuilder();",
+        "aftercode": "final StringBuilder sb = new StringBuilder(len);",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 27,
+        "line": 283,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "for (int i = 0; i < len; i++) {",
+        "aftercode": "for (int i = 0; i <= len; i++) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_EmptyString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 28,
+        "line": 283,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "for (int i = 0; i < len; i++) {",
+        "aftercode": "for (int i = 1; i < len; i++) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 29,
+        "line": 283,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "for (int i = 0; i < len; i++) {",
+        "aftercode": "for (int i = 0; i < len + 1; i++) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_EmptyString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 30,
+        "line": 284,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "final char c = chars[i];",
+        "aftercode": "final char c = chars[0];",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 31,
+        "line": 285,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "if (!Character.isISOControl(c)) {",
+        "aftercode": "if (Character.isISOControl(c)) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 32,
+        "line": 285,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "if (!Character.isISOControl(c)) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 33,
+        "line": 285,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "if (!Character.isISOControl(c)) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 34,
+        "line": 286,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "Character.UnicodeBlock block = Character.UnicodeBlock.of(c);",
+        "aftercode": "Character.UnicodeBlock block = null;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 35,
+        "line": 287,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "if (block != null && block != Character.UnicodeBlock.SPECIALS) {",
+        "aftercode": "if (block != null || block != Character.UnicodeBlock.SPECIALS) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 36,
+        "line": 287,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "if (block != null && block != Character.UnicodeBlock.SPECIALS) {",
+        "aftercode": "if (block == null && block != Character.UnicodeBlock.SPECIALS) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 37,
+        "line": 287,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "if (block != null && block != Character.UnicodeBlock.SPECIALS) {",
+        "aftercode": "if (block != null && block == Character.UnicodeBlock.SPECIALS) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 38,
+        "line": 287,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "if (block != null && block != Character.UnicodeBlock.SPECIALS) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 39,
+        "line": 288,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "sb.append(c);",
+        "aftercode": "sb.append('?');",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 40,
+        "line": 288,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "sb.append(c);",
+        "aftercode": "sb.append(Character.toUpperCase(c));",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 41,
+        "line": 288,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "sb.append(c);",
+        "aftercode": "sb.append(Character.toLowerCase(c));",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 42,
+        "line": 289,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "continue;",
+        "aftercode": "break;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 43,
+        "line": 289,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "continue;",
+        "aftercode": "return sb.toString();",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_ShortStringNoSpecialChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringWithinMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithValidUnicode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 44,
+        "line": 292,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "sb.append('?');",
+        "aftercode": "sb.append('!');",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 45,
+        "line": 292,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "sb.append('?');",
+        "aftercode": "sb.append('.');",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 46,
+        "line": 292,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "sb.append('?');",
+        "aftercode": "sb.append(c);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 47,
+        "line": 292,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "sb.append('?');",
+        "aftercode": "sb.append(' ');",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 48,
+        "line": 294,
+        "filepath": "./defects4j_fixed/Compress/Compress_39_fixed/src/main/java/org/apache/commons/compress/utils/ArchiveUtils.java",
+        "precode": "return sb.toString();",
+        "aftercode": "return s;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithExactMaxLength\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithSpecialsUnicodeBlock\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitizeWithLengthExactlyMaxPlusOne\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_MixedCharactersLongString\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_StringWithControlChars\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testIsArrayZero1\n  - gentest.org.apache.commons.compress.utils.tests.ArchiveUtilsTest::testSanitize_LongStringExceedsMaxLength\n",
+        "survived": false
+    }
+]

@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "line": 941,
+        "precode": "endIndex = -(endIndex + 1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "endIndex = -(endIndex);"
+    },
+    {
+        "id": 2,
+        "line": 941,
+        "precode": "endIndex = -(endIndex + 1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "endIndex = -(endIndex - 1);"
+    },
+    {
+        "id": 3,
+        "line": 941,
+        "precode": "endIndex = -(endIndex + 1);",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "endIndex = endIndex + 1;"
+    },
+    {
+        "id": 4,
+        "line": 942,
+        "precode": "endIndex = endIndex - 1;",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "endIndex = endIndex + 1;"
+    },
+    {
+        "id": 5,
+        "line": 942,
+        "precode": "endIndex = endIndex - 1;",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "endIndex = endIndex;"
+    },
+    {
+        "id": 6,
+        "line": 944,
+        "precode": "if ((endIndex < 0)  || (endIndex < startIndex)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "if ((endIndex <= 0)  || (endIndex < startIndex)) {"
+    },
+    {
+        "id": 7,
+        "line": 944,
+        "precode": "if ((endIndex < 0)  || (endIndex < startIndex)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "if ((endIndex < 0)  && (endIndex < startIndex)) {"
+    },
+    {
+        "id": 8,
+        "line": 944,
+        "precode": "if ((endIndex < 0)  || (endIndex < startIndex)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "if ((endIndex < 0)  || (endIndex <= startIndex)) {"
+    },
+    {
+        "id": 9,
+        "line": 944,
+        "precode": "if ((endIndex < 0)  || (endIndex < startIndex)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "if ((endIndex < 0)  || (endIndex > startIndex)) {"
+    },
+    {
+        "id": 10,
+        "line": 944,
+        "precode": "if ((endIndex < 0)  || (endIndex < startIndex)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "if ((endIndex >= 0)  || (endIndex < startIndex)) {"
+    },
+    {
+        "id": 11,
+        "line": 945,
+        "precode": "emptyRange = true;",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "emptyRange = false;"
+    },
+    {
+        "id": 12,
+        "line": 945,
+        "precode": "emptyRange = true;",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "emptyRange = !emptyRange;"
+    },
+    {
+        "id": 13,
+        "line": 945,
+        "precode": "emptyRange = true;",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "emptyRange = (endIndex < startIndex);"
+    },
+    {
+        "id": 14,
+        "line": 945,
+        "precode": "emptyRange = true;",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "emptyRange = (endIndex == startIndex);"
+    }
+]

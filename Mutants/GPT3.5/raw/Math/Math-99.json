@@ -1,0 +1,165 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 715,
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "precode": "if (a==0 || b==0){",
+        "aftercode": "if (a==0 && b==0){",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_OverflowCaseBothMinValue\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_LargeNumbers\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_EdgeCaseValues\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 715,
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "precode": "if (a==0 || b==0){",
+        "aftercode": "if (a!=0 || b!=0){",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_OneIsMultipleOfOther\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_EqualValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_TypicalValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_LargeValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_ZeroValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_OverflowCaseBothMinValue\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_LargeNumbers\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_EdgeCaseValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_PrimeNumbers\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_NegativeValues\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 716,
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "precode": "return 0;",
+        "aftercode": "return 1;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_EqualValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_ZeroValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_OverflowCaseBothMinValue\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_LargeNumbers\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_EdgeCaseValues\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 718,
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "precode": "int lcm = Math.abs(mulAndCheck(a / gcd(a, b), b));",
+        "aftercode": "int lcm = Math.abs(mulAndCheck(a * gcd(a, b), b));",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_OneIsMultipleOfOther\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_EqualValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_OverflowCaseBothMinValue\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_LargeNumbers\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 718,
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "precode": "int lcm = Math.abs(mulAndCheck(a / gcd(a, b), b));",
+        "aftercode": "int lcm = Math.abs(mulAndCheck(a + gcd(a, b), b));",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_OneIsMultipleOfOther\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_EqualValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_TypicalValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_LargeValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_OverflowCaseBothMinValue\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_LargeNumbers\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_EdgeCaseValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_PrimeNumbers\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_NegativeValues\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 718,
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "precode": "int lcm = Math.abs(mulAndCheck(a / gcd(a, b), b));",
+        "aftercode": "int lcm = Math.abs(mulAndCheck(a / gcd(a, b), a));",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_OneIsMultipleOfOther\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_TypicalValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_LargeValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_OverflowCaseBothMinValue\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_LargeNumbers\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_EdgeCaseValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_PrimeNumbers\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_NegativeValues\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 718,
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "precode": "int lcm = Math.abs(mulAndCheck(a / gcd(a, b), b));",
+        "aftercode": "int lcm = Math.abs(mulAndCheck(a / gcd(b, a), b));",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_OverflowCaseBothMinValue\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_LargeNumbers\n",
+        "survived": true,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 719,
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "precode": "if (lcm == Integer.MIN_VALUE){",
+        "aftercode": "if (lcm != Integer.MIN_VALUE){",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_OneIsMultipleOfOther\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_EqualValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_TypicalValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_LargeValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_OverflowCaseBothMinValue\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_LargeNumbers\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_EdgeCaseValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_PrimeNumbers\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_NegativeValues\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 719,
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "precode": "if (lcm == Integer.MIN_VALUE){",
+        "aftercode": "if (lcm == Integer.MAX_VALUE){",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_OverflowCaseBothMinValue\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_LargeNumbers\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_EdgeCaseValues\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 720,
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "precode": "throw new ArithmeticException(\"overflow: lcm is 2^31\");",
+        "aftercode": "throw new ArithmeticException(\"underflow: lcm is 2^31\");",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_OverflowCaseBothMinValue\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_LargeNumbers\n",
+        "survived": true,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 722,
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "precode": "return lcm;",
+        "aftercode": "return lcm + 1;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_OneIsMultipleOfOther\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_EqualValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_TypicalValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_LargeValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_OverflowCaseBothMinValue\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testGcd_LargeNumbers\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_EdgeCaseValues\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_PrimeNumbers\n  - gentest.org.apache.commons.math.util.tests.MathUtilsTest::testLcm_NegativeValues\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "id": 12,
+        "line": 718,
+        "precode": "int lcm = Math.abs(mulAndCheck(a / gcd(a, b), b));",
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "int lcm = Math.abs(mulAndCheck(b / gcd(a, b), a));"
+    },
+    {
+        "id": 13,
+        "line": 718,
+        "precode": "int lcm = Math.abs(mulAndCheck(a / gcd(a, b), b));",
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "int lcm = Math.abs(a / gcd(a, b) * b);"
+    },
+    {
+        "id": 14,
+        "line": 544,
+        "precode": "throw MathRuntimeException.createArithmeticException(",
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "throw new ArithmeticException("
+    },
+    {
+        "id": 15,
+        "line": 544,
+        "precode": "throw MathRuntimeException.createArithmeticException(",
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "throw MathRuntimeException.createIllegalArgumentException("
+    },
+    {
+        "id": 16,
+        "line": 720,
+        "precode": "throw new ArithmeticException(\"overflow: lcm is 2^31\");",
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "throw new ArithmeticException(\"overflow: least common multiple is 2^31\");"
+    },
+    {
+        "id": 17,
+        "line": 720,
+        "precode": "throw new ArithmeticException(\"overflow: lcm is 2^31\");",
+        "filepath": "./defects4j_fixed/Math/Math_99_fixed/src/java/org/apache/commons/math/util/MathUtils.java",
+        "aftercode": "throw new RuntimeException(\"overflow: lcm is 2^31\");"
+    }
+]

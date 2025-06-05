@@ -1,0 +1,114 @@
+[
+    {
+        "id": 1,
+        "line": 135,
+        "precode": "Object fieldValue = field.get(value);",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "Object fieldValue = null;"
+    },
+    {
+        "id": 2,
+        "line": 135,
+        "precode": "Object fieldValue = field.get(value);",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "Object fieldValue = value;"
+    },
+    {
+        "id": 3,
+        "line": 122,
+        "precode": "TypeAdapter t = jsonAdapterPresent ? typeAdapter",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "TypeAdapter t = jsonAdapterPresent ? null"
+    },
+    {
+        "id": 4,
+        "line": 122,
+        "precode": "TypeAdapter t = jsonAdapterPresent ? typeAdapter",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "TypeAdapter t = !jsonAdapterPresent ? typeAdapter"
+    },
+    {
+        "id": 5,
+        "line": 123,
+        "precode": ": new TypeAdapterRuntimeTypeWrapper(context, typeAdapter, fieldType.getType());",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": ": typeAdapter;"
+    },
+    {
+        "id": 6,
+        "line": 123,
+        "precode": ": new TypeAdapterRuntimeTypeWrapper(context, typeAdapter, fieldType.getType());",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": ": new TypeAdapterRuntimeTypeWrapper(null, typeAdapter, fieldType.getType());"
+    },
+    {
+        "id": 7,
+        "line": 124,
+        "precode": "t.write(writer, fieldValue);",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "if (fieldValue != null) t.write(writer, fieldValue);"
+    },
+    {
+        "id": 8,
+        "line": 124,
+        "precode": "t.write(writer, fieldValue);",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "t.write(writer, null);"
+    },
+    {
+        "id": 9,
+        "line": 124,
+        "precode": "t.write(writer, fieldValue);",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "t.write(writer, value);"
+    },
+    {
+        "id": 10,
+        "line": 126,
+        "precode": "@Override void read(JsonReader reader, Object value)",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "@Override void read(JsonReader reader, Object value) throws IOException"
+    },
+    {
+        "id": 11,
+        "line": 128,
+        "precode": "Object fieldValue = typeAdapter.read(reader);",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "Object fieldValue = null;"
+    },
+    {
+        "id": 12,
+        "line": 128,
+        "precode": "Object fieldValue = typeAdapter.read(reader);",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "Object fieldValue = reader.nextString();"
+    },
+    {
+        "id": 13,
+        "line": 129,
+        "precode": "if (fieldValue != null || !isPrimitive) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "if (fieldValue == null || !isPrimitive) {"
+    },
+    {
+        "id": 14,
+        "line": 129,
+        "precode": "if (fieldValue != null || !isPrimitive) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 15,
+        "line": 130,
+        "precode": "field.set(value, fieldValue);",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "field.set(null, fieldValue);"
+    },
+    {
+        "id": 16,
+        "line": 130,
+        "precode": "field.set(value, fieldValue);",
+        "filepath": "./defects4j_fixed/Gson/Gson_10_fixed/gson/src/main/java/com/google/gson/internal/bind/ReflectiveTypeAdapterFactory.java",
+        "aftercode": "field.set(value, null);"
+    }
+]

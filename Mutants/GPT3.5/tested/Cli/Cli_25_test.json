@@ -1,0 +1,181 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 822,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (nextLineTabStop >= width)",
+        "aftercode": "if (nextLineTabStop > width)",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 822,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (nextLineTabStop >= width)",
+        "aftercode": "if (nextLineTabStop <= width)",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 822,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (nextLineTabStop >= width)",
+        "aftercode": "if (nextLineTabStop == width)",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 822,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (nextLineTabStop >= width)",
+        "aftercode": "if (nextLineTabStop != width)",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 822,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (nextLineTabStop >= width)",
+        "aftercode": "if (true)",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopReset1\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopAdjustment\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_DetectsWidthMutant\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedTextReturnsStringBufferWhenNoWrapNeeded\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedTextDetectsPosZeroMutant\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_SingleWrap\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 822,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (nextLineTabStop >= width)",
+        "aftercode": "if (false)",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 825,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "nextLineTabStop = 1;",
+        "aftercode": "nextLineTabStop = 0;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_DetectsNextLineTabStopMutation1\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopReset1\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopReset2\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopGreaterThanWidth\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopReset\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_WhenNextLineTabStopEqualsWidth_ShouldResetTabStop\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopAdjustment\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_DetectsWidthMutant\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_DetectsNextLineTabStopMutation\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopEqualsWidth\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedTextReturnsStringBufferWhenNoWrapNeeded\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopGreaterThanWidth1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 825,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "nextLineTabStop = 1;",
+        "aftercode": "nextLineTabStop = width;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 825,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "nextLineTabStop = 1;",
+        "aftercode": "nextLineTabStop = nextLineTabStop;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 825,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "nextLineTabStop = 1;",
+        "aftercode": "nextLineTabStop = -1;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_DetectsNextLineTabStopMutation1\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopReset1\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopReset2\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopGreaterThanWidth\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopReset\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_WhenNextLineTabStopEqualsWidth_ShouldResetTabStop\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopAdjustment\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_DetectsWidthMutant\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_DetectsNextLineTabStopMutation\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopEqualsWidth\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedTextReturnsStringBufferWhenNoWrapNeeded\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopGreaterThanWidth1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 825,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "nextLineTabStop = 1;",
+        "aftercode": "nextLineTabStop = width + 1;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 825,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "nextLineTabStop = 1;",
+        "aftercode": "nextLineTabStop = nextLineTabStop + 1;",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 822,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (nextLineTabStop >= width)",
+        "aftercode": "if (nextLineTabStop >= width + 1)",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 822,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "if (nextLineTabStop >= width)",
+        "aftercode": "if (nextLineTabStop >= 0)",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopReset1\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopAdjustment\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_DetectsWidthMutant\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedTextReturnsStringBufferWhenNoWrapNeeded\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedTextDetectsPosZeroMutant\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_SingleWrap\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 816,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "sb.append(rtrim(text));",
+        "aftercode": "sb.append(text);",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopReset1\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopAdjustment\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_DetectsWidthMutant\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedTextReturnsStringBufferWhenNoWrapNeeded\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 16,
+        "line": 816,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "sb.append(rtrim(text));",
+        "aftercode": "sb.insert(0, rtrim(text));",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopReset1\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopAdjustment\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_DetectsWidthMutant\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_AppendVsInsertMutation\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedTextReturnsStringBufferWhenNoWrapNeeded\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 818,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "return sb;",
+        "aftercode": "return null;",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopReset1\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_DetectsRtrimMutation\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopAdjustment\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_DetectsWidthMutant\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_AppendVsInsertMutation\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedTextReturnsStringBufferWhenNoWrapNeeded\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 846,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "pos = width;",
+        "aftercode": "pos = width + 1;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopReset1\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_NextLineTabStopAdjustment\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedText_DetectsWidthMutant\n  - gentest.org.apache.commons.cli.tests.HelpFormatterTest::testRenderWrappedTextReturnsStringBufferWhenNoWrapNeeded\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 20,
+        "line": 846,
+        "filepath": "./defects4j_fixed/Cli/Cli_25_fixed/src/java/org/apache/commons/cli/HelpFormatter.java",
+        "precode": "pos = width;",
+        "aftercode": "pos = 0;",
+        "time out": true,
+        "survived": false
+    }
+]

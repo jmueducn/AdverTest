@@ -1,0 +1,506 @@
+[
+    {
+        "id": 1,
+        "line": 6,
+        "precode": "markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(index));",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "markers = (ArrayList) this.backgroundDomainMarkers.get(index);"
+    },
+    {
+        "id": 2,
+        "line": 6,
+        "precode": "markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(index));",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(index + 1));"
+    },
+    {
+        "id": 3,
+        "line": 6,
+        "precode": "markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(index));",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(index - 1));"
+    },
+    {
+        "id": 4,
+        "line": 2166,
+        "precode": "if (markers == null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "if (markers != null) {"
+    },
+    {
+        "id": 5,
+        "line": 2166,
+        "precode": "if (markers == null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "if (markers.isEmpty()) {"
+    },
+    {
+        "id": 6,
+        "line": 2167,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 7,
+        "line": 2167,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "return notify;"
+    },
+    {
+        "id": 8,
+        "line": 2169,
+        "precode": "boolean removed = markers.remove(marker);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "boolean removed = !markers.remove(marker);"
+    },
+    {
+        "id": 9,
+        "line": 2169,
+        "precode": "boolean removed = markers.remove(marker);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "boolean removed = markers.contains(marker);"
+    },
+    {
+        "id": 10,
+        "line": 2169,
+        "precode": "boolean removed = markers.remove(marker);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "boolean removed = markers.add(marker);"
+    },
+    {
+        "id": 11,
+        "line": 2170,
+        "precode": "if (removed && notify) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "if (removed || notify) {"
+    },
+    {
+        "id": 12,
+        "line": 2170,
+        "precode": "if (removed && notify) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "if (!removed && notify) {"
+    },
+    {
+        "id": 13,
+        "line": 2170,
+        "precode": "if (removed && notify) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "if (removed) {"
+    },
+    {
+        "id": 14,
+        "line": 2171,
+        "precode": "fireChangeEvent();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "// fireChangeEvent();"
+    },
+    {
+        "id": 15,
+        "line": 2171,
+        "precode": "fireChangeEvent();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "System.out.println(\"Change event fired\");"
+    },
+    {
+        "id": 16,
+        "line": 2171,
+        "precode": "fireChangeEvent();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "fireChangeEvent(); fireChangeEvent();"
+    },
+    {
+        "id": 17,
+        "line": 6,
+        "precode": "markers = (ArrayList) this.backgroundDomainMarkers.get(new Integer(index));",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "markers = new ArrayList();"
+    },
+    {
+        "id": 18,
+        "line": 2169,
+        "precode": "boolean removed = markers.remove(marker);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "boolean removed = markers.removeAll(Collections.singleton(marker));"
+    },
+    {
+        "id": 19,
+        "line": 7,
+        "precode": "markers = (ArrayList) this.backgroundRangeMarkers.get(new Integer(index));",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "markers = (ArrayList) this.backgroundRangeMarkers.get(index);"
+    },
+    {
+        "id": 20,
+        "line": 7,
+        "precode": "markers = (ArrayList) this.backgroundRangeMarkers.get(new Integer(index));",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "markers = (ArrayList) this.backgroundRangeMarkers.get(new Double(index));"
+    },
+    {
+        "id": 21,
+        "line": 7,
+        "precode": "markers = (ArrayList) this.backgroundRangeMarkers.get(new Integer(index));",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "markers = (ArrayList) this.backgroundRangeMarkers.get(new Integer(index + 1));"
+    },
+    {
+        "id": 22,
+        "line": 7,
+        "precode": "markers = (ArrayList) this.backgroundRangeMarkers.get(new Integer(index));",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "markers = (ArrayList) this.backgroundRangeMarkers.get(new Integer(index - 1));"
+    },
+    {
+        "id": 23,
+        "line": 2451,
+        "precode": "if (markers == null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "if (markers != null) {"
+    },
+    {
+        "id": 24,
+        "line": 2451,
+        "precode": "if (markers == null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "if (markers.isEmpty()) {"
+    },
+    {
+        "id": 25,
+        "line": 2452,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "return true;"
+    },
+    {
+        "id": 26,
+        "line": 2452,
+        "precode": "return false;",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "return markers.isEmpty();"
+    },
+    {
+        "id": 27,
+        "line": 2454,
+        "precode": "boolean removed = markers.remove(marker);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "boolean removed = markers.contains(marker);"
+    },
+    {
+        "id": 28,
+        "line": 2454,
+        "precode": "boolean removed = markers.remove(marker);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "boolean removed = !markers.remove(marker);"
+    },
+    {
+        "id": 29,
+        "line": 2454,
+        "precode": "boolean removed = markers.remove(marker);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "boolean removed = markers.remove(null);"
+    },
+    {
+        "id": 30,
+        "line": 2455,
+        "precode": "if (removed && notify) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "if (!removed && notify) {"
+    },
+    {
+        "id": 31,
+        "line": 2455,
+        "precode": "if (removed && notify) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "if (removed || notify) {"
+    },
+    {
+        "id": 32,
+        "line": 2455,
+        "precode": "if (removed && notify) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "if (removed) {"
+    },
+    {
+        "id": 33,
+        "line": 2455,
+        "precode": "if (removed && notify) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "if (notify) {"
+    },
+    {
+        "id": 34,
+        "line": 2456,
+        "precode": "fireChangeEvent();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "// fireChangeEvent();"
+    },
+    {
+        "id": 35,
+        "line": 2456,
+        "precode": "fireChangeEvent();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "fireChangeEvent(marker);"
+    },
+    {
+        "id": 36,
+        "line": 2456,
+        "precode": "fireChangeEvent();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "System.out.println(\"Change event fired\");"
+    },
+    {
+        "id": 37,
+        "line": 2274,
+        "precode": "Set keys = this.backgroundRangeMarkers.keySet();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "Set keys = new HashSet();"
+    },
+    {
+        "id": 38,
+        "line": 2284,
+        "precode": "Iterator iterator = keys.iterator();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "Iterator iterator = Collections.emptyIterator();"
+    },
+    {
+        "id": 39,
+        "line": 2286,
+        "precode": "Integer key = (Integer) iterator.next();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "Integer key = 0;"
+    },
+    {
+        "id": 40,
+        "line": 2287,
+        "precode": "clearRangeMarkers(key.intValue());",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "clearRangeMarkers(0);"
+    },
+    {
+        "id": 41,
+        "line": 2280,
+        "precode": "this.backgroundRangeMarkers.clear();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "// this.backgroundRangeMarkers.clear();"
+    },
+    {
+        "id": 42,
+        "line": 2283,
+        "precode": "Set keys = this.foregroundRangeMarkers.keySet();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "Set keys = new TreeSet();"
+    },
+    {
+        "id": 43,
+        "line": 2284,
+        "precode": "Iterator iterator = keys.iterator();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "Iterator iterator = null;"
+    },
+    {
+        "id": 44,
+        "line": 2286,
+        "precode": "Integer key = (Integer) iterator.next();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "Integer key = 1;"
+    },
+    {
+        "id": 45,
+        "line": 2287,
+        "precode": "clearRangeMarkers(key.intValue());",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "clearRangeMarkers(1);"
+    },
+    {
+        "id": 46,
+        "line": 2289,
+        "precode": "this.foregroundRangeMarkers.clear();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "// this.foregroundRangeMarkers.clear();"
+    },
+    {
+        "id": 47,
+        "line": 2291,
+        "precode": "fireChangeEvent();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "// fireChangeEvent();"
+    },
+    {
+        "id": 48,
+        "line": 2274,
+        "precode": "Set keys = this.backgroundRangeMarkers.keySet();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "Set keys = null;"
+    },
+    {
+        "id": 49,
+        "line": 2284,
+        "precode": "Iterator iterator = keys.iterator();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "Iterator iterator = keys.descendingIterator();"
+    },
+    {
+        "id": 50,
+        "line": 2287,
+        "precode": "clearRangeMarkers(key.intValue());",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "continue;"
+    },
+    {
+        "id": 51,
+        "line": 2283,
+        "precode": "Set keys = this.foregroundRangeMarkers.keySet();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "Set keys = new LinkedHashSet();"
+    },
+    {
+        "id": 52,
+        "line": 2284,
+        "precode": "Iterator iterator = keys.iterator();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "Iterator iterator = keys.listIterator();"
+    },
+    {
+        "id": 53,
+        "line": 2287,
+        "precode": "clearRangeMarkers(key.intValue());",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "break;"
+    },
+    {
+        "id": 54,
+        "line": 2291,
+        "precode": "fireChangeEvent();",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "fireChangeEvent(null);"
+    },
+    {
+        "id": 55,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value, false);"
+    },
+    {
+        "id": 56,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value + 1, true);"
+    },
+    {
+        "id": 57,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value - 1, true);"
+    },
+    {
+        "id": 58,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(0, true);"
+    },
+    {
+        "id": 59,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value * 2, true);"
+    },
+    {
+        "id": 60,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value / 2, true);"
+    },
+    {
+        "id": 61,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(-value, true);"
+    },
+    {
+        "id": 62,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value, false);"
+    },
+    {
+        "id": 63,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value, value > 0);"
+    },
+    {
+        "id": 64,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value, !true);"
+    },
+    {
+        "id": 65,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value, value < 0);"
+    },
+    {
+        "id": 66,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value, value == 0);"
+    },
+    {
+        "id": 67,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value, value != 0);"
+    },
+    {
+        "id": 68,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value, value >= 0);"
+    },
+    {
+        "id": 69,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value, value <= 0);"
+    },
+    {
+        "id": 70,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value, value == 1);"
+    },
+    {
+        "id": 71,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value, value != 1);"
+    },
+    {
+        "id": 72,
+        "line": 2535,
+        "precode": "setRangeCrosshairValue(value, true);",
+        "filepath": "./defects4j_fixed/Chart/Chart_14_fixed/source/org/jfree/chart/plot/CategoryPlot.java",
+        "aftercode": "setRangeCrosshairValue(value, value > 1);"
+    }
+]

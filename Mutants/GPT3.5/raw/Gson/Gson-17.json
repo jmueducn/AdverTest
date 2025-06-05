@@ -1,0 +1,567 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 99,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "if (in.peek() == JsonToken.NULL) {",
+        "aftercode": "if (in.peek() != JsonToken.NULL) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_NullValue\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_TimestampType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_InvalidDateString\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 99,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "if (in.peek() == JsonToken.NULL) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_NullValue\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 99,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "if (in.peek() == JsonToken.NULL) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_TimestampType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_InvalidDateString\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 100,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "in.nextNull();",
+        "aftercode": "// in.nextNull();",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_NullValue\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 100,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "in.nextNull();",
+        "aftercode": "in.nextString();",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_NullValue\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 101,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "return null;",
+        "aftercode": "return new Date();",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_NullValue\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 101,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "return null;",
+        "aftercode": "throw new IOException();",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_NullValue\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 103,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "Date date = deserializeToDate(in.nextString());",
+        "aftercode": "Date date = null;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_TimestampType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_InvalidDateString\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 103,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "Date date = deserializeToDate(in.nextString());",
+        "aftercode": "Date date = new Date();",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_TimestampType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_InvalidDateString\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 103,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "Date date = deserializeToDate(in.nextString());",
+        "aftercode": "Date date = deserializeToDate(\"\");",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_TimestampType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 104,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "if (dateType == Date.class) {",
+        "aftercode": "if (dateType != Date.class) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_TimestampType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 12,
+        "line": 104,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "if (dateType == Date.class) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_TimestampType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n",
+        "survived": false,
+        "id": 12
+    },
+    {
+        "mutant_id:": 13,
+        "line": 104,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "if (dateType == Date.class) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n",
+        "survived": true,
+        "id": 13
+    },
+    {
+        "mutant_id:": 14,
+        "line": 104,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "if (dateType == Date.class) {",
+        "aftercode": "if (dateType == Timestamp.class) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_TimestampType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n",
+        "survived": false,
+        "id": 14
+    },
+    {
+        "mutant_id:": 15,
+        "line": 104,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "if (dateType == Date.class) {",
+        "aftercode": "if (dateType == java.sql.Date.class) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n",
+        "survived": true,
+        "id": 15
+    },
+    {
+        "mutant_id:": 17,
+        "line": 104,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "if (dateType == Date.class) {",
+        "aftercode": "if (dateType.equals(Date.class)) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n",
+        "survived": true,
+        "id": 16
+    },
+    {
+        "mutant_id:": 18,
+        "line": 104,
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "precode": "if (dateType == Date.class) {",
+        "aftercode": "if (dateType == null) {",
+        "fail_test_number": 3,
+        "fail_test": "Failing tests: 3\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_AssertionErrorForInvalidType\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_WithDifferentDateFormats\n  - gentest.com.google.gson.tests.DefaultDateTypeAdapterTest::testRead_SqlDateType\n",
+        "survived": true,
+        "id": 17
+    },
+    {
+        "id": 18,
+        "line": 104,
+        "precode": "if (dateType == Date.class) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "if (dateType != Date.class) {"
+    },
+    {
+        "id": 19,
+        "line": 104,
+        "precode": "if (dateType == Date.class) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "if (dateType == Object.class) {"
+    },
+    {
+        "id": 20,
+        "line": 134,
+        "precode": "StringBuilder sb = new StringBuilder();",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "StringBuilder sb = null;"
+    },
+    {
+        "id": 21,
+        "line": 134,
+        "precode": "StringBuilder sb = new StringBuilder();",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "StringBuilder sb = new StringBuilder(0);"
+    },
+    {
+        "id": 22,
+        "line": 135,
+        "precode": "sb.append(SIMPLE_NAME);",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "sb.append(SIMPLE_NAME.toLowerCase());"
+    },
+    {
+        "id": 23,
+        "line": 135,
+        "precode": "sb.append(SIMPLE_NAME);",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "sb.append(\"\");"
+    },
+    {
+        "id": 24,
+        "line": 136,
+        "precode": "sb.append('(').append(localFormat.getClass().getSimpleName()).append(')');",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "sb.append('[').append(localFormat.getClass().getSimpleName()).append(']');"
+    },
+    {
+        "id": 25,
+        "line": 136,
+        "precode": "sb.append('(').append(localFormat.getClass().getSimpleName()).append(')');",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "sb.append('(').append(localFormat.getClass().getName()).append(')');"
+    },
+    {
+        "id": 26,
+        "line": 137,
+        "precode": "return sb.toString();",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "return sb;"
+    },
+    {
+        "id": 27,
+        "line": 137,
+        "precode": "return sb.toString();",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "return \"\";"
+    },
+    {
+        "id": 28,
+        "line": 40,
+        "precode": "final class DefaultDateTypeAdapter extends TypeAdapter<Date> {",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "class DefaultDateTypeAdapter extends TypeAdapter<Date> {"
+    },
+    {
+        "id": 29,
+        "line": 40,
+        "precode": "final class DefaultDateTypeAdapter extends TypeAdapter<Date> {",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "final class DefaultDateTypeAdapter implements TypeAdapter<Date> {"
+    },
+    {
+        "id": 30,
+        "line": 55,
+        "precode": "this(dateType, new SimpleDateFormat(datePattern, Locale.US), new SimpleDateFormat(datePattern));",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "this(dateType, new SimpleDateFormat(datePattern, Locale.UK), new SimpleDateFormat(datePattern));"
+    },
+    {
+        "id": 31,
+        "line": 55,
+        "precode": "this(dateType, new SimpleDateFormat(datePattern, Locale.US), new SimpleDateFormat(datePattern));",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "this(dateType, new SimpleDateFormat(datePattern, Locale.US), null);"
+    },
+    {
+        "id": 32,
+        "line": 56,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "});"
+    },
+    {
+        "id": 33,
+        "line": 56,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "} // dummy comment added"
+    },
+    {
+        "id": 34,
+        "line": 59,
+        "precode": "this(dateType, DateFormat.getDateInstance(style, Locale.US), DateFormat.getDateInstance(style));",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "this(dateType, DateFormat.getDateInstance(style), DateFormat.getDateInstance(style, Locale.US));"
+    },
+    {
+        "id": 35,
+        "line": 59,
+        "precode": "this(dateType, DateFormat.getDateInstance(style, Locale.US), DateFormat.getDateInstance(style));",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "this(dateType, DateFormat.getDateInstance(style, Locale.US), DateFormat.getDateInstance(style, Locale.US));"
+    },
+    {
+        "id": 36,
+        "line": 60,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 37,
+        "line": 60,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 38,
+        "line": 63,
+        "precode": "this(Date.class,",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "this(Object.class,"
+    },
+    {
+        "id": 39,
+        "line": 63,
+        "precode": "this(Date.class,",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "this(Date.class);"
+    },
+    {
+        "id": 40,
+        "line": 66,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 41,
+        "line": 66,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": " }"
+    },
+    {
+        "id": 42,
+        "line": 69,
+        "precode": "this(dateType,",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "this(null,"
+    },
+    {
+        "id": 43,
+        "line": 69,
+        "precode": "this(dateType,",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "this(dateType);"
+    },
+    {
+        "id": 44,
+        "line": 72,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "});"
+    },
+    {
+        "id": 45,
+        "line": 72,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "}"
+    },
+    {
+        "id": 46,
+        "line": 76,
+        "precode": "throw new IllegalArgumentException(\"Date type must be one of \" + Date.class + \", \" + Timestamp.class + \", or \" + java.sql.Date.class + \" but was \" + dateType);",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "throw new IllegalArgumentException(\"Date type must be one of \" + Timestamp.class + \", \" + Date.class + \", or \" + java.sql.Date.class + \" but was \" + dateType);"
+    },
+    {
+        "id": 47,
+        "line": 76,
+        "precode": "throw new IllegalArgumentException(\"Date type must be one of \" + Date.class + \", \" + Timestamp.class + \", or \" + java.sql.Date.class + \" but was \" + dateType);",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "throw new IllegalArgumentException(\"Date type must be one of \" + Date.class + \" but was \" + dateType);"
+    },
+    {
+        "id": 48,
+        "line": 87,
+        "precode": "if (value == null) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "if (value != null) {"
+    },
+    {
+        "id": 49,
+        "line": 87,
+        "precode": "if (value == null) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 50,
+        "line": 88,
+        "precode": "out.nullValue();",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "out.notNullValue();"
+    },
+    {
+        "id": 51,
+        "line": 88,
+        "precode": "out.nullValue();",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "out.isNull();"
+    },
+    {
+        "id": 52,
+        "line": 89,
+        "precode": "return;",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 53,
+        "line": 89,
+        "precode": "return;",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "throw new RuntimeException();"
+    },
+    {
+        "id": 54,
+        "line": 91,
+        "precode": "synchronized (localFormat) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "synchronized (this) {"
+    },
+    {
+        "id": 55,
+        "line": 91,
+        "precode": "synchronized (localFormat) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "synchronized (new Object()) {"
+    },
+    {
+        "id": 56,
+        "line": 92,
+        "precode": "String dateFormatAsString = enUsFormat.format(value);",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "String dateFormatAsString = enUsFormat.format(null);"
+    },
+    {
+        "id": 57,
+        "line": 92,
+        "precode": "String dateFormatAsString = enUsFormat.format(value);",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "String dateFormatAsString = value.toString();"
+    },
+    {
+        "id": 58,
+        "line": 93,
+        "precode": "out.value(dateFormatAsString);",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "out.value(null);"
+    },
+    {
+        "id": 59,
+        "line": 93,
+        "precode": "out.value(dateFormatAsString);",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "out.value(\"\");"
+    },
+    {
+        "id": 60,
+        "line": 94,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 61,
+        "line": 94,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "} // dummy comment"
+    },
+    {
+        "id": 62,
+        "line": 95,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 63,
+        "line": 95,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": " }"
+    },
+    {
+        "id": 64,
+        "line": 105,
+        "precode": "return date;",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 65,
+        "line": 105,
+        "precode": "return date;",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "return new Date();"
+    },
+    {
+        "id": 66,
+        "line": 108,
+        "precode": "} else if (dateType == java.sql.Date.class) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "} else if (dateType != java.sql.Date.class) {"
+    },
+    {
+        "id": 67,
+        "line": 108,
+        "precode": "} else if (dateType == java.sql.Date.class) {",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "} else if (dateType == java.util.Date.class) {"
+    },
+    {
+        "id": 68,
+        "line": 109,
+        "precode": "return new java.sql.Date(date.getTime());",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "return new java.sql.Date(date.getTime() + 86400000);"
+    },
+    {
+        "id": 69,
+        "line": 109,
+        "precode": "return new java.sql.Date(date.getTime());",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "return new java.sql.Date(0);"
+    },
+    {
+        "id": 70,
+        "line": 112,
+        "precode": "throw new AssertionError();",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "throw new RuntimeException();"
+    },
+    {
+        "id": 71,
+        "line": 112,
+        "precode": "throw new AssertionError();",
+        "filepath": "./defects4j_fixed/Gson/Gson_17_fixed/gson/src/main/java/com/google/gson/DefaultDateTypeAdapter.java",
+        "aftercode": "throw new AssertionError(\"Error occurred\");"
+    }
+]

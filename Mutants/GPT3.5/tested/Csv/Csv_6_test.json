@@ -1,0 +1,82 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 181,
+        "filepath": "./defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "final int col = entry.getValue().intValue();",
+        "aftercode": "final int col = entry.getValue();",
+        "fail_test_number": 2,
+        "fail_test": "Failing tests: 2\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_MixedValidAndInvalidMappings\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_NullInputMap\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 2,
+        "line": 182,
+        "filepath": "./defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "if (col < values.length) {",
+        "aftercode": "if (col <= values.length) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_MixedValidAndInvalidMappings\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_NullInputMap\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_EmptyValuesArray\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 182,
+        "filepath": "./defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "if (col < values.length) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_MixedValidAndInvalidMappings\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_NullInputMap\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_EmptyValuesArray\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 183,
+        "filepath": "./defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "map.put(entry.getKey(), values[col]);",
+        "aftercode": "map.put(entry.getKey(), \"\");",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_MixedValidAndInvalidMappings\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_NullInputMap\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_PreservesExistingMapEntries\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_TypicalCase\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 183,
+        "filepath": "./defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "map.put(entry.getKey(), values[col]);",
+        "aftercode": "map.put(entry.getValue().toString(), values[col]);",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_MixedValidAndInvalidMappings\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_NullInputMap\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_PreservesExistingMapEntries\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_TypicalCase\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 181,
+        "filepath": "./defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "final int col = entry.getValue().intValue();",
+        "aftercode": "final int col = 0;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutInWithNullIntegerValue\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_MixedValidAndInvalidMappings\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_NullInputMap\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_TypicalCase\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 186,
+        "filepath": "./defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "return map;",
+        "aftercode": "return null;",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_MixedValidAndInvalidMappings\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_NullInputMap\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_PreservesExistingMapEntries\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_EmptyMapping\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_TypicalCase\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_EmptyValuesArray\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 182,
+        "filepath": "./defects4j_fixed/Csv/Csv_6_fixed/src/main/java/org/apache/commons/csv/CSVRecord.java",
+        "precode": "if (col < values.length) {",
+        "aftercode": "if (col < values.length - 1) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_MixedValidAndInvalidMappings\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_IndexOutOfBounds\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_NullInputMap\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_PreservesExistingMapEntries\n  - gentest.org.apache.commons.csv.tests.CSVRecordTest::testPutIn_TypicalCase\n",
+        "survived": false
+    }
+]

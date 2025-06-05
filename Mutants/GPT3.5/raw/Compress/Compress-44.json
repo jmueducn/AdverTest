@@ -1,0 +1,128 @@
+[
+    {
+        "id": 1,
+        "line": 33,
+        "precode": "public ChecksumCalculatingInputStream(final Checksum checksum, final InputStream in) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "public ChecksumCalculatingInputStream(final Checksum checksum, final InputStream in) throws Exception {"
+    },
+    {
+        "id": 2,
+        "line": 35,
+        "precode": "if ( checksum == null ){",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "if ( checksum != null ){"
+    },
+    {
+        "id": 3,
+        "line": 35,
+        "precode": "if ( checksum == null ){",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "if ( true ){"
+    },
+    {
+        "id": 4,
+        "line": 36,
+        "precode": "throw new NullPointerException(\"Parameter checksum must not be null\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "throw new IllegalArgumentException(\"Parameter checksum must not be null\");"
+    },
+    {
+        "id": 5,
+        "line": 36,
+        "precode": "throw new NullPointerException(\"Parameter checksum must not be null\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "return;"
+    },
+    {
+        "id": 6,
+        "line": 39,
+        "precode": "if ( in == null ){",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "if ( in != null ){"
+    },
+    {
+        "id": 7,
+        "line": 39,
+        "precode": "if ( in == null ){",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "if ( false ){"
+    },
+    {
+        "id": 8,
+        "line": 40,
+        "precode": "throw new NullPointerException(\"Parameter in must not be null\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "throw new RuntimeException(\"Parameter in must not be null\");"
+    },
+    {
+        "id": 9,
+        "line": 40,
+        "precode": "throw new NullPointerException(\"Parameter in must not be null\");",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "System.out.println(\"Parameter in must not be null\");"
+    },
+    {
+        "id": 10,
+        "line": 43,
+        "precode": "this.checksum = checksum;",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "this.checksum = null;"
+    },
+    {
+        "id": 11,
+        "line": 43,
+        "precode": "this.checksum = checksum;",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "this.checksum = new CRC32();"
+    },
+    {
+        "id": 12,
+        "line": 44,
+        "precode": "this.in = in;",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "this.in = null;"
+    },
+    {
+        "id": 13,
+        "line": 44,
+        "precode": "this.in = in;",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "this.in = new ByteArrayInputStream(new byte[0]);"
+    },
+    {
+        "id": 14,
+        "line": 33,
+        "precode": "public ChecksumCalculatingInputStream(final Checksum checksum, final InputStream in) {",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "public ChecksumCalculatingInputStream(Checksum checksum, InputStream in) {"
+    },
+    {
+        "id": 15,
+        "line": 35,
+        "precode": "if ( checksum == null ){",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "if (checksum == null){"
+    },
+    {
+        "id": 16,
+        "line": 39,
+        "precode": "if ( in == null ){",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "if (in == null){"
+    },
+    {
+        "id": 17,
+        "line": 35,
+        "precode": "if ( checksum == null ){",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "if ( checksum == null || true ){"
+    },
+    {
+        "id": 18,
+        "line": 39,
+        "precode": "if ( in == null ){",
+        "filepath": "./defects4j_fixed/Compress/Compress_44_fixed/src/main/java/org/apache/commons/compress/utils/ChecksumCalculatingInputStream.java",
+        "aftercode": "if ( in == null && false ){"
+    }
+]

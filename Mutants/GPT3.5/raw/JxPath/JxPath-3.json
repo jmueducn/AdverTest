@@ -1,0 +1,135 @@
+[
+    {
+        "id": 1,
+        "line": 37,
+        "precode": "    public NullPropertyPointer(NodePointer parent) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "    public NullPropertyPointer(NodePointer parent) { parent = null;"
+    },
+    {
+        "id": 2,
+        "line": 42,
+        "precode": "        return new QName(propertyName);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        return null;"
+    },
+    {
+        "id": 3,
+        "line": 189,
+        "precode": "        return 0;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        return 1;"
+    },
+    {
+        "id": 4,
+        "line": 57,
+        "precode": "        return null;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        return new Object();"
+    },
+    {
+        "id": 5,
+        "line": 77,
+        "precode": "        return true;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        return false;"
+    },
+    {
+        "id": 6,
+        "line": 65,
+        "precode": "        return new NullPointer(this,  new QName(getPropertyName()));",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        return this;"
+    },
+    {
+        "id": 7,
+        "line": 73,
+        "precode": "        return false;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        return true;"
+    },
+    {
+        "id": 8,
+        "line": 77,
+        "precode": "        return true;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        return false;"
+    },
+    {
+        "id": 9,
+        "line": 81,
+        "precode": "        if (parent == null || parent.isContainer()) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        if (parent == null) {"
+    },
+    {
+        "id": 10,
+        "line": 137,
+        "precode": "        if (isAttribute()) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        if (false) {"
+    },
+    {
+        "id": 11,
+        "line": 143,
+        "precode": "            if (parent instanceof NullPointer && parent.equals(newParent)) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "            if (parent instanceof NullPointer) {"
+    },
+    {
+        "id": 12,
+        "line": 138,
+        "precode": "            NodePointer pointer = newParent.createAttribute(context, getName());",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "            NodePointer pointer = newParent;"
+    },
+    {
+        "id": 13,
+        "line": 159,
+        "precode": "        return createPath(context).createChild(context, name, index);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        return null;"
+    },
+    {
+        "id": 14,
+        "line": 168,
+        "precode": "        return createPath(context).createChild(context, name, index, value);",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        return createPath(context);"
+    },
+    {
+        "id": 15,
+        "line": 176,
+        "precode": "        this.propertyName = propertyName;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        this.propertyName = null;"
+    },
+    {
+        "id": 16,
+        "line": 185,
+        "precode": "        return getIndex() != WHOLE_COLLECTION;",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        return false;"
+    },
+    {
+        "id": 17,
+        "line": 197,
+        "precode": "        if (!byNameAttribute) {",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        if (true) {"
+    },
+    {
+        "id": 18,
+        "line": 234,
+        "precode": "        return new JXPathAbstractFactoryException(\"Factory \" + factory",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "        return null;"
+    },
+    {
+        "id": 19,
+        "line": 235,
+        "precode": "                + \" reported success creating object for path: \" + asPath()",
+        "filepath": "./defects4j_fixed/JxPath/JxPath_3_fixed/src/java/org/apache/commons/jxpath/ri/model/beans/NullPropertyPointer.java",
+        "aftercode": "                + \" reported success creating object\""
+    }
+]

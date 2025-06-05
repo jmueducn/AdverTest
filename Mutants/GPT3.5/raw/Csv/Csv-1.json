@@ -1,0 +1,100 @@
+[
+    {
+        "id": 1,
+        "line": 52,
+        "precode": "super(r);",
+        "filepath": "./defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+        "aftercode": "super(null);"
+    },
+    {
+        "id": 2,
+        "line": 57,
+        "precode": "int current = super.read();",
+        "filepath": "./defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+        "aftercode": "int current = 0;"
+    },
+    {
+        "id": 3,
+        "line": 57,
+        "precode": "int current = super.read();",
+        "filepath": "./defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+        "aftercode": "int current = -1;"
+    },
+    {
+        "id": 4,
+        "line": 58,
+        "precode": "if (current == '\\r' || (current == '\\n' && lastChar != '\\r')) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+        "aftercode": "if (current == '\\r' || (current == '\\n' && lastChar == '\\r')) {"
+    },
+    {
+        "id": 5,
+        "line": 58,
+        "precode": "if (current == '\\r' || (current == '\\n' && lastChar != '\\r')) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+        "aftercode": "if (current == '\\r' && (current == '\\n' && lastChar != '\\r')) {"
+    },
+    {
+        "id": 6,
+        "line": 58,
+        "precode": "if (current == '\\r' || (current == '\\n' && lastChar != '\\r')) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+        "aftercode": "if (current == '\\r' || (current != '\\n' && lastChar != '\\r')) {"
+    },
+    {
+        "id": 7,
+        "line": 58,
+        "precode": "if (current == '\\r' || (current == '\\n' && lastChar != '\\r')) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 8,
+        "line": 58,
+        "precode": "if (current == '\\r' || (current == '\\n' && lastChar != '\\r')) {",
+        "filepath": "./defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 9,
+        "line": 59,
+        "precode": "lineCounter++;",
+        "filepath": "./defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+        "aftercode": "lineCounter--;"
+    },
+    {
+        "id": 10,
+        "line": 59,
+        "precode": "lineCounter++;",
+        "filepath": "./defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+        "aftercode": "lineCounter += 2;"
+    },
+    {
+        "id": 11,
+        "line": 59,
+        "precode": "lineCounter++;",
+        "filepath": "./defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+        "aftercode": "lineCounter = 0;"
+    },
+    {
+        "id": 12,
+        "line": 61,
+        "precode": "lastChar = current;",
+        "filepath": "./defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+        "aftercode": "lastChar = 0;"
+    },
+    {
+        "id": 13,
+        "line": 61,
+        "precode": "lastChar = current;",
+        "filepath": "./defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+        "aftercode": "lastChar = -1;"
+    },
+    {
+        "id": 14,
+        "line": 62,
+        "precode": "return lastChar;",
+        "filepath": "./defects4j_fixed/Csv/Csv_1_fixed/src/main/java/org/apache/commons/csv/ExtendedBufferedReader.java",
+        "aftercode": "return current;"
+    }
+]

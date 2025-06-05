@@ -1,0 +1,233 @@
+[
+    {
+        "id": 1,
+        "line": 109,
+        "precode": "public void addValue(Object v) {",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "public void addValue(Object v) {}"
+    },
+    {
+        "id": 2,
+        "line": 109,
+        "precode": "public void addValue(Object v) {",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "public void addValue(Object v) throws Exception {"
+    },
+    {
+        "id": 3,
+        "line": 110,
+        "precode": "addValue((Comparable<?>) v);",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "addValue(v);"
+    },
+    {
+        "id": 4,
+        "line": 110,
+        "precode": "addValue((Comparable<?>) v);",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "addValue((Comparable<?>) null);"
+    },
+    {
+        "id": 5,
+        "line": 110,
+        "precode": "addValue((Comparable<?>) v);",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "addValue((Comparable<?>) new Object());"
+    },
+    {
+        "id": 6,
+        "line": 123,
+        "precode": "public void addValue(Comparable<?>v){",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "public void addValue(Comparable<?>v) throws Exception {"
+    },
+    {
+        "id": 7,
+        "line": 123,
+        "precode": "public void addValue(Comparable<?>v){",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "public void addValue(Comparable<?>v){}"
+    },
+    {
+        "id": 8,
+        "line": 124,
+        "precode": "Object obj = v;",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "Object obj = null;"
+    },
+    {
+        "id": 9,
+        "line": 124,
+        "precode": "Object obj = v;",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "Object obj = new Object();"
+    },
+    {
+        "id": 10,
+        "line": 125,
+        "precode": "if (v instanceof Integer) {",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 11,
+        "line": 125,
+        "precode": "if (v instanceof Integer) {",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "if (v instanceof Long) {"
+    },
+    {
+        "id": 12,
+        "line": 126,
+        "precode": "obj = Long.valueOf(((Integer) v).longValue());",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "obj = Long.valueOf(0);"
+    },
+    {
+        "id": 13,
+        "line": 126,
+        "precode": "obj = Long.valueOf(((Integer) v).longValue());",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "obj = v;"
+    },
+    {
+        "id": 14,
+        "line": 126,
+        "precode": "obj = Long.valueOf(((Integer) v).longValue());",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "obj = Long.valueOf(((Integer) v).intValue());"
+    },
+    {
+        "id": 15,
+        "line": 129,
+        "precode": "Long count = (Long) freqTable.get(obj);",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "Long count = null;"
+    },
+    {
+        "id": 16,
+        "line": 129,
+        "precode": "Long count = (Long) freqTable.get(obj);",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "Long count = 0L;"
+    },
+    {
+        "id": 17,
+        "line": 130,
+        "precode": "if (count == null) {",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 18,
+        "line": 130,
+        "precode": "if (count == null) {",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "if (count != null) {"
+    },
+    {
+        "id": 19,
+        "line": 131,
+        "precode": "freqTable.put(obj, Long.valueOf(1));",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "freqTable.put(obj, Long.valueOf(0));"
+    },
+    {
+        "id": 20,
+        "line": 131,
+        "precode": "freqTable.put(obj, Long.valueOf(1));",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "freqTable.put(obj, Long.valueOf(2));"
+    },
+    {
+        "id": 21,
+        "line": 131,
+        "precode": "freqTable.put(obj, Long.valueOf(1));",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "freqTable.put(null, Long.valueOf(1));"
+    },
+    {
+        "id": 22,
+        "line": 133,
+        "precode": "freqTable.put(obj, Long.valueOf(count.longValue() + 1));",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "freqTable.put(obj, Long.valueOf(count.longValue()));"
+    },
+    {
+        "id": 23,
+        "line": 133,
+        "precode": "freqTable.put(obj, Long.valueOf(count.longValue() + 1));",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "freqTable.put(obj, Long.valueOf(count.longValue() - 1));"
+    },
+    {
+        "id": 24,
+        "line": 133,
+        "precode": "freqTable.put(obj, Long.valueOf(count.longValue() + 1));",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "freqTable.put(obj, Long.valueOf(count.longValue() + 2));"
+    },
+    {
+        "id": 25,
+        "line": 133,
+        "precode": "freqTable.put(obj, Long.valueOf(count.longValue() + 1));",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "freqTable.put(null, Long.valueOf(count.longValue() + 1));"
+    },
+    {
+        "id": 26,
+        "line": 135,
+        "precode": "} catch (ClassCastException ex) {",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "} catch (Exception ex) {"
+    },
+    {
+        "id": 27,
+        "line": 135,
+        "precode": "} catch (ClassCastException ex) {",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "} catch (NullPointerException ex) {"
+    },
+    {
+        "id": 28,
+        "line": 135,
+        "precode": "} catch (ClassCastException ex) {",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "} catch (ClassCastException ex) {}"
+    },
+    {
+        "id": 29,
+        "line": 137,
+        "precode": "throw new IllegalArgumentException(\"Value not comparable to existing values.\");",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "throw new NullPointerException(\"Value not comparable to existing values.\");"
+    },
+    {
+        "id": 30,
+        "line": 137,
+        "precode": "throw new IllegalArgumentException(\"Value not comparable to existing values.\");",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "throw new IllegalArgumentException(\"Different error message\");"
+    },
+    {
+        "id": 31,
+        "line": 137,
+        "precode": "throw new IllegalArgumentException(\"Value not comparable to existing values.\");",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "throw new IllegalArgumentException(null);"
+    },
+    {
+        "id": 32,
+        "line": 137,
+        "precode": "throw new IllegalArgumentException(\"Value not comparable to existing values.\");",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "throw new RuntimeException(\"Value not comparable to existing values.\");"
+    },
+    {
+        "id": 33,
+        "line": 137,
+        "precode": "throw new IllegalArgumentException(\"Value not comparable to existing values.\");",
+        "filepath": "./defects4j_fixed/Math/Math_90_fixed/src/java/org/apache/commons/math/stat/Frequency.java",
+        "aftercode": "return;"
+    }
+]

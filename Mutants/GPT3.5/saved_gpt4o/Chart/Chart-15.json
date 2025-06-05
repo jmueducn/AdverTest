@@ -1,0 +1,268 @@
+[
+    {
+        "id": 1,
+        "line": 1379,
+        "precode": "return 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "return -1.0;"
+    },
+    {
+        "id": 2,
+        "line": 1381,
+        "precode": "double result = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "double result = -1.0;"
+    },
+    {
+        "id": 3,
+        "line": 1382,
+        "precode": "Iterator iterator = this.dataset.getKeys().iterator();",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "Iterator iterator = this.dataset.getKeys().listIterator();"
+    },
+    {
+        "id": 4,
+        "line": 1383,
+        "precode": "while (iterator.hasNext()) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "while (!iterator.hasNext()) {"
+    },
+    {
+        "id": 5,
+        "line": 1384,
+        "precode": "Comparable key = (Comparable) iterator.next();",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "Comparable key = (Comparable) iterator.previous();"
+    },
+    {
+        "id": 6,
+        "line": 1385,
+        "precode": "Number explode = (Number) this.explodePercentages.get(key);",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "Number explode = (Number) this.explodePercentages.remove(key);"
+    },
+    {
+        "id": 7,
+        "line": 1386,
+        "precode": "if (explode != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "if (explode == null) {"
+    },
+    {
+        "id": 8,
+        "line": 1387,
+        "precode": "result = Math.max(result, explode.doubleValue());",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "result = Math.min(result, explode.doubleValue());"
+    },
+    {
+        "id": 9,
+        "line": 1387,
+        "precode": "result = Math.max(result, explode.doubleValue());",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "result += explode.doubleValue();"
+    },
+    {
+        "id": 10,
+        "line": 1379,
+        "precode": "return 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "return 1.0;"
+    },
+    {
+        "id": 11,
+        "line": 1381,
+        "precode": "double result = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "double result = Double.POSITIVE_INFINITY;"
+    },
+    {
+        "id": 12,
+        "line": 1382,
+        "precode": "Iterator iterator = this.dataset.getKeys().iterator();",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "Iterator iterator = Collections.emptyIterator();"
+    },
+    {
+        "id": 13,
+        "line": 1386,
+        "precode": "if (explode != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 14,
+        "line": 1387,
+        "precode": "result = Math.max(result, explode.doubleValue());",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "result = explode.doubleValue();"
+    },
+    {
+        "id": 15,
+        "line": 1379,
+        "precode": "return 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "return Double.NaN;"
+    },
+    {
+        "id": 16,
+        "line": 1381,
+        "precode": "double result = 0.0;",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "double result = 1.0;"
+    },
+    {
+        "id": 17,
+        "line": 1383,
+        "precode": "while (iterator.hasNext()) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "while (iterator.hasNext() && result < 1.0) {"
+    },
+    {
+        "id": 18,
+        "line": 1385,
+        "precode": "Number explode = (Number) this.explodePercentages.get(key);",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "Number explode = 0;"
+    },
+    {
+        "id": 19,
+        "line": 2052,
+        "precode": "PiePlotState state = new PiePlotState(info);",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "PiePlotState state = new PiePlotState(null);"
+    },
+    {
+        "id": 20,
+        "line": 2053,
+        "precode": "state.setPassesRequired(2);",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "state.setPassesRequired(1);"
+    },
+    {
+        "id": 21,
+        "line": 2053,
+        "precode": "state.setPassesRequired(2);",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "state.setPassesRequired(3);"
+    },
+    {
+        "id": 22,
+        "line": 2054,
+        "precode": "if (this.dataset != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "if (this.dataset == null) {"
+    },
+    {
+        "id": 23,
+        "line": 2054,
+        "precode": "if (this.dataset != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 24,
+        "line": 5,
+        "precode": "state.setTotal(DatasetUtilities.calculatePieDatasetTotal(plot.getDataset()));",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "state.setTotal(0);"
+    },
+    {
+        "id": 25,
+        "line": 5,
+        "precode": "state.setTotal(DatasetUtilities.calculatePieDatasetTotal(plot.getDataset()));",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "state.setTotal(DatasetUtilities.calculatePieDatasetTotal(null));"
+    },
+    {
+        "id": 26,
+        "line": 5,
+        "precode": "state.setTotal(DatasetUtilities.calculatePieDatasetTotal(plot.getDataset()));",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "state.setTotal(DatasetUtilities.calculatePieDatasetTotal(this.dataset));"
+    },
+    {
+        "id": 27,
+        "line": 2058,
+        "precode": "state.setLatestAngle(plot.getStartAngle());",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "state.setLatestAngle(0);"
+    },
+    {
+        "id": 28,
+        "line": 2058,
+        "precode": "state.setLatestAngle(plot.getStartAngle());",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "state.setLatestAngle(plot.getStartAngle() + 90);"
+    },
+    {
+        "id": 29,
+        "line": 2058,
+        "precode": "state.setLatestAngle(plot.getStartAngle());",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "state.setLatestAngle(plot.getStartAngle() - 90);"
+    },
+    {
+        "id": 30,
+        "line": 2058,
+        "precode": "state.setLatestAngle(plot.getStartAngle());",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "state.setLatestAngle(Math.PI);"
+    },
+    {
+        "id": 31,
+        "line": 2058,
+        "precode": "state.setLatestAngle(plot.getStartAngle());",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "state.setLatestAngle(360);"
+    },
+    {
+        "id": 32,
+        "line": 5,
+        "precode": "state.setTotal(DatasetUtilities.calculatePieDatasetTotal(plot.getDataset()));",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "state.setTotal(DatasetUtilities.calculatePieDatasetTotal(plot.getDataset()) * 2);"
+    },
+    {
+        "id": 33,
+        "line": 5,
+        "precode": "state.setTotal(DatasetUtilities.calculatePieDatasetTotal(plot.getDataset()));",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "state.setTotal(DatasetUtilities.calculatePieDatasetTotal(plot.getDataset()) / 2);"
+    },
+    {
+        "id": 34,
+        "line": 2053,
+        "precode": "state.setPassesRequired(2);",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "state.setPassesRequired(-1);"
+    },
+    {
+        "id": 35,
+        "line": 2054,
+        "precode": "if (this.dataset != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "if (this.dataset != null && plot != null) {"
+    },
+    {
+        "id": 36,
+        "line": 2054,
+        "precode": "if (this.dataset != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "if (this.dataset != null || plot == null) {"
+    },
+    {
+        "id": 37,
+        "line": 2052,
+        "precode": "PiePlotState state = new PiePlotState(info);",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "PiePlotState state = null;"
+    },
+    {
+        "id": 38,
+        "line": 2058,
+        "precode": "state.setLatestAngle(plot.getStartAngle());",
+        "filepath": "./defects4j_fixed/Chart/Chart_15_fixed/source/org/jfree/chart/plot/PiePlot.java",
+        "aftercode": "state.setLatestAngle(-plot.getStartAngle());"
+    }
+]

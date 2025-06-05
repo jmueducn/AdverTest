@@ -1,0 +1,277 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 335,
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "precode": "if (categoryKeys == null) {",
+        "aftercode": "if (categoryKeys != null) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_EmptyDataset\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_ContainsNull\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_ValidInput\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_WrongLength\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_FireDatasetChanged\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_NullInput\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 335,
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "precode": "if (categoryKeys == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_EmptyDataset\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_ContainsNull\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_ValidInput\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_WrongLength\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_FireDatasetChanged\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 335,
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "precode": "if (categoryKeys == null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_NullInput\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 336,
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "precode": "throw new IllegalArgumentException(\"Null 'categoryKeys' argument.\");",
+        "aftercode": "throw new NullPointerException(\"Null 'categoryKeys' argument.\");",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_NullInput\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 336,
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "precode": "throw new IllegalArgumentException(\"Null 'categoryKeys' argument.\");",
+        "aftercode": "return;",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_NullInput\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 338,
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "precode": "if (categoryKeys.length != getCategoryCount()) {",
+        "aftercode": "if (categoryKeys.length == getCategoryCount()) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_EmptyDataset\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_ContainsNull\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_ValidInput\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_WrongLength\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_FireDatasetChanged\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 338,
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "precode": "if (categoryKeys.length != getCategoryCount()) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_EmptyDataset\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_ContainsNull\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_ValidInput\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_FireDatasetChanged\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 338,
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "precode": "if (categoryKeys.length != getCategoryCount()) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_WrongLength\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 338,
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "precode": "if (categoryKeys.length != getCategoryCount()) {",
+        "aftercode": "if (categoryKeys.length > getCategoryCount()) {",
+        "fail_test_number": 1,
+        "fail_test": "Failing tests: 1\n  - gentest.org.jfree.data.category.tests.DefaultIntervalCategoryDatasetTest::testSetCategoryKeys_WrongLength\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 338,
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "precode": "if (categoryKeys.length != getCategoryCount()) {",
+        "aftercode": "if (categoryKeys.length < getCategoryCount()) {",
+        "fail_test_number": 0,
+        "fail_test": "Failing tests: 0\n",
+        "survived": true,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 338,
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "precode": "if (categoryKeys.length != getCategoryCount()) {",
+        "aftercode": "if (getCategoryCount() != categoryKeys.length) {",
+        "fail_test_number": 0,
+        "fail_test": "Failing tests: 0\n",
+        "survived": true,
+        "id": 11
+    },
+    {
+        "id": 12,
+        "line": 338,
+        "precode": "if (categoryKeys.length != getCategoryCount()) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "if (categoryKeys.length > getCategoryCount()) {"
+    },
+    {
+        "id": 13,
+        "line": 338,
+        "precode": "if (categoryKeys.length != getCategoryCount()) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "if (categoryKeys.length == getCategoryCount()) {"
+    },
+    {
+        "id": 14,
+        "line": 192,
+        "precode": "if (categoryKeys.length != categoryCount) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "if (categoryKeys.length == categoryCount) {"
+    },
+    {
+        "id": 15,
+        "line": 192,
+        "precode": "if (categoryKeys.length != categoryCount) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "if (categoryKeys.length > categoryCount) {"
+    },
+    {
+        "id": 16,
+        "line": 161,
+        "precode": "throw new IllegalArgumentException(errMsg);",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "throw new RuntimeException(errMsg);"
+    },
+    {
+        "id": 17,
+        "line": 161,
+        "precode": "throw new IllegalArgumentException(errMsg);",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "throw new IllegalArgumentException(\"Error occurred\");"
+    },
+    {
+        "id": 18,
+        "line": 193,
+        "precode": "throw new IllegalArgumentException(",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "throw new RuntimeException("
+    },
+    {
+        "id": 19,
+        "line": 193,
+        "precode": "throw new IllegalArgumentException(",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "throw new NullPointerException("
+    },
+    {
+        "id": 20,
+        "line": 197,
+        "precode": "this.categoryKeys = categoryKeys;",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "this.categoryKeys = null;"
+    },
+    {
+        "id": 21,
+        "line": 197,
+        "precode": "this.categoryKeys = categoryKeys;",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "this.categoryKeys = new ArrayList<>();"
+    },
+    {
+        "id": 22,
+        "line": 169,
+        "precode": "throw new IllegalArgumentException(",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "throw new NullPointerException("
+    },
+    {
+        "id": 23,
+        "line": 169,
+        "precode": "throw new IllegalArgumentException(",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "throw new RuntimeException("
+    },
+    {
+        "id": 24,
+        "line": 177,
+        "precode": "String prefix = resources.getString(",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "String prefix = resources.getInt("
+    },
+    {
+        "id": 25,
+        "line": 177,
+        "precode": "String prefix = resources.getString(",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "String prefix = resources.getString"
+    },
+    {
+        "id": 26,
+        "line": 179,
+        "precode": "this.seriesKeys = generateKeys(seriesCount, prefix);",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "this.seriesKeys = generateKeys(seriesCount + 1, prefix);"
+    },
+    {
+        "id": 27,
+        "line": 179,
+        "precode": "this.seriesKeys = generateKeys(seriesCount, prefix);",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "this.seriesKeys = generateKeys(seriesCount, \"\");"
+    },
+    {
+        "id": 28,
+        "line": 189,
+        "precode": "throw new IllegalArgumentException(errMsg);",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "throw new RuntimeException(errMsg);"
+    },
+    {
+        "id": 29,
+        "line": 189,
+        "precode": "throw new IllegalArgumentException(errMsg);",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "throw new IllegalArgumentException(\"\");"
+    },
+    {
+        "id": 30,
+        "line": 185,
+        "precode": "String errMsg = \"DefaultIntervalCategoryDataset: the \"",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "String errMsg = \"DefaultIntervalCategoryDataset the \""
+    },
+    {
+        "id": 31,
+        "line": 185,
+        "precode": "String errMsg = \"DefaultIntervalCategoryDataset: the \"",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "String errMsg = \"DefaultIntervalCategoryDataset: \""
+    },
+    {
+        "id": 32,
+        "line": 157,
+        "precode": "String errMsg = \"DefaultIntervalCategoryDataset: the number \"",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "String errMsg = \"DefaultIntervalCategoryDataset: the numbers \""
+    },
+    {
+        "id": 33,
+        "line": 157,
+        "precode": "String errMsg = \"DefaultIntervalCategoryDataset: the number \"",
+        "filepath": "./defects4j_fixed/Chart/Chart_16_fixed/source/org/jfree/data/category/DefaultIntervalCategoryDataset.java",
+        "aftercode": "String errMsg = \"DefaultIntervalCategoryDataset: number \""
+    }
+]

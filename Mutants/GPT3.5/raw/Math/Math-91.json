@@ -1,0 +1,156 @@
+[
+    {
+        "id": 1,
+        "line": 244,
+        "precode": "if (numerator >= 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "if (numerator > 0) {"
+    },
+    {
+        "id": 2,
+        "line": 244,
+        "precode": "if (numerator >= 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "if (numerator <= 0) {"
+    },
+    {
+        "id": 3,
+        "line": 244,
+        "precode": "if (numerator >= 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "if (numerator < 0) {"
+    },
+    {
+        "id": 4,
+        "line": 244,
+        "precode": "if (numerator >= 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "if (numerator == 0) {"
+    },
+    {
+        "id": 5,
+        "line": 244,
+        "precode": "if (numerator >= 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 6,
+        "line": 244,
+        "precode": "if (numerator >= 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "if (false) {"
+    },
+    {
+        "id": 7,
+        "line": 245,
+        "precode": "ret = this;",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "ret = negate();"
+    },
+    {
+        "id": 8,
+        "line": 245,
+        "precode": "ret = this;",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "ret = null;"
+    },
+    {
+        "id": 9,
+        "line": 247,
+        "precode": "ret = negate();",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "ret = this;"
+    },
+    {
+        "id": 10,
+        "line": 247,
+        "precode": "ret = negate();",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "ret = null;"
+    },
+    {
+        "id": 11,
+        "line": 249,
+        "precode": "return ret;",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 12,
+        "line": 249,
+        "precode": "return ret;",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "return this;"
+    },
+    {
+        "id": 13,
+        "line": 259,
+        "precode": "long nOd = ((long) numerator) * object.denominator;",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "long nOd = ((long) numerator) + object.denominator;"
+    },
+    {
+        "id": 14,
+        "line": 259,
+        "precode": "long nOd = ((long) numerator) * object.denominator;",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "long nOd = ((long) numerator) - object.denominator;"
+    },
+    {
+        "id": 15,
+        "line": 259,
+        "precode": "long nOd = ((long) numerator) * object.denominator;",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "long nOd = ((long) numerator) / object.denominator;"
+    },
+    {
+        "id": 16,
+        "line": 260,
+        "precode": "long dOn = ((long) denominator) * object.numerator;",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "long dOn = ((long) denominator) + object.numerator;"
+    },
+    {
+        "id": 17,
+        "line": 260,
+        "precode": "long dOn = ((long) denominator) * object.numerator;",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "long dOn = ((long) denominator) - object.numerator;"
+    },
+    {
+        "id": 18,
+        "line": 260,
+        "precode": "long dOn = ((long) denominator) * object.numerator;",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "long dOn = ((long) denominator) / object.numerator;"
+    },
+    {
+        "id": 19,
+        "line": 261,
+        "precode": "return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "return (nOd > dOn) ? -1 : ((nOd < dOn) ? +1 : 0);"
+    },
+    {
+        "id": 20,
+        "line": 261,
+        "precode": "return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "return (nOd < dOn) ? +1 : ((nOd > dOn) ? -1 : 0);"
+    },
+    {
+        "id": 21,
+        "line": 261,
+        "precode": "return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "return 0;"
+    },
+    {
+        "id": 22,
+        "line": 261,
+        "precode": "return (nOd < dOn) ? -1 : ((nOd > dOn) ? +1 : 0);",
+        "filepath": "./defects4j_fixed/Math/Math_91_fixed/src/java/org/apache/commons/math/fraction/Fraction.java",
+        "aftercode": "return 1;"
+    }
+]

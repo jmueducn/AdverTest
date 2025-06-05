@@ -1,0 +1,387 @@
+[
+    {
+        "id": 1,
+        "line": 259,
+        "precode": "double sx2 = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double sx2 = 1;"
+    },
+    {
+        "id": 2,
+        "line": 260,
+        "precode": "double sy2 = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double sy2 = 1;"
+    },
+    {
+        "id": 3,
+        "line": 261,
+        "precode": "double sxy = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double sxy = 1;"
+    },
+    {
+        "id": 4,
+        "line": 262,
+        "precode": "double sxz = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double sxz = 1;"
+    },
+    {
+        "id": 5,
+        "line": 263,
+        "precode": "double syz = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double syz = 1;"
+    },
+    {
+        "id": 6,
+        "line": 265,
+        "precode": "double currentX = observations[0].getX();",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double currentX = observations[1].getX();"
+    },
+    {
+        "id": 7,
+        "line": 266,
+        "precode": "double currentY = observations[0].getY();",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double currentY = observations[1].getY();"
+    },
+    {
+        "id": 8,
+        "line": 267,
+        "precode": "double f2Integral = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double f2Integral = 1;"
+    },
+    {
+        "id": 9,
+        "line": 268,
+        "precode": "double fPrime2Integral = 0;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double fPrime2Integral = 1;"
+    },
+    {
+        "id": 10,
+        "line": 312,
+        "precode": "for (int i = 1; i < observations.length; ++i) {",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "for (int i = 0; i < observations.length; ++i) {"
+    },
+    {
+        "id": 11,
+        "line": 312,
+        "precode": "for (int i = 1; i < observations.length; ++i) {",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "for (int i = 1; i <= observations.length; ++i) {"
+    },
+    {
+        "id": 12,
+        "line": 279,
+        "precode": "final double dx = currentX - previousX;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "final double dx = currentX + previousX;"
+    },
+    {
+        "id": 13,
+        "line": 280,
+        "precode": "final double dy = currentY - previousY;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "final double dy = currentY + previousY;"
+    },
+    {
+        "id": 14,
+        "line": 282,
+        "precode": "dx * (previousY * previousY + previousY * currentY + currentY * currentY) / 3;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "dx * (previousY * previousY + previousY * currentY + currentY * currentY) / 2;"
+    },
+    {
+        "id": 15,
+        "line": 283,
+        "precode": "final double fPrime2StepIntegral = dy * dy / dx;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "final double fPrime2StepIntegral = dy * dy * dx;"
+    },
+    {
+        "id": 16,
+        "line": 285,
+        "precode": "final double x = currentX - startX;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "final double x = currentX + startX;"
+    },
+    {
+        "id": 17,
+        "line": 286,
+        "precode": "f2Integral += f2StepIntegral;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "f2Integral -= f2StepIntegral;"
+    },
+    {
+        "id": 18,
+        "line": 287,
+        "precode": "fPrime2Integral += fPrime2StepIntegral;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "fPrime2Integral -= fPrime2StepIntegral;"
+    },
+    {
+        "id": 19,
+        "line": 289,
+        "precode": "sx2 += x * x;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "sx2 -= x * x;"
+    },
+    {
+        "id": 20,
+        "line": 290,
+        "precode": "sy2 += f2Integral * f2Integral;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "sy2 -= f2Integral * f2Integral;"
+    },
+    {
+        "id": 21,
+        "line": 291,
+        "precode": "sxy += x * f2Integral;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "sxy -= x * f2Integral;"
+    },
+    {
+        "id": 22,
+        "line": 292,
+        "precode": "sxz += x * fPrime2Integral;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "sxz -= x * fPrime2Integral;"
+    },
+    {
+        "id": 23,
+        "line": 293,
+        "precode": "syz += f2Integral * fPrime2Integral;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "syz -= f2Integral * fPrime2Integral;"
+    },
+    {
+        "id": 24,
+        "line": 297,
+        "precode": "double c1 = sy2 * sxz - sxy * syz;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double c1 = sy2 * sxz + sxy * syz;"
+    },
+    {
+        "id": 25,
+        "line": 298,
+        "precode": "double c2 = sxy * sxz - sx2 * syz;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double c2 = sxy * sxz + sx2 * syz;"
+    },
+    {
+        "id": 26,
+        "line": 299,
+        "precode": "double c3 = sx2 * sy2 - sxy * sxy;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double c3 = sx2 * sy2 + sxy * sxy;"
+    },
+    {
+        "id": 27,
+        "line": 300,
+        "precode": "if ((c1 / c2 < 0) || (c2 / c3 < 0)) {",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "if ((c1 / c2 > 0) || (c2 / c3 < 0)) {"
+    },
+    {
+        "id": 28,
+        "line": 300,
+        "precode": "if ((c1 / c2 < 0) || (c2 / c3 < 0)) {",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "if ((c1 / c2 < 0) && (c2 / c3 < 0)) {"
+    },
+    {
+        "id": 29,
+        "line": 300,
+        "precode": "if ((c1 / c2 < 0) || (c2 / c3 < 0)) {",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "if (true) {"
+    },
+    {
+        "id": 30,
+        "line": 304,
+        "precode": "final double xRange = observations[last].getX() - observations[0].getX();",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "final double xRange = observations[last].getX() + observations[0].getX();"
+    },
+    {
+        "id": 31,
+        "line": 305,
+        "precode": "if (xRange == 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "if (xRange != 0) {"
+    },
+    {
+        "id": 32,
+        "line": 306,
+        "precode": "throw new ZeroException();",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "// throw new ZeroException();"
+    },
+    {
+        "id": 33,
+        "line": 308,
+        "precode": "omega = 2 * Math.PI / xRange;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "omega = Math.PI / xRange;"
+    },
+    {
+        "id": 34,
+        "line": 310,
+        "precode": "double yMin = Double.POSITIVE_INFINITY;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double yMin = Double.NEGATIVE_INFINITY;"
+    },
+    {
+        "id": 35,
+        "line": 311,
+        "precode": "double yMax = Double.NEGATIVE_INFINITY;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double yMax = Double.POSITIVE_INFINITY;"
+    },
+    {
+        "id": 36,
+        "line": 312,
+        "precode": "for (int i = 1; i < observations.length; ++i) {",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "for (int i = 0; i < observations.length; ++i) {"
+    },
+    {
+        "id": 37,
+        "line": 314,
+        "precode": "if (y < yMin) {",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "if (y > yMin) {"
+    },
+    {
+        "id": 38,
+        "line": 317,
+        "precode": "if (y > yMax) {",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "if (y < yMax) {"
+    },
+    {
+        "id": 39,
+        "line": 321,
+        "precode": "a = 0.5 * (yMax - yMin);",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "a = (yMax - yMin);"
+    },
+    {
+        "id": 40,
+        "line": 323,
+        "precode": "if (c2 == 0) {",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "if (c2 != 0) {"
+    },
+    {
+        "id": 41,
+        "line": 326,
+        "precode": "throw new MathIllegalStateException(LocalizedFormats.ZERO_DENOMINATOR);",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "// throw new MathIllegalStateException(LocalizedFormats.ZERO_DENOMINATOR);"
+    },
+    {
+        "id": 42,
+        "line": 329,
+        "precode": "a = FastMath.sqrt(c1 / c2);",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "a = FastMath.sqrt(c1 * c2);"
+    },
+    {
+        "id": 43,
+        "line": 330,
+        "precode": "omega = FastMath.sqrt(c2 / c3);",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "omega = FastMath.sqrt(c2 * c3);"
+    },
+    {
+        "id": 44,
+        "line": 282,
+        "precode": "dx * (previousY * previousY + previousY * currentY + currentY * currentY) / 3;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "dx * (previousY * previousY - previousY * currentY + currentY * currentY) / 3;"
+    },
+    {
+        "id": 45,
+        "line": 283,
+        "precode": "final double fPrime2StepIntegral = dy * dy / dx;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "final double fPrime2StepIntegral = dy / dx;"
+    },
+    {
+        "id": 46,
+        "line": 312,
+        "precode": "for (int i = 1; i < observations.length; ++i) {",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "for (int i = 2; i < observations.length; ++i) {"
+    },
+    {
+        "id": 47,
+        "line": 297,
+        "precode": "double c1 = sy2 * sxz - sxy * syz;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double c1 = sy2 * sxz;"
+    },
+    {
+        "id": 48,
+        "line": 298,
+        "precode": "double c2 = sxy * sxz - sx2 * syz;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double c2 = sxy * sxz;"
+    },
+    {
+        "id": 49,
+        "line": 299,
+        "precode": "double c3 = sx2 * sy2 - sxy * sxy;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "double c3 = sx2 * sy2;"
+    },
+    {
+        "id": 50,
+        "line": 308,
+        "precode": "omega = 2 * Math.PI / xRange;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "omega = 3 * Math.PI / xRange;"
+    },
+    {
+        "id": 51,
+        "line": 321,
+        "precode": "a = 0.5 * (yMax - yMin);",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "a = 0.25 * (yMax - yMin);"
+    },
+    {
+        "id": 52,
+        "line": 329,
+        "precode": "a = FastMath.sqrt(c1 / c2);",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "a = c1 / c2;"
+    },
+    {
+        "id": 53,
+        "line": 330,
+        "precode": "omega = FastMath.sqrt(c2 / c3);",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "omega = c2 / c3;"
+    },
+    {
+        "id": 54,
+        "line": 279,
+        "precode": "final double dx = currentX - previousX;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "final double dx = currentX;"
+    },
+    {
+        "id": 55,
+        "line": 280,
+        "precode": "final double dy = currentY - previousY;",
+        "filepath": "./defects4j_fixed/Math/Math_25_fixed/src/main/java/org/apache/commons/math3/optimization/fitting/HarmonicFitter.java",
+        "aftercode": "final double dy = currentY;"
+    }
+]

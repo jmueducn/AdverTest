@@ -1,0 +1,170 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 941,
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "endIndex = -(endIndex + 1);",
+        "aftercode": "endIndex = -(endIndex);",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_FullRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_SingleItem\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_VerifyDeepCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_MultipleItems\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NullStartPeriod_ThrowsIllegalArgumentException\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartInData_EndAfterData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_BoundaryConditions\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartNotInData_EndNotInData_ButRangeContainsData\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 941,
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "endIndex = -(endIndex + 1);",
+        "aftercode": "endIndex = (endIndex + 1);",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_FullRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_SingleItem\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_VerifyDeepCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_MultipleItems\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NullStartPeriod_ThrowsIllegalArgumentException\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartInData_EndAfterData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_BoundaryConditions\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartNotInData_EndNotInData_ButRangeContainsData\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 941,
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "endIndex = -(endIndex + 1);",
+        "aftercode": "endIndex = endIndex + 1;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_FullRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_SingleItem\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_VerifyDeepCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_MultipleItems\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NullStartPeriod_ThrowsIllegalArgumentException\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartInData_EndAfterData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_BoundaryConditions\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartNotInData_EndNotInData_ButRangeContainsData\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 941,
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "endIndex = -(endIndex + 1);",
+        "aftercode": "endIndex = -endIndex + 1;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_FullRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_SingleItem\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_VerifyDeepCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_MultipleItems\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NullStartPeriod_ThrowsIllegalArgumentException\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartInData_EndAfterData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_BoundaryConditions\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartNotInData_EndNotInData_ButRangeContainsData\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 942,
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "endIndex = endIndex - 1;",
+        "aftercode": "endIndex = endIndex + 1;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_FullRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_SingleItem\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_VerifyDeepCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_MultipleItems\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NullStartPeriod_ThrowsIllegalArgumentException\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartInData_EndAfterData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_BoundaryConditions\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartNotInData_EndNotInData_ButRangeContainsData\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 942,
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "endIndex = endIndex - 1;",
+        "aftercode": "endIndex = endIndex;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_FullRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_SingleItem\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_VerifyDeepCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_MultipleItems\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NullStartPeriod_ThrowsIllegalArgumentException\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartInData_EndAfterData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_BoundaryConditions\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartNotInData_EndNotInData_ButRangeContainsData\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 942,
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "endIndex = endIndex - 1;",
+        "aftercode": "endIndex = 1 - endIndex;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_FullRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_SingleItem\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_VerifyDeepCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_MultipleItems\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NullStartPeriod_ThrowsIllegalArgumentException\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartInData_EndAfterData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_BoundaryConditions\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartNotInData_EndNotInData_ButRangeContainsData\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 944,
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "if ((endIndex < 0)  || (endIndex < startIndex)) {",
+        "aftercode": "if ((endIndex > 0)  || (endIndex < startIndex)) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_FullRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_SingleItem\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_VerifyDeepCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_MultipleItems\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ExactRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NullStartPeriod_ThrowsIllegalArgumentException\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartBeforeData_EndInData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartInData_EndAfterData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_BoundaryConditions\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartNotInData_EndNotInData_ButRangeContainsData\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 944,
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "if ((endIndex < 0)  || (endIndex < startIndex)) {",
+        "aftercode": "if ((endIndex < 0)  && (endIndex < startIndex)) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_FullRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_SingleItem\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_VerifyDeepCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_MultipleItems\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NullStartPeriod_ThrowsIllegalArgumentException\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_BoundaryConditions\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartNotInData_EndNotInData_ButRangeContainsData\n",
+        "survived": true,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 944,
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "if ((endIndex < 0)  || (endIndex < startIndex)) {",
+        "aftercode": "if ((endIndex < 0)  || (endIndex > startIndex)) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_FullRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_SingleItem\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_VerifyDeepCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_MultipleItems\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ExactRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NullStartPeriod_ThrowsIllegalArgumentException\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartBeforeData_EndInData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartInData_EndAfterData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_BoundaryConditions\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartNotInData_EndNotInData_ButRangeContainsData\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 944,
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "if ((endIndex < 0)  || (endIndex < startIndex)) {",
+        "aftercode": "if ((endIndex <= 0)  || (endIndex < startIndex)) {",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_FullRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_SingleItem\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_PartialRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_VerifyDeepCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_MultipleItems\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NullStartPeriod_ThrowsIllegalArgumentException\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_BoundaryConditions\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartNotInData_EndNotInData_ButRangeContainsData\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 12,
+        "line": 945,
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "emptyRange = true;",
+        "aftercode": "emptyRange = false;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_FullRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_SingleItem\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_VerifyDeepCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_MultipleItems\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NullStartPeriod_ThrowsIllegalArgumentException\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_BoundaryConditions\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyRange_ReturnsEmptySeries\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartNotInData_EndNotInData_ButRangeContainsData\n",
+        "survived": false,
+        "id": 12
+    },
+    {
+        "mutant_id:": 13,
+        "line": 945,
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "emptyRange = true;",
+        "aftercode": "emptyRange = !emptyRange;",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_FullRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_SingleItem\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_VerifyDeepCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_MultipleItems\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NullStartPeriod_ThrowsIllegalArgumentException\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_BoundaryConditions\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyRange_ReturnsEmptySeries\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartNotInData_EndNotInData_ButRangeContainsData\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "mutant_id:": 14,
+        "line": 947,
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "precode": "if (emptyRange) {",
+        "aftercode": "if (!emptyRange) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_FullRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_SingleItem\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_PartialRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_VerifyDeepCopy\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_MultipleItems\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_ExactRange\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_NullStartPeriod_ThrowsIllegalArgumentException\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartBeforeData_EndInData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartInData_EndAfterData\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_BoundaryConditions\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_EmptyRange_ReturnsEmptySeries\n  - gentest.org.jfree.data.time.tests.TimeSeriesTest::testCreateCopy_StartNotInData_EndNotInData_ButRangeContainsData\n",
+        "survived": false,
+        "id": 14
+    },
+    {
+        "id": 15,
+        "line": 944,
+        "precode": "if ((endIndex < 0)  || (endIndex < startIndex)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "if ((endIndex <= 0)  || (endIndex < startIndex)) {"
+    },
+    {
+        "id": 16,
+        "line": 944,
+        "precode": "if ((endIndex < 0)  || (endIndex < startIndex)) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_9_fixed/source/org/jfree/data/time/TimeSeries.java",
+        "aftercode": "if ((endIndex < 0)  || (endIndex <= startIndex)) {"
+    }
+]

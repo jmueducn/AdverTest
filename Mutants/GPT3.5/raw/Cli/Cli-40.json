@@ -1,0 +1,187 @@
+[
+    {
+        "mutant_id:": 2,
+        "line": 65,
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "precode": "if (PatternOptionBuilder.STRING_VALUE == clazz)",
+        "aftercode": "if (PatternOptionBuilder.OBJECT_VALUE == clazz)",
+        "fail_test_number": 21,
+        "fail_test": "Failing tests: 21\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_UnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnsupportedClassThrowsParseException1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FilesType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ExistingFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateTypeForComparison\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithInvalidInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ObjectType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_DateType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberTypeShouldReturnNumber\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithCustomClass\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithNullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsDateWhenRequested\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithPrimitiveTypes\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_StringType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_URLType\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 3,
+        "line": 67,
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "precode": "return (T) str;",
+        "aftercode": "return (T) \"\";",
+        "fail_test_number": 21,
+        "fail_test": "Failing tests: 21\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_UnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnsupportedClassThrowsParseException1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FilesType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ExistingFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateTypeForComparison\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithInvalidInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ObjectType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_DateType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberTypeShouldReturnNumber\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithCustomClass\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithNullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsDateWhenRequested\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithPrimitiveTypes\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_StringType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_URLType\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 4,
+        "line": 69,
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "precode": "else if (PatternOptionBuilder.OBJECT_VALUE == clazz)",
+        "aftercode": "else if (PatternOptionBuilder.STRING_VALUE == clazz)",
+        "fail_test_number": 20,
+        "fail_test": "Failing tests: 20\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_UnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnsupportedClassThrowsParseException1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FilesType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ExistingFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateTypeForComparison\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithInvalidInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ObjectType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_DateType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberTypeShouldReturnNumber\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithCustomClass\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithNullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsDateWhenRequested\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithPrimitiveTypes\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_URLType\n",
+        "survived": false,
+        "id": 3
+    },
+    {
+        "mutant_id:": 5,
+        "line": 71,
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "precode": "return (T) createObject(str);",
+        "aftercode": "return (T) str;",
+        "fail_test_number": 20,
+        "fail_test": "Failing tests: 20\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_UnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnsupportedClassThrowsParseException1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FilesType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ExistingFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateTypeForComparison\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithInvalidInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ObjectType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_DateType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberTypeShouldReturnNumber\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithCustomClass\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithNullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsDateWhenRequested\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithPrimitiveTypes\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_URLType\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 6,
+        "line": 73,
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "precode": "else if (PatternOptionBuilder.NUMBER_VALUE == clazz)",
+        "aftercode": "else if (PatternOptionBuilder.DATE_VALUE == clazz)",
+        "fail_test_number": 21,
+        "fail_test": "Failing tests: 21\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_UnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnsupportedClassThrowsParseException1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FilesType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ExistingFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateTypeForComparison\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithInvalidInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ObjectType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_DateType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberTypeShouldReturnNumber\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithCustomClass\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithNullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsDateWhenRequested\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithPrimitiveTypes\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_URLType\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 7,
+        "line": 75,
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "precode": "return (T) createNumber(str);",
+        "aftercode": "return (T) createDate(str);",
+        "fail_test_number": 21,
+        "fail_test": "Failing tests: 21\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_UnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnsupportedClassThrowsParseException1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FilesType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ExistingFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateTypeForComparison\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithInvalidInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ObjectType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_DateType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberTypeShouldReturnNumber\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithCustomClass\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithNullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsDateWhenRequested\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithPrimitiveTypes\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_URLType\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 8,
+        "line": 77,
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "precode": "else if (PatternOptionBuilder.DATE_VALUE == clazz)",
+        "aftercode": "else if (PatternOptionBuilder.NUMBER_VALUE == clazz)",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_UnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnsupportedClassThrowsParseException1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FilesType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ExistingFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateTypeForComparison\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithInvalidInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ObjectType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_DateType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberTypeShouldReturnNumber\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithCustomClass\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithNullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsDateWhenRequested\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithPrimitiveTypes\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_URLType\n",
+        "survived": true,
+        "id": 7
+    },
+    {
+        "mutant_id:": 9,
+        "line": 79,
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "precode": "return (T) createDate(str);",
+        "aftercode": "return (T) createNumber(str);",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_UnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnsupportedClassThrowsParseException1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FilesType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ExistingFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateTypeForComparison\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithInvalidInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ObjectType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_DateType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberTypeShouldReturnNumber\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithCustomClass\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithNullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsDateWhenRequested\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithPrimitiveTypes\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_URLType\n",
+        "survived": true,
+        "id": 8
+    },
+    {
+        "mutant_id:": 10,
+        "line": 81,
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "precode": "else if (PatternOptionBuilder.CLASS_VALUE == clazz)",
+        "aftercode": "else if (PatternOptionBuilder.FILE_VALUE == clazz)",
+        "fail_test_number": 24,
+        "fail_test": "Failing tests: 24\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_UnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsFileWhenExpected\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnsupportedClassThrowsParseException1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FilesType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ExistingFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateTypeForComparison\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithInvalidInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ObjectType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_DateType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ClassType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberTypeShouldReturnNumber\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithCustomClass\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithNullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsDateWhenRequested\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithFileValueReturnsFile\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithPrimitiveTypes\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_URLType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueForFileType\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 11,
+        "line": 83,
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "precode": "return (T) createClass(str);",
+        "aftercode": "return (T) createFile(str);",
+        "fail_test_number": 20,
+        "fail_test": "Failing tests: 20\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_UnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnsupportedClassThrowsParseException1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FilesType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ExistingFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateTypeForComparison\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithInvalidInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ObjectType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_DateType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ClassType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberTypeShouldReturnNumber\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithCustomClass\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithNullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsDateWhenRequested\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithPrimitiveTypes\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_URLType\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 12,
+        "line": 85,
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "precode": "else if (PatternOptionBuilder.FILE_VALUE == clazz)",
+        "aftercode": "else if (PatternOptionBuilder.CLASS_VALUE == clazz)",
+        "fail_test_number": 23,
+        "fail_test": "Failing tests: 23\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_UnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsFileWhenExpected\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnsupportedClassThrowsParseException1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FilesType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ExistingFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateTypeForComparison\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithInvalidInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ObjectType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_DateType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberTypeShouldReturnNumber\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithCustomClass\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithNullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsDateWhenRequested\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithFileValueReturnsFile\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithPrimitiveTypes\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_URLType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueForFileType\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 13,
+        "line": 87,
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "precode": "return (T) createFile(str);",
+        "aftercode": "return (T) createClass(str);",
+        "fail_test_number": 23,
+        "fail_test": "Failing tests: 23\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_UnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsFileWhenExpected\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnsupportedClassThrowsParseException1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FilesType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ExistingFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateTypeForComparison\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithInvalidInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ObjectType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_DateType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberTypeShouldReturnNumber\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithCustomClass\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithNullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsDateWhenRequested\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithFileValueReturnsFile\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithPrimitiveTypes\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_URLType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueForFileType\n",
+        "survived": false,
+        "id": 12
+    },
+    {
+        "mutant_id:": 14,
+        "line": 103,
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "precode": "throw new ParseException(\"Unable to handle the class: \" + clazz);",
+        "aftercode": "throw new RuntimeException(\"Unable to handle the class: \" + clazz);",
+        "fail_test_number": 20,
+        "fail_test": "Failing tests: 20\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_UnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_NumberType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnsupportedClassThrowsParseException1\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnsupportedClassThrowsParseException\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FilesType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ExistingFileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithDateTypeForComparison\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithInvalidInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_ObjectType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_DateType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberValue\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithNumberTypeShouldReturnNumber\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithCustomClass\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithNullInput\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueReturnsDateWhenRequested\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValueWithUnknownType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_WithPrimitiveTypes\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_FileType\n  - gentest.org.apache.commons.cli.tests.TypeHandlerTest::testCreateValue_URLType\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "id": 14,
+        "line": 91,
+        "precode": "return (T) openFile(str);",
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "aftercode": "return openFile(str);"
+    },
+    {
+        "id": 15,
+        "line": 91,
+        "precode": "return (T) openFile(str);",
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "aftercode": "return (T) str;"
+    },
+    {
+        "id": 16,
+        "line": 99,
+        "precode": "return (T) createURL(str);",
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "aftercode": "return (T) str;"
+    },
+    {
+        "id": 17,
+        "line": 99,
+        "precode": "return (T) createURL(str);",
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "aftercode": "return createURL(str);"
+    },
+    {
+        "id": 18,
+        "line": 95,
+        "precode": "return (T) createFiles(str);",
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "aftercode": "return createFiles(str);"
+    },
+    {
+        "id": 19,
+        "line": 95,
+        "precode": "return (T) createFiles(str);",
+        "filepath": "./defects4j_fixed/Cli/Cli_40_fixed/src/main/java/org/apache/commons/cli/TypeHandler.java",
+        "aftercode": "return (T) createFiles(null);"
+    }
+]

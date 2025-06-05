@@ -1,0 +1,622 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 1006,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "final int end = offset + len;",
+        "aftercode": "final int end = offset - len;",
+        "fail_test_number": 20,
+        "fail_test": "Failing tests: 20\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithNumber\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_InvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ValidChars\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_Substring\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 2,
+        "line": 1006,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "final int end = offset + len;",
+        "aftercode": "final int end = offset;",
+        "fail_test_number": 20,
+        "fail_test": "Failing tests: 20\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithNumber\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_InvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ValidChars\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_Substring\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 1008,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "final char delimChar = getDelimiter();",
+        "aftercode": "final char delimChar = 'a';",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ValidChars\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 1009,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "final char quoteChar = getQuoteCharacter().charValue();",
+        "aftercode": "final char quoteChar = 'b';",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 1011,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "QuoteMode quoteModePolicy = getQuoteMode();",
+        "aftercode": "QuoteMode quoteModePolicy = QuoteMode.MINIMAL;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 1012,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (quoteModePolicy == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 1012,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (quoteModePolicy == null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_InvalidQuoteMode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 1013,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "quoteModePolicy = QuoteMode.MINIMAL;",
+        "aftercode": "quoteModePolicy = QuoteMode.ALL;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_InvalidQuoteMode\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 1062,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "quote = true;",
+        "aftercode": "quote = false;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 1020,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "quote = !(object instanceof Number);",
+        "aftercode": "quote = (object instanceof Number);",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithNumber\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 11,
+        "line": 1020,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "quote = !(object instanceof Number);",
+        "aftercode": "quote = true;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithNumber\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 12,
+        "line": 1024,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "printAndEscape(value, offset, len, out);",
+        "aftercode": "out.append(value, offset, offset + len);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 13,
+        "line": 1032,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (newRecord) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 14,
+        "line": 1032,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (newRecord) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 1062,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "quote = true;",
+        "aftercode": "quote = false;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 1090,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "char c = value.charAt(pos);",
+        "aftercode": "char c = 'a';",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 1039,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (newRecord && (c < 0x20 || c > 0x21 && c < 0x23 || c > 0x2B && c < 0x2D || c > 0x7E)) {",
+        "aftercode": "if (false && (c < 0x20 || c > 0x21 && c < 0x23 || c > 0x2B && c < 0x2D || c > 0x7E)) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 18,
+        "line": 1039,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (newRecord && (c < 0x20 || c > 0x21 && c < 0x23 || c > 0x2B && c < 0x2D || c > 0x7E)) {",
+        "aftercode": "if (newRecord || (c < 0x20 || c > 0x21 && c < 0x23 || c > 0x2B && c < 0x2D || c > 0x7E)) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_InvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ValidChars\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_Substring\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 1062,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "quote = true;",
+        "aftercode": "quote = false;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 20,
+        "line": 1062,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "quote = true;",
+        "aftercode": "quote = false;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 1089,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "while (pos < end) {",
+        "aftercode": "while (pos <= end) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 22,
+        "line": 1049,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (c == LF || c == CR || c == quoteChar || c == delimChar) {",
+        "aftercode": "if (c == LF && c == CR && c == quoteChar && c == delimChar) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 23,
+        "line": 1049,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (c == LF || c == CR || c == quoteChar || c == delimChar) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 24,
+        "line": 1062,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "quote = true;",
+        "aftercode": "quote = false;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 25,
+        "line": 1100,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "pos++;",
+        "aftercode": "pos--;",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 26,
+        "line": 1100,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "pos++;",
+        "aftercode": "pos += 2;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 27,
+        "line": 1078,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (!quote) {",
+        "aftercode": "if (quote) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithNumber\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 28,
+        "line": 1057,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "pos = end - 1;",
+        "aftercode": "pos = end;",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_InvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ValidChars\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_Substring\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 29,
+        "line": 1061,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (c <= SP) {",
+        "aftercode": "if (c >= SP) {",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_InvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ValidChars\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_Substring\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 30,
+        "line": 1062,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "quote = true;",
+        "aftercode": "quote = false;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 31,
+        "line": 1080,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "out.append(value, start, end);",
+        "aftercode": "out.append(value, start, start);",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithNumber\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 32,
+        "line": 1078,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (!quote) {",
+        "aftercode": "if (quote) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithNumber\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 33,
+        "line": 1080,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "out.append(value, start, end);",
+        "aftercode": "out.append(value, start, start);",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithNumber\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 34,
+        "line": 1105,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "out.append(quoteChar);",
+        "aftercode": "out.append(delimChar);",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 35,
+        "line": 1089,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "while (pos < end) {",
+        "aftercode": "while (pos <= end) {",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 36,
+        "line": 1090,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "final char c = value.charAt(pos);",
+        "aftercode": "final char c = value.charAt(0);",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 37,
+        "line": 1091,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (c == quoteChar) {",
+        "aftercode": "if (c != quoteChar) {",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 38,
+        "line": 1095,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "out.append(value, start, pos + 1);",
+        "aftercode": "out.append(value, start, pos);",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 39,
+        "line": 1098,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "start = pos;",
+        "aftercode": "start = pos + 1;",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 40,
+        "line": 1100,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "pos++;",
+        "aftercode": "pos--;",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 41,
+        "line": 1100,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "pos++;",
+        "aftercode": "pos += 2;",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 42,
+        "line": 1104,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "out.append(value, start, pos);",
+        "aftercode": "out.append(value, start, start);",
+        "fail_test_number": 16,
+        "fail_test": "Failing tests: 16\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 43,
+        "line": 1105,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "out.append(quoteChar);",
+        "aftercode": "out.append(delimChar);",
+        "fail_test_number": 17,
+        "fail_test": "Failing tests: 17\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NON_NUMERIC_WithString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_ALL\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidStartChar\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 44,
+        "line": 1039,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (newRecord && (c < 0x20 || c > 0x21 && c < 0x23 || c > 0x2B && c < 0x2D || c > 0x7E)) {",
+        "aftercode": "if (newRecord && (c < 0x20 || c > 0x21 || c < 0x23 || c > 0x2B || c < 0x2D || c > 0x7E)) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_InvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ValidChars\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_Substring\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 45,
+        "line": 1049,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (c == LF || c == CR || c == quoteChar || c == delimChar) {",
+        "aftercode": "if (c == LF || c == CR || c == quoteChar) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 46,
+        "line": 1049,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (c == LF || c == CR || c == quoteChar || c == delimChar) {",
+        "aftercode": "if (c == LF || c == CR) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 47,
+        "line": 1049,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (c == LF || c == CR || c == quoteChar || c == delimChar) {",
+        "aftercode": "if (c == LF) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsQuoteChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsDelimiter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 48,
+        "line": 1061,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (c <= SP) {",
+        "aftercode": "if (c < SP) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 49,
+        "line": 1061,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (c <= SP) {",
+        "aftercode": "if (c == SP) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 50,
+        "line": 1024,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "printAndEscape(value, offset, len, out);",
+        "aftercode": "printAndEscape(value, offset, len + 1, out);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 51,
+        "line": 1024,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "printAndEscape(value, offset, len, out);",
+        "aftercode": "printAndEscape(value, offset + 1, len, out);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 52,
+        "line": 1032,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (newRecord) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 53,
+        "line": 1032,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (newRecord) {",
+        "aftercode": "if (!newRecord) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 54,
+        "line": 1039,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (newRecord && (c < 0x20 || c > 0x21 && c < 0x23 || c > 0x2B && c < 0x2D || c > 0x7E)) {",
+        "aftercode": "if (newRecord || (c < 0x20 || c > 0x21 && c < 0x23 || c > 0x2B && c < 0x2D || c > 0x7E)) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_InvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ValidChars\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_Substring\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 55,
+        "line": 1039,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (newRecord && (c < 0x20 || c > 0x21 && c < 0x23 || c > 0x2B && c < 0x2D || c > 0x7E)) {",
+        "aftercode": "if (newRecord && (c <= 0x20 || c > 0x21 && c < 0x23 || c > 0x2B && c < 0x2D || c > 0x7E)) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 56,
+        "line": 1061,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (c <= SP) {",
+        "aftercode": "if (c > SP) {",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_InvalidEndChar\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_InvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ValidChars\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_Substring\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 57,
+        "line": 1061,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "if (c <= SP) {",
+        "aftercode": "if (c != SP) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_InvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ValidChars\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_Substring\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 58,
+        "line": 1024,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "printAndEscape(value, offset, len, out);",
+        "aftercode": "printAndEscape(value, offset, len + 1, out);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 59,
+        "line": 1024,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "printAndEscape(value, offset, len, out);",
+        "aftercode": "printAndEscape(value, offset + 1, len, out);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 61,
+        "line": 1025,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "return;",
+        "aftercode": "throw new RuntimeException();",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 62,
+        "line": 1075,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "throw new IllegalStateException(\"Unexpected Quote value: \" + quoteModePolicy);",
+        "aftercode": "throw new IllegalArgumentException(\"Unexpected Quote value: \" + quoteModePolicy);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 63,
+        "line": 1075,
+        "filepath": "./defects4j_fixed/Csv/Csv_14_fixed/src/main/java/org/apache/commons/csv/CSVFormat.java",
+        "precode": "throw new IllegalStateException(\"Unexpected Quote value: \" + quoteModePolicy);",
+        "aftercode": "throw new IllegalStateException(\"Invalid Quote value: \" + quoteModePolicy);",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSpecialCharacters\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndEmptyString\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeShouldNotSkipFirstCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_ContainsLineBreak\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeAndSingleCharacter\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_WithSpaces\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithInvalidQuoteMode\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_NONE\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuoteWithNoneQuoteModeVerifiesEscaping\n  - gentest.org.apache.commons.csv.tests.CSVFormatTest::testPrintAndQuote_QuoteMode_MINIMAL_EmptyValueNotNewRecord\n",
+        "survived": true
+    }
+]

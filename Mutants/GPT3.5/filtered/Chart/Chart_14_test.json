@@ -1,0 +1,281 @@
+[
+    {
+        "mutant_id:": 2,
+        "line": 749,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double uvalue;",
+        "aftercode": "double uvalue = 0.0;",
+        "fail_test_number:": 1,
+        "fail_test:": "Failing tests: 1\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 3,
+        "line": 755,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double value = intervalXYData.getXValue(series, item);",
+        "aftercode": "double value = intervalXYData.getYValue(series, item);",
+        "fail_test_number:": 7,
+        "fail_test:": "Failing tests: 7\n  - org.jfree.chart.renderer.xy.junit.ClusteredXYBarRendererTests::testFindDomainBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds_NaN2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds_NaN\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds2\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 4,
+        "line": 756,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "lvalue = intervalXYData.getStartXValue(series, item);",
+        "aftercode": "lvalue = intervalXYData.getStartYValue(series, item);",
+        "fail_test_number:": 7,
+        "fail_test:": "Failing tests: 7\n  - org.jfree.chart.renderer.xy.junit.ClusteredXYBarRendererTests::testFindDomainBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds_NaN2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds_NaN\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds2\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 5,
+        "line": 757,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "uvalue = intervalXYData.getEndXValue(series, item);",
+        "aftercode": "uvalue = intervalXYData.getEndYValue(series, item);",
+        "fail_test_number:": 7,
+        "fail_test:": "Failing tests: 7\n  - org.jfree.chart.renderer.xy.junit.ClusteredXYBarRendererTests::testFindDomainBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds_NaN2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds_NaN\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds2\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 9,
+        "line": 787,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "return null;",
+        "aftercode": "return new Range(Double.POSITIVE_INFINITY, Double.NEGATIVE_INFINITY);",
+        "fail_test_number:": 3,
+        "fail_test:": "Failing tests: 3\n  - org.jfree.chart.plot.junit.XYPlotTests::testDrawRangeGridlines\n  - org.jfree.chart.renderer.xy.junit.XYBlockRendererTests::testBug1766646A\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 11,
+        "line": 749,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double uvalue;",
+        "aftercode": "double uvalue = Double.POSITIVE_INFINITY;",
+        "fail_test_number:": 1,
+        "fail_test:": "Failing tests: 1\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 12,
+        "line": 759,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "minimum = Math.min(minimum, value);",
+        "aftercode": "minimum = Math.max(minimum, value);",
+        "fail_test_number:": 7,
+        "fail_test:": "Failing tests: 7\n  - org.jfree.chart.renderer.xy.junit.ClusteredXYBarRendererTests::testFindDomainBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds_NaN2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds_NaN\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds2\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 13,
+        "line": 760,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "maximum = Math.max(maximum, value);",
+        "aftercode": "maximum = Math.min(maximum, value);",
+        "fail_test_number:": 2,
+        "fail_test:": "Failing tests: 2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_2\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 14,
+        "line": 780,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "minimum = Math.min(minimum, lvalue);",
+        "aftercode": "minimum = Math.max(minimum, lvalue);",
+        "fail_test_number:": 6,
+        "fail_test:": "Failing tests: 6\n  - org.jfree.chart.renderer.xy.junit.StackedXYBarRendererTests::testFindDomainBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds_NaN2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds_NaN\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds_NaN\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds3\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 15,
+        "line": 764,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "maximum = Math.max(maximum, lvalue);",
+        "aftercode": "maximum = Math.min(maximum, lvalue);",
+        "fail_test_number:": 2,
+        "fail_test:": "Failing tests: 2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_2\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 16,
+        "line": 767,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "minimum = Math.min(minimum, uvalue);",
+        "aftercode": "minimum = Math.max(minimum, uvalue);",
+        "fail_test_number:": 7,
+        "fail_test:": "Failing tests: 7\n  - org.jfree.chart.renderer.xy.junit.ClusteredXYBarRendererTests::testFindDomainBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds_NaN2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds_NaN\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds2\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 17,
+        "line": 781,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "maximum = Math.max(maximum, uvalue);",
+        "aftercode": "maximum = Math.min(maximum, uvalue);",
+        "fail_test_number:": 6,
+        "fail_test:": "Failing tests: 6\n  - org.jfree.chart.renderer.xy.junit.StackedXYBarRendererTests::testFindDomainBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds_NaN2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds_NaN\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateDomainBounds_NaN\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindDomainBounds3\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 20,
+        "line": 1240,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "int seriesCount = dataset.getSeriesCount();",
+        "aftercode": "int seriesCount = dataset.getSeriesCount()-1;",
+        "fail_test_number:": 10,
+        "fail_test:": "Failing tests: 10\n  - org.jfree.chart.renderer.xy.junit.HighLowRendererTests::testFindRangeBounds\n  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testFindRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindRangeBounds2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds3\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds4\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_3\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n  - org.jfree.data.xy.junit.DefaultOHLCDatasetTests::testDataRange\n"
+    },
+    {
+        "mutant_id:": 21,
+        "line": 1243,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "if (includeInterval && dataset instanceof IntervalXYDataset) {",
+        "aftercode": "if (includeInterval || dataset instanceof IntervalXYDataset) {",
+        "fail_test_number:": 7,
+        "fail_test:": "Failing tests: 7\n  - org.jfree.chart.plot.junit.PolarPlotTests::testCloning\n  - org.jfree.chart.plot.junit.XYPlotTests::testDrawRangeGridlines\n  - org.jfree.chart.renderer.xy.junit.HighLowRendererTests::testFindRangeBounds\n  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testFindRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindRangeBounds2\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n  - org.jfree.data.xy.junit.DefaultOHLCDatasetTests::testDataRange\n"
+    },
+    {
+        "mutant_id:": 22,
+        "line": 1249,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double value = ixyd.getYValue(series, item);",
+        "aftercode": "double value = ixyd.getYValue(series, item + 1);",
+        "fail_test_number:": 9,
+        "fail_test:": "Failing tests: 9\n  - org.jfree.chart.junit.JFreeChartTests::testSerialization4\n  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testFindRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindRangeBounds2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds3\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds4\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_3\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 23,
+        "line": 1250,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double lvalue = ixyd.getStartYValue(series, item);",
+        "aftercode": "double lvalue = ixyd.getStartYValue(series + 1, item);",
+        "fail_test_number:": 9,
+        "fail_test:": "Failing tests: 9\n  - org.jfree.chart.junit.JFreeChartTests::testSerialization4\n  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testFindRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindRangeBounds2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds3\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds4\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_3\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 24,
+        "line": 1251,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double uvalue = ixyd.getEndYValue(series, item);",
+        "aftercode": "double uvalue = ixyd.getEndYValue(series, item + 1);",
+        "fail_test_number:": 9,
+        "fail_test:": "Failing tests: 9\n  - org.jfree.chart.junit.JFreeChartTests::testSerialization4\n  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testFindRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindRangeBounds2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds3\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds4\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_3\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 25,
+        "line": 1291,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "minimum = Math.min(minimum, value);",
+        "aftercode": "minimum = Math.max(minimum, value);",
+        "fail_test_number:": 3,
+        "fail_test:": "Failing tests: 3\n  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testFindRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindRangeBounds2\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 26,
+        "line": 1258,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "maximum = Math.max(maximum, lvalue);",
+        "aftercode": "maximum = Math.min(maximum, lvalue);",
+        "fail_test_number:": 4,
+        "fail_test:": "Failing tests: 4\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindRangeBounds2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds4\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_3\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 27,
+        "line": 1261,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "minimum = Math.min(minimum, uvalue);",
+        "aftercode": "maximum = Math.max(maximum, uvalue);",
+        "fail_test_number:": 1,
+        "fail_test:": "Failing tests: 1\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 28,
+        "line": 1290,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "if (!Double.isNaN(value)) {",
+        "aftercode": "if (Double.isNaN(value)) {",
+        "fail_test_number:": 3,
+        "fail_test:": "Failing tests: 3\n  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testFindRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindRangeBounds2\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 29,
+        "line": 1275,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "if (!Double.isNaN(lvalue)) {",
+        "aftercode": "if (Double.isNaN(lvalue)) {",
+        "fail_test_number:": 3,
+        "fail_test:": "Failing tests: 3\n  - org.jfree.chart.renderer.xy.junit.HighLowRendererTests::testFindRangeBounds\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n  - org.jfree.data.xy.junit.DefaultOHLCDatasetTests::testDataRange\n"
+    },
+    {
+        "mutant_id:": 30,
+        "line": 1278,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "if (!Double.isNaN(uvalue)) {",
+        "aftercode": "if (Double.isNaN(uvalue)) {",
+        "fail_test_number:": 3,
+        "fail_test:": "Failing tests: 3\n  - org.jfree.chart.renderer.xy.junit.HighLowRendererTests::testFindRangeBounds\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n  - org.jfree.data.xy.junit.DefaultOHLCDatasetTests::testDataRange\n"
+    },
+    {
+        "mutant_id:": 31,
+        "line": 1297,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "if (minimum == Double.POSITIVE_INFINITY) {",
+        "aftercode": "if (minimum == Double.NEGATIVE_INFINITY) {",
+        "fail_test_number:": 8,
+        "fail_test:": "Failing tests: 8\n  - org.jfree.chart.plot.junit.PolarPlotTests::testCloning\n  - org.jfree.chart.plot.junit.XYPlotTests::testDrawRangeGridlines\n  - org.jfree.chart.renderer.xy.junit.HighLowRendererTests::testFindRangeBounds\n  - org.jfree.chart.renderer.xy.junit.XYBlockRendererTests::testBug1766646B\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindRangeBounds2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds3\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds4\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 32,
+        "line": 1301,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "return new Range(minimum, maximum);",
+        "aftercode": "return new Range(maximum, minimum);",
+        "fail_test_number:": 13,
+        "fail_test:": "Failing tests: 13\n  - org.jfree.chart.junit.JFreeChartTests::testSerialization4\n  - org.jfree.chart.junit.XYBarChartTests::testDrawWithNullInfo\n  - org.jfree.chart.junit.XYBarChartTests::testSetSeriesToolTipGenerator\n  - org.jfree.chart.junit.XYBarChartTests::testReplaceDataset\n  - org.jfree.chart.renderer.xy.junit.HighLowRendererTests::testFindRangeBounds\n  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testFindRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindRangeBounds2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds4\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_3\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n  - org.jfree.data.xy.junit.DefaultOHLCDatasetTests::testDataRange\n"
+    },
+    {
+        "mutant_id:": 33,
+        "line": 1250,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double lvalue = ixyd.getStartYValue(series, item);",
+        "aftercode": "double lvalue = ixyd.getEndYValue(series, item);",
+        "fail_test_number:": 5,
+        "fail_test:": "Failing tests: 5\n  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testFindRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindRangeBounds2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds4\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_3\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 34,
+        "line": 1251,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "double uvalue = ixyd.getEndYValue(series, item);",
+        "aftercode": "double uvalue = ixyd.getStartYValue(series, item);",
+        "fail_test_number:": 5,
+        "fail_test:": "Failing tests: 5\n  - org.jfree.chart.renderer.xy.junit.XYBarRendererTests::testFindRangeBounds\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testFindRangeBounds2\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testIterateRangeBounds4\n  - org.jfree.data.general.junit.DatasetUtilitiesTests::testBug2849731_3\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 35,
+        "line": 1267,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "else if (includeInterval && dataset instanceof OHLCDataset) {",
+        "aftercode": "else if (includeInterval || dataset instanceof OHLCDataset) {",
+        "fail_test_number:": 3,
+        "fail_test:": "Failing tests: 3\n  - org.jfree.chart.plot.junit.PolarPlotTests::testCloning\n  - org.jfree.chart.plot.junit.XYPlotTests::testDrawRangeGridlines\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n"
+    },
+    {
+        "mutant_id:": 36,
+        "line": 1279,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "maximum = Math.max(maximum, uvalue);",
+        "aftercode": "minimum = Math.min(minimum, uvalue);",
+        "fail_test_number:": 3,
+        "fail_test:": "Failing tests: 3\n  - org.jfree.chart.renderer.xy.junit.HighLowRendererTests::testFindRangeBounds\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n  - org.jfree.data.xy.junit.DefaultOHLCDatasetTests::testDataRange\n"
+    },
+    {
+        "mutant_id:": 37,
+        "line": 1276,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "minimum = Math.min(minimum, lvalue);",
+        "aftercode": "maximum = Math.max(maximum, lvalue);",
+        "fail_test_number:": 3,
+        "fail_test:": "Failing tests: 3\n  - org.jfree.chart.renderer.xy.junit.HighLowRendererTests::testFindRangeBounds\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n  - org.jfree.data.xy.junit.DefaultOHLCDatasetTests::testDataRange\n"
+    },
+    {
+        "mutant_id:": 38,
+        "line": 1279,
+        "filepath": "./defects4j_fixed/Chart/Chart_2_fixed/source/org/jfree/data/general/DatasetUtilities.java",
+        "precode": "maximum = Math.max(maximum, uvalue);",
+        "aftercode": "minimum = Math.min(minimum, uvalue);",
+        "fail_test_number:": 3,
+        "fail_test:": "Failing tests: 3\n  - org.jfree.chart.renderer.xy.junit.HighLowRendererTests::testFindRangeBounds\n  - org.jfree.data.time.junit.MonthTests::testParseMonth\n  - org.jfree.data.xy.junit.DefaultOHLCDatasetTests::testDataRange\n"
+    }
+]

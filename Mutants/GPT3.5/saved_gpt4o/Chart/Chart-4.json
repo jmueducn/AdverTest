@@ -1,0 +1,198 @@
+[
+    {
+        "id": 1,
+        "line": 4493,
+        "precode": "if (r != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "if (r == null) {"
+    },
+    {
+        "id": 2,
+        "line": 4494,
+        "precode": "Collection c = r.getAnnotations();",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "Collection c = new ArrayList();"
+    },
+    {
+        "id": 3,
+        "line": 4494,
+        "precode": "Collection c = r.getAnnotations();",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "Collection c = r.getAnnotations(); c.clear();"
+    },
+    {
+        "id": 4,
+        "line": 4495,
+        "precode": "Iterator i = c.iterator();",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "Iterator i = Collections.emptyIterator();"
+    },
+    {
+        "id": 5,
+        "line": 4496,
+        "precode": "while (i.hasNext()) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "while (!i.hasNext()) {"
+    },
+    {
+        "id": 6,
+        "line": 4496,
+        "precode": "while (i.hasNext()) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "while (true) {"
+    },
+    {
+        "id": 7,
+        "line": 4496,
+        "precode": "while (i.hasNext()) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "while (c.isEmpty()) {"
+    },
+    {
+        "id": 8,
+        "line": 4493,
+        "precode": "if (r != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "if (r == null || c.isEmpty()) {"
+    },
+    {
+        "id": 9,
+        "line": 4495,
+        "precode": "Iterator i = c.iterator();",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "Iterator i = c.listIterator();"
+    },
+    {
+        "id": 10,
+        "line": 4494,
+        "precode": "Collection c = r.getAnnotations();",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "Collection c = new HashSet(r.getAnnotations());"
+    },
+    {
+        "id": 11,
+        "line": 4496,
+        "precode": "while (i.hasNext()) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "for (Object obj : c) {"
+    },
+    {
+        "id": 12,
+        "line": 4495,
+        "precode": "Iterator i = c.iterator();",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "Iterator i = null;"
+    },
+    {
+        "id": 13,
+        "line": 4494,
+        "precode": "Collection c = r.getAnnotations();",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "Collection c = r.getAnnotations(); c.add(null);"
+    },
+    {
+        "id": 14,
+        "line": 4493,
+        "precode": "if (r != null) {",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "if (r != null && !c.isEmpty()) {"
+    },
+    {
+        "id": 15,
+        "line": 4499,
+        "precode": "includedAnnotations.add(a);",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "// includedAnnotations.add(a);"
+    },
+    {
+        "id": 16,
+        "line": 4499,
+        "precode": "includedAnnotations.add(a);",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "includedAnnotations.remove(a);"
+    },
+    {
+        "id": 17,
+        "line": 4499,
+        "precode": "includedAnnotations.add(a);",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "includedAnnotations.clear();"
+    },
+    {
+        "id": 18,
+        "line": 4499,
+        "precode": "includedAnnotations.add(a);",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "includedAnnotations.add(null);"
+    },
+    {
+        "id": 19,
+        "line": 4499,
+        "precode": "includedAnnotations.add(a);",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "includedAnnotations.add(xyabi);"
+    },
+    {
+        "id": 20,
+        "line": 4499,
+        "precode": "includedAnnotations.add(a);",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "if (a != null) includedAnnotations.add(a);"
+    },
+    {
+        "id": 21,
+        "line": 4499,
+        "precode": "includedAnnotations.add(a);",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "includedAnnotations.addAll(c);"
+    },
+    {
+        "id": 22,
+        "line": 4499,
+        "precode": "includedAnnotations.add(a);",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "includedAnnotations.add(a.clone());"
+    },
+    {
+        "id": 23,
+        "line": 4499,
+        "precode": "includedAnnotations.add(a);",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "includedAnnotations.add(a.toString());"
+    },
+    {
+        "id": 24,
+        "line": 4499,
+        "precode": "includedAnnotations.add(a);",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "includedAnnotations.add(new XYAnnotationBoundsInfo());"
+    },
+    {
+        "id": 25,
+        "line": 4499,
+        "precode": "includedAnnotations.add(a);",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "includedAnnotations.add(a.getClass());"
+    },
+    {
+        "id": 26,
+        "line": 4499,
+        "precode": "includedAnnotations.add(a);",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "includedAnnotations.add(a.hashCode());"
+    },
+    {
+        "id": 27,
+        "line": 4499,
+        "precode": "includedAnnotations.add(a);",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "includedAnnotations.add((XYAnnotation) a);"
+    },
+    {
+        "id": 28,
+        "line": 4499,
+        "precode": "includedAnnotations.add(a);",
+        "filepath": "./defects4j_fixed/Chart/Chart_4_fixed/source/org/jfree/chart/plot/XYPlot.java",
+        "aftercode": "includedAnnotations.add(a.equals(xyabi));"
+    }
+]

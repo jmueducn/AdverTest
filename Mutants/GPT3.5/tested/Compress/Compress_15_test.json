@@ -1,0 +1,572 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 650,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (this == obj) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 2,
+        "line": 650,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (this == obj) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 31,
+        "fail_test": "Failing tests: 31\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentClass\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentCompressedSize\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullComparison\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentInternalAttributes\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExternalAttributes\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentGeneralPurposeBit\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName3\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName5\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName6\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameShouldReturnFalseWhenOtherNameNotNull\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentMethod\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentSize\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentTime\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldReturnFalseWhenCommentsDiffer\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentCrc\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 653,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (obj == null || getClass() != obj.getClass()) {",
+        "aftercode": "if (obj == null) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentClass\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 653,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (obj == null || getClass() != obj.getClass()) {",
+        "aftercode": "if (getClass() != obj.getClass()) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullComparison\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 653,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (obj == null || getClass() != obj.getClass()) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentClass\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullComparison\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 6,
+        "line": 657,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "String myName = getName();",
+        "aftercode": "String myName = null;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 658,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "String otherName = other.getName();",
+        "aftercode": "String otherName = null;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 659,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (myName == null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 9,
+        "line": 659,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (myName == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 660,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (otherName != null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 11,
+        "line": 660,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (otherName != null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 12,
+        "line": 663,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "} else if (!myName.equals(otherName)) {",
+        "aftercode": "} else if (true) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 663,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "} else if (!myName.equals(otherName)) {",
+        "aftercode": "} else if (false) {",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName3\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName5\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName6\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameShouldReturnFalseWhenOtherNameNotNull\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 14,
+        "line": 666,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "String myComment = getComment();",
+        "aftercode": "String myComment = null;",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldReturnFalseWhenCommentsDiffer\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 15,
+        "line": 667,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "String otherComment = other.getComment();",
+        "aftercode": "String otherComment = null;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldReturnFalseWhenCommentsDiffer\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 16,
+        "line": 668,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (myComment == null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentCompressedSize\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentInternalAttributes\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExternalAttributes\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentGeneralPurposeBit\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentMethod\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentSize\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldReturnFalseWhenCommentsDiffer\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentCrc\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 17,
+        "line": 668,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (myComment == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldReturnFalseWhenCommentsDiffer\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 18,
+        "line": 669,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "myComment = \"\";",
+        "aftercode": "myComment = \"mutant\";",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 19,
+        "line": 671,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (otherComment == null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 20,
+        "line": 671,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (otherComment == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldReturnFalseWhenCommentsDiffer\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 21,
+        "line": 672,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "otherComment = \"\";",
+        "aftercode": "otherComment = \"mutant\";",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 22,
+        "line": 674,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "return getTime() == other.getTime()",
+        "aftercode": "return false",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 23,
+        "line": 675,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& myComment.equals(otherComment)",
+        "aftercode": "&& false",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 24,
+        "line": 675,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& myComment.equals(otherComment)",
+        "aftercode": "&& true",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldReturnFalseWhenCommentsDiffer\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 25,
+        "line": 676,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& getInternalAttributes() == other.getInternalAttributes()",
+        "aftercode": "&& false",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 26,
+        "line": 677,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& getPlatform() == other.getPlatform()",
+        "aftercode": "&& false",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 27,
+        "line": 678,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& getExternalAttributes() == other.getExternalAttributes()",
+        "aftercode": "&& false",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 28,
+        "line": 679,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& getMethod() == other.getMethod()",
+        "aftercode": "&& false",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 29,
+        "line": 680,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& getSize() == other.getSize()",
+        "aftercode": "&& false",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 30,
+        "line": 681,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& getCrc() == other.getCrc()",
+        "aftercode": "&& false",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 31,
+        "line": 682,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& getCompressedSize() == other.getCompressedSize()",
+        "aftercode": "&& false",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 32,
+        "line": 684,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "other.getCentralDirectoryExtra())",
+        "aftercode": "null)",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 33,
+        "line": 686,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "other.getLocalFileDataExtra())",
+        "aftercode": "null)",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 34,
+        "line": 687,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& gpb.equals(other.gpb);",
+        "aftercode": "&& false;",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 35,
+        "line": 687,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& gpb.equals(other.gpb);",
+        "aftercode": "&& true;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentGeneralPurposeBit\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 36,
+        "line": 674,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "return getTime() == other.getTime()",
+        "aftercode": "return true",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentTime\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 37,
+        "line": 653,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (obj == null || getClass() != obj.getClass()) {",
+        "aftercode": "if (obj != null && getClass() == obj.getClass()) {",
+        "fail_test_number": 12,
+        "fail_test": "Failing tests: 12\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentClass\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullComparison\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 38,
+        "line": 663,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "} else if (!myName.equals(otherName)) {",
+        "aftercode": "} else if (myName.equals(otherName)) {",
+        "fail_test_number": 18,
+        "fail_test": "Failing tests: 18\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName3\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName5\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName6\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameShouldReturnFalseWhenOtherNameNotNull\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 39,
+        "line": 675,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "&& myComment.equals(otherComment)",
+        "aftercode": "&& !myComment.equals(otherComment)",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldReturnFalseWhenCommentsDiffer\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 40,
+        "line": 650,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (this == obj) {",
+        "aftercode": "if (obj == this) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 41,
+        "line": 650,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (this == obj) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 31,
+        "fail_test": "Failing tests: 31\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentClass\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentCompressedSize\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullComparison\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentInternalAttributes\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExternalAttributes\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentGeneralPurposeBit\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName3\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName5\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName6\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameShouldReturnFalseWhenOtherNameNotNull\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentMethod\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentSize\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentTime\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldReturnFalseWhenCommentsDiffer\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentCrc\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 42,
+        "line": 659,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (myName == null) {",
+        "aftercode": "if (myName != null) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 43,
+        "line": 659,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (myName == null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 44,
+        "line": 660,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (otherName != null) {",
+        "aftercode": "if (otherName == null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 45,
+        "line": 660,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (otherName != null) {",
+        "aftercode": "if (otherName != null && false) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 46,
+        "line": 666,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "String myComment = getComment();",
+        "aftercode": "String myComment = \"\";",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldReturnFalseWhenCommentsDiffer\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 47,
+        "line": 666,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "String myComment = getComment();",
+        "aftercode": "String myComment = getComment() + \"test\";",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithBothNullNamesShouldReturnTrue\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 48,
+        "line": 667,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "String otherComment = other.getComment();",
+        "aftercode": "String otherComment = \"\";",
+        "fail_test_number": 10,
+        "fail_test": "Failing tests: 10\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldReturnFalseWhenCommentsDiffer\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 49,
+        "line": 667,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "String otherComment = other.getComment();",
+        "aftercode": "String otherComment = other.toString();",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 50,
+        "line": 668,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (myComment == null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 19,
+        "fail_test": "Failing tests: 19\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentCompressedSize\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentInternalAttributes\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExternalAttributes\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentGeneralPurposeBit\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentMethod\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentSize\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldReturnFalseWhenCommentsDiffer\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentCrc\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 51,
+        "line": 668,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (myComment == null) {",
+        "aftercode": "if (myComment != null) {",
+        "fail_test_number": 20,
+        "fail_test": "Failing tests: 20\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentCompressedSize\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentInternalAttributes\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExternalAttributes\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentGeneralPurposeBit\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentPlatform\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentMethod\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentComment\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentSize\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldReturnFalseWhenCommentsDiffer\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentCrc\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 52,
+        "line": 671,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (otherComment == null) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 53,
+        "line": 671,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (otherComment == null) {",
+        "aftercode": "if (otherComment != null) {",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldDetectMutatedCommentHandling\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldReturnFalse\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_NullName\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_shouldReturnFalseWhenCommentsDiffer\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual1\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual2\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithDifferentCommentsShouldNotBeEqual\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 54,
+        "line": 660,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (otherName != null) {",
+        "aftercode": "if (otherName == null) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 55,
+        "line": 660,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "if (otherName != null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 56,
+        "line": 661,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "return false;",
+        "aftercode": "return true;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 57,
+        "line": 661,
+        "filepath": "./defects4j_fixed/Compress/Compress_15_fixed/src/main/java/org/apache/commons/compress/archivers/zip/ZipArchiveEntry.java",
+        "precode": "return false;",
+        "aftercode": "return !false;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNames\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEqualsWithNullNameVsNonNullName4\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_DifferentExtraFields\n  - gentest.org.apache.commons.compress.archivers.zip.tests.ZipArchiveEntryTest::testEquals_AllFieldsEqual\n",
+        "survived": true
+    }
+]

@@ -1,0 +1,261 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 851,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "if (file != null) {",
+        "aftercode": "if (file == null) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_LinkFlagIsDir\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NameEndsWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NotDirectory\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 852,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "return file.isDirectory();",
+        "aftercode": "return true;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n",
+        "survived": true,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 852,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "return file.isDirectory();",
+        "aftercode": "return false;",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n",
+        "survived": true,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 855,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "if (linkFlag == LF_DIR) {",
+        "aftercode": "if (linkFlag != LF_DIR) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NotDirectory\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 5,
+        "line": 860,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "return true;",
+        "aftercode": "return false;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NameEndsWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n",
+        "survived": false,
+        "id": 5
+    },
+    {
+        "mutant_id:": 6,
+        "line": 859,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "if (!isPaxHeader() && !isGlobalPaxHeader() && getName().endsWith(\"/\")) {",
+        "aftercode": "if (isPaxHeader() && !isGlobalPaxHeader() && getName().endsWith(\"/\")) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NameEndsWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 7,
+        "line": 859,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "if (!isPaxHeader() && !isGlobalPaxHeader() && getName().endsWith(\"/\")) {",
+        "aftercode": "if (!isPaxHeader() || !isGlobalPaxHeader() && getName().endsWith(\"/\")) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NotDirectory\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "mutant_id:": 8,
+        "line": 859,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "if (!isPaxHeader() && !isGlobalPaxHeader() && getName().endsWith(\"/\")) {",
+        "aftercode": "if (!isPaxHeader() && isGlobalPaxHeader() && getName().endsWith(\"/\")) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NameEndsWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n",
+        "survived": false,
+        "id": 8
+    },
+    {
+        "mutant_id:": 9,
+        "line": 859,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "if (!isPaxHeader() && !isGlobalPaxHeader() && getName().endsWith(\"/\")) {",
+        "aftercode": "if (!isPaxHeader() && !isGlobalPaxHeader() || getName().endsWith(\"/\")) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NotDirectory\n",
+        "survived": false,
+        "id": 9
+    },
+    {
+        "mutant_id:": 10,
+        "line": 859,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "if (!isPaxHeader() && !isGlobalPaxHeader() && getName().endsWith(\"/\")) {",
+        "aftercode": "if (!isPaxHeader() && !isGlobalPaxHeader() && !getName().endsWith(\"/\")) {",
+        "fail_test_number": 6,
+        "fail_test": "Failing tests: 6\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NameEndsWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NotDirectory\n",
+        "survived": false,
+        "id": 10
+    },
+    {
+        "mutant_id:": 11,
+        "line": 859,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "if (!isPaxHeader() && !isGlobalPaxHeader() && getName().endsWith(\"/\")) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NotDirectory\n",
+        "survived": false,
+        "id": 11
+    },
+    {
+        "mutant_id:": 12,
+        "line": 859,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "if (!isPaxHeader() && !isGlobalPaxHeader() && getName().endsWith(\"/\")) {",
+        "aftercode": "if (false) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NameEndsWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n",
+        "survived": false,
+        "id": 12
+    },
+    {
+        "mutant_id:": 13,
+        "line": 860,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "return true;",
+        "aftercode": "return false;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NameEndsWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n",
+        "survived": false,
+        "id": 13
+    },
+    {
+        "mutant_id:": 14,
+        "line": 863,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "return false;",
+        "aftercode": "return true;",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NotDirectory\n",
+        "survived": false,
+        "id": 14
+    },
+    {
+        "mutant_id:": 15,
+        "line": 851,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "if (file != null) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_LinkFlagIsDir\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NameEndsWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NotDirectory\n",
+        "survived": false,
+        "id": 15
+    },
+    {
+        "mutant_id:": 16,
+        "line": 855,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "if (linkFlag == LF_DIR) {",
+        "aftercode": "if (true) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NotDirectory\n",
+        "survived": false,
+        "id": 16
+    },
+    {
+        "mutant_id:": 17,
+        "line": 859,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "if (!isPaxHeader() && !isGlobalPaxHeader() && getName().endsWith(\"/\")) {",
+        "aftercode": "if (!isPaxHeader() && !isGlobalPaxHeader() && getName().startsWith(\"/\")) {",
+        "fail_test_number": 5,
+        "fail_test": "Failing tests: 5\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_NameEndsWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n",
+        "survived": false,
+        "id": 17
+    },
+    {
+        "mutant_id:": 18,
+        "line": 852,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "return file.isDirectory();",
+        "aftercode": "return !file.isDirectory();",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n",
+        "survived": true,
+        "id": 18
+    },
+    {
+        "mutant_id:": 19,
+        "line": 852,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "return file.isDirectory();",
+        "aftercode": "return file.isFile();",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n",
+        "survived": true,
+        "id": 19
+    },
+    {
+        "mutant_id:": 20,
+        "line": 852,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "return file.isDirectory();",
+        "aftercode": "return !file.isDirectory();",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n",
+        "survived": true,
+        "id": 20
+    },
+    {
+        "mutant_id:": 21,
+        "line": 852,
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "precode": "return file.isDirectory();",
+        "aftercode": "return file.isFile();",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_PaxHeaderWithSlash\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsNotDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_FileIsDirectory\n  - gentest.org.apache.commons.compress.archivers.tar.tests.TarArchiveEntryTest::testIsDirectory_GlobalPaxHeaderWithSlash\n",
+        "survived": true,
+        "id": 21
+    },
+    {
+        "id": 22,
+        "line": 852,
+        "precode": "return file.isDirectory();",
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "aftercode": "return file != null && file.isDirectory();"
+    },
+    {
+        "id": 23,
+        "line": 852,
+        "precode": "return file.isDirectory();",
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "aftercode": "return file.exists() && file.isDirectory();"
+    },
+    {
+        "id": 24,
+        "line": 852,
+        "precode": "return file.isDirectory();",
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "aftercode": "return !file.isDirectory();"
+    },
+    {
+        "id": 25,
+        "line": 852,
+        "precode": "return file.isDirectory();",
+        "filepath": "./defects4j_fixed/Compress/Compress_38_fixed/src/main/java/org/apache/commons/compress/archivers/tar/TarArchiveEntry.java",
+        "aftercode": "return file.isFile();"
+    }
+]

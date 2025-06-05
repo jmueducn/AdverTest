@@ -1,0 +1,121 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 47,
+        "filepath": "./defects4j_fixed/Math/Math_35_fixed/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java",
+        "precode": "public ElitisticListPopulation(final List<Chromosome> chromosomes,",
+        "aftercode": "public ElitisticListPopulation(final List chromosomes,",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ChromosomesExceedLimit_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ElitismRateGreaterThanOne_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NegativeElitismRate_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NullChromosomes_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 2,
+        "line": 49,
+        "filepath": "./defects4j_fixed/Math/Math_35_fixed/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java",
+        "precode": "                                   final double elitismRate) {",
+        "aftercode": "                                   final int elitismRate) {",
+        "time out": true,
+        "survived": false
+    },
+    {
+        "mutant_id:": 3,
+        "line": 50,
+        "filepath": "./defects4j_fixed/Math/Math_35_fixed/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java",
+        "precode": "        super(chromosomes, populationLimit);",
+        "aftercode": "        super(chromosomes, 0);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ChromosomesExceedLimit_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_OneElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_EmptyChromosomes_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ZeroElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructorSetsElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ElitismRateGreaterThanOne_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NegativeElitismRate_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NullChromosomes_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ValidParameters\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 4,
+        "line": 51,
+        "filepath": "./defects4j_fixed/Math/Math_35_fixed/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java",
+        "precode": "        setElitismRate(elitismRate);",
+        "aftercode": "        setElitismRate(0.0);",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ChromosomesExceedLimit_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_OneElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructorSetsElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ElitismRateGreaterThanOne_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NegativeElitismRate_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NullChromosomes_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ValidParameters\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 5,
+        "line": 51,
+        "filepath": "./defects4j_fixed/Math/Math_35_fixed/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java",
+        "precode": "        setElitismRate(elitismRate);",
+        "aftercode": "        setElitismRate(elitismRate);",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ChromosomesExceedLimit_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ElitismRateGreaterThanOne_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NegativeElitismRate_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NullChromosomes_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 6,
+        "line": 64,
+        "filepath": "./defects4j_fixed/Math/Math_35_fixed/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java",
+        "precode": "super(populationLimit);",
+        "aftercode": "super(0);",
+        "fail_test_number": 9,
+        "fail_test": "Failing tests: 9\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ChromosomesExceedLimit_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ExtremeValidElitismRates\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_EdgeCasePopulationLimit\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ValidInputs\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ElitismRateGreaterThanOne_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NegativeElitismRate_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NullChromosomes_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testEmptyConstructorSetsElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructorSetsElitismRateCorrectly\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 7,
+        "line": 64,
+        "filepath": "./defects4j_fixed/Math/Math_35_fixed/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java",
+        "precode": "super(populationLimit);",
+        "aftercode": "super(populationLimit + 1);",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ChromosomesExceedLimit_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_EdgeCasePopulationLimit\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ValidInputs\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ElitismRateGreaterThanOne_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NegativeElitismRate_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NullChromosomes_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_InvalidPopulationLimit\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 8,
+        "line": 65,
+        "filepath": "./defects4j_fixed/Math/Math_35_fixed/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java",
+        "precode": "setElitismRate(elitismRate);",
+        "aftercode": "setElitismRate(0.0);",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ChromosomesExceedLimit_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ExtremeValidElitismRates\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ElitismRateAboveOne\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_EdgeCasePopulationLimit\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NegativeElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ValidInputs\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ElitismRateGreaterThanOne_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NegativeElitismRate_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NullChromosomes_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testEmptyConstructorSetsElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructorSetsElitismRateCorrectly\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 9,
+        "line": 65,
+        "filepath": "./defects4j_fixed/Math/Math_35_fixed/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java",
+        "precode": "setElitismRate(elitismRate);",
+        "aftercode": "setElitismRate(1.0);",
+        "fail_test_number": 11,
+        "fail_test": "Failing tests: 11\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ChromosomesExceedLimit_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ExtremeValidElitismRates\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ElitismRateAboveOne\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_EdgeCasePopulationLimit\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NegativeElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ValidInputs\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ElitismRateGreaterThanOne_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NegativeElitismRate_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NullChromosomes_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testEmptyConstructorSetsElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructorSetsElitismRateCorrectly\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 10,
+        "line": 47,
+        "filepath": "./defects4j_fixed/Math/Math_35_fixed/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java",
+        "precode": "public ElitisticListPopulation(final List<Chromosome> chromosomes,",
+        "aftercode": "public ElitisticListPopulation(List<Chromosome> chromosomes,",
+        "fail_test_number": 4,
+        "fail_test": "Failing tests: 4\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ChromosomesExceedLimit_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ElitismRateGreaterThanOne_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NegativeElitismRate_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NullChromosomes_ThrowsException\n",
+        "survived": true
+    },
+    {
+        "mutant_id:": 12,
+        "line": 51,
+        "filepath": "./defects4j_fixed/Math/Math_35_fixed/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java",
+        "precode": "setElitismRate(elitismRate);",
+        "aftercode": "setElitismRate(0.0);",
+        "fail_test_number": 7,
+        "fail_test": "Failing tests: 7\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ChromosomesExceedLimit_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_OneElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructorSetsElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ElitismRateGreaterThanOne_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NegativeElitismRate_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NullChromosomes_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ValidParameters\n",
+        "survived": false
+    },
+    {
+        "mutant_id:": 13,
+        "line": 51,
+        "filepath": "./defects4j_fixed/Math/Math_35_fixed/src/main/java/org/apache/commons/math3/genetics/ElitisticListPopulation.java",
+        "precode": "setElitismRate(elitismRate);",
+        "aftercode": "setElitismRate(1.0 - elitismRate);",
+        "fail_test_number": 8,
+        "fail_test": "Failing tests: 8\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ChromosomesExceedLimit_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_OneElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ZeroElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructorSetsElitismRate\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ElitismRateGreaterThanOne_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NegativeElitismRate_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_NullChromosomes_ThrowsException\n  - gentest.org.apache.commons.math3.genetics.tests.ElitisticListPopulationTest::testConstructor_ValidParameters\n",
+        "survived": false
+    }
+]

@@ -1,0 +1,396 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.21951219512195122" branch-rate="0.18181818181818182" lines-covered="18" lines-valid="82" branches-covered="4" branches-valid="22" complexity="1.6129032258064515" version="2.0.3" timestamp="1747421914502">
+	<sources>
+		<source>src/main/java</source>
+	</sources>
+	<packages>
+		<package name="org.apache.commons.math3.distribution" line-rate="0.21951219512195122" branch-rate="0.18181818181818182" complexity="1.6129032258064515">
+			<classes>
+				<class name="org.apache.commons.math3.distribution.FDistribution" filename="org/apache/commons/math3/distribution/FDistribution.java" line-rate="0.36" branch-rate="0.3333333333333333" complexity="1.625">
+					<methods>
+						<method name="&lt;init&gt;" signature="(DD)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="65" hits="59" branch="false"/>
+								<line number="67" hits="57" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(DDD)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="86" hits="69" branch="false"/>
+								<line number="88" hits="66" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Lorg/apache/commons/math3/random/RandomGenerator;DDD)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="49" hits="71" branch="false"/>
+								<line number="51" hits="71" branch="false"/>
+								<line number="108" hits="71" branch="false"/>
+								<line number="110" hits="71" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="111" hits="1" branch="false"/>
+								<line number="114" hits="70" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="115" hits="2" branch="false"/>
+								<line number="118" hits="68" branch="false"/>
+								<line number="119" hits="68" branch="false"/>
+								<line number="120" hits="68" branch="false"/>
+								<line number="121" hits="68" branch="false"/>
+							</lines>
+						</method>
+						<method name="calculateNumericalVariance" signature="()D" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="237" hits="0" branch="false"/>
+								<line number="239" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="240" hits="0" branch="false"/>
+								<line number="241" hits="0" branch="false"/>
+								<line number="243" hits="0" branch="false"/>
+								<line number="247" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="cumulativeProbability" signature="(D)D" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="154" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="155" hits="0" branch="false"/>
+								<line number="157" hits="0" branch="false"/>
+								<line number="158" hits="0" branch="false"/>
+								<line number="160" hits="0" branch="false"/>
+								<line number="164" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="density" signature="(D)D" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="129" hits="0" branch="false"/>
+								<line number="130" hits="0" branch="false"/>
+								<line number="131" hits="0" branch="false"/>
+								<line number="132" hits="0" branch="false"/>
+								<line number="133" hits="0" branch="false"/>
+								<line number="134" hits="0" branch="false"/>
+								<line number="136" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getDenominatorDegreesOfFreedom" signature="()D" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="182" hits="56" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNumeratorDegreesOfFreedom" signature="()D" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="173" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNumericalMean" signature="()D" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="201" hits="0" branch="false"/>
+								<line number="203" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="204" hits="0" branch="false"/>
+								<line number="207" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNumericalVariance" signature="()D" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="224" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="225" hits="0" branch="false"/>
+								<line number="226" hits="0" branch="false"/>
+								<line number="228" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSolverAbsoluteAccuracy" signature="()D" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="188" hits="9" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSupportLowerBound" signature="()D" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="258" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSupportUpperBound" signature="()D" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="270" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="isSupportConnected" signature="()Z" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="291" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="isSupportLowerBoundInclusive" signature="()Z" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="275" hits="5" branch="false"/>
+							</lines>
+						</method>
+						<method name="isSupportUpperBoundInclusive" signature="()Z" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="280" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="49" hits="71" branch="false"/>
+						<line number="51" hits="71" branch="false"/>
+						<line number="65" hits="59" branch="false"/>
+						<line number="67" hits="57" branch="false"/>
+						<line number="86" hits="69" branch="false"/>
+						<line number="88" hits="66" branch="false"/>
+						<line number="108" hits="71" branch="false"/>
+						<line number="110" hits="71" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="111" hits="1" branch="false"/>
+						<line number="114" hits="70" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="115" hits="2" branch="false"/>
+						<line number="118" hits="68" branch="false"/>
+						<line number="119" hits="68" branch="false"/>
+						<line number="120" hits="68" branch="false"/>
+						<line number="121" hits="68" branch="false"/>
+						<line number="129" hits="0" branch="false"/>
+						<line number="130" hits="0" branch="false"/>
+						<line number="131" hits="0" branch="false"/>
+						<line number="132" hits="0" branch="false"/>
+						<line number="133" hits="0" branch="false"/>
+						<line number="134" hits="0" branch="false"/>
+						<line number="136" hits="0" branch="false"/>
+						<line number="154" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="155" hits="0" branch="false"/>
+						<line number="157" hits="0" branch="false"/>
+						<line number="158" hits="0" branch="false"/>
+						<line number="160" hits="0" branch="false"/>
+						<line number="164" hits="0" branch="false"/>
+						<line number="173" hits="0" branch="false"/>
+						<line number="182" hits="56" branch="false"/>
+						<line number="188" hits="9" branch="false"/>
+						<line number="201" hits="0" branch="false"/>
+						<line number="203" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="204" hits="0" branch="false"/>
+						<line number="207" hits="0" branch="false"/>
+						<line number="224" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="225" hits="0" branch="false"/>
+						<line number="226" hits="0" branch="false"/>
+						<line number="228" hits="0" branch="false"/>
+						<line number="237" hits="0" branch="false"/>
+						<line number="239" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="240" hits="0" branch="false"/>
+						<line number="241" hits="0" branch="false"/>
+						<line number="243" hits="0" branch="false"/>
+						<line number="247" hits="0" branch="false"/>
+						<line number="258" hits="0" branch="false"/>
+						<line number="270" hits="0" branch="false"/>
+						<line number="275" hits="5" branch="false"/>
+						<line number="280" hits="0" branch="false"/>
+						<line number="291" hits="0" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.apache.commons.math3.distribution.UniformRealDistribution" filename="org/apache/commons/math3/distribution/UniformRealDistribution.java" line-rate="0.0" branch-rate="0.0" complexity="1.6">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="51" hits="0" branch="false"/>
+								<line number="52" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(DD)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="64" hits="0" branch="false"/>
+								<line number="65" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(DDD)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="77" hits="0" branch="false"/>
+								<line number="78" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Lorg/apache/commons/math3/random/RandomGenerator;DDD)V" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="95" hits="0" branch="false"/>
+								<line number="96" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="97" hits="0" branch="false"/>
+								<line number="102" hits="0" branch="false"/>
+								<line number="103" hits="0" branch="false"/>
+								<line number="104" hits="0" branch="false"/>
+								<line number="105" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="cumulativeProbability" signature="(D)D" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="117" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="118" hits="0" branch="false"/>
+								<line number="120" hits="0" branch="true" condition-coverage="0% (0/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="121" hits="0" branch="false"/>
+								<line number="123" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="density" signature="(D)D" line-rate="0.0" branch-rate="0.0">
+							<lines>
+								<line number="109" hits="0" branch="true" condition-coverage="0% (0/4)">
+									<conditions>
+										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="0%"/>
+									</conditions>
+								</line>
+								<line number="110" hits="0" branch="false"/>
+								<line number="112" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNumericalMean" signature="()D" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="139" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getNumericalVariance" signature="()D" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="149" hits="0" branch="false"/>
+								<line number="150" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSolverAbsoluteAccuracy" signature="()D" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="129" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSupportLowerBound" signature="()D" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="162" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="getSupportUpperBound" signature="()D" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="174" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="isSupportConnected" signature="()Z" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="195" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="isSupportLowerBoundInclusive" signature="()Z" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="179" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="isSupportUpperBoundInclusive" signature="()Z" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="184" hits="0" branch="false"/>
+							</lines>
+						</method>
+						<method name="sample" signature="()D" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="201" hits="0" branch="false"/>
+								<line number="202" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="51" hits="0" branch="false"/>
+						<line number="52" hits="0" branch="false"/>
+						<line number="64" hits="0" branch="false"/>
+						<line number="65" hits="0" branch="false"/>
+						<line number="77" hits="0" branch="false"/>
+						<line number="78" hits="0" branch="false"/>
+						<line number="95" hits="0" branch="false"/>
+						<line number="96" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="97" hits="0" branch="false"/>
+						<line number="102" hits="0" branch="false"/>
+						<line number="103" hits="0" branch="false"/>
+						<line number="104" hits="0" branch="false"/>
+						<line number="105" hits="0" branch="false"/>
+						<line number="109" hits="0" branch="true" condition-coverage="0% (0/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="110" hits="0" branch="false"/>
+						<line number="112" hits="0" branch="false"/>
+						<line number="117" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="118" hits="0" branch="false"/>
+						<line number="120" hits="0" branch="true" condition-coverage="0% (0/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="0%"/>
+							</conditions>
+						</line>
+						<line number="121" hits="0" branch="false"/>
+						<line number="123" hits="0" branch="false"/>
+						<line number="129" hits="0" branch="false"/>
+						<line number="139" hits="0" branch="false"/>
+						<line number="149" hits="0" branch="false"/>
+						<line number="150" hits="0" branch="false"/>
+						<line number="162" hits="0" branch="false"/>
+						<line number="174" hits="0" branch="false"/>
+						<line number="179" hits="0" branch="false"/>
+						<line number="184" hits="0" branch="false"/>
+						<line number="195" hits="0" branch="false"/>
+						<line number="201" hits="0" branch="false"/>
+						<line number="202" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>

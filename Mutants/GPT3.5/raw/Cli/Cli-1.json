@@ -1,0 +1,177 @@
+[
+    {
+        "mutant_id:": 1,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "precode": "return (Option[]) processed.toArray(optionsArray);",
+        "aftercode": "return optionsArray;",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_ReturnTypeIsOptionArray\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_InvalidTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_RemoveWithoutNextThrowsException\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_EmptySet\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_WhenOptionsHasElements\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_OptionNotFound\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_NullOptionType\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_IntegerTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_SingleOption\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_RemoveOperation\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_StringTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_BooleanTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_OptionValueIsNull\n",
+        "survived": false,
+        "id": 1
+    },
+    {
+        "mutant_id:": 2,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "precode": "return (Option[]) processed.toArray(optionsArray);",
+        "aftercode": "return new Option[0];",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_ReturnTypeIsOptionArray\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_InvalidTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_RemoveWithoutNextThrowsException\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_EmptySet\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_WhenOptionsHasElements\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_OptionNotFound\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_NullOptionType\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_IntegerTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_SingleOption\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_RemoveOperation\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_StringTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_BooleanTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_OptionValueIsNull\n",
+        "survived": false,
+        "id": 2
+    },
+    {
+        "mutant_id:": 3,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "precode": "return (Option[]) processed.toArray(optionsArray);",
+        "aftercode": "return (Option[]) processed.toArray(new Option[0]);",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_ReturnTypeIsOptionArray\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_InvalidTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_RemoveWithoutNextThrowsException\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_EmptySet\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_WhenOptionsHasElements\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_OptionNotFound\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_NullOptionType\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_IntegerTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_RemoveOperation\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_StringTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_BooleanTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_OptionValueIsNull\n",
+        "survived": true,
+        "id": 3
+    },
+    {
+        "mutant_id:": 4,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "precode": "return (Option[]) processed.toArray(optionsArray);",
+        "aftercode": "return (Option[]) processed.toArray(null);",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_ReturnTypeIsOptionArray\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_InvalidTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_RemoveWithoutNextThrowsException\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_EmptySet\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_WhenOptionsHasElements\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_OptionNotFound\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_NullOptionType\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_IntegerTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_SingleOption\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_RemoveOperation\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_StringTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_BooleanTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_OptionValueIsNull\n",
+        "survived": false,
+        "id": 4
+    },
+    {
+        "mutant_id:": 6,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "precode": "return (Option[]) processed.toArray(optionsArray);",
+        "aftercode": "return (Option[]) options.toArray(optionsArray);",
+        "fail_test_number": 13,
+        "fail_test": "Failing tests: 13\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_ReturnTypeIsOptionArray\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_InvalidTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_RemoveWithoutNextThrowsException\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_EmptySet\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_WhenOptionsHasElements\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_OptionNotFound\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_NullOptionType\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_IntegerTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_RemoveOperation\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_StringTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_BooleanTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_OptionValueIsNull\n",
+        "survived": true,
+        "id": 5
+    },
+    {
+        "mutant_id:": 7,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "precode": "return (Option[]) processed.toArray(optionsArray);",
+        "aftercode": "return (Option[]) processed.toArray(new Option[processed.size()*2]);",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_ReturnTypeIsOptionArray\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_InvalidTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_RemoveWithoutNextThrowsException\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_EmptySet\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_WhenOptionsHasElements\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_OptionNotFound\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_NullOptionType\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_IntegerTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_SingleOption\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_RemoveOperation\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_StringTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_BooleanTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_OptionValueIsNull\n",
+        "survived": false,
+        "id": 6
+    },
+    {
+        "mutant_id:": 8,
+        "line": 315,
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "precode": "return (Option[]) processed.toArray(optionsArray);",
+        "aftercode": "return null;",
+        "fail_test_number": 14,
+        "fail_test": "Failing tests: 14\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_ReturnTypeIsOptionArray\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_MultipleOptions\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_InvalidTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_RemoveWithoutNextThrowsException\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_EmptySet\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_WhenOptionsHasElements\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_OptionNotFound\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_NullOptionType\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_IntegerTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptions_SingleOption\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testIterator_RemoveOperation\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_StringTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_BooleanTypeConversion\n  - gentest.org.apache.commons.cli.tests.CommandLineTest::testGetOptionObject_OptionValueIsNull\n",
+        "survived": false,
+        "id": 7
+    },
+    {
+        "id": 8,
+        "line": 97,
+        "precode": "Object type = option.getType();",
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "Object type = option.getType(); // mutation: added comment"
+    },
+    {
+        "id": 9,
+        "line": 97,
+        "precode": "Object type = option.getType();",
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "Object type = null; // mutation: replaced method call with null"
+    },
+    {
+        "id": 10,
+        "line": 99,
+        "precode": "return (res == null) ? null : TypeHandler.createValue(res, type);",
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return (res != null) ? null : TypeHandler.createValue(res, type);"
+    },
+    {
+        "id": 11,
+        "line": 99,
+        "precode": "return (res == null) ? null : TypeHandler.createValue(res, type);",
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return (res == null) ? TypeHandler.createValue(res, type) : null;"
+    },
+    {
+        "id": 12,
+        "line": 43,
+        "precode": "private List args = new LinkedList();",
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "private List args = new ArrayList();"
+    },
+    {
+        "id": 13,
+        "line": 43,
+        "precode": "private List args = new LinkedList();",
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "private LinkedList args = new LinkedList();"
+    },
+    {
+        "id": 14,
+        "line": 173,
+        "precode": "if (opt.equals( option.getLongOpt()))",
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "if (opt == option.getLongOpt())"
+    },
+    {
+        "id": 15,
+        "line": 173,
+        "precode": "if (opt.equals( option.getLongOpt()))",
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "if (option.getLongOpt().equals(opt))"
+    },
+    {
+        "id": 16,
+        "line": 175,
+        "precode": "return option;",
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return null;"
+    },
+    {
+        "id": 17,
+        "line": 175,
+        "precode": "return option;",
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return new Option();"
+    },
+    {
+        "id": 18,
+        "line": 178,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "};"
+    },
+    {
+        "id": 19,
+        "line": 178,
+        "precode": "}",
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "} // dummy comment"
+    },
+    {
+        "id": 20,
+        "line": 152,
+        "precode": "return key.getValues();",
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return key.getValues().clone();"
+    },
+    {
+        "id": 21,
+        "line": 152,
+        "precode": "return key.getValues();",
+        "filepath": "./defects4j_fixed/Cli/Cli_1_fixed/src/java/org/apache/commons/cli/CommandLine.java",
+        "aftercode": "return Collections.emptyList();"
+    }
+]
