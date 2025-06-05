@@ -3,7 +3,7 @@
 
 dependency: defects4j v2.0.1 我修改过一点（当时改的但是不知道要不要用），放在另一个repo里了
 然后安装可以参考原版的defects4j
-但是还是有可能出问题 到时候修改  defects4j.build.xml文件，把dependency的位置改对
+但是还是有可能出问题 到时候修改  defects4j.build.xml文件(defects4j/framework/projects/defects4j.build.xml)，把dependency的位置改对
 ```
     <property name="junit5-api.jar" value="xxxx"/>
     <property name="junit5-engine.jar" value="xxxx"/>
