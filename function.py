@@ -185,168 +185,12 @@ d4j_path = '../mutantsgen/Wukong/defects4j',
         json.dump(mu_list, file, ensure_ascii=False,indent=4)
     print("fail times:",fail)
     return mutated_lines
-def con_generate_mutant(llm,conpath = 'ConDefects-main/java2024-0306',savepath='ConDefects-main/java2024-0306-mutant'):
-
-    mu_list=[]
-    id=0
-    print("...........................................start generate..............................................................")
-    folder_path = conpath
-    faultLocations = glob.glob(os.path.join(folder_path, '**/*.txt'), recursive=True)
-    dd=0
-    fail=0
-    for location in faultLocations:
-        dd+=1
-        print(dd,"****************************",location)
-        try:
-            with open(location, 'r',errors='ignore') as patch:
-                patch_line = patch.readlines()  
-        except Exception as e:
-            continue
-        javaFile=location.replace("faultLocation.txt","correctVersion.java")
-        try:
-            liness = open(javaFile, "r",errors='ignore').read().strip().splitlines()
-        except Exception as e:
-            print("here")
-            continue
- 
-        start_line=int(patch_line[0])-2
-        if start_line<1:
-            start_line=1
-        end_line=int(patch_line[0])+2
-        if end_line>len(liness):
-            end_line=len(liness)
-        fault_line=int(patch_line[0])
-        mutant_code=""
-        for i in liness[start_line-1:end_line]:
-            mutant_code=mutant_code+i+'\n'
-        func=['long','Object','bool','class','public']
-        while('static' not in liness[start_line-1]):
-            start_line=start_line-1
-            if start_line<1:
-                break
-            loop=False
-            for i in func:
-                if (i in liness[start_line-1]) and (liness[start_line-2]=='' or liness[start_line-2]=='\t'):
-                    loop=True
-                    break
-            if loop:
-                break
-        while('static' not in liness[end_line-1]):
-            end_line=end_line+1
-            if end_line>=len(liness):
-                    break
-            loop=False
-            for i in func:
-                if (i in liness[end_line-1]) and (liness[end_line-2]=='' or liness[start_line-2]=='\t'):
-                    loop=True
-                    break
-            if loop:
-                break
-            if '/*' in liness[end_line-1]:
-                break
-        ori_code=""
-        num_lines=(end_line-start_line) 
-        for i in liness[start_line-1:end_line-1]:
-            ori_code=ori_code+i+'\n'
-        
-
-        promptt="""
-
-        %s\n
-        Above is the original code. your task is to generate 5 mutants(notice:mutant refers to mutant in software engineering, i.e. making subtle alterations to the original code) in the following code:
-        %s\n
-
-        as follows are some examples of mutants which you can refer to:
-            {
-            "precode": "n = (n & (n - 1));",
-            "aftercode": " n = (n ^ (n - 1));"                                        
-            },
-            {
-            "precode": "  while (!queue.isEmpty()) {",
-            "aftercode": " while (true) { "             
-            },                                        
-            {
-            "precode": "return depth==0;",
-            "aftercode": "return true;"
-            },                                        
-            {
-            "precode": "ArrayList r = new 
-            ArrayList();r.add(first).addll(subset);to_add(r)",
-            "aftercode": "to_add.addAll(subset);"
-            },                               
-            {
-            "precode": "c = bin_op.apply(b,a);",
-            "aftercode": "c = bin_op.apply(a,b);",    
-            },                              
-            {
-            "precode":"while (Math.abs(x-approx*approx) > epsilon) { "     
-            "aftercode": " while (Math.abs(x-approx) > epsilon) {"
-            },                          
-        #Requirement:
-        1.Provide generated mutants directly
-        2.A mutation can only occur on one line
-        3.Your output must be like:
-        [
-            {
-                "id":,
-                "line":,
-                "precode":"",
-                "filepath":"kk",
-                "aftercode":""
-            }
-        ]
-        Where "id" stand for mutant serlal number,"Line" represent the line number of the mutated(refer to the original code line number),"precode" represent the line of code before mutation and it can't be empty,"aftercode" represent the line of code after mutation
-        4.Prohibit generating the exact same mutants
-        5.all write in a json file
-        """%(ori_code,mutant_code)
-        #print(promptt)
-        num=0
-        for tem in range(3): 
-            try:
-                generated_text = llm._call(promptt)
-                pattern = r'\[.*\]'
-                generated_text = re.findall(pattern,generated_text,re.DOTALL)
-                try:
-                    mu=json.loads(generated_text[0])
-
-                    for i in range(len(mu)):
-                        id+=1
-                        mu[i]['id']=id
-                        mu[i]['filepath']=javaFile
-                        for k in range(num_lines):
-                            if mu[i]['precode'] in liness[start_line+k-1]:
-                                mu[i]['line']=start_line+k
-                                print("here found")
-                                continue
-                            if liness[start_line+k-1] in mu[i]['precode']:
-                                mu[i]['line']=start_line+k
-                                print("there found")
-                                continue
-
-                    mu_list.extend(mu)
-                    break
-                except Exception as e:
-                    print("JSON Content Error",e)
-                    num+=1
-                    continue
-            except Exception as e:
-                print("LLM Generate Error",e)
-                num+=1
-                continue
-        if num>=5:
-            fail+=1
-    print('savepath:',savepath)
-    with open(savepath, 'w', encoding='utf-8') as file:
-        json.dump(mu_list, file, ensure_ascii=False,indent=4)
-    print("fail times:",fail)
 
 
 def extract_methods_and_lines(java_file_path):
-    """
-    提取Java文件中的方法及其行号范围
-    """
+  
     if not os.path.isfile(java_file_path):
-        print(f"文件不存在: {java_file_path}")
+        print(f"File not found: {java_file_path}")
         return []
 
     with open(java_file_path, 'r', encoding='utf-8') as file:
@@ -355,19 +199,15 @@ def extract_methods_and_lines(java_file_path):
     try:
         tree = javalang.parse.parse(content)
     except javalang.parser.JavaSyntaxError as e:
-        print(f"解析错误: {e}")
+        print(f"Extraction error: {e}")
         return []
 
     methods = []
-    # 遍历每个方法声明
     for path, node in tree.filter(javalang.tree.MethodDeclaration):
-        # 获取方法的起始行号
         start_line = node.position.line
 
-        # 方法体的结束行号：遍历方法体的所有节点，找到最大行号
         if node.body:
             end_line = get_max_line(node)
-            # 将 start_line 和 max_line 作为方法的行号范围
             methods.append({
                 'name': node.name,
                 'start_line': start_line,
@@ -377,27 +217,24 @@ def extract_methods_and_lines(java_file_path):
 
 
 def find_affected_methods(patch_file_path, methods):
-    """
-    根据补丁文件中的行号范围，找到受影响的方法
-    """
+  
     if not os.path.isfile(patch_file_path):
-        print(f"文件不存在: {patch_file_path}")
+        print(f"File not found: {patch_file_path}")
         return []
 
     with open(patch_file_path, 'r', encoding='utf-8') as patch_file:
         patch_content = patch_file.readlines()
 
     affected_methods = []
-    # 遍历补丁文件中的变更行号
     for patch_line in patch_content:
         
-        if "@@" in patch_line:  # 只处理补丁变更块
-            # 解析补丁的行号信息
+        if "@@" in patch_line:  
+           
             split_result = patch_line.split(" ")[1]
             newstart_line, mutant_lines = map(int, split_result.split(','))
-            newstart_line = -newstart_line  # 补丁文件行号为负数，表示删除的行
-            newend_line = newstart_line + mutant_lines  # 计算结束行号
-            # 找到受影响的方法
+            newstart_line = -newstart_line  
+            newend_line = newstart_line + mutant_lines  
+           
             for method in methods:
                 for line in range(newstart_line,newend_line):
                     
@@ -408,9 +245,7 @@ def find_affected_methods(patch_file_path, methods):
         return None
     return affected_methods
 def find_affected_methods_by_linenumber(line_number, methods):
-    """
-    根据行号，找到受影响的方法
-    """
+  
    
 
     affected_methods = []
@@ -425,18 +260,16 @@ def find_affected_methods_by_linenumber(line_number, methods):
 
     return affected_methods
 def extract_constructors_and_lines(java_file_path):
-    """
-    提取Java文件中的构造器及其行号范围
-    """
+    
     if not os.path.isfile(java_file_path):
-        print(f"文件不存在: {java_file_path}")
+        print(f"File not found: {java_file_path}")
         return []
     with open(java_file_path, 'r', encoding='utf-8') as file:
         content = file.read()
     try:
         tree = javalang.parse.parse(content)
     except javalang.parser.JavaSyntaxError as e:
-        print(f"解析错误: {e}")
+        print(f"Extraction Error: {e}")
         return []
     constructors = []
     for path, node in tree.filter(javalang.tree.ConstructorDeclaration):
@@ -444,7 +277,7 @@ def extract_constructors_and_lines(java_file_path):
         if node.body:
             max_line = get_max_line(node)
             constructors.append({
-                'name': node.name,  # 构造器的名称通常与类名相同
+                'name': node.name,  
                 'start_line': start_line,
                 'end_line': max_line
             })
@@ -478,7 +311,7 @@ def initial_generate_testcase_def4j(project,project_id,llm,
         
         methods  = extract_methods_and_lines(fixed_bug)
         affected_methods = find_affected_methods(patch_path, methods)
-        # 如果没找到，再尝试从构造器中查找（新增部分）
+       
         print(affected_methods)
         if affected_methods is None:
             constructors = extract_constructors_and_lines(fixed_bug)
@@ -664,16 +497,16 @@ def running_mutants(project,project_id,mutant_path,mutant_tested_path,d4jbug_pat
         mutation_score = -1
     savepath=mutant_tested_path + '/%s/%s_%s_test.json' % (project,project,i+1) 
     test_cmd='defects4j coverage -w ./defects4j_fixed/%s/%s_%s_fixed -s %s' % (project,project,i+1,archive_name) 
-    # 运行命令并获取输出
+    
     log_test = subprocess.Popen(test_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1, start_new_session=True)
 
-    # 实时打印标准输出和错误输出
-    stdout_data, stderr_data = log_test.communicate()  # 获取stdout和stderr的内容
+    
+    stdout_data, stderr_data = log_test.communicate()  
 
-    # 打印标准输出
+    
     print(stdout_data.decode(), end='')
 
-    # 打印错误输出
+    
     print(stderr_data.decode(), end='')
     with open(savepath, 'w', encoding='utf-8') as file1:
         json.dump(test, file1, ensure_ascii=False,indent=4)

@@ -48,7 +48,7 @@ def run_one_case(proj,projid,mutants_raw,mutants_tested,llm,ms_standard=70,cover
     
     uncovered,coverage = coverage_process(proj,projid,mutated_lines)
     print("MS:",mutation_score)
-    print("未被覆盖的行号列表:", uncovered)
+    print("Uncovered Lines List:", uncovered)
     print("cvg rate:",coverage,"%")
     cnt_T = 0
     cnt_M = 0
@@ -69,7 +69,7 @@ def run_one_case(proj,projid,mutants_raw,mutants_tested,llm,ms_standard=70,cover
         mutation_score = running_mutants(proj,projid,mutants_raw,mutants_tested)
 
         uncovered,coverage = coverage_process(proj,projid,mutated_lines)
-        print("未被覆盖的行号列表:", uncovered)
+        print("Uncovered Lines List:", uncovered)
         print("cvg rate:",coverage,"%")
         our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, MS:{mutation_score} CV:{coverage},Round:{cnt_T+cnt_M+1},TC: {cnt_T},MT: {cnt_M}')
         #result = bug_detection_ourgen(proj,projid)

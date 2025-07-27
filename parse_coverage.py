@@ -9,21 +9,21 @@ def parse_coverage(xml_path, target_methods):
     total_lines = covered_lines = 0
     total_branches = covered_branches = 0
 
-    # 遍历所有 <method>
+    
     for m in root.findall(".//method"):
         name = m.get("name")
         if name not in target_methods:
             continue
 
-        # 行覆盖：统计所有 <line> 节点
+        
         lines = m.findall(".//line")
         for ln in lines:
             total_lines += 1
-            # hits 属性大于 0 视为覆盖
+            
             if int(ln.get("hits", "0")) > 0:
                 covered_lines += 1
 
-            # 分支覆盖：branch="true" 时，解析 condition-coverage="XX% (a/b)"
+            
             if ln.get("branch") == "true":
                 cond = ln.get("condition-coverage", "")
                 m2 = re.search(r"\((\d+)/(\d+)\)", cond)

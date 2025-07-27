@@ -313,7 +313,7 @@ The different behavior can be tested by monitoring ......., so ......
                             "pure_test_method": pure_method.strip()
                             })
 
-        # 构建完整的测试类信息
+        
         test_class_info = {
     "class_name": class_name,
     "test_class_name": f"{class_name}Test",

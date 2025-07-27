@@ -11,21 +11,19 @@ def del_coverage_result(path):
     for file in os.listdir(path):
         if file.endswith('coverage.xml'):
             os.remove(os.path.join(path, file))
-            print(f"已删除文件 {os.path.join(path, file)}")
+            print(f"Deleted File {os.path.join(path, file)}")
 def copy_coverage_result(src,dst):
-    """
-    将 src 目录下的 coverage.xml 文件复制到 dst 目录，并重命名为 coverage_%s.xml
-    """
+ 
     
     if not os.path.exists(src):
-        print(f"源目录 {src} 不存在")
+        print(f" {src} Not exists, please check the path")
         return
     if not os.path.exists(dst):
         os.makedirs(dst)
     for file in os.listdir(src):
         if file.endswith('coverage.xml'):
             shutil.copy(os.path.join(src, file), os.path.join(dst, 'coverage_%s.xml' % (file.split('.')[0])))
-            print(f"已将文件从 {os.path.join(src, file)} 复制到 {os.path.join(dst, 'coverage_%s.xml' % (file.split('.')[0]))}")
+            print(f"Copied File from {os.path.join(src, file)} to {os.path.join(dst, 'coverage_%s.xml' % (file.split('.')[0]))}")
 def bug_detection_ourgen(project,projid,fixed_dir='./defects4j_fixed',bug_dir='./defects4j_bug'):
     fixed_dir = fixed_dir +'/%s/%s_%s_fixed' % (project,project,projid+1)
     bug_dir = bug_dir + '/%s/%s_%s_bug' % (project,project,projid+1)
@@ -524,7 +522,6 @@ def rotation_test(max,name):
             evosuite_logger.error(f"Project {name} test {i+1}: encountered an error: {e}")
 if __name__ == "__main__":
     # Configure the logging system
-    # 配置第一个 logger，用于记录 evosuite 相关的日志
     evosuite_logger = logging.getLogger("evosuite_logger")
     evosuite_logger.setLevel(logging.INFO)
     evosuite_handler = logging.FileHandler("WTF_DOES_IT_MAKESENSE.log")
