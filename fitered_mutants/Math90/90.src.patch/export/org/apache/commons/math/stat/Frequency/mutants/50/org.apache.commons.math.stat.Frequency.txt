@@ -1,0 +1,874 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math/stat/Frequency implements java/io/Serializable {
+
+  // compiled from: Frequency.java
+  // access flags 0x1008
+  static synthetic INNERCLASS org/apache/commons/math/stat/Frequency$1 org/apache/commons/math/stat/Frequency null
+  // access flags 0xA
+  private static INNERCLASS org/apache/commons/math/stat/Frequency$NaturalComparator org/apache/commons/math/stat/Frequency NaturalComparator
+
+  // access flags 0x1A
+  private final static J serialVersionUID = -3845586908418844111
+
+  // access flags 0x12
+  private final Ljava/util/TreeMap; freqTable
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 57 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 58 L1
+    ALOAD 0
+    NEW java/util/TreeMap
+    DUP
+    INVOKESPECIAL java/util/TreeMap.<init> ()V
+    PUTFIELD org/apache/commons/math/stat/Frequency.freqTable : Ljava/util/TreeMap;
+   L2
+    LINENUMBER 59 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L3 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public <init>(Ljava/util/Comparator;)V
+   L0
+    LINENUMBER 66 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 67 L1
+    ALOAD 0
+    NEW java/util/TreeMap
+    DUP
+    ALOAD 1
+    INVOKESPECIAL java/util/TreeMap.<init> (Ljava/util/Comparator;)V
+    PUTFIELD org/apache/commons/math/stat/Frequency.freqTable : Ljava/util/TreeMap;
+   L2
+    LINENUMBER 68 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L3 0
+    LOCALVARIABLE comparator Ljava/util/Comparator; L0 L3 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public toString()Ljava/lang/String;
+   L0
+    LINENUMBER 78 L0
+    INVOKESTATIC java/text/NumberFormat.getPercentInstance ()Ljava/text/NumberFormat;
+    ASTORE 1
+   L1
+    LINENUMBER 79 L1
+    NEW java/lang/StringBuffer
+    DUP
+    INVOKESPECIAL java/lang/StringBuffer.<init> ()V
+    ASTORE 2
+   L2
+    LINENUMBER 80 L2
+    ALOAD 2
+    LDC "Value \u0009 Freq. \u0009 Pct. \u0009 Cum Pct. \n"
+    INVOKEVIRTUAL java/lang/StringBuffer.append (Ljava/lang/String;)Ljava/lang/StringBuffer;
+    POP
+   L3
+    LINENUMBER 81 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/Frequency.freqTable : Ljava/util/TreeMap;
+    INVOKEVIRTUAL java/util/TreeMap.keySet ()Ljava/util/Set;
+    INVOKEINTERFACE java/util/Set.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 3
+   L4
+    LINENUMBER 82 L4
+    ALOAD 3
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L5
+   L6
+    LINENUMBER 83 L6
+    ALOAD 3
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    ASTORE 4
+   L7
+    LINENUMBER 84 L7
+    ALOAD 2
+    ALOAD 4
+    INVOKEVIRTUAL java/lang/StringBuffer.append (Ljava/lang/Object;)Ljava/lang/StringBuffer;
+    POP
+   L8
+    LINENUMBER 85 L8
+    ALOAD 2
+    BIPUSH 9
+    INVOKEVIRTUAL java/lang/StringBuffer.append (C)Ljava/lang/StringBuffer;
+    POP
+   L9
+    LINENUMBER 86 L9
+    ALOAD 2
+    ALOAD 0
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCount (Ljava/lang/Object;)J
+    INVOKEVIRTUAL java/lang/StringBuffer.append (J)Ljava/lang/StringBuffer;
+    POP
+   L10
+    LINENUMBER 87 L10
+    ALOAD 2
+    BIPUSH 9
+    INVOKEVIRTUAL java/lang/StringBuffer.append (C)Ljava/lang/StringBuffer;
+    POP
+   L11
+    LINENUMBER 88 L11
+    ALOAD 2
+    ALOAD 1
+    ALOAD 0
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getPct (Ljava/lang/Object;)D
+    INVOKEVIRTUAL java/text/NumberFormat.format (D)Ljava/lang/String;
+    INVOKEVIRTUAL java/lang/StringBuffer.append (Ljava/lang/String;)Ljava/lang/StringBuffer;
+    POP
+   L12
+    LINENUMBER 89 L12
+    ALOAD 2
+    BIPUSH 9
+    INVOKEVIRTUAL java/lang/StringBuffer.append (C)Ljava/lang/StringBuffer;
+    POP
+   L13
+    LINENUMBER 90 L13
+    ALOAD 2
+    ALOAD 1
+    ALOAD 0
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCumPct (Ljava/lang/Object;)D
+    INVOKEVIRTUAL java/text/NumberFormat.format (D)Ljava/lang/String;
+    INVOKEVIRTUAL java/lang/StringBuffer.append (Ljava/lang/String;)Ljava/lang/StringBuffer;
+    POP
+   L14
+    LINENUMBER 91 L14
+    ALOAD 2
+    BIPUSH 10
+    INVOKEVIRTUAL java/lang/StringBuffer.append (C)Ljava/lang/StringBuffer;
+    POP
+   L15
+    LINENUMBER 92 L15
+    GOTO L4
+   L5
+    LINENUMBER 93 L5
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/StringBuffer.toString ()Ljava/lang/String;
+    ARETURN
+   L16
+    LOCALVARIABLE value Ljava/lang/Object; L7 L15 4
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L16 0
+    LOCALVARIABLE nf Ljava/text/NumberFormat; L1 L16 1
+    LOCALVARIABLE outBuffer Ljava/lang/StringBuffer; L2 L16 2
+    LOCALVARIABLE iter Ljava/util/Iterator; L4 L16 3
+    MAXSTACK = 4
+    MAXLOCALS = 5
+
+  // DEPRECATED
+  // access flags 0x20001
+  public addValue(Ljava/lang/Object;)V
+  @Ljava/lang/Deprecated;()
+   L0
+    LINENUMBER 110 L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST java/lang/Comparable
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.addValue (Ljava/lang/Comparable;)V
+   L1
+    LINENUMBER 111 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L2 0
+    LOCALVARIABLE v Ljava/lang/Object; L0 L2 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  // signature (Ljava/lang/Comparable<*>;)V
+  // declaration: void addValue(java.lang.Comparable<?>)
+  public addValue(Ljava/lang/Comparable;)V
+    TRYCATCHBLOCK L0 L1 L2 java/lang/ClassCastException
+   L3
+    LINENUMBER 124 L3
+    ALOAD 1
+    ASTORE 2
+   L4
+    LINENUMBER 125 L4
+    ALOAD 1
+    INSTANCEOF java/lang/Integer
+    IFEQ L0
+   L5
+    LINENUMBER 126 L5
+    ALOAD 1
+    CHECKCAST java/lang/Integer
+    INVOKEVIRTUAL java/lang/Integer.longValue ()J
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    ASTORE 2
+   L0
+    LINENUMBER 129 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/Frequency.freqTable : Ljava/util/TreeMap;
+    ALOAD 2
+    INVOKEVIRTUAL java/util/TreeMap.get (Ljava/lang/Object;)Ljava/lang/Object;
+    CHECKCAST java/lang/Long
+    ASTORE 3
+   L6
+    LINENUMBER 130 L6
+    ALOAD 3
+    IFNULL L7
+   L8
+    LINENUMBER 131 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/Frequency.freqTable : Ljava/util/TreeMap;
+    ALOAD 2
+    LCONST_1
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKEVIRTUAL java/util/TreeMap.put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    POP
+    GOTO L1
+   L7
+    LINENUMBER 133 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/Frequency.freqTable : Ljava/util/TreeMap;
+    ALOAD 2
+    ALOAD 3
+    INVOKEVIRTUAL java/lang/Long.longValue ()J
+    LCONST_1
+    LADD
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKEVIRTUAL java/util/TreeMap.put (Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+    POP
+   L1
+    LINENUMBER 138 L1
+    GOTO L9
+   L2
+    LINENUMBER 135 L2
+    ASTORE 3
+   L10
+    LINENUMBER 137 L10
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "Value not comparable to existing values."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L9
+    LINENUMBER 139 L9
+    RETURN
+   L11
+    LOCALVARIABLE count Ljava/lang/Long; L6 L1 3
+    LOCALVARIABLE ex Ljava/lang/ClassCastException; L10 L9 3
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L3 L11 0
+    LOCALVARIABLE v Ljava/lang/Comparable; L3 L11 1
+    // signature Ljava/lang/Comparable<*>;
+    // declaration: v extends java.lang.Comparable<?>
+    LOCALVARIABLE obj Ljava/lang/Object; L4 L11 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public addValue(I)V
+   L0
+    LINENUMBER 147 L0
+    ALOAD 0
+    ILOAD 1
+    I2L
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.addValue (Ljava/lang/Comparable;)V
+   L1
+    LINENUMBER 148 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L2 0
+    LOCALVARIABLE v I L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public addValue(Ljava/lang/Integer;)V
+   L0
+    LINENUMBER 156 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL java/lang/Integer.longValue ()J
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.addValue (Ljava/lang/Comparable;)V
+   L1
+    LINENUMBER 157 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L2 0
+    LOCALVARIABLE v Ljava/lang/Integer; L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public addValue(J)V
+   L0
+    LINENUMBER 165 L0
+    ALOAD 0
+    LLOAD 1
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.addValue (Ljava/lang/Comparable;)V
+   L1
+    LINENUMBER 166 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L2 0
+    LOCALVARIABLE v J L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public addValue(C)V
+   L0
+    LINENUMBER 174 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKESTATIC java/lang/Character.valueOf (C)Ljava/lang/Character;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.addValue (Ljava/lang/Comparable;)V
+   L1
+    LINENUMBER 175 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L2 0
+    LOCALVARIABLE v C L0 L2 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public clear()V
+   L0
+    LINENUMBER 179 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/Frequency.freqTable : Ljava/util/TreeMap;
+    INVOKEVIRTUAL java/util/TreeMap.clear ()V
+   L1
+    LINENUMBER 180 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L2 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public valuesIterator()Ljava/util/Iterator;
+   L0
+    LINENUMBER 192 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/Frequency.freqTable : Ljava/util/TreeMap;
+    INVOKEVIRTUAL java/util/TreeMap.keySet ()Ljava/util/Set;
+    INVOKEINTERFACE java/util/Set.iterator ()Ljava/util/Iterator; (itf)
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getSumFreq()J
+   L0
+    LINENUMBER 203 L0
+    LCONST_0
+    LSTORE 1
+   L1
+    LINENUMBER 204 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/Frequency.freqTable : Ljava/util/TreeMap;
+    INVOKEVIRTUAL java/util/TreeMap.values ()Ljava/util/Collection;
+    INVOKEINTERFACE java/util/Collection.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 3
+   L2
+    LINENUMBER 205 L2
+    ALOAD 3
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L3
+   L4
+    LINENUMBER 206 L4
+    LLOAD 1
+    ALOAD 3
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST java/lang/Long
+    INVOKEVIRTUAL java/lang/Long.longValue ()J
+    LADD
+    LSTORE 1
+    GOTO L2
+   L3
+    LINENUMBER 208 L3
+    LLOAD 1
+    LRETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L5 0
+    LOCALVARIABLE result J L1 L5 1
+    LOCALVARIABLE iterator Ljava/util/Iterator; L2 L5 3
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public getCount(Ljava/lang/Object;)J
+    TRYCATCHBLOCK L0 L1 L2 java/lang/ClassCastException
+   L3
+    LINENUMBER 219 L3
+    ALOAD 1
+    INSTANCEOF java/lang/Integer
+    IFEQ L4
+   L5
+    LINENUMBER 220 L5
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST java/lang/Integer
+    INVOKEVIRTUAL java/lang/Integer.longValue ()J
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCount (J)J
+    LRETURN
+   L4
+    LINENUMBER 222 L4
+    LCONST_0
+    LSTORE 2
+   L0
+    LINENUMBER 224 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/Frequency.freqTable : Ljava/util/TreeMap;
+    ALOAD 1
+    INVOKEVIRTUAL java/util/TreeMap.get (Ljava/lang/Object;)Ljava/lang/Object;
+    CHECKCAST java/lang/Long
+    ASTORE 4
+   L6
+    LINENUMBER 225 L6
+    ALOAD 4
+    IFNULL L1
+   L7
+    LINENUMBER 226 L7
+    ALOAD 4
+    INVOKEVIRTUAL java/lang/Long.longValue ()J
+    LSTORE 2
+   L1
+    LINENUMBER 230 L1
+    GOTO L8
+   L2
+    LINENUMBER 228 L2
+    ASTORE 4
+   L8
+    LINENUMBER 231 L8
+    LLOAD 2
+    LRETURN
+   L9
+    LOCALVARIABLE count Ljava/lang/Long; L6 L1 4
+    LOCALVARIABLE ex Ljava/lang/ClassCastException; L8 L8 4
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L3 L9 0
+    LOCALVARIABLE v Ljava/lang/Object; L3 L9 1
+    LOCALVARIABLE result J L0 L9 2
+    MAXSTACK = 3
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public getCount(I)J
+   L0
+    LINENUMBER 241 L0
+    ALOAD 0
+    ILOAD 1
+    I2L
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCount (Ljava/lang/Object;)J
+    LRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L1 0
+    LOCALVARIABLE v I L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getCount(J)J
+   L0
+    LINENUMBER 251 L0
+    ALOAD 0
+    LLOAD 1
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCount (Ljava/lang/Object;)J
+    LRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L1 0
+    LOCALVARIABLE v J L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getCount(C)J
+   L0
+    LINENUMBER 261 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKESTATIC java/lang/Character.valueOf (C)Ljava/lang/Character;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCount (Ljava/lang/Object;)J
+    LRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L1 0
+    LOCALVARIABLE v C L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getPct(Ljava/lang/Object;)D
+   L0
+    LINENUMBER 276 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getSumFreq ()J
+    LSTORE 2
+   L1
+    LINENUMBER 277 L1
+    LLOAD 2
+    LCONST_0
+    LCMP
+    IFNE L2
+   L3
+    LINENUMBER 278 L3
+    LDC NaN
+    DRETURN
+   L2
+    LINENUMBER 280 L2
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCount (Ljava/lang/Object;)J
+    L2D
+    LLOAD 2
+    L2D
+    DDIV
+    DRETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L4 0
+    LOCALVARIABLE v Ljava/lang/Object; L0 L4 1
+    LOCALVARIABLE sumFreq J L1 L4 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public getPct(I)D
+   L0
+    LINENUMBER 291 L0
+    ALOAD 0
+    ILOAD 1
+    I2L
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getPct (Ljava/lang/Object;)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L1 0
+    LOCALVARIABLE v I L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getPct(J)D
+   L0
+    LINENUMBER 302 L0
+    ALOAD 0
+    LLOAD 1
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getPct (Ljava/lang/Object;)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L1 0
+    LOCALVARIABLE v J L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getPct(C)D
+   L0
+    LINENUMBER 313 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKESTATIC java/lang/Character.valueOf (C)Ljava/lang/Character;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getPct (Ljava/lang/Object;)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L1 0
+    LOCALVARIABLE v C L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getCumFreq(Ljava/lang/Object;)J
+    TRYCATCHBLOCK L0 L1 L2 java/lang/ClassCastException
+   L3
+    LINENUMBER 327 L3
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getSumFreq ()J
+    LCONST_0
+    LCMP
+    IFNE L4
+   L5
+    LINENUMBER 328 L5
+    LCONST_0
+    LRETURN
+   L4
+    LINENUMBER 330 L4
+    ALOAD 1
+    INSTANCEOF java/lang/Integer
+    IFEQ L6
+   L7
+    LINENUMBER 331 L7
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST java/lang/Integer
+    INVOKEVIRTUAL java/lang/Integer.longValue ()J
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCumFreq (J)J
+    LRETURN
+   L6
+    LINENUMBER 333 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/Frequency.freqTable : Ljava/util/TreeMap;
+    INVOKEVIRTUAL java/util/TreeMap.comparator ()Ljava/util/Comparator;
+    ASTORE 2
+   L8
+    LINENUMBER 334 L8
+    ALOAD 2
+    IFNONNULL L9
+   L10
+    LINENUMBER 335 L10
+    NEW org/apache/commons/math/stat/Frequency$NaturalComparator
+    DUP
+    ACONST_NULL
+    INVOKESPECIAL org/apache/commons/math/stat/Frequency$NaturalComparator.<init> (Lorg/apache/commons/math/stat/Frequency$1;)V
+    ASTORE 2
+   L9
+    LINENUMBER 337 L9
+    LCONST_0
+    LSTORE 3
+   L0
+    LINENUMBER 340 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/Frequency.freqTable : Ljava/util/TreeMap;
+    ALOAD 1
+    INVOKEVIRTUAL java/util/TreeMap.get (Ljava/lang/Object;)Ljava/lang/Object;
+    CHECKCAST java/lang/Long
+    ASTORE 5
+   L11
+    LINENUMBER 341 L11
+    ALOAD 5
+    IFNULL L1
+   L12
+    LINENUMBER 342 L12
+    ALOAD 5
+    INVOKEVIRTUAL java/lang/Long.longValue ()J
+    LSTORE 3
+   L1
+    LINENUMBER 346 L1
+    GOTO L13
+   L2
+    LINENUMBER 344 L2
+    ASTORE 5
+   L14
+    LINENUMBER 345 L14
+    LLOAD 3
+    LRETURN
+   L13
+    LINENUMBER 348 L13
+    ALOAD 2
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/Frequency.freqTable : Ljava/util/TreeMap;
+    INVOKEVIRTUAL java/util/TreeMap.firstKey ()Ljava/lang/Object;
+    INVOKEINTERFACE java/util/Comparator.compare (Ljava/lang/Object;Ljava/lang/Object;)I (itf)
+    IFGE L15
+   L16
+    LINENUMBER 349 L16
+    LCONST_0
+    LRETURN
+   L15
+    LINENUMBER 352 L15
+    ALOAD 2
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/Frequency.freqTable : Ljava/util/TreeMap;
+    INVOKEVIRTUAL java/util/TreeMap.lastKey ()Ljava/lang/Object;
+    INVOKEINTERFACE java/util/Comparator.compare (Ljava/lang/Object;Ljava/lang/Object;)I (itf)
+    IFLT L17
+   L18
+    LINENUMBER 353 L18
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getSumFreq ()J
+    LRETURN
+   L17
+    LINENUMBER 356 L17
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.valuesIterator ()Ljava/util/Iterator;
+    ASTORE 5
+   L19
+    LINENUMBER 357 L19
+    ALOAD 5
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L20
+   L21
+    LINENUMBER 358 L21
+    ALOAD 5
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    ASTORE 6
+   L22
+    LINENUMBER 359 L22
+    ALOAD 2
+    ALOAD 1
+    ALOAD 6
+    INVOKEINTERFACE java/util/Comparator.compare (Ljava/lang/Object;Ljava/lang/Object;)I (itf)
+    IFLE L23
+   L24
+    LINENUMBER 360 L24
+    LLOAD 3
+    ALOAD 0
+    ALOAD 6
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCount (Ljava/lang/Object;)J
+    LADD
+    LSTORE 3
+    GOTO L25
+   L23
+    LINENUMBER 362 L23
+    LLOAD 3
+    LRETURN
+   L25
+    LINENUMBER 364 L25
+    GOTO L19
+   L20
+    LINENUMBER 365 L20
+    LLOAD 3
+    LRETURN
+   L26
+    LOCALVARIABLE value Ljava/lang/Long; L11 L1 5
+    LOCALVARIABLE ex Ljava/lang/ClassCastException; L14 L13 5
+    LOCALVARIABLE nextValue Ljava/lang/Object; L22 L25 6
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L3 L26 0
+    LOCALVARIABLE v Ljava/lang/Object; L3 L26 1
+    LOCALVARIABLE c Ljava/util/Comparator; L8 L26 2
+    LOCALVARIABLE result J L0 L26 3
+    LOCALVARIABLE values Ljava/util/Iterator; L19 L26 5
+    MAXSTACK = 4
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getCumFreq(I)J
+   L0
+    LINENUMBER 377 L0
+    ALOAD 0
+    ILOAD 1
+    I2L
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCumFreq (Ljava/lang/Object;)J
+    LRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L1 0
+    LOCALVARIABLE v I L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getCumFreq(J)J
+   L0
+    LINENUMBER 389 L0
+    ALOAD 0
+    LLOAD 1
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCumFreq (Ljava/lang/Object;)J
+    LRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L1 0
+    LOCALVARIABLE v J L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getCumFreq(C)J
+   L0
+    LINENUMBER 401 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKESTATIC java/lang/Character.valueOf (C)Ljava/lang/Character;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCumFreq (Ljava/lang/Object;)J
+    LRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L1 0
+    LOCALVARIABLE v C L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getCumPct(Ljava/lang/Object;)D
+   L0
+    LINENUMBER 418 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getSumFreq ()J
+    LSTORE 2
+   L1
+    LINENUMBER 419 L1
+    LLOAD 2
+    LCONST_0
+    LCMP
+    IFNE L2
+   L3
+    LINENUMBER 420 L3
+    LDC NaN
+    DRETURN
+   L2
+    LINENUMBER 422 L2
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCumFreq (Ljava/lang/Object;)J
+    L2D
+    LLOAD 2
+    L2D
+    DDIV
+    DRETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L4 0
+    LOCALVARIABLE v Ljava/lang/Object; L0 L4 1
+    LOCALVARIABLE sumFreq J L1 L4 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public getCumPct(I)D
+   L0
+    LINENUMBER 435 L0
+    ALOAD 0
+    ILOAD 1
+    I2L
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCumPct (Ljava/lang/Object;)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L1 0
+    LOCALVARIABLE v I L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getCumPct(J)D
+   L0
+    LINENUMBER 448 L0
+    ALOAD 0
+    LLOAD 1
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCumPct (Ljava/lang/Object;)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L1 0
+    LOCALVARIABLE v J L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getCumPct(C)D
+   L0
+    LINENUMBER 461 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKESTATIC java/lang/Character.valueOf (C)Ljava/lang/Character;
+    INVOKEVIRTUAL org/apache/commons/math/stat/Frequency.getCumPct (Ljava/lang/Object;)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/Frequency; L0 L1 0
+    LOCALVARIABLE v C L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+}
+

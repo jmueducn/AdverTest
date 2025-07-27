@@ -1,0 +1,422 @@
+// class version 49.0 (49)
+// access flags 0x21
+// signature <T:Ljava/lang/Object;>Ljava/lang/Object;
+// declaration: org/apache/commons/math3/distribution/DiscreteDistribution<T>
+public class org/apache/commons/math3/distribution/DiscreteDistribution {
+
+  // compiled from: DiscreteDistribution.java
+
+  // access flags 0x14
+  protected final Lorg/apache/commons/math3/random/RandomGenerator; random
+
+  // access flags 0x12
+  // signature Ljava/util/List<TT;>;
+  // declaration: singletons extends java.util.List<T>
+  private final Ljava/util/List; singletons
+
+  // access flags 0x12
+  private final [D probabilities
+
+  // access flags 0x1
+  // signature (Ljava/util/List<Lorg/apache/commons/math3/util/Pair<TT;Ljava/lang/Double;>;>;)V
+  // declaration: void <init>(java.util.List<org.apache.commons.math3.util.Pair<T, java.lang.Double>>)
+  public <init>(Ljava/util/List;)V throws org/apache/commons/math3/exception/NotPositiveException org/apache/commons/math3/exception/MathArithmeticException org/apache/commons/math3/exception/MathIllegalArgumentException 
+   L0
+    LINENUMBER 69 L0
+    ALOAD 0
+    NEW org/apache/commons/math3/random/Well19937c
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/random/Well19937c.<init> ()V
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math3/distribution/DiscreteDistribution.<init> (Lorg/apache/commons/math3/random/RandomGenerator;Ljava/util/List;)V
+   L1
+    LINENUMBER 70 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/DiscreteDistribution; L0 L2 0
+    // signature Lorg/apache/commons/math3/distribution/DiscreteDistribution<TT;>;
+    // declaration: this extends org.apache.commons.math3.distribution.DiscreteDistribution<T>
+    LOCALVARIABLE samples Ljava/util/List; L0 L2 1
+    // signature Ljava/util/List<Lorg/apache/commons/math3/util/Pair<TT;Ljava/lang/Double;>;>;
+    // declaration: samples extends java.util.List<org.apache.commons.math3.util.Pair<T, java.lang.Double>>
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  // signature (Lorg/apache/commons/math3/random/RandomGenerator;Ljava/util/List<Lorg/apache/commons/math3/util/Pair<TT;Ljava/lang/Double;>;>;)V
+  // declaration: void <init>(org.apache.commons.math3.random.RandomGenerator, java.util.List<org.apache.commons.math3.util.Pair<T, java.lang.Double>>)
+  public <init>(Lorg/apache/commons/math3/random/RandomGenerator;Ljava/util/List;)V throws org/apache/commons/math3/exception/NotPositiveException org/apache/commons/math3/exception/MathArithmeticException org/apache/commons/math3/exception/MathIllegalArgumentException 
+   L0
+    LINENUMBER 86 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 87 L1
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math3/distribution/DiscreteDistribution.random : Lorg/apache/commons/math3/random/RandomGenerator;
+   L2
+    LINENUMBER 89 L2
+    ALOAD 0
+    NEW java/util/ArrayList
+    DUP
+    ALOAD 2
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    INVOKESPECIAL java/util/ArrayList.<init> (I)V
+    PUTFIELD org/apache/commons/math3/distribution/DiscreteDistribution.singletons : Ljava/util/List;
+   L3
+    LINENUMBER 90 L3
+    ALOAD 2
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    NEWARRAY T_DOUBLE
+    ASTORE 3
+   L4
+    LINENUMBER 92 L4
+    ICONST_0
+    ISTORE 4
+   L5
+    ILOAD 4
+    ALOAD 2
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 93 L7
+    ALOAD 2
+    ILOAD 4
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math3/util/Pair
+    ASTORE 5
+   L8
+    LINENUMBER 94 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.singletons : Ljava/util/List;
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math3/util/Pair.getKey ()Ljava/lang/Object;
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L9
+    LINENUMBER 95 L9
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math3/util/Pair.getValue ()Ljava/lang/Object;
+    CHECKCAST java/lang/Double
+    INVOKEVIRTUAL java/lang/Double.doubleValue ()D
+    DCONST_0
+    DCMPG
+    IFGE L10
+   L11
+    LINENUMBER 96 L11
+    NEW org/apache/commons/math3/exception/NotPositiveException
+    DUP
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math3/util/Pair.getValue ()Ljava/lang/Object;
+    CHECKCAST java/lang/Number
+    INVOKESPECIAL org/apache/commons/math3/exception/NotPositiveException.<init> (Ljava/lang/Number;)V
+    ATHROW
+   L10
+    LINENUMBER 98 L10
+    ALOAD 3
+    ILOAD 4
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math3/util/Pair.getValue ()Ljava/lang/Object;
+    CHECKCAST java/lang/Double
+    INVOKEVIRTUAL java/lang/Double.doubleValue ()D
+    DASTORE
+   L12
+    LINENUMBER 92 L12
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 101 L6
+    ALOAD 0
+    ALOAD 3
+    DCONST_1
+    INVOKESTATIC org/apache/commons/math3/util/MathArrays.normalizeArray ([DD)[D
+    PUTFIELD org/apache/commons/math3/distribution/DiscreteDistribution.probabilities : [D
+   L13
+    LINENUMBER 102 L13
+    RETURN
+   L14
+    LOCALVARIABLE sample Lorg/apache/commons/math3/util/Pair; L8 L12 5
+    // signature Lorg/apache/commons/math3/util/Pair<TT;Ljava/lang/Double;>;
+    // declaration: sample extends org.apache.commons.math3.util.Pair<T, java.lang.Double>
+    LOCALVARIABLE i I L5 L6 4
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/DiscreteDistribution; L0 L14 0
+    // signature Lorg/apache/commons/math3/distribution/DiscreteDistribution<TT;>;
+    // declaration: this extends org.apache.commons.math3.distribution.DiscreteDistribution<T>
+    LOCALVARIABLE rng Lorg/apache/commons/math3/random/RandomGenerator; L0 L14 1
+    LOCALVARIABLE samples Ljava/util/List; L0 L14 2
+    // signature Ljava/util/List<Lorg/apache/commons/math3/util/Pair<TT;Ljava/lang/Double;>;>;
+    // declaration: samples extends java.util.List<org.apache.commons.math3.util.Pair<T, java.lang.Double>>
+    LOCALVARIABLE probs [D L4 L14 3
+    MAXSTACK = 4
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public reseedRandomGenerator(J)V
+   L0
+    LINENUMBER 110 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.random : Lorg/apache/commons/math3/random/RandomGenerator;
+    LLOAD 1
+    INVOKEINTERFACE org/apache/commons/math3/random/RandomGenerator.setSeed (J)V (itf)
+   L1
+    LINENUMBER 111 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/DiscreteDistribution; L0 L2 0
+    // signature Lorg/apache/commons/math3/distribution/DiscreteDistribution<TT;>;
+    // declaration: this extends org.apache.commons.math3.distribution.DiscreteDistribution<T>
+    LOCALVARIABLE seed J L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x0
+  // signature (TT;)D
+  // declaration: double probability(T)
+  probability(Ljava/lang/Object;)D
+   L0
+    LINENUMBER 123 L0
+    DCONST_0
+    DSTORE 2
+   L1
+    LINENUMBER 125 L1
+    ICONST_0
+    ISTORE 4
+   L2
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.probabilities : [D
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 126 L4
+    ALOAD 1
+    IFNONNULL L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.singletons : Ljava/util/List;
+    ILOAD 4
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    IFNULL L6
+   L5
+    ALOAD 1
+    IFNULL L7
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.singletons : Ljava/util/List;
+    ILOAD 4
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    INVOKEVIRTUAL java/lang/Object.equals (Ljava/lang/Object;)Z
+    IFEQ L7
+   L6
+    LINENUMBER 128 L6
+    DLOAD 2
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.probabilities : [D
+    ILOAD 4
+    DALOAD
+    DADD
+    DSTORE 2
+   L7
+    LINENUMBER 125 L7
+    IINC 4 1
+    GOTO L2
+   L3
+    LINENUMBER 132 L3
+    DLOAD 2
+    DRETURN
+   L8
+    LOCALVARIABLE i I L2 L3 4
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/DiscreteDistribution; L0 L8 0
+    // signature Lorg/apache/commons/math3/distribution/DiscreteDistribution<TT;>;
+    // declaration: this extends org.apache.commons.math3.distribution.DiscreteDistribution<T>
+    LOCALVARIABLE x Ljava/lang/Object; L0 L8 1
+    // signature TT;
+    // declaration: x extends T
+    LOCALVARIABLE probability D L1 L8 2
+    MAXSTACK = 4
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  // signature ()Ljava/util/List<Lorg/apache/commons/math3/util/Pair<TT;Ljava/lang/Double;>;>;
+  // declaration: java.util.List<org.apache.commons.math3.util.Pair<T, java.lang.Double>> getSamples()
+  public getSamples()Ljava/util/List;
+   L0
+    LINENUMBER 142 L0
+    NEW java/util/ArrayList
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.probabilities : [D
+    ARRAYLENGTH
+    INVOKESPECIAL java/util/ArrayList.<init> (I)V
+    ASTORE 1
+   L1
+    LINENUMBER 144 L1
+    ICONST_0
+    ISTORE 2
+   L2
+    ILOAD 2
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.probabilities : [D
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 145 L4
+    ALOAD 1
+    NEW org/apache/commons/math3/util/Pair
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.singletons : Ljava/util/List;
+    ILOAD 2
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.probabilities : [D
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    INVOKESPECIAL org/apache/commons/math3/util/Pair.<init> (Ljava/lang/Object;Ljava/lang/Object;)V
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L5
+    LINENUMBER 144 L5
+    IINC 2 1
+    GOTO L2
+   L3
+    LINENUMBER 148 L3
+    ALOAD 1
+    ARETURN
+   L6
+    LOCALVARIABLE i I L2 L3 2
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/DiscreteDistribution; L0 L6 0
+    // signature Lorg/apache/commons/math3/distribution/DiscreteDistribution<TT;>;
+    // declaration: this extends org.apache.commons.math3.distribution.DiscreteDistribution<T>
+    LOCALVARIABLE samples Ljava/util/List; L1 L6 1
+    // signature Ljava/util/List<Lorg/apache/commons/math3/util/Pair<TT;Ljava/lang/Double;>;>;
+    // declaration: samples extends java.util.List<org.apache.commons.math3.util.Pair<T, java.lang.Double>>
+    MAXSTACK = 6
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  // signature ()TT;
+  // declaration: T sample()
+  public sample()Ljava/lang/Object;
+   L0
+    LINENUMBER 157 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.random : Lorg/apache/commons/math3/random/RandomGenerator;
+    INVOKEINTERFACE org/apache/commons/math3/random/RandomGenerator.nextDouble ()D (itf)
+    DSTORE 1
+   L1
+    LINENUMBER 158 L1
+    DCONST_0
+    DSTORE 3
+   L2
+    LINENUMBER 160 L2
+    ICONST_0
+    ISTORE 5
+   L3
+    ILOAD 5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.probabilities : [D
+    ARRAYLENGTH
+    IF_ICMPLT L4
+   L5
+    LINENUMBER 161 L5
+    DLOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.probabilities : [D
+    ILOAD 5
+    DALOAD
+    DADD
+    DSTORE 3
+   L6
+    LINENUMBER 162 L6
+    DLOAD 1
+    DLOAD 3
+    DCMPG
+    IFGE L7
+   L8
+    LINENUMBER 163 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.singletons : Ljava/util/List;
+    ILOAD 5
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    ARETURN
+   L7
+    LINENUMBER 160 L7
+    IINC 5 1
+    GOTO L3
+   L4
+    LINENUMBER 170 L4
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.singletons : Ljava/util/List;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/DiscreteDistribution.singletons : Ljava/util/List;
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    ICONST_1
+    ISUB
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    ARETURN
+   L9
+    LOCALVARIABLE i I L3 L4 5
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/DiscreteDistribution; L0 L9 0
+    // signature Lorg/apache/commons/math3/distribution/DiscreteDistribution<TT;>;
+    // declaration: this extends org.apache.commons.math3.distribution.DiscreteDistribution<T>
+    LOCALVARIABLE randomValue D L1 L9 1
+    LOCALVARIABLE sum D L2 L9 3
+    MAXSTACK = 4
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public sample(I)[Ljava/lang/Object; throws org/apache/commons/math3/exception/NotStrictlyPositiveException 
+   L0
+    LINENUMBER 182 L0
+    ILOAD 1
+    IFGT L1
+   L2
+    LINENUMBER 183 L2
+    NEW org/apache/commons/math3/exception/NotStrictlyPositiveException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.NUMBER_OF_SAMPLES : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ILOAD 1
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    INVOKESPECIAL org/apache/commons/math3/exception/NotStrictlyPositiveException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;Ljava/lang/Number;)V
+    ATHROW
+   L1
+    LINENUMBER 187 L1
+    ILOAD 1
+    ANEWARRAY java/lang/Object
+    ASTORE 2
+   L3
+    LINENUMBER 189 L3
+    ICONST_0
+    ISTORE 3
+   L4
+    ILOAD 3
+    ILOAD 1
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 190 L6
+    ALOAD 2
+    ILOAD 3
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/distribution/DiscreteDistribution.sample ()Ljava/lang/Object;
+    AASTORE
+   L7
+    LINENUMBER 189 L7
+    IINC 3 1
+    GOTO L4
+   L5
+    LINENUMBER 193 L5
+    ALOAD 2
+    ARETURN
+   L8
+    LOCALVARIABLE i I L4 L5 3
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/DiscreteDistribution; L0 L8 0
+    // signature Lorg/apache/commons/math3/distribution/DiscreteDistribution<TT;>;
+    // declaration: this extends org.apache.commons.math3.distribution.DiscreteDistribution<T>
+    LOCALVARIABLE sampleSize I L0 L8 1
+    LOCALVARIABLE out [Ljava/lang/Object; L3 L8 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+}
+

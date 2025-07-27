@@ -3,7 +3,7 @@ import logging
 
 our_method_logger = logging.getLogger("our_method_logger")
 our_method_logger.setLevel(logging.INFO)
-our_method_handler = logging.FileHandler("Ablation_Math_all.log")
+our_method_handler = logging.FileHandler("Demonstration.log")
 
 our_method_formatter = logging.Formatter('%(asctime)s - %(message)s')
 our_method_handler.setFormatter(our_method_formatter)

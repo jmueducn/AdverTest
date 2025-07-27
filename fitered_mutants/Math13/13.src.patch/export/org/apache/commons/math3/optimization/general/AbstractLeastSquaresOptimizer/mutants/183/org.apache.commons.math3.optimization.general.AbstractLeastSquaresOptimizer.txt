@@ -1,0 +1,979 @@
+// class version 49.0 (49)
+// DEPRECATED
+// access flags 0x20421
+// signature Lorg/apache/commons/math3/optimization/direct/BaseAbstractMultivariateVectorOptimizer<Lorg/apache/commons/math3/analysis/DifferentiableMultivariateVectorFunction;>;Lorg/apache/commons/math3/optimization/DifferentiableMultivariateVectorOptimizer;
+// declaration: org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer extends org.apache.commons.math3.optimization.direct.BaseAbstractMultivariateVectorOptimizer<org.apache.commons.math3.analysis.DifferentiableMultivariateVectorFunction> implements org.apache.commons.math3.optimization.DifferentiableMultivariateVectorOptimizer
+public abstract class org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer extends org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateVectorOptimizer implements org/apache/commons/math3/optimization/DifferentiableMultivariateVectorOptimizer {
+
+  // compiled from: AbstractLeastSquaresOptimizer.java
+
+  @Ljava/lang/Deprecated;()
+
+  // DEPRECATED
+  // access flags 0x2001A
+  private final static D DEFAULT_SINGULARITY_THRESHOLD = 1.0E-14
+  @Ljava/lang/Deprecated;()
+
+  // DEPRECATED
+  // access flags 0x20004
+  protected [[D weightedResidualJacobian
+  @Ljava/lang/Deprecated;()
+
+  // DEPRECATED
+  // access flags 0x20004
+  protected I cols
+  @Ljava/lang/Deprecated;()
+
+  // DEPRECATED
+  // access flags 0x20004
+  protected I rows
+  @Ljava/lang/Deprecated;()
+
+  // DEPRECATED
+  // access flags 0x20004
+  protected [D point
+  @Ljava/lang/Deprecated;()
+
+  // DEPRECATED
+  // access flags 0x20004
+  protected [D objective
+  @Ljava/lang/Deprecated;()
+
+  // DEPRECATED
+  // access flags 0x20004
+  protected [D weightedResiduals
+  @Ljava/lang/Deprecated;()
+
+  // DEPRECATED
+  // access flags 0x20004
+  protected D cost
+  @Ljava/lang/Deprecated;()
+
+  // access flags 0x2
+  private Lorg/apache/commons/math3/analysis/differentiation/MultivariateDifferentiableVectorFunction; jF
+
+  // access flags 0x2
+  private I jacobianEvaluations
+
+  // access flags 0x2
+  private Lorg/apache/commons/math3/linear/RealMatrix; weightMatrixSqrt
+
+  // DEPRECATED
+  // access flags 0x20004
+  protected <init>()V
+  @Ljava/lang/Deprecated;()
+   L0
+    LINENUMBER 128 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateVectorOptimizer.<init> ()V
+    RETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x4
+  // signature (Lorg/apache/commons/math3/optimization/ConvergenceChecker<Lorg/apache/commons/math3/optimization/PointVectorValuePair;>;)V
+  // declaration: void <init>(org.apache.commons.math3.optimization.ConvergenceChecker<org.apache.commons.math3.optimization.PointVectorValuePair>)
+  protected <init>(Lorg/apache/commons/math3/optimization/ConvergenceChecker;)V
+   L0
+    LINENUMBER 134 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateVectorOptimizer.<init> (Lorg/apache/commons/math3/optimization/ConvergenceChecker;)V
+   L1
+    LINENUMBER 135 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L2 0
+    LOCALVARIABLE checker Lorg/apache/commons/math3/optimization/ConvergenceChecker; L0 L2 1
+    // signature Lorg/apache/commons/math3/optimization/ConvergenceChecker<Lorg/apache/commons/math3/optimization/PointVectorValuePair;>;
+    // declaration: checker extends org.apache.commons.math3.optimization.ConvergenceChecker<org.apache.commons.math3.optimization.PointVectorValuePair>
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getJacobianEvaluations()I
+   L0
+    LINENUMBER 141 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.jacobianEvaluations : I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // DEPRECATED
+  // access flags 0x20004
+  protected updateJacobian()V
+  @Ljava/lang/Deprecated;()
+   L0
+    LINENUMBER 154 L0
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.point : [D
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.computeWeightedJacobian ([D)Lorg/apache/commons/math3/linear/RealMatrix;
+    ASTORE 1
+   L1
+    LINENUMBER 155 L1
+    ALOAD 0
+    ALOAD 1
+    LDC -1.0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getData ()[[D (itf)
+    PUTFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.weightedResidualJacobian : [[D
+   L2
+    LINENUMBER 156 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L3 0
+    LOCALVARIABLE weightedJacobian Lorg/apache/commons/math3/linear/RealMatrix; L1 L3 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x4
+  protected computeWeightedJacobian([D)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 168 L0
+    ALOAD 0
+    DUP
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.jacobianEvaluations : I
+    ICONST_1
+    IADD
+    PUTFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.jacobianEvaluations : I
+   L1
+    LINENUMBER 170 L1
+    ALOAD 1
+    ARRAYLENGTH
+    ANEWARRAY org/apache/commons/math3/analysis/differentiation/DerivativeStructure
+    ASTORE 2
+   L2
+    LINENUMBER 171 L2
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 3
+   L3
+    LINENUMBER 172 L3
+    ICONST_0
+    ISTORE 4
+   L4
+    ILOAD 4
+    ILOAD 3
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 173 L6
+    ALOAD 2
+    ILOAD 4
+    NEW org/apache/commons/math3/analysis/differentiation/DerivativeStructure
+    DUP
+    ILOAD 3
+    ICONST_1
+    ILOAD 4
+    ALOAD 1
+    ILOAD 4
+    DALOAD
+    INVOKESPECIAL org/apache/commons/math3/analysis/differentiation/DerivativeStructure.<init> (IIID)V
+    AASTORE
+   L7
+    LINENUMBER 172 L7
+    IINC 4 1
+    GOTO L4
+   L5
+    LINENUMBER 175 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.jF : Lorg/apache/commons/math3/analysis/differentiation/MultivariateDifferentiableVectorFunction;
+    ALOAD 2
+    INVOKEINTERFACE org/apache/commons/math3/analysis/differentiation/MultivariateDifferentiableVectorFunction.value ([Lorg/apache/commons/math3/analysis/differentiation/DerivativeStructure;)[Lorg/apache/commons/math3/analysis/differentiation/DerivativeStructure; (itf)
+    ASTORE 4
+   L8
+    LINENUMBER 176 L8
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.getTarget ()[D
+    ARRAYLENGTH
+    ISTORE 5
+   L9
+    LINENUMBER 177 L9
+    ALOAD 4
+    ARRAYLENGTH
+    ILOAD 5
+    IF_ICMPEQ L10
+   L11
+    LINENUMBER 178 L11
+    NEW org/apache/commons/math3/exception/DimensionMismatchException
+    DUP
+    ALOAD 4
+    ARRAYLENGTH
+    ILOAD 5
+    INVOKESPECIAL org/apache/commons/math3/exception/DimensionMismatchException.<init> (II)V
+    ATHROW
+   L10
+    LINENUMBER 180 L10
+    ILOAD 5
+    ILOAD 3
+    MULTIANEWARRAY [[D 2
+    ASTORE 6
+   L12
+    LINENUMBER 181 L12
+    ICONST_0
+    ISTORE 7
+   L13
+    ILOAD 7
+    ILOAD 5
+    IF_ICMPGE L14
+   L15
+    LINENUMBER 182 L15
+    ILOAD 3
+    NEWARRAY T_INT
+    ASTORE 8
+   L16
+    LINENUMBER 183 L16
+    ICONST_0
+    ISTORE 9
+   L17
+    ILOAD 9
+    ILOAD 3
+    IF_ICMPGE L18
+   L19
+    LINENUMBER 184 L19
+    ALOAD 8
+    ILOAD 9
+    ICONST_1
+    IASTORE
+   L20
+    LINENUMBER 185 L20
+    ALOAD 6
+    ILOAD 7
+    AALOAD
+    ILOAD 9
+    ALOAD 4
+    ILOAD 7
+    AALOAD
+    ALOAD 8
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DerivativeStructure.getPartialDerivative ([I)D
+    DASTORE
+   L21
+    LINENUMBER 186 L21
+    ALOAD 8
+    ILOAD 9
+    ICONST_0
+    IASTORE
+   L22
+    LINENUMBER 183 L22
+    IINC 9 1
+    GOTO L17
+   L18
+    LINENUMBER 181 L18
+    IINC 7 1
+    GOTO L13
+   L14
+    LINENUMBER 190 L14
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.weightMatrixSqrt : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 6
+    INVOKESTATIC org/apache/commons/math3/linear/MatrixUtils.createRealMatrix ([[D)Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ARETURN
+   L23
+    LOCALVARIABLE i I L4 L5 4
+    LOCALVARIABLE j I L17 L18 9
+    LOCALVARIABLE orders [I L16 L18 8
+    LOCALVARIABLE i I L13 L14 7
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L23 0
+    LOCALVARIABLE params [D L0 L23 1
+    LOCALVARIABLE dsPoint [Lorg/apache/commons/math3/analysis/differentiation/DerivativeStructure; L2 L23 2
+    LOCALVARIABLE nC I L3 L23 3
+    LOCALVARIABLE dsValue [Lorg/apache/commons/math3/analysis/differentiation/DerivativeStructure; L8 L23 4
+    LOCALVARIABLE nR I L9 L23 5
+    LOCALVARIABLE jacobianData [[D L12 L23 6
+    MAXSTACK = 9
+    MAXLOCALS = 10
+
+  // DEPRECATED
+  // access flags 0x20004
+  protected updateResidualsAndCost()V
+  @Ljava/lang/Deprecated;()
+   L0
+    LINENUMBER 205 L0
+    ALOAD 0
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.point : [D
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.computeObjectiveValue ([D)[D
+    PUTFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.objective : [D
+   L1
+    LINENUMBER 206 L1
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.objective : [D
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.computeResiduals ([D)[D
+    ASTORE 1
+   L2
+    LINENUMBER 209 L2
+    ALOAD 0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.computeCost ([D)D
+    PUTFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.cost : D
+   L3
+    LINENUMBER 212 L3
+    NEW org/apache/commons/math3/linear/ArrayRealVector
+    DUP
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math3/linear/ArrayRealVector.<init> ([D)V
+    ASTORE 2
+   L4
+    LINENUMBER 213 L4
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.weightMatrixSqrt : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 2
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.operate (Lorg/apache/commons/math3/linear/RealVector;)Lorg/apache/commons/math3/linear/RealVector; (itf)
+    INVOKEVIRTUAL org/apache/commons/math3/linear/RealVector.toArray ()[D
+    PUTFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.weightedResiduals : [D
+   L5
+    LINENUMBER 214 L5
+    RETURN
+   L6
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L6 0
+    LOCALVARIABLE res [D L2 L6 1
+    LOCALVARIABLE residuals Lorg/apache/commons/math3/linear/ArrayRealVector; L4 L6 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x4
+  protected computeCost([D)D
+   L0
+    LINENUMBER 225 L0
+    NEW org/apache/commons/math3/linear/ArrayRealVector
+    DUP
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math3/linear/ArrayRealVector.<init> ([D)V
+    ASTORE 2
+   L1
+    LINENUMBER 226 L1
+    ALOAD 2
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.getWeight ()Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 2
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.operate (Lorg/apache/commons/math3/linear/RealVector;)Lorg/apache/commons/math3/linear/RealVector; (itf)
+    INVOKEVIRTUAL org/apache/commons/math3/linear/ArrayRealVector.dotProduct (Lorg/apache/commons/math3/linear/RealVector;)D
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    DRETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L2 0
+    LOCALVARIABLE residuals [D L0 L2 1
+    LOCALVARIABLE r Lorg/apache/commons/math3/linear/ArrayRealVector; L1 L2 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getRMS()D
+   L0
+    LINENUMBER 240 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.getChiSquare ()D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.rows : I
+    I2D
+    DDIV
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L1 0
+    MAXSTACK = 4
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getChiSquare()D
+   L0
+    LINENUMBER 250 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.cost : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.cost : D
+    DMUL
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L1 0
+    MAXSTACK = 4
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getWeightSquareRoot()Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 260 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.weightMatrixSqrt : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.copy ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x4
+  protected setCost(D)V
+   L0
+    LINENUMBER 270 L0
+    ALOAD 0
+    DLOAD 1
+    PUTFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.cost : D
+   L1
+    LINENUMBER 271 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L2 0
+    LOCALVARIABLE cost D L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // DEPRECATED
+  // access flags 0x20001
+  public getCovariances()[[D
+  @Ljava/lang/Deprecated;()
+   L0
+    LINENUMBER 285 L0
+    ALOAD 0
+    LDC 1.0E-14
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.getCovariances (D)[[D
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L1 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // DEPRECATED
+  // access flags 0x20001
+  public getCovariances(D)[[D
+  @Ljava/lang/Deprecated;()
+   L0
+    LINENUMBER 307 L0
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.point : [D
+    DLOAD 1
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.computeCovariances ([DD)[[D
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L1 0
+    LOCALVARIABLE threshold D L0 L1 1
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public computeCovariances([DD)[[D
+   L0
+    LINENUMBER 330 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.computeWeightedJacobian ([D)Lorg/apache/commons/math3/linear/RealMatrix;
+    ASTORE 4
+   L1
+    LINENUMBER 333 L1
+    ALOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.transpose ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ASTORE 5
+   L2
+    LINENUMBER 336 L2
+    NEW org/apache/commons/math3/linear/QRDecomposition
+    DUP
+    ALOAD 5
+    DLOAD 2
+    INVOKESPECIAL org/apache/commons/math3/linear/QRDecomposition.<init> (Lorg/apache/commons/math3/linear/RealMatrix;D)V
+    INVOKEVIRTUAL org/apache/commons/math3/linear/QRDecomposition.getSolver ()Lorg/apache/commons/math3/linear/DecompositionSolver;
+    ASTORE 6
+   L3
+    LINENUMBER 338 L3
+    ALOAD 6
+    INVOKEINTERFACE org/apache/commons/math3/linear/DecompositionSolver.getInverse ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getData ()[[D (itf)
+    ARETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L4 0
+    LOCALVARIABLE params [D L0 L4 1
+    LOCALVARIABLE threshold D L0 L4 2
+    LOCALVARIABLE j Lorg/apache/commons/math3/linear/RealMatrix; L1 L4 4
+    LOCALVARIABLE jTj Lorg/apache/commons/math3/linear/RealMatrix; L2 L4 5
+    LOCALVARIABLE solver Lorg/apache/commons/math3/linear/DecompositionSolver; L3 L4 6
+    MAXSTACK = 5
+    MAXLOCALS = 7
+
+  // DEPRECATED
+  // access flags 0x20001
+  public guessParametersErrors()[D
+  @Ljava/lang/Deprecated;()
+   L0
+    LINENUMBER 372 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.rows : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.cols : I
+    IF_ICMPGT L1
+   L2
+    LINENUMBER 373 L2
+    NEW org/apache/commons/math3/exception/NumberIsTooSmallException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.NO_DEGREES_OF_FREEDOM : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.rows : I
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.cols : I
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/exception/NumberIsTooSmallException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;Ljava/lang/Number;Ljava/lang/Number;Z)V
+    ATHROW
+   L1
+    LINENUMBER 376 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.cols : I
+    NEWARRAY T_DOUBLE
+    ASTORE 1
+   L3
+    LINENUMBER 377 L3
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.getChiSquare ()D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.rows : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.cols : I
+    ISUB
+    I2D
+    DDIV
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    DSTORE 2
+   L4
+    LINENUMBER 378 L4
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.point : [D
+    LDC 1.0E-14
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.computeCovariances ([DD)[[D
+    ASTORE 4
+   L5
+    LINENUMBER 379 L5
+    ICONST_0
+    ISTORE 5
+   L6
+    ILOAD 5
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 380 L8
+    ALOAD 1
+    ILOAD 5
+    ALOAD 4
+    ILOAD 5
+    AALOAD
+    ILOAD 5
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    DLOAD 2
+    DMUL
+    DASTORE
+   L9
+    LINENUMBER 379 L9
+    IINC 5 1
+    GOTO L6
+   L7
+    LINENUMBER 382 L7
+    ALOAD 1
+    ARETURN
+   L10
+    LOCALVARIABLE i I L6 L7 5
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L10 0
+    LOCALVARIABLE errors [D L3 L10 1
+    LOCALVARIABLE c D L4 L10 2
+    LOCALVARIABLE covar [[D L5 L10 4
+    MAXSTACK = 6
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public computeSigma([DD)[D
+   L0
+    LINENUMBER 402 L0
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 4
+   L1
+    LINENUMBER 403 L1
+    ILOAD 4
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L2
+    LINENUMBER 404 L2
+    ALOAD 0
+    ALOAD 1
+    DLOAD 2
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.computeCovariances ([DD)[[D
+    ASTORE 6
+   L3
+    LINENUMBER 405 L3
+    ICONST_0
+    ISTORE 7
+   L4
+    ILOAD 7
+    ILOAD 4
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 406 L6
+    ALOAD 5
+    ILOAD 7
+    ALOAD 6
+    ILOAD 7
+    AALOAD
+    ILOAD 7
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    DASTORE
+   L7
+    LINENUMBER 405 L7
+    IINC 7 1
+    GOTO L4
+   L5
+    LINENUMBER 408 L5
+    ALOAD 5
+    ARETURN
+   L8
+    LOCALVARIABLE i I L4 L5 7
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L8 0
+    LOCALVARIABLE params [D L0 L8 1
+    LOCALVARIABLE covarianceSingularityThreshold D L0 L8 2
+    LOCALVARIABLE nC I L1 L8 4
+    LOCALVARIABLE sig [D L2 L8 5
+    LOCALVARIABLE cov [[D L3 L8 6
+    MAXSTACK = 4
+    MAXLOCALS = 8
+
+  // DEPRECATED
+  // access flags 0x20001
+  public optimize(ILorg/apache/commons/math3/analysis/DifferentiableMultivariateVectorFunction;[D[D[D)Lorg/apache/commons/math3/optimization/PointVectorValuePair;
+  @Ljava/lang/Deprecated;()
+   L0
+    LINENUMBER 423 L0
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    INVOKESTATIC org/apache/commons/math3/analysis/FunctionUtils.toMultivariateDifferentiableVectorFunction (Lorg/apache/commons/math3/analysis/DifferentiableMultivariateVectorFunction;)Lorg/apache/commons/math3/analysis/differentiation/MultivariateDifferentiableVectorFunction;
+    ICONST_3
+    ANEWARRAY org/apache/commons/math3/optimization/OptimizationData
+    DUP
+    ICONST_0
+    NEW org/apache/commons/math3/optimization/Target
+    DUP
+    ALOAD 3
+    INVOKESPECIAL org/apache/commons/math3/optimization/Target.<init> ([D)V
+    AASTORE
+    DUP
+    ICONST_1
+    NEW org/apache/commons/math3/optimization/Weight
+    DUP
+    ALOAD 4
+    INVOKESPECIAL org/apache/commons/math3/optimization/Weight.<init> ([D)V
+    AASTORE
+    DUP
+    ICONST_2
+    NEW org/apache/commons/math3/optimization/InitialGuess
+    DUP
+    ALOAD 5
+    INVOKESPECIAL org/apache/commons/math3/optimization/InitialGuess.<init> ([D)V
+    AASTORE
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.optimizeInternal (ILorg/apache/commons/math3/analysis/differentiation/MultivariateDifferentiableVectorFunction;[Lorg/apache/commons/math3/optimization/OptimizationData;)Lorg/apache/commons/math3/optimization/PointVectorValuePair;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L1 0
+    LOCALVARIABLE maxEval I L0 L1 1
+    LOCALVARIABLE f Lorg/apache/commons/math3/analysis/DifferentiableMultivariateVectorFunction; L0 L1 2
+    LOCALVARIABLE target [D L0 L1 3
+    LOCALVARIABLE weights [D L0 L1 4
+    LOCALVARIABLE startPoint [D L0 L1 5
+    MAXSTACK = 9
+    MAXLOCALS = 6
+
+  // DEPRECATED
+  // access flags 0x20001
+  public optimize(ILorg/apache/commons/math3/analysis/differentiation/MultivariateDifferentiableVectorFunction;[D[D[D)Lorg/apache/commons/math3/optimization/PointVectorValuePair;
+  @Ljava/lang/Deprecated;()
+   L0
+    LINENUMBER 459 L0
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    ICONST_3
+    ANEWARRAY org/apache/commons/math3/optimization/OptimizationData
+    DUP
+    ICONST_0
+    NEW org/apache/commons/math3/optimization/Target
+    DUP
+    ALOAD 3
+    INVOKESPECIAL org/apache/commons/math3/optimization/Target.<init> ([D)V
+    AASTORE
+    DUP
+    ICONST_1
+    NEW org/apache/commons/math3/optimization/Weight
+    DUP
+    ALOAD 4
+    INVOKESPECIAL org/apache/commons/math3/optimization/Weight.<init> ([D)V
+    AASTORE
+    DUP
+    ICONST_2
+    NEW org/apache/commons/math3/optimization/InitialGuess
+    DUP
+    ALOAD 5
+    INVOKESPECIAL org/apache/commons/math3/optimization/InitialGuess.<init> ([D)V
+    AASTORE
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.optimizeInternal (ILorg/apache/commons/math3/analysis/differentiation/MultivariateDifferentiableVectorFunction;[Lorg/apache/commons/math3/optimization/OptimizationData;)Lorg/apache/commons/math3/optimization/PointVectorValuePair;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L1 0
+    LOCALVARIABLE maxEval I L0 L1 1
+    LOCALVARIABLE f Lorg/apache/commons/math3/analysis/differentiation/MultivariateDifferentiableVectorFunction; L0 L1 2
+    LOCALVARIABLE target [D L0 L1 3
+    LOCALVARIABLE weights [D L0 L1 4
+    LOCALVARIABLE startPoint [D L0 L1 5
+    MAXSTACK = 9
+    MAXLOCALS = 6
+
+  // DEPRECATED
+  // access flags 0x20084
+  protected varargs optimizeInternal(ILorg/apache/commons/math3/analysis/differentiation/MultivariateDifferentiableVectorFunction;[Lorg/apache/commons/math3/optimization/OptimizationData;)Lorg/apache/commons/math3/optimization/PointVectorValuePair;
+  @Ljava/lang/Deprecated;()
+   L0
+    LINENUMBER 496 L0
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    INVOKESTATIC org/apache/commons/math3/analysis/FunctionUtils.toDifferentiableMultivariateVectorFunction (Lorg/apache/commons/math3/analysis/differentiation/MultivariateDifferentiableVectorFunction;)Lorg/apache/commons/math3/analysis/DifferentiableMultivariateVectorFunction;
+    ALOAD 3
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateVectorOptimizer.optimizeInternal (ILorg/apache/commons/math3/analysis/MultivariateVectorFunction;[Lorg/apache/commons/math3/optimization/OptimizationData;)Lorg/apache/commons/math3/optimization/PointVectorValuePair;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L1 0
+    LOCALVARIABLE maxEval I L0 L1 1
+    LOCALVARIABLE f Lorg/apache/commons/math3/analysis/differentiation/MultivariateDifferentiableVectorFunction; L0 L1 2
+    LOCALVARIABLE optData [Lorg/apache/commons/math3/optimization/OptimizationData; L0 L1 3
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x4
+  protected setUp()V
+   L0
+    LINENUMBER 502 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateVectorOptimizer.setUp ()V
+   L1
+    LINENUMBER 505 L1
+    ALOAD 0
+    ICONST_0
+    PUTFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.jacobianEvaluations : I
+   L2
+    LINENUMBER 508 L2
+    ALOAD 0
+    ALOAD 0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.getWeight ()Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESPECIAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.squareRoot (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.weightMatrixSqrt : Lorg/apache/commons/math3/linear/RealMatrix;
+   L3
+    LINENUMBER 516 L3
+    ALOAD 0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.getObjectiveFunction ()Lorg/apache/commons/math3/analysis/MultivariateVectorFunction;
+    CHECKCAST org/apache/commons/math3/analysis/DifferentiableMultivariateVectorFunction
+    INVOKESTATIC org/apache/commons/math3/analysis/FunctionUtils.toMultivariateDifferentiableVectorFunction (Lorg/apache/commons/math3/analysis/DifferentiableMultivariateVectorFunction;)Lorg/apache/commons/math3/analysis/differentiation/MultivariateDifferentiableVectorFunction;
+    PUTFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.jF : Lorg/apache/commons/math3/analysis/differentiation/MultivariateDifferentiableVectorFunction;
+   L4
+    LINENUMBER 519 L4
+    ALOAD 0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.getStartPoint ()[D
+    PUTFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.point : [D
+   L5
+    LINENUMBER 520 L5
+    ALOAD 0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.getTarget ()[D
+    ARRAYLENGTH
+    PUTFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.rows : I
+   L6
+    LINENUMBER 521 L6
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.point : [D
+    ARRAYLENGTH
+    PUTFIELD org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.cols : I
+   L7
+    LINENUMBER 522 L7
+    RETURN
+   L8
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L8 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x4
+  protected computeResiduals([D)[D
+   L0
+    LINENUMBER 541 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.getTarget ()[D
+    ASTORE 2
+   L1
+    LINENUMBER 542 L1
+    ALOAD 1
+    ARRAYLENGTH
+    ALOAD 2
+    ARRAYLENGTH
+    IF_ICMPEQ L2
+   L3
+    LINENUMBER 543 L3
+    NEW org/apache/commons/math3/exception/DimensionMismatchException
+    DUP
+    ALOAD 2
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKESPECIAL org/apache/commons/math3/exception/DimensionMismatchException.<init> (II)V
+    ATHROW
+   L2
+    LINENUMBER 547 L2
+    ALOAD 2
+    ARRAYLENGTH
+    NEWARRAY T_DOUBLE
+    ASTORE 3
+   L4
+    LINENUMBER 548 L4
+    ICONST_0
+    ISTORE 4
+   L5
+    ILOAD 4
+    ALOAD 2
+    ARRAYLENGTH
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 549 L7
+    ALOAD 3
+    ILOAD 4
+    ALOAD 2
+    ILOAD 4
+    DALOAD
+    ALOAD 1
+    ILOAD 4
+    DALOAD
+    DSUB
+    DASTORE
+   L8
+    LINENUMBER 548 L8
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 552 L6
+    ALOAD 3
+    ARETURN
+   L9
+    LOCALVARIABLE i I L5 L6 4
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L9 0
+    LOCALVARIABLE objectiveValue [D L0 L9 1
+    LOCALVARIABLE target [D L1 L9 2
+    LOCALVARIABLE residuals [D L4 L9 3
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0x2
+  private squareRoot(Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 562 L0
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math3/linear/DiagonalMatrix
+    IFEQ L1
+   L2
+    LINENUMBER 563 L2
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    ISTORE 2
+   L3
+    LINENUMBER 564 L3
+    NEW org/apache/commons/math3/linear/DiagonalMatrix
+    DUP
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math3/linear/DiagonalMatrix.<init> (I)V
+    ASTORE 3
+   L4
+    LINENUMBER 565 L4
+    ICONST_0
+    ISTORE 4
+   L5
+    ILOAD 4
+    ILOAD 2
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 566 L7
+    ALOAD 3
+    ILOAD 4
+    ILOAD 4
+    ALOAD 1
+    ILOAD 4
+    ILOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    POP2
+    POP
+    POP
+    POP
+   L8
+    LINENUMBER 565 L8
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 568 L6
+    ALOAD 3
+    ARETURN
+   L1
+    LINENUMBER 570 L1
+    NEW org/apache/commons/math3/linear/EigenDecomposition
+    DUP
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math3/linear/EigenDecomposition.<init> (Lorg/apache/commons/math3/linear/RealMatrix;)V
+    ASTORE 2
+   L9
+    LINENUMBER 571 L9
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math3/linear/EigenDecomposition.getSquareRoot ()Lorg/apache/commons/math3/linear/RealMatrix;
+    ARETURN
+   L10
+    LOCALVARIABLE i I L5 L6 4
+    LOCALVARIABLE dim I L3 L1 2
+    LOCALVARIABLE sqrtM Lorg/apache/commons/math3/linear/RealMatrix; L4 L1 3
+    LOCALVARIABLE dec Lorg/apache/commons/math3/linear/EigenDecomposition; L9 L10 2
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L10 0
+    LOCALVARIABLE m Lorg/apache/commons/math3/linear/RealMatrix; L0 L10 1
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0x1041
+  public synthetic bridge optimize(ILorg/apache/commons/math3/analysis/MultivariateVectorFunction;[D[D[D)Lorg/apache/commons/math3/optimization/PointVectorValuePair;
+   L0
+    LINENUMBER 62 L0
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    CHECKCAST org/apache/commons/math3/analysis/DifferentiableMultivariateVectorFunction
+    ALOAD 3
+    ALOAD 4
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer.optimize (ILorg/apache/commons/math3/analysis/DifferentiableMultivariateVectorFunction;[D[D[D)Lorg/apache/commons/math3/optimization/PointVectorValuePair;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/general/AbstractLeastSquaresOptimizer; L0 L1 0
+    LOCALVARIABLE x0 I L0 L1 1
+    LOCALVARIABLE x1 Lorg/apache/commons/math3/analysis/MultivariateVectorFunction; L0 L1 2
+    LOCALVARIABLE x2 [D L0 L1 3
+    LOCALVARIABLE x3 [D L0 L1 4
+    LOCALVARIABLE x4 [D L0 L1 5
+    MAXSTACK = 6
+    MAXLOCALS = 6
+}
+

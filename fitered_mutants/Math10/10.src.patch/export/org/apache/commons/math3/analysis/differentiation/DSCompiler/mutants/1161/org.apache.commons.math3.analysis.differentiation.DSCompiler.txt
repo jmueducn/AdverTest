@@ -1,0 +1,5645 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math3/analysis/differentiation/DSCompiler {
+
+  // compiled from: DSCompiler.java
+
+  // access flags 0xA
+  // signature Ljava/util/concurrent/atomic/AtomicReference<[[Lorg/apache/commons/math3/analysis/differentiation/DSCompiler;>;
+  // declaration: compilers extends java.util.concurrent.atomic.AtomicReference<org.apache.commons.math3.analysis.differentiation.DSCompiler[][]>
+  private static Ljava/util/concurrent/atomic/AtomicReference; compilers
+
+  // access flags 0x12
+  private final I parameters
+
+  // access flags 0x12
+  private final I order
+
+  // access flags 0x12
+  private final [[I sizes
+
+  // access flags 0x12
+  private final [[I derivativesIndirection
+
+  // access flags 0x12
+  private final [I lowerIndirection
+
+  // access flags 0x12
+  private final [[[I multIndirection
+
+  // access flags 0x12
+  private final [[[I compIndirection
+
+  // access flags 0x2
+  private <init>(IILorg/apache/commons/math3/analysis/differentiation/DSCompiler;Lorg/apache/commons/math3/analysis/differentiation/DSCompiler;)V
+   L0
+    LINENUMBER 159 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 161 L1
+    ALOAD 0
+    ILOAD 1
+    PUTFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.parameters : I
+   L2
+    LINENUMBER 162 L2
+    ALOAD 0
+    ILOAD 2
+    PUTFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+   L3
+    LINENUMBER 163 L3
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    ALOAD 3
+    INVOKESTATIC org/apache/commons/math3/analysis/differentiation/DSCompiler.compileSizes (IILorg/apache/commons/math3/analysis/differentiation/DSCompiler;)[[I
+    PUTFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.sizes : [[I
+   L4
+    LINENUMBER 164 L4
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    ALOAD 3
+    ALOAD 4
+    INVOKESTATIC org/apache/commons/math3/analysis/differentiation/DSCompiler.compileDerivativesIndirection (IILorg/apache/commons/math3/analysis/differentiation/DSCompiler;Lorg/apache/commons/math3/analysis/differentiation/DSCompiler;)[[I
+    PUTFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.derivativesIndirection : [[I
+   L5
+    LINENUMBER 167 L5
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    ALOAD 3
+    ALOAD 4
+    INVOKESTATIC org/apache/commons/math3/analysis/differentiation/DSCompiler.compileLowerIndirection (IILorg/apache/commons/math3/analysis/differentiation/DSCompiler;Lorg/apache/commons/math3/analysis/differentiation/DSCompiler;)[I
+    PUTFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.lowerIndirection : [I
+   L6
+    LINENUMBER 170 L6
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    ALOAD 3
+    ALOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.lowerIndirection : [I
+    INVOKESTATIC org/apache/commons/math3/analysis/differentiation/DSCompiler.compileMultiplicationIndirection (IILorg/apache/commons/math3/analysis/differentiation/DSCompiler;Lorg/apache/commons/math3/analysis/differentiation/DSCompiler;[I)[[[I
+    PUTFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.multIndirection : [[[I
+   L7
+    LINENUMBER 173 L7
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    ALOAD 3
+    ALOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.sizes : [[I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.derivativesIndirection : [[I
+    INVOKESTATIC org/apache/commons/math3/analysis/differentiation/DSCompiler.compileCompositionIndirection (IILorg/apache/commons/math3/analysis/differentiation/DSCompiler;Lorg/apache/commons/math3/analysis/differentiation/DSCompiler;[[I[[I)[[[I
+    PUTFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.compIndirection : [[[I
+   L8
+    LINENUMBER 178 L8
+    RETURN
+   L9
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L9 0
+    LOCALVARIABLE parameters I L0 L9 1
+    LOCALVARIABLE order I L0 L9 2
+    LOCALVARIABLE valueCompiler Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L9 3
+    LOCALVARIABLE derivativeCompiler Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L9 4
+    MAXSTACK = 7
+    MAXLOCALS = 5
+
+  // access flags 0x9
+  public static getCompiler(II)Lorg/apache/commons/math3/analysis/differentiation/DSCompiler;
+   L0
+    LINENUMBER 188 L0
+    GETSTATIC org/apache/commons/math3/analysis/differentiation/DSCompiler.compilers : Ljava/util/concurrent/atomic/AtomicReference;
+    INVOKEVIRTUAL java/util/concurrent/atomic/AtomicReference.get ()Ljava/lang/Object;
+    CHECKCAST [[Lorg/apache/commons/math3/analysis/differentiation/DSCompiler;
+    ASTORE 2
+   L1
+    LINENUMBER 189 L1
+    ALOAD 2
+    IFNULL L2
+    ALOAD 2
+    ARRAYLENGTH
+    ILOAD 0
+    IF_ICMPLE L2
+    ALOAD 2
+    ILOAD 0
+    AALOAD
+    ARRAYLENGTH
+    ILOAD 1
+    IF_ICMPLE L2
+   L3
+    LINENUMBER 190 L3
+    ALOAD 2
+    ILOAD 0
+    AALOAD
+    ILOAD 1
+    AALOAD
+    IFNULL L2
+   L4
+    LINENUMBER 192 L4
+    ALOAD 2
+    ILOAD 0
+    AALOAD
+    ILOAD 1
+    AALOAD
+    ARETURN
+   L2
+    LINENUMBER 197 L2
+    ILOAD 0
+    ALOAD 2
+    IFNONNULL L5
+    ICONST_0
+    GOTO L6
+   L5
+    ALOAD 2
+    ARRAYLENGTH
+   L6
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.max (II)I
+    ISTORE 3
+   L7
+    LINENUMBER 198 L7
+    ILOAD 1
+    ALOAD 2
+    IFNONNULL L8
+    ICONST_0
+    GOTO L9
+   L8
+    ALOAD 2
+    ICONST_0
+    AALOAD
+    ARRAYLENGTH
+   L9
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.max (II)I
+    ISTORE 4
+   L10
+    LINENUMBER 199 L10
+    ILOAD 3
+    ICONST_1
+    IADD
+    ILOAD 4
+    ICONST_1
+    IADD
+    MULTIANEWARRAY [[Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; 2
+    ASTORE 5
+   L11
+    LINENUMBER 201 L11
+    ALOAD 2
+    IFNULL L12
+   L13
+    LINENUMBER 203 L13
+    ICONST_0
+    ISTORE 6
+   L14
+    ILOAD 6
+    ALOAD 2
+    ARRAYLENGTH
+    IF_ICMPGE L12
+   L15
+    LINENUMBER 204 L15
+    ALOAD 2
+    ILOAD 6
+    AALOAD
+    ICONST_0
+    ALOAD 5
+    ILOAD 6
+    AALOAD
+    ICONST_0
+    ALOAD 2
+    ILOAD 6
+    AALOAD
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L16
+    LINENUMBER 203 L16
+    IINC 6 1
+    GOTO L14
+   L12
+    LINENUMBER 209 L12
+    ICONST_0
+    ISTORE 6
+   L17
+    ILOAD 6
+    ILOAD 0
+    ILOAD 1
+    IADD
+    IF_ICMPGT L18
+   L19
+    LINENUMBER 210 L19
+    ICONST_0
+    ILOAD 6
+    ILOAD 0
+    ISUB
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.max (II)I
+    ISTORE 7
+   L20
+    ILOAD 7
+    ILOAD 1
+    ILOAD 6
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.min (II)I
+    IF_ICMPGT L21
+   L22
+    LINENUMBER 211 L22
+    ILOAD 6
+    ILOAD 7
+    ISUB
+    ISTORE 8
+   L23
+    LINENUMBER 212 L23
+    ALOAD 5
+    ILOAD 8
+    AALOAD
+    ILOAD 7
+    AALOAD
+    IFNONNULL L24
+   L25
+    LINENUMBER 213 L25
+    ILOAD 8
+    IFNE L26
+    ACONST_NULL
+    GOTO L27
+   L26
+    ALOAD 5
+    ILOAD 8
+    ICONST_1
+    ISUB
+    AALOAD
+    ILOAD 7
+    AALOAD
+   L27
+    ASTORE 9
+   L28
+    LINENUMBER 214 L28
+    ILOAD 7
+    IFNE L29
+    ACONST_NULL
+    GOTO L30
+   L29
+    ALOAD 5
+    ILOAD 8
+    AALOAD
+    ILOAD 7
+    ICONST_1
+    ISUB
+    AALOAD
+   L30
+    ASTORE 10
+   L31
+    LINENUMBER 215 L31
+    ALOAD 5
+    ILOAD 8
+    AALOAD
+    ILOAD 7
+    NEW org/apache/commons/math3/analysis/differentiation/DSCompiler
+    DUP
+    ILOAD 8
+    ILOAD 7
+    ALOAD 9
+    ALOAD 10
+    INVOKESPECIAL org/apache/commons/math3/analysis/differentiation/DSCompiler.<init> (IILorg/apache/commons/math3/analysis/differentiation/DSCompiler;Lorg/apache/commons/math3/analysis/differentiation/DSCompiler;)V
+    AASTORE
+   L24
+    LINENUMBER 210 L24
+    IINC 7 1
+    GOTO L20
+   L21
+    LINENUMBER 209 L21
+    IINC 6 1
+    GOTO L17
+   L18
+    LINENUMBER 221 L18
+    GETSTATIC org/apache/commons/math3/analysis/differentiation/DSCompiler.compilers : Ljava/util/concurrent/atomic/AtomicReference;
+    ALOAD 2
+    ALOAD 5
+    INVOKEVIRTUAL java/util/concurrent/atomic/AtomicReference.compareAndSet (Ljava/lang/Object;Ljava/lang/Object;)Z
+    POP
+   L32
+    LINENUMBER 223 L32
+    ALOAD 5
+    ILOAD 0
+    AALOAD
+    ILOAD 1
+    AALOAD
+    ARETURN
+   L33
+    LOCALVARIABLE i I L14 L12 6
+    LOCALVARIABLE valueCompiler Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L28 L24 9
+    LOCALVARIABLE derivativeCompiler Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L31 L24 10
+    LOCALVARIABLE p I L23 L24 8
+    LOCALVARIABLE o I L20 L21 7
+    LOCALVARIABLE diag I L17 L18 6
+    LOCALVARIABLE parameters I L0 L33 0
+    LOCALVARIABLE order I L0 L33 1
+    LOCALVARIABLE cache [[Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L1 L33 2
+    LOCALVARIABLE maxParameters I L7 L33 3
+    LOCALVARIABLE maxOrder I L10 L33 4
+    LOCALVARIABLE newCache [[Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L11 L33 5
+    MAXSTACK = 8
+    MAXLOCALS = 11
+
+  // access flags 0xA
+  private static compileSizes(IILorg/apache/commons/math3/analysis/differentiation/DSCompiler;)[[I
+   L0
+    LINENUMBER 236 L0
+    ILOAD 0
+    ICONST_1
+    IADD
+    ILOAD 1
+    ICONST_1
+    IADD
+    MULTIANEWARRAY [[I 2
+    ASTORE 3
+   L1
+    LINENUMBER 237 L1
+    ILOAD 0
+    IFNE L2
+   L3
+    LINENUMBER 238 L3
+    ALOAD 3
+    ICONST_0
+    AALOAD
+    ICONST_1
+    INVOKESTATIC java/util/Arrays.fill ([II)V
+    GOTO L4
+   L2
+    LINENUMBER 240 L2
+    ALOAD 2
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.sizes : [[I
+    ICONST_0
+    ALOAD 3
+    ICONST_0
+    ILOAD 0
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L5
+    LINENUMBER 241 L5
+    ALOAD 3
+    ILOAD 0
+    AALOAD
+    ICONST_0
+    ICONST_1
+    IASTORE
+   L6
+    LINENUMBER 242 L6
+    ICONST_0
+    ISTORE 4
+   L7
+    ILOAD 4
+    ILOAD 1
+    IF_ICMPGE L4
+   L8
+    LINENUMBER 243 L8
+    ALOAD 3
+    ILOAD 0
+    AALOAD
+    ILOAD 4
+    ICONST_1
+    IADD
+    ALOAD 3
+    ILOAD 0
+    AALOAD
+    ILOAD 4
+    IALOAD
+    ALOAD 3
+    ILOAD 0
+    ICONST_1
+    ISUB
+    AALOAD
+    ILOAD 4
+    ICONST_1
+    IADD
+    IALOAD
+    IADD
+    IASTORE
+   L9
+    LINENUMBER 242 L9
+    IINC 4 1
+    GOTO L7
+   L4
+    LINENUMBER 247 L4
+    ALOAD 3
+    ARETURN
+   L10
+    LOCALVARIABLE i I L7 L4 4
+    LOCALVARIABLE parameters I L0 L10 0
+    LOCALVARIABLE order I L0 L10 1
+    LOCALVARIABLE valueCompiler Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L10 2
+    LOCALVARIABLE sizes [[I L1 L10 3
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0xA
+  private static compileDerivativesIndirection(IILorg/apache/commons/math3/analysis/differentiation/DSCompiler;Lorg/apache/commons/math3/analysis/differentiation/DSCompiler;)[[I
+   L0
+    LINENUMBER 262 L0
+    ILOAD 0
+    IFEQ L1
+    ILOAD 1
+    IFNE L2
+   L1
+    LINENUMBER 263 L1
+    ICONST_1
+    ILOAD 0
+    MULTIANEWARRAY [[I 2
+    ARETURN
+   L2
+    LINENUMBER 266 L2
+    ALOAD 2
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.derivativesIndirection : [[I
+    ARRAYLENGTH
+    ISTORE 4
+   L3
+    LINENUMBER 267 L3
+    ALOAD 3
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.derivativesIndirection : [[I
+    ARRAYLENGTH
+    ISTORE 5
+   L4
+    LINENUMBER 268 L4
+    ILOAD 4
+    ILOAD 5
+    IADD
+    ILOAD 0
+    MULTIANEWARRAY [[I 2
+    ASTORE 6
+   L5
+    LINENUMBER 271 L5
+    ICONST_0
+    ISTORE 7
+   L6
+    ILOAD 7
+    ILOAD 4
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 273 L8
+    ALOAD 2
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.derivativesIndirection : [[I
+    ILOAD 7
+    AALOAD
+    ICONST_0
+    ALOAD 6
+    ILOAD 7
+    AALOAD
+    ICONST_0
+    ILOAD 0
+    ICONST_1
+    ISUB
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L9
+    LINENUMBER 271 L9
+    IINC 7 1
+    GOTO L6
+   L7
+    LINENUMBER 279 L7
+    ICONST_0
+    ISTORE 7
+   L10
+    ILOAD 7
+    ILOAD 5
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 282 L12
+    ALOAD 3
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.derivativesIndirection : [[I
+    ILOAD 7
+    AALOAD
+    ICONST_0
+    ALOAD 6
+    ILOAD 4
+    ILOAD 7
+    IADD
+    AALOAD
+    ICONST_0
+    ILOAD 0
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L13
+    LINENUMBER 287 L13
+    ALOAD 6
+    ILOAD 4
+    ILOAD 7
+    IADD
+    AALOAD
+    ILOAD 0
+    ICONST_1
+    ISUB
+    DUP2
+    IALOAD
+    ICONST_1
+    IADD
+    IASTORE
+   L14
+    LINENUMBER 279 L14
+    IINC 7 1
+    GOTO L10
+   L11
+    LINENUMBER 291 L11
+    ALOAD 6
+    ARETURN
+   L15
+    LOCALVARIABLE i I L6 L7 7
+    LOCALVARIABLE i I L10 L11 7
+    LOCALVARIABLE parameters I L0 L15 0
+    LOCALVARIABLE order I L0 L15 1
+    LOCALVARIABLE valueCompiler Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L15 2
+    LOCALVARIABLE derivativeCompiler Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L15 3
+    LOCALVARIABLE vSize I L3 L15 4
+    LOCALVARIABLE dSize I L4 L15 5
+    LOCALVARIABLE derivativesIndirection [[I L5 L15 6
+    MAXSTACK = 6
+    MAXLOCALS = 8
+
+  // access flags 0xA
+  private static compileLowerIndirection(IILorg/apache/commons/math3/analysis/differentiation/DSCompiler;Lorg/apache/commons/math3/analysis/differentiation/DSCompiler;)[I
+   L0
+    LINENUMBER 310 L0
+    ILOAD 0
+    IFEQ L1
+    ILOAD 1
+    ICONST_1
+    IF_ICMPGT L2
+   L1
+    LINENUMBER 311 L1
+    ICONST_1
+    NEWARRAY T_INT
+    DUP
+    ICONST_0
+    ICONST_0
+    IASTORE
+    ARETURN
+   L2
+    LINENUMBER 315 L2
+    ALOAD 2
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.lowerIndirection : [I
+    ARRAYLENGTH
+    ISTORE 4
+   L3
+    LINENUMBER 316 L3
+    ALOAD 3
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.lowerIndirection : [I
+    ARRAYLENGTH
+    ISTORE 5
+   L4
+    LINENUMBER 317 L4
+    ILOAD 4
+    ILOAD 5
+    IADD
+    NEWARRAY T_INT
+    ASTORE 6
+   L5
+    LINENUMBER 318 L5
+    ALOAD 2
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.lowerIndirection : [I
+    ICONST_0
+    ALOAD 6
+    ICONST_0
+    ILOAD 4
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L6
+    LINENUMBER 319 L6
+    ICONST_0
+    ISTORE 7
+   L7
+    ILOAD 7
+    ILOAD 5
+    IF_ICMPGE L8
+   L9
+    LINENUMBER 320 L9
+    ALOAD 6
+    ILOAD 4
+    ILOAD 7
+    IADD
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getSize ()I
+    ALOAD 3
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.lowerIndirection : [I
+    ILOAD 7
+    IALOAD
+    IADD
+    IASTORE
+   L10
+    LINENUMBER 319 L10
+    IINC 7 1
+    GOTO L7
+   L8
+    LINENUMBER 323 L8
+    ALOAD 6
+    ARETURN
+   L11
+    LOCALVARIABLE i I L7 L8 7
+    LOCALVARIABLE parameters I L0 L11 0
+    LOCALVARIABLE order I L0 L11 1
+    LOCALVARIABLE valueCompiler Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L11 2
+    LOCALVARIABLE derivativeCompiler Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L11 3
+    LOCALVARIABLE vSize I L3 L11 4
+    LOCALVARIABLE dSize I L4 L11 5
+    LOCALVARIABLE lowerIndirection [I L5 L11 6
+    MAXSTACK = 5
+    MAXLOCALS = 8
+
+  // access flags 0xA
+  private static compileMultiplicationIndirection(IILorg/apache/commons/math3/analysis/differentiation/DSCompiler;Lorg/apache/commons/math3/analysis/differentiation/DSCompiler;[I)[[[I
+   L0
+    LINENUMBER 345 L0
+    ILOAD 0
+    IFEQ L1
+    ILOAD 1
+    IFNE L2
+   L1
+    LINENUMBER 346 L1
+    ICONST_1
+    ANEWARRAY [[I
+    DUP
+    ICONST_0
+    ICONST_1
+    ANEWARRAY [I
+    DUP
+    ICONST_0
+    ICONST_3
+    NEWARRAY T_INT
+    DUP
+    ICONST_0
+    ICONST_1
+    IASTORE
+    DUP
+    ICONST_1
+    ICONST_0
+    IASTORE
+    DUP
+    ICONST_2
+    ICONST_0
+    IASTORE
+    AASTORE
+    AASTORE
+    ARETURN
+   L2
+    LINENUMBER 350 L2
+    ALOAD 2
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.multIndirection : [[[I
+    ARRAYLENGTH
+    ISTORE 5
+   L3
+    LINENUMBER 351 L3
+    ALOAD 3
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.multIndirection : [[[I
+    ARRAYLENGTH
+    ISTORE 6
+   L4
+    LINENUMBER 352 L4
+    ILOAD 5
+    ILOAD 6
+    IADD
+    ANEWARRAY [[I
+    ASTORE 7
+   L5
+    LINENUMBER 354 L5
+    ALOAD 2
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.multIndirection : [[[I
+    ICONST_0
+    ALOAD 7
+    ICONST_0
+    ILOAD 5
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L6
+    LINENUMBER 356 L6
+    ICONST_0
+    ISTORE 8
+   L7
+    ILOAD 8
+    ILOAD 6
+    IF_ICMPGE L8
+   L9
+    LINENUMBER 357 L9
+    ALOAD 3
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.multIndirection : [[[I
+    ILOAD 8
+    AALOAD
+    ASTORE 9
+   L10
+    LINENUMBER 358 L10
+    NEW java/util/ArrayList
+    DUP
+    INVOKESPECIAL java/util/ArrayList.<init> ()V
+    ASTORE 10
+   L11
+    LINENUMBER 359 L11
+    ICONST_0
+    ISTORE 11
+   L12
+    ILOAD 11
+    ALOAD 9
+    ARRAYLENGTH
+    IF_ICMPGE L13
+   L14
+    LINENUMBER 360 L14
+    ALOAD 10
+    ICONST_3
+    NEWARRAY T_INT
+    DUP
+    ICONST_0
+    ALOAD 9
+    ILOAD 11
+    AALOAD
+    ICONST_0
+    IALOAD
+    IASTORE
+    DUP
+    ICONST_1
+    ALOAD 4
+    ALOAD 9
+    ILOAD 11
+    AALOAD
+    ICONST_1
+    IALOAD
+    IALOAD
+    IASTORE
+    DUP
+    ICONST_2
+    ILOAD 5
+    ALOAD 9
+    ILOAD 11
+    AALOAD
+    ICONST_2
+    IALOAD
+    IADD
+    IASTORE
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L15
+    LINENUMBER 361 L15
+    ALOAD 10
+    ICONST_3
+    NEWARRAY T_INT
+    DUP
+    ICONST_0
+    ALOAD 9
+    ILOAD 11
+    AALOAD
+    ICONST_0
+    IALOAD
+    IASTORE
+    DUP
+    ICONST_1
+    ILOAD 5
+    ALOAD 9
+    ILOAD 11
+    AALOAD
+    ICONST_1
+    IALOAD
+    IADD
+    IASTORE
+    DUP
+    ICONST_2
+    ALOAD 4
+    ALOAD 9
+    ILOAD 11
+    AALOAD
+    ICONST_2
+    IALOAD
+    IALOAD
+    IASTORE
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L16
+    LINENUMBER 359 L16
+    IINC 11 1
+    GOTO L12
+   L13
+    LINENUMBER 365 L13
+    NEW java/util/ArrayList
+    DUP
+    ALOAD 10
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    INVOKESPECIAL java/util/ArrayList.<init> (I)V
+    ASTORE 11
+   L17
+    LINENUMBER 366 L17
+    ICONST_0
+    ISTORE 12
+   L18
+    ILOAD 12
+    ALOAD 10
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    IF_ICMPGE L19
+   L20
+    LINENUMBER 367 L20
+    ALOAD 10
+    ILOAD 12
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    CHECKCAST [I
+    ASTORE 13
+   L21
+    LINENUMBER 368 L21
+    ALOAD 13
+    ICONST_0
+    IALOAD
+    IFLE L22
+   L23
+    LINENUMBER 369 L23
+    ILOAD 12
+    ICONST_1
+    IADD
+    ISTORE 14
+   L24
+    ILOAD 14
+    ALOAD 10
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    IF_ICMPGE L25
+   L26
+    LINENUMBER 370 L26
+    ALOAD 10
+    ILOAD 14
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    CHECKCAST [I
+    ASTORE 15
+   L27
+    LINENUMBER 371 L27
+    ALOAD 13
+    ICONST_1
+    IALOAD
+    ALOAD 15
+    ICONST_1
+    IALOAD
+    IF_ICMPNE L28
+    ALOAD 13
+    ICONST_2
+    IALOAD
+    ALOAD 15
+    ICONST_2
+    IALOAD
+    IF_ICMPNE L28
+   L29
+    LINENUMBER 373 L29
+    ALOAD 13
+    ICONST_0
+    DUP2
+    IALOAD
+    ALOAD 15
+    ICONST_0
+    IALOAD
+    IADD
+    IASTORE
+   L30
+    LINENUMBER 375 L30
+    ALOAD 15
+    ICONST_0
+    ICONST_0
+    IASTORE
+   L28
+    LINENUMBER 369 L28
+    IINC 14 1
+    GOTO L24
+   L25
+    LINENUMBER 378 L25
+    ALOAD 11
+    ALOAD 13
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L22
+    LINENUMBER 366 L22
+    IINC 12 1
+    GOTO L18
+   L19
+    LINENUMBER 382 L19
+    ALOAD 7
+    ILOAD 5
+    ILOAD 8
+    IADD
+    ALOAD 11
+    ALOAD 11
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    ANEWARRAY [I
+    INVOKEINTERFACE java/util/List.toArray ([Ljava/lang/Object;)[Ljava/lang/Object; (itf)
+    CHECKCAST [[I
+    AASTORE
+   L31
+    LINENUMBER 356 L31
+    IINC 8 1
+    GOTO L7
+   L8
+    LINENUMBER 386 L8
+    ALOAD 7
+    ARETURN
+   L32
+    LOCALVARIABLE j I L12 L13 11
+    LOCALVARIABLE termK [I L27 L28 15
+    LOCALVARIABLE k I L24 L25 14
+    LOCALVARIABLE termJ [I L21 L22 13
+    LOCALVARIABLE j I L18 L19 12
+    LOCALVARIABLE dRow [[I L10 L31 9
+    LOCALVARIABLE row Ljava/util/List; L11 L31 10
+    // signature Ljava/util/List<[I>;
+    // declaration: row extends java.util.List<int[]>
+    LOCALVARIABLE combined Ljava/util/List; L17 L31 11
+    // signature Ljava/util/List<[I>;
+    // declaration: combined extends java.util.List<int[]>
+    LOCALVARIABLE i I L7 L8 8
+    LOCALVARIABLE parameters I L0 L32 0
+    LOCALVARIABLE order I L0 L32 1
+    LOCALVARIABLE valueCompiler Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L32 2
+    LOCALVARIABLE derivativeCompiler Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L32 3
+    LOCALVARIABLE lowerIndirection [I L0 L32 4
+    LOCALVARIABLE vSize I L3 L32 5
+    LOCALVARIABLE dSize I L4 L32 6
+    LOCALVARIABLE multIndirection [[[I L5 L32 7
+    MAXSTACK = 10
+    MAXLOCALS = 16
+
+  // access flags 0xA
+  private static compileCompositionIndirection(IILorg/apache/commons/math3/analysis/differentiation/DSCompiler;Lorg/apache/commons/math3/analysis/differentiation/DSCompiler;[[I[[I)[[[I
+   L0
+    LINENUMBER 410 L0
+    ILOAD 0
+    IFEQ L1
+    ILOAD 1
+    IFNE L2
+   L1
+    LINENUMBER 411 L1
+    ICONST_1
+    ANEWARRAY [[I
+    DUP
+    ICONST_0
+    ICONST_1
+    ANEWARRAY [I
+    DUP
+    ICONST_0
+    ICONST_2
+    NEWARRAY T_INT
+    DUP
+    ICONST_0
+    ICONST_1
+    IASTORE
+    DUP
+    ICONST_1
+    ICONST_0
+    IASTORE
+    AASTORE
+    AASTORE
+    ARETURN
+   L2
+    LINENUMBER 414 L2
+    ALOAD 2
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.compIndirection : [[[I
+    ARRAYLENGTH
+    ISTORE 6
+   L3
+    LINENUMBER 415 L3
+    ALOAD 3
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.compIndirection : [[[I
+    ARRAYLENGTH
+    ISTORE 7
+   L4
+    LINENUMBER 416 L4
+    ILOAD 6
+    ILOAD 7
+    IADD
+    ANEWARRAY [[I
+    ASTORE 8
+   L5
+    LINENUMBER 419 L5
+    ALOAD 2
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.compIndirection : [[[I
+    ICONST_0
+    ALOAD 8
+    ICONST_0
+    ILOAD 6
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L6
+    LINENUMBER 425 L6
+    ICONST_0
+    ISTORE 9
+   L7
+    ILOAD 9
+    ILOAD 7
+    IF_ICMPGE L8
+   L9
+    LINENUMBER 426 L9
+    NEW java/util/ArrayList
+    DUP
+    INVOKESPECIAL java/util/ArrayList.<init> ()V
+    ASTORE 10
+   L10
+    LINENUMBER 427 L10
+    ALOAD 3
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.compIndirection : [[[I
+    ILOAD 9
+    AALOAD
+    ASTORE 11
+   L11
+    ALOAD 11
+    ARRAYLENGTH
+    ISTORE 12
+   L12
+    ICONST_0
+    ISTORE 13
+   L13
+    ILOAD 13
+    ILOAD 12
+    IF_ICMPGE L14
+    ALOAD 11
+    ILOAD 13
+    AALOAD
+    ASTORE 14
+   L15
+    LINENUMBER 432 L15
+    ALOAD 14
+    ARRAYLENGTH
+    ICONST_1
+    IADD
+    NEWARRAY T_INT
+    ASTORE 15
+   L16
+    LINENUMBER 433 L16
+    ALOAD 15
+    ICONST_0
+    ALOAD 14
+    ICONST_0
+    IALOAD
+    IASTORE
+   L17
+    LINENUMBER 434 L17
+    ALOAD 15
+    ICONST_1
+    ALOAD 14
+    ICONST_1
+    IALOAD
+    ICONST_1
+    IADD
+    IASTORE
+   L18
+    LINENUMBER 435 L18
+    ILOAD 0
+    NEWARRAY T_INT
+    ASTORE 16
+   L19
+    LINENUMBER 436 L19
+    ALOAD 16
+    ILOAD 0
+    ICONST_1
+    ISUB
+    ICONST_1
+    IASTORE
+   L20
+    LINENUMBER 437 L20
+    ALOAD 15
+    ALOAD 14
+    ARRAYLENGTH
+    ILOAD 0
+    ILOAD 1
+    ALOAD 4
+    ALOAD 16
+    INVOKESTATIC org/apache/commons/math3/analysis/differentiation/DSCompiler.getPartialDerivativeIndex (II[[I[I)I
+    IASTORE
+   L21
+    LINENUMBER 438 L21
+    ICONST_2
+    ISTORE 17
+   L22
+    ILOAD 17
+    ALOAD 14
+    ARRAYLENGTH
+    IF_ICMPGE L23
+   L24
+    LINENUMBER 441 L24
+    ALOAD 15
+    ILOAD 17
+    ALOAD 14
+    ILOAD 17
+    IALOAD
+    ILOAD 0
+    ALOAD 3
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.derivativesIndirection : [[I
+    ILOAD 0
+    ILOAD 1
+    ALOAD 4
+    INVOKESTATIC org/apache/commons/math3/analysis/differentiation/DSCompiler.convertIndex (II[[III[[I)I
+    IASTORE
+   L25
+    LINENUMBER 438 L25
+    IINC 17 1
+    GOTO L22
+   L23
+    LINENUMBER 445 L23
+    ALOAD 15
+    ICONST_2
+    ALOAD 15
+    ARRAYLENGTH
+    INVOKESTATIC java/util/Arrays.sort ([III)V
+   L26
+    LINENUMBER 446 L26
+    ALOAD 10
+    ALOAD 15
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L27
+    LINENUMBER 449 L27
+    ICONST_2
+    ISTORE 17
+   L28
+    ILOAD 17
+    ALOAD 14
+    ARRAYLENGTH
+    IF_ICMPGE L29
+   L30
+    LINENUMBER 450 L30
+    ALOAD 14
+    ARRAYLENGTH
+    NEWARRAY T_INT
+    ASTORE 18
+   L31
+    LINENUMBER 451 L31
+    ALOAD 18
+    ICONST_0
+    ALOAD 14
+    ICONST_0
+    IALOAD
+    IASTORE
+   L32
+    LINENUMBER 452 L32
+    ALOAD 18
+    ICONST_1
+    ALOAD 14
+    ICONST_1
+    IALOAD
+    IASTORE
+   L33
+    LINENUMBER 453 L33
+    ICONST_2
+    ISTORE 19
+   L34
+    ILOAD 19
+    ALOAD 14
+    ARRAYLENGTH
+    IF_ICMPGE L35
+   L36
+    LINENUMBER 456 L36
+    ALOAD 18
+    ILOAD 19
+    ALOAD 14
+    ILOAD 19
+    IALOAD
+    ILOAD 0
+    ALOAD 3
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.derivativesIndirection : [[I
+    ILOAD 0
+    ILOAD 1
+    ALOAD 4
+    INVOKESTATIC org/apache/commons/math3/analysis/differentiation/DSCompiler.convertIndex (II[[III[[I)I
+    IASTORE
+   L37
+    LINENUMBER 459 L37
+    ILOAD 19
+    ILOAD 17
+    IF_ICMPNE L38
+   L39
+    LINENUMBER 461 L39
+    ALOAD 5
+    ALOAD 18
+    ILOAD 19
+    IALOAD
+    AALOAD
+    ICONST_0
+    ALOAD 16
+    ICONST_0
+    ILOAD 0
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L40
+    LINENUMBER 462 L40
+    ALOAD 16
+    ILOAD 0
+    ICONST_1
+    ISUB
+    DUP2
+    IALOAD
+    ICONST_1
+    IADD
+    IASTORE
+   L41
+    LINENUMBER 463 L41
+    ALOAD 18
+    ILOAD 19
+    ILOAD 0
+    ILOAD 1
+    ALOAD 4
+    ALOAD 16
+    INVOKESTATIC org/apache/commons/math3/analysis/differentiation/DSCompiler.getPartialDerivativeIndex (II[[I[I)I
+    IASTORE
+   L38
+    LINENUMBER 453 L38
+    IINC 19 1
+    GOTO L34
+   L35
+    LINENUMBER 466 L35
+    ALOAD 18
+    ICONST_2
+    ALOAD 18
+    ARRAYLENGTH
+    INVOKESTATIC java/util/Arrays.sort ([III)V
+   L42
+    LINENUMBER 467 L42
+    ALOAD 10
+    ALOAD 18
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L43
+    LINENUMBER 449 L43
+    IINC 17 1
+    GOTO L28
+   L29
+    LINENUMBER 427 L29
+    IINC 13 1
+    GOTO L13
+   L14
+    LINENUMBER 473 L14
+    NEW java/util/ArrayList
+    DUP
+    ALOAD 10
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    INVOKESPECIAL java/util/ArrayList.<init> (I)V
+    ASTORE 11
+   L44
+    LINENUMBER 474 L44
+    ICONST_0
+    ISTORE 12
+   L45
+    ILOAD 12
+    ALOAD 10
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    IF_ICMPGE L46
+   L47
+    LINENUMBER 475 L47
+    ALOAD 10
+    ILOAD 12
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    CHECKCAST [I
+    ASTORE 13
+   L48
+    LINENUMBER 476 L48
+    ALOAD 13
+    ICONST_0
+    IALOAD
+    IFLE L49
+   L50
+    LINENUMBER 477 L50
+    ILOAD 12
+    ICONST_1
+    IADD
+    ISTORE 14
+   L51
+    ILOAD 14
+    ALOAD 10
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    IF_ICMPGE L52
+   L53
+    LINENUMBER 478 L53
+    ALOAD 10
+    ILOAD 14
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    CHECKCAST [I
+    ASTORE 15
+   L54
+    LINENUMBER 479 L54
+    ALOAD 13
+    ARRAYLENGTH
+    ALOAD 15
+    ARRAYLENGTH
+    IF_ICMPNE L55
+    ICONST_1
+    GOTO L56
+   L55
+    ICONST_0
+   L56
+    ISTORE 16
+   L57
+    LINENUMBER 480 L57
+    ICONST_1
+    ISTORE 17
+   L58
+    ILOAD 16
+    IFEQ L59
+    ILOAD 17
+    ALOAD 13
+    ARRAYLENGTH
+    IF_ICMPGE L59
+   L60
+    LINENUMBER 481 L60
+    ILOAD 16
+    ALOAD 13
+    ILOAD 17
+    IALOAD
+    ALOAD 15
+    ILOAD 17
+    IALOAD
+    IF_ICMPNE L61
+    ICONST_1
+    GOTO L62
+   L61
+    ICONST_0
+   L62
+    IAND
+    ISTORE 16
+   L63
+    LINENUMBER 480 L63
+    IINC 17 1
+    GOTO L58
+   L59
+    LINENUMBER 483 L59
+    ILOAD 16
+    IFEQ L64
+   L65
+    LINENUMBER 485 L65
+    ALOAD 13
+    ICONST_0
+    DUP2
+    IALOAD
+    ALOAD 15
+    ICONST_0
+    IALOAD
+    IADD
+    IASTORE
+   L66
+    LINENUMBER 487 L66
+    ALOAD 15
+    ICONST_0
+    ICONST_0
+    IASTORE
+   L64
+    LINENUMBER 477 L64
+    IINC 14 1
+    GOTO L51
+   L52
+    LINENUMBER 490 L52
+    ALOAD 11
+    ALOAD 13
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L49
+    LINENUMBER 474 L49
+    IINC 12 1
+    GOTO L45
+   L46
+    LINENUMBER 494 L46
+    ALOAD 8
+    ILOAD 6
+    ILOAD 9
+    IADD
+    ALOAD 11
+    ALOAD 11
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    ANEWARRAY [I
+    INVOKEINTERFACE java/util/List.toArray ([Ljava/lang/Object;)[Ljava/lang/Object; (itf)
+    CHECKCAST [[I
+    AASTORE
+   L67
+    LINENUMBER 425 L67
+    IINC 9 1
+    GOTO L7
+   L8
+    LINENUMBER 498 L8
+    ALOAD 8
+    ARETURN
+   L68
+    LOCALVARIABLE j I L22 L23 17
+    LOCALVARIABLE j I L34 L35 19
+    LOCALVARIABLE derivedTermG [I L31 L43 18
+    LOCALVARIABLE l I L28 L29 17
+    LOCALVARIABLE derivedTermF [I L16 L29 15
+    LOCALVARIABLE orders [I L19 L29 16
+    LOCALVARIABLE term [I L15 L29 14
+    LOCALVARIABLE arr$ [[I L11 L14 11
+    LOCALVARIABLE len$ I L12 L14 12
+    LOCALVARIABLE i$ I L13 L14 13
+    LOCALVARIABLE l I L58 L59 17
+    LOCALVARIABLE termK [I L54 L64 15
+    LOCALVARIABLE equals Z L57 L64 16
+    LOCALVARIABLE k I L51 L52 14
+    LOCALVARIABLE termJ [I L48 L49 13
+    LOCALVARIABLE j I L45 L46 12
+    LOCALVARIABLE row Ljava/util/List; L10 L67 10
+    // signature Ljava/util/List<[I>;
+    // declaration: row extends java.util.List<int[]>
+    LOCALVARIABLE combined Ljava/util/List; L44 L67 11
+    // signature Ljava/util/List<[I>;
+    // declaration: combined extends java.util.List<int[]>
+    LOCALVARIABLE i I L7 L8 9
+    LOCALVARIABLE parameters I L0 L68 0
+    LOCALVARIABLE order I L0 L68 1
+    LOCALVARIABLE valueCompiler Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L68 2
+    LOCALVARIABLE derivativeCompiler Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L68 3
+    LOCALVARIABLE sizes [[I L0 L68 4
+    LOCALVARIABLE derivativesIndirection [[I L0 L68 5
+    LOCALVARIABLE vSize I L3 L68 6
+    LOCALVARIABLE dSize I L4 L68 7
+    LOCALVARIABLE compIndirection [[[I L5 L68 8
+    MAXSTACK = 10
+    MAXLOCALS = 20
+
+  // access flags 0x81
+  public varargs getPartialDerivativeIndex([I)I throws org/apache/commons/math3/exception/DimensionMismatchException org/apache/commons/math3/exception/NumberIsTooLargeException 
+   L0
+    LINENUMBER 538 L0
+    ALOAD 1
+    ARRAYLENGTH
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getFreeParameters ()I
+    IF_ICMPEQ L1
+   L2
+    LINENUMBER 539 L2
+    NEW org/apache/commons/math3/exception/DimensionMismatchException
+    DUP
+    ALOAD 1
+    ARRAYLENGTH
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getFreeParameters ()I
+    INVOKESPECIAL org/apache/commons/math3/exception/DimensionMismatchException.<init> (II)V
+    ATHROW
+   L1
+    LINENUMBER 542 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.parameters : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.sizes : [[I
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math3/analysis/differentiation/DSCompiler.getPartialDerivativeIndex (II[[I[I)I
+    IRETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L3 0
+    LOCALVARIABLE orders [I L0 L3 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x8A
+  private static varargs getPartialDerivativeIndex(II[[I[I)I throws org/apache/commons/math3/exception/NumberIsTooLargeException 
+   L0
+    LINENUMBER 562 L0
+    ICONST_0
+    ISTORE 4
+   L1
+    LINENUMBER 563 L1
+    ILOAD 1
+    ISTORE 5
+   L2
+    LINENUMBER 564 L2
+    ICONST_0
+    ISTORE 6
+   L3
+    LINENUMBER 565 L3
+    ILOAD 0
+    ICONST_1
+    ISUB
+    ISTORE 7
+   L4
+    ILOAD 7
+    IFLT L5
+   L6
+    LINENUMBER 568 L6
+    ALOAD 3
+    ILOAD 7
+    IALOAD
+    ISTORE 8
+   L7
+    LINENUMBER 571 L7
+    ILOAD 6
+    ILOAD 8
+    IADD
+    ISTORE 6
+   L8
+    LINENUMBER 572 L8
+    ILOAD 6
+    ILOAD 1
+    IF_ICMPLE L9
+   L10
+    LINENUMBER 573 L10
+    NEW org/apache/commons/math3/exception/NumberIsTooLargeException
+    DUP
+    ILOAD 6
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ILOAD 1
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ICONST_1
+    INVOKESPECIAL org/apache/commons/math3/exception/NumberIsTooLargeException.<init> (Ljava/lang/Number;Ljava/lang/Number;Z)V
+    ATHROW
+   L9
+    LINENUMBER 576 L9
+    ILOAD 8
+    IINC 8 -1
+    IFLE L11
+   L12
+    LINENUMBER 580 L12
+    ILOAD 4
+    ALOAD 2
+    ILOAD 7
+    AALOAD
+    ILOAD 5
+    IINC 5 -1
+    IALOAD
+    IADD
+    ISTORE 4
+    GOTO L9
+   L11
+    LINENUMBER 565 L11
+    IINC 7 -1
+    GOTO L4
+   L5
+    LINENUMBER 585 L5
+    ILOAD 4
+    IRETURN
+   L13
+    LOCALVARIABLE derivativeOrder I L7 L11 8
+    LOCALVARIABLE i I L4 L5 7
+    LOCALVARIABLE parameters I L0 L13 0
+    LOCALVARIABLE order I L0 L13 1
+    LOCALVARIABLE sizes [[I L0 L13 2
+    LOCALVARIABLE orders [I L0 L13 3
+    LOCALVARIABLE index I L1 L13 4
+    LOCALVARIABLE m I L2 L13 5
+    LOCALVARIABLE ordersSum I L3 L13 6
+    MAXSTACK = 5
+    MAXLOCALS = 9
+
+  // access flags 0xA
+  private static convertIndex(II[[III[[I)I
+   L0
+    LINENUMBER 603 L0
+    ILOAD 3
+    NEWARRAY T_INT
+    ASTORE 6
+   L1
+    LINENUMBER 604 L1
+    ALOAD 2
+    ILOAD 0
+    AALOAD
+    ICONST_0
+    ALOAD 6
+    ICONST_0
+    ILOAD 1
+    ILOAD 3
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.min (II)I
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L2
+    LINENUMBER 605 L2
+    ILOAD 3
+    ILOAD 4
+    ALOAD 5
+    ALOAD 6
+    INVOKESTATIC org/apache/commons/math3/analysis/differentiation/DSCompiler.getPartialDerivativeIndex (II[[I[I)I
+    IRETURN
+   L3
+    LOCALVARIABLE index I L0 L3 0
+    LOCALVARIABLE srcP I L0 L3 1
+    LOCALVARIABLE srcDerivativesIndirection [[I L0 L3 2
+    LOCALVARIABLE destP I L0 L3 3
+    LOCALVARIABLE destO I L0 L3 4
+    LOCALVARIABLE destSizes [[I L0 L3 5
+    LOCALVARIABLE orders [I L1 L3 6
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getPartialDerivativeOrders(I)[I
+   L0
+    LINENUMBER 617 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.derivativesIndirection : [[I
+    ILOAD 1
+    AALOAD
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L1 0
+    LOCALVARIABLE index I L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getFreeParameters()I
+   L0
+    LINENUMBER 624 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.parameters : I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getOrder()I
+   L0
+    LINENUMBER 631 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getSize()I
+   L0
+    LINENUMBER 642 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.sizes : [[I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.parameters : I
+    AALOAD
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IALOAD
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public linearCombination(D[DID[DI[DI)V
+   L0
+    LINENUMBER 660 L0
+    ICONST_0
+    ISTORE 11
+   L1
+    ILOAD 11
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getSize ()I
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 661 L3
+    ALOAD 9
+    ILOAD 10
+    ILOAD 11
+    IADD
+    DLOAD 1
+    ALOAD 3
+    ILOAD 4
+    ILOAD 11
+    IADD
+    DALOAD
+    DLOAD 5
+    ALOAD 7
+    ILOAD 8
+    ILOAD 11
+    IADD
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/MathArrays.linearCombination (DDDD)D
+    DASTORE
+   L4
+    LINENUMBER 660 L4
+    IINC 11 1
+    GOTO L1
+   L2
+    LINENUMBER 664 L2
+    RETURN
+   L5
+    LOCALVARIABLE i I L1 L2 11
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L5 0
+    LOCALVARIABLE a1 D L0 L5 1
+    LOCALVARIABLE c1 [D L0 L5 3
+    LOCALVARIABLE offset1 I L0 L5 4
+    LOCALVARIABLE a2 D L0 L5 5
+    LOCALVARIABLE c2 [D L0 L5 7
+    LOCALVARIABLE offset2 I L0 L5 8
+    LOCALVARIABLE result [D L0 L5 9
+    LOCALVARIABLE resultOffset I L0 L5 10
+    MAXSTACK = 11
+    MAXLOCALS = 12
+
+  // access flags 0x1
+  public linearCombination(D[DID[DID[DI[DI)V
+   L0
+    LINENUMBER 685 L0
+    ICONST_0
+    ISTORE 15
+   L1
+    ILOAD 15
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getSize ()I
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 686 L3
+    ALOAD 13
+    ILOAD 14
+    ILOAD 15
+    IADD
+    DLOAD 1
+    ALOAD 3
+    ILOAD 4
+    ILOAD 15
+    IADD
+    DALOAD
+    DLOAD 5
+    ALOAD 7
+    ILOAD 8
+    ILOAD 15
+    IADD
+    DALOAD
+    DLOAD 9
+    ALOAD 11
+    ILOAD 12
+    ILOAD 15
+    IADD
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/MathArrays.linearCombination (DDDDDD)D
+    DASTORE
+   L4
+    LINENUMBER 685 L4
+    IINC 15 1
+    GOTO L1
+   L2
+    LINENUMBER 691 L2
+    RETURN
+   L5
+    LOCALVARIABLE i I L1 L2 15
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L5 0
+    LOCALVARIABLE a1 D L0 L5 1
+    LOCALVARIABLE c1 [D L0 L5 3
+    LOCALVARIABLE offset1 I L0 L5 4
+    LOCALVARIABLE a2 D L0 L5 5
+    LOCALVARIABLE c2 [D L0 L5 7
+    LOCALVARIABLE offset2 I L0 L5 8
+    LOCALVARIABLE a3 D L0 L5 9
+    LOCALVARIABLE c3 [D L0 L5 11
+    LOCALVARIABLE offset3 I L0 L5 12
+    LOCALVARIABLE result [D L0 L5 13
+    LOCALVARIABLE resultOffset I L0 L5 14
+    MAXSTACK = 15
+    MAXLOCALS = 16
+
+  // access flags 0x1
+  public linearCombination(D[DID[DID[DID[DI[DI)V
+   L0
+    LINENUMBER 716 L0
+    ICONST_0
+    ISTORE 19
+   L1
+    ILOAD 19
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getSize ()I
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 717 L3
+    ALOAD 17
+    ILOAD 18
+    ILOAD 19
+    IADD
+    DLOAD 1
+    ALOAD 3
+    ILOAD 4
+    ILOAD 19
+    IADD
+    DALOAD
+    DLOAD 5
+    ALOAD 7
+    ILOAD 8
+    ILOAD 19
+    IADD
+    DALOAD
+    DLOAD 9
+    ALOAD 11
+    ILOAD 12
+    ILOAD 19
+    IADD
+    DALOAD
+    DLOAD 13
+    ALOAD 15
+    ILOAD 16
+    ILOAD 19
+    IADD
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/MathArrays.linearCombination (DDDDDDDD)D
+    DASTORE
+   L4
+    LINENUMBER 716 L4
+    IINC 19 1
+    GOTO L1
+   L2
+    LINENUMBER 723 L2
+    RETURN
+   L5
+    LOCALVARIABLE i I L1 L2 19
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L5 0
+    LOCALVARIABLE a1 D L0 L5 1
+    LOCALVARIABLE c1 [D L0 L5 3
+    LOCALVARIABLE offset1 I L0 L5 4
+    LOCALVARIABLE a2 D L0 L5 5
+    LOCALVARIABLE c2 [D L0 L5 7
+    LOCALVARIABLE offset2 I L0 L5 8
+    LOCALVARIABLE a3 D L0 L5 9
+    LOCALVARIABLE c3 [D L0 L5 11
+    LOCALVARIABLE offset3 I L0 L5 12
+    LOCALVARIABLE a4 D L0 L5 13
+    LOCALVARIABLE c4 [D L0 L5 15
+    LOCALVARIABLE offset4 I L0 L5 16
+    LOCALVARIABLE result [D L0 L5 17
+    LOCALVARIABLE resultOffset I L0 L5 18
+    MAXSTACK = 19
+    MAXLOCALS = 20
+
+  // access flags 0x1
+  public add([DI[DI[DI)V
+   L0
+    LINENUMBER 737 L0
+    ICONST_0
+    ISTORE 7
+   L1
+    ILOAD 7
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getSize ()I
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 738 L3
+    ALOAD 5
+    ILOAD 6
+    ILOAD 7
+    IADD
+    ALOAD 1
+    ILOAD 2
+    ILOAD 7
+    IADD
+    DALOAD
+    ALOAD 3
+    ILOAD 4
+    ILOAD 7
+    IADD
+    DALOAD
+    DADD
+    DASTORE
+   L4
+    LINENUMBER 737 L4
+    IINC 7 1
+    GOTO L1
+   L2
+    LINENUMBER 740 L2
+    RETURN
+   L5
+    LOCALVARIABLE i I L1 L2 7
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L5 0
+    LOCALVARIABLE lhs [D L0 L5 1
+    LOCALVARIABLE lhsOffset I L0 L5 2
+    LOCALVARIABLE rhs [D L0 L5 3
+    LOCALVARIABLE rhsOffset I L0 L5 4
+    LOCALVARIABLE result [D L0 L5 5
+    LOCALVARIABLE resultOffset I L0 L5 6
+    MAXSTACK = 7
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public subtract([DI[DI[DI)V
+   L0
+    LINENUMBER 753 L0
+    ICONST_0
+    ISTORE 7
+   L1
+    ILOAD 7
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getSize ()I
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 754 L3
+    ALOAD 5
+    ILOAD 6
+    ILOAD 7
+    IADD
+    ALOAD 1
+    ILOAD 2
+    ILOAD 7
+    IADD
+    DALOAD
+    ALOAD 3
+    ILOAD 4
+    ILOAD 7
+    IADD
+    DALOAD
+    DSUB
+    DASTORE
+   L4
+    LINENUMBER 753 L4
+    IINC 7 1
+    GOTO L1
+   L2
+    LINENUMBER 756 L2
+    RETURN
+   L5
+    LOCALVARIABLE i I L1 L2 7
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L5 0
+    LOCALVARIABLE lhs [D L0 L5 1
+    LOCALVARIABLE lhsOffset I L0 L5 2
+    LOCALVARIABLE rhs [D L0 L5 3
+    LOCALVARIABLE rhsOffset I L0 L5 4
+    LOCALVARIABLE result [D L0 L5 5
+    LOCALVARIABLE resultOffset I L0 L5 6
+    MAXSTACK = 7
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public multiply([DI[DI[DI)V
+   L0
+    LINENUMBER 771 L0
+    ICONST_0
+    ISTORE 7
+   L1
+    ILOAD 7
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.multIndirection : [[[I
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 772 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.multIndirection : [[[I
+    ILOAD 7
+    AALOAD
+    ASTORE 8
+   L4
+    LINENUMBER 773 L4
+    DCONST_0
+    DSTORE 9
+   L5
+    LINENUMBER 774 L5
+    ICONST_0
+    ISTORE 11
+   L6
+    ILOAD 11
+    ALOAD 8
+    ARRAYLENGTH
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 775 L8
+    DLOAD 9
+    ALOAD 8
+    ILOAD 11
+    AALOAD
+    ICONST_0
+    IALOAD
+    I2D
+    ALOAD 1
+    ILOAD 2
+    ALOAD 8
+    ILOAD 11
+    AALOAD
+    ICONST_1
+    IALOAD
+    IADD
+    DALOAD
+    DMUL
+    ALOAD 3
+    ILOAD 4
+    ALOAD 8
+    ILOAD 11
+    AALOAD
+    ICONST_2
+    IALOAD
+    IADD
+    DALOAD
+    DMUL
+    DADD
+    DSTORE 9
+   L9
+    LINENUMBER 774 L9
+    IINC 11 1
+    GOTO L6
+   L7
+    LINENUMBER 779 L7
+    ALOAD 5
+    ILOAD 6
+    ILOAD 7
+    IADD
+    DLOAD 9
+    DASTORE
+   L10
+    LINENUMBER 771 L10
+    IINC 7 1
+    GOTO L1
+   L2
+    LINENUMBER 781 L2
+    RETURN
+   L11
+    LOCALVARIABLE j I L6 L7 11
+    LOCALVARIABLE mappingI [[I L4 L10 8
+    LOCALVARIABLE r D L5 L10 9
+    LOCALVARIABLE i I L1 L2 7
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L11 0
+    LOCALVARIABLE lhs [D L0 L11 1
+    LOCALVARIABLE lhsOffset I L0 L11 2
+    LOCALVARIABLE rhs [D L0 L11 3
+    LOCALVARIABLE rhsOffset I L0 L11 4
+    LOCALVARIABLE result [D L0 L11 5
+    LOCALVARIABLE resultOffset I L0 L11 6
+    MAXSTACK = 8
+    MAXLOCALS = 12
+
+  // access flags 0x1
+  public divide([DI[DI[DI)V
+   L0
+    LINENUMBER 796 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getSize ()I
+    NEWARRAY T_DOUBLE
+    ASTORE 7
+   L1
+    LINENUMBER 797 L1
+    ALOAD 0
+    ALOAD 3
+    ILOAD 2
+    ICONST_M1
+    ALOAD 7
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.pow ([DII[DI)V
+   L2
+    LINENUMBER 798 L2
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 7
+    ICONST_0
+    ALOAD 5
+    ILOAD 6
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.multiply ([DI[DI[DI)V
+   L3
+    LINENUMBER 799 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L4 0
+    LOCALVARIABLE lhs [D L0 L4 1
+    LOCALVARIABLE lhsOffset I L0 L4 2
+    LOCALVARIABLE rhs [D L0 L4 3
+    LOCALVARIABLE rhsOffset I L0 L4 4
+    LOCALVARIABLE result [D L0 L4 5
+    LOCALVARIABLE resultOffset I L0 L4 6
+    LOCALVARIABLE reciprocal [D L1 L4 7
+    MAXSTACK = 7
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public remainder([DI[DI[DI)V
+   L0
+    LINENUMBER 815 L0
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    ALOAD 3
+    ILOAD 4
+    DALOAD
+    DREM
+    DSTORE 7
+   L1
+    LINENUMBER 816 L1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DLOAD 7
+    DSUB
+    ALOAD 3
+    ILOAD 4
+    DALOAD
+    DDIV
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.rint (D)D
+    DSTORE 9
+   L2
+    LINENUMBER 819 L2
+    ALOAD 5
+    ILOAD 6
+    DLOAD 7
+    DASTORE
+   L3
+    LINENUMBER 822 L3
+    ICONST_1
+    ISTORE 11
+   L4
+    ILOAD 11
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getSize ()I
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 823 L6
+    ALOAD 5
+    ILOAD 6
+    ILOAD 11
+    IADD
+    ALOAD 1
+    ILOAD 2
+    ILOAD 11
+    IADD
+    DALOAD
+    DLOAD 9
+    ALOAD 3
+    ILOAD 4
+    ILOAD 11
+    IADD
+    DALOAD
+    DMUL
+    DSUB
+    DASTORE
+   L7
+    LINENUMBER 822 L7
+    IINC 11 1
+    GOTO L4
+   L5
+    LINENUMBER 826 L5
+    RETURN
+   L8
+    LOCALVARIABLE i I L4 L5 11
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L8 0
+    LOCALVARIABLE lhs [D L0 L8 1
+    LOCALVARIABLE lhsOffset I L0 L8 2
+    LOCALVARIABLE rhs [D L0 L8 3
+    LOCALVARIABLE rhsOffset I L0 L8 4
+    LOCALVARIABLE result [D L0 L8 5
+    LOCALVARIABLE resultOffset I L0 L8 6
+    LOCALVARIABLE rem D L1 L8 7
+    LOCALVARIABLE k D L2 L8 9
+    MAXSTACK = 9
+    MAXLOCALS = 12
+
+  // access flags 0x1
+  public pow([DID[DI)V
+   L0
+    LINENUMBER 842 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 7
+   L1
+    LINENUMBER 843 L1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DLOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    I2D
+    DSUB
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.pow (DD)D
+    DSTORE 8
+   L2
+    LINENUMBER 844 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    ISTORE 10
+   L3
+    ILOAD 10
+    IFLE L4
+   L5
+    LINENUMBER 845 L5
+    ALOAD 7
+    ILOAD 10
+    DLOAD 8
+    DASTORE
+   L6
+    LINENUMBER 846 L6
+    DLOAD 8
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DMUL
+    DSTORE 8
+   L7
+    LINENUMBER 844 L7
+    IINC 10 -1
+    GOTO L3
+   L4
+    LINENUMBER 848 L4
+    ALOAD 7
+    ICONST_0
+    DLOAD 8
+    DASTORE
+   L8
+    LINENUMBER 849 L8
+    DLOAD 3
+    DSTORE 10
+   L9
+    LINENUMBER 850 L9
+    ICONST_1
+    ISTORE 12
+   L10
+    ILOAD 12
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L11
+   L12
+    LINENUMBER 851 L12
+    ALOAD 7
+    ILOAD 12
+    DUP2
+    DALOAD
+    DLOAD 10
+    DMUL
+    DASTORE
+   L13
+    LINENUMBER 852 L13
+    DLOAD 10
+    DLOAD 3
+    ILOAD 12
+    I2D
+    DSUB
+    DMUL
+    DSTORE 10
+   L14
+    LINENUMBER 850 L14
+    IINC 12 1
+    GOTO L10
+   L11
+    LINENUMBER 856 L11
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 7
+    ALOAD 5
+    ILOAD 6
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L15
+    LINENUMBER 858 L15
+    RETURN
+   L16
+    LOCALVARIABLE i I L3 L4 10
+    LOCALVARIABLE i I L10 L11 12
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L16 0
+    LOCALVARIABLE operand [D L0 L16 1
+    LOCALVARIABLE operandOffset I L0 L16 2
+    LOCALVARIABLE p D L0 L16 3
+    LOCALVARIABLE result [D L0 L16 5
+    LOCALVARIABLE resultOffset I L0 L16 6
+    LOCALVARIABLE function [D L1 L16 7
+    LOCALVARIABLE xk D L2 L16 8
+    LOCALVARIABLE coefficient D L9 L16 10
+    MAXSTACK = 6
+    MAXLOCALS = 13
+
+  // access flags 0x1
+  public pow([DII[DI)V
+   L0
+    LINENUMBER 872 L0
+    ILOAD 3
+    IFNE L1
+   L2
+    LINENUMBER 874 L2
+    ALOAD 4
+    ILOAD 5
+    DCONST_1
+    DASTORE
+   L3
+    LINENUMBER 875 L3
+    ALOAD 4
+    ILOAD 5
+    ICONST_1
+    IADD
+    ILOAD 5
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getSize ()I
+    IADD
+    DCONST_0
+    INVOKESTATIC java/util/Arrays.fill ([DIID)V
+   L4
+    LINENUMBER 876 L4
+    RETURN
+   L1
+    LINENUMBER 881 L1
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 6
+   L5
+    LINENUMBER 883 L5
+    ILOAD 3
+    IFLE L6
+   L7
+    LINENUMBER 885 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    ILOAD 3
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.min (II)I
+    ISTORE 7
+   L8
+    LINENUMBER 886 L8
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    ILOAD 3
+    ILOAD 7
+    ISUB
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.pow (DI)D
+    DSTORE 8
+   L9
+    LINENUMBER 887 L9
+    ILOAD 7
+    ISTORE 10
+   L10
+    ILOAD 10
+    IFLE L11
+   L12
+    LINENUMBER 888 L12
+    ALOAD 6
+    ILOAD 10
+    DLOAD 8
+    DASTORE
+   L13
+    LINENUMBER 889 L13
+    DLOAD 8
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DMUL
+    DSTORE 8
+   L14
+    LINENUMBER 887 L14
+    IINC 10 -1
+    GOTO L10
+   L11
+    LINENUMBER 891 L11
+    ALOAD 6
+    ICONST_0
+    DLOAD 8
+    DASTORE
+   L15
+    LINENUMBER 892 L15
+    GOTO L16
+   L6
+    LINENUMBER 894 L6
+    DCONST_1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DDIV
+    DSTORE 7
+   L17
+    LINENUMBER 895 L17
+    DLOAD 7
+    ILOAD 3
+    INEG
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.pow (DI)D
+    DSTORE 9
+   L18
+    LINENUMBER 896 L18
+    ICONST_0
+    ISTORE 11
+   L19
+    ILOAD 11
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L16
+   L20
+    LINENUMBER 897 L20
+    ALOAD 6
+    ILOAD 11
+    DLOAD 9
+    DASTORE
+   L21
+    LINENUMBER 898 L21
+    DLOAD 9
+    DLOAD 7
+    DMUL
+    DSTORE 9
+   L22
+    LINENUMBER 896 L22
+    IINC 11 1
+    GOTO L19
+   L16
+    LINENUMBER 902 L16
+    ILOAD 3
+    I2D
+    DSTORE 7
+   L23
+    LINENUMBER 903 L23
+    ICONST_1
+    ISTORE 9
+   L24
+    ILOAD 9
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L25
+   L26
+    LINENUMBER 904 L26
+    ALOAD 6
+    ILOAD 9
+    DUP2
+    DALOAD
+    DLOAD 7
+    DMUL
+    DASTORE
+   L27
+    LINENUMBER 905 L27
+    DLOAD 7
+    ILOAD 3
+    ILOAD 9
+    ISUB
+    I2D
+    DMUL
+    DSTORE 7
+   L28
+    LINENUMBER 903 L28
+    IINC 9 1
+    GOTO L24
+   L25
+    LINENUMBER 909 L25
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 6
+    ALOAD 4
+    ILOAD 5
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L29
+    LINENUMBER 911 L29
+    RETURN
+   L30
+    LOCALVARIABLE i I L10 L11 10
+    LOCALVARIABLE maxOrder I L8 L15 7
+    LOCALVARIABLE xk D L9 L15 8
+    LOCALVARIABLE i I L19 L16 11
+    LOCALVARIABLE inv D L17 L16 7
+    LOCALVARIABLE xk D L18 L16 9
+    LOCALVARIABLE i I L24 L25 9
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L30 0
+    LOCALVARIABLE operand [D L0 L30 1
+    LOCALVARIABLE operandOffset I L0 L30 2
+    LOCALVARIABLE n I L0 L30 3
+    LOCALVARIABLE result [D L0 L30 4
+    LOCALVARIABLE resultOffset I L0 L30 5
+    LOCALVARIABLE function [D L5 L30 6
+    LOCALVARIABLE coefficient D L23 L30 7
+    MAXSTACK = 6
+    MAXLOCALS = 12
+
+  // access flags 0x1
+  public pow([DI[DI[DI)V
+   L0
+    LINENUMBER 926 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getSize ()I
+    NEWARRAY T_DOUBLE
+    ASTORE 7
+   L1
+    LINENUMBER 927 L1
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 7
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.log ([DI[DI)V
+   L2
+    LINENUMBER 928 L2
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getSize ()I
+    NEWARRAY T_DOUBLE
+    ASTORE 8
+   L3
+    LINENUMBER 929 L3
+    ALOAD 0
+    ALOAD 7
+    ICONST_0
+    ALOAD 3
+    ILOAD 4
+    ALOAD 8
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.multiply ([DI[DI[DI)V
+   L4
+    LINENUMBER 930 L4
+    ALOAD 0
+    ALOAD 8
+    ICONST_0
+    ALOAD 5
+    ILOAD 6
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.exp ([DI[DI)V
+   L5
+    LINENUMBER 931 L5
+    RETURN
+   L6
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L6 0
+    LOCALVARIABLE x [D L0 L6 1
+    LOCALVARIABLE xOffset I L0 L6 2
+    LOCALVARIABLE y [D L0 L6 3
+    LOCALVARIABLE yOffset I L0 L6 4
+    LOCALVARIABLE result [D L0 L6 5
+    LOCALVARIABLE resultOffset I L0 L6 6
+    LOCALVARIABLE logX [D L1 L6 7
+    LOCALVARIABLE yLogX [D L3 L6 8
+    MAXSTACK = 7
+    MAXLOCALS = 9
+
+  // access flags 0x1
+  public rootN([DII[DI)V
+   L0
+    LINENUMBER 947 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 6
+   L1
+    LINENUMBER 949 L1
+    ILOAD 3
+    ICONST_2
+    IF_ICMPNE L2
+   L3
+    LINENUMBER 950 L3
+    ALOAD 6
+    ICONST_0
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    DASTORE
+   L4
+    LINENUMBER 951 L4
+    LDC 0.5
+    ALOAD 6
+    ICONST_0
+    DALOAD
+    DDIV
+    DSTORE 7
+   L5
+    GOTO L6
+   L2
+    LINENUMBER 952 L2
+    ILOAD 3
+    ICONST_3
+    IF_ICMPNE L7
+   L8
+    LINENUMBER 953 L8
+    ALOAD 6
+    ICONST_0
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.cbrt (D)D
+    DASTORE
+   L9
+    LINENUMBER 954 L9
+    DCONST_1
+    LDC 3.0
+    ALOAD 6
+    ICONST_0
+    DALOAD
+    DMUL
+    ALOAD 6
+    ICONST_0
+    DALOAD
+    DMUL
+    DDIV
+    DSTORE 7
+   L10
+    GOTO L6
+   L7
+    LINENUMBER 956 L7
+    ALOAD 6
+    ICONST_0
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DCONST_1
+    ILOAD 3
+    I2D
+    DDIV
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.pow (DD)D
+    DASTORE
+   L11
+    LINENUMBER 957 L11
+    DCONST_1
+    ILOAD 3
+    I2D
+    ALOAD 6
+    ICONST_0
+    DALOAD
+    ILOAD 3
+    ICONST_1
+    ISUB
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.pow (DI)D
+    DMUL
+    DDIV
+    DSTORE 7
+   L6
+    LINENUMBER 959 L6
+    DCONST_1
+    ILOAD 3
+    I2D
+    DDIV
+    DSTORE 9
+   L12
+    LINENUMBER 960 L12
+    DCONST_1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DDIV
+    DSTORE 11
+   L13
+    LINENUMBER 961 L13
+    ICONST_1
+    ISTORE 13
+   L14
+    ILOAD 13
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L15
+   L16
+    LINENUMBER 962 L16
+    ALOAD 6
+    ILOAD 13
+    DLOAD 7
+    DASTORE
+   L17
+    LINENUMBER 963 L17
+    DLOAD 7
+    DLOAD 11
+    DLOAD 9
+    ILOAD 13
+    I2D
+    DSUB
+    DMUL
+    DMUL
+    DSTORE 7
+   L18
+    LINENUMBER 961 L18
+    IINC 13 1
+    GOTO L14
+   L15
+    LINENUMBER 967 L15
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 6
+    ALOAD 4
+    ILOAD 5
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L19
+    LINENUMBER 969 L19
+    RETURN
+   L20
+    LOCALVARIABLE xk D L5 L2 7
+    LOCALVARIABLE xk D L10 L7 7
+    LOCALVARIABLE i I L14 L15 13
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L20 0
+    LOCALVARIABLE operand [D L0 L20 1
+    LOCALVARIABLE operandOffset I L0 L20 2
+    LOCALVARIABLE n I L0 L20 3
+    LOCALVARIABLE result [D L0 L20 4
+    LOCALVARIABLE resultOffset I L0 L20 5
+    LOCALVARIABLE function [D L1 L20 6
+    LOCALVARIABLE xk D L6 L20 7
+    LOCALVARIABLE nReciprocal D L12 L20 9
+    LOCALVARIABLE xReciprocal D L13 L20 11
+    MAXSTACK = 8
+    MAXLOCALS = 14
+
+  // access flags 0x1
+  public exp([DI[DI)V
+   L0
+    LINENUMBER 983 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 984 L1
+    ALOAD 5
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.exp (D)D
+    INVOKESTATIC java/util/Arrays.fill ([DD)V
+   L2
+    LINENUMBER 987 L2
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L3
+    LINENUMBER 989 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L4 0
+    LOCALVARIABLE operand [D L0 L4 1
+    LOCALVARIABLE operandOffset I L0 L4 2
+    LOCALVARIABLE result [D L0 L4 3
+    LOCALVARIABLE resultOffset I L0 L4 4
+    LOCALVARIABLE function [D L1 L4 5
+    MAXSTACK = 6
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public expm1([DI[DI)V
+   L0
+    LINENUMBER 1003 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1004 L1
+    ALOAD 5
+    ICONST_0
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.expm1 (D)D
+    DASTORE
+   L2
+    LINENUMBER 1005 L2
+    ALOAD 5
+    ICONST_1
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.exp (D)D
+    INVOKESTATIC java/util/Arrays.fill ([DIID)V
+   L3
+    LINENUMBER 1008 L3
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L4
+    LINENUMBER 1010 L4
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L5 0
+    LOCALVARIABLE operand [D L0 L5 1
+    LOCALVARIABLE operandOffset I L0 L5 2
+    LOCALVARIABLE result [D L0 L5 3
+    LOCALVARIABLE resultOffset I L0 L5 4
+    LOCALVARIABLE function [D L1 L5 5
+    MAXSTACK = 6
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public log([DI[DI)V
+   L0
+    LINENUMBER 1024 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1025 L1
+    ALOAD 5
+    ICONST_0
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.log (D)D
+    DASTORE
+   L2
+    LINENUMBER 1026 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L3
+   L4
+    LINENUMBER 1027 L4
+    DCONST_1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DDIV
+    DSTORE 6
+   L5
+    LINENUMBER 1028 L5
+    DLOAD 6
+    DSTORE 8
+   L6
+    LINENUMBER 1029 L6
+    ICONST_1
+    ISTORE 10
+   L7
+    ILOAD 10
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L3
+   L8
+    LINENUMBER 1030 L8
+    ALOAD 5
+    ILOAD 10
+    DLOAD 8
+    DASTORE
+   L9
+    LINENUMBER 1031 L9
+    DLOAD 8
+    ILOAD 10
+    INEG
+    I2D
+    DLOAD 6
+    DMUL
+    DMUL
+    DSTORE 8
+   L10
+    LINENUMBER 1029 L10
+    IINC 10 1
+    GOTO L7
+   L3
+    LINENUMBER 1036 L3
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L11
+    LINENUMBER 1038 L11
+    RETURN
+   L12
+    LOCALVARIABLE i I L7 L3 10
+    LOCALVARIABLE inv D L5 L3 6
+    LOCALVARIABLE xk D L6 L3 8
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L12 0
+    LOCALVARIABLE operand [D L0 L12 1
+    LOCALVARIABLE operandOffset I L0 L12 2
+    LOCALVARIABLE result [D L0 L12 3
+    LOCALVARIABLE resultOffset I L0 L12 4
+    LOCALVARIABLE function [D L1 L12 5
+    MAXSTACK = 6
+    MAXLOCALS = 11
+
+  // access flags 0x1
+  public log1p([DI[DI)V
+   L0
+    LINENUMBER 1051 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1052 L1
+    ALOAD 5
+    ICONST_0
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.log1p (D)D
+    DASTORE
+   L2
+    LINENUMBER 1053 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L3
+   L4
+    LINENUMBER 1054 L4
+    DCONST_1
+    DCONST_1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DADD
+    DDIV
+    DSTORE 6
+   L5
+    LINENUMBER 1055 L5
+    DLOAD 6
+    DSTORE 8
+   L6
+    LINENUMBER 1056 L6
+    ICONST_1
+    ISTORE 10
+   L7
+    ILOAD 10
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L3
+   L8
+    LINENUMBER 1057 L8
+    ALOAD 5
+    ILOAD 10
+    DLOAD 8
+    DASTORE
+   L9
+    LINENUMBER 1058 L9
+    DLOAD 8
+    ILOAD 10
+    INEG
+    I2D
+    DLOAD 6
+    DMUL
+    DMUL
+    DSTORE 8
+   L10
+    LINENUMBER 1056 L10
+    IINC 10 1
+    GOTO L7
+   L3
+    LINENUMBER 1063 L3
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L11
+    LINENUMBER 1065 L11
+    RETURN
+   L12
+    LOCALVARIABLE i I L7 L3 10
+    LOCALVARIABLE inv D L5 L3 6
+    LOCALVARIABLE xk D L6 L3 8
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L12 0
+    LOCALVARIABLE operand [D L0 L12 1
+    LOCALVARIABLE operandOffset I L0 L12 2
+    LOCALVARIABLE result [D L0 L12 3
+    LOCALVARIABLE resultOffset I L0 L12 4
+    LOCALVARIABLE function [D L1 L12 5
+    MAXSTACK = 6
+    MAXLOCALS = 11
+
+  // access flags 0x1
+  public log10([DI[DI)V
+   L0
+    LINENUMBER 1078 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1079 L1
+    ALOAD 5
+    ICONST_0
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.log10 (D)D
+    DASTORE
+   L2
+    LINENUMBER 1080 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L3
+   L4
+    LINENUMBER 1081 L4
+    DCONST_1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DDIV
+    DSTORE 6
+   L5
+    LINENUMBER 1082 L5
+    DLOAD 6
+    LDC 10.0
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.log (D)D
+    DDIV
+    DSTORE 8
+   L6
+    LINENUMBER 1083 L6
+    ICONST_1
+    ISTORE 10
+   L7
+    ILOAD 10
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L3
+   L8
+    LINENUMBER 1084 L8
+    ALOAD 5
+    ILOAD 10
+    DLOAD 8
+    DASTORE
+   L9
+    LINENUMBER 1085 L9
+    DLOAD 8
+    ILOAD 10
+    INEG
+    I2D
+    DLOAD 6
+    DMUL
+    DMUL
+    DSTORE 8
+   L10
+    LINENUMBER 1083 L10
+    IINC 10 1
+    GOTO L7
+   L3
+    LINENUMBER 1090 L3
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L11
+    LINENUMBER 1092 L11
+    RETURN
+   L12
+    LOCALVARIABLE i I L7 L3 10
+    LOCALVARIABLE inv D L5 L3 6
+    LOCALVARIABLE xk D L6 L3 8
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L12 0
+    LOCALVARIABLE operand [D L0 L12 1
+    LOCALVARIABLE operandOffset I L0 L12 2
+    LOCALVARIABLE result [D L0 L12 3
+    LOCALVARIABLE resultOffset I L0 L12 4
+    LOCALVARIABLE function [D L1 L12 5
+    MAXSTACK = 6
+    MAXLOCALS = 11
+
+  // access flags 0x1
+  public cos([DI[DI)V
+   L0
+    LINENUMBER 1106 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1107 L1
+    ALOAD 5
+    ICONST_0
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.cos (D)D
+    DASTORE
+   L2
+    LINENUMBER 1108 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L3
+   L4
+    LINENUMBER 1109 L4
+    ALOAD 5
+    ICONST_1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sin (D)D
+    DNEG
+    DASTORE
+   L5
+    LINENUMBER 1110 L5
+    ICONST_2
+    ISTORE 6
+   L6
+    ILOAD 6
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L3
+   L7
+    LINENUMBER 1111 L7
+    ALOAD 5
+    ILOAD 6
+    ALOAD 5
+    ILOAD 6
+    ICONST_2
+    ISUB
+    DALOAD
+    DNEG
+    DASTORE
+   L8
+    LINENUMBER 1110 L8
+    IINC 6 1
+    GOTO L6
+   L3
+    LINENUMBER 1116 L3
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L9
+    LINENUMBER 1118 L9
+    RETURN
+   L10
+    LOCALVARIABLE i I L6 L3 6
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L10 0
+    LOCALVARIABLE operand [D L0 L10 1
+    LOCALVARIABLE operandOffset I L0 L10 2
+    LOCALVARIABLE result [D L0 L10 3
+    LOCALVARIABLE resultOffset I L0 L10 4
+    LOCALVARIABLE function [D L1 L10 5
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public sin([DI[DI)V
+   L0
+    LINENUMBER 1132 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1133 L1
+    ALOAD 5
+    ICONST_0
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sin (D)D
+    DASTORE
+   L2
+    LINENUMBER 1134 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L3
+   L4
+    LINENUMBER 1135 L4
+    ALOAD 5
+    ICONST_1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.cos (D)D
+    DASTORE
+   L5
+    LINENUMBER 1136 L5
+    ICONST_2
+    ISTORE 6
+   L6
+    ILOAD 6
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L3
+   L7
+    LINENUMBER 1137 L7
+    ALOAD 5
+    ILOAD 6
+    ALOAD 5
+    ILOAD 6
+    ICONST_2
+    ISUB
+    DALOAD
+    DNEG
+    DASTORE
+   L8
+    LINENUMBER 1136 L8
+    IINC 6 1
+    GOTO L6
+   L3
+    LINENUMBER 1142 L3
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L9
+    LINENUMBER 1144 L9
+    RETURN
+   L10
+    LOCALVARIABLE i I L6 L3 6
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L10 0
+    LOCALVARIABLE operand [D L0 L10 1
+    LOCALVARIABLE operandOffset I L0 L10 2
+    LOCALVARIABLE result [D L0 L10 3
+    LOCALVARIABLE resultOffset I L0 L10 4
+    LOCALVARIABLE function [D L1 L10 5
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public tan([DI[DI)V
+   L0
+    LINENUMBER 1158 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1159 L1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.tan (D)D
+    DSTORE 6
+   L2
+    LINENUMBER 1160 L2
+    ALOAD 5
+    ICONST_0
+    DLOAD 6
+    DASTORE
+   L3
+    LINENUMBER 1162 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L4
+   L5
+    LINENUMBER 1171 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    ICONST_2
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 8
+   L6
+    LINENUMBER 1172 L6
+    ALOAD 8
+    ICONST_1
+    DCONST_1
+    DASTORE
+   L7
+    LINENUMBER 1173 L7
+    DLOAD 6
+    DLOAD 6
+    DMUL
+    DSTORE 9
+   L8
+    LINENUMBER 1174 L8
+    ICONST_1
+    ISTORE 11
+   L9
+    ILOAD 11
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L4
+   L10
+    LINENUMBER 1177 L10
+    DCONST_0
+    DSTORE 12
+   L11
+    LINENUMBER 1178 L11
+    ALOAD 8
+    ILOAD 11
+    ICONST_1
+    IADD
+    ILOAD 11
+    I2D
+    ALOAD 8
+    ILOAD 11
+    DALOAD
+    DMUL
+    DASTORE
+   L12
+    LINENUMBER 1179 L12
+    ILOAD 11
+    ICONST_1
+    IADD
+    ISTORE 14
+   L13
+    ILOAD 14
+    IFLT L14
+   L15
+    LINENUMBER 1180 L15
+    DLOAD 12
+    DLOAD 9
+    DMUL
+    ALOAD 8
+    ILOAD 14
+    DALOAD
+    DADD
+    DSTORE 12
+   L16
+    LINENUMBER 1181 L16
+    ILOAD 14
+    ICONST_2
+    IF_ICMPLE L17
+   L18
+    LINENUMBER 1182 L18
+    ALOAD 8
+    ILOAD 14
+    ICONST_2
+    ISUB
+    ILOAD 14
+    ICONST_1
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 14
+    ICONST_1
+    ISUB
+    DALOAD
+    DMUL
+    ILOAD 14
+    ICONST_3
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 14
+    ICONST_3
+    ISUB
+    DALOAD
+    DMUL
+    DADD
+    DASTORE
+    GOTO L19
+   L17
+    LINENUMBER 1183 L17
+    ILOAD 14
+    ICONST_2
+    IF_ICMPNE L19
+   L20
+    LINENUMBER 1184 L20
+    ALOAD 8
+    ICONST_0
+    ALOAD 8
+    ICONST_1
+    DALOAD
+    DASTORE
+   L19
+    LINENUMBER 1179 L19
+    IINC 14 -2
+    GOTO L13
+   L14
+    LINENUMBER 1187 L14
+    ILOAD 11
+    ICONST_1
+    IAND
+    IFNE L21
+   L22
+    LINENUMBER 1188 L22
+    DLOAD 12
+    DLOAD 6
+    DMUL
+    DSTORE 12
+   L21
+    LINENUMBER 1191 L21
+    ALOAD 5
+    ILOAD 11
+    DLOAD 12
+    DASTORE
+   L23
+    LINENUMBER 1174 L23
+    IINC 11 1
+    GOTO L9
+   L4
+    LINENUMBER 1197 L4
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L24
+    LINENUMBER 1199 L24
+    RETURN
+   L25
+    LOCALVARIABLE k I L13 L14 14
+    LOCALVARIABLE v D L11 L23 12
+    LOCALVARIABLE n I L9 L4 11
+    LOCALVARIABLE p [D L6 L4 8
+    LOCALVARIABLE t2 D L8 L4 9
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L25 0
+    LOCALVARIABLE operand [D L0 L25 1
+    LOCALVARIABLE operandOffset I L0 L25 2
+    LOCALVARIABLE result [D L0 L25 3
+    LOCALVARIABLE resultOffset I L0 L25 4
+    LOCALVARIABLE function [D L1 L25 5
+    LOCALVARIABLE t D L2 L25 6
+    MAXSTACK = 9
+    MAXLOCALS = 15
+
+  // access flags 0x1
+  public acos([DI[DI)V
+   L0
+    LINENUMBER 1213 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1214 L1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DSTORE 6
+   L2
+    LINENUMBER 1215 L2
+    ALOAD 5
+    ICONST_0
+    DLOAD 6
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.acos (D)D
+    DASTORE
+   L3
+    LINENUMBER 1216 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L4
+   L5
+    LINENUMBER 1224 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    NEWARRAY T_DOUBLE
+    ASTORE 8
+   L6
+    LINENUMBER 1225 L6
+    ALOAD 8
+    ICONST_0
+    LDC -1.0
+    DASTORE
+   L7
+    LINENUMBER 1226 L7
+    DLOAD 6
+    DLOAD 6
+    DMUL
+    DSTORE 9
+   L8
+    LINENUMBER 1227 L8
+    DCONST_1
+    DCONST_1
+    DLOAD 9
+    DSUB
+    DDIV
+    DSTORE 11
+   L9
+    LINENUMBER 1228 L9
+    DLOAD 11
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    DSTORE 13
+   L10
+    LINENUMBER 1229 L10
+    ALOAD 5
+    ICONST_1
+    DLOAD 13
+    ALOAD 8
+    ICONST_0
+    DALOAD
+    DMUL
+    DASTORE
+   L11
+    LINENUMBER 1230 L11
+    ICONST_2
+    ISTORE 15
+   L12
+    ILOAD 15
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L4
+   L13
+    LINENUMBER 1233 L13
+    DCONST_0
+    DSTORE 16
+   L14
+    LINENUMBER 1234 L14
+    ALOAD 8
+    ILOAD 15
+    ICONST_1
+    ISUB
+    ILOAD 15
+    ICONST_1
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 15
+    ICONST_2
+    ISUB
+    DALOAD
+    DMUL
+    DASTORE
+   L15
+    LINENUMBER 1235 L15
+    ILOAD 15
+    ICONST_1
+    ISUB
+    ISTORE 18
+   L16
+    ILOAD 18
+    IFLT L17
+   L18
+    LINENUMBER 1236 L18
+    DLOAD 16
+    DLOAD 9
+    DMUL
+    ALOAD 8
+    ILOAD 18
+    DALOAD
+    DADD
+    DSTORE 16
+   L19
+    LINENUMBER 1237 L19
+    ILOAD 18
+    ICONST_2
+    IF_ICMPLE L20
+   L21
+    LINENUMBER 1238 L21
+    ALOAD 8
+    ILOAD 18
+    ICONST_2
+    ISUB
+    ILOAD 18
+    ICONST_1
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 18
+    ICONST_1
+    ISUB
+    DALOAD
+    DMUL
+    ICONST_2
+    ILOAD 15
+    IMUL
+    ILOAD 18
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 18
+    ICONST_3
+    ISUB
+    DALOAD
+    DMUL
+    DADD
+    DASTORE
+    GOTO L22
+   L20
+    LINENUMBER 1239 L20
+    ILOAD 18
+    ICONST_2
+    IF_ICMPNE L22
+   L23
+    LINENUMBER 1240 L23
+    ALOAD 8
+    ICONST_0
+    ALOAD 8
+    ICONST_1
+    DALOAD
+    DASTORE
+   L22
+    LINENUMBER 1235 L22
+    IINC 18 -2
+    GOTO L16
+   L17
+    LINENUMBER 1243 L17
+    ILOAD 15
+    ICONST_1
+    IAND
+    IFNE L24
+   L25
+    LINENUMBER 1244 L25
+    DLOAD 16
+    DLOAD 6
+    DMUL
+    DSTORE 16
+   L24
+    LINENUMBER 1247 L24
+    DLOAD 13
+    DLOAD 11
+    DMUL
+    DSTORE 13
+   L26
+    LINENUMBER 1248 L26
+    ALOAD 5
+    ILOAD 15
+    DLOAD 13
+    DLOAD 16
+    DMUL
+    DASTORE
+   L27
+    LINENUMBER 1230 L27
+    IINC 15 1
+    GOTO L12
+   L4
+    LINENUMBER 1254 L4
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L28
+    LINENUMBER 1256 L28
+    RETURN
+   L29
+    LOCALVARIABLE k I L16 L17 18
+    LOCALVARIABLE v D L14 L27 16
+    LOCALVARIABLE n I L12 L4 15
+    LOCALVARIABLE p [D L6 L4 8
+    LOCALVARIABLE x2 D L8 L4 9
+    LOCALVARIABLE f D L9 L4 11
+    LOCALVARIABLE coeff D L10 L4 13
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L29 0
+    LOCALVARIABLE operand [D L0 L29 1
+    LOCALVARIABLE operandOffset I L0 L29 2
+    LOCALVARIABLE result [D L0 L29 3
+    LOCALVARIABLE resultOffset I L0 L29 4
+    LOCALVARIABLE function [D L1 L29 5
+    LOCALVARIABLE x D L2 L29 6
+    MAXSTACK = 9
+    MAXLOCALS = 19
+
+  // access flags 0x1
+  public asin([DI[DI)V
+   L0
+    LINENUMBER 1270 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1271 L1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DSTORE 6
+   L2
+    LINENUMBER 1272 L2
+    ALOAD 5
+    ICONST_0
+    DLOAD 6
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.asin (D)D
+    DASTORE
+   L3
+    LINENUMBER 1273 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L4
+   L5
+    LINENUMBER 1281 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    NEWARRAY T_DOUBLE
+    ASTORE 8
+   L6
+    LINENUMBER 1282 L6
+    ALOAD 8
+    ICONST_0
+    DCONST_1
+    DASTORE
+   L7
+    LINENUMBER 1283 L7
+    DLOAD 6
+    DLOAD 6
+    DMUL
+    DSTORE 9
+   L8
+    LINENUMBER 1284 L8
+    DCONST_1
+    DCONST_1
+    DLOAD 9
+    DSUB
+    DDIV
+    DSTORE 11
+   L9
+    LINENUMBER 1285 L9
+    DLOAD 11
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    DSTORE 13
+   L10
+    LINENUMBER 1286 L10
+    ALOAD 5
+    ICONST_1
+    DLOAD 13
+    ALOAD 8
+    ICONST_0
+    DALOAD
+    DMUL
+    DASTORE
+   L11
+    LINENUMBER 1287 L11
+    ICONST_2
+    ISTORE 15
+   L12
+    ILOAD 15
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L4
+   L13
+    LINENUMBER 1290 L13
+    DCONST_0
+    DSTORE 16
+   L14
+    LINENUMBER 1291 L14
+    ALOAD 8
+    ILOAD 15
+    ICONST_1
+    ISUB
+    ILOAD 15
+    ICONST_1
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 15
+    ICONST_2
+    ISUB
+    DALOAD
+    DMUL
+    DASTORE
+   L15
+    LINENUMBER 1292 L15
+    ILOAD 15
+    ICONST_1
+    ISUB
+    ISTORE 18
+   L16
+    ILOAD 18
+    IFLT L17
+   L18
+    LINENUMBER 1293 L18
+    DLOAD 16
+    DLOAD 9
+    DMUL
+    ALOAD 8
+    ILOAD 18
+    DALOAD
+    DADD
+    DSTORE 16
+   L19
+    LINENUMBER 1294 L19
+    ILOAD 18
+    ICONST_2
+    IF_ICMPLE L20
+   L21
+    LINENUMBER 1295 L21
+    ALOAD 8
+    ILOAD 18
+    ICONST_2
+    ISUB
+    ILOAD 18
+    ICONST_1
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 18
+    ICONST_1
+    ISUB
+    DALOAD
+    DMUL
+    ICONST_2
+    ILOAD 15
+    IMUL
+    ILOAD 18
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 18
+    ICONST_3
+    ISUB
+    DALOAD
+    DMUL
+    DADD
+    DASTORE
+    GOTO L22
+   L20
+    LINENUMBER 1296 L20
+    ILOAD 18
+    ICONST_2
+    IF_ICMPNE L22
+   L23
+    LINENUMBER 1297 L23
+    ALOAD 8
+    ICONST_0
+    ALOAD 8
+    ICONST_1
+    DALOAD
+    DASTORE
+   L22
+    LINENUMBER 1292 L22
+    IINC 18 -2
+    GOTO L16
+   L17
+    LINENUMBER 1300 L17
+    ILOAD 15
+    ICONST_1
+    IAND
+    IFNE L24
+   L25
+    LINENUMBER 1301 L25
+    DLOAD 16
+    DLOAD 6
+    DMUL
+    DSTORE 16
+   L24
+    LINENUMBER 1304 L24
+    DLOAD 13
+    DLOAD 11
+    DMUL
+    DSTORE 13
+   L26
+    LINENUMBER 1305 L26
+    ALOAD 5
+    ILOAD 15
+    DLOAD 13
+    DLOAD 16
+    DMUL
+    DASTORE
+   L27
+    LINENUMBER 1287 L27
+    IINC 15 1
+    GOTO L12
+   L4
+    LINENUMBER 1311 L4
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L28
+    LINENUMBER 1313 L28
+    RETURN
+   L29
+    LOCALVARIABLE k I L16 L17 18
+    LOCALVARIABLE v D L14 L27 16
+    LOCALVARIABLE n I L12 L4 15
+    LOCALVARIABLE p [D L6 L4 8
+    LOCALVARIABLE x2 D L8 L4 9
+    LOCALVARIABLE f D L9 L4 11
+    LOCALVARIABLE coeff D L10 L4 13
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L29 0
+    LOCALVARIABLE operand [D L0 L29 1
+    LOCALVARIABLE operandOffset I L0 L29 2
+    LOCALVARIABLE result [D L0 L29 3
+    LOCALVARIABLE resultOffset I L0 L29 4
+    LOCALVARIABLE function [D L1 L29 5
+    LOCALVARIABLE x D L2 L29 6
+    MAXSTACK = 9
+    MAXLOCALS = 19
+
+  // access flags 0x1
+  public atan([DI[DI)V
+   L0
+    LINENUMBER 1327 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1328 L1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DSTORE 6
+   L2
+    LINENUMBER 1329 L2
+    ALOAD 5
+    ICONST_0
+    DLOAD 6
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.atan (D)D
+    DASTORE
+   L3
+    LINENUMBER 1330 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L4
+   L5
+    LINENUMBER 1338 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    NEWARRAY T_DOUBLE
+    ASTORE 8
+   L6
+    LINENUMBER 1339 L6
+    ALOAD 8
+    ICONST_0
+    DCONST_1
+    DASTORE
+   L7
+    LINENUMBER 1340 L7
+    DLOAD 6
+    DLOAD 6
+    DMUL
+    DSTORE 9
+   L8
+    LINENUMBER 1341 L8
+    DCONST_1
+    DCONST_1
+    DLOAD 9
+    DADD
+    DDIV
+    DSTORE 11
+   L9
+    LINENUMBER 1342 L9
+    DLOAD 11
+    DSTORE 13
+   L10
+    LINENUMBER 1343 L10
+    ALOAD 5
+    ICONST_1
+    DLOAD 13
+    ALOAD 8
+    ICONST_0
+    DALOAD
+    DMUL
+    DASTORE
+   L11
+    LINENUMBER 1344 L11
+    ICONST_2
+    ISTORE 15
+   L12
+    ILOAD 15
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L4
+   L13
+    LINENUMBER 1347 L13
+    DCONST_0
+    DSTORE 16
+   L14
+    LINENUMBER 1348 L14
+    ALOAD 8
+    ILOAD 15
+    ICONST_1
+    ISUB
+    ILOAD 15
+    INEG
+    I2D
+    ALOAD 8
+    ILOAD 15
+    ICONST_2
+    ISUB
+    DALOAD
+    DMUL
+    DASTORE
+   L15
+    LINENUMBER 1349 L15
+    ILOAD 15
+    ICONST_1
+    ISUB
+    ISTORE 18
+   L16
+    ILOAD 18
+    IFLT L17
+   L18
+    LINENUMBER 1350 L18
+    DLOAD 16
+    DLOAD 9
+    DMUL
+    ALOAD 8
+    ILOAD 18
+    DALOAD
+    DADD
+    DSTORE 16
+   L19
+    LINENUMBER 1351 L19
+    ILOAD 18
+    ICONST_2
+    IF_ICMPLE L20
+   L21
+    LINENUMBER 1352 L21
+    ALOAD 8
+    ILOAD 18
+    ICONST_2
+    ISUB
+    ILOAD 18
+    ICONST_1
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 18
+    ICONST_1
+    ISUB
+    DALOAD
+    DMUL
+    ILOAD 18
+    ICONST_1
+    ISUB
+    ICONST_2
+    ILOAD 15
+    IMUL
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 18
+    ICONST_3
+    ISUB
+    DALOAD
+    DMUL
+    DADD
+    DASTORE
+    GOTO L22
+   L20
+    LINENUMBER 1353 L20
+    ILOAD 18
+    ICONST_2
+    IF_ICMPNE L22
+   L23
+    LINENUMBER 1354 L23
+    ALOAD 8
+    ICONST_0
+    ALOAD 8
+    ICONST_1
+    DALOAD
+    DASTORE
+   L22
+    LINENUMBER 1349 L22
+    IINC 18 -2
+    GOTO L16
+   L17
+    LINENUMBER 1357 L17
+    ILOAD 15
+    ICONST_1
+    IAND
+    IFNE L24
+   L25
+    LINENUMBER 1358 L25
+    DLOAD 16
+    DLOAD 6
+    DMUL
+    DSTORE 16
+   L24
+    LINENUMBER 1361 L24
+    DLOAD 13
+    DLOAD 11
+    DMUL
+    DSTORE 13
+   L26
+    LINENUMBER 1362 L26
+    ALOAD 5
+    ILOAD 15
+    DLOAD 13
+    DLOAD 16
+    DMUL
+    DASTORE
+   L27
+    LINENUMBER 1344 L27
+    IINC 15 1
+    GOTO L12
+   L4
+    LINENUMBER 1368 L4
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L28
+    LINENUMBER 1370 L28
+    RETURN
+   L29
+    LOCALVARIABLE k I L16 L17 18
+    LOCALVARIABLE v D L14 L27 16
+    LOCALVARIABLE n I L12 L4 15
+    LOCALVARIABLE q [D L6 L4 8
+    LOCALVARIABLE x2 D L8 L4 9
+    LOCALVARIABLE f D L9 L4 11
+    LOCALVARIABLE coeff D L10 L4 13
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L29 0
+    LOCALVARIABLE operand [D L0 L29 1
+    LOCALVARIABLE operandOffset I L0 L29 2
+    LOCALVARIABLE result [D L0 L29 3
+    LOCALVARIABLE resultOffset I L0 L29 4
+    LOCALVARIABLE function [D L1 L29 5
+    LOCALVARIABLE x D L2 L29 6
+    MAXSTACK = 9
+    MAXLOCALS = 19
+
+  // access flags 0x1
+  public atan2([DI[DI[DI)V
+   L0
+    LINENUMBER 1387 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getSize ()I
+    NEWARRAY T_DOUBLE
+    ASTORE 7
+   L1
+    LINENUMBER 1388 L1
+    ALOAD 0
+    ALOAD 3
+    ILOAD 4
+    ALOAD 3
+    ILOAD 4
+    ALOAD 7
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.multiply ([DI[DI[DI)V
+   L2
+    LINENUMBER 1389 L2
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getSize ()I
+    NEWARRAY T_DOUBLE
+    ASTORE 8
+   L3
+    LINENUMBER 1390 L3
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 1
+    ILOAD 2
+    ALOAD 8
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.multiply ([DI[DI[DI)V
+   L4
+    LINENUMBER 1391 L4
+    ALOAD 0
+    ALOAD 7
+    ICONST_0
+    ALOAD 8
+    ICONST_0
+    ALOAD 8
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.add ([DI[DI[DI)V
+   L5
+    LINENUMBER 1392 L5
+    ALOAD 0
+    ALOAD 8
+    ICONST_0
+    ICONST_2
+    ALOAD 7
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.rootN ([DII[DI)V
+   L6
+    LINENUMBER 1394 L6
+    ALOAD 3
+    ILOAD 4
+    DALOAD
+    DCONST_0
+    DCMPL
+    IFLT L7
+   L8
+    LINENUMBER 1397 L8
+    ALOAD 0
+    ALOAD 7
+    ICONST_0
+    ALOAD 3
+    ILOAD 4
+    ALOAD 8
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.add ([DI[DI[DI)V
+   L9
+    LINENUMBER 1398 L9
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 8
+    ICONST_0
+    ALOAD 7
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.divide ([DI[DI[DI)V
+   L10
+    LINENUMBER 1399 L10
+    ALOAD 0
+    ALOAD 7
+    ICONST_0
+    ALOAD 8
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.atan ([DI[DI)V
+   L11
+    LINENUMBER 1400 L11
+    ICONST_0
+    ISTORE 9
+   L12
+    ILOAD 9
+    ALOAD 8
+    ARRAYLENGTH
+    IF_ICMPGE L13
+   L14
+    LINENUMBER 1401 L14
+    ALOAD 5
+    ILOAD 6
+    ILOAD 9
+    IADD
+    LDC 2.0
+    ALOAD 8
+    ILOAD 9
+    DALOAD
+    DMUL
+    DASTORE
+   L15
+    LINENUMBER 1400 L15
+    IINC 9 1
+    GOTO L12
+   L13
+    GOTO L16
+   L7
+    LINENUMBER 1407 L7
+    ALOAD 0
+    ALOAD 7
+    ICONST_0
+    ALOAD 3
+    ILOAD 4
+    ALOAD 8
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.subtract ([DI[DI[DI)V
+   L17
+    LINENUMBER 1408 L17
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 8
+    ICONST_0
+    ALOAD 7
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.divide ([DI[DI[DI)V
+   L18
+    LINENUMBER 1409 L18
+    ALOAD 0
+    ALOAD 7
+    ICONST_0
+    ALOAD 8
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.atan ([DI[DI)V
+   L19
+    LINENUMBER 1410 L19
+    ALOAD 5
+    ILOAD 6
+    ALOAD 8
+    ICONST_0
+    DALOAD
+    DCONST_0
+    DCMPG
+    IFGT L20
+    LDC -3.141592653589793
+    GOTO L21
+   L20
+    LDC 3.141592653589793
+   L21
+    LDC 2.0
+    ALOAD 8
+    ICONST_0
+    DALOAD
+    DMUL
+    DSUB
+    DASTORE
+   L22
+    LINENUMBER 1412 L22
+    ICONST_1
+    ISTORE 9
+   L23
+    ILOAD 9
+    ALOAD 8
+    ARRAYLENGTH
+    IF_ICMPLT L16
+   L24
+    LINENUMBER 1413 L24
+    ALOAD 5
+    ILOAD 6
+    ILOAD 9
+    IADD
+    LDC -2.0
+    ALOAD 8
+    ILOAD 9
+    DALOAD
+    DMUL
+    DASTORE
+   L25
+    LINENUMBER 1412 L25
+    IINC 9 1
+    GOTO L23
+   L16
+    LINENUMBER 1419 L16
+    ALOAD 5
+    ILOAD 6
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    ALOAD 3
+    ILOAD 4
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.atan2 (DD)D
+    DASTORE
+   L26
+    LINENUMBER 1421 L26
+    RETURN
+   L27
+    LOCALVARIABLE i I L12 L13 9
+    LOCALVARIABLE i I L23 L16 9
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L27 0
+    LOCALVARIABLE y [D L0 L27 1
+    LOCALVARIABLE yOffset I L0 L27 2
+    LOCALVARIABLE x [D L0 L27 3
+    LOCALVARIABLE xOffset I L0 L27 4
+    LOCALVARIABLE result [D L0 L27 5
+    LOCALVARIABLE resultOffset I L0 L27 6
+    LOCALVARIABLE tmp1 [D L1 L27 7
+    LOCALVARIABLE tmp2 [D L3 L27 8
+    MAXSTACK = 8
+    MAXLOCALS = 10
+
+  // access flags 0x1
+  public cosh([DI[DI)V
+   L0
+    LINENUMBER 1435 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1436 L1
+    ALOAD 5
+    ICONST_0
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.cosh (D)D
+    DASTORE
+   L2
+    LINENUMBER 1437 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L3
+   L4
+    LINENUMBER 1438 L4
+    ALOAD 5
+    ICONST_1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sinh (D)D
+    DASTORE
+   L5
+    LINENUMBER 1439 L5
+    ICONST_2
+    ISTORE 6
+   L6
+    ILOAD 6
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L3
+   L7
+    LINENUMBER 1440 L7
+    ALOAD 5
+    ILOAD 6
+    ALOAD 5
+    ILOAD 6
+    ICONST_2
+    ISUB
+    DALOAD
+    DASTORE
+   L8
+    LINENUMBER 1439 L8
+    IINC 6 1
+    GOTO L6
+   L3
+    LINENUMBER 1445 L3
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L9
+    LINENUMBER 1447 L9
+    RETURN
+   L10
+    LOCALVARIABLE i I L6 L3 6
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L10 0
+    LOCALVARIABLE operand [D L0 L10 1
+    LOCALVARIABLE operandOffset I L0 L10 2
+    LOCALVARIABLE result [D L0 L10 3
+    LOCALVARIABLE resultOffset I L0 L10 4
+    LOCALVARIABLE function [D L1 L10 5
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public sinh([DI[DI)V
+   L0
+    LINENUMBER 1461 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1462 L1
+    ALOAD 5
+    ICONST_0
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sinh (D)D
+    DASTORE
+   L2
+    LINENUMBER 1463 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L3
+   L4
+    LINENUMBER 1464 L4
+    ALOAD 5
+    ICONST_1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.cosh (D)D
+    DASTORE
+   L5
+    LINENUMBER 1465 L5
+    ICONST_2
+    ISTORE 6
+   L6
+    ILOAD 6
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L3
+   L7
+    LINENUMBER 1466 L7
+    ALOAD 5
+    ILOAD 6
+    ALOAD 5
+    ILOAD 6
+    ICONST_2
+    ISUB
+    DALOAD
+    DASTORE
+   L8
+    LINENUMBER 1465 L8
+    IINC 6 1
+    GOTO L6
+   L3
+    LINENUMBER 1471 L3
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L9
+    LINENUMBER 1473 L9
+    RETURN
+   L10
+    LOCALVARIABLE i I L6 L3 6
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L10 0
+    LOCALVARIABLE operand [D L0 L10 1
+    LOCALVARIABLE operandOffset I L0 L10 2
+    LOCALVARIABLE result [D L0 L10 3
+    LOCALVARIABLE resultOffset I L0 L10 4
+    LOCALVARIABLE function [D L1 L10 5
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public tanh([DI[DI)V
+   L0
+    LINENUMBER 1487 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1488 L1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.tanh (D)D
+    DSTORE 6
+   L2
+    LINENUMBER 1489 L2
+    ALOAD 5
+    ICONST_0
+    DLOAD 6
+    DASTORE
+   L3
+    LINENUMBER 1491 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L4
+   L5
+    LINENUMBER 1500 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    ICONST_2
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 8
+   L6
+    LINENUMBER 1501 L6
+    ALOAD 8
+    ICONST_1
+    DCONST_1
+    DASTORE
+   L7
+    LINENUMBER 1502 L7
+    DLOAD 6
+    DLOAD 6
+    DMUL
+    DSTORE 9
+   L8
+    LINENUMBER 1503 L8
+    ICONST_1
+    ISTORE 11
+   L9
+    ILOAD 11
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L4
+   L10
+    LINENUMBER 1506 L10
+    DCONST_0
+    DSTORE 12
+   L11
+    LINENUMBER 1507 L11
+    ALOAD 8
+    ILOAD 11
+    ICONST_1
+    IADD
+    ILOAD 11
+    INEG
+    I2D
+    ALOAD 8
+    ILOAD 11
+    DALOAD
+    DMUL
+    DASTORE
+   L12
+    LINENUMBER 1508 L12
+    ILOAD 11
+    ICONST_1
+    IADD
+    ISTORE 14
+   L13
+    ILOAD 14
+    IFLT L14
+   L15
+    LINENUMBER 1509 L15
+    DLOAD 12
+    DLOAD 9
+    DMUL
+    ALOAD 8
+    ILOAD 14
+    DALOAD
+    DADD
+    DSTORE 12
+   L16
+    LINENUMBER 1510 L16
+    ILOAD 14
+    ICONST_2
+    IF_ICMPLE L17
+   L18
+    LINENUMBER 1511 L18
+    ALOAD 8
+    ILOAD 14
+    ICONST_2
+    ISUB
+    ILOAD 14
+    ICONST_1
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 14
+    ICONST_1
+    ISUB
+    DALOAD
+    DMUL
+    ILOAD 14
+    ICONST_3
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 14
+    ICONST_3
+    ISUB
+    DALOAD
+    DMUL
+    DSUB
+    DASTORE
+    GOTO L19
+   L17
+    LINENUMBER 1512 L17
+    ILOAD 14
+    ICONST_2
+    IF_ICMPNE L19
+   L20
+    LINENUMBER 1513 L20
+    ALOAD 8
+    ICONST_0
+    ALOAD 8
+    ICONST_1
+    DALOAD
+    DASTORE
+   L19
+    LINENUMBER 1508 L19
+    IINC 14 -2
+    GOTO L13
+   L14
+    LINENUMBER 1516 L14
+    ILOAD 11
+    ICONST_1
+    IAND
+    IFNE L21
+   L22
+    LINENUMBER 1517 L22
+    DLOAD 12
+    DLOAD 6
+    DMUL
+    DSTORE 12
+   L21
+    LINENUMBER 1520 L21
+    ALOAD 5
+    ILOAD 11
+    DLOAD 12
+    DASTORE
+   L23
+    LINENUMBER 1503 L23
+    IINC 11 1
+    GOTO L9
+   L4
+    LINENUMBER 1526 L4
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L24
+    LINENUMBER 1528 L24
+    RETURN
+   L25
+    LOCALVARIABLE k I L13 L14 14
+    LOCALVARIABLE v D L11 L23 12
+    LOCALVARIABLE n I L9 L4 11
+    LOCALVARIABLE p [D L6 L4 8
+    LOCALVARIABLE t2 D L8 L4 9
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L25 0
+    LOCALVARIABLE operand [D L0 L25 1
+    LOCALVARIABLE operandOffset I L0 L25 2
+    LOCALVARIABLE result [D L0 L25 3
+    LOCALVARIABLE resultOffset I L0 L25 4
+    LOCALVARIABLE function [D L1 L25 5
+    LOCALVARIABLE t D L2 L25 6
+    MAXSTACK = 9
+    MAXLOCALS = 15
+
+  // access flags 0x1
+  public acosh([DI[DI)V
+   L0
+    LINENUMBER 1542 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1543 L1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DSTORE 6
+   L2
+    LINENUMBER 1544 L2
+    ALOAD 5
+    ICONST_0
+    DLOAD 6
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.acosh (D)D
+    DASTORE
+   L3
+    LINENUMBER 1545 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L4
+   L5
+    LINENUMBER 1553 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    NEWARRAY T_DOUBLE
+    ASTORE 8
+   L6
+    LINENUMBER 1554 L6
+    ALOAD 8
+    ICONST_0
+    DCONST_1
+    DASTORE
+   L7
+    LINENUMBER 1555 L7
+    DLOAD 6
+    DLOAD 6
+    DMUL
+    DSTORE 9
+   L8
+    LINENUMBER 1556 L8
+    DCONST_1
+    DLOAD 9
+    DCONST_1
+    DSUB
+    DDIV
+    DSTORE 11
+   L9
+    LINENUMBER 1557 L9
+    DLOAD 11
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    DSTORE 13
+   L10
+    LINENUMBER 1558 L10
+    ALOAD 5
+    ICONST_1
+    DLOAD 13
+    ALOAD 8
+    ICONST_0
+    DALOAD
+    DMUL
+    DASTORE
+   L11
+    LINENUMBER 1559 L11
+    ICONST_2
+    ISTORE 15
+   L12
+    ILOAD 15
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L4
+   L13
+    LINENUMBER 1562 L13
+    DCONST_0
+    DSTORE 16
+   L14
+    LINENUMBER 1563 L14
+    ALOAD 8
+    ILOAD 15
+    ICONST_1
+    ISUB
+    ICONST_1
+    ILOAD 15
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 15
+    ICONST_2
+    ISUB
+    DALOAD
+    DMUL
+    DASTORE
+   L15
+    LINENUMBER 1564 L15
+    ILOAD 15
+    ICONST_1
+    ISUB
+    ISTORE 18
+   L16
+    ILOAD 18
+    IFLT L17
+   L18
+    LINENUMBER 1565 L18
+    DLOAD 16
+    DLOAD 9
+    DMUL
+    ALOAD 8
+    ILOAD 18
+    DALOAD
+    DADD
+    DSTORE 16
+   L19
+    LINENUMBER 1566 L19
+    ILOAD 18
+    ICONST_2
+    IF_ICMPLE L20
+   L21
+    LINENUMBER 1567 L21
+    ALOAD 8
+    ILOAD 18
+    ICONST_2
+    ISUB
+    ICONST_1
+    ILOAD 18
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 18
+    ICONST_1
+    ISUB
+    DALOAD
+    DMUL
+    ILOAD 18
+    ICONST_2
+    ILOAD 15
+    IMUL
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 18
+    ICONST_3
+    ISUB
+    DALOAD
+    DMUL
+    DADD
+    DASTORE
+    GOTO L22
+   L20
+    LINENUMBER 1568 L20
+    ILOAD 18
+    ICONST_2
+    IF_ICMPNE L22
+   L23
+    LINENUMBER 1569 L23
+    ALOAD 8
+    ICONST_0
+    ALOAD 8
+    ICONST_1
+    DALOAD
+    DNEG
+    DASTORE
+   L22
+    LINENUMBER 1564 L22
+    IINC 18 -2
+    GOTO L16
+   L17
+    LINENUMBER 1572 L17
+    ILOAD 15
+    ICONST_1
+    IAND
+    IFNE L24
+   L25
+    LINENUMBER 1573 L25
+    DLOAD 16
+    DLOAD 6
+    DMUL
+    DSTORE 16
+   L24
+    LINENUMBER 1576 L24
+    DLOAD 13
+    DLOAD 11
+    DMUL
+    DSTORE 13
+   L26
+    LINENUMBER 1577 L26
+    ALOAD 5
+    ILOAD 15
+    DLOAD 13
+    DLOAD 16
+    DMUL
+    DASTORE
+   L27
+    LINENUMBER 1559 L27
+    IINC 15 1
+    GOTO L12
+   L4
+    LINENUMBER 1583 L4
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L28
+    LINENUMBER 1585 L28
+    RETURN
+   L29
+    LOCALVARIABLE k I L16 L17 18
+    LOCALVARIABLE v D L14 L27 16
+    LOCALVARIABLE n I L12 L4 15
+    LOCALVARIABLE p [D L6 L4 8
+    LOCALVARIABLE x2 D L8 L4 9
+    LOCALVARIABLE f D L9 L4 11
+    LOCALVARIABLE coeff D L10 L4 13
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L29 0
+    LOCALVARIABLE operand [D L0 L29 1
+    LOCALVARIABLE operandOffset I L0 L29 2
+    LOCALVARIABLE result [D L0 L29 3
+    LOCALVARIABLE resultOffset I L0 L29 4
+    LOCALVARIABLE function [D L1 L29 5
+    LOCALVARIABLE x D L2 L29 6
+    MAXSTACK = 9
+    MAXLOCALS = 19
+
+  // access flags 0x1
+  public asinh([DI[DI)V
+   L0
+    LINENUMBER 1599 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1600 L1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DSTORE 6
+   L2
+    LINENUMBER 1601 L2
+    ALOAD 5
+    ICONST_0
+    DLOAD 6
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.asinh (D)D
+    DASTORE
+   L3
+    LINENUMBER 1602 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L4
+   L5
+    LINENUMBER 1610 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    NEWARRAY T_DOUBLE
+    ASTORE 8
+   L6
+    LINENUMBER 1611 L6
+    ALOAD 8
+    ICONST_0
+    DCONST_1
+    DASTORE
+   L7
+    LINENUMBER 1612 L7
+    DLOAD 6
+    DLOAD 6
+    DMUL
+    DSTORE 9
+   L8
+    LINENUMBER 1613 L8
+    DCONST_1
+    DCONST_1
+    DLOAD 9
+    DADD
+    DDIV
+    DSTORE 11
+   L9
+    LINENUMBER 1614 L9
+    DLOAD 11
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    DSTORE 13
+   L10
+    LINENUMBER 1615 L10
+    ALOAD 5
+    ICONST_1
+    DLOAD 13
+    ALOAD 8
+    ICONST_0
+    DALOAD
+    DMUL
+    DASTORE
+   L11
+    LINENUMBER 1616 L11
+    ICONST_2
+    ISTORE 15
+   L12
+    ILOAD 15
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L4
+   L13
+    LINENUMBER 1619 L13
+    DCONST_0
+    DSTORE 16
+   L14
+    LINENUMBER 1620 L14
+    ALOAD 8
+    ILOAD 15
+    ICONST_1
+    ISUB
+    ICONST_1
+    ILOAD 15
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 15
+    ICONST_2
+    ISUB
+    DALOAD
+    DMUL
+    DASTORE
+   L15
+    LINENUMBER 1621 L15
+    ILOAD 15
+    ICONST_1
+    ISUB
+    ISTORE 18
+   L16
+    ILOAD 18
+    IFLT L17
+   L18
+    LINENUMBER 1622 L18
+    DLOAD 16
+    DLOAD 9
+    DMUL
+    ALOAD 8
+    ILOAD 18
+    DALOAD
+    DADD
+    DSTORE 16
+   L19
+    LINENUMBER 1623 L19
+    ILOAD 18
+    ICONST_2
+    IF_ICMPLE L20
+   L21
+    LINENUMBER 1624 L21
+    ALOAD 8
+    ILOAD 18
+    ICONST_2
+    ISUB
+    ILOAD 18
+    ICONST_1
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 18
+    ICONST_1
+    ISUB
+    DALOAD
+    DMUL
+    ILOAD 18
+    ICONST_2
+    ILOAD 15
+    IMUL
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 18
+    ICONST_3
+    ISUB
+    DALOAD
+    DMUL
+    DADD
+    DASTORE
+    GOTO L22
+   L20
+    LINENUMBER 1625 L20
+    ILOAD 18
+    ICONST_2
+    IF_ICMPNE L22
+   L23
+    LINENUMBER 1626 L23
+    ALOAD 8
+    ICONST_0
+    ALOAD 8
+    ICONST_1
+    DALOAD
+    DASTORE
+   L22
+    LINENUMBER 1621 L22
+    IINC 18 -2
+    GOTO L16
+   L17
+    LINENUMBER 1629 L17
+    ILOAD 15
+    ICONST_1
+    IAND
+    IFNE L24
+   L25
+    LINENUMBER 1630 L25
+    DLOAD 16
+    DLOAD 6
+    DMUL
+    DSTORE 16
+   L24
+    LINENUMBER 1633 L24
+    DLOAD 13
+    DLOAD 11
+    DMUL
+    DSTORE 13
+   L26
+    LINENUMBER 1634 L26
+    ALOAD 5
+    ILOAD 15
+    DLOAD 13
+    DLOAD 16
+    DMUL
+    DASTORE
+   L27
+    LINENUMBER 1616 L27
+    IINC 15 1
+    GOTO L12
+   L4
+    LINENUMBER 1640 L4
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L28
+    LINENUMBER 1642 L28
+    RETURN
+   L29
+    LOCALVARIABLE k I L16 L17 18
+    LOCALVARIABLE v D L14 L27 16
+    LOCALVARIABLE n I L12 L4 15
+    LOCALVARIABLE p [D L6 L4 8
+    LOCALVARIABLE x2 D L8 L4 9
+    LOCALVARIABLE f D L9 L4 11
+    LOCALVARIABLE coeff D L10 L4 13
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L29 0
+    LOCALVARIABLE operand [D L0 L29 1
+    LOCALVARIABLE operandOffset I L0 L29 2
+    LOCALVARIABLE result [D L0 L29 3
+    LOCALVARIABLE resultOffset I L0 L29 4
+    LOCALVARIABLE function [D L1 L29 5
+    LOCALVARIABLE x D L2 L29 6
+    MAXSTACK = 9
+    MAXLOCALS = 19
+
+  // access flags 0x1
+  public atanh([DI[DI)V
+   L0
+    LINENUMBER 1656 L0
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L1
+    LINENUMBER 1657 L1
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    DSTORE 6
+   L2
+    LINENUMBER 1658 L2
+    ALOAD 5
+    ICONST_0
+    DLOAD 6
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.atanh (D)D
+    DASTORE
+   L3
+    LINENUMBER 1659 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IFLE L4
+   L5
+    LINENUMBER 1667 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    NEWARRAY T_DOUBLE
+    ASTORE 8
+   L6
+    LINENUMBER 1668 L6
+    ALOAD 8
+    ICONST_0
+    DCONST_1
+    DASTORE
+   L7
+    LINENUMBER 1669 L7
+    DLOAD 6
+    DLOAD 6
+    DMUL
+    DSTORE 9
+   L8
+    LINENUMBER 1670 L8
+    DCONST_1
+    DCONST_1
+    DLOAD 9
+    DSUB
+    DDIV
+    DSTORE 11
+   L9
+    LINENUMBER 1671 L9
+    DLOAD 11
+    DSTORE 13
+   L10
+    LINENUMBER 1672 L10
+    ALOAD 5
+    ICONST_1
+    DLOAD 13
+    ALOAD 8
+    ICONST_0
+    DALOAD
+    DMUL
+    DASTORE
+   L11
+    LINENUMBER 1673 L11
+    ICONST_2
+    ISTORE 15
+   L12
+    ILOAD 15
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPGT L4
+   L13
+    LINENUMBER 1676 L13
+    DCONST_0
+    DSTORE 16
+   L14
+    LINENUMBER 1677 L14
+    ALOAD 8
+    ILOAD 15
+    ICONST_1
+    ISUB
+    ILOAD 15
+    I2D
+    ALOAD 8
+    ILOAD 15
+    ICONST_2
+    ISUB
+    DALOAD
+    DMUL
+    DASTORE
+   L15
+    LINENUMBER 1678 L15
+    ILOAD 15
+    ICONST_1
+    ISUB
+    ISTORE 18
+   L16
+    ILOAD 18
+    IFLT L17
+   L18
+    LINENUMBER 1679 L18
+    DLOAD 16
+    DLOAD 9
+    DMUL
+    ALOAD 8
+    ILOAD 18
+    DALOAD
+    DADD
+    DSTORE 16
+   L19
+    LINENUMBER 1680 L19
+    ILOAD 18
+    ICONST_2
+    IF_ICMPLE L20
+   L21
+    LINENUMBER 1681 L21
+    ALOAD 8
+    ILOAD 18
+    ICONST_2
+    ISUB
+    ILOAD 18
+    ICONST_1
+    ISUB
+    I2D
+    ALOAD 8
+    ILOAD 18
+    ICONST_1
+    ISUB
+    DALOAD
+    DMUL
+    ICONST_2
+    ILOAD 15
+    IMUL
+    ILOAD 18
+    ISUB
+    ICONST_1
+    IADD
+    I2D
+    ALOAD 8
+    ILOAD 18
+    ICONST_3
+    ISUB
+    DALOAD
+    DMUL
+    DADD
+    DASTORE
+    GOTO L22
+   L20
+    LINENUMBER 1682 L20
+    ILOAD 18
+    ICONST_2
+    IF_ICMPNE L22
+   L23
+    LINENUMBER 1683 L23
+    ALOAD 8
+    ICONST_0
+    ALOAD 8
+    ICONST_1
+    DALOAD
+    DASTORE
+   L22
+    LINENUMBER 1678 L22
+    IINC 18 -2
+    GOTO L16
+   L17
+    LINENUMBER 1686 L17
+    ILOAD 15
+    ICONST_1
+    IAND
+    IFNE L24
+   L25
+    LINENUMBER 1687 L25
+    DLOAD 16
+    DLOAD 6
+    DMUL
+    DSTORE 16
+   L24
+    LINENUMBER 1690 L24
+    DLOAD 13
+    DLOAD 11
+    DMUL
+    DSTORE 13
+   L26
+    LINENUMBER 1691 L26
+    ALOAD 5
+    ILOAD 15
+    DLOAD 13
+    DLOAD 16
+    DMUL
+    DASTORE
+   L27
+    LINENUMBER 1673 L27
+    IINC 15 1
+    GOTO L12
+   L4
+    LINENUMBER 1697 L4
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 5
+    ALOAD 3
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.compose ([DI[D[DI)V
+   L28
+    LINENUMBER 1699 L28
+    RETURN
+   L29
+    LOCALVARIABLE k I L16 L17 18
+    LOCALVARIABLE v D L14 L27 16
+    LOCALVARIABLE n I L12 L4 15
+    LOCALVARIABLE q [D L6 L4 8
+    LOCALVARIABLE x2 D L8 L4 9
+    LOCALVARIABLE f D L9 L4 11
+    LOCALVARIABLE coeff D L10 L4 13
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L29 0
+    LOCALVARIABLE operand [D L0 L29 1
+    LOCALVARIABLE operandOffset I L0 L29 2
+    LOCALVARIABLE result [D L0 L29 3
+    LOCALVARIABLE resultOffset I L0 L29 4
+    LOCALVARIABLE function [D L1 L29 5
+    LOCALVARIABLE x D L2 L29 6
+    MAXSTACK = 9
+    MAXLOCALS = 19
+
+  // access flags 0x1
+  public compose([DI[D[DI)V
+   L0
+    LINENUMBER 1713 L0
+    ICONST_0
+    ISTORE 6
+   L1
+    ILOAD 6
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.compIndirection : [[[I
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 1714 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.compIndirection : [[[I
+    ILOAD 6
+    AALOAD
+    ASTORE 7
+   L4
+    LINENUMBER 1715 L4
+    DCONST_0
+    DSTORE 8
+   L5
+    LINENUMBER 1716 L5
+    ICONST_0
+    ISTORE 10
+   L6
+    ILOAD 10
+    ALOAD 7
+    ARRAYLENGTH
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 1717 L8
+    ALOAD 7
+    ILOAD 10
+    AALOAD
+    ASTORE 11
+   L9
+    LINENUMBER 1718 L9
+    ALOAD 11
+    ICONST_0
+    IALOAD
+    I2D
+    ALOAD 3
+    ALOAD 11
+    ICONST_1
+    IALOAD
+    DALOAD
+    DMUL
+    DSTORE 12
+   L10
+    LINENUMBER 1719 L10
+    ICONST_2
+    ISTORE 14
+   L11
+    ILOAD 14
+    ALOAD 11
+    ARRAYLENGTH
+    IF_ICMPGE L12
+   L13
+    LINENUMBER 1720 L13
+    DLOAD 12
+    ALOAD 1
+    ILOAD 2
+    ALOAD 11
+    ILOAD 14
+    IALOAD
+    IADD
+    DALOAD
+    DMUL
+    DSTORE 12
+   L14
+    LINENUMBER 1719 L14
+    IINC 14 1
+    GOTO L11
+   L12
+    LINENUMBER 1722 L12
+    DLOAD 8
+    DLOAD 12
+    DADD
+    DSTORE 8
+   L15
+    LINENUMBER 1716 L15
+    IINC 10 1
+    GOTO L6
+   L7
+    LINENUMBER 1724 L7
+    ALOAD 4
+    ILOAD 5
+    ILOAD 6
+    IADD
+    DLOAD 8
+    DASTORE
+   L16
+    LINENUMBER 1713 L16
+    IINC 6 1
+    GOTO L1
+   L2
+    LINENUMBER 1726 L2
+    RETURN
+   L17
+    LOCALVARIABLE k I L11 L12 14
+    LOCALVARIABLE mappingIJ [I L9 L15 11
+    LOCALVARIABLE product D L10 L15 12
+    LOCALVARIABLE j I L6 L7 10
+    LOCALVARIABLE mappingI [[I L4 L16 7
+    LOCALVARIABLE r D L5 L16 8
+    LOCALVARIABLE i I L1 L2 6
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L17 0
+    LOCALVARIABLE operand [D L0 L17 1
+    LOCALVARIABLE operandOffset I L0 L17 2
+    LOCALVARIABLE f [D L0 L17 3
+    LOCALVARIABLE result [D L0 L17 4
+    LOCALVARIABLE resultOffset I L0 L17 5
+    MAXSTACK = 6
+    MAXLOCALS = 15
+
+  // access flags 0x81
+  public varargs taylor([DI[D)D
+   L0
+    LINENUMBER 1735 L0
+    DCONST_0
+    DSTORE 4
+   L1
+    LINENUMBER 1736 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getSize ()I
+    ICONST_1
+    ISUB
+    ISTORE 6
+   L2
+    ILOAD 6
+    IFLT L3
+   L4
+    LINENUMBER 1737 L4
+    ALOAD 0
+    ILOAD 6
+    INVOKEVIRTUAL org/apache/commons/math3/analysis/differentiation/DSCompiler.getPartialDerivativeOrders (I)[I
+    ASTORE 7
+   L5
+    LINENUMBER 1738 L5
+    ALOAD 1
+    ILOAD 2
+    ILOAD 6
+    IADD
+    DALOAD
+    DSTORE 8
+   L6
+    LINENUMBER 1739 L6
+    ICONST_0
+    ISTORE 10
+   L7
+    ILOAD 10
+    ALOAD 7
+    ARRAYLENGTH
+    IF_ICMPGE L8
+   L9
+    LINENUMBER 1740 L9
+    ALOAD 7
+    ILOAD 10
+    IALOAD
+    IFLE L10
+   L11
+    LINENUMBER 1741 L11
+    DLOAD 8
+    ALOAD 3
+    ILOAD 10
+    DALOAD
+    ALOAD 7
+    ILOAD 10
+    IALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.pow (DI)D
+    ALOAD 7
+    ILOAD 10
+    IALOAD
+    INVOKESTATIC org/apache/commons/math3/util/ArithmeticUtils.factorial (I)J
+    L2D
+    DDIV
+    DMUL
+    DSTORE 8
+   L10
+    LINENUMBER 1739 L10
+    IINC 10 1
+    GOTO L7
+   L8
+    LINENUMBER 1744 L8
+    DLOAD 4
+    DLOAD 8
+    DADD
+    DSTORE 4
+   L12
+    LINENUMBER 1736 L12
+    IINC 6 -1
+    GOTO L2
+   L3
+    LINENUMBER 1746 L3
+    DLOAD 4
+    DRETURN
+   L13
+    LOCALVARIABLE k I L7 L8 10
+    LOCALVARIABLE orders [I L5 L12 7
+    LOCALVARIABLE term D L6 L12 8
+    LOCALVARIABLE i I L2 L3 6
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L13 0
+    LOCALVARIABLE ds [D L0 L13 1
+    LOCALVARIABLE dsOffset I L0 L13 2
+    LOCALVARIABLE delta [D L0 L13 3
+    LOCALVARIABLE value D L1 L13 4
+    MAXSTACK = 6
+    MAXLOCALS = 11
+
+  // access flags 0x1
+  public checkCompatibility(Lorg/apache/commons/math3/analysis/differentiation/DSCompiler;)V throws org/apache/commons/math3/exception/DimensionMismatchException 
+   L0
+    LINENUMBER 1755 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.parameters : I
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.parameters : I
+    IF_ICMPEQ L1
+   L2
+    LINENUMBER 1756 L2
+    NEW org/apache/commons/math3/exception/DimensionMismatchException
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.parameters : I
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.parameters : I
+    INVOKESPECIAL org/apache/commons/math3/exception/DimensionMismatchException.<init> (II)V
+    ATHROW
+   L1
+    LINENUMBER 1758 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    IF_ICMPEQ L3
+   L4
+    LINENUMBER 1759 L4
+    NEW org/apache/commons/math3/exception/DimensionMismatchException
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/analysis/differentiation/DSCompiler.order : I
+    INVOKESPECIAL org/apache/commons/math3/exception/DimensionMismatchException.<init> (II)V
+    ATHROW
+   L3
+    LINENUMBER 1761 L3
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L5 0
+    LOCALVARIABLE compiler Lorg/apache/commons/math3/analysis/differentiation/DSCompiler; L0 L5 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x8
+  static <clinit>()V
+   L0
+    LINENUMBER 128 L0
+    NEW java/util/concurrent/atomic/AtomicReference
+    DUP
+    ACONST_NULL
+    INVOKESPECIAL java/util/concurrent/atomic/AtomicReference.<init> (Ljava/lang/Object;)V
+    PUTSTATIC org/apache/commons/math3/analysis/differentiation/DSCompiler.compilers : Ljava/util/concurrent/atomic/AtomicReference;
+    RETURN
+    MAXSTACK = 3
+    MAXLOCALS = 0
+}
+

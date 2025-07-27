@@ -1,0 +1,2555 @@
+// class version 51.0 (51)
+// access flags 0x31
+public final class org/apache/commons/math/util/MathUtils {
+
+  // compiled from: MathUtils.java
+
+  // access flags 0x19
+  public final static D EPSILON = 1.1102230246251565E-16
+
+  // access flags 0x19
+  public final static D SAFE_MIN = 2.2250738585072014E-308
+
+  // access flags 0x1A
+  private final static B NB = -1
+
+  // access flags 0x1A
+  private final static S NS = -1
+
+  // access flags 0x1A
+  private final static B PB = 1
+
+  // access flags 0x1A
+  private final static S PS = 1
+
+  // access flags 0x1A
+  private final static B ZB = 0
+
+  // access flags 0x1A
+  private final static S ZS = 0
+
+  // access flags 0x1A
+  private final static D TWO_PI = 6.283185307179586
+
+  // access flags 0x1A
+  private final static [J factorials
+
+  // access flags 0x2
+  private <init>()V
+   L0
+    LINENUMBER 63 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 64 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/util/MathUtils; L0 L2 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static addAndCheck(II)I
+   L0
+    LINENUMBER 77 L0
+    ILOAD 0
+    I2L
+    ILOAD 1
+    I2L
+    LADD
+    LSTORE 2
+   L1
+    LINENUMBER 78 L1
+    LLOAD 2
+    LDC -2147483648
+    LCMP
+    IFLT L2
+    LLOAD 2
+    LDC 2147483647
+    LCMP
+    IFLE L3
+   L2
+    LINENUMBER 79 L2
+   FRAME FULL [I I J] []
+    NEW java/lang/ArithmeticException
+    DUP
+    LDC "overflow: add"
+    INVOKESPECIAL java/lang/ArithmeticException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L3
+    LINENUMBER 81 L3
+   FRAME FULL [I I J] []
+    LLOAD 2
+    L2I
+    IRETURN
+   L4
+    LOCALVARIABLE x I L0 L4 0
+    LOCALVARIABLE y I L0 L4 1
+    LOCALVARIABLE s J L1 L4 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static addAndCheck(JJ)J
+   L0
+    LINENUMBER 95 L0
+    LLOAD 0
+    LLOAD 2
+    LDC "overflow: add"
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.addAndCheck (JJLjava/lang/String;)J
+    LRETURN
+   L1
+    LOCALVARIABLE a J L0 L1 0
+    LOCALVARIABLE b J L0 L1 2
+    MAXSTACK = 5
+    MAXLOCALS = 4
+
+  // access flags 0xA
+  private static addAndCheck(JJLjava/lang/String;)J
+   L0
+    LINENUMBER 111 L0
+    LLOAD 0
+    LLOAD 2
+    LCMP
+    IFLE L1
+   L2
+    LINENUMBER 113 L2
+    LLOAD 2
+    LLOAD 0
+    ALOAD 4
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.addAndCheck (JJLjava/lang/String;)J
+    LSTORE 5
+   L3
+    GOTO L4
+   L1
+    LINENUMBER 117 L1
+   FRAME FULL [J J java/lang/String] []
+    LLOAD 0
+    LCONST_0
+    LCMP
+    IFGE L5
+   L6
+    LINENUMBER 118 L6
+    LLOAD 2
+    LCONST_0
+    LCMP
+    IFGE L7
+   L8
+    LINENUMBER 120 L8
+    LDC -9223372036854775808
+    LLOAD 2
+    LSUB
+    LLOAD 0
+    LCMP
+    IFGT L9
+   L10
+    LINENUMBER 121 L10
+    LLOAD 0
+    LLOAD 2
+    LADD
+    LSTORE 5
+   L11
+    GOTO L4
+   L9
+    LINENUMBER 123 L9
+   FRAME FULL [J J java/lang/String] []
+    NEW java/lang/ArithmeticException
+    DUP
+    ALOAD 4
+    INVOKESPECIAL java/lang/ArithmeticException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L7
+    LINENUMBER 127 L7
+   FRAME FULL [J J java/lang/String] []
+    LLOAD 0
+    LLOAD 2
+    LADD
+    LSTORE 5
+   L12
+    GOTO L4
+   L5
+    LINENUMBER 134 L5
+   FRAME FULL [J J java/lang/String] []
+    LLOAD 0
+    LDC 9223372036854775807
+    LLOAD 2
+    LSUB
+    LCMP
+    IFGT L13
+   L14
+    LINENUMBER 135 L14
+    LLOAD 0
+    LLOAD 2
+    LADD
+    LSTORE 5
+   L15
+    GOTO L4
+   L13
+    LINENUMBER 137 L13
+   FRAME FULL [J J java/lang/String] []
+    NEW java/lang/ArithmeticException
+    DUP
+    ALOAD 4
+    INVOKESPECIAL java/lang/ArithmeticException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L4
+    LINENUMBER 141 L4
+   FRAME FULL [J J java/lang/String J] []
+    LLOAD 5
+    LRETURN
+   L16
+    LOCALVARIABLE ret J L3 L1 5
+    LOCALVARIABLE ret J L11 L9 5
+    LOCALVARIABLE ret J L12 L5 5
+    LOCALVARIABLE ret J L15 L13 5
+    LOCALVARIABLE a J L0 L16 0
+    LOCALVARIABLE b J L0 L16 2
+    LOCALVARIABLE msg Ljava/lang/String; L0 L16 4
+    LOCALVARIABLE ret J L4 L16 5
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x9
+  public static binomialCoefficient(II)J
+   L0
+    LINENUMBER 170 L0
+    ILOAD 0
+    ILOAD 1
+    IF_ICMPGE L1
+   L2
+    LINENUMBER 171 L2
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "must have n >= k for binomial coefficient (n,k)"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 174 L1
+   FRAME FULL [I I] []
+    ILOAD 0
+    IFGE L3
+   L4
+    LINENUMBER 175 L4
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "must have n >= 0 for binomial coefficient (n,k)"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L3
+    LINENUMBER 178 L3
+   FRAME FULL [I I] []
+    ILOAD 0
+    ILOAD 1
+    IF_ICMPEQ L5
+    ILOAD 1
+    IFNE L6
+   L5
+    LINENUMBER 179 L5
+   FRAME FULL [I I] []
+    LCONST_1
+    LRETURN
+   L6
+    LINENUMBER 181 L6
+   FRAME FULL [I I] []
+    ILOAD 1
+    ICONST_1
+    IF_ICMPEQ L7
+    ILOAD 1
+    ILOAD 0
+    ICONST_1
+    ISUB
+    IF_ICMPNE L8
+   L7
+    LINENUMBER 182 L7
+   FRAME FULL [I I] []
+    ILOAD 0
+    I2L
+    LRETURN
+   L8
+    LINENUMBER 185 L8
+   FRAME FULL [I I] []
+    ILOAD 1
+    ILOAD 0
+    ICONST_2
+    IDIV
+    IF_ICMPLE L9
+   L10
+    LINENUMBER 186 L10
+    ILOAD 0
+    ILOAD 0
+    ILOAD 1
+    ISUB
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.binomialCoefficient (II)J
+    LRETURN
+   L9
+    LINENUMBER 193 L9
+   FRAME FULL [I I] []
+    LCONST_1
+    LSTORE 2
+   L11
+    LINENUMBER 194 L11
+    ILOAD 0
+    BIPUSH 61
+    IF_ICMPGT L12
+   L13
+    LINENUMBER 196 L13
+    ICONST_1
+    ISTORE 4
+   L14
+    ILOAD 0
+    ILOAD 1
+    ISUB
+    ICONST_1
+    IADD
+    ISTORE 5
+   L15
+   FRAME FULL [I I J I I] []
+    ILOAD 4
+    ILOAD 1
+    IF_ICMPGT L16
+   L17
+    LINENUMBER 197 L17
+    LLOAD 2
+    ILOAD 5
+    I2L
+    LMUL
+    ILOAD 4
+    I2L
+    LDIV
+    LSTORE 2
+   L18
+    LINENUMBER 196 L18
+    IINC 5 1
+    IINC 4 1
+    GOTO L15
+   L16
+   FRAME FULL [I I J I I] []
+    GOTO L19
+   L12
+    LINENUMBER 199 L12
+   FRAME FULL [I I J] []
+    ILOAD 0
+    BIPUSH 66
+    IF_ICMPGT L20
+   L21
+    LINENUMBER 202 L21
+    ICONST_1
+    ISTORE 4
+   L22
+    ILOAD 0
+    ILOAD 1
+    ISUB
+    ICONST_1
+    IADD
+    ISTORE 5
+   L23
+   FRAME FULL [I I J I I] []
+    ILOAD 4
+    ILOAD 1
+    POP2
+   L24
+    LINENUMBER 209 L24
+    ILOAD 5
+    ILOAD 4
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.gcd (II)I
+    I2L
+    LSTORE 6
+   L25
+    LINENUMBER 210 L25
+    LLOAD 2
+    ILOAD 4
+    I2L
+    LLOAD 6
+    LDIV
+    LDIV
+    ILOAD 5
+    I2L
+    LLOAD 6
+    LDIV
+    LMUL
+    LSTORE 2
+   L26
+    LINENUMBER 202 L26
+    IINC 5 1
+    IINC 4 1
+    GOTO L23
+   L27
+   FRAME FULL [] [java/lang/Throwable]
+    NOP
+    NOP
+    ATHROW
+   L20
+    LINENUMBER 216 L20
+   FRAME FULL [I I J] []
+    ICONST_1
+    ISTORE 4
+   L28
+    ILOAD 0
+    ILOAD 1
+    ISUB
+    ICONST_1
+    IADD
+    ISTORE 5
+   L29
+   FRAME FULL [I I J I I] []
+    ILOAD 4
+    ILOAD 1
+    IF_ICMPGT L19
+   L30
+    LINENUMBER 217 L30
+    ILOAD 5
+    ILOAD 4
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.gcd (II)I
+    I2L
+    LSTORE 6
+   L31
+    LINENUMBER 218 L31
+    LLOAD 2
+    ILOAD 4
+    I2L
+    LLOAD 6
+    LDIV
+    LDIV
+    ILOAD 5
+    I2L
+    LLOAD 6
+    LDIV
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.mulAndCheck (JJ)J
+    LSTORE 2
+   L32
+    LINENUMBER 216 L32
+    IINC 5 1
+    IINC 4 1
+    GOTO L29
+   L19
+    LINENUMBER 221 L19
+   FRAME FULL [I I J I I] []
+    LLOAD 2
+    LRETURN
+   L33
+    LOCALVARIABLE j I L14 L16 4
+    LOCALVARIABLE i I L15 L16 5
+    LOCALVARIABLE d J L25 L26 6
+    LOCALVARIABLE j I L22 L27 4
+    LOCALVARIABLE i I L23 L27 5
+    LOCALVARIABLE d J L31 L32 6
+    LOCALVARIABLE j I L28 L19 4
+    LOCALVARIABLE i I L29 L19 5
+    LOCALVARIABLE n I L0 L33 0
+    LOCALVARIABLE k I L0 L33 1
+    LOCALVARIABLE result J L11 L33 2
+    MAXSTACK = 6
+    MAXLOCALS = 8
+
+  // access flags 0x9
+  public static binomialCoefficientDouble(II)D
+   L0
+    LINENUMBER 247 L0
+    ILOAD 0
+    ILOAD 1
+    IF_ICMPGE L1
+   L2
+    LINENUMBER 248 L2
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "must have n >= k for binomial coefficient (n,k)"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 251 L1
+   FRAME FULL [I I] []
+    ILOAD 0
+    IFGE L3
+   L4
+    LINENUMBER 252 L4
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "must have n >= 0 for binomial coefficient (n,k)"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L3
+    LINENUMBER 255 L3
+   FRAME FULL [I I] []
+    ILOAD 0
+    ILOAD 1
+    IF_ICMPEQ L5
+    ILOAD 1
+    IFNE L6
+   L5
+    LINENUMBER 256 L5
+   FRAME FULL [I I] []
+    DCONST_1
+    DRETURN
+   L6
+    LINENUMBER 258 L6
+   FRAME FULL [I I] []
+    ILOAD 1
+    ICONST_1
+    IF_ICMPEQ L7
+    ILOAD 1
+    ILOAD 0
+    ICONST_1
+    ISUB
+    IF_ICMPNE L8
+   L7
+    LINENUMBER 259 L7
+   FRAME FULL [I I] []
+    ILOAD 0
+    I2D
+    DRETURN
+   L8
+    LINENUMBER 261 L8
+   FRAME FULL [I I] []
+    ILOAD 1
+    ILOAD 0
+    ICONST_2
+    IDIV
+    IF_ICMPLE L9
+   L10
+    LINENUMBER 262 L10
+    ILOAD 0
+    ILOAD 0
+    ILOAD 1
+    ISUB
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.binomialCoefficientDouble (II)D
+    DRETURN
+   L9
+    LINENUMBER 264 L9
+   FRAME FULL [I I] []
+    ILOAD 0
+    BIPUSH 67
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 265 L12
+    ILOAD 0
+    ILOAD 1
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.binomialCoefficient (II)J
+    L2D
+    DRETURN
+   L11
+    LINENUMBER 268 L11
+   FRAME FULL [I I] []
+    DCONST_1
+    DSTORE 2
+   L13
+    LINENUMBER 269 L13
+    ICONST_1
+    ISTORE 4
+   L14
+   FRAME FULL [I I D I] []
+    ILOAD 4
+    ILOAD 1
+    IF_ICMPGT L15
+   L16
+    LINENUMBER 270 L16
+    DLOAD 2
+    ILOAD 0
+    ILOAD 1
+    ISUB
+    ILOAD 4
+    IADD
+    I2D
+    ILOAD 4
+    I2D
+    DDIV
+    DMUL
+    DSTORE 2
+   L17
+    LINENUMBER 269 L17
+    IINC 4 1
+    GOTO L14
+   L15
+    LINENUMBER 273 L15
+   FRAME FULL [I I D I] []
+    DLOAD 2
+    LDC 0.5
+    DADD
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DRETURN
+   L18
+    LOCALVARIABLE i I L14 L15 4
+    LOCALVARIABLE n I L0 L18 0
+    LOCALVARIABLE k I L0 L18 1
+    LOCALVARIABLE result D L13 L18 2
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0x9
+  public static binomialCoefficientLog(II)D
+   L0
+    LINENUMBER 295 L0
+    ILOAD 0
+    ILOAD 1
+    IF_ICMPGE L1
+   L2
+    LINENUMBER 296 L2
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "must have n >= k for binomial coefficient (n,k)"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 299 L1
+   FRAME FULL [I I] []
+    ILOAD 0
+    IFGE L3
+   L4
+    LINENUMBER 300 L4
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "must have n >= 0 for binomial coefficient (n,k)"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L3
+    LINENUMBER 303 L3
+   FRAME FULL [I I] []
+    ILOAD 0
+    ILOAD 1
+    IF_ICMPEQ L5
+    ILOAD 1
+    IFNE L6
+   L5
+    LINENUMBER 304 L5
+   FRAME FULL [I I] []
+    DCONST_0
+    DRETURN
+   L6
+    LINENUMBER 306 L6
+   FRAME FULL [I I] []
+    ILOAD 1
+    ICONST_1
+    IF_ICMPEQ L7
+    ILOAD 1
+    ILOAD 0
+    ICONST_1
+    ISUB
+    IF_ICMPNE L8
+   L7
+    LINENUMBER 307 L7
+   FRAME FULL [I I] []
+    ILOAD 0
+    I2D
+    INVOKESTATIC java/lang/Math.log (D)D
+    DRETURN
+   L8
+    LINENUMBER 314 L8
+   FRAME FULL [I I] []
+    ILOAD 0
+    BIPUSH 67
+    IF_ICMPGE L9
+   L10
+    LINENUMBER 315 L10
+    ILOAD 0
+    ILOAD 1
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.binomialCoefficient (II)J
+    L2D
+    INVOKESTATIC java/lang/Math.log (D)D
+    DRETURN
+   L9
+    LINENUMBER 322 L9
+   FRAME FULL [I I] []
+    ILOAD 0
+    SIPUSH 1030
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 323 L12
+    ILOAD 0
+    ILOAD 1
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.binomialCoefficientDouble (II)D
+    INVOKESTATIC java/lang/Math.log (D)D
+    DRETURN
+   L11
+    LINENUMBER 329 L11
+   FRAME FULL [I I] []
+    DCONST_0
+    DSTORE 2
+   L13
+    LINENUMBER 332 L13
+    ILOAD 1
+    ICONST_1
+    IADD
+    ISTORE 4
+   L14
+   FRAME FULL [I I D I] []
+    ILOAD 4
+    ILOAD 0
+    IF_ICMPGT L15
+   L16
+    LINENUMBER 333 L16
+    DLOAD 2
+    ILOAD 4
+    I2D
+    INVOKESTATIC java/lang/Math.log (D)D
+    DADD
+    DSTORE 2
+   L17
+    LINENUMBER 332 L17
+    IINC 4 1
+    GOTO L14
+   L15
+    LINENUMBER 337 L15
+   FRAME FULL [I I D I] []
+    ICONST_2
+    ISTORE 4
+   L18
+   FRAME FULL [I I D I] []
+    ILOAD 4
+    ILOAD 0
+    ILOAD 1
+    ISUB
+    IF_ICMPGT L19
+   L20
+    LINENUMBER 338 L20
+    DLOAD 2
+    ILOAD 4
+    I2D
+    INVOKESTATIC java/lang/Math.log (D)D
+    DSUB
+    DSTORE 2
+   L21
+    LINENUMBER 337 L21
+    IINC 4 1
+    GOTO L18
+   L19
+    LINENUMBER 341 L19
+   FRAME FULL [I I D I] []
+    DLOAD 2
+    DRETURN
+   L22
+    LOCALVARIABLE i I L14 L15 4
+    LOCALVARIABLE i I L18 L19 4
+    LOCALVARIABLE n I L0 L22 0
+    LOCALVARIABLE k I L0 L22 1
+    LOCALVARIABLE logSum D L13 L22 2
+    MAXSTACK = 4
+    MAXLOCALS = 5
+
+  // access flags 0x9
+  public static cosh(D)D
+   L0
+    LINENUMBER 352 L0
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.exp (D)D
+    DLOAD 0
+    DNEG
+    INVOKESTATIC java/lang/Math.exp (D)D
+    DADD
+    LDC 2.0
+    DDIV
+    DRETURN
+   L1
+    LOCALVARIABLE x D L0 L1 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static equals(DD)Z
+   L0
+    LINENUMBER 364 L0
+    DLOAD 0
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L1
+    DLOAD 2
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFNE L2
+   L1
+   FRAME FULL [D D] []
+    DLOAD 0
+    DLOAD 2
+    DCMPL
+    IFNE L3
+   L2
+   FRAME FULL [D D] []
+    ICONST_1
+    GOTO L4
+   L3
+   FRAME FULL [D D] []
+    ICONST_0
+   L4
+   FRAME FULL [D D] [I]
+    IRETURN
+   L5
+    LOCALVARIABLE x D L0 L5 0
+    LOCALVARIABLE y D L0 L5 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static equals([D[D)Z
+   L0
+    LINENUMBER 378 L0
+    ALOAD 0
+    IFNULL L1
+    ALOAD 1
+    IFNONNULL L2
+   L1
+    LINENUMBER 379 L1
+   FRAME FULL [[D [D] []
+    ALOAD 0
+    IFNONNULL L3
+    ICONST_1
+    GOTO L4
+   L3
+   FRAME FULL [[D [D] []
+    ICONST_0
+   L4
+   FRAME FULL [[D [D] [I]
+    ALOAD 1
+    IFNONNULL L5
+    ICONST_1
+    GOTO L6
+   L5
+   FRAME FULL [[D [D] [I]
+    ICONST_0
+   L6
+   FRAME FULL [[D [D] [I I]
+    IXOR
+    IFNE L7
+    ICONST_1
+    GOTO L8
+   L7
+   FRAME FULL [[D [D] []
+    ICONST_0
+   L8
+   FRAME FULL [[D [D] [I]
+    IRETURN
+   L2
+    LINENUMBER 381 L2
+   FRAME FULL [[D [D] []
+    ALOAD 0
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPEQ L9
+   L10
+    LINENUMBER 382 L10
+    ICONST_0
+    IRETURN
+   L9
+    LINENUMBER 384 L9
+   FRAME FULL [[D [D] []
+    ICONST_0
+    ISTORE 2
+   L11
+   FRAME FULL [[D [D I] []
+    ILOAD 2
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L12
+   L13
+    LINENUMBER 385 L13
+    ALOAD 0
+    ILOAD 2
+    DALOAD
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.equals (DD)Z
+    IFNE L14
+   L15
+    LINENUMBER 386 L15
+    ICONST_0
+    IRETURN
+   L14
+    LINENUMBER 384 L14
+   FRAME FULL [[D [D I] []
+    IINC 2 1
+    GOTO L11
+   L12
+    LINENUMBER 389 L12
+   FRAME FULL [[D [D I] []
+    ICONST_1
+    IRETURN
+   L16
+    LOCALVARIABLE i I L11 L12 2
+    LOCALVARIABLE x [D L0 L16 0
+    LOCALVARIABLE y [D L0 L16 1
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static factorial(I)J
+   L0
+    LINENUMBER 422 L0
+    ILOAD 0
+    IFGE L1
+   L2
+    LINENUMBER 423 L2
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "must have n >= 0 for n!"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 425 L1
+   FRAME FULL [I] []
+    ILOAD 0
+    BIPUSH 20
+    IF_ICMPLE L3
+   L4
+    LINENUMBER 426 L4
+    NEW java/lang/ArithmeticException
+    DUP
+    LDC "factorial value is too large to fit in a long"
+    INVOKESPECIAL java/lang/ArithmeticException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L3
+    LINENUMBER 429 L3
+   FRAME FULL [I] []
+    GETSTATIC org/apache/commons/math/util/MathUtils.factorials : [J
+    ILOAD 0
+    LALOAD
+    LRETURN
+   L5
+    LOCALVARIABLE n I L0 L5 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static factorialDouble(I)D
+   L0
+    LINENUMBER 453 L0
+    ILOAD 0
+    IFGE L1
+   L2
+    LINENUMBER 454 L2
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "must have n >= 0 for n!"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 456 L1
+   FRAME FULL [I] []
+    ILOAD 0
+    BIPUSH 21
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 457 L4
+    ILOAD 0
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.factorial (I)J
+    L2D
+    DRETURN
+   L3
+    LINENUMBER 459 L3
+   FRAME FULL [I] []
+    ILOAD 0
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.factorialLog (I)D
+    INVOKESTATIC java/lang/Math.exp (D)D
+    LDC 0.5
+    DADD
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DRETURN
+   L5
+    LOCALVARIABLE n I L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static factorialLog(I)D
+   L0
+    LINENUMBER 476 L0
+    ILOAD 0
+    IFGE L1
+   L2
+    LINENUMBER 477 L2
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "must have n > 0 for n!"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 479 L1
+   FRAME FULL [I] []
+    ILOAD 0
+    BIPUSH 21
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 480 L4
+    ILOAD 0
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.factorial (I)J
+    L2D
+    INVOKESTATIC java/lang/Math.log (D)D
+    DRETURN
+   L3
+    LINENUMBER 482 L3
+   FRAME FULL [I] []
+    DCONST_0
+    DSTORE 1
+   L5
+    LINENUMBER 483 L5
+    ICONST_2
+    ISTORE 3
+   L6
+   FRAME FULL [I D I] []
+    ILOAD 3
+    ILOAD 0
+    IF_ICMPGT L7
+   L8
+    LINENUMBER 484 L8
+    DLOAD 1
+    ILOAD 3
+    I2D
+    INVOKESTATIC java/lang/Math.log (D)D
+    DADD
+    DSTORE 1
+   L9
+    LINENUMBER 483 L9
+    IINC 3 1
+    GOTO L6
+   L7
+    LINENUMBER 486 L7
+   FRAME FULL [I D I] []
+    DLOAD 1
+    DRETURN
+   L10
+    LOCALVARIABLE i I L6 L7 3
+    LOCALVARIABLE n I L0 L10 0
+    LOCALVARIABLE logSum D L5 L10 1
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static gcd(II)I
+   L0
+    LINENUMBER 503 L0
+    ILOAD 0
+    IFEQ L1
+    ILOAD 1
+    IFNE L2
+   L1
+    LINENUMBER 504 L1
+   FRAME FULL [I I] []
+    ILOAD 0
+    INVOKESTATIC java/lang/Math.abs (I)I
+    ILOAD 1
+    INVOKESTATIC java/lang/Math.abs (I)I
+    IADD
+    IRETURN
+   L2
+    LINENUMBER 511 L2
+   FRAME FULL [I I] []
+    ILOAD 0
+    IFLE L3
+   L4
+    LINENUMBER 512 L4
+    ILOAD 0
+    INEG
+    ISTORE 0
+   L3
+    LINENUMBER 514 L3
+   FRAME FULL [I I] []
+    ILOAD 1
+    IFLE L5
+   L6
+    LINENUMBER 515 L6
+    ILOAD 1
+    INEG
+    ISTORE 1
+   L5
+    LINENUMBER 518 L5
+   FRAME FULL [I I] []
+    ICONST_0
+    ISTORE 2
+   L7
+    LINENUMBER 519 L7
+   FRAME FULL [I I I] []
+    ILOAD 0
+    ICONST_1
+    IAND
+    IFNE L8
+    ILOAD 1
+    ICONST_1
+    IAND
+    IFNE L8
+    ILOAD 2
+    BIPUSH 31
+    IF_ICMPGE L8
+   L9
+    LINENUMBER 521 L9
+    ILOAD 0
+    ICONST_2
+    IDIV
+    ISTORE 0
+   L10
+    LINENUMBER 522 L10
+    ILOAD 1
+    ICONST_2
+    IDIV
+    ISTORE 1
+   L11
+    LINENUMBER 523 L11
+    IINC 2 1
+    GOTO L7
+   L8
+    LINENUMBER 525 L8
+   FRAME FULL [I I I] []
+    ILOAD 2
+    BIPUSH 31
+    IF_ICMPNE L12
+   L13
+    LINENUMBER 526 L13
+    NEW java/lang/ArithmeticException
+    DUP
+    LDC "overflow: gcd is 2^31"
+    INVOKESPECIAL java/lang/ArithmeticException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L12
+    LINENUMBER 530 L12
+   FRAME FULL [I I I] []
+    ILOAD 0
+    ICONST_1
+    IAND
+    ICONST_1
+    IF_ICMPNE L14
+    ILOAD 1
+    GOTO L15
+   L14
+   FRAME FULL [I I I] []
+    ILOAD 0
+    ICONST_2
+    IDIV
+    INEG
+   L15
+   FRAME FULL [I I I] [I]
+    ISTORE 3
+   L16
+    LINENUMBER 536 L16
+   FRAME FULL [I I I I] []
+    ILOAD 3
+    ICONST_1
+    IAND
+    IFNE L17
+   L18
+    LINENUMBER 537 L18
+    ILOAD 3
+    ICONST_2
+    IDIV
+    ISTORE 3
+    GOTO L16
+   L17
+    LINENUMBER 540 L17
+   FRAME FULL [I I I I] []
+    ILOAD 3
+    IFLE L19
+   L20
+    LINENUMBER 541 L20
+    ILOAD 3
+    INEG
+    ISTORE 0
+    GOTO L21
+   L19
+    LINENUMBER 543 L19
+   FRAME FULL [I I I I] []
+    ILOAD 3
+    ISTORE 1
+   L21
+    LINENUMBER 546 L21
+   FRAME FULL [I I I I] []
+    ILOAD 1
+    ILOAD 0
+    ISUB
+    ICONST_2
+    IDIV
+    ISTORE 3
+   L22
+    LINENUMBER 549 L22
+    ILOAD 3
+    IFNE L16
+   L23
+    LINENUMBER 550 L23
+    ILOAD 0
+    INEG
+    ICONST_1
+    ILOAD 2
+    ISHL
+    IMUL
+    IRETURN
+   L24
+    LOCALVARIABLE u I L0 L24 0
+    LOCALVARIABLE v I L0 L24 1
+    LOCALVARIABLE k I L7 L24 2
+    LOCALVARIABLE t I L16 L24 3
+    MAXSTACK = 3
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static hash(D)I
+   L0
+    LINENUMBER 560 L0
+    NEW java/lang/Double
+    DUP
+    DLOAD 0
+    INVOKESPECIAL java/lang/Double.<init> (D)V
+    INVOKEVIRTUAL java/lang/Double.hashCode ()I
+    IRETURN
+   L1
+    LOCALVARIABLE value D L0 L1 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static hash([D)I
+   L0
+    LINENUMBER 571 L0
+    ALOAD 0
+    INVOKESTATIC java/util/Arrays.hashCode ([D)I
+    IRETURN
+   L1
+    LOCALVARIABLE value [D L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static indicator(B)B
+   L0
+    LINENUMBER 582 L0
+    ILOAD 0
+    IFLT L1
+    ICONST_1
+    GOTO L2
+   L1
+   FRAME FULL [I] []
+    ICONST_M1
+   L2
+   FRAME FULL [I] [I]
+    IRETURN
+   L3
+    LOCALVARIABLE x B L0 L3 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static indicator(D)D
+   L0
+    LINENUMBER 594 L0
+    DLOAD 0
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L1
+   L2
+    LINENUMBER 595 L2
+    LDC NaN
+    DRETURN
+   L1
+    LINENUMBER 597 L1
+   FRAME FULL [D] []
+    DLOAD 0
+    DCONST_0
+    DCMPL
+    IFLT L3
+    DCONST_1
+    GOTO L4
+   L3
+   FRAME FULL [D] []
+    LDC -1.0
+   L4
+   FRAME FULL [D] [D]
+    DRETURN
+   L5
+    LOCALVARIABLE x D L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static indicator(F)F
+   L0
+    LINENUMBER 608 L0
+    FLOAD 0
+    INVOKESTATIC java/lang/Float.isNaN (F)Z
+    IFEQ L1
+   L2
+    LINENUMBER 609 L2
+    LDC NaN
+    FRETURN
+   L1
+    LINENUMBER 611 L1
+   FRAME FULL [F] []
+    FLOAD 0
+    FCONST_0
+    FCMPL
+    IFLT L3
+    FCONST_1
+    GOTO L4
+   L3
+   FRAME FULL [F] []
+    LDC -1.0
+   L4
+   FRAME FULL [F] [F]
+    FRETURN
+   L5
+    LOCALVARIABLE x F L0 L5 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static indicator(I)I
+   L0
+    LINENUMBER 621 L0
+    ILOAD 0
+    IFLT L1
+    ICONST_1
+    GOTO L2
+   L1
+   FRAME FULL [I] []
+    ICONST_M1
+   L2
+   FRAME FULL [I] [I]
+    IRETURN
+   L3
+    LOCALVARIABLE x I L0 L3 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static indicator(J)J
+   L0
+    LINENUMBER 631 L0
+    LLOAD 0
+    LCONST_0
+    LCMP
+    IFLT L1
+    LCONST_1
+    GOTO L2
+   L1
+   FRAME FULL [J] []
+    LDC -1
+   L2
+   FRAME FULL [J] [J]
+    LRETURN
+   L3
+    LOCALVARIABLE x J L0 L3 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static indicator(S)S
+   L0
+    LINENUMBER 642 L0
+    ILOAD 0
+    IFLT L1
+    ICONST_1
+    GOTO L2
+   L1
+   FRAME FULL [I] []
+    ICONST_M1
+   L2
+   FRAME FULL [I] [I]
+    IRETURN
+   L3
+    LOCALVARIABLE x S L0 L3 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static lcm(II)I
+   L0
+    LINENUMBER 655 L0
+    ILOAD 0
+    ILOAD 0
+    ILOAD 1
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.gcd (II)I
+    IDIV
+    ILOAD 1
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.mulAndCheck (II)I
+    INVOKESTATIC java/lang/Math.abs (I)I
+    IRETURN
+   L1
+    LOCALVARIABLE a I L0 L1 0
+    LOCALVARIABLE b I L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static log(DD)D
+   L0
+    LINENUMBER 675 L0
+    DLOAD 2
+    INVOKESTATIC java/lang/Math.log (D)D
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.log (D)D
+    DDIV
+    DRETURN
+   L1
+    LOCALVARIABLE base D L0 L1 0
+    LOCALVARIABLE x D L0 L1 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static mulAndCheck(II)I
+   L0
+    LINENUMBER 689 L0
+    ILOAD 0
+    I2L
+    ILOAD 1
+    I2L
+    LMUL
+    LSTORE 2
+   L1
+    LINENUMBER 690 L1
+    LLOAD 2
+    LDC -2147483648
+    LCMP
+    IFLT L2
+    LLOAD 2
+    LDC 2147483647
+    LCMP
+    IFLE L3
+   L2
+    LINENUMBER 691 L2
+   FRAME FULL [I I J] []
+    NEW java/lang/ArithmeticException
+    DUP
+    LDC "overflow: mul"
+    INVOKESPECIAL java/lang/ArithmeticException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L3
+    LINENUMBER 693 L3
+   FRAME FULL [I I J] []
+    LLOAD 2
+    L2I
+    IRETURN
+   L4
+    LOCALVARIABLE x I L0 L4 0
+    LOCALVARIABLE y I L0 L4 1
+    LOCALVARIABLE m J L1 L4 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static mulAndCheck(JJ)J
+   L0
+    LINENUMBER 708 L0
+    LDC "overflow: multiply"
+    ASTORE 6
+   L1
+    LINENUMBER 709 L1
+    LLOAD 0
+    LLOAD 2
+    LCMP
+    IFLE L2
+   L3
+    LINENUMBER 711 L3
+    LLOAD 2
+    LLOAD 0
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.mulAndCheck (JJ)J
+    LSTORE 4
+   L4
+    GOTO L5
+   L2
+    LINENUMBER 713 L2
+   FRAME FULL [J J T T java/lang/String] []
+    LLOAD 0
+    LCONST_0
+    LCMP
+    IFGE L6
+   L7
+    LINENUMBER 714 L7
+    LLOAD 2
+    LCONST_0
+    LCMP
+    IFGE L8
+   L9
+    LINENUMBER 716 L9
+    LLOAD 0
+    LDC 9223372036854775807
+    LLOAD 2
+    LDIV
+    LCMP
+    IFLT L10
+   L11
+    LINENUMBER 717 L11
+    LLOAD 0
+    LLOAD 2
+    LMUL
+    LSTORE 4
+   L12
+    GOTO L5
+   L10
+    LINENUMBER 719 L10
+   FRAME FULL [J J T T java/lang/String] []
+    NEW java/lang/ArithmeticException
+    DUP
+    ALOAD 6
+    INVOKESPECIAL java/lang/ArithmeticException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L8
+    LINENUMBER 721 L8
+   FRAME FULL [J J T T java/lang/String] []
+    LLOAD 2
+    LCONST_0
+    LCMP
+    IFLE L13
+   L14
+    LINENUMBER 723 L14
+    LDC -9223372036854775808
+    LLOAD 2
+    LDIV
+    LLOAD 0
+    LCMP
+    IFGT L15
+   L16
+    LINENUMBER 724 L16
+    LLOAD 0
+    LLOAD 2
+    LMUL
+    LSTORE 4
+   L17
+    GOTO L5
+   L15
+    LINENUMBER 726 L15
+   FRAME FULL [J J T T java/lang/String] []
+    NEW java/lang/ArithmeticException
+    DUP
+    ALOAD 6
+    INVOKESPECIAL java/lang/ArithmeticException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L13
+    LINENUMBER 731 L13
+   FRAME FULL [J J T T java/lang/String] []
+    LCONST_0
+    LSTORE 4
+   L18
+    GOTO L5
+   L6
+    LINENUMBER 733 L6
+   FRAME FULL [J J T T java/lang/String] []
+    LLOAD 0
+    LCONST_0
+    LCMP
+    IFLE L19
+   L20
+    LINENUMBER 738 L20
+    LLOAD 0
+    LDC 9223372036854775807
+    LLOAD 2
+    LDIV
+    LCMP
+    IFGT L21
+   L22
+    LINENUMBER 739 L22
+    LLOAD 0
+    LLOAD 2
+    LMUL
+    LSTORE 4
+   L23
+    GOTO L5
+   L21
+    LINENUMBER 741 L21
+   FRAME FULL [J J T T java/lang/String] []
+    NEW java/lang/ArithmeticException
+    DUP
+    ALOAD 6
+    INVOKESPECIAL java/lang/ArithmeticException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L19
+    LINENUMBER 745 L19
+   FRAME FULL [J J T T java/lang/String] []
+    LCONST_0
+    LSTORE 4
+   L5
+    LINENUMBER 748 L5
+   FRAME FULL [J J J java/lang/String] []
+    LLOAD 4
+    LRETURN
+   L24
+    LOCALVARIABLE ret J L4 L2 4
+    LOCALVARIABLE ret J L12 L10 4
+    LOCALVARIABLE ret J L17 L15 4
+    LOCALVARIABLE ret J L18 L6 4
+    LOCALVARIABLE ret J L23 L21 4
+    LOCALVARIABLE a J L0 L24 0
+    LOCALVARIABLE b J L0 L24 2
+    LOCALVARIABLE ret J L5 L24 4
+    LOCALVARIABLE msg Ljava/lang/String; L1 L24 6
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x9
+  public static nextAfter(DD)D
+   L0
+    LINENUMBER 771 L0
+    DLOAD 0
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFNE L1
+    DLOAD 0
+    INVOKESTATIC java/lang/Double.isInfinite (D)Z
+    IFEQ L2
+   L1
+    LINENUMBER 772 L1
+   FRAME FULL [D D] []
+    DLOAD 0
+    DRETURN
+   L2
+    LINENUMBER 773 L2
+   FRAME FULL [D D] []
+    DLOAD 0
+    DCONST_0
+    DCMPL
+    IFNE L3
+   L4
+    LINENUMBER 774 L4
+    DLOAD 2
+    DCONST_0
+    DCMPG
+    IFGE L5
+    LDC -4.9E-324
+    GOTO L6
+   L5
+   FRAME FULL [D D] []
+    LDC 4.9E-324
+   L6
+   FRAME FULL [D D] [D]
+    DRETURN
+   L3
+    LINENUMBER 780 L3
+   FRAME FULL [D D] []
+    DLOAD 0
+    INVOKESTATIC java/lang/Double.doubleToLongBits (D)J
+    LSTORE 4
+   L7
+    LINENUMBER 781 L7
+    LLOAD 4
+    LDC -9223372036854775808
+    LAND
+    LSTORE 6
+   L8
+    LINENUMBER 782 L8
+    LLOAD 4
+    LDC 9218868437227405312
+    LAND
+    LSTORE 8
+   L9
+    LINENUMBER 783 L9
+    LLOAD 4
+    LDC 4503599627370495
+    LAND
+    LSTORE 10
+   L10
+    LINENUMBER 785 L10
+    DLOAD 0
+    DLOAD 2
+    DLOAD 0
+    DSUB
+    DMUL
+    DCONST_0
+    DCMPL
+    IFLT L11
+   L12
+    LINENUMBER 787 L12
+    LLOAD 10
+    LDC 4503599627370495
+    LCMP
+    IFNE L13
+   L14
+    LINENUMBER 788 L14
+    LLOAD 6
+    LLOAD 8
+    LDC 4503599627370496
+    LADD
+    LOR
+    INVOKESTATIC java/lang/Double.longBitsToDouble (J)D
+    DRETURN
+   L13
+    LINENUMBER 791 L13
+   FRAME FULL [D D J J J J] []
+    LLOAD 6
+    LLOAD 8
+    LOR
+    LLOAD 10
+    LCONST_1
+    LADD
+    LOR
+    INVOKESTATIC java/lang/Double.longBitsToDouble (J)D
+    DRETURN
+   L11
+    LINENUMBER 796 L11
+   FRAME FULL [D D J J J J] []
+    LLOAD 10
+    LCONST_0
+    LCMP
+    IFNE L15
+   L16
+    LINENUMBER 797 L16
+    LLOAD 6
+    LLOAD 8
+    LDC 4503599627370496
+    LSUB
+    LOR
+    LDC 4503599627370495
+    LOR
+    INVOKESTATIC java/lang/Double.longBitsToDouble (J)D
+    DRETURN
+   L15
+    LINENUMBER 801 L15
+   FRAME FULL [D D J J J J] []
+    LLOAD 6
+    LLOAD 8
+    LOR
+    LLOAD 10
+    LCONST_1
+    LSUB
+    LOR
+    INVOKESTATIC java/lang/Double.longBitsToDouble (J)D
+    DRETURN
+   L17
+    LOCALVARIABLE d D L0 L17 0
+    LOCALVARIABLE direction D L0 L17 2
+    LOCALVARIABLE bits J L7 L17 4
+    LOCALVARIABLE sign J L8 L17 6
+    LOCALVARIABLE exponent J L9 L17 8
+    LOCALVARIABLE mantissa J L10 L17 10
+    MAXSTACK = 6
+    MAXLOCALS = 12
+
+  // access flags 0x9
+  public static scalb(DI)D
+   L0
+    LINENUMBER 820 L0
+    DLOAD 0
+    DCONST_0
+    DCMPL
+    IFEQ L1
+    DLOAD 0
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFNE L1
+    DLOAD 0
+    INVOKESTATIC java/lang/Double.isInfinite (D)Z
+    IFEQ L2
+   L1
+    LINENUMBER 821 L1
+   FRAME FULL [D I] []
+    DLOAD 0
+    DRETURN
+   L2
+    LINENUMBER 825 L2
+   FRAME FULL [D I] []
+    DLOAD 0
+    INVOKESTATIC java/lang/Double.doubleToLongBits (D)J
+    LSTORE 3
+   L3
+    LINENUMBER 826 L3
+    LLOAD 3
+    LDC 9218868437227405312
+    LAND
+    LSTORE 5
+   L4
+    LINENUMBER 827 L4
+    LLOAD 3
+    LDC -9218868437227405313
+    LAND
+    LSTORE 7
+   L5
+    LINENUMBER 830 L5
+    LLOAD 7
+    LLOAD 5
+    ILOAD 2
+    I2L
+    BIPUSH 52
+    LSHL
+    LADD
+    LOR
+    LSTORE 9
+   L6
+    LINENUMBER 831 L6
+    LLOAD 9
+    INVOKESTATIC java/lang/Double.longBitsToDouble (J)D
+    DRETURN
+   L7
+    LOCALVARIABLE d D L0 L7 0
+    LOCALVARIABLE scaleFactor I L0 L7 2
+    LOCALVARIABLE bits J L3 L7 3
+    LOCALVARIABLE exponent J L4 L7 5
+    LOCALVARIABLE rest J L5 L7 7
+    LOCALVARIABLE newBits J L6 L7 9
+    MAXSTACK = 7
+    MAXLOCALS = 11
+
+  // access flags 0x9
+  public static normalizeAngle(DD)D
+   L0
+    LINENUMBER 855 L0
+    DLOAD 0
+    LDC 6.283185307179586
+    DLOAD 0
+    LDC 3.141592653589793
+    DADD
+    DLOAD 2
+    DSUB
+    LDC 6.283185307179586
+    DDIV
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DMUL
+    DSUB
+    DRETURN
+   L1
+    LOCALVARIABLE a D L0 L1 0
+    LOCALVARIABLE center D L0 L1 2
+    MAXSTACK = 8
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static round(DI)D
+   L0
+    LINENUMBER 868 L0
+    DLOAD 0
+    ILOAD 2
+    ICONST_4
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.round (DII)D
+    DRETURN
+   L1
+    LOCALVARIABLE x D L0 L1 0
+    LOCALVARIABLE scale I L0 L1 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static round(DII)D
+    TRYCATCHBLOCK L0 L1 L2 java/lang/NumberFormatException
+   L0
+    LINENUMBER 885 L0
+    NEW java/math/BigDecimal
+    DUP
+    DLOAD 0
+    INVOKESTATIC java/lang/Double.toString (D)Ljava/lang/String;
+    INVOKESPECIAL java/math/BigDecimal.<init> (Ljava/lang/String;)V
+    ILOAD 2
+    ILOAD 3
+    INVOKEVIRTUAL java/math/BigDecimal.setScale (II)Ljava/math/BigDecimal;
+    INVOKEVIRTUAL java/math/BigDecimal.doubleValue ()D
+   L1
+    DRETURN
+   L2
+    LINENUMBER 889 L2
+   FRAME FULL [D I I] [java/lang/NumberFormatException]
+    ASTORE 4
+   L3
+    LINENUMBER 890 L3
+    DLOAD 0
+    INVOKESTATIC java/lang/Double.isInfinite (D)Z
+    IFEQ L4
+   L5
+    LINENUMBER 891 L5
+    DLOAD 0
+    DRETURN
+   L4
+    LINENUMBER 893 L4
+   FRAME FULL [D I I java/lang/NumberFormatException] []
+    LDC NaN
+    DRETURN
+   L6
+    LOCALVARIABLE ex Ljava/lang/NumberFormatException; L3 L6 4
+    LOCALVARIABLE x D L0 L6 0
+    LOCALVARIABLE scale I L0 L6 2
+    LOCALVARIABLE roundingMethod I L0 L6 3
+    MAXSTACK = 4
+    MAXLOCALS = 5
+
+  // access flags 0x9
+  public static round(FI)F
+   L0
+    LINENUMBER 908 L0
+    FLOAD 0
+    ILOAD 1
+    ICONST_4
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.round (FII)F
+    FRETURN
+   L1
+    LOCALVARIABLE x F L0 L1 0
+    LOCALVARIABLE scale I L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static round(FII)F
+   L0
+    LINENUMBER 924 L0
+    FLOAD 0
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.indicator (F)F
+    FSTORE 3
+   L1
+    LINENUMBER 925 L1
+    LDC 10.0
+    ILOAD 1
+    I2D
+    INVOKESTATIC java/lang/Math.pow (DD)D
+    D2F
+    FLOAD 3
+    FMUL
+    FSTORE 4
+   L2
+    LINENUMBER 926 L2
+    FLOAD 0
+    FLOAD 4
+    FMUL
+    F2D
+    FLOAD 3
+    F2D
+    ILOAD 2
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.roundUnscaled (DDI)D
+    D2F
+    FLOAD 4
+    FDIV
+    FRETURN
+   L3
+    LOCALVARIABLE x F L0 L3 0
+    LOCALVARIABLE scale I L0 L3 1
+    LOCALVARIABLE roundingMethod I L0 L3 2
+    LOCALVARIABLE sign F L1 L3 3
+    LOCALVARIABLE factor F L2 L3 4
+    MAXSTACK = 5
+    MAXLOCALS = 5
+
+  // access flags 0xA
+  private static roundUnscaled(DDI)D
+   L0
+    LINENUMBER 943 L0
+    ILOAD 4
+    TABLESWITCH
+      0: L1
+      1: L2
+      2: L3
+      3: L4
+      4: L5
+      5: L6
+      6: L7
+      7: L8
+      default: L9
+   L3
+    LINENUMBER 945 L3
+   FRAME FULL [D D I] []
+    DLOAD 2
+    LDC -1.0
+    DCMPL
+    IFNE L10
+   L11
+    LINENUMBER 946 L11
+    DLOAD 0
+    LDC -Infinity
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.nextAfter (DD)D
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DSTORE 0
+    GOTO L12
+   L10
+    LINENUMBER 948 L10
+   FRAME FULL [D D I] []
+    DLOAD 0
+    LDC Infinity
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.nextAfter (DD)D
+    INVOKESTATIC java/lang/Math.ceil (D)D
+    DSTORE 0
+   L13
+    LINENUMBER 950 L13
+    GOTO L12
+   L2
+    LINENUMBER 952 L2
+   FRAME FULL [D D I] []
+    DLOAD 0
+    LDC -Infinity
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.nextAfter (DD)D
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DSTORE 0
+   L14
+    LINENUMBER 953 L14
+    GOTO L12
+   L4
+    LINENUMBER 955 L4
+   FRAME FULL [D D I] []
+    DLOAD 2
+    LDC -1.0
+    DCMPL
+    IFNE L15
+   L16
+    LINENUMBER 956 L16
+    DLOAD 0
+    LDC Infinity
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.nextAfter (DD)D
+    INVOKESTATIC java/lang/Math.ceil (D)D
+    DSTORE 0
+    GOTO L12
+   L15
+    LINENUMBER 958 L15
+   FRAME FULL [D D I] []
+    DLOAD 0
+    LDC -Infinity
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.nextAfter (DD)D
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DSTORE 0
+   L17
+    LINENUMBER 960 L17
+    GOTO L12
+   L6
+    LINENUMBER 962 L6
+   FRAME FULL [D D I] []
+    DLOAD 0
+    LDC -Infinity
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.nextAfter (DD)D
+    DSTORE 0
+   L18
+    LINENUMBER 963 L18
+    DLOAD 0
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DSUB
+    DSTORE 5
+   L19
+    LINENUMBER 964 L19
+    DLOAD 5
+    LDC 0.5
+    DCMPL
+    IFLE L20
+   L21
+    LINENUMBER 965 L21
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.ceil (D)D
+    DSTORE 0
+    GOTO L12
+   L20
+    LINENUMBER 967 L20
+   FRAME FULL [D D I D] []
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DSTORE 0
+   L22
+    LINENUMBER 969 L22
+    GOTO L12
+   L7
+    LINENUMBER 972 L7
+   FRAME FULL [D D I] []
+    DLOAD 0
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DSUB
+    DSTORE 5
+   L23
+    LINENUMBER 973 L23
+    DLOAD 5
+    LDC 0.5
+    DCMPL
+    IFLE L24
+   L25
+    LINENUMBER 974 L25
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.ceil (D)D
+    DSTORE 0
+    GOTO L12
+   L24
+    LINENUMBER 975 L24
+   FRAME FULL [D D I D] []
+    DLOAD 5
+    LDC 0.5
+    DCMPG
+    IFGE L26
+   L27
+    LINENUMBER 976 L27
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DSTORE 0
+    GOTO L12
+   L26
+    LINENUMBER 979 L26
+   FRAME FULL [D D I D] []
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.floor (D)D
+    LDC 2.0
+    DDIV
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.floor (D)D
+    LDC 2.0
+    DDIV
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DCMPL
+    IFNE L28
+   L29
+    LINENUMBER 981 L29
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DSTORE 0
+    GOTO L12
+   L28
+    LINENUMBER 983 L28
+   FRAME FULL [D D I D] []
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.ceil (D)D
+    DSTORE 0
+   L30
+    LINENUMBER 986 L30
+    GOTO L12
+   L5
+    LINENUMBER 989 L5
+   FRAME FULL [D D I] []
+    DLOAD 0
+    LDC Infinity
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.nextAfter (DD)D
+    DSTORE 0
+   L31
+    LINENUMBER 990 L31
+    DLOAD 0
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DSUB
+    DSTORE 5
+   L32
+    LINENUMBER 991 L32
+    DLOAD 5
+    LDC 0.5
+    DCMPL
+    IFLT L33
+   L34
+    LINENUMBER 992 L34
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.ceil (D)D
+    DSTORE 0
+    GOTO L12
+   L33
+    LINENUMBER 994 L33
+   FRAME FULL [D D I D] []
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DSTORE 0
+   L35
+    LINENUMBER 996 L35
+    GOTO L12
+   L8
+    LINENUMBER 999 L8
+   FRAME FULL [D D I] []
+    DLOAD 0
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DCMPL
+    IFEQ L12
+   L36
+    LINENUMBER 1000 L36
+    NEW java/lang/ArithmeticException
+    DUP
+    LDC "Inexact result from rounding"
+    INVOKESPECIAL java/lang/ArithmeticException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 1004 L1
+   FRAME FULL [D D I] []
+    DLOAD 0
+    LDC Infinity
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.nextAfter (DD)D
+    INVOKESTATIC java/lang/Math.ceil (D)D
+    DSTORE 0
+   L37
+    LINENUMBER 1005 L37
+    GOTO L12
+   L9
+    LINENUMBER 1007 L9
+   FRAME FULL [D D I] []
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "Invalid rounding method."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L12
+    LINENUMBER 1009 L12
+   FRAME FULL [D D I] []
+    DLOAD 0
+    DRETURN
+   L38
+    LOCALVARIABLE fraction D L19 L7 5
+    LOCALVARIABLE fraction D L23 L5 5
+    LOCALVARIABLE fraction D L32 L8 5
+    LOCALVARIABLE unscaled D L0 L38 0
+    LOCALVARIABLE sign D L0 L38 2
+    LOCALVARIABLE roundingMethod I L0 L38 4
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x9
+  public static sign(B)B
+   L0
+    LINENUMBER 1023 L0
+    ILOAD 0
+    IFNE L1
+    ICONST_0
+    GOTO L2
+   L1
+   FRAME FULL [I] []
+    ILOAD 0
+    IFLE L3
+    ICONST_1
+    GOTO L2
+   L3
+   FRAME FULL [I] []
+    ICONST_M1
+   L2
+   FRAME FULL [I] [I]
+    IRETURN
+   L4
+    LOCALVARIABLE x B L0 L4 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static sign(D)D
+   L0
+    LINENUMBER 1039 L0
+    DLOAD 0
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L1
+   L2
+    LINENUMBER 1040 L2
+    LDC NaN
+    DRETURN
+   L1
+    LINENUMBER 1042 L1
+   FRAME FULL [D] []
+    DLOAD 0
+    DCONST_0
+    DCMPL
+    IFNE L3
+    DCONST_0
+    GOTO L4
+   L3
+   FRAME FULL [D] []
+    DLOAD 0
+    DCONST_0
+    DCMPL
+    IFLE L5
+    DCONST_1
+    GOTO L4
+   L5
+   FRAME FULL [D] []
+    LDC -1.0
+   L4
+   FRAME FULL [D] [D]
+    DRETURN
+   L6
+    LOCALVARIABLE x D L0 L6 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static sign(F)F
+   L0
+    LINENUMBER 1057 L0
+    FLOAD 0
+    INVOKESTATIC java/lang/Float.isNaN (F)Z
+    IFEQ L1
+   L2
+    LINENUMBER 1058 L2
+    LDC NaN
+    FRETURN
+   L1
+    LINENUMBER 1060 L1
+   FRAME FULL [F] []
+    FLOAD 0
+    FCONST_0
+    FCMPL
+    IFNE L3
+    FCONST_0
+    GOTO L4
+   L3
+   FRAME FULL [F] []
+    FLOAD 0
+    FCONST_0
+    FCMPL
+    IFLE L5
+    FCONST_1
+    GOTO L4
+   L5
+   FRAME FULL [F] []
+    LDC -1.0
+   L4
+   FRAME FULL [F] [F]
+    FRETURN
+   L6
+    LOCALVARIABLE x F L0 L6 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static sign(I)I
+   L0
+    LINENUMBER 1074 L0
+    ILOAD 0
+    IFNE L1
+    ICONST_0
+    GOTO L2
+   L1
+   FRAME FULL [I] []
+    ILOAD 0
+    IFLE L3
+    ICONST_1
+    GOTO L2
+   L3
+   FRAME FULL [I] []
+    ICONST_M1
+   L2
+   FRAME FULL [I] [I]
+    IRETURN
+   L4
+    LOCALVARIABLE x I L0 L4 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static sign(J)J
+   L0
+    LINENUMBER 1088 L0
+    LLOAD 0
+    LCONST_0
+    LCMP
+    IFNE L1
+    LCONST_0
+    GOTO L2
+   L1
+   FRAME FULL [J] []
+    LLOAD 0
+    LCONST_0
+    LCMP
+    IFLE L3
+    LCONST_1
+    GOTO L2
+   L3
+   FRAME FULL [J] []
+    LDC -1
+   L2
+   FRAME FULL [J] [J]
+    LRETURN
+   L4
+    LOCALVARIABLE x J L0 L4 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static sign(S)S
+   L0
+    LINENUMBER 1103 L0
+    ILOAD 0
+    IFNE L1
+    ICONST_0
+    GOTO L2
+   L1
+   FRAME FULL [I] []
+    ILOAD 0
+    IFLE L3
+    ICONST_1
+    GOTO L2
+   L3
+   FRAME FULL [I] []
+    ICONST_M1
+   L2
+   FRAME FULL [I] [I]
+    IRETURN
+   L4
+    LOCALVARIABLE x S L0 L4 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static sinh(D)D
+   L0
+    LINENUMBER 1114 L0
+    DLOAD 0
+    INVOKESTATIC java/lang/Math.exp (D)D
+    DLOAD 0
+    DNEG
+    INVOKESTATIC java/lang/Math.exp (D)D
+    DSUB
+    LDC 2.0
+    DDIV
+    DRETURN
+   L1
+    LOCALVARIABLE x D L0 L1 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static subAndCheck(II)I
+   L0
+    LINENUMBER 1128 L0
+    ILOAD 0
+    I2L
+    ILOAD 1
+    I2L
+    LSUB
+    LSTORE 2
+   L1
+    LINENUMBER 1129 L1
+    LLOAD 2
+    LDC -2147483648
+    LCMP
+    IFLT L2
+    LLOAD 2
+    LDC 2147483647
+    LCMP
+    IFLE L3
+   L2
+    LINENUMBER 1130 L2
+   FRAME FULL [I I J] []
+    NEW java/lang/ArithmeticException
+    DUP
+    LDC "overflow: subtract"
+    INVOKESPECIAL java/lang/ArithmeticException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L3
+    LINENUMBER 1132 L3
+   FRAME FULL [I I J] []
+    LLOAD 2
+    L2I
+    IRETURN
+   L4
+    LOCALVARIABLE x I L0 L4 0
+    LOCALVARIABLE y I L0 L4 1
+    LOCALVARIABLE s J L1 L4 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static subAndCheck(JJ)J
+   L0
+    LINENUMBER 1147 L0
+    LDC "overflow: subtract"
+    ASTORE 6
+   L1
+    LINENUMBER 1148 L1
+    LLOAD 2
+    LDC -9223372036854775808
+    LCMP
+    IFNE L2
+   L3
+    LINENUMBER 1149 L3
+    LLOAD 0
+    LCONST_0
+    LCMP
+    IFGE L4
+   L5
+    LINENUMBER 1150 L5
+    LLOAD 0
+    LLOAD 2
+    LSUB
+    LSTORE 4
+   L6
+    GOTO L7
+   L4
+    LINENUMBER 1152 L4
+   FRAME FULL [J J T T java/lang/String] []
+    NEW java/lang/ArithmeticException
+    DUP
+    ALOAD 6
+    INVOKESPECIAL java/lang/ArithmeticException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L2
+    LINENUMBER 1156 L2
+   FRAME FULL [J J T T java/lang/String] []
+    LLOAD 0
+    LLOAD 2
+    LNEG
+    ALOAD 6
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.addAndCheck (JJLjava/lang/String;)J
+    LSTORE 4
+   L7
+    LINENUMBER 1158 L7
+   FRAME FULL [J J J java/lang/String] []
+    LLOAD 4
+    LRETURN
+   L8
+    LOCALVARIABLE ret J L6 L4 4
+    LOCALVARIABLE a J L0 L8 0
+    LOCALVARIABLE b J L0 L8 2
+    LOCALVARIABLE ret J L7 L8 4
+    LOCALVARIABLE msg Ljava/lang/String; L1 L8 6
+    MAXSTACK = 5
+    MAXLOCALS = 7
+
+  // access flags 0x8
+  static <clinit>()V
+   L0
+    LINENUMBER 393 L0
+    BIPUSH 21
+    NEWARRAY T_LONG
+    DUP
+    ICONST_0
+    LCONST_1
+    LASTORE
+    DUP
+    ICONST_1
+    LCONST_1
+    LASTORE
+    DUP
+    ICONST_2
+    LDC 2
+    LASTORE
+    DUP
+    ICONST_3
+    LDC 6
+    LASTORE
+    DUP
+    ICONST_4
+    LDC 24
+    LASTORE
+    DUP
+    ICONST_5
+    LDC 120
+    LASTORE
+    DUP
+    BIPUSH 6
+    LDC 720
+    LASTORE
+    DUP
+    BIPUSH 7
+    LDC 5040
+    LASTORE
+    DUP
+    BIPUSH 8
+    LDC 40320
+    LASTORE
+    DUP
+    BIPUSH 9
+    LDC 362880
+    LASTORE
+    DUP
+    BIPUSH 10
+    LDC 3628800
+    LASTORE
+    DUP
+    BIPUSH 11
+    LDC 39916800
+    LASTORE
+    DUP
+    BIPUSH 12
+    LDC 479001600
+    LASTORE
+    DUP
+    BIPUSH 13
+    LDC 6227020800
+    LASTORE
+    DUP
+    BIPUSH 14
+    LDC 87178291200
+    LASTORE
+    DUP
+    BIPUSH 15
+    LDC 1307674368000
+    LASTORE
+    DUP
+    BIPUSH 16
+    LDC 20922789888000
+    LASTORE
+    DUP
+    BIPUSH 17
+    LDC 355687428096000
+    LASTORE
+    DUP
+    BIPUSH 18
+    LDC 6402373705728000
+    LASTORE
+    DUP
+    BIPUSH 19
+    LDC 121645100408832000
+    LASTORE
+    DUP
+    BIPUSH 20
+    LDC 2432902008176640000
+    LASTORE
+    PUTSTATIC org/apache/commons/math/util/MathUtils.factorials : [J
+    RETURN
+    MAXSTACK = 5
+    MAXLOCALS = 0
+}
+

@@ -1,0 +1,947 @@
+// class version 49.0 (49)
+// access flags 0x21
+// signature <T::Lorg/apache/commons/math/stat/clustering/Clusterable<TT;>;>Ljava/lang/Object;
+// declaration: org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer<T extends org.apache.commons.math.stat.clustering.Clusterable<T>>
+public class org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer {
+
+  // compiled from: KMeansPlusPlusClusterer.java
+  // access flags 0x1008
+  static synthetic INNERCLASS org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer$1 org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer null
+  // access flags 0x4019
+  public final static enum INNERCLASS org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer$EmptyClusterStrategy org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer EmptyClusterStrategy
+
+  // access flags 0x12
+  private final Ljava/util/Random; random
+
+  // access flags 0x12
+  private final Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer$EmptyClusterStrategy; emptyStrategy
+
+  // access flags 0x1
+  public <init>(Ljava/util/Random;)V
+   L0
+    LINENUMBER 69 L0
+    ALOAD 0
+    ALOAD 1
+    GETSTATIC org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer$EmptyClusterStrategy.LARGEST_VARIANCE : Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer$EmptyClusterStrategy;
+    INVOKESPECIAL org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.<init> (Ljava/util/Random;Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer$EmptyClusterStrategy;)V
+   L1
+    LINENUMBER 70 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer; L0 L2 0
+    // signature Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer<TT;>;
+    // declaration: this extends org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer<T>
+    LOCALVARIABLE random Ljava/util/Random; L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>(Ljava/util/Random;Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer$EmptyClusterStrategy;)V
+   L0
+    LINENUMBER 78 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 79 L1
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.random : Ljava/util/Random;
+   L2
+    LINENUMBER 80 L2
+    ALOAD 0
+    ALOAD 2
+    PUTFIELD org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.emptyStrategy : Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer$EmptyClusterStrategy;
+   L3
+    LINENUMBER 81 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer; L0 L4 0
+    // signature Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer<TT;>;
+    // declaration: this extends org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer<T>
+    LOCALVARIABLE random Ljava/util/Random; L0 L4 1
+    LOCALVARIABLE emptyStrategy Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer$EmptyClusterStrategy; L0 L4 2
+    MAXSTACK = 2
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  // signature (Ljava/util/Collection<TT;>;II)Ljava/util/List<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;
+  // declaration: java.util.List<org.apache.commons.math.stat.clustering.Cluster<T>> cluster(java.util.Collection<T>, int, int)
+  public cluster(Ljava/util/Collection;II)Ljava/util/List;
+   L0
+    LINENUMBER 95 L0
+    ALOAD 1
+    ILOAD 2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.random : Ljava/util/Random;
+    INVOKESTATIC org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.chooseInitialCenters (Ljava/util/Collection;ILjava/util/Random;)Ljava/util/List;
+    ASTORE 4
+   L1
+    LINENUMBER 96 L1
+    ALOAD 4
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.assignPointsToClusters (Ljava/util/Collection;Ljava/util/Collection;)V
+   L2
+    LINENUMBER 99 L2
+    ILOAD 3
+    IFGE L3
+    LDC 2147483647
+    GOTO L4
+   L3
+    ILOAD 3
+   L4
+    ISTORE 5
+   L5
+    LINENUMBER 100 L5
+    ICONST_0
+    ISTORE 6
+   L6
+    ILOAD 6
+    ILOAD 5
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 101 L8
+    ICONST_0
+    ISTORE 7
+   L9
+    LINENUMBER 102 L9
+    NEW java/util/ArrayList
+    DUP
+    INVOKESPECIAL java/util/ArrayList.<init> ()V
+    ASTORE 8
+   L10
+    LINENUMBER 103 L10
+    ALOAD 4
+    INVOKEINTERFACE java/util/List.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 9
+   L11
+    ALOAD 9
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L12
+    ALOAD 9
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Cluster
+    ASTORE 10
+   L13
+    LINENUMBER 105 L13
+    ALOAD 10
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getPoints ()Ljava/util/List;
+    INVOKEINTERFACE java/util/List.isEmpty ()Z (itf)
+    IFEQ L14
+   L15
+    LINENUMBER 106 L15
+    GETSTATIC org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer$1.$SwitchMap$org$apache$commons$math$stat$clustering$KMeansPlusPlusClusterer$EmptyClusterStrategy : [I
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.emptyStrategy : Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer$EmptyClusterStrategy;
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer$EmptyClusterStrategy.ordinal ()I
+    IALOAD
+    TABLESWITCH
+      1: L16
+      2: L17
+      3: L18
+      default: L19
+   L16
+    LINENUMBER 108 L16
+    ALOAD 0
+    ALOAD 4
+    INVOKESPECIAL org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.getPointFromLargestVarianceCluster (Ljava/util/Collection;)Lorg/apache/commons/math/stat/clustering/Clusterable;
+    ASTORE 11
+   L20
+    LINENUMBER 109 L20
+    GOTO L21
+   L17
+    LINENUMBER 111 L17
+    ALOAD 0
+    ALOAD 4
+    INVOKESPECIAL org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.getPointFromLargestNumberCluster (Ljava/util/Collection;)Lorg/apache/commons/math/stat/clustering/Clusterable;
+    ASTORE 11
+   L22
+    LINENUMBER 112 L22
+    GOTO L21
+   L18
+    LINENUMBER 114 L18
+    ALOAD 0
+    ALOAD 4
+    INVOKESPECIAL org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.getFarthestPoint (Ljava/util/Collection;)Lorg/apache/commons/math/stat/clustering/Clusterable;
+    ASTORE 11
+   L23
+    LINENUMBER 115 L23
+    GOTO L21
+   L19
+    LINENUMBER 117 L19
+    NEW org/apache/commons/math/exception/ConvergenceException
+    DUP
+    GETSTATIC org/apache/commons/math/exception/util/LocalizedFormats.EMPTY_CLUSTER_IN_K_MEANS : Lorg/apache/commons/math/exception/util/LocalizedFormats;
+    INVOKESPECIAL org/apache/commons/math/exception/ConvergenceException.<init> (Lorg/apache/commons/math/exception/util/Localizable;)V
+    ATHROW
+   L21
+    LINENUMBER 119 L21
+    ICONST_1
+    ISTORE 7
+    GOTO L24
+   L14
+    LINENUMBER 121 L14
+    ALOAD 10
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getCenter ()Lorg/apache/commons/math/stat/clustering/Clusterable;
+    ALOAD 10
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getPoints ()Ljava/util/List;
+    INVOKEINTERFACE org/apache/commons/math/stat/clustering/Clusterable.centroidOf (Ljava/util/Collection;)Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Clusterable
+    ASTORE 11
+   L25
+    LINENUMBER 122 L25
+    ALOAD 11
+    ALOAD 10
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getCenter ()Lorg/apache/commons/math/stat/clustering/Clusterable;
+    INVOKEVIRTUAL java/lang/Object.equals (Ljava/lang/Object;)Z
+    IFNE L24
+   L26
+    LINENUMBER 123 L26
+    ICONST_1
+    ISTORE 7
+   L24
+    LINENUMBER 126 L24
+    ALOAD 8
+    NEW org/apache/commons/math/stat/clustering/Cluster
+    DUP
+    ALOAD 11
+    INVOKESPECIAL org/apache/commons/math/stat/clustering/Cluster.<init> (Lorg/apache/commons/math/stat/clustering/Clusterable;)V
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L27
+    LINENUMBER 127 L27
+    GOTO L11
+   L12
+    LINENUMBER 128 L12
+    ILOAD 7
+    IFNE L28
+   L29
+    LINENUMBER 129 L29
+    ALOAD 4
+    ARETURN
+   L28
+    LINENUMBER 131 L28
+    ALOAD 8
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.assignPointsToClusters (Ljava/util/Collection;Ljava/util/Collection;)V
+   L30
+    LINENUMBER 132 L30
+    ALOAD 8
+    ASTORE 4
+   L31
+    LINENUMBER 100 L31
+    IINC 6 1
+    GOTO L6
+   L7
+    LINENUMBER 134 L7
+    ALOAD 4
+    ARETURN
+   L32
+    LOCALVARIABLE newCenter Lorg/apache/commons/math/stat/clustering/Clusterable; L20 L14 11
+    // signature TT;
+    // declaration: newCenter extends T
+    LOCALVARIABLE newCenter Lorg/apache/commons/math/stat/clustering/Clusterable; L25 L27 11
+    // signature TT;
+    // declaration: newCenter extends T
+    LOCALVARIABLE cluster Lorg/apache/commons/math/stat/clustering/Cluster; L13 L27 10
+    // signature Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;
+    // declaration: cluster extends org.apache.commons.math.stat.clustering.Cluster<T>
+    LOCALVARIABLE i$ Ljava/util/Iterator; L11 L12 9
+    LOCALVARIABLE clusteringChanged Z L9 L31 7
+    LOCALVARIABLE newClusters Ljava/util/List; L10 L31 8
+    // signature Ljava/util/List<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;
+    // declaration: newClusters extends java.util.List<org.apache.commons.math.stat.clustering.Cluster<T>>
+    LOCALVARIABLE count I L6 L7 6
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer; L0 L32 0
+    // signature Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer<TT;>;
+    // declaration: this extends org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer<T>
+    LOCALVARIABLE points Ljava/util/Collection; L0 L32 1
+    // signature Ljava/util/Collection<TT;>;
+    // declaration: points extends java.util.Collection<T>
+    LOCALVARIABLE k I L0 L32 2
+    LOCALVARIABLE maxIterations I L0 L32 3
+    LOCALVARIABLE clusters Ljava/util/List; L1 L32 4
+    // signature Ljava/util/List<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;
+    // declaration: clusters extends java.util.List<org.apache.commons.math.stat.clustering.Cluster<T>>
+    LOCALVARIABLE max I L5 L32 5
+    MAXSTACK = 4
+    MAXLOCALS = 12
+
+  // access flags 0xA
+  // signature <T::Lorg/apache/commons/math/stat/clustering/Clusterable<TT;>;>(Ljava/util/Collection<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;Ljava/util/Collection<TT;>;)V
+  // declaration: void assignPointsToClusters<T extends org.apache.commons.math.stat.clustering.Clusterable<T>>(java.util.Collection<org.apache.commons.math.stat.clustering.Cluster<T>>, java.util.Collection<T>)
+  private static assignPointsToClusters(Ljava/util/Collection;Ljava/util/Collection;)V
+   L0
+    LINENUMBER 146 L0
+    ALOAD 1
+    INVOKEINTERFACE java/util/Collection.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 2
+   L1
+    ALOAD 2
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L2
+    ALOAD 2
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Clusterable
+    ASTORE 3
+   L3
+    LINENUMBER 147 L3
+    ALOAD 0
+    ALOAD 3
+    INVOKESTATIC org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.getNearestCluster (Ljava/util/Collection;Lorg/apache/commons/math/stat/clustering/Clusterable;)Lorg/apache/commons/math/stat/clustering/Cluster;
+    ASTORE 4
+   L4
+    LINENUMBER 148 L4
+    ALOAD 4
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.addPoint (Lorg/apache/commons/math/stat/clustering/Clusterable;)V
+   L5
+    LINENUMBER 149 L5
+    GOTO L1
+   L2
+    LINENUMBER 150 L2
+    RETURN
+   L6
+    LOCALVARIABLE cluster Lorg/apache/commons/math/stat/clustering/Cluster; L4 L5 4
+    // signature Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;
+    // declaration: cluster extends org.apache.commons.math.stat.clustering.Cluster<T>
+    LOCALVARIABLE p Lorg/apache/commons/math/stat/clustering/Clusterable; L3 L5 3
+    // signature TT;
+    // declaration: p extends T
+    LOCALVARIABLE i$ Ljava/util/Iterator; L1 L2 2
+    LOCALVARIABLE clusters Ljava/util/Collection; L0 L6 0
+    // signature Ljava/util/Collection<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;
+    // declaration: clusters extends java.util.Collection<org.apache.commons.math.stat.clustering.Cluster<T>>
+    LOCALVARIABLE points Ljava/util/Collection; L0 L6 1
+    // signature Ljava/util/Collection<TT;>;
+    // declaration: points extends java.util.Collection<T>
+    MAXSTACK = 2
+    MAXLOCALS = 5
+
+  // access flags 0xA
+  // signature <T::Lorg/apache/commons/math/stat/clustering/Clusterable<TT;>;>(Ljava/util/Collection<TT;>;ILjava/util/Random;)Ljava/util/List<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;
+  // declaration: java.util.List<org.apache.commons.math.stat.clustering.Cluster<T>> chooseInitialCenters<T extends org.apache.commons.math.stat.clustering.Clusterable<T>>(java.util.Collection<T>, int, java.util.Random)
+  private static chooseInitialCenters(Ljava/util/Collection;ILjava/util/Random;)Ljava/util/List;
+   L0
+    LINENUMBER 164 L0
+    NEW java/util/ArrayList
+    DUP
+    ALOAD 0
+    INVOKESPECIAL java/util/ArrayList.<init> (Ljava/util/Collection;)V
+    ASTORE 3
+   L1
+    LINENUMBER 165 L1
+    NEW java/util/ArrayList
+    DUP
+    INVOKESPECIAL java/util/ArrayList.<init> ()V
+    ASTORE 4
+   L2
+    LINENUMBER 168 L2
+    ALOAD 3
+    ALOAD 2
+    ALOAD 3
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    INVOKEVIRTUAL java/util/Random.nextInt (I)I
+    INVOKEINTERFACE java/util/List.remove (I)Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Clusterable
+    ASTORE 5
+   L3
+    LINENUMBER 169 L3
+    ALOAD 4
+    NEW org/apache/commons/math/stat/clustering/Cluster
+    DUP
+    ALOAD 5
+    INVOKESPECIAL org/apache/commons/math/stat/clustering/Cluster.<init> (Lorg/apache/commons/math/stat/clustering/Clusterable;)V
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L4
+    LINENUMBER 171 L4
+    ALOAD 3
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    NEWARRAY T_DOUBLE
+    ASTORE 6
+   L5
+    LINENUMBER 172 L5
+    ALOAD 4
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    ILOAD 1
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 175 L7
+    DCONST_0
+    DSTORE 7
+   L8
+    LINENUMBER 176 L8
+    ICONST_0
+    ISTORE 9
+   L9
+    ILOAD 9
+    ALOAD 3
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    IF_ICMPGE L10
+   L11
+    LINENUMBER 177 L11
+    ALOAD 3
+    ILOAD 9
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Clusterable
+    ASTORE 10
+   L12
+    LINENUMBER 178 L12
+    ALOAD 4
+    ALOAD 10
+    INVOKESTATIC org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.getNearestCluster (Ljava/util/Collection;Lorg/apache/commons/math/stat/clustering/Clusterable;)Lorg/apache/commons/math/stat/clustering/Cluster;
+    ASTORE 11
+   L13
+    LINENUMBER 179 L13
+    ALOAD 10
+    ALOAD 11
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getCenter ()Lorg/apache/commons/math/stat/clustering/Clusterable;
+    INVOKEINTERFACE org/apache/commons/math/stat/clustering/Clusterable.distanceFrom (Ljava/lang/Object;)D (itf)
+    DSTORE 12
+   L14
+    LINENUMBER 180 L14
+    DLOAD 7
+    DLOAD 12
+    DLOAD 12
+    DMUL
+    DSUB
+    DSTORE 7
+   L15
+    LINENUMBER 181 L15
+    ALOAD 6
+    ILOAD 9
+    DLOAD 7
+    DASTORE
+   L16
+    LINENUMBER 176 L16
+    IINC 9 1
+    GOTO L9
+   L10
+    LINENUMBER 186 L10
+    ALOAD 2
+    INVOKEVIRTUAL java/util/Random.nextDouble ()D
+    DLOAD 7
+    DMUL
+    DSTORE 9
+   L17
+    LINENUMBER 187 L17
+    ICONST_0
+    ISTORE 11
+   L18
+    ILOAD 11
+    ALOAD 6
+    ARRAYLENGTH
+    IF_ICMPGE L19
+   L20
+    LINENUMBER 188 L20
+    ALOAD 6
+    ILOAD 11
+    DALOAD
+    DLOAD 9
+    DCMPL
+    IFLT L21
+   L22
+    LINENUMBER 189 L22
+    ALOAD 3
+    ILOAD 11
+    INVOKEINTERFACE java/util/List.remove (I)Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Clusterable
+    ASTORE 12
+   L23
+    LINENUMBER 190 L23
+    ALOAD 4
+    NEW org/apache/commons/math/stat/clustering/Cluster
+    DUP
+    ALOAD 12
+    INVOKESPECIAL org/apache/commons/math/stat/clustering/Cluster.<init> (Lorg/apache/commons/math/stat/clustering/Clusterable;)V
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L24
+    LINENUMBER 191 L24
+    GOTO L19
+   L21
+    LINENUMBER 187 L21
+    IINC 11 1
+    GOTO L18
+   L19
+    LINENUMBER 194 L19
+    GOTO L5
+   L6
+    LINENUMBER 196 L6
+    ALOAD 4
+    ARETURN
+   L25
+    LOCALVARIABLE p Lorg/apache/commons/math/stat/clustering/Clusterable; L12 L16 10
+    // signature TT;
+    // declaration: p extends T
+    LOCALVARIABLE nearest Lorg/apache/commons/math/stat/clustering/Cluster; L13 L16 11
+    // signature Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;
+    // declaration: nearest extends org.apache.commons.math.stat.clustering.Cluster<T>
+    LOCALVARIABLE d D L14 L16 12
+    LOCALVARIABLE i I L9 L10 9
+    LOCALVARIABLE p Lorg/apache/commons/math/stat/clustering/Clusterable; L23 L21 12
+    // signature TT;
+    // declaration: p extends T
+    LOCALVARIABLE i I L18 L19 11
+    LOCALVARIABLE sum D L8 L19 7
+    LOCALVARIABLE r D L17 L19 9
+    LOCALVARIABLE points Ljava/util/Collection; L0 L25 0
+    // signature Ljava/util/Collection<TT;>;
+    // declaration: points extends java.util.Collection<T>
+    LOCALVARIABLE k I L0 L25 1
+    LOCALVARIABLE random Ljava/util/Random; L0 L25 2
+    LOCALVARIABLE pointSet Ljava/util/List; L1 L25 3
+    // signature Ljava/util/List<TT;>;
+    // declaration: pointSet extends java.util.List<T>
+    LOCALVARIABLE resultSet Ljava/util/List; L2 L25 4
+    // signature Ljava/util/List<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;
+    // declaration: resultSet extends java.util.List<org.apache.commons.math.stat.clustering.Cluster<T>>
+    LOCALVARIABLE firstPoint Lorg/apache/commons/math/stat/clustering/Clusterable; L3 L25 5
+    // signature TT;
+    // declaration: firstPoint extends T
+    LOCALVARIABLE dx2 [D L5 L25 6
+    MAXSTACK = 6
+    MAXLOCALS = 14
+
+  // access flags 0x2
+  // signature (Ljava/util/Collection<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;)TT;
+  // declaration: T getPointFromLargestVarianceCluster(java.util.Collection<org.apache.commons.math.stat.clustering.Cluster<T>>)
+  private getPointFromLargestVarianceCluster(Ljava/util/Collection;)Lorg/apache/commons/math/stat/clustering/Clusterable;
+   L0
+    LINENUMBER 208 L0
+    LDC -Infinity
+    DSTORE 2
+   L1
+    LINENUMBER 209 L1
+    ACONST_NULL
+    ASTORE 4
+   L2
+    LINENUMBER 210 L2
+    ALOAD 1
+    INVOKEINTERFACE java/util/Collection.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 5
+   L3
+    ALOAD 5
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L4
+    ALOAD 5
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Cluster
+    ASTORE 6
+   L5
+    LINENUMBER 211 L5
+    ALOAD 6
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getPoints ()Ljava/util/List;
+    INVOKEINTERFACE java/util/List.isEmpty ()Z (itf)
+    IFNE L6
+   L7
+    LINENUMBER 214 L7
+    ALOAD 6
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getCenter ()Lorg/apache/commons/math/stat/clustering/Clusterable;
+    ASTORE 7
+   L8
+    LINENUMBER 215 L8
+    NEW org/apache/commons/math/stat/descriptive/moment/Variance
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/moment/Variance.<init> ()V
+    ASTORE 8
+   L9
+    LINENUMBER 216 L9
+    ALOAD 6
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getPoints ()Ljava/util/List;
+    INVOKEINTERFACE java/util/List.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 9
+   L10
+    ALOAD 9
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L11
+    ALOAD 9
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Clusterable
+    ASTORE 10
+   L12
+    LINENUMBER 217 L12
+    ALOAD 8
+    ALOAD 10
+    ALOAD 7
+    INVOKEINTERFACE org/apache/commons/math/stat/clustering/Clusterable.distanceFrom (Ljava/lang/Object;)D (itf)
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/moment/Variance.increment (D)V
+   L13
+    LINENUMBER 218 L13
+    GOTO L10
+   L11
+    LINENUMBER 219 L11
+    ALOAD 8
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/moment/Variance.getResult ()D
+    DSTORE 9
+   L14
+    LINENUMBER 222 L14
+    DLOAD 9
+    DLOAD 2
+    DCMPL
+    IFLE L6
+   L15
+    LINENUMBER 223 L15
+    DLOAD 9
+    DSTORE 2
+   L16
+    LINENUMBER 224 L16
+    ALOAD 6
+    ASTORE 4
+   L6
+    LINENUMBER 228 L6
+    GOTO L3
+   L4
+    LINENUMBER 231 L4
+    ALOAD 4
+    IFNONNULL L17
+   L18
+    LINENUMBER 232 L18
+    NEW org/apache/commons/math/exception/ConvergenceException
+    DUP
+    GETSTATIC org/apache/commons/math/exception/util/LocalizedFormats.EMPTY_CLUSTER_IN_K_MEANS : Lorg/apache/commons/math/exception/util/LocalizedFormats;
+    INVOKESPECIAL org/apache/commons/math/exception/ConvergenceException.<init> (Lorg/apache/commons/math/exception/util/Localizable;)V
+    ATHROW
+   L17
+    LINENUMBER 236 L17
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getPoints ()Ljava/util/List;
+    ASTORE 5
+   L19
+    LINENUMBER 237 L19
+    ALOAD 5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.random : Ljava/util/Random;
+    ALOAD 5
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    INVOKEVIRTUAL java/util/Random.nextInt (I)I
+    INVOKEINTERFACE java/util/List.remove (I)Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Clusterable
+    ARETURN
+   L20
+    LOCALVARIABLE point Lorg/apache/commons/math/stat/clustering/Clusterable; L12 L13 10
+    // signature TT;
+    // declaration: point extends T
+    LOCALVARIABLE i$ Ljava/util/Iterator; L10 L11 9
+    LOCALVARIABLE center Lorg/apache/commons/math/stat/clustering/Clusterable; L8 L6 7
+    // signature TT;
+    // declaration: center extends T
+    LOCALVARIABLE stat Lorg/apache/commons/math/stat/descriptive/moment/Variance; L9 L6 8
+    LOCALVARIABLE variance D L14 L6 9
+    LOCALVARIABLE cluster Lorg/apache/commons/math/stat/clustering/Cluster; L5 L6 6
+    // signature Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;
+    // declaration: cluster extends org.apache.commons.math.stat.clustering.Cluster<T>
+    LOCALVARIABLE i$ Ljava/util/Iterator; L3 L4 5
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer; L0 L20 0
+    // signature Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer<TT;>;
+    // declaration: this extends org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer<T>
+    LOCALVARIABLE clusters Ljava/util/Collection; L0 L20 1
+    // signature Ljava/util/Collection<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;
+    // declaration: clusters extends java.util.Collection<org.apache.commons.math.stat.clustering.Cluster<T>>
+    LOCALVARIABLE maxVariance D L1 L20 2
+    LOCALVARIABLE selected Lorg/apache/commons/math/stat/clustering/Cluster; L2 L20 4
+    // signature Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;
+    // declaration: selected extends org.apache.commons.math.stat.clustering.Cluster<T>
+    LOCALVARIABLE selectedPoints Ljava/util/List; L19 L20 5
+    // signature Ljava/util/List<TT;>;
+    // declaration: selectedPoints extends java.util.List<T>
+    MAXSTACK = 4
+    MAXLOCALS = 11
+
+  // access flags 0x2
+  // signature (Ljava/util/Collection<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;)TT;
+  // declaration: T getPointFromLargestNumberCluster(java.util.Collection<org.apache.commons.math.stat.clustering.Cluster<T>>)
+  private getPointFromLargestNumberCluster(Ljava/util/Collection;)Lorg/apache/commons/math/stat/clustering/Clusterable;
+   L0
+    LINENUMBER 249 L0
+    ICONST_0
+    ISTORE 2
+   L1
+    LINENUMBER 250 L1
+    ACONST_NULL
+    ASTORE 3
+   L2
+    LINENUMBER 251 L2
+    ALOAD 1
+    INVOKEINTERFACE java/util/Collection.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 4
+   L3
+    ALOAD 4
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L4
+    ALOAD 4
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Cluster
+    ASTORE 5
+   L5
+    LINENUMBER 254 L5
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getPoints ()Ljava/util/List;
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    ISTORE 6
+   L6
+    LINENUMBER 257 L6
+    ILOAD 6
+    ILOAD 2
+    IF_ICMPLE L7
+   L8
+    LINENUMBER 258 L8
+    ILOAD 6
+    ISTORE 2
+   L9
+    LINENUMBER 259 L9
+    ALOAD 5
+    ASTORE 3
+   L7
+    LINENUMBER 262 L7
+    GOTO L3
+   L4
+    LINENUMBER 265 L4
+    ALOAD 3
+    IFNONNULL L10
+   L11
+    LINENUMBER 266 L11
+    NEW org/apache/commons/math/exception/ConvergenceException
+    DUP
+    GETSTATIC org/apache/commons/math/exception/util/LocalizedFormats.EMPTY_CLUSTER_IN_K_MEANS : Lorg/apache/commons/math/exception/util/LocalizedFormats;
+    INVOKESPECIAL org/apache/commons/math/exception/ConvergenceException.<init> (Lorg/apache/commons/math/exception/util/Localizable;)V
+    ATHROW
+   L10
+    LINENUMBER 270 L10
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getPoints ()Ljava/util/List;
+    ASTORE 4
+   L12
+    LINENUMBER 271 L12
+    ALOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.random : Ljava/util/Random;
+    ALOAD 4
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    INVOKEVIRTUAL java/util/Random.nextInt (I)I
+    INVOKEINTERFACE java/util/List.remove (I)Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Clusterable
+    ARETURN
+   L13
+    LOCALVARIABLE number I L6 L7 6
+    LOCALVARIABLE cluster Lorg/apache/commons/math/stat/clustering/Cluster; L5 L7 5
+    // signature Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;
+    // declaration: cluster extends org.apache.commons.math.stat.clustering.Cluster<T>
+    LOCALVARIABLE i$ Ljava/util/Iterator; L3 L4 4
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer; L0 L13 0
+    // signature Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer<TT;>;
+    // declaration: this extends org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer<T>
+    LOCALVARIABLE clusters Ljava/util/Collection; L0 L13 1
+    // signature Ljava/util/Collection<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;
+    // declaration: clusters extends java.util.Collection<org.apache.commons.math.stat.clustering.Cluster<T>>
+    LOCALVARIABLE maxNumber I L1 L13 2
+    LOCALVARIABLE selected Lorg/apache/commons/math/stat/clustering/Cluster; L2 L13 3
+    // signature Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;
+    // declaration: selected extends org.apache.commons.math.stat.clustering.Cluster<T>
+    LOCALVARIABLE selectedPoints Ljava/util/List; L12 L13 4
+    // signature Ljava/util/List<TT;>;
+    // declaration: selectedPoints extends java.util.List<T>
+    MAXSTACK = 3
+    MAXLOCALS = 7
+
+  // access flags 0x2
+  // signature (Ljava/util/Collection<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;)TT;
+  // declaration: T getFarthestPoint(java.util.Collection<org.apache.commons.math.stat.clustering.Cluster<T>>)
+  private getFarthestPoint(Ljava/util/Collection;)Lorg/apache/commons/math/stat/clustering/Clusterable;
+   L0
+    LINENUMBER 283 L0
+    LDC -Infinity
+    DSTORE 2
+   L1
+    LINENUMBER 284 L1
+    ACONST_NULL
+    ASTORE 4
+   L2
+    LINENUMBER 285 L2
+    ICONST_M1
+    ISTORE 5
+   L3
+    LINENUMBER 286 L3
+    ALOAD 1
+    INVOKEINTERFACE java/util/Collection.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 6
+   L4
+    ALOAD 6
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L5
+    ALOAD 6
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Cluster
+    ASTORE 7
+   L6
+    LINENUMBER 289 L6
+    ALOAD 7
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getCenter ()Lorg/apache/commons/math/stat/clustering/Clusterable;
+    ASTORE 8
+   L7
+    LINENUMBER 290 L7
+    ALOAD 7
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getPoints ()Ljava/util/List;
+    ASTORE 9
+   L8
+    LINENUMBER 291 L8
+    ICONST_0
+    ISTORE 10
+   L9
+    ILOAD 10
+    ALOAD 9
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    IF_ICMPGE L10
+   L11
+    LINENUMBER 292 L11
+    ALOAD 9
+    ILOAD 10
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Clusterable
+    ALOAD 8
+    INVOKEINTERFACE org/apache/commons/math/stat/clustering/Clusterable.distanceFrom (Ljava/lang/Object;)D (itf)
+    DSTORE 11
+   L12
+    LINENUMBER 293 L12
+    DLOAD 11
+    DLOAD 2
+    DCMPL
+    IFLE L13
+   L14
+    LINENUMBER 294 L14
+    DLOAD 11
+    DSTORE 2
+   L15
+    LINENUMBER 295 L15
+    ALOAD 7
+    ASTORE 4
+   L16
+    LINENUMBER 296 L16
+    ILOAD 10
+    ISTORE 5
+   L13
+    LINENUMBER 291 L13
+    IINC 10 1
+    GOTO L9
+   L10
+    LINENUMBER 300 L10
+    GOTO L4
+   L5
+    LINENUMBER 303 L5
+    ALOAD 4
+    IFNONNULL L17
+   L18
+    LINENUMBER 304 L18
+    NEW org/apache/commons/math/exception/ConvergenceException
+    DUP
+    GETSTATIC org/apache/commons/math/exception/util/LocalizedFormats.EMPTY_CLUSTER_IN_K_MEANS : Lorg/apache/commons/math/exception/util/LocalizedFormats;
+    INVOKESPECIAL org/apache/commons/math/exception/ConvergenceException.<init> (Lorg/apache/commons/math/exception/util/Localizable;)V
+    ATHROW
+   L17
+    LINENUMBER 307 L17
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getPoints ()Ljava/util/List;
+    ILOAD 5
+    INVOKEINTERFACE java/util/List.remove (I)Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Clusterable
+    ARETURN
+   L19
+    LOCALVARIABLE distance D L12 L13 11
+    LOCALVARIABLE i I L9 L10 10
+    LOCALVARIABLE center Lorg/apache/commons/math/stat/clustering/Clusterable; L7 L10 8
+    // signature TT;
+    // declaration: center extends T
+    LOCALVARIABLE points Ljava/util/List; L8 L10 9
+    // signature Ljava/util/List<TT;>;
+    // declaration: points extends java.util.List<T>
+    LOCALVARIABLE cluster Lorg/apache/commons/math/stat/clustering/Cluster; L6 L10 7
+    // signature Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;
+    // declaration: cluster extends org.apache.commons.math.stat.clustering.Cluster<T>
+    LOCALVARIABLE i$ Ljava/util/Iterator; L4 L5 6
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer; L0 L19 0
+    // signature Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer<TT;>;
+    // declaration: this extends org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer<T>
+    LOCALVARIABLE clusters Ljava/util/Collection; L0 L19 1
+    // signature Ljava/util/Collection<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;
+    // declaration: clusters extends java.util.Collection<org.apache.commons.math.stat.clustering.Cluster<T>>
+    LOCALVARIABLE maxDistance D L1 L19 2
+    LOCALVARIABLE selectedCluster Lorg/apache/commons/math/stat/clustering/Cluster; L2 L19 4
+    // signature Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;
+    // declaration: selectedCluster extends org.apache.commons.math.stat.clustering.Cluster<T>
+    LOCALVARIABLE selectedPoint I L3 L19 5
+    MAXSTACK = 4
+    MAXLOCALS = 13
+
+  // access flags 0xA
+  // signature <T::Lorg/apache/commons/math/stat/clustering/Clusterable<TT;>;>(Ljava/util/Collection<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;TT;)Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;
+  // declaration: org.apache.commons.math.stat.clustering.Cluster<T> getNearestCluster<T extends org.apache.commons.math.stat.clustering.Clusterable<T>>(java.util.Collection<org.apache.commons.math.stat.clustering.Cluster<T>>, T)
+  private static getNearestCluster(Ljava/util/Collection;Lorg/apache/commons/math/stat/clustering/Clusterable;)Lorg/apache/commons/math/stat/clustering/Cluster;
+   L0
+    LINENUMBER 321 L0
+    LDC 1.7976931348623157E308
+    DSTORE 2
+   L1
+    LINENUMBER 322 L1
+    ACONST_NULL
+    ASTORE 4
+   L2
+    LINENUMBER 323 L2
+    ALOAD 0
+    INVOKEINTERFACE java/util/Collection.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 5
+   L3
+    ALOAD 5
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L4
+    ALOAD 5
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/stat/clustering/Cluster
+    ASTORE 6
+   L5
+    LINENUMBER 324 L5
+    ALOAD 1
+    ALOAD 6
+    INVOKEVIRTUAL org/apache/commons/math/stat/clustering/Cluster.getCenter ()Lorg/apache/commons/math/stat/clustering/Clusterable;
+    INVOKEINTERFACE org/apache/commons/math/stat/clustering/Clusterable.distanceFrom (Ljava/lang/Object;)D (itf)
+    DSTORE 7
+   L6
+    LINENUMBER 325 L6
+    DLOAD 7
+    DLOAD 2
+    DCMPG
+    IFGE L7
+   L8
+    LINENUMBER 326 L8
+    DLOAD 7
+    DSTORE 2
+   L9
+    LINENUMBER 327 L9
+    ALOAD 6
+    ASTORE 4
+   L7
+    LINENUMBER 329 L7
+    GOTO L3
+   L4
+    LINENUMBER 330 L4
+    ALOAD 4
+    ARETURN
+   L10
+    LOCALVARIABLE distance D L6 L7 7
+    LOCALVARIABLE c Lorg/apache/commons/math/stat/clustering/Cluster; L5 L7 6
+    // signature Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;
+    // declaration: c extends org.apache.commons.math.stat.clustering.Cluster<T>
+    LOCALVARIABLE i$ Ljava/util/Iterator; L3 L4 5
+    LOCALVARIABLE clusters Ljava/util/Collection; L0 L10 0
+    // signature Ljava/util/Collection<Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;>;
+    // declaration: clusters extends java.util.Collection<org.apache.commons.math.stat.clustering.Cluster<T>>
+    LOCALVARIABLE point Lorg/apache/commons/math/stat/clustering/Clusterable; L0 L10 1
+    // signature TT;
+    // declaration: point extends T
+    LOCALVARIABLE minDistance D L1 L10 2
+    LOCALVARIABLE minCluster Lorg/apache/commons/math/stat/clustering/Cluster; L2 L10 4
+    // signature Lorg/apache/commons/math/stat/clustering/Cluster<TT;>;
+    // declaration: minCluster extends org.apache.commons.math.stat.clustering.Cluster<T>
+    MAXSTACK = 4
+    MAXLOCALS = 9
+}
+

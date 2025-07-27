@@ -1,0 +1,2305 @@
+// class version 49.0 (49)
+// access flags 0x21
+// signature Ljava/lang/Number;Lorg/apache/commons/math3/FieldElement<Lorg/apache/commons/math3/fraction/BigFraction;>;Ljava/lang/Comparable<Lorg/apache/commons/math3/fraction/BigFraction;>;Ljava/io/Serializable;
+// declaration: org/apache/commons/math3/fraction/BigFraction extends java.lang.Number implements org.apache.commons.math3.FieldElement<org.apache.commons.math3.fraction.BigFraction>, java.lang.Comparable<org.apache.commons.math3.fraction.BigFraction>, java.io.Serializable
+public class org/apache/commons/math3/fraction/BigFraction extends java/lang/Number implements org/apache/commons/math3/FieldElement java/lang/Comparable java/io/Serializable {
+
+  // compiled from: BigFraction.java
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/fraction/BigFraction; TWO
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/fraction/BigFraction; ONE
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/fraction/BigFraction; ZERO
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/fraction/BigFraction; MINUS_ONE
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/fraction/BigFraction; FOUR_FIFTHS
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/fraction/BigFraction; ONE_FIFTH
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/fraction/BigFraction; ONE_HALF
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/fraction/BigFraction; ONE_QUARTER
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/fraction/BigFraction; ONE_THIRD
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/fraction/BigFraction; THREE_FIFTHS
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/fraction/BigFraction; THREE_QUARTERS
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/fraction/BigFraction; TWO_FIFTHS
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/fraction/BigFraction; TWO_QUARTERS
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/fraction/BigFraction; TWO_THIRDS
+
+  // access flags 0x1A
+  private final static J serialVersionUID = -5630213147331578515
+
+  // access flags 0x1A
+  private final static Ljava/math/BigInteger; ONE_HUNDRED
+
+  // access flags 0x12
+  private final Ljava/math/BigInteger; numerator
+
+  // access flags 0x12
+  private final Ljava/math/BigInteger; denominator
+
+  // access flags 0x1
+  public <init>(Ljava/math/BigInteger;)V
+   L0
+    LINENUMBER 108 L0
+    ALOAD 0
+    ALOAD 1
+    GETSTATIC java/math/BigInteger.ONE : Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+   L1
+    LINENUMBER 109 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L2 0
+    LOCALVARIABLE num Ljava/math/BigInteger; L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>(Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+   L0
+    LINENUMBER 120 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Number.<init> ()V
+   L1
+    LINENUMBER 121 L1
+    ALOAD 1
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.NUMERATOR : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESTATIC org/apache/commons/math3/util/MathUtils.checkNotNull (Ljava/lang/Object;Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+   L2
+    LINENUMBER 122 L2
+    ALOAD 2
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.DENOMINATOR : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESTATIC org/apache/commons/math3/util/MathUtils.checkNotNull (Ljava/lang/Object;Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+   L3
+    LINENUMBER 123 L3
+    GETSTATIC java/math/BigInteger.ZERO : Ljava/math/BigInteger;
+    ALOAD 2
+    INVOKEVIRTUAL java/math/BigInteger.equals (Ljava/lang/Object;)Z
+    IFEQ L4
+   L5
+    LINENUMBER 124 L5
+    NEW org/apache/commons/math3/exception/ZeroException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.ZERO_DENOMINATOR : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESPECIAL org/apache/commons/math3/exception/ZeroException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L4
+    LINENUMBER 126 L4
+    GETSTATIC java/math/BigInteger.ZERO : Ljava/math/BigInteger;
+    ALOAD 1
+    INVOKEVIRTUAL java/math/BigInteger.equals (Ljava/lang/Object;)Z
+    IFEQ L6
+   L7
+    LINENUMBER 127 L7
+    ALOAD 0
+    GETSTATIC java/math/BigInteger.ZERO : Ljava/math/BigInteger;
+    PUTFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+   L8
+    LINENUMBER 128 L8
+    ALOAD 0
+    GETSTATIC java/math/BigInteger.ONE : Ljava/math/BigInteger;
+    PUTFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    GOTO L9
+   L6
+    LINENUMBER 132 L6
+    ALOAD 1
+    ALOAD 2
+    INVOKEVIRTUAL java/math/BigInteger.gcd (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ASTORE 3
+   L10
+    LINENUMBER 133 L10
+    GETSTATIC java/math/BigInteger.ONE : Ljava/math/BigInteger;
+    ALOAD 3
+    INVOKEVIRTUAL java/math/BigInteger.compareTo (Ljava/math/BigInteger;)I
+    IFGE L11
+   L12
+    LINENUMBER 134 L12
+    ALOAD 1
+    ALOAD 3
+    INVOKEVIRTUAL java/math/BigInteger.divide (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ASTORE 1
+   L13
+    LINENUMBER 135 L13
+    ALOAD 2
+    ALOAD 3
+    INVOKEVIRTUAL java/math/BigInteger.divide (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ASTORE 2
+   L11
+    LINENUMBER 139 L11
+    GETSTATIC java/math/BigInteger.ZERO : Ljava/math/BigInteger;
+    ALOAD 2
+    INVOKEVIRTUAL java/math/BigInteger.compareTo (Ljava/math/BigInteger;)I
+    IFLE L14
+   L15
+    LINENUMBER 140 L15
+    ALOAD 1
+    INVOKEVIRTUAL java/math/BigInteger.negate ()Ljava/math/BigInteger;
+    ASTORE 1
+   L16
+    LINENUMBER 141 L16
+    ALOAD 2
+    INVOKEVIRTUAL java/math/BigInteger.negate ()Ljava/math/BigInteger;
+    ASTORE 2
+   L14
+    LINENUMBER 145 L14
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+   L17
+    LINENUMBER 146 L17
+    ALOAD 0
+    ALOAD 2
+    PUTFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+   L9
+    LINENUMBER 149 L9
+    RETURN
+   L18
+    LOCALVARIABLE gcd Ljava/math/BigInteger; L10 L9 3
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L18 0
+    LOCALVARIABLE num Ljava/math/BigInteger; L0 L18 1
+    LOCALVARIABLE den Ljava/math/BigInteger; L0 L18 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public <init>(D)V throws org/apache/commons/math3/exception/MathIllegalArgumentException 
+   L0
+    LINENUMBER 172 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Number.<init> ()V
+   L1
+    LINENUMBER 173 L1
+    DLOAD 1
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L2
+   L3
+    LINENUMBER 174 L3
+    NEW org/apache/commons/math3/exception/MathIllegalArgumentException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.NAN_VALUE_CONVERSION : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESPECIAL org/apache/commons/math3/exception/MathIllegalArgumentException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L2
+    LINENUMBER 176 L2
+    DLOAD 1
+    INVOKESTATIC java/lang/Double.isInfinite (D)Z
+    IFEQ L4
+   L5
+    LINENUMBER 177 L5
+    NEW org/apache/commons/math3/exception/MathIllegalArgumentException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.INFINITE_VALUE_CONVERSION : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESPECIAL org/apache/commons/math3/exception/MathIllegalArgumentException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L4
+    LINENUMBER 181 L4
+    DLOAD 1
+    INVOKESTATIC java/lang/Double.doubleToLongBits (D)J
+    LSTORE 3
+   L6
+    LINENUMBER 182 L6
+    LLOAD 3
+    LDC -9223372036854775808
+    LAND
+    LSTORE 5
+   L7
+    LINENUMBER 183 L7
+    LLOAD 3
+    LDC 9218868437227405312
+    LAND
+    LSTORE 7
+   L8
+    LINENUMBER 184 L8
+    LLOAD 3
+    LDC 4503599627370495
+    LAND
+    LSTORE 9
+   L9
+    LINENUMBER 185 L9
+    LLOAD 7
+    LCONST_0
+    LCMP
+    IFEQ L10
+   L11
+    LINENUMBER 187 L11
+    LLOAD 9
+    LDC 4503599627370496
+    LOR
+    LSTORE 9
+   L10
+    LINENUMBER 189 L10
+    LLOAD 5
+    LCONST_0
+    LCMP
+    IFEQ L12
+   L13
+    LINENUMBER 190 L13
+    LLOAD 9
+    LNEG
+    LSTORE 9
+   L12
+    LINENUMBER 192 L12
+    LLOAD 7
+    BIPUSH 52
+    LSHR
+    L2I
+    SIPUSH 1075
+    ISUB
+    ISTORE 11
+   L14
+    LINENUMBER 193 L14
+    LLOAD 9
+    LDC 9007199254740990
+    LAND
+    LCONST_0
+    LCMP
+    IFEQ L15
+    LLOAD 9
+    LCONST_1
+    LAND
+    LCONST_0
+    LCMP
+    IFNE L15
+   L16
+    LINENUMBER 194 L16
+    LLOAD 9
+    ICONST_1
+    LSHR
+    LSTORE 9
+   L17
+    LINENUMBER 195 L17
+    IINC 11 1
+    GOTO L14
+   L15
+    LINENUMBER 198 L15
+    ILOAD 11
+    IFGE L18
+   L19
+    LINENUMBER 199 L19
+    ALOAD 0
+    LLOAD 9
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    PUTFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+   L20
+    LINENUMBER 200 L20
+    ALOAD 0
+    GETSTATIC java/math/BigInteger.ZERO : Ljava/math/BigInteger;
+    ILOAD 11
+    INEG
+    INVOKEVIRTUAL java/math/BigInteger.flipBit (I)Ljava/math/BigInteger;
+    PUTFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    GOTO L21
+   L18
+    LINENUMBER 202 L18
+    ALOAD 0
+    LLOAD 9
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    GETSTATIC java/math/BigInteger.ZERO : Ljava/math/BigInteger;
+    ILOAD 11
+    INVOKEVIRTUAL java/math/BigInteger.flipBit (I)Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    PUTFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+   L22
+    LINENUMBER 203 L22
+    ALOAD 0
+    GETSTATIC java/math/BigInteger.ONE : Ljava/math/BigInteger;
+    PUTFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+   L21
+    LINENUMBER 206 L21
+    RETURN
+   L23
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L23 0
+    LOCALVARIABLE value D L0 L23 1
+    LOCALVARIABLE bits J L6 L23 3
+    LOCALVARIABLE sign J L7 L23 5
+    LOCALVARIABLE exponent J L8 L23 7
+    LOCALVARIABLE m J L9 L23 9
+    LOCALVARIABLE k I L14 L23 11
+    MAXSTACK = 4
+    MAXLOCALS = 12
+
+  // access flags 0x1
+  public <init>(DDI)V throws org/apache/commons/math3/fraction/FractionConversionException 
+   L0
+    LINENUMBER 232 L0
+    ALOAD 0
+    DLOAD 1
+    DLOAD 3
+    LDC 2147483647
+    ILOAD 5
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (DDII)V
+   L1
+    LINENUMBER 233 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L2 0
+    LOCALVARIABLE value D L0 L2 1
+    LOCALVARIABLE epsilon D L0 L2 3
+    LOCALVARIABLE maxIterations I L0 L2 5
+    MAXSTACK = 7
+    MAXLOCALS = 6
+
+  // access flags 0x2
+  private <init>(DDII)V throws org/apache/commons/math3/fraction/FractionConversionException 
+   L0
+    LINENUMBER 271 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Number.<init> ()V
+   L1
+    LINENUMBER 272 L1
+    LDC 2147483647
+    LSTORE 7
+   L2
+    LINENUMBER 273 L2
+    DLOAD 1
+    DSTORE 9
+   L3
+    LINENUMBER 274 L3
+    DLOAD 9
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.floor (D)D
+    D2L
+    LSTORE 11
+   L4
+    LINENUMBER 275 L4
+    LLOAD 11
+    LLOAD 7
+    LCMP
+    IFLE L5
+   L6
+    LINENUMBER 276 L6
+    NEW org/apache/commons/math3/fraction/FractionConversionException
+    DUP
+    DLOAD 1
+    LLOAD 11
+    LCONST_1
+    INVOKESPECIAL org/apache/commons/math3/fraction/FractionConversionException.<init> (DJJ)V
+    ATHROW
+   L5
+    LINENUMBER 281 L5
+    LLOAD 11
+    L2D
+    DLOAD 1
+    DSUB
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.abs (D)D
+    DLOAD 3
+    DCMPG
+    IFGT L7
+   L8
+    LINENUMBER 282 L8
+    ALOAD 0
+    LLOAD 11
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    PUTFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+   L9
+    LINENUMBER 283 L9
+    ALOAD 0
+    GETSTATIC java/math/BigInteger.ONE : Ljava/math/BigInteger;
+    PUTFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+   L10
+    LINENUMBER 284 L10
+    RETURN
+   L7
+    LINENUMBER 287 L7
+    LCONST_1
+    LSTORE 13
+   L11
+    LINENUMBER 288 L11
+    LCONST_0
+    LSTORE 15
+   L12
+    LINENUMBER 289 L12
+    LLOAD 11
+    LSTORE 17
+   L13
+    LINENUMBER 290 L13
+    LCONST_1
+    LSTORE 19
+   L14
+    LINENUMBER 292 L14
+    LCONST_0
+    LSTORE 21
+   L15
+    LINENUMBER 293 L15
+    LCONST_1
+    LSTORE 23
+   L16
+    LINENUMBER 295 L16
+    ICONST_0
+    ISTORE 25
+   L17
+    LINENUMBER 296 L17
+    ICONST_0
+    ISTORE 26
+   L18
+    LINENUMBER 298 L18
+    IINC 25 1
+   L19
+    LINENUMBER 299 L19
+    DCONST_1
+    DLOAD 9
+    LLOAD 11
+    L2D
+    DSUB
+    DDIV
+    DSTORE 27
+   L20
+    LINENUMBER 300 L20
+    DLOAD 27
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.floor (D)D
+    D2L
+    LSTORE 29
+   L21
+    LINENUMBER 301 L21
+    LLOAD 29
+    LLOAD 17
+    LMUL
+    LLOAD 13
+    LADD
+    LSTORE 21
+   L22
+    LINENUMBER 302 L22
+    LLOAD 29
+    LLOAD 19
+    LMUL
+    LLOAD 15
+    LADD
+    LSTORE 23
+   L23
+    LINENUMBER 303 L23
+    LLOAD 21
+    LLOAD 7
+    LCMP
+    IFGT L24
+    LLOAD 23
+    LLOAD 7
+    LCMP
+    IFLE L25
+   L24
+    LINENUMBER 306 L24
+    DLOAD 3
+    DCONST_0
+    DCMPL
+    IFNE L26
+    LLOAD 19
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.abs (J)J
+    ILOAD 5
+    I2L
+    LCMP
+    IFGE L26
+   L27
+    LINENUMBER 307 L27
+    GOTO L28
+   L26
+    LINENUMBER 309 L26
+    NEW org/apache/commons/math3/fraction/FractionConversionException
+    DUP
+    DLOAD 1
+    LLOAD 21
+    LLOAD 23
+    INVOKESPECIAL org/apache/commons/math3/fraction/FractionConversionException.<init> (DJJ)V
+    ATHROW
+   L25
+    LINENUMBER 312 L25
+    LLOAD 21
+    L2D
+    LLOAD 23
+    L2D
+    DDIV
+    DSTORE 31
+   L29
+    LINENUMBER 313 L29
+    ILOAD 25
+    ILOAD 6
+    IF_ICMPGE L30
+    DLOAD 31
+    DLOAD 1
+    DSUB
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.abs (D)D
+    DLOAD 3
+    DCMPL
+    IFLE L30
+    LLOAD 23
+    ILOAD 5
+    I2L
+    LCMP
+    IFGE L30
+   L31
+    LINENUMBER 316 L31
+    LLOAD 17
+    LSTORE 13
+   L32
+    LINENUMBER 317 L32
+    LLOAD 21
+    LSTORE 17
+   L33
+    LINENUMBER 318 L33
+    LLOAD 19
+    LSTORE 15
+   L34
+    LINENUMBER 319 L34
+    LLOAD 23
+    LSTORE 19
+   L35
+    LINENUMBER 320 L35
+    LLOAD 29
+    LSTORE 11
+   L36
+    LINENUMBER 321 L36
+    DLOAD 27
+    DSTORE 9
+    GOTO L37
+   L30
+    LINENUMBER 323 L30
+    ICONST_1
+    ISTORE 26
+   L37
+    LINENUMBER 325 L37
+    ILOAD 26
+    IFEQ L18
+   L28
+    LINENUMBER 327 L28
+    ILOAD 25
+    ILOAD 6
+    IF_ICMPLT L38
+   L39
+    LINENUMBER 328 L39
+    NEW org/apache/commons/math3/fraction/FractionConversionException
+    DUP
+    DLOAD 1
+    ILOAD 6
+    INVOKESPECIAL org/apache/commons/math3/fraction/FractionConversionException.<init> (DI)V
+    ATHROW
+   L38
+    LINENUMBER 331 L38
+    LLOAD 23
+    ILOAD 5
+    I2L
+    LCMP
+    IFGE L40
+   L41
+    LINENUMBER 332 L41
+    ALOAD 0
+    LLOAD 21
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    PUTFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+   L42
+    LINENUMBER 333 L42
+    ALOAD 0
+    LLOAD 23
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    PUTFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    GOTO L43
+   L40
+    LINENUMBER 335 L40
+    ALOAD 0
+    LLOAD 17
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    PUTFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+   L44
+    LINENUMBER 336 L44
+    ALOAD 0
+    LLOAD 19
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    PUTFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+   L43
+    LINENUMBER 338 L43
+    RETURN
+   L45
+    LOCALVARIABLE r1 D L20 L37 27
+    LOCALVARIABLE a1 J L21 L37 29
+    LOCALVARIABLE convergent D L29 L37 31
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L45 0
+    LOCALVARIABLE value D L0 L45 1
+    LOCALVARIABLE epsilon D L0 L45 3
+    LOCALVARIABLE maxDenominator I L0 L45 5
+    LOCALVARIABLE maxIterations I L0 L45 6
+    LOCALVARIABLE overflow J L2 L45 7
+    LOCALVARIABLE r0 D L3 L45 9
+    LOCALVARIABLE a0 J L4 L45 11
+    LOCALVARIABLE p0 J L11 L45 13
+    LOCALVARIABLE q0 J L12 L45 15
+    LOCALVARIABLE p1 J L13 L45 17
+    LOCALVARIABLE q1 J L14 L45 19
+    LOCALVARIABLE p2 J L15 L45 21
+    LOCALVARIABLE q2 J L16 L45 23
+    LOCALVARIABLE n I L17 L45 25
+    LOCALVARIABLE stop Z L18 L45 26
+    MAXSTACK = 8
+    MAXLOCALS = 33
+
+  // access flags 0x1
+  public <init>(DI)V throws org/apache/commons/math3/fraction/FractionConversionException 
+   L0
+    LINENUMBER 359 L0
+    ALOAD 0
+    DLOAD 1
+    DCONST_0
+    ILOAD 3
+    BIPUSH 100
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (DDII)V
+   L1
+    LINENUMBER 360 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L2 0
+    LOCALVARIABLE value D L0 L2 1
+    LOCALVARIABLE maxDenominator I L0 L2 3
+    MAXSTACK = 7
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public <init>(I)V
+   L0
+    LINENUMBER 372 L0
+    ALOAD 0
+    ILOAD 1
+    I2L
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    GETSTATIC java/math/BigInteger.ONE : Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+   L1
+    LINENUMBER 373 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L2 0
+    LOCALVARIABLE num I L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>(II)V
+   L0
+    LINENUMBER 387 L0
+    ALOAD 0
+    ILOAD 1
+    I2L
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    ILOAD 2
+    I2L
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+   L1
+    LINENUMBER 388 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L2 0
+    LOCALVARIABLE num I L0 L2 1
+    LOCALVARIABLE den I L0 L2 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public <init>(J)V
+   L0
+    LINENUMBER 399 L0
+    ALOAD 0
+    LLOAD 1
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    GETSTATIC java/math/BigInteger.ONE : Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+   L1
+    LINENUMBER 400 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L2 0
+    LOCALVARIABLE num J L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public <init>(JJ)V
+   L0
+    LINENUMBER 414 L0
+    ALOAD 0
+    LLOAD 1
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    LLOAD 3
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+   L1
+    LINENUMBER 415 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L2 0
+    LOCALVARIABLE num J L0 L2 1
+    LOCALVARIABLE den J L0 L2 3
+    MAXSTACK = 4
+    MAXLOCALS = 5
+
+  // access flags 0x9
+  public static getReducedFraction(II)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 438 L0
+    ILOAD 0
+    IFNE L1
+   L2
+    LINENUMBER 439 L2
+    GETSTATIC org/apache/commons/math3/fraction/BigFraction.ZERO : Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LINENUMBER 442 L1
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ILOAD 0
+    ILOAD 1
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (II)V
+    ARETURN
+   L3
+    LOCALVARIABLE numerator I L0 L3 0
+    LOCALVARIABLE denominator I L0 L3 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public abs()Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 453 L0
+    GETSTATIC java/math/BigInteger.ZERO : Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.compareTo (Ljava/math/BigInteger;)I
+    IFGT L1
+    ALOAD 0
+    GOTO L2
+   L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.negate ()Lorg/apache/commons/math3/fraction/BigFraction;
+   L2
+    ARETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L3 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public add(Ljava/math/BigInteger;)Lorg/apache/commons/math3/fraction/BigFraction; throws org/apache/commons/math3/exception/NullArgumentException 
+   L0
+    LINENUMBER 469 L0
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math3/util/MathUtils.checkNotNull (Ljava/lang/Object;)V
+   L1
+    LINENUMBER 470 L1
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ALOAD 1
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.add (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L2 0
+    LOCALVARIABLE bg Ljava/math/BigInteger; L0 L2 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public add(I)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 484 L0
+    ALOAD 0
+    ILOAD 1
+    I2L
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.add (Ljava/math/BigInteger;)Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE i I L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public add(J)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 498 L0
+    ALOAD 0
+    LLOAD 1
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.add (Ljava/math/BigInteger;)Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE l J L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public add(Lorg/apache/commons/math3/fraction/BigFraction;)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 513 L0
+    ALOAD 1
+    IFNONNULL L1
+   L2
+    LINENUMBER 514 L2
+    NEW org/apache/commons/math3/exception/NullArgumentException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.FRACTION : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESPECIAL org/apache/commons/math3/exception/NullArgumentException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L1
+    LINENUMBER 516 L1
+    GETSTATIC org/apache/commons/math3/fraction/BigFraction.ZERO : Lorg/apache/commons/math3/fraction/BigFraction;
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.equals (Ljava/lang/Object;)Z
+    IFEQ L3
+   L4
+    LINENUMBER 517 L4
+    ALOAD 0
+    ARETURN
+   L3
+    LINENUMBER 520 L3
+    ACONST_NULL
+    ASTORE 2
+   L5
+    LINENUMBER 521 L5
+    ACONST_NULL
+    ASTORE 3
+   L6
+    LINENUMBER 523 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.equals (Ljava/lang/Object;)Z
+    IFEQ L7
+   L8
+    LINENUMBER 524 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.add (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ASTORE 2
+   L9
+    LINENUMBER 525 L9
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ASTORE 3
+    GOTO L10
+   L7
+    LINENUMBER 527 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.add (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ASTORE 2
+   L11
+    LINENUMBER 528 L11
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ASTORE 3
+   L10
+    LINENUMBER 530 L10
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 2
+    ALOAD 3
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L12
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L12 0
+    LOCALVARIABLE fraction Lorg/apache/commons/math3/fraction/BigFraction; L0 L12 1
+    LOCALVARIABLE num Ljava/math/BigInteger; L5 L12 2
+    LOCALVARIABLE den Ljava/math/BigInteger; L6 L12 3
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public bigDecimalValue()Ljava/math/BigDecimal;
+   L0
+    LINENUMBER 547 L0
+    NEW java/math/BigDecimal
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKESPECIAL java/math/BigDecimal.<init> (Ljava/math/BigInteger;)V
+    NEW java/math/BigDecimal
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKESPECIAL java/math/BigDecimal.<init> (Ljava/math/BigInteger;)V
+    INVOKEVIRTUAL java/math/BigDecimal.divide (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 4
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public bigDecimalValue(I)Ljava/math/BigDecimal;
+   L0
+    LINENUMBER 566 L0
+    NEW java/math/BigDecimal
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKESPECIAL java/math/BigDecimal.<init> (Ljava/math/BigInteger;)V
+    NEW java/math/BigDecimal
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKESPECIAL java/math/BigDecimal.<init> (Ljava/math/BigInteger;)V
+    ILOAD 1
+    INVOKEVIRTUAL java/math/BigDecimal.divide (Ljava/math/BigDecimal;I)Ljava/math/BigDecimal;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE roundingMode I L0 L1 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public bigDecimalValue(II)Ljava/math/BigDecimal;
+   L0
+    LINENUMBER 585 L0
+    NEW java/math/BigDecimal
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKESPECIAL java/math/BigDecimal.<init> (Ljava/math/BigInteger;)V
+    NEW java/math/BigDecimal
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKESPECIAL java/math/BigDecimal.<init> (Ljava/math/BigInteger;)V
+    ILOAD 1
+    ILOAD 2
+    INVOKEVIRTUAL java/math/BigDecimal.divide (Ljava/math/BigDecimal;II)Ljava/math/BigDecimal;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE scale I L0 L1 1
+    LOCALVARIABLE roundingMode I L0 L1 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public compareTo(Lorg/apache/commons/math3/fraction/BigFraction;)I
+   L0
+    LINENUMBER 600 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ASTORE 2
+   L1
+    LINENUMBER 601 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ASTORE 3
+   L2
+    LINENUMBER 602 L2
+    ALOAD 2
+    ALOAD 3
+    INVOKEVIRTUAL java/math/BigInteger.compareTo (Ljava/math/BigInteger;)I
+    IRETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L3 0
+    LOCALVARIABLE object Lorg/apache/commons/math3/fraction/BigFraction; L0 L3 1
+    LOCALVARIABLE nOd Ljava/math/BigInteger; L1 L3 2
+    LOCALVARIABLE dOn Ljava/math/BigInteger; L2 L3 3
+    MAXSTACK = 2
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public divide(Ljava/math/BigInteger;)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 617 L0
+    ALOAD 1
+    IFNONNULL L1
+   L2
+    LINENUMBER 618 L2
+    NEW org/apache/commons/math3/exception/NullArgumentException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.FRACTION : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESPECIAL org/apache/commons/math3/exception/NullArgumentException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L1
+    LINENUMBER 620 L1
+    GETSTATIC java/math/BigInteger.ZERO : Ljava/math/BigInteger;
+    ALOAD 1
+    INVOKEVIRTUAL java/math/BigInteger.equals (Ljava/lang/Object;)Z
+    IFEQ L3
+   L4
+    LINENUMBER 621 L4
+    NEW org/apache/commons/math3/exception/MathArithmeticException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.ZERO_DENOMINATOR : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESPECIAL org/apache/commons/math3/exception/MathArithmeticException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L3
+    LINENUMBER 623 L3
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ALOAD 1
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L5 0
+    LOCALVARIABLE bg Ljava/math/BigInteger; L0 L5 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public divide(I)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 637 L0
+    ALOAD 0
+    ILOAD 1
+    I2L
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.divide (Ljava/math/BigInteger;)Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE i I L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public divide(J)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 651 L0
+    ALOAD 0
+    LLOAD 1
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.divide (Ljava/math/BigInteger;)Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE l J L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public divide(Lorg/apache/commons/math3/fraction/BigFraction;)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 666 L0
+    ALOAD 1
+    IFNONNULL L1
+   L2
+    LINENUMBER 667 L2
+    NEW org/apache/commons/math3/exception/NullArgumentException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.FRACTION : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESPECIAL org/apache/commons/math3/exception/NullArgumentException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L1
+    LINENUMBER 669 L1
+    GETSTATIC java/math/BigInteger.ZERO : Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.equals (Ljava/lang/Object;)Z
+    IFEQ L3
+   L4
+    LINENUMBER 670 L4
+    NEW org/apache/commons/math3/exception/MathArithmeticException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.ZERO_DENOMINATOR : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESPECIAL org/apache/commons/math3/exception/MathArithmeticException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L3
+    LINENUMBER 673 L3
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.reciprocal ()Lorg/apache/commons/math3/fraction/BigFraction;
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.multiply (Lorg/apache/commons/math3/fraction/BigFraction;)Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L5 0
+    LOCALVARIABLE fraction Lorg/apache/commons/math3/fraction/BigFraction; L0 L5 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public doubleValue()D
+   L0
+    LINENUMBER 687 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.doubleValue ()D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.doubleValue ()D
+    DDIV
+    DSTORE 1
+   L1
+    LINENUMBER 688 L1
+    DLOAD 1
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L2
+   L3
+    LINENUMBER 691 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.bitLength ()I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.bitLength ()I
+    INVOKESTATIC java/lang/Math.max (II)I
+    LDC 1.7976931348623157E308
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.getExponent (D)I
+    ISUB
+    ISTORE 3
+   L4
+    LINENUMBER 693 L4
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ILOAD 3
+    INVOKEVIRTUAL java/math/BigInteger.shiftRight (I)Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.doubleValue ()D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ILOAD 3
+    INVOKEVIRTUAL java/math/BigInteger.shiftRight (I)Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.doubleValue ()D
+    DDIV
+    DSTORE 1
+   L2
+    LINENUMBER 696 L2
+    DLOAD 1
+    DRETURN
+   L5
+    LOCALVARIABLE shift I L4 L2 3
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L5 0
+    LOCALVARIABLE result D L1 L5 1
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public equals(Ljava/lang/Object;)Z
+   L0
+    LINENUMBER 716 L0
+    ICONST_0
+    ISTORE 2
+   L1
+    LINENUMBER 718 L1
+    ALOAD 0
+    ALOAD 1
+    IF_ACMPNE L2
+   L3
+    LINENUMBER 719 L3
+    ICONST_1
+    ISTORE 2
+    GOTO L4
+   L2
+    LINENUMBER 720 L2
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math3/fraction/BigFraction
+    IFEQ L4
+   L5
+    LINENUMBER 721 L5
+    ALOAD 1
+    CHECKCAST org/apache/commons/math3/fraction/BigFraction
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.reduce ()Lorg/apache/commons/math3/fraction/BigFraction;
+    ASTORE 3
+   L6
+    LINENUMBER 722 L6
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.reduce ()Lorg/apache/commons/math3/fraction/BigFraction;
+    ASTORE 4
+   L7
+    LINENUMBER 723 L7
+    ALOAD 4
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 3
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.equals (Ljava/lang/Object;)Z
+    IFEQ L8
+    ALOAD 4
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ALOAD 3
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.equals (Ljava/lang/Object;)Z
+    IFEQ L8
+    ICONST_1
+    GOTO L9
+   L8
+    ICONST_0
+   L9
+    ISTORE 2
+   L4
+    LINENUMBER 726 L4
+    ILOAD 2
+    IRETURN
+   L10
+    LOCALVARIABLE rhs Lorg/apache/commons/math3/fraction/BigFraction; L6 L4 3
+    LOCALVARIABLE thisOne Lorg/apache/commons/math3/fraction/BigFraction; L7 L4 4
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L10 0
+    LOCALVARIABLE other Ljava/lang/Object; L0 L10 1
+    LOCALVARIABLE ret Z L1 L10 2
+    MAXSTACK = 2
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public floatValue()F
+   L0
+    LINENUMBER 740 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.floatValue ()F
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.floatValue ()F
+    FDIV
+    FSTORE 1
+   L1
+    LINENUMBER 741 L1
+    FLOAD 1
+    F2D
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L2
+   L3
+    LINENUMBER 744 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.bitLength ()I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.bitLength ()I
+    INVOKESTATIC java/lang/Math.max (II)I
+    LDC 3.4028235E38
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.getExponent (F)I
+    ISUB
+    ISTORE 2
+   L4
+    LINENUMBER 746 L4
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ILOAD 2
+    INVOKEVIRTUAL java/math/BigInteger.shiftRight (I)Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.floatValue ()F
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ILOAD 2
+    INVOKEVIRTUAL java/math/BigInteger.shiftRight (I)Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.floatValue ()F
+    FDIV
+    FSTORE 1
+   L2
+    LINENUMBER 749 L2
+    FLOAD 1
+    FRETURN
+   L5
+    LOCALVARIABLE shift I L4 L2 2
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L5 0
+    LOCALVARIABLE result F L1 L5 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getDenominator()Ljava/math/BigInteger;
+   L0
+    LINENUMBER 760 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getDenominatorAsInt()I
+   L0
+    LINENUMBER 771 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.intValue ()I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getDenominatorAsLong()J
+   L0
+    LINENUMBER 782 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.longValue ()J
+    LRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getNumerator()Ljava/math/BigInteger;
+   L0
+    LINENUMBER 793 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getNumeratorAsInt()I
+   L0
+    LINENUMBER 804 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.intValue ()I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getNumeratorAsLong()J
+   L0
+    LINENUMBER 815 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.longValue ()J
+    LRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public hashCode()I
+   L0
+    LINENUMBER 828 L0
+    BIPUSH 37
+    SIPUSH 629
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.hashCode ()I
+    IADD
+    IMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.hashCode ()I
+    IADD
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public intValue()I
+   L0
+    LINENUMBER 842 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.divide (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.intValue ()I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public longValue()J
+   L0
+    LINENUMBER 856 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.divide (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.longValue ()J
+    LRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public multiply(Ljava/math/BigInteger;)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 870 L0
+    ALOAD 1
+    IFNONNULL L1
+   L2
+    LINENUMBER 871 L2
+    NEW org/apache/commons/math3/exception/NullArgumentException
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/exception/NullArgumentException.<init> ()V
+    ATHROW
+   L1
+    LINENUMBER 873 L1
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L3 0
+    LOCALVARIABLE bg Ljava/math/BigInteger; L0 L3 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public multiply(I)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 887 L0
+    ALOAD 0
+    ILOAD 1
+    I2L
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.multiply (Ljava/math/BigInteger;)Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE i I L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public multiply(J)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 901 L0
+    ALOAD 0
+    LLOAD 1
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.multiply (Ljava/math/BigInteger;)Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE l J L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public multiply(Lorg/apache/commons/math3/fraction/BigFraction;)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 915 L0
+    ALOAD 1
+    IFNONNULL L1
+   L2
+    LINENUMBER 916 L2
+    NEW org/apache/commons/math3/exception/NullArgumentException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.FRACTION : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESPECIAL org/apache/commons/math3/exception/NullArgumentException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L1
+    LINENUMBER 918 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    GETSTATIC java/math/BigInteger.ZERO : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.equals (Ljava/lang/Object;)Z
+    IFNE L3
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    GETSTATIC java/math/BigInteger.ZERO : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.equals (Ljava/lang/Object;)Z
+    IFEQ L4
+   L3
+    LINENUMBER 920 L3
+    GETSTATIC org/apache/commons/math3/fraction/BigFraction.ZERO : Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L4
+    LINENUMBER 922 L4
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L5 0
+    LOCALVARIABLE fraction Lorg/apache/commons/math3/fraction/BigFraction; L0 L5 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public negate()Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 935 L0
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.negate ()Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 4
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public percentageValue()D
+   L0
+    LINENUMBER 947 L0
+    ALOAD 0
+    GETSTATIC org/apache/commons/math3/fraction/BigFraction.ONE_HUNDRED : Ljava/math/BigInteger;
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.multiply (Ljava/math/BigInteger;)Lorg/apache/commons/math3/fraction/BigFraction;
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.doubleValue ()D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public pow(I)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 962 L0
+    ILOAD 1
+    IFGE L1
+   L2
+    LINENUMBER 963 L2
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ILOAD 1
+    INEG
+    INVOKEVIRTUAL java/math/BigInteger.pow (I)Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ILOAD 1
+    INEG
+    INVOKEVIRTUAL java/math/BigInteger.pow (I)Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L1
+    LINENUMBER 965 L1
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ILOAD 1
+    INVOKEVIRTUAL java/math/BigInteger.pow (I)Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ILOAD 1
+    INVOKEVIRTUAL java/math/BigInteger.pow (I)Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L3 0
+    LOCALVARIABLE exponent I L0 L3 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public pow(J)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 979 L0
+    LLOAD 1
+    LCONST_0
+    LCMP
+    IFGE L1
+   L2
+    LINENUMBER 980 L2
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    LLOAD 1
+    LNEG
+    INVOKESTATIC org/apache/commons/math3/util/ArithmeticUtils.pow (Ljava/math/BigInteger;J)Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    LLOAD 1
+    LNEG
+    INVOKESTATIC org/apache/commons/math3/util/ArithmeticUtils.pow (Ljava/math/BigInteger;J)Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L1
+    LINENUMBER 983 L1
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    LLOAD 1
+    INVOKESTATIC org/apache/commons/math3/util/ArithmeticUtils.pow (Ljava/math/BigInteger;J)Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    LLOAD 1
+    INVOKESTATIC org/apache/commons/math3/util/ArithmeticUtils.pow (Ljava/math/BigInteger;J)Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L3 0
+    LOCALVARIABLE exponent J L0 L3 1
+    MAXSTACK = 6
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public pow(Ljava/math/BigInteger;)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 998 L0
+    ALOAD 1
+    GETSTATIC java/math/BigInteger.ZERO : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.compareTo (Ljava/math/BigInteger;)I
+    IFGE L1
+   L2
+    LINENUMBER 999 L2
+    ALOAD 1
+    INVOKEVIRTUAL java/math/BigInteger.negate ()Ljava/math/BigInteger;
+    ASTORE 2
+   L3
+    LINENUMBER 1000 L3
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ALOAD 2
+    INVOKESTATIC org/apache/commons/math3/util/ArithmeticUtils.pow (Ljava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 2
+    INVOKESTATIC org/apache/commons/math3/util/ArithmeticUtils.pow (Ljava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L1
+    LINENUMBER 1003 L1
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math3/util/ArithmeticUtils.pow (Ljava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math3/util/ArithmeticUtils.pow (Ljava/math/BigInteger;Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L4
+    LOCALVARIABLE eNeg Ljava/math/BigInteger; L3 L1 2
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L4 0
+    LOCALVARIABLE exponent Ljava/math/BigInteger; L0 L4 1
+    MAXSTACK = 5
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public pow(D)D
+   L0
+    LINENUMBER 1018 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.doubleValue ()D
+    DLOAD 1
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.pow (DD)D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.doubleValue ()D
+    DLOAD 1
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.pow (DD)D
+    DDIV
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE exponent D L0 L1 1
+    MAXSTACK = 6
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public reciprocal()Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 1030 L0
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 4
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public reduce()Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 1042 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.gcd (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ASTORE 1
+   L1
+    LINENUMBER 1043 L1
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 1
+    INVOKEVIRTUAL java/math/BigInteger.divide (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ALOAD 1
+    INVOKEVIRTUAL java/math/BigInteger.divide (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L2 0
+    LOCALVARIABLE gcd Ljava/math/BigInteger; L1 L2 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public subtract(Ljava/math/BigInteger;)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 1057 L0
+    ALOAD 1
+    IFNONNULL L1
+   L2
+    LINENUMBER 1058 L2
+    NEW org/apache/commons/math3/exception/NullArgumentException
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/exception/NullArgumentException.<init> ()V
+    ATHROW
+   L1
+    LINENUMBER 1060 L1
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ALOAD 1
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.subtract (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L3 0
+    LOCALVARIABLE bg Ljava/math/BigInteger; L0 L3 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public subtract(I)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 1073 L0
+    ALOAD 0
+    ILOAD 1
+    I2L
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.subtract (Ljava/math/BigInteger;)Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE i I L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public subtract(J)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 1086 L0
+    ALOAD 0
+    LLOAD 1
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.subtract (Ljava/math/BigInteger;)Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE l J L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public subtract(Lorg/apache/commons/math3/fraction/BigFraction;)Lorg/apache/commons/math3/fraction/BigFraction;
+   L0
+    LINENUMBER 1100 L0
+    ALOAD 1
+    IFNONNULL L1
+   L2
+    LINENUMBER 1101 L2
+    NEW org/apache/commons/math3/exception/NullArgumentException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.FRACTION : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESPECIAL org/apache/commons/math3/exception/NullArgumentException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L1
+    LINENUMBER 1103 L1
+    GETSTATIC org/apache/commons/math3/fraction/BigFraction.ZERO : Lorg/apache/commons/math3/fraction/BigFraction;
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.equals (Ljava/lang/Object;)Z
+    IFEQ L3
+   L4
+    LINENUMBER 1104 L4
+    ALOAD 0
+    ARETURN
+   L3
+    LINENUMBER 1107 L3
+    ACONST_NULL
+    ASTORE 2
+   L5
+    LINENUMBER 1108 L5
+    ACONST_NULL
+    ASTORE 3
+   L6
+    LINENUMBER 1109 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.equals (Ljava/lang/Object;)Z
+    IFEQ L7
+   L8
+    LINENUMBER 1110 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.subtract (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ASTORE 2
+   L9
+    LINENUMBER 1111 L9
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ASTORE 3
+    GOTO L10
+   L7
+    LINENUMBER 1113 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.subtract (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ASTORE 2
+   L11
+    LINENUMBER 1114 L11
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    ALOAD 1
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.multiply (Ljava/math/BigInteger;)Ljava/math/BigInteger;
+    ASTORE 3
+   L10
+    LINENUMBER 1116 L10
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ALOAD 2
+    ALOAD 3
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (Ljava/math/BigInteger;Ljava/math/BigInteger;)V
+    ARETURN
+   L12
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L12 0
+    LOCALVARIABLE fraction Lorg/apache/commons/math3/fraction/BigFraction; L0 L12 1
+    LOCALVARIABLE num Ljava/math/BigInteger; L5 L12 2
+    LOCALVARIABLE den Ljava/math/BigInteger; L6 L12 3
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public toString()Ljava/lang/String;
+   L0
+    LINENUMBER 1131 L0
+    ACONST_NULL
+    ASTORE 1
+   L1
+    LINENUMBER 1132 L1
+    GETSTATIC java/math/BigInteger.ONE : Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.equals (Ljava/lang/Object;)Z
+    IFEQ L2
+   L3
+    LINENUMBER 1133 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.toString ()Ljava/lang/String;
+    ASTORE 1
+    GOTO L4
+   L2
+    LINENUMBER 1134 L2
+    GETSTATIC java/math/BigInteger.ZERO : Ljava/math/BigInteger;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/math/BigInteger.equals (Ljava/lang/Object;)Z
+    IFEQ L5
+   L6
+    LINENUMBER 1135 L6
+    LDC "0"
+    ASTORE 1
+    GOTO L4
+   L5
+    LINENUMBER 1137 L5
+    NEW java/lang/StringBuilder
+    DUP
+    INVOKESPECIAL java/lang/StringBuilder.<init> ()V
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.numerator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    LDC " / "
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/fraction/BigFraction.denominator : Ljava/math/BigInteger;
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    INVOKEVIRTUAL java/lang/StringBuilder.toString ()Ljava/lang/String;
+    ASTORE 1
+   L4
+    LINENUMBER 1139 L4
+    ALOAD 1
+    ARETURN
+   L7
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L7 0
+    LOCALVARIABLE str Ljava/lang/String; L1 L7 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getField()Lorg/apache/commons/math3/fraction/BigFractionField;
+   L0
+    LINENUMBER 1144 L0
+    INVOKESTATIC org/apache/commons/math3/fraction/BigFractionField.getInstance ()Lorg/apache/commons/math3/fraction/BigFractionField;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1041
+  public synthetic bridge getField()Lorg/apache/commons/math3/Field;
+   L0
+    LINENUMBER 40 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.getField ()Lorg/apache/commons/math3/fraction/BigFractionField;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1041
+  public synthetic bridge reciprocal()Ljava/lang/Object; throws org/apache/commons/math3/exception/MathArithmeticException 
+   L0
+    LINENUMBER 40 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.reciprocal ()Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1041
+  public synthetic bridge divide(Ljava/lang/Object;)Ljava/lang/Object; throws org/apache/commons/math3/exception/NullArgumentException org/apache/commons/math3/exception/MathArithmeticException 
+   L0
+    LINENUMBER 40 L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math3/fraction/BigFraction
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.divide (Lorg/apache/commons/math3/fraction/BigFraction;)Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE x0 Ljava/lang/Object; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge multiply(Ljava/lang/Object;)Ljava/lang/Object; throws org/apache/commons/math3/exception/NullArgumentException 
+   L0
+    LINENUMBER 40 L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math3/fraction/BigFraction
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.multiply (Lorg/apache/commons/math3/fraction/BigFraction;)Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE x0 Ljava/lang/Object; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge multiply(I)Ljava/lang/Object;
+   L0
+    LINENUMBER 40 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.multiply (I)Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE x0 I L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge negate()Ljava/lang/Object;
+   L0
+    LINENUMBER 40 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.negate ()Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1041
+  public synthetic bridge subtract(Ljava/lang/Object;)Ljava/lang/Object; throws org/apache/commons/math3/exception/NullArgumentException 
+   L0
+    LINENUMBER 40 L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math3/fraction/BigFraction
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.subtract (Lorg/apache/commons/math3/fraction/BigFraction;)Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE x0 Ljava/lang/Object; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge add(Ljava/lang/Object;)Ljava/lang/Object; throws org/apache/commons/math3/exception/NullArgumentException 
+   L0
+    LINENUMBER 40 L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math3/fraction/BigFraction
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.add (Lorg/apache/commons/math3/fraction/BigFraction;)Lorg/apache/commons/math3/fraction/BigFraction;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE x0 Ljava/lang/Object; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge compareTo(Ljava/lang/Object;)I
+   L0
+    LINENUMBER 40 L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math3/fraction/BigFraction
+    INVOKEVIRTUAL org/apache/commons/math3/fraction/BigFraction.compareTo (Lorg/apache/commons/math3/fraction/BigFraction;)I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/fraction/BigFraction; L0 L1 0
+    LOCALVARIABLE x0 Ljava/lang/Object; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x8
+  static <clinit>()V
+   L0
+    LINENUMBER 45 L0
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ICONST_2
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (I)V
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.TWO : Lorg/apache/commons/math3/fraction/BigFraction;
+   L1
+    LINENUMBER 48 L1
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ICONST_1
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (I)V
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.ONE : Lorg/apache/commons/math3/fraction/BigFraction;
+   L2
+    LINENUMBER 51 L2
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (I)V
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.ZERO : Lorg/apache/commons/math3/fraction/BigFraction;
+   L3
+    LINENUMBER 54 L3
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ICONST_M1
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (I)V
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.MINUS_ONE : Lorg/apache/commons/math3/fraction/BigFraction;
+   L4
+    LINENUMBER 57 L4
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ICONST_4
+    ICONST_5
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (II)V
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.FOUR_FIFTHS : Lorg/apache/commons/math3/fraction/BigFraction;
+   L5
+    LINENUMBER 60 L5
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ICONST_1
+    ICONST_5
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (II)V
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.ONE_FIFTH : Lorg/apache/commons/math3/fraction/BigFraction;
+   L6
+    LINENUMBER 63 L6
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ICONST_1
+    ICONST_2
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (II)V
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.ONE_HALF : Lorg/apache/commons/math3/fraction/BigFraction;
+   L7
+    LINENUMBER 66 L7
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ICONST_1
+    ICONST_4
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (II)V
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.ONE_QUARTER : Lorg/apache/commons/math3/fraction/BigFraction;
+   L8
+    LINENUMBER 69 L8
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ICONST_1
+    ICONST_3
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (II)V
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.ONE_THIRD : Lorg/apache/commons/math3/fraction/BigFraction;
+   L9
+    LINENUMBER 72 L9
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ICONST_3
+    ICONST_5
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (II)V
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.THREE_FIFTHS : Lorg/apache/commons/math3/fraction/BigFraction;
+   L10
+    LINENUMBER 75 L10
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ICONST_3
+    ICONST_4
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (II)V
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.THREE_QUARTERS : Lorg/apache/commons/math3/fraction/BigFraction;
+   L11
+    LINENUMBER 78 L11
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ICONST_2
+    ICONST_5
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (II)V
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.TWO_FIFTHS : Lorg/apache/commons/math3/fraction/BigFraction;
+   L12
+    LINENUMBER 81 L12
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ICONST_2
+    ICONST_4
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (II)V
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.TWO_QUARTERS : Lorg/apache/commons/math3/fraction/BigFraction;
+   L13
+    LINENUMBER 84 L13
+    NEW org/apache/commons/math3/fraction/BigFraction
+    DUP
+    ICONST_2
+    ICONST_3
+    INVOKESPECIAL org/apache/commons/math3/fraction/BigFraction.<init> (II)V
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.TWO_THIRDS : Lorg/apache/commons/math3/fraction/BigFraction;
+   L14
+    LINENUMBER 90 L14
+    LDC 100
+    INVOKESTATIC java/math/BigInteger.valueOf (J)Ljava/math/BigInteger;
+    PUTSTATIC org/apache/commons/math3/fraction/BigFraction.ONE_HUNDRED : Ljava/math/BigInteger;
+    RETURN
+    MAXSTACK = 4
+    MAXLOCALS = 0
+}
+

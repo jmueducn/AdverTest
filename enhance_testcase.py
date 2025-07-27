@@ -1,4 +1,8 @@
 # enhance_testcase.py
+# enhance_from_details.py
+import  tempfile
+from pathlib import Path
+
 
 import os
 import re
@@ -11,7 +15,12 @@ from extract import extract_method
 from compress import generate_tar_bz2
 from testIniGenPrompt import extract_pure_test_method,ensure_unique_test_method_names,assemble_test_class,compile_and_run,update_test_class_info,llm_based_fix
 from function import extract_methods_and_lines,find_affected_methods_by_linenumber,extract_constructors_and_lines
-
+DETAILS_RE = re.compile(
+    r"clazz=([A-Za-z0-9_.$]+).*?"
+    r"method=([A-Za-z0-9_<$]+).*?"
+    r"lineNumber=(\d+).*?"
+    r"description=(.*?)\]"
+)
 def tc_enhance(test_file,mutants_file,llm,base_dir):
     
     test_class_code = ""
@@ -78,7 +87,7 @@ def tc_enhance(test_file,mutants_file,llm,base_dir):
 Instruction:
 
 You are an expert Java developer and software tester. Your task is to generate a JUnit test method to detect and capture survived mutants in a given Java method within a Java class. The mutant has already been identified, and your job is to create test cases to ensure that it is caught during testing.(notice:mutant refers to mutant in software engineering, i.e. making subtle alterations to the original code)
-Follow these steps to ensure comprehensive and effective test coverage for mutants:
+Follow these steps to ensure comprehensive and detection for mutants:
 
 1. **Analyze the Java Method and Its Mutation**:
    - Clearly identify the method's parameters, return type, and intended functionality.
@@ -149,10 +158,8 @@ The different behavior can be tested by monitoring ......., so ......
 <test method>
 ```
 '''
-         # 创建 ChatPromptTemplate 对象
         prompt = ChatPromptTemplate.from_template(prompt_template)
 
-        # 初始化一个列表来存储所有生成的测试方法
         test_methods = []
         method_infos = []
         methodstr = ""
@@ -179,11 +186,10 @@ The different behavior can be tested by monitoring ......., so ......
                 cons_parameters = constructor['parameters']
                 cons_body = constructor['body']
                 
-                # 构建参数字符串
                 params_str = ', '.join([f"{param['type']} {param['name']}" for param in cons_parameters])
                 
                 constrstr.append(f"  - {cons_modifiers} {cons_name}({params_str}) {{")
-                # 打印构造函数体，每行缩进四个空格
+
                 for line in cons_body.split('\n'):
                     constrstr.append(f"      {line.strip()}")
                 constrstr.append("  }")
@@ -196,12 +202,14 @@ The different behavior can be tested by monitoring ......., so ......
                     "method_code":{cons_body},
                     "class_variables":f"class_name:{class_name}\nclass variables:{class_json}\n",
                     "method_info":f"all methods: {methodstr}",
-                    "Constructors":f"Constructors: {constructors_str}",
-                    "mutant_info":f"in the upper method, code{survived_mutant['precode']} was mutated to {survived_mutant['aftercode']},however, it was not detected by previous test cases, plase add a new test case to detect it!"
+                    "Constructors":f"Constructors: {constrstr}",
+                    #"mutant_info":f" "
+                    #"mutant_info":f"{survived_mutant['description']}",
+                    "mutant_info":f"in the upper method, code{survived_mutant['precode']} was mutated to {survived_mutant['aftercode']}, however, it was not detected by previous test cases, plase add a new test case to detect it!"
                     })
                         print("hahaha")
                         new_pure_methods = extract_pure_test_method(test_method)
-                        print(f"生成的测试方法 for {cons_name} 已生成。")
+                        print(f"Generated Test Method for {cons_name} .")
                         if new_pure_methods:
                             if first_method:
                                 for test_method_name, pure_method in pure_test_methods:
@@ -225,15 +233,15 @@ The different behavior can be tested by monitoring ......., so ......
                         "pure_test_method": pure_method.strip()
                         })
                         else:
-                            print(f"无法提取纯粹的测试方法 for {cons_name}.")
+                            print(f"no pure method errors extracted for {cons_name}.")
             
 
                     except ValueError as ve:
-                        print(f"提示模板格式错误 for {cons_name}: {ve}")
+                        print(f"prompt template error for {cons_name}: {ve}")
                         continue
                     except Exception as e:
-                        print(f"调用 LLM 失败 for {cons_name}: {e}")
-                        traceback.print_exc()  # 打印完整的错误栈
+                        print(f" LLM failed for {cons_name}: {e}")
+                        traceback.print_exc()  
                         continue
         else:
             constrstr.append("  - No constructors found.")
@@ -247,7 +255,6 @@ The different behavior can be tested by monitoring ......., so ......
             #if method_name in 
                 continue
         
-        # 调用 LLM 生成测试方法
             try:
                 class_variables = method['class_variables']
                 class_json = json.dumps(class_variables, indent=2)           
@@ -257,11 +264,13 @@ The different behavior can be tested by monitoring ......., so ......
                 "class_variables":f"class_name:{class_name}\nclass variables:{class_json}\n",
                 "method_info":f"all methods: {methodstr}",
                 "Constructors":f"Constructors: {constructors_str}",
+                #"mutant_info":f"{survived_mutant['description']}"
+                #"mutant_info":f" "
                 "mutant_info":f"in the upper method, code{survived_mutant['precode']} was mutated to {survived_mutant['aftercode']},however, it was not detected by previous test cases, plase add a new test case to detect it!"
                 })
             
                 new_pure_methods = extract_pure_test_method(test_method)
-                print(f"生成的测试方法 for {method_name} 已生成。")
+                print(f"Generated Test Method for {method_name} .")
                 if new_pure_methods:
                     if first_method:
                         for test_method_name, pure_method in pure_test_methods:
@@ -331,9 +340,8 @@ The different behavior can be tested by monitoring ......., so ......
             except Exception as e:
                 print(f"Error writing file: {e}")
             Rfirst = False
-            print(f"\nbackup已保存到: {backup_path}")
-        #not decided: fix it or re-prompt i guess fix is better (for both cases--- token count / time)
-        #剩余的问题：处理 fix（直接用llm）, 重名和重复的testcase
+            print(f"\nbackup: {backup_path}")
+     
         if resp == 0:
             is_llm_success, test_class_code, errors, test_class_info = llm_based_fix(
                  test_class_code, errors, test_class_info, base_dir, test_dir, 0,tested_file,llm,pkg
@@ -357,6 +365,46 @@ The different behavior can be tested by monitoring ......., so ......
     print("enhance ended")
     return resp,errors
 
+
+def enhance_from_details(test_file: str,
+                         details_txt: str,
+                         project_src_root: str,
+                         llm,
+                         base_dir: str):
+
+    mutants = []
+    with open(details_txt, encoding="utf-8") as f:
+        for line in f:
+            if not line.startswith("MutationDetails"):
+                continue
+            m = DETAILS_RE.search(line)
+            if not m:
+                continue
+            clazz, method, line_no, desc = m.groups()
+            java_path = Path(project_src_root) / Path(clazz.replace(".", "/") + ".java")
+            mutants.append({
+                "survived": True,
+                "filepath": str(java_path),
+                "line": int(line_no),
+                "description": desc          
+            })
+
+    if not mutants:
+        print("details.txt has no MutationDetails")
+        return -1, []
+
+    with tempfile.NamedTemporaryFile(mode="w", suffix=".json", delete=False) as tmp:
+        json.dump(mutants, tmp, indent=2, ensure_ascii=False)
+        mutants_json_path = tmp.name
+
+    resp, errors = tc_enhance(
+        test_file=test_file,
+        mutants_file=mutants_json_path,
+        llm=llm,
+        base_dir=base_dir
+    )
+    os.unlink(mutants_json_path)
+    return resp, errors
 
 def TC_ENHANCE(proj,id,base_dir,test_file,mutants_dir,LLM):
     rbase_dir = base_dir + "/%s/%s_" % (proj,proj) +str(id+1)+"_fixed"

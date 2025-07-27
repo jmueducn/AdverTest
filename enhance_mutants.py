@@ -4,20 +4,13 @@ from langchain.prompts import ChatPromptTemplate
 
 def group_mutants_by_line(mutants_data):
     """
-    将变异体按照变异行号分组。
-
-    参数:
-        mutants_data: 包含所有变异体的列表，每个变异体是一个字典，
-                      必须包含 'line' 键，表示变异的行号。
-
-    返回:
-        groups: 一个字典，键为行号，值为该行对应的变异体列表。
+    
     """
     groups = {}
     for mutant in mutants_data:
         line = mutant.get("line")
         if line is None:
-            continue  # 如果没有行号，则跳过
+            continue  # 
         groups.setdefault(line, []).append(mutant)
     return groups
 

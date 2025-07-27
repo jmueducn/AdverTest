@@ -1,0 +1,835 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math/analysis/solvers/BrentSolver extends org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl {
+
+  // compiled from: BrentSolver.java
+
+  // access flags 0x1A
+  private final static Ljava/lang/String; NON_BRACKETING_MESSAGE = "function values at endpoints do not have different signs.  Endpoints: [{0}, {1}], Values: [{2}, {3}]"
+
+  // access flags 0x1A
+  private final static J serialVersionUID = 7694577816772532779
+
+  // DEPRECATED
+  // access flags 0x20001
+  public <init>(Lorg/apache/commons/math/analysis/UnivariateRealFunction;)V
+  @Ljava/lang/Deprecated;()
+   L0
+    LINENUMBER 54 L0
+    ALOAD 0
+    ALOAD 1
+    BIPUSH 100
+    LDC 1.0E-6
+    INVOKESPECIAL org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.<init> (Lorg/apache/commons/math/analysis/UnivariateRealFunction;ID)V
+   L1
+    LINENUMBER 55 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/analysis/solvers/BrentSolver; L0 L2 0
+    LOCALVARIABLE f Lorg/apache/commons/math/analysis/UnivariateRealFunction; L0 L2 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 61 L0
+    ALOAD 0
+    BIPUSH 100
+    LDC 1.0E-6
+    INVOKESPECIAL org/apache/commons/math/analysis/solvers/UnivariateRealSolverImpl.<init> (ID)V
+   L1
+    LINENUMBER 62 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/analysis/solvers/BrentSolver; L0 L2 0
+    MAXSTACK = 4
+    MAXLOCALS = 1
+
+  // DEPRECATED
+  // access flags 0x20001
+  public solve(DD)D throws org/apache/commons/math/MaxIterationsExceededException org/apache/commons/math/FunctionEvaluationException 
+  @Ljava/lang/Deprecated;()
+   L0
+    LINENUMBER 68 L0
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.f : Lorg/apache/commons/math/analysis/UnivariateRealFunction;
+    DLOAD 1
+    DLOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BrentSolver.solve (Lorg/apache/commons/math/analysis/UnivariateRealFunction;DD)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/analysis/solvers/BrentSolver; L0 L1 0
+    LOCALVARIABLE min D L0 L1 1
+    LOCALVARIABLE max D L0 L1 3
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // DEPRECATED
+  // access flags 0x20001
+  public solve(DDD)D throws org/apache/commons/math/MaxIterationsExceededException org/apache/commons/math/FunctionEvaluationException 
+  @Ljava/lang/Deprecated;()
+   L0
+    LINENUMBER 75 L0
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.f : Lorg/apache/commons/math/analysis/UnivariateRealFunction;
+    DLOAD 1
+    DLOAD 3
+    DLOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BrentSolver.solve (Lorg/apache/commons/math/analysis/UnivariateRealFunction;DDD)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/analysis/solvers/BrentSolver; L0 L1 0
+    LOCALVARIABLE min D L0 L1 1
+    LOCALVARIABLE max D L0 L1 3
+    LOCALVARIABLE initial D L0 L1 5
+    MAXSTACK = 8
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public solve(Lorg/apache/commons/math/analysis/UnivariateRealFunction;DDD)D throws org/apache/commons/math/MaxIterationsExceededException org/apache/commons/math/FunctionEvaluationException 
+   L0
+    LINENUMBER 102 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BrentSolver.clearResult ()V
+   L1
+    LINENUMBER 103 L1
+    ALOAD 0
+    DLOAD 2
+    DLOAD 6
+    DLOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BrentSolver.verifySequence (DDD)V
+   L2
+    LINENUMBER 106 L2
+    ALOAD 1
+    DLOAD 6
+    INVOKEINTERFACE org/apache/commons/math/analysis/UnivariateRealFunction.value (D)D (itf)
+    DSTORE 8
+   L3
+    LINENUMBER 107 L3
+    DLOAD 8
+    INVOKESTATIC java/lang/Math.abs (D)D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.functionValueAccuracy : D
+    DCMPG
+    IFGT L4
+   L5
+    LINENUMBER 108 L5
+    ALOAD 0
+    DLOAD 6
+    ICONST_1
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BrentSolver.setResult (DI)V
+   L6
+    LINENUMBER 109 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.result : D
+    DRETURN
+   L4
+    LINENUMBER 113 L4
+    ALOAD 1
+    DLOAD 2
+    INVOKEINTERFACE org/apache/commons/math/analysis/UnivariateRealFunction.value (D)D (itf)
+    DSTORE 10
+   L7
+    LINENUMBER 114 L7
+    DLOAD 10
+    INVOKESTATIC java/lang/Math.abs (D)D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.functionValueAccuracy : D
+    DCMPG
+    IFGT L8
+   L9
+    LINENUMBER 115 L9
+    ALOAD 0
+    DLOAD 10
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BrentSolver.setResult (DI)V
+   L10
+    LINENUMBER 116 L10
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.result : D
+    DRETURN
+   L8
+    LINENUMBER 120 L8
+    DLOAD 8
+    DLOAD 10
+    DMUL
+    DCONST_0
+    DCMPG
+    IFGE L11
+   L12
+    LINENUMBER 121 L12
+    ALOAD 0
+    ALOAD 1
+    DLOAD 2
+    DLOAD 10
+    DLOAD 6
+    DLOAD 8
+    DLOAD 2
+    DLOAD 10
+    INVOKESPECIAL org/apache/commons/math/analysis/solvers/BrentSolver.solve (Lorg/apache/commons/math/analysis/UnivariateRealFunction;DDDDDD)D
+    DRETURN
+   L11
+    LINENUMBER 125 L11
+    ALOAD 1
+    DLOAD 4
+    INVOKEINTERFACE org/apache/commons/math/analysis/UnivariateRealFunction.value (D)D (itf)
+    DSTORE 12
+   L13
+    LINENUMBER 126 L13
+    DLOAD 12
+    INVOKESTATIC java/lang/Math.abs (D)D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.functionValueAccuracy : D
+    DCMPG
+    IFGT L14
+   L15
+    LINENUMBER 127 L15
+    ALOAD 0
+    DLOAD 12
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BrentSolver.setResult (DI)V
+   L16
+    LINENUMBER 128 L16
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.result : D
+    DRETURN
+   L14
+    LINENUMBER 132 L14
+    DLOAD 8
+    DLOAD 12
+    DMUL
+    DCONST_0
+    DCMPG
+    IFGE L17
+   L18
+    LINENUMBER 133 L18
+    ALOAD 0
+    ALOAD 1
+    DLOAD 6
+    DLOAD 8
+    DLOAD 4
+    DLOAD 12
+    DLOAD 6
+    DLOAD 8
+    INVOKESPECIAL org/apache/commons/math/analysis/solvers/BrentSolver.solve (Lorg/apache/commons/math/analysis/UnivariateRealFunction;DDDDDD)D
+    DRETURN
+   L17
+    LINENUMBER 136 L17
+    DLOAD 10
+    DLOAD 12
+    DMUL
+    DCONST_0
+    DCMPL
+    IFLE L19
+   L20
+    LINENUMBER 137 L20
+    LDC "function values at endpoints do not have different signs.  Endpoints: [{0}, {1}], Values: [{2}, {3}]"
+    ICONST_4
+    ANEWARRAY java/lang/Object
+    DUP
+    ICONST_0
+    DLOAD 2
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    AASTORE
+    DUP
+    ICONST_1
+    DLOAD 4
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    AASTORE
+    DUP
+    ICONST_2
+    DLOAD 10
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    AASTORE
+    DUP
+    ICONST_3
+    DLOAD 12
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    AASTORE
+    INVOKESTATIC org/apache/commons/math/MathRuntimeException.createIllegalArgumentException (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;
+    ATHROW
+   L19
+    LINENUMBER 142 L19
+    ALOAD 0
+    ALOAD 1
+    DLOAD 2
+    DLOAD 10
+    DLOAD 4
+    DLOAD 12
+    DLOAD 6
+    DLOAD 8
+    INVOKESPECIAL org/apache/commons/math/analysis/solvers/BrentSolver.solve (Lorg/apache/commons/math/analysis/UnivariateRealFunction;DDDDDD)D
+    DRETURN
+   L21
+    LOCALVARIABLE this Lorg/apache/commons/math/analysis/solvers/BrentSolver; L0 L21 0
+    LOCALVARIABLE f Lorg/apache/commons/math/analysis/UnivariateRealFunction; L0 L21 1
+    LOCALVARIABLE min D L0 L21 2
+    LOCALVARIABLE max D L0 L21 4
+    LOCALVARIABLE initial D L0 L21 6
+    LOCALVARIABLE yInitial D L3 L21 8
+    LOCALVARIABLE yMin D L7 L21 10
+    LOCALVARIABLE yMax D L13 L21 12
+    MAXSTACK = 14
+    MAXLOCALS = 14
+
+  // access flags 0x1
+  public solve(Lorg/apache/commons/math/analysis/UnivariateRealFunction;DD)D throws org/apache/commons/math/MaxIterationsExceededException org/apache/commons/math/FunctionEvaluationException 
+   L0
+    LINENUMBER 168 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BrentSolver.clearResult ()V
+   L1
+    LINENUMBER 169 L1
+    ALOAD 0
+    DLOAD 2
+    DLOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BrentSolver.verifyInterval (DD)V
+   L2
+    LINENUMBER 171 L2
+    LDC NaN
+    DSTORE 6
+   L3
+    LINENUMBER 173 L3
+    ALOAD 1
+    DLOAD 2
+    INVOKEINTERFACE org/apache/commons/math/analysis/UnivariateRealFunction.value (D)D (itf)
+    DSTORE 8
+   L4
+    LINENUMBER 174 L4
+    ALOAD 1
+    DLOAD 4
+    INVOKEINTERFACE org/apache/commons/math/analysis/UnivariateRealFunction.value (D)D (itf)
+    DSTORE 10
+   L5
+    LINENUMBER 177 L5
+    DLOAD 8
+    DLOAD 10
+    DMUL
+    DSTORE 12
+   L6
+    LINENUMBER 178 L6
+    DLOAD 12
+    DCONST_0
+    DCMPL
+    IFLE L7
+   L8
+    LINENUMBER 180 L8
+    DLOAD 8
+    INVOKESTATIC java/lang/Math.abs (D)D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.functionValueAccuracy : D
+    DCMPG
+    IFGT L9
+   L10
+    LINENUMBER 181 L10
+    ALOAD 0
+    DLOAD 2
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BrentSolver.setResult (DI)V
+   L11
+    LINENUMBER 182 L11
+    DLOAD 2
+    DSTORE 6
+    GOTO L12
+   L9
+    LINENUMBER 183 L9
+    DLOAD 10
+    INVOKESTATIC java/lang/Math.abs (D)D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.functionValueAccuracy : D
+    DCMPG
+    IFGT L13
+   L14
+    LINENUMBER 184 L14
+    ALOAD 0
+    DLOAD 4
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BrentSolver.setResult (DI)V
+   L15
+    LINENUMBER 185 L15
+    DLOAD 4
+    DSTORE 6
+    GOTO L12
+   L13
+    LINENUMBER 188 L13
+    LDC "function values at endpoints do not have different signs.  Endpoints: [{0}, {1}], Values: [{2}, {3}]"
+    ICONST_4
+    ANEWARRAY java/lang/Object
+    DUP
+    ICONST_0
+    DLOAD 2
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    AASTORE
+    DUP
+    ICONST_1
+    DLOAD 4
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    AASTORE
+    DUP
+    ICONST_2
+    DLOAD 8
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    AASTORE
+    DUP
+    ICONST_3
+    DLOAD 10
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    AASTORE
+    INVOKESTATIC org/apache/commons/math/MathRuntimeException.createIllegalArgumentException (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;
+    ATHROW
+   L7
+    LINENUMBER 191 L7
+    DLOAD 12
+    DCONST_0
+    DCMPG
+    IFGE L16
+   L17
+    LINENUMBER 193 L17
+    ALOAD 0
+    ALOAD 1
+    DLOAD 2
+    DLOAD 8
+    DLOAD 4
+    DLOAD 10
+    DLOAD 2
+    DLOAD 8
+    INVOKESPECIAL org/apache/commons/math/analysis/solvers/BrentSolver.solve (Lorg/apache/commons/math/analysis/UnivariateRealFunction;DDDDDD)D
+    DSTORE 6
+    GOTO L12
+   L16
+    LINENUMBER 196 L16
+    DLOAD 8
+    DCONST_0
+    DCMPL
+    IFNE L18
+   L19
+    LINENUMBER 197 L19
+    DLOAD 2
+    DSTORE 6
+    GOTO L12
+   L18
+    LINENUMBER 199 L18
+    DLOAD 4
+    DSTORE 6
+   L12
+    LINENUMBER 203 L12
+    DLOAD 6
+    DRETURN
+   L20
+    LOCALVARIABLE this Lorg/apache/commons/math/analysis/solvers/BrentSolver; L0 L20 0
+    LOCALVARIABLE f Lorg/apache/commons/math/analysis/UnivariateRealFunction; L0 L20 1
+    LOCALVARIABLE min D L0 L20 2
+    LOCALVARIABLE max D L0 L20 4
+    LOCALVARIABLE ret D L3 L20 6
+    LOCALVARIABLE yMin D L4 L20 8
+    LOCALVARIABLE yMax D L5 L20 10
+    LOCALVARIABLE sign D L6 L20 12
+    MAXSTACK = 14
+    MAXLOCALS = 14
+
+  // access flags 0x2
+  private solve(Lorg/apache/commons/math/analysis/UnivariateRealFunction;DDDDDD)D throws org/apache/commons/math/MaxIterationsExceededException org/apache/commons/math/FunctionEvaluationException 
+   L0
+    LINENUMBER 229 L0
+    DLOAD 6
+    DLOAD 2
+    DSUB
+    DSTORE 14
+   L1
+    LINENUMBER 230 L1
+    DLOAD 14
+    DSTORE 16
+   L2
+    LINENUMBER 232 L2
+    ICONST_0
+    ISTORE 18
+   L3
+    LINENUMBER 233 L3
+    ILOAD 18
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.maximalIterationCount : I
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 234 L5
+    DLOAD 12
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DLOAD 8
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DCMPG
+    IFGE L6
+   L7
+    LINENUMBER 236 L7
+    DLOAD 6
+    DSTORE 2
+   L8
+    LINENUMBER 237 L8
+    DLOAD 10
+    DSTORE 6
+   L9
+    LINENUMBER 238 L9
+    DLOAD 2
+    DSTORE 10
+   L10
+    LINENUMBER 239 L10
+    DLOAD 8
+    DSTORE 4
+   L11
+    LINENUMBER 240 L11
+    DLOAD 12
+    DSTORE 8
+   L12
+    LINENUMBER 241 L12
+    DLOAD 4
+    DSTORE 12
+   L6
+    LINENUMBER 243 L6
+    DLOAD 8
+    INVOKESTATIC java/lang/Math.abs (D)D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.functionValueAccuracy : D
+    DCMPG
+    IFGT L13
+   L14
+    LINENUMBER 247 L14
+    ALOAD 0
+    DLOAD 6
+    ILOAD 18
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BrentSolver.setResult (DI)V
+   L15
+    LINENUMBER 248 L15
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.result : D
+    DRETURN
+   L13
+    LINENUMBER 250 L13
+    DLOAD 10
+    DLOAD 6
+    DSUB
+    DSTORE 19
+   L16
+    LINENUMBER 251 L16
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.relativeAccuracy : D
+    DLOAD 6
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.absoluteAccuracy : D
+    INVOKESTATIC java/lang/Math.max (DD)D
+    DSTORE 21
+   L17
+    LINENUMBER 253 L17
+    DLOAD 19
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DLOAD 21
+    DCMPG
+    IFGT L18
+   L19
+    LINENUMBER 254 L19
+    ALOAD 0
+    DLOAD 6
+    ILOAD 18
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BrentSolver.setResult (DI)V
+   L20
+    LINENUMBER 255 L20
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.result : D
+    DRETURN
+   L18
+    LINENUMBER 257 L18
+    DLOAD 16
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DLOAD 21
+    DCMPG
+    IFLT L21
+    DLOAD 4
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DLOAD 8
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DCMPG
+    IFGT L22
+   L21
+    LINENUMBER 260 L21
+    LDC 0.5
+    DLOAD 19
+    DMUL
+    DSTORE 14
+   L23
+    LINENUMBER 261 L23
+    DLOAD 14
+    DSTORE 16
+    GOTO L24
+   L22
+    LINENUMBER 263 L22
+    DLOAD 8
+    DLOAD 4
+    DDIV
+    DSTORE 23
+   L25
+    LINENUMBER 269 L25
+    DLOAD 2
+    DLOAD 10
+    DCMPL
+    IFNE L26
+   L27
+    LINENUMBER 271 L27
+    DLOAD 19
+    DLOAD 23
+    DMUL
+    DSTORE 25
+   L28
+    LINENUMBER 272 L28
+    DCONST_1
+    DLOAD 23
+    DSUB
+    DSTORE 27
+   L29
+    GOTO L30
+   L26
+    LINENUMBER 275 L26
+    DLOAD 4
+    DLOAD 12
+    DDIV
+    DSTORE 29
+   L31
+    LINENUMBER 276 L31
+    DLOAD 8
+    DLOAD 12
+    DDIV
+    DSTORE 31
+   L32
+    LINENUMBER 277 L32
+    DLOAD 23
+    DLOAD 19
+    DLOAD 29
+    DMUL
+    DLOAD 29
+    DLOAD 31
+    DSUB
+    DMUL
+    DLOAD 6
+    DLOAD 2
+    DSUB
+    DLOAD 31
+    DCONST_1
+    DSUB
+    DMUL
+    DSUB
+    DMUL
+    DSTORE 25
+   L33
+    LINENUMBER 278 L33
+    DLOAD 29
+    DCONST_1
+    DSUB
+    DLOAD 31
+    DCONST_1
+    DSUB
+    DMUL
+    DLOAD 23
+    DCONST_1
+    DSUB
+    DMUL
+    DSTORE 27
+   L30
+    LINENUMBER 280 L30
+    DLOAD 25
+    DCONST_0
+    DCMPL
+    IFLE L34
+   L35
+    LINENUMBER 281 L35
+    DLOAD 27
+    DNEG
+    DSTORE 27
+    GOTO L36
+   L34
+    LINENUMBER 283 L34
+    DLOAD 25
+    DNEG
+    DSTORE 25
+   L36
+    LINENUMBER 285 L36
+    LDC 2.0
+    DLOAD 25
+    DMUL
+    LDC 1.5
+    DLOAD 19
+    DMUL
+    DLOAD 27
+    DMUL
+    DLOAD 21
+    DLOAD 27
+    DMUL
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DSUB
+    DCMPL
+    IFGE L37
+    DLOAD 25
+    LDC 0.5
+    DLOAD 16
+    DMUL
+    DLOAD 27
+    DMUL
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DCMPL
+    IFLT L38
+   L37
+    LINENUMBER 290 L37
+    LDC 0.5
+    DLOAD 19
+    DMUL
+    DSTORE 14
+   L39
+    LINENUMBER 291 L39
+    DLOAD 14
+    DSTORE 16
+    GOTO L24
+   L38
+    LINENUMBER 293 L38
+    DLOAD 14
+    DSTORE 16
+   L40
+    LINENUMBER 294 L40
+    DLOAD 25
+    DLOAD 27
+    DDIV
+    DSTORE 14
+   L24
+    LINENUMBER 298 L24
+    DLOAD 6
+    DSTORE 2
+   L41
+    LINENUMBER 299 L41
+    DLOAD 8
+    DSTORE 4
+   L42
+    LINENUMBER 301 L42
+    DLOAD 14
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DLOAD 21
+    DCMPL
+    IFLE L43
+   L44
+    LINENUMBER 302 L44
+    DLOAD 6
+    DLOAD 14
+    DADD
+    DSTORE 6
+    GOTO L45
+   L43
+    LINENUMBER 303 L43
+    DLOAD 19
+    DCONST_0
+    DCMPL
+    IFLE L46
+   L47
+    LINENUMBER 304 L47
+    DLOAD 6
+    LDC 0.5
+    DLOAD 21
+    DMUL
+    DADD
+    DSTORE 6
+    GOTO L45
+   L46
+    LINENUMBER 305 L46
+    DLOAD 19
+    DCONST_0
+    DCMPG
+    IFGT L45
+   L48
+    LINENUMBER 306 L48
+    DLOAD 6
+    LDC 0.5
+    DLOAD 21
+    DMUL
+    DSUB
+    DSTORE 6
+   L45
+    LINENUMBER 308 L45
+    ALOAD 1
+    DLOAD 6
+    INVOKEINTERFACE org/apache/commons/math/analysis/UnivariateRealFunction.value (D)D (itf)
+    DSTORE 8
+   L49
+    LINENUMBER 309 L49
+    DLOAD 8
+    DCONST_0
+    DCMPL
+    IFLE L50
+    ICONST_1
+    GOTO L51
+   L50
+    ICONST_0
+   L51
+    DLOAD 12
+    DCONST_0
+    DCMPL
+    IFLE L52
+    ICONST_1
+    GOTO L53
+   L52
+    ICONST_0
+   L53
+    IF_ICMPNE L54
+   L55
+    LINENUMBER 310 L55
+    DLOAD 2
+    DSTORE 10
+   L56
+    LINENUMBER 311 L56
+    DLOAD 4
+    DSTORE 12
+   L57
+    LINENUMBER 312 L57
+    DLOAD 6
+    DLOAD 2
+    DSUB
+    DSTORE 14
+   L58
+    LINENUMBER 313 L58
+    DLOAD 14
+    DSTORE 16
+   L54
+    LINENUMBER 315 L54
+    IINC 18 1
+   L59
+    LINENUMBER 316 L59
+    GOTO L3
+   L4
+    LINENUMBER 317 L4
+    NEW org/apache/commons/math/MaxIterationsExceededException
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BrentSolver.maximalIterationCount : I
+    INVOKESPECIAL org/apache/commons/math/MaxIterationsExceededException.<init> (I)V
+    ATHROW
+   L60
+    LOCALVARIABLE p D L28 L26 25
+    LOCALVARIABLE p1 D L29 L26 27
+    LOCALVARIABLE r1 D L31 L30 29
+    LOCALVARIABLE r2 D L32 L30 31
+    LOCALVARIABLE r3 D L25 L24 23
+    LOCALVARIABLE p D L33 L24 25
+    LOCALVARIABLE p1 D L30 L24 27
+    LOCALVARIABLE dx D L16 L59 19
+    LOCALVARIABLE tolerance D L17 L59 21
+    LOCALVARIABLE this Lorg/apache/commons/math/analysis/solvers/BrentSolver; L0 L60 0
+    LOCALVARIABLE f Lorg/apache/commons/math/analysis/UnivariateRealFunction; L0 L60 1
+    LOCALVARIABLE x0 D L0 L60 2
+    LOCALVARIABLE y0 D L0 L60 4
+    LOCALVARIABLE x1 D L0 L60 6
+    LOCALVARIABLE y1 D L0 L60 8
+    LOCALVARIABLE x2 D L0 L60 10
+    LOCALVARIABLE y2 D L0 L60 12
+    LOCALVARIABLE delta D L1 L60 14
+    LOCALVARIABLE oldDelta D L2 L60 16
+    LOCALVARIABLE i I L3 L60 18
+    MAXSTACK = 10
+    MAXLOCALS = 33
+}
+

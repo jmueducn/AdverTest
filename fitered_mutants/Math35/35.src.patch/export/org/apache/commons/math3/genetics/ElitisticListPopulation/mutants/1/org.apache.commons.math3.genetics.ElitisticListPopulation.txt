@@ -1,0 +1,191 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math3/genetics/ElitisticListPopulation extends org/apache/commons/math3/genetics/ListPopulation {
+
+  // compiled from: ElitisticListPopulation.java
+
+  // access flags 0x2
+  private D elitismRate
+
+  // access flags 0x1
+  // signature (Ljava/util/List<Lorg/apache/commons/math3/genetics/Chromosome;>;ID)V
+  // declaration: void <init>(java.util.List<org.apache.commons.math3.genetics.Chromosome>, int, double)
+  public <init>(Ljava/util/List;ID)V
+   L0
+    LINENUMBER 50 L0
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math3/genetics/ListPopulation.<init> (Ljava/util/List;I)V
+   L1
+    LINENUMBER 36 L1
+    ALOAD 0
+    LDC 0.9
+    PUTFIELD org/apache/commons/math3/genetics/ElitisticListPopulation.elitismRate : D
+   L2
+    LINENUMBER 51 L2
+    ALOAD 0
+    DLOAD 3
+    INVOKEVIRTUAL org/apache/commons/math3/genetics/ElitisticListPopulation.setElitismRate (D)V
+   L3
+    LINENUMBER 52 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ElitisticListPopulation; L0 L4 0
+    LOCALVARIABLE chromosomes Ljava/util/List; L0 L4 1
+    // signature Ljava/util/List<Lorg/apache/commons/math3/genetics/Chromosome;>;
+    // declaration: chromosomes extends java.util.List<org.apache.commons.math3.genetics.Chromosome>
+    LOCALVARIABLE populationLimit I L0 L4 2
+    LOCALVARIABLE elitismRate D L0 L4 3
+    MAXSTACK = 3
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public <init>(ID)V
+   L0
+    LINENUMBER 64 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKESPECIAL org/apache/commons/math3/genetics/ListPopulation.<init> (I)V
+   L1
+    LINENUMBER 36 L1
+    ALOAD 0
+    DCONST_1
+    PUTFIELD org/apache/commons/math3/genetics/ElitisticListPopulation.elitismRate : D
+   L2
+    LINENUMBER 65 L2
+    ALOAD 0
+    DLOAD 2
+    INVOKEVIRTUAL org/apache/commons/math3/genetics/ElitisticListPopulation.setElitismRate (D)V
+   L3
+    LINENUMBER 66 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ElitisticListPopulation; L0 L4 0
+    LOCALVARIABLE populationLimit I L0 L4 1
+    LOCALVARIABLE elitismRate D L0 L4 2
+    MAXSTACK = 3
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public nextGeneration()Lorg/apache/commons/math3/genetics/Population;
+   L0
+    LINENUMBER 76 L0
+    NEW org/apache/commons/math3/genetics/ElitisticListPopulation
+    DUP
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/genetics/ElitisticListPopulation.getPopulationLimit ()I
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/genetics/ElitisticListPopulation.getElitismRate ()D
+    INVOKESPECIAL org/apache/commons/math3/genetics/ElitisticListPopulation.<init> (ID)V
+    ASTORE 1
+   L1
+    LINENUMBER 78 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/genetics/ElitisticListPopulation.getChromosomes ()Ljava/util/List;
+    ASTORE 2
+   L2
+    LINENUMBER 79 L2
+    ALOAD 2
+    INVOKESTATIC java/util/Collections.sort (Ljava/util/List;)V
+   L3
+    LINENUMBER 82 L3
+    DCONST_1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/genetics/ElitisticListPopulation.getElitismRate ()D
+    DSUB
+    ALOAD 2
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    I2D
+    DMUL
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.ceil (D)D
+    D2I
+    ISTORE 3
+   L4
+    LINENUMBER 83 L4
+    ILOAD 3
+    ISTORE 4
+   L5
+    ILOAD 4
+    ALOAD 2
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 84 L7
+    ALOAD 1
+    ALOAD 2
+    ILOAD 4
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math3/genetics/Chromosome
+    INVOKEVIRTUAL org/apache/commons/math3/genetics/ElitisticListPopulation.addChromosome (Lorg/apache/commons/math3/genetics/Chromosome;)V
+   L8
+    LINENUMBER 83 L8
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 86 L6
+    ALOAD 1
+    ARETURN
+   L9
+    LOCALVARIABLE i I L5 L6 4
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ElitisticListPopulation; L0 L9 0
+    LOCALVARIABLE nextGeneration Lorg/apache/commons/math3/genetics/ElitisticListPopulation; L1 L9 1
+    LOCALVARIABLE oldChromosomes Ljava/util/List; L2 L9 2
+    // signature Ljava/util/List<Lorg/apache/commons/math3/genetics/Chromosome;>;
+    // declaration: oldChromosomes extends java.util.List<org.apache.commons.math3.genetics.Chromosome>
+    LOCALVARIABLE boundIndex I L4 L9 3
+    MAXSTACK = 5
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public setElitismRate(D)V
+   L0
+    LINENUMBER 98 L0
+    DLOAD 1
+    DCONST_0
+    DCMPG
+    IFLT L1
+    DLOAD 1
+    DCONST_1
+    DCMPL
+    IFLE L2
+   L1
+    LINENUMBER 99 L1
+    NEW org/apache/commons/math3/exception/OutOfRangeException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.ELITISM_RATE : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    DLOAD 1
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    ICONST_0
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ICONST_1
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    INVOKESPECIAL org/apache/commons/math3/exception/OutOfRangeException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;Ljava/lang/Number;Ljava/lang/Number;Ljava/lang/Number;)V
+    ATHROW
+   L2
+    LINENUMBER 101 L2
+    ALOAD 0
+    DLOAD 1
+    PUTFIELD org/apache/commons/math3/genetics/ElitisticListPopulation.elitismRate : D
+   L3
+    LINENUMBER 102 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ElitisticListPopulation; L0 L4 0
+    LOCALVARIABLE elitismRate D L0 L4 1
+    MAXSTACK = 6
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getElitismRate()D
+   L0
+    LINENUMBER 109 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ElitisticListPopulation.elitismRate : D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ElitisticListPopulation; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+}
+

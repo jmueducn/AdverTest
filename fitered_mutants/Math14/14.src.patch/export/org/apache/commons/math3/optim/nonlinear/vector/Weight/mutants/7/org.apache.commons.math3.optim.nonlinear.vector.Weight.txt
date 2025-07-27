@@ -1,0 +1,91 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math3/optim/nonlinear/vector/Weight implements org/apache/commons/math3/optim/OptimizationData {
+
+  // compiled from: Weight.java
+
+  // access flags 0x12
+  private final Lorg/apache/commons/math3/linear/RealMatrix; weightMatrix
+
+  // access flags 0x1
+  public <init>([D)V
+   L0
+    LINENUMBER 41 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 42 L1
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 2
+   L2
+    LINENUMBER 43 L2
+    ALOAD 0
+    NEW org/apache/commons/math3/linear/DiagonalMatrix
+    DUP
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math3/linear/DiagonalMatrix.<init> ([D)V
+    PUTFIELD org/apache/commons/math3/optim/nonlinear/vector/Weight.weightMatrix : Lorg/apache/commons/math3/linear/RealMatrix;
+   L3
+    LINENUMBER 44 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math3/optim/nonlinear/vector/Weight; L0 L4 0
+    LOCALVARIABLE weight [D L0 L4 1
+    LOCALVARIABLE dim I L2 L4 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math3/linear/RealMatrix;)V
+   L0
+    LINENUMBER 51 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 52 L1
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    IF_ICMPEQ L2
+   L3
+    LINENUMBER 53 L3
+    NEW org/apache/commons/math3/linear/NonSquareMatrixException
+    DUP
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    ALOAD 1
+    POP
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/NonSquareMatrixException.<init> (II)V
+    ATHROW
+   L2
+    LINENUMBER 57 L2
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.copy ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optim/nonlinear/vector/Weight.weightMatrix : Lorg/apache/commons/math3/linear/RealMatrix;
+   L4
+    LINENUMBER 58 L4
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math3/optim/nonlinear/vector/Weight; L0 L5 0
+    LOCALVARIABLE weight Lorg/apache/commons/math3/linear/RealMatrix; L0 L5 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getWeight()Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 66 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optim/nonlinear/vector/Weight.weightMatrix : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.copy ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optim/nonlinear/vector/Weight; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+}
+

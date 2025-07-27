@@ -1,0 +1,443 @@
+// class version 49.0 (49)
+// access flags 0x421
+public abstract class org/apache/commons/math3/genetics/ListPopulation implements org/apache/commons/math3/genetics/Population {
+
+  // compiled from: ListPopulation.java
+
+  // access flags 0x2
+  // signature Ljava/util/List<Lorg/apache/commons/math3/genetics/Chromosome;>;
+  // declaration: chromosomes extends java.util.List<org.apache.commons.math3.genetics.Chromosome>
+  private Ljava/util/List; chromosomes
+
+  // access flags 0x2
+  private I populationLimit
+
+  // access flags 0x1
+  public <init>(I)V
+   L0
+    LINENUMBER 52 L0
+    ALOAD 0
+    INVOKESTATIC java/util/Collections.emptyList ()Ljava/util/List;
+    ILOAD 1
+    INVOKESPECIAL org/apache/commons/math3/genetics/ListPopulation.<init> (Ljava/util/List;I)V
+   L1
+    LINENUMBER 53 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ListPopulation; L0 L2 0
+    LOCALVARIABLE populationLimit I L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  // signature (Ljava/util/List<Lorg/apache/commons/math3/genetics/Chromosome;>;I)V
+  // declaration: void <init>(java.util.List<org.apache.commons.math3.genetics.Chromosome>, int)
+  public <init>(Ljava/util/List;I)V
+   L0
+    LINENUMBER 64 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 65 L1
+    ALOAD 1
+    IFNONNULL L2
+   L3
+    LINENUMBER 66 L3
+    NEW org/apache/commons/math3/exception/NullArgumentException
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/exception/NullArgumentException.<init> ()V
+    ATHROW
+   L2
+    LINENUMBER 68 L2
+    ILOAD 2
+    IFGT L4
+   L5
+    LINENUMBER 69 L5
+    NEW org/apache/commons/math3/exception/NotPositiveException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.POPULATION_LIMIT_NOT_POSITIVE : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ILOAD 2
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    INVOKESPECIAL org/apache/commons/math3/exception/NotPositiveException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;Ljava/lang/Number;)V
+    ATHROW
+   L4
+    LINENUMBER 71 L4
+    ALOAD 1
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    ILOAD 2
+    IF_ICMPLE L6
+   L7
+    LINENUMBER 72 L7
+    NEW org/apache/commons/math3/exception/NumberIsTooLargeException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.LIST_OF_CHROMOSOMES_BIGGER_THAN_POPULATION_SIZE : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ALOAD 1
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ILOAD 2
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/exception/NumberIsTooLargeException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;Ljava/lang/Number;Ljava/lang/Number;Z)V
+    ATHROW
+   L6
+    LINENUMBER 75 L6
+    ALOAD 0
+    ILOAD 2
+    PUTFIELD org/apache/commons/math3/genetics/ListPopulation.populationLimit : I
+   L8
+    LINENUMBER 76 L8
+    ALOAD 0
+    NEW java/util/ArrayList
+    DUP
+    ILOAD 2
+    INVOKESPECIAL java/util/ArrayList.<init> (I)V
+    PUTFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+   L9
+    LINENUMBER 77 L9
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    ALOAD 1
+    INVOKEINTERFACE java/util/List.addAll (Ljava/util/Collection;)Z (itf)
+    POP
+   L10
+    LINENUMBER 78 L10
+    RETURN
+   L11
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ListPopulation; L0 L11 0
+    LOCALVARIABLE chromosomes Ljava/util/List; L0 L11 1
+    // signature Ljava/util/List<Lorg/apache/commons/math3/genetics/Chromosome;>;
+    // declaration: chromosomes extends java.util.List<org.apache.commons.math3.genetics.Chromosome>
+    LOCALVARIABLE populationLimit I L0 L11 2
+    MAXSTACK = 6
+    MAXLOCALS = 3
+
+  // DEPRECATED
+  // access flags 0x20001
+  // signature (Ljava/util/List<Lorg/apache/commons/math3/genetics/Chromosome;>;)V
+  // declaration: void setChromosomes(java.util.List<org.apache.commons.math3.genetics.Chromosome>)
+  public setChromosomes(Ljava/util/List;)V
+   L0
+    LINENUMBER 90 L0
+    ALOAD 1
+    IFNONNULL L1
+   L2
+    LINENUMBER 91 L2
+    NEW org/apache/commons/math3/exception/NullArgumentException
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/exception/NullArgumentException.<init> ()V
+    ATHROW
+   L1
+    LINENUMBER 93 L1
+    ALOAD 1
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.populationLimit : I
+    IF_ICMPLE L3
+   L4
+    LINENUMBER 94 L4
+    NEW org/apache/commons/math3/exception/NumberIsTooLargeException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.LIST_OF_CHROMOSOMES_BIGGER_THAN_POPULATION_SIZE : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ALOAD 1
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.populationLimit : I
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/exception/NumberIsTooLargeException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;Ljava/lang/Number;Ljava/lang/Number;Z)V
+    ATHROW
+   L3
+    LINENUMBER 97 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    INVOKEINTERFACE java/util/List.clear ()V (itf)
+   L5
+    LINENUMBER 98 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    ALOAD 1
+    INVOKEINTERFACE java/util/List.addAll (Ljava/util/Collection;)Z (itf)
+    POP
+   L6
+    LINENUMBER 99 L6
+    RETURN
+   L7
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ListPopulation; L0 L7 0
+    LOCALVARIABLE chromosomes Ljava/util/List; L0 L7 1
+    // signature Ljava/util/List<Lorg/apache/commons/math3/genetics/Chromosome;>;
+    // declaration: chromosomes extends java.util.List<org.apache.commons.math3.genetics.Chromosome>
+    MAXSTACK = 6
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  // signature (Ljava/util/Collection<Lorg/apache/commons/math3/genetics/Chromosome;>;)V
+  // declaration: void addChromosomes(java.util.Collection<org.apache.commons.math3.genetics.Chromosome>)
+  public addChromosomes(Ljava/util/Collection;)V
+   L0
+    LINENUMBER 108 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    ALOAD 1
+    INVOKEINTERFACE java/util/Collection.size ()I (itf)
+    IADD
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.populationLimit : I
+    IF_ICMPLE L1
+   L2
+    LINENUMBER 109 L2
+    NEW org/apache/commons/math3/exception/NumberIsTooLargeException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.LIST_OF_CHROMOSOMES_BIGGER_THAN_POPULATION_SIZE : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.populationLimit : I
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/exception/NumberIsTooLargeException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;Ljava/lang/Number;Ljava/lang/Number;Z)V
+    ATHROW
+   L1
+    LINENUMBER 112 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    ALOAD 1
+    INVOKEINTERFACE java/util/List.addAll (Ljava/util/Collection;)Z (itf)
+    POP
+   L3
+    LINENUMBER 113 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ListPopulation; L0 L4 0
+    LOCALVARIABLE chromosomeColl Ljava/util/Collection; L0 L4 1
+    // signature Ljava/util/Collection<Lorg/apache/commons/math3/genetics/Chromosome;>;
+    // declaration: chromosomeColl extends java.util.Collection<org.apache.commons.math3.genetics.Chromosome>
+    MAXSTACK = 6
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  // signature ()Ljava/util/List<Lorg/apache/commons/math3/genetics/Chromosome;>;
+  // declaration: java.util.List<org.apache.commons.math3.genetics.Chromosome> getChromosomes()
+  public getChromosomes()Ljava/util/List;
+   L0
+    LINENUMBER 120 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    INVOKESTATIC java/util/Collections.unmodifiableList (Ljava/util/List;)Ljava/util/List;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ListPopulation; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x4
+  // signature ()Ljava/util/List<Lorg/apache/commons/math3/genetics/Chromosome;>;
+  // declaration: java.util.List<org.apache.commons.math3.genetics.Chromosome> getChromosomeList()
+  protected getChromosomeList()Ljava/util/List;
+   L0
+    LINENUMBER 128 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ListPopulation; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public addChromosome(Lorg/apache/commons/math3/genetics/Chromosome;)V
+   L0
+    LINENUMBER 138 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.populationLimit : I
+    IF_ICMPLT L1
+   L2
+    LINENUMBER 139 L2
+    NEW org/apache/commons/math3/exception/NumberIsTooLargeException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.LIST_OF_CHROMOSOMES_BIGGER_THAN_POPULATION_SIZE : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.populationLimit : I
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/exception/NumberIsTooLargeException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;Ljava/lang/Number;Ljava/lang/Number;Z)V
+    ATHROW
+   L1
+    LINENUMBER 142 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    ALOAD 1
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L3
+    LINENUMBER 143 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ListPopulation; L0 L4 0
+    LOCALVARIABLE chromosome Lorg/apache/commons/math3/genetics/Chromosome; L0 L4 1
+    MAXSTACK = 6
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getFittestChromosome()Lorg/apache/commons/math3/genetics/Chromosome;
+   L0
+    LINENUMBER 151 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    ICONST_0
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math3/genetics/Chromosome
+    ASTORE 1
+   L1
+    LINENUMBER 152 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    INVOKEINTERFACE java/util/List.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 2
+   L2
+    ALOAD 2
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L3
+    ALOAD 2
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math3/genetics/Chromosome
+    ASTORE 3
+   L4
+    LINENUMBER 153 L4
+    ALOAD 3
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math3/genetics/Chromosome.compareTo (Lorg/apache/commons/math3/genetics/Chromosome;)I
+    IFLE L5
+   L6
+    LINENUMBER 155 L6
+    ALOAD 3
+    ASTORE 1
+   L5
+    LINENUMBER 157 L5
+    GOTO L2
+   L3
+    LINENUMBER 158 L3
+    ALOAD 1
+    ARETURN
+   L7
+    LOCALVARIABLE chromosome Lorg/apache/commons/math3/genetics/Chromosome; L4 L5 3
+    LOCALVARIABLE i$ Ljava/util/Iterator; L2 L3 2
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ListPopulation; L0 L7 0
+    LOCALVARIABLE bestChromosome Lorg/apache/commons/math3/genetics/Chromosome; L1 L7 1
+    MAXSTACK = 2
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public getPopulationLimit()I
+   L0
+    LINENUMBER 166 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.populationLimit : I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ListPopulation; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setPopulationLimit(I)V
+   L0
+    LINENUMBER 177 L0
+    ILOAD 1
+    IFGT L1
+   L2
+    LINENUMBER 178 L2
+    NEW org/apache/commons/math3/exception/NotPositiveException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.POPULATION_LIMIT_NOT_POSITIVE : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ILOAD 1
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    INVOKESPECIAL org/apache/commons/math3/exception/NotPositiveException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;Ljava/lang/Number;)V
+    ATHROW
+   L1
+    LINENUMBER 180 L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 181 L4
+    NEW org/apache/commons/math3/exception/NumberIsTooSmallException
+    DUP
+    ILOAD 1
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ICONST_1
+    INVOKESPECIAL org/apache/commons/math3/exception/NumberIsTooSmallException.<init> (Ljava/lang/Number;Ljava/lang/Number;Z)V
+    ATHROW
+   L3
+    LINENUMBER 183 L3
+    ALOAD 0
+    ILOAD 1
+    PUTFIELD org/apache/commons/math3/genetics/ListPopulation.populationLimit : I
+   L5
+    LINENUMBER 184 L5
+    RETURN
+   L6
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ListPopulation; L0 L6 0
+    LOCALVARIABLE populationLimit I L0 L6 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getPopulationSize()I
+   L0
+    LINENUMBER 191 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    INVOKEINTERFACE java/util/List.size ()I (itf)
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ListPopulation; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public toString()Ljava/lang/String;
+   L0
+    LINENUMBER 199 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/genetics/ListPopulation.chromosomes : Ljava/util/List;
+    INVOKEVIRTUAL java/lang/Object.toString ()Ljava/lang/String;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ListPopulation; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  // signature ()Ljava/util/Iterator<Lorg/apache/commons/math3/genetics/Chromosome;>;
+  // declaration: java.util.Iterator<org.apache.commons.math3.genetics.Chromosome> iterator()
+  public iterator()Ljava/util/Iterator;
+   L0
+    LINENUMBER 209 L0
+    ALOAD 0
+    POP
+    ACONST_NULL
+    INVOKEINTERFACE java/util/List.iterator ()Ljava/util/Iterator; (itf)
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/genetics/ListPopulation; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+}
+

@@ -1,0 +1,347 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math/optimization/direct/MultiDirectional extends org/apache/commons/math/optimization/direct/DirectSearchOptimizer {
+
+  // compiled from: MultiDirectional.java
+
+  // access flags 0x12
+  private final D khi
+
+  // access flags 0x12
+  private final D gamma
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 45 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/optimization/direct/DirectSearchOptimizer.<init> ()V
+   L1
+    LINENUMBER 46 L1
+    ALOAD 0
+    LDC 2.0
+    PUTFIELD org/apache/commons/math/optimization/direct/MultiDirectional.khi : D
+   L2
+    LINENUMBER 47 L2
+    ALOAD 0
+    LDC 0.5
+    PUTFIELD org/apache/commons/math/optimization/direct/MultiDirectional.gamma : D
+   L3
+    LINENUMBER 48 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/optimization/direct/MultiDirectional; L0 L4 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public <init>(DD)V
+   L0
+    LINENUMBER 54 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/optimization/direct/DirectSearchOptimizer.<init> ()V
+   L1
+    LINENUMBER 55 L1
+    ALOAD 0
+    DLOAD 1
+    PUTFIELD org/apache/commons/math/optimization/direct/MultiDirectional.khi : D
+   L2
+    LINENUMBER 56 L2
+    ALOAD 0
+    DLOAD 3
+    PUTFIELD org/apache/commons/math/optimization/direct/MultiDirectional.gamma : D
+   L3
+    LINENUMBER 57 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/optimization/direct/MultiDirectional; L0 L4 0
+    LOCALVARIABLE khi D L0 L4 1
+    LOCALVARIABLE gamma D L0 L4 3
+    MAXSTACK = 3
+    MAXLOCALS = 5
+
+  // access flags 0x4
+  // signature (Ljava/util/Comparator<Lorg/apache/commons/math/optimization/RealPointValuePair;>;)V
+  // declaration: void iterateSimplex(java.util.Comparator<org.apache.commons.math.optimization.RealPointValuePair>)
+  protected iterateSimplex(Ljava/util/Comparator;)V throws org/apache/commons/math/FunctionEvaluationException org/apache/commons/math/optimization/OptimizationException java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 64 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/optimization/direct/MultiDirectional.getConvergenceChecker ()Lorg/apache/commons/math/optimization/RealConvergenceChecker;
+    ASTORE 2
+   L1
+    LINENUMBER 67 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/optimization/direct/MultiDirectional.incrementIterationsCounter ()V
+   L2
+    LINENUMBER 70 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/direct/MultiDirectional.simplex : [Lorg/apache/commons/math/optimization/RealPointValuePair;
+    ASTORE 3
+   L3
+    LINENUMBER 71 L3
+    ALOAD 3
+    ICONST_0
+    AALOAD
+    ASTORE 4
+   L4
+    LINENUMBER 74 L4
+    ALOAD 0
+    ALOAD 3
+    DCONST_1
+    ALOAD 1
+    POP
+    POP2
+    POP
+    POP
+    ACONST_NULL
+    ASTORE 5
+   L5
+    LINENUMBER 75 L5
+    ALOAD 1
+    ALOAD 5
+    ALOAD 4
+    INVOKEINTERFACE java/util/Comparator.compare (Ljava/lang/Object;Ljava/lang/Object;)I (itf)
+    IFGE L6
+   L7
+    LINENUMBER 78 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/direct/MultiDirectional.simplex : [Lorg/apache/commons/math/optimization/RealPointValuePair;
+    ASTORE 6
+   L8
+    LINENUMBER 79 L8
+    ALOAD 0
+    ALOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/direct/MultiDirectional.khi : D
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/optimization/direct/MultiDirectional.evaluateNewSimplex ([Lorg/apache/commons/math/optimization/RealPointValuePair;DLjava/util/Comparator;)Lorg/apache/commons/math/optimization/RealPointValuePair;
+    ASTORE 7
+   L9
+    LINENUMBER 80 L9
+    ALOAD 1
+    ALOAD 5
+    ALOAD 7
+    INVOKEINTERFACE java/util/Comparator.compare (Ljava/lang/Object;Ljava/lang/Object;)I (itf)
+    IFGT L10
+   L11
+    LINENUMBER 82 L11
+    ALOAD 0
+    ALOAD 6
+    PUTFIELD org/apache/commons/math/optimization/direct/MultiDirectional.simplex : [Lorg/apache/commons/math/optimization/RealPointValuePair;
+   L10
+    LINENUMBER 85 L10
+    RETURN
+   L6
+    LINENUMBER 90 L6
+    ALOAD 0
+    ALOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/direct/MultiDirectional.gamma : D
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/optimization/direct/MultiDirectional.evaluateNewSimplex ([Lorg/apache/commons/math/optimization/RealPointValuePair;DLjava/util/Comparator;)Lorg/apache/commons/math/optimization/RealPointValuePair;
+    ASTORE 6
+   L12
+    LINENUMBER 91 L12
+    ALOAD 1
+    ALOAD 6
+    ALOAD 4
+    INVOKEINTERFACE java/util/Comparator.compare (Ljava/lang/Object;Ljava/lang/Object;)I (itf)
+    IFGE L13
+   L14
+    LINENUMBER 93 L14
+    RETURN
+   L13
+    LINENUMBER 97 L13
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/optimization/direct/MultiDirectional.getIterations ()I
+    ISTORE 7
+   L15
+    LINENUMBER 98 L15
+    ICONST_1
+    ISTORE 8
+   L16
+    LINENUMBER 99 L16
+    ICONST_0
+    ISTORE 9
+   L17
+    ILOAD 9
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/direct/MultiDirectional.simplex : [Lorg/apache/commons/math/optimization/RealPointValuePair;
+    ARRAYLENGTH
+    IF_ICMPGE L18
+   L19
+    LINENUMBER 100 L19
+    ILOAD 8
+    ALOAD 2
+    ILOAD 7
+    ALOAD 3
+    ILOAD 9
+    AALOAD
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/direct/MultiDirectional.simplex : [Lorg/apache/commons/math/optimization/RealPointValuePair;
+    ILOAD 9
+    AALOAD
+    INVOKEINTERFACE org/apache/commons/math/optimization/RealConvergenceChecker.converged (ILorg/apache/commons/math/optimization/RealPointValuePair;Lorg/apache/commons/math/optimization/RealPointValuePair;)Z (itf)
+    IAND
+    ISTORE 8
+   L20
+    LINENUMBER 99 L20
+    IINC 9 1
+    GOTO L17
+   L18
+    LINENUMBER 102 L18
+    ILOAD 8
+    IFEQ L21
+   L22
+    LINENUMBER 103 L22
+    RETURN
+   L21
+    LINENUMBER 106 L21
+    GOTO L1
+   L23
+    LOCALVARIABLE reflectedSimplex [Lorg/apache/commons/math/optimization/RealPointValuePair; L8 L6 6
+    LOCALVARIABLE expanded Lorg/apache/commons/math/optimization/RealPointValuePair; L9 L6 7
+    LOCALVARIABLE i I L17 L18 9
+    LOCALVARIABLE original [Lorg/apache/commons/math/optimization/RealPointValuePair; L3 L21 3
+    LOCALVARIABLE best Lorg/apache/commons/math/optimization/RealPointValuePair; L4 L21 4
+    LOCALVARIABLE reflected Lorg/apache/commons/math/optimization/RealPointValuePair; L5 L21 5
+    LOCALVARIABLE contracted Lorg/apache/commons/math/optimization/RealPointValuePair; L12 L21 6
+    LOCALVARIABLE iter I L15 L21 7
+    LOCALVARIABLE converged Z L16 L21 8
+    LOCALVARIABLE this Lorg/apache/commons/math/optimization/direct/MultiDirectional; L0 L23 0
+    LOCALVARIABLE comparator Ljava/util/Comparator; L0 L23 1
+    // signature Ljava/util/Comparator<Lorg/apache/commons/math/optimization/RealPointValuePair;>;
+    // declaration: comparator extends java.util.Comparator<org.apache.commons.math.optimization.RealPointValuePair>
+    LOCALVARIABLE checker Lorg/apache/commons/math/optimization/RealConvergenceChecker; L1 L23 2
+    MAXSTACK = 6
+    MAXLOCALS = 10
+
+  // access flags 0x2
+  // signature ([Lorg/apache/commons/math/optimization/RealPointValuePair;DLjava/util/Comparator<Lorg/apache/commons/math/optimization/RealPointValuePair;>;)Lorg/apache/commons/math/optimization/RealPointValuePair;
+  // declaration: org.apache.commons.math.optimization.RealPointValuePair evaluateNewSimplex(org.apache.commons.math.optimization.RealPointValuePair[], double, java.util.Comparator<org.apache.commons.math.optimization.RealPointValuePair>)
+  private evaluateNewSimplex([Lorg/apache/commons/math/optimization/RealPointValuePair;DLjava/util/Comparator;)Lorg/apache/commons/math/optimization/RealPointValuePair; throws org/apache/commons/math/FunctionEvaluationException org/apache/commons/math/optimization/OptimizationException 
+   L0
+    LINENUMBER 124 L0
+    ALOAD 1
+    ICONST_0
+    AALOAD
+    INVOKEVIRTUAL org/apache/commons/math/optimization/RealPointValuePair.getPointRef ()[D
+    ASTORE 5
+   L1
+    LINENUMBER 125 L1
+    ALOAD 5
+    ARRAYLENGTH
+    ISTORE 6
+   L2
+    LINENUMBER 128 L2
+    ALOAD 0
+    ILOAD 6
+    ICONST_1
+    IADD
+    ANEWARRAY org/apache/commons/math/optimization/RealPointValuePair
+    PUTFIELD org/apache/commons/math/optimization/direct/MultiDirectional.simplex : [Lorg/apache/commons/math/optimization/RealPointValuePair;
+   L3
+    LINENUMBER 129 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/direct/MultiDirectional.simplex : [Lorg/apache/commons/math/optimization/RealPointValuePair;
+    ICONST_0
+    ALOAD 1
+    ICONST_0
+    AALOAD
+    AASTORE
+   L4
+    LINENUMBER 130 L4
+    ICONST_1
+    ISTORE 7
+   L5
+    ILOAD 7
+    ILOAD 6
+    IF_ICMPGT L6
+   L7
+    LINENUMBER 131 L7
+    ALOAD 1
+    ILOAD 7
+    AALOAD
+    INVOKEVIRTUAL org/apache/commons/math/optimization/RealPointValuePair.getPointRef ()[D
+    ASTORE 8
+   L8
+    LINENUMBER 132 L8
+    ILOAD 6
+    NEWARRAY T_DOUBLE
+    ASTORE 9
+   L9
+    LINENUMBER 133 L9
+    ICONST_0
+    ISTORE 10
+   L10
+    ILOAD 10
+    ILOAD 6
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 134 L12
+    ALOAD 9
+    ILOAD 10
+    ALOAD 5
+    ILOAD 10
+    DALOAD
+    DLOAD 2
+    ALOAD 5
+    ILOAD 10
+    DALOAD
+    ALOAD 8
+    ILOAD 10
+    DALOAD
+    DSUB
+    DMUL
+    DADD
+    DASTORE
+   L13
+    LINENUMBER 133 L13
+    IINC 10 1
+    GOTO L10
+   L11
+    LINENUMBER 136 L11
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/direct/MultiDirectional.simplex : [Lorg/apache/commons/math/optimization/RealPointValuePair;
+    ILOAD 7
+    NEW org/apache/commons/math/optimization/RealPointValuePair
+    DUP
+    ALOAD 9
+    LDC NaN
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/optimization/RealPointValuePair.<init> ([DDZ)V
+    AASTORE
+   L14
+    LINENUMBER 130 L14
+    IINC 7 1
+    GOTO L5
+   L6
+    LINENUMBER 140 L6
+    ALOAD 0
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/optimization/direct/MultiDirectional.evaluateSimplex (Ljava/util/Comparator;)V
+   L15
+    LINENUMBER 141 L15
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/direct/MultiDirectional.simplex : [Lorg/apache/commons/math/optimization/RealPointValuePair;
+    ICONST_0
+    AALOAD
+    ARETURN
+   L16
+    LOCALVARIABLE j I L10 L11 10
+    LOCALVARIABLE xOriginal [D L8 L14 8
+    LOCALVARIABLE xTransformed [D L9 L14 9
+    LOCALVARIABLE i I L5 L6 7
+    LOCALVARIABLE this Lorg/apache/commons/math/optimization/direct/MultiDirectional; L0 L16 0
+    LOCALVARIABLE original [Lorg/apache/commons/math/optimization/RealPointValuePair; L0 L16 1
+    LOCALVARIABLE coeff D L0 L16 2
+    LOCALVARIABLE comparator Ljava/util/Comparator; L0 L16 4
+    // signature Ljava/util/Comparator<Lorg/apache/commons/math/optimization/RealPointValuePair;>;
+    // declaration: comparator extends java.util.Comparator<org.apache.commons.math.optimization.RealPointValuePair>
+    LOCALVARIABLE xSmallest [D L1 L16 5
+    LOCALVARIABLE n I L2 L16 6
+    MAXSTACK = 10
+    MAXLOCALS = 11
+}
+

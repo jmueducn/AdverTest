@@ -14,7 +14,7 @@ from config import our_method_logger
 
 llm = Deepseek(api_key="your api-key",model="deepseek-chat")
 ms_standard = 70
-coverage_threshold = 95
+coverage_threshold = 100
 projname = 'Math'
 def run_one_case(proj,projid,mutants_raw,mutants_tested,llm,ms_standard=70,coverage_threshold=95):
     mutated_lines = initial_generate_mutant_def4j(proj,projid,mutants_raw,llm)
@@ -53,8 +53,8 @@ def run_one_case(proj,projid,mutants_raw,mutants_tested,llm,ms_standard=70,cover
     cnt_T = 0
     cnt_M = 0
     our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, MS:{mutation_score} CV:{coverage},Round:{cnt_T+cnt_M+1},TC: {cnt_T},MT: {cnt_M}')
-    result = bug_detection_ourgen(proj,projid)
-    our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, Round:{cnt_T+cnt_M}, result: {result}')
+    #result = bug_detection_ourgen(proj,projid)
+    #our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, Round:{cnt_T+cnt_M}, result: {result}')
     last_M = 0
     while 1:
         
@@ -72,27 +72,27 @@ def run_one_case(proj,projid,mutants_raw,mutants_tested,llm,ms_standard=70,cover
         print("未被覆盖的行号列表:", uncovered)
         print("cvg rate:",coverage,"%")
         our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, MS:{mutation_score} CV:{coverage},Round:{cnt_T+cnt_M+1},TC: {cnt_T},MT: {cnt_M}')
-        result = bug_detection_ourgen(proj,projid)
-        our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, Round:{cnt_T+cnt_M}, result: {result}')
+        #result = bug_detection_ourgen(proj,projid)
+        #our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, Round:{cnt_T+cnt_M}, result: {result}')
         if cnt_M+cnt_T >= 4:
-            # if cnt_T < cnt_M  or last_M == 1:
-            #     TC_ENHANCE(proj,projid,'./defects4j_fixed',test_file_path,mutants_tested,llm)
-            #     cnt_T+=1
-            #     mutation_score = running_mutants(proj,projid,mutants_raw,mutants_tested)
-            #     uncovered,coverage = coverage_process(proj,projid,mutated_lines)
-            #     our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, MS:{mutation_score} CV:{coverage},Round:{cnt_T+cnt_M+1},TC: {cnt_T},MT: {cnt_M}')
-            #     result = bug_detection_ourgen(proj,projid)
-            #     our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, Round:{cnt_T+cnt_M}, result: {result}')
+            if cnt_T < cnt_M  or last_M == 1:
+                TC_ENHANCE(proj,projid,'./defects4j_fixed',test_file_path,mutants_tested,llm)
+                cnt_T+=1
+                mutation_score = running_mutants(proj,projid,mutants_raw,mutants_tested)
+                uncovered,coverage = coverage_process(proj,projid,mutated_lines)
+                our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, MS:{mutation_score} CV:{coverage},Round:{cnt_T+cnt_M+1},TC: {cnt_T},MT: {cnt_M}')
+                #result = bug_detection_ourgen(proj,projid)
+                #our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, Round:{cnt_T+cnt_M}, result: {result}')
             break
-        # if coverage>coverage_threshold and mutation_score>= ms_standard:
+        # if coverage>=coverage_threshold and mutation_score>= ms_standard:
         #     if cnt_T == 0:
         #         TC_ENHANCE(proj,projid,'./defects4j_fixed',test_file_path,mutants_tested,llm)
         #         mutation_score = running_mutants(proj,projid,mutants_raw,mutants_tested)
         #         uncovered,coverage = coverage_process(proj,projid,mutated_lines)
         #         cnt_T+=1
         #         our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, MS:{mutation_score} CV:{coverage},Round:{cnt_T+cnt_M+1},TC: {cnt_T},MT: {cnt_M}')
-        #         result = bug_detection_ourgen(proj,projid)
-        #         our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, Round:{cnt_T+cnt_M}, result: {result}')
+        #         #result = bug_detection_ourgen(proj,projid)
+        #         #our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, Round:{cnt_T+cnt_M}, result: {result}')
         #         break
         #     break
         
@@ -123,32 +123,8 @@ def process_project(projid):
         our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, Result: error {e}')
         print(f'Project name: {projname}, Project ID: {projid+1}, Result: error {e}')
 
-with ThreadPoolExecutor(max_workers=8) as executor:
-    futures = [executor.submit(process_project, i) for i in range(0, 106)]
+with ThreadPoolExecutor(max_workers=1) as executor:
+    futures = [executor.submit(process_project, i) for i in range(1,2)]
     for future in as_completed(futures):
         future.result()  
     
-# llm = GPT(api_key="your api-key",model="GPT-4o")
-# generate_mutant('Chart',0,'./',llm)
-
-# llm = GPT(api_key="your api-key",model="GPT-4o-mini")
-# generate_mutant('Chart',0,'./',llm)
-
-#condefect
-# llm = deepseek(api_key="your api-key")
-# con_generate_mutant(llm)
-
-# llm = StarChat(model_path='path')
-# con_generate_mutant(llm)
-
-# llm = CodeLlama13B(model_path='path')
-# con_generate_mutant(llm)
-
-# llm = GPT(api_key="your api-key",model="GPT-3.5-turbo")
-# con_generate_mutant(llm)
-
-# llm = GPT(api_key="your api-key",model="GPT-4o")
-# con_generate_mutant(llm)
-
-# llm = GPT(api_key="your api-key",model="GPT-4o-mini")
-# con_generate_mutant(llm)

@@ -1,27 +1,27 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.25" branch-rate="0.18518518518518517" lines-covered="30" lines-valid="120" branches-covered="10" branches-valid="54" complexity="4.666666666666667" version="2.0.3" timestamp="1747571855175">
+<coverage line-rate="0.3416666666666667" branch-rate="0.2037037037037037" lines-covered="41" lines-valid="120" branches-covered="11" branches-valid="54" complexity="4.666666666666667" version="2.0.3" timestamp="1751300535733">
 	<sources>
 		<source>src/main/java</source>
 	</sources>
 	<packages>
-		<package name="org.apache.commons.math.stat.clustering" line-rate="0.25" branch-rate="0.18518518518518517" complexity="4.666666666666667">
+		<package name="org.apache.commons.math.stat.clustering" line-rate="0.3416666666666667" branch-rate="0.2037037037037037" complexity="4.666666666666667">
 			<classes>
-				<class name="org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer" filename="org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java" line-rate="0.2631578947368421" branch-rate="0.18518518518518517" complexity="4.666666666666667">
+				<class name="org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer" filename="org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java" line-rate="0.3157894736842105" branch-rate="0.2037037037037037" complexity="4.666666666666667">
 					<methods>
-						<method name="&lt;init&gt;" signature="(Ljava/util/Random;)V" line-rate="0.0" branch-rate="1.0">
+						<method name="&lt;init&gt;" signature="(Ljava/util/Random;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="69" hits="0" branch="false"/>
-								<line number="70" hits="0" branch="false"/>
+								<line number="69" hits="3" branch="false"/>
+								<line number="70" hits="3" branch="false"/>
 							</lines>
 						</method>
-						<method name="&lt;init&gt;" signature="(Ljava/util/Random;Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer$EmptyClusterStrategy;)V" line-rate="0.0" branch-rate="1.0">
+						<method name="&lt;init&gt;" signature="(Ljava/util/Random;Lorg/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer$EmptyClusterStrategy;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="78" hits="0" branch="false"/>
-								<line number="79" hits="0" branch="false"/>
-								<line number="80" hits="0" branch="false"/>
-								<line number="81" hits="0" branch="false"/>
+								<line number="78" hits="3" branch="false"/>
+								<line number="79" hits="3" branch="false"/>
+								<line number="80" hits="3" branch="false"/>
+								<line number="81" hits="3" branch="false"/>
 							</lines>
 						</method>
 						<method name="assignPointsToClusters" signature="(Ljava/util/Collection;Ljava/util/Collection;)V" line-rate="0.0" branch-rate="0.0">
@@ -44,23 +44,23 @@
 								<line number="168" hits="6" branch="false"/>
 								<line number="169" hits="4" branch="false"/>
 								<line number="171" hits="4" branch="false"/>
-								<line number="172" hits="8" branch="true" condition-coverage="100% (2/2)">
+								<line number="172" hits="7" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="175" hits="5" branch="false"/>
+								<line number="175" hits="4" branch="false"/>
 								<line number="176" hits="12" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="177" hits="7" branch="false"/>
-								<line number="178" hits="7" branch="false"/>
-								<line number="179" hits="7" branch="false"/>
-								<line number="180" hits="7" branch="false"/>
-								<line number="181" hits="7" branch="false"/>
-								<line number="186" hits="5" branch="false"/>
+								<line number="177" hits="8" branch="false"/>
+								<line number="178" hits="8" branch="false"/>
+								<line number="179" hits="8" branch="false"/>
+								<line number="180" hits="8" branch="false"/>
+								<line number="181" hits="8" branch="false"/>
+								<line number="186" hits="4" branch="false"/>
 								<line number="187" hits="7" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
@@ -71,10 +71,10 @@
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="189" hits="5" branch="false"/>
-								<line number="190" hits="4" branch="false"/>
-								<line number="191" hits="4" branch="false"/>
-								<line number="194" hits="4" branch="false"/>
+								<line number="189" hits="4" branch="false"/>
+								<line number="190" hits="3" branch="false"/>
+								<line number="191" hits="3" branch="false"/>
+								<line number="194" hits="3" branch="false"/>
 								<line number="196" hits="3" branch="false"/>
 							</lines>
 						</method>
@@ -173,25 +173,25 @@
 								<line number="307" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getNearestCluster" signature="(Ljava/util/Collection;Lorg/apache/commons/math/stat/clustering/Clusterable;)Lorg/apache/commons/math/stat/clustering/Cluster;" line-rate="1.0" branch-rate="0.75">
+						<method name="getNearestCluster" signature="(Ljava/util/Collection;Lorg/apache/commons/math/stat/clustering/Clusterable;)Lorg/apache/commons/math/stat/clustering/Cluster;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="321" hits="7" branch="false"/>
-								<line number="322" hits="7" branch="false"/>
-								<line number="323" hits="7" branch="true" condition-coverage="100% (2/2)">
+								<line number="321" hits="8" branch="false"/>
+								<line number="322" hits="8" branch="false"/>
+								<line number="323" hits="8" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="324" hits="8" branch="false"/>
-								<line number="325" hits="8" branch="true" condition-coverage="50% (1/2)">
+								<line number="324" hits="11" branch="false"/>
+								<line number="325" hits="11" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
-										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="326" hits="8" branch="false"/>
-								<line number="327" hits="8" branch="false"/>
-								<line number="329" hits="8" branch="false"/>
-								<line number="330" hits="7" branch="false"/>
+								<line number="326" hits="9" branch="false"/>
+								<line number="327" hits="9" branch="false"/>
+								<line number="329" hits="11" branch="false"/>
+								<line number="330" hits="8" branch="false"/>
 							</lines>
 						</method>
 						<method name="getPointFromLargestNumberCluster" signature="(Ljava/util/Collection;)Lorg/apache/commons/math/stat/clustering/Clusterable;" line-rate="0.0" branch-rate="0.0">
@@ -266,12 +266,12 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="69" hits="0" branch="false"/>
-						<line number="70" hits="0" branch="false"/>
-						<line number="78" hits="0" branch="false"/>
-						<line number="79" hits="0" branch="false"/>
-						<line number="80" hits="0" branch="false"/>
-						<line number="81" hits="0" branch="false"/>
+						<line number="69" hits="3" branch="false"/>
+						<line number="70" hits="3" branch="false"/>
+						<line number="78" hits="3" branch="false"/>
+						<line number="79" hits="3" branch="false"/>
+						<line number="80" hits="3" branch="false"/>
+						<line number="81" hits="3" branch="false"/>
 						<line number="95" hits="0" branch="false"/>
 						<line number="96" hits="0" branch="false"/>
 						<line number="99" hits="0" branch="true" condition-coverage="0% (0/2)">
@@ -341,23 +341,23 @@
 						<line number="168" hits="6" branch="false"/>
 						<line number="169" hits="4" branch="false"/>
 						<line number="171" hits="4" branch="false"/>
-						<line number="172" hits="8" branch="true" condition-coverage="100% (2/2)">
+						<line number="172" hits="7" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="175" hits="5" branch="false"/>
+						<line number="175" hits="4" branch="false"/>
 						<line number="176" hits="12" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="177" hits="7" branch="false"/>
-						<line number="178" hits="7" branch="false"/>
-						<line number="179" hits="7" branch="false"/>
-						<line number="180" hits="7" branch="false"/>
-						<line number="181" hits="7" branch="false"/>
-						<line number="186" hits="5" branch="false"/>
+						<line number="177" hits="8" branch="false"/>
+						<line number="178" hits="8" branch="false"/>
+						<line number="179" hits="8" branch="false"/>
+						<line number="180" hits="8" branch="false"/>
+						<line number="181" hits="8" branch="false"/>
+						<line number="186" hits="4" branch="false"/>
 						<line number="187" hits="7" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
@@ -368,10 +368,10 @@
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="189" hits="5" branch="false"/>
-						<line number="190" hits="4" branch="false"/>
-						<line number="191" hits="4" branch="false"/>
-						<line number="194" hits="4" branch="false"/>
+						<line number="189" hits="4" branch="false"/>
+						<line number="190" hits="3" branch="false"/>
+						<line number="191" hits="3" branch="false"/>
+						<line number="194" hits="3" branch="false"/>
 						<line number="196" hits="3" branch="false"/>
 						<line number="208" hits="0" branch="false"/>
 						<line number="209" hits="0" branch="false"/>
@@ -467,23 +467,23 @@
 						</line>
 						<line number="304" hits="0" branch="false"/>
 						<line number="307" hits="0" branch="false"/>
-						<line number="321" hits="7" branch="false"/>
-						<line number="322" hits="7" branch="false"/>
-						<line number="323" hits="7" branch="true" condition-coverage="100% (2/2)">
+						<line number="321" hits="8" branch="false"/>
+						<line number="322" hits="8" branch="false"/>
+						<line number="323" hits="8" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="324" hits="8" branch="false"/>
-						<line number="325" hits="8" branch="true" condition-coverage="50% (1/2)">
+						<line number="324" hits="11" branch="false"/>
+						<line number="325" hits="11" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
-								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="326" hits="8" branch="false"/>
-						<line number="327" hits="8" branch="false"/>
-						<line number="329" hits="8" branch="false"/>
-						<line number="330" hits="7" branch="false"/>
+						<line number="326" hits="9" branch="false"/>
+						<line number="327" hits="9" branch="false"/>
+						<line number="329" hits="11" branch="false"/>
+						<line number="330" hits="8" branch="false"/>
 					</lines>
 				</class>
 				<class name="org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer$1" filename="org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java" line-rate="0.0" branch-rate="1.0" complexity="4.666666666666667">
@@ -498,15 +498,15 @@
 						<line number="106" hits="0" branch="false"/>
 					</lines>
 				</class>
-				<class name="org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer$EmptyClusterStrategy" filename="org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java" line-rate="0.0" branch-rate="1.0" complexity="4.666666666666667">
+				<class name="org.apache.commons.math.stat.clustering.KMeansPlusPlusClusterer$EmptyClusterStrategy" filename="org/apache/commons/math/stat/clustering/KMeansPlusPlusClusterer.java" line-rate="1.0" branch-rate="1.0" complexity="4.666666666666667">
 					<methods>
-						<method name="&lt;clinit&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
+						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="39" hits="0" branch="false"/>
-								<line number="42" hits="0" branch="false"/>
-								<line number="45" hits="0" branch="false"/>
-								<line number="48" hits="0" branch="false"/>
-								<line number="51" hits="0" branch="false"/>
+								<line number="39" hits="5" branch="false"/>
+								<line number="42" hits="1" branch="false"/>
+								<line number="45" hits="1" branch="false"/>
+								<line number="48" hits="1" branch="false"/>
+								<line number="51" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="&lt;init&gt;" signature="(Ljava/lang/String;I)V" line-rate="1.0" branch-rate="1.0">
@@ -523,11 +523,11 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="39" hits="0" branch="false"/>
-						<line number="42" hits="0" branch="false"/>
-						<line number="45" hits="0" branch="false"/>
-						<line number="48" hits="0" branch="false"/>
-						<line number="51" hits="0" branch="false"/>
+						<line number="39" hits="5" branch="false"/>
+						<line number="42" hits="1" branch="false"/>
+						<line number="45" hits="1" branch="false"/>
+						<line number="48" hits="1" branch="false"/>
+						<line number="51" hits="1" branch="false"/>
 					</lines>
 				</class>
 			</classes>

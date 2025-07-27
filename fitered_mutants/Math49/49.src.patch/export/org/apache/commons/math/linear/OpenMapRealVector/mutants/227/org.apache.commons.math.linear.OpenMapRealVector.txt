@@ -1,0 +1,3103 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math/linear/OpenMapRealVector extends org/apache/commons/math/linear/AbstractRealVector implements org/apache/commons/math/linear/SparseRealVector java/io/Serializable {
+
+  // compiled from: OpenMapRealVector.java
+  // access flags 0x4
+  protected INNERCLASS org/apache/commons/math/linear/OpenMapRealVector$OpenMapSparseIterator org/apache/commons/math/linear/OpenMapRealVector OpenMapSparseIterator
+  // access flags 0x4
+  protected INNERCLASS org/apache/commons/math/linear/OpenMapRealVector$OpenMapEntry org/apache/commons/math/linear/OpenMapRealVector OpenMapEntry
+  // access flags 0x1
+  public INNERCLASS org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator org/apache/commons/math/util/OpenIntToDoubleHashMap Iterator
+  // access flags 0x409
+  public static abstract INNERCLASS org/apache/commons/math/linear/RealVector$Entry org/apache/commons/math/linear/RealVector Entry
+
+  // access flags 0x19
+  public final static D DEFAULT_ZERO_TOLERANCE = 1.0E-12
+
+  // access flags 0x1A
+  private final static J serialVersionUID = 8772222695580707260
+
+  // access flags 0x12
+  private final Lorg/apache/commons/math/util/OpenIntToDoubleHashMap; entries
+
+  // access flags 0x12
+  private final I virtualSize
+
+  // access flags 0x12
+  private final D epsilon
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 56 L0
+    ALOAD 0
+    ICONST_0
+    LDC 1.0E-12
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> (ID)V
+   L1
+    LINENUMBER 57 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L2 0
+    MAXSTACK = 4
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public <init>(I)V
+   L0
+    LINENUMBER 65 L0
+    ALOAD 0
+    ILOAD 1
+    LDC 1.0E-12
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> (ID)V
+   L1
+    LINENUMBER 66 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L2 0
+    LOCALVARIABLE dimension I L0 L2 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>(ID)V
+   L0
+    LINENUMBER 74 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 75 L1
+    ALOAD 0
+    ILOAD 1
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+   L2
+    LINENUMBER 76 L2
+    ALOAD 0
+    NEW org/apache/commons/math/util/OpenIntToDoubleHashMap
+    DUP
+    DCONST_0
+    INVOKESPECIAL org/apache/commons/math/util/OpenIntToDoubleHashMap.<init> (D)V
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+   L3
+    LINENUMBER 77 L3
+    ALOAD 0
+    DLOAD 2
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.epsilon : D
+   L4
+    LINENUMBER 78 L4
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L5 0
+    LOCALVARIABLE dimension I L0 L5 1
+    LOCALVARIABLE epsilon D L0 L5 2
+    MAXSTACK = 5
+    MAXLOCALS = 4
+
+  // access flags 0x4
+  protected <init>(Lorg/apache/commons/math/linear/OpenMapRealVector;I)V
+   L0
+    LINENUMBER 86 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 87 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getDimension ()I
+    ILOAD 2
+    IADD
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+   L2
+    LINENUMBER 88 L2
+    ALOAD 0
+    NEW org/apache/commons/math/util/OpenIntToDoubleHashMap
+    DUP
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKESPECIAL org/apache/commons/math/util/OpenIntToDoubleHashMap.<init> (Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;)V
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+   L3
+    LINENUMBER 89 L3
+    ALOAD 0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.epsilon : D
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.epsilon : D
+   L4
+    LINENUMBER 90 L4
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L5 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L5 1
+    LOCALVARIABLE resize I L0 L5 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public <init>(II)V
+   L0
+    LINENUMBER 99 L0
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    LDC 1.0E-12
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> (IID)V
+   L1
+    LINENUMBER 100 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L2 0
+    LOCALVARIABLE dimension I L0 L2 1
+    LOCALVARIABLE expectedSize I L0 L2 2
+    MAXSTACK = 5
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public <init>(IID)V
+   L0
+    LINENUMBER 110 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 111 L1
+    ALOAD 0
+    ILOAD 1
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+   L2
+    LINENUMBER 112 L2
+    ALOAD 0
+    NEW org/apache/commons/math/util/OpenIntToDoubleHashMap
+    DUP
+    ILOAD 2
+    DCONST_0
+    INVOKESPECIAL org/apache/commons/math/util/OpenIntToDoubleHashMap.<init> (ID)V
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+   L3
+    LINENUMBER 113 L3
+    ALOAD 0
+    DLOAD 3
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.epsilon : D
+   L4
+    LINENUMBER 114 L4
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L5 0
+    LOCALVARIABLE dimension I L0 L5 1
+    LOCALVARIABLE expectedSize I L0 L5 2
+    LOCALVARIABLE epsilon D L0 L5 3
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public <init>([D)V
+   L0
+    LINENUMBER 123 L0
+    ALOAD 0
+    ALOAD 1
+    LDC 1.0E-12
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> ([DD)V
+   L1
+    LINENUMBER 124 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L2 0
+    LOCALVARIABLE values [D L0 L2 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>([DD)V
+   L0
+    LINENUMBER 133 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 134 L1
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+   L2
+    LINENUMBER 135 L2
+    ALOAD 0
+    NEW org/apache/commons/math/util/OpenIntToDoubleHashMap
+    DUP
+    DCONST_0
+    INVOKESPECIAL org/apache/commons/math/util/OpenIntToDoubleHashMap.<init> (D)V
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+   L3
+    LINENUMBER 136 L3
+    ALOAD 0
+    DLOAD 2
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.epsilon : D
+   L4
+    LINENUMBER 137 L4
+    ICONST_0
+    ISTORE 4
+   L5
+    ILOAD 4
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 138 L7
+    ALOAD 1
+    ILOAD 4
+    DALOAD
+    DSTORE 5
+   L8
+    LINENUMBER 139 L8
+    ALOAD 0
+    DLOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.isDefaultValue (D)Z
+    IFNE L9
+   L10
+    LINENUMBER 140 L10
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 4
+    DLOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.put (ID)D
+    POP2
+   L9
+    LINENUMBER 137 L9
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 143 L6
+    RETURN
+   L11
+    LOCALVARIABLE value D L8 L9 5
+    LOCALVARIABLE key I L5 L6 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L11 0
+    LOCALVARIABLE values [D L0 L11 1
+    LOCALVARIABLE epsilon D L0 L11 2
+    MAXSTACK = 5
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public <init>([Ljava/lang/Double;)V
+   L0
+    LINENUMBER 152 L0
+    ALOAD 0
+    ALOAD 1
+    LDC 1.0E-12
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> ([Ljava/lang/Double;D)V
+   L1
+    LINENUMBER 153 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L2 0
+    LOCALVARIABLE values [Ljava/lang/Double; L0 L2 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>([Ljava/lang/Double;D)V
+   L0
+    LINENUMBER 162 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 163 L1
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+   L2
+    LINENUMBER 164 L2
+    ALOAD 0
+    NEW org/apache/commons/math/util/OpenIntToDoubleHashMap
+    DUP
+    DCONST_0
+    INVOKESPECIAL org/apache/commons/math/util/OpenIntToDoubleHashMap.<init> (D)V
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+   L3
+    LINENUMBER 165 L3
+    ALOAD 0
+    DLOAD 2
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.epsilon : D
+   L4
+    LINENUMBER 166 L4
+    ICONST_0
+    ISTORE 4
+   L5
+    ILOAD 4
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 167 L7
+    ALOAD 1
+    ILOAD 4
+    AALOAD
+    INVOKEVIRTUAL java/lang/Double.doubleValue ()D
+    DSTORE 5
+   L8
+    LINENUMBER 168 L8
+    ALOAD 0
+    DLOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.isDefaultValue (D)Z
+    IFNE L9
+   L10
+    LINENUMBER 169 L10
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 4
+    DLOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.put (ID)D
+    POP2
+   L9
+    LINENUMBER 166 L9
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 172 L6
+    RETURN
+   L11
+    LOCALVARIABLE value D L8 L9 5
+    LOCALVARIABLE key I L5 L6 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L11 0
+    LOCALVARIABLE values [Ljava/lang/Double; L0 L11 1
+    LOCALVARIABLE epsilon D L0 L11 2
+    MAXSTACK = 5
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/linear/OpenMapRealVector;)V
+   L0
+    LINENUMBER 179 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 180 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getDimension ()I
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+   L2
+    LINENUMBER 181 L2
+    ALOAD 0
+    NEW org/apache/commons/math/util/OpenIntToDoubleHashMap
+    DUP
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.getEntries ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKESPECIAL org/apache/commons/math/util/OpenIntToDoubleHashMap.<init> (Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;)V
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+   L3
+    LINENUMBER 182 L3
+    ALOAD 0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.epsilon : D
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.epsilon : D
+   L4
+    LINENUMBER 183 L4
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L5 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L5 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/linear/RealVector;)V
+   L0
+    LINENUMBER 190 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 191 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+   L2
+    LINENUMBER 192 L2
+    ALOAD 0
+    NEW org/apache/commons/math/util/OpenIntToDoubleHashMap
+    DUP
+    DCONST_0
+    INVOKESPECIAL org/apache/commons/math/util/OpenIntToDoubleHashMap.<init> (D)V
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+   L3
+    LINENUMBER 193 L3
+    ALOAD 0
+    LDC 1.0E-12
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealVector.epsilon : D
+   L4
+    LINENUMBER 194 L4
+    ICONST_0
+    ISTORE 2
+   L5
+    ILOAD 2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 195 L7
+    ALOAD 1
+    ILOAD 2
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getEntry (I)D (itf)
+    DSTORE 3
+   L8
+    LINENUMBER 196 L8
+    ALOAD 0
+    DLOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.isDefaultValue (D)Z
+    IFNE L9
+   L10
+    LINENUMBER 197 L10
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 2
+    DLOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.put (ID)D
+    POP2
+   L9
+    LINENUMBER 194 L9
+    IINC 2 1
+    GOTO L5
+   L6
+    LINENUMBER 200 L6
+    RETURN
+   L11
+    LOCALVARIABLE value D L8 L9 3
+    LOCALVARIABLE key I L5 L6 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L11 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L11 1
+    MAXSTACK = 5
+    MAXLOCALS = 5
+
+  // access flags 0x2
+  private getEntries()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+   L0
+    LINENUMBER 208 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x4
+  protected isDefaultValue(D)Z
+   L0
+    LINENUMBER 220 L0
+    DLOAD 1
+    INVOKESTATIC org/apache/commons/math/util/FastMath.abs (D)D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.epsilon : D
+    DCMPG
+    IFGE L1
+    ICONST_1
+    GOTO L2
+   L1
+    ICONST_0
+   L2
+    IRETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L3 0
+    LOCALVARIABLE value D L0 L3 1
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public add(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 226 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 227 L1
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/OpenMapRealVector
+    IFEQ L2
+   L3
+    LINENUMBER 228 L3
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/OpenMapRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.add (Lorg/apache/commons/math/linear/OpenMapRealVector;)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L2
+    LINENUMBER 230 L2
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.add (Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealVector;
+    ARETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L4 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L4 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public add(Lorg/apache/commons/math/linear/OpenMapRealVector;)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 244 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getDimension ()I
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 245 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.size ()I
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.size ()I
+    IF_ICMPLE L2
+    ICONST_1
+    GOTO L3
+   L2
+    ICONST_0
+   L3
+    ISTORE 2
+   L4
+    LINENUMBER 246 L4
+    ILOAD 2
+    IFEQ L5
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.copy ()Lorg/apache/commons/math/linear/OpenMapRealVector;
+    GOTO L6
+   L5
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.copy ()Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L6
+    ASTORE 3
+   L7
+    LINENUMBER 247 L7
+    ILOAD 2
+    IFEQ L8
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    GOTO L9
+   L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+   L9
+    ASTORE 4
+   L10
+    LINENUMBER 248 L10
+    ILOAD 2
+    IFEQ L11
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    GOTO L12
+   L11
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+   L12
+    ASTORE 5
+   L13
+    LINENUMBER 249 L13
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L14
+   L15
+    LINENUMBER 250 L15
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L16
+    LINENUMBER 251 L16
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ISTORE 6
+   L17
+    LINENUMBER 252 L17
+    ALOAD 5
+    ILOAD 6
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.containsKey (I)Z
+    IFEQ L18
+   L19
+    LINENUMBER 253 L19
+    ALOAD 3
+    ILOAD 6
+    ALOAD 5
+    ILOAD 6
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.get (I)D
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DADD
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+    GOTO L20
+   L18
+    LINENUMBER 255 L18
+    ALOAD 3
+    ILOAD 6
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+   L20
+    LINENUMBER 257 L20
+    GOTO L13
+   L14
+    LINENUMBER 258 L14
+    ALOAD 3
+    ARETURN
+   L21
+    LOCALVARIABLE key I L17 L20 6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L21 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L21 1
+    LOCALVARIABLE copyThis Z L4 L21 2
+    LOCALVARIABLE res Lorg/apache/commons/math/linear/OpenMapRealVector; L7 L21 3
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L10 L21 4
+    LOCALVARIABLE randomAccess Lorg/apache/commons/math/util/OpenIntToDoubleHashMap; L13 L21 5
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public append(Lorg/apache/commons/math/linear/OpenMapRealVector;)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 267 L0
+    NEW org/apache/commons/math/linear/OpenMapRealVector
+    DUP
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getDimension ()I
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> (Lorg/apache/commons/math/linear/OpenMapRealVector;I)V
+    ASTORE 2
+   L1
+    LINENUMBER 268 L1
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 3
+   L2
+    LINENUMBER 269 L2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L3
+   L4
+    LINENUMBER 270 L4
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L5
+    LINENUMBER 271 L5
+    ALOAD 2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+    IADD
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+    GOTO L2
+   L3
+    LINENUMBER 273 L3
+    ALOAD 2
+    ARETURN
+   L6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L6 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L6 1
+    LOCALVARIABLE res Lorg/apache/commons/math/linear/OpenMapRealVector; L1 L6 2
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L2 L6 3
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public append(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 278 L0
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/OpenMapRealVector
+    IFEQ L1
+   L2
+    LINENUMBER 279 L2
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/OpenMapRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.append (Lorg/apache/commons/math/linear/OpenMapRealVector;)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LINENUMBER 281 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getData ()[D (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.append ([D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L3 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L3 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public append(D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 286 L0
+    NEW org/apache/commons/math/linear/OpenMapRealVector
+    DUP
+    ALOAD 0
+    ICONST_1
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> (Lorg/apache/commons/math/linear/OpenMapRealVector;I)V
+    ASTORE 3
+   L1
+    LINENUMBER 287 L1
+    ALOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+    DLOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+   L2
+    LINENUMBER 288 L2
+    ALOAD 3
+    ARETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L3 0
+    LOCALVARIABLE d D L0 L3 1
+    LOCALVARIABLE res Lorg/apache/commons/math/linear/OpenMapRealVector; L1 L3 3
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public append([D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 293 L0
+    NEW org/apache/commons/math/linear/OpenMapRealVector
+    DUP
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> (Lorg/apache/commons/math/linear/OpenMapRealVector;I)V
+    ASTORE 2
+   L1
+    LINENUMBER 294 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 295 L4
+    ALOAD 2
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+    IADD
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+   L5
+    LINENUMBER 294 L5
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 297 L3
+    ALOAD 2
+    ARETURN
+   L6
+    LOCALVARIABLE i I L2 L3 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L6 0
+    LOCALVARIABLE a [D L0 L6 1
+    LOCALVARIABLE res Lorg/apache/commons/math/linear/OpenMapRealVector; L1 L6 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public copy()Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 306 L0
+    NEW org/apache/commons/math/linear/OpenMapRealVector
+    DUP
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> (Lorg/apache/commons/math/linear/OpenMapRealVector;)V
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public dotProduct(Lorg/apache/commons/math/linear/OpenMapRealVector;)D
+   L0
+    LINENUMBER 319 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getDimension ()I
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 320 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.size ()I
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.size ()I
+    IF_ICMPGE L2
+    ICONST_1
+    GOTO L3
+   L2
+    ICONST_0
+   L3
+    ISTORE 2
+   L4
+    LINENUMBER 321 L4
+    ILOAD 2
+    IFEQ L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    GOTO L6
+   L5
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+   L6
+    ASTORE 3
+   L7
+    LINENUMBER 322 L7
+    ILOAD 2
+    IFEQ L8
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    GOTO L9
+   L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+   L9
+    ASTORE 4
+   L10
+    LINENUMBER 323 L10
+    DCONST_0
+    DSTORE 5
+   L11
+    LINENUMBER 324 L11
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L12
+   L13
+    LINENUMBER 325 L13
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L14
+    LINENUMBER 326 L14
+    DLOAD 5
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    ALOAD 4
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.get (I)D
+    DMUL
+    DADD
+    DSTORE 5
+    GOTO L11
+   L12
+    LINENUMBER 328 L12
+    DLOAD 5
+    DRETURN
+   L15
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L15 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L15 1
+    LOCALVARIABLE thisIsSmaller Z L4 L15 2
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L7 L15 3
+    LOCALVARIABLE larger Lorg/apache/commons/math/util/OpenIntToDoubleHashMap; L10 L15 4
+    LOCALVARIABLE d D L11 L15 5
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public dotProduct(Lorg/apache/commons/math/linear/RealVector;)D
+   L0
+    LINENUMBER 334 L0
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/OpenMapRealVector
+    IFEQ L1
+   L2
+    LINENUMBER 335 L2
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/OpenMapRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.dotProduct (Lorg/apache/commons/math/linear/OpenMapRealVector;)D
+    DRETURN
+   L1
+    LINENUMBER 337 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.dotProduct (Lorg/apache/commons/math/linear/RealVector;)D
+    DRETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L3 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L3 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public ebeDivide(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 343 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 344 L1
+    NEW org/apache/commons/math/linear/OpenMapRealVector
+    DUP
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> (Lorg/apache/commons/math/linear/OpenMapRealVector;)V
+    ASTORE 2
+   L2
+    LINENUMBER 345 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 3
+   L3
+    LINENUMBER 346 L3
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    POP
+   L4
+    LINENUMBER 347 L4
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L5
+    LINENUMBER 348 L5
+    ALOAD 2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    ALOAD 1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getEntry (I)D (itf)
+    DDIV
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+    GOTO L3
+   L6
+    LINENUMBER 350 L6
+    ALOAD 2
+    ARETURN
+   L7
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L7 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L7 1
+    LOCALVARIABLE res Lorg/apache/commons/math/linear/OpenMapRealVector; L2 L7 2
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L3 L7 3
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public ebeDivide([D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 356 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 357 L1
+    NEW org/apache/commons/math/linear/OpenMapRealVector
+    DUP
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> (Lorg/apache/commons/math/linear/OpenMapRealVector;)V
+    ASTORE 2
+   L2
+    LINENUMBER 358 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 3
+   L3
+    LINENUMBER 359 L3
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L4
+   L5
+    LINENUMBER 360 L5
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L6
+    LINENUMBER 361 L6
+    ALOAD 2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    ALOAD 1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    DALOAD
+    DDIV
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+    GOTO L3
+   L4
+    LINENUMBER 363 L4
+    ALOAD 2
+    ARETURN
+   L7
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L7 0
+    LOCALVARIABLE v [D L0 L7 1
+    LOCALVARIABLE res Lorg/apache/commons/math/linear/OpenMapRealVector; L2 L7 2
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L3 L7 3
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public ebeMultiply(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 368 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 369 L1
+    NEW org/apache/commons/math/linear/OpenMapRealVector
+    DUP
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> (Lorg/apache/commons/math/linear/OpenMapRealVector;)V
+    ASTORE 2
+   L2
+    LINENUMBER 370 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 3
+   L3
+    LINENUMBER 371 L3
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L4
+   L5
+    LINENUMBER 372 L5
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L6
+    LINENUMBER 373 L6
+    ALOAD 2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    ALOAD 1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getEntry (I)D (itf)
+    DMUL
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+    GOTO L3
+   L4
+    LINENUMBER 375 L4
+    ALOAD 2
+    ARETURN
+   L7
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L7 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L7 1
+    LOCALVARIABLE res Lorg/apache/commons/math/linear/OpenMapRealVector; L2 L7 2
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L3 L7 3
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public ebeMultiply([D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 381 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 382 L1
+    NEW org/apache/commons/math/linear/OpenMapRealVector
+    DUP
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> (Lorg/apache/commons/math/linear/OpenMapRealVector;)V
+    ASTORE 2
+   L2
+    LINENUMBER 383 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 3
+   L3
+    LINENUMBER 384 L3
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L4
+   L5
+    LINENUMBER 385 L5
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L6
+    LINENUMBER 386 L6
+    ALOAD 2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    ALOAD 1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    DALOAD
+    DMUL
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+    GOTO L3
+   L4
+    LINENUMBER 388 L4
+    ALOAD 2
+    ARETURN
+   L7
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L7 0
+    LOCALVARIABLE v [D L0 L7 1
+    LOCALVARIABLE res Lorg/apache/commons/math/linear/OpenMapRealVector; L2 L7 2
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L3 L7 3
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public getSubVector(II)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 393 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkIndex (I)V
+   L1
+    LINENUMBER 394 L1
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    IADD
+    ICONST_1
+    ISUB
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkIndex (I)V
+   L2
+    LINENUMBER 395 L2
+    NEW org/apache/commons/math/linear/OpenMapRealVector
+    DUP
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> (I)V
+    ASTORE 3
+   L3
+    LINENUMBER 396 L3
+    ILOAD 1
+    ILOAD 2
+    IADD
+    ISTORE 4
+   L4
+    LINENUMBER 397 L4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 5
+   L5
+    LINENUMBER 398 L5
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L6
+   L7
+    LINENUMBER 399 L7
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L8
+    LINENUMBER 400 L8
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ISTORE 6
+   L9
+    LINENUMBER 401 L9
+    ILOAD 6
+    ILOAD 1
+    IF_ICMPLT L10
+    ILOAD 6
+    ILOAD 4
+    IF_ICMPGE L10
+   L11
+    LINENUMBER 402 L11
+    ALOAD 3
+    ILOAD 6
+    ILOAD 1
+    ISUB
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+   L10
+    LINENUMBER 404 L10
+    GOTO L5
+   L6
+    LINENUMBER 405 L6
+    ALOAD 3
+    ARETURN
+   L12
+    LOCALVARIABLE key I L9 L10 6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L12 0
+    LOCALVARIABLE index I L0 L12 1
+    LOCALVARIABLE n I L0 L12 2
+    LOCALVARIABLE res Lorg/apache/commons/math/linear/OpenMapRealVector; L3 L12 3
+    LOCALVARIABLE end I L4 L12 4
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L5 L12 5
+    MAXSTACK = 4
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getData()[D
+   L0
+    LINENUMBER 411 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+    NEWARRAY T_DOUBLE
+    ASTORE 1
+   L1
+    LINENUMBER 412 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 2
+   L2
+    LINENUMBER 413 L2
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L3
+   L4
+    LINENUMBER 414 L4
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L5
+    LINENUMBER 415 L5
+    ALOAD 1
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DASTORE
+    GOTO L2
+   L3
+    LINENUMBER 417 L3
+    ALOAD 1
+    ARETURN
+   L6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L6 0
+    LOCALVARIABLE res [D L1 L6 1
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L2 L6 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getDimension()I
+   L0
+    LINENUMBER 422 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getDistance(Lorg/apache/commons/math/linear/OpenMapRealVector;)D
+   L0
+    LINENUMBER 434 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 2
+   L1
+    LINENUMBER 435 L1
+    DCONST_0
+    DSTORE 3
+   L2
+    LINENUMBER 436 L2
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L3
+   L4
+    LINENUMBER 437 L4
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L5
+    LINENUMBER 438 L5
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ISTORE 5
+   L6
+    LINENUMBER 440 L6
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    ALOAD 1
+    ILOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getEntry (I)D
+    DSUB
+    DSTORE 6
+   L7
+    LINENUMBER 441 L7
+    DLOAD 3
+    DLOAD 6
+    DLOAD 6
+    DMUL
+    DADD
+    DSTORE 3
+   L8
+    LINENUMBER 442 L8
+    GOTO L2
+   L3
+    LINENUMBER 443 L3
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.getEntries ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 2
+   L9
+    LINENUMBER 444 L9
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L10
+   L11
+    LINENUMBER 445 L11
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L12
+    LINENUMBER 446 L12
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ISTORE 5
+   L13
+    LINENUMBER 447 L13
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.containsKey (I)Z
+    IFNE L14
+   L15
+    LINENUMBER 448 L15
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DSTORE 6
+   L16
+    LINENUMBER 449 L16
+    DLOAD 3
+    DLOAD 6
+    DLOAD 6
+    DMUL
+    DADD
+    DSTORE 3
+   L14
+    LINENUMBER 451 L14
+    GOTO L9
+   L10
+    LINENUMBER 452 L10
+    DLOAD 3
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    DRETURN
+   L17
+    LOCALVARIABLE key I L6 L8 5
+    LOCALVARIABLE delta D L7 L8 6
+    LOCALVARIABLE value D L16 L14 6
+    LOCALVARIABLE key I L13 L14 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L17 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L17 1
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L1 L17 2
+    LOCALVARIABLE res D L2 L17 3
+    MAXSTACK = 6
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public getDistance(Lorg/apache/commons/math/linear/RealVector;)D
+   L0
+    LINENUMBER 458 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 459 L1
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/OpenMapRealVector
+    IFEQ L2
+   L3
+    LINENUMBER 460 L3
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/OpenMapRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getDistance (Lorg/apache/commons/math/linear/OpenMapRealVector;)D
+    DRETURN
+   L2
+    LINENUMBER 462 L2
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getData ()[D (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getDistance ([D)D
+    DRETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L4 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L4 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getDistance([D)D
+   L0
+    LINENUMBER 468 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 469 L1
+    DCONST_0
+    DSTORE 2
+   L2
+    LINENUMBER 470 L2
+    ICONST_0
+    ISTORE 4
+   L3
+    ILOAD 4
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 471 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.get (I)D
+    ALOAD 1
+    ILOAD 4
+    DALOAD
+    DSUB
+    DSTORE 5
+   L6
+    LINENUMBER 472 L6
+    DLOAD 2
+    DLOAD 5
+    DLOAD 5
+    DMUL
+    DADD
+    DSTORE 2
+   L7
+    LINENUMBER 470 L7
+    IINC 4 1
+    GOTO L3
+   L4
+    LINENUMBER 474 L4
+    DLOAD 2
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    DRETURN
+   L8
+    LOCALVARIABLE delta D L6 L7 5
+    LOCALVARIABLE i I L3 L4 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L8 0
+    LOCALVARIABLE v [D L0 L8 1
+    LOCALVARIABLE res D L2 L8 2
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getEntry(I)D
+   L0
+    LINENUMBER 479 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkIndex (I)V
+   L1
+    LINENUMBER 480 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.get (I)D
+    DRETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L2 0
+    LOCALVARIABLE index I L0 L2 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getL1Distance(Lorg/apache/commons/math/linear/OpenMapRealVector;)D
+   L0
+    LINENUMBER 493 L0
+    DCONST_0
+    DSTORE 2
+   L1
+    LINENUMBER 494 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 4
+   L2
+    LINENUMBER 495 L2
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L3
+   L4
+    LINENUMBER 496 L4
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L5
+    LINENUMBER 497 L5
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    ALOAD 1
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getEntry (I)D
+    DSUB
+    INVOKESTATIC org/apache/commons/math/util/FastMath.abs (D)D
+    DSTORE 5
+   L6
+    LINENUMBER 498 L6
+    DLOAD 2
+    DLOAD 5
+    DADD
+    DSTORE 2
+   L7
+    LINENUMBER 499 L7
+    GOTO L2
+   L3
+    LINENUMBER 500 L3
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.getEntries ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 4
+   L8
+    LINENUMBER 501 L8
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L9
+   L10
+    LINENUMBER 502 L10
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L11
+    LINENUMBER 503 L11
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ISTORE 5
+   L12
+    LINENUMBER 504 L12
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.containsKey (I)Z
+    IFNE L13
+   L14
+    LINENUMBER 505 L14
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.abs (D)D
+    DSTORE 6
+   L15
+    LINENUMBER 506 L15
+    DLOAD 2
+    DLOAD 6
+    INVOKESTATIC org/apache/commons/math/util/FastMath.abs (D)D
+    DADD
+    DSTORE 2
+   L13
+    LINENUMBER 508 L13
+    GOTO L8
+   L9
+    LINENUMBER 509 L9
+    DLOAD 2
+    DRETURN
+   L16
+    LOCALVARIABLE delta D L6 L7 5
+    LOCALVARIABLE delta D L15 L13 6
+    LOCALVARIABLE key I L12 L13 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L16 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L16 1
+    LOCALVARIABLE max D L1 L16 2
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L2 L16 4
+    MAXSTACK = 4
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public getL1Distance(Lorg/apache/commons/math/linear/RealVector;)D
+   L0
+    LINENUMBER 515 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 516 L1
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/OpenMapRealVector
+    IFEQ L2
+   L3
+    LINENUMBER 517 L3
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/OpenMapRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getL1Distance (Lorg/apache/commons/math/linear/OpenMapRealVector;)D
+    DRETURN
+   L2
+    LINENUMBER 519 L2
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getData ()[D (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getL1Distance ([D)D
+    DRETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L4 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L4 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getL1Distance([D)D
+   L0
+    LINENUMBER 525 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 526 L1
+    DCONST_0
+    DSTORE 2
+   L2
+    LINENUMBER 527 L2
+    ICONST_0
+    ISTORE 4
+   L3
+    ILOAD 4
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 528 L5
+    ALOAD 0
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getEntry (I)D
+    ALOAD 1
+    ILOAD 4
+    DALOAD
+    DSUB
+    INVOKESTATIC org/apache/commons/math/util/FastMath.abs (D)D
+    DSTORE 5
+   L6
+    LINENUMBER 529 L6
+    DLOAD 2
+    DLOAD 5
+    DADD
+    DSTORE 2
+   L7
+    LINENUMBER 527 L7
+    IINC 4 1
+    GOTO L3
+   L4
+    LINENUMBER 531 L4
+    DLOAD 2
+    DRETURN
+   L8
+    LOCALVARIABLE delta D L6 L7 5
+    LOCALVARIABLE i I L3 L4 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L8 0
+    LOCALVARIABLE v [D L0 L8 1
+    LOCALVARIABLE max D L2 L8 2
+    MAXSTACK = 4
+    MAXLOCALS = 7
+
+  // access flags 0x2
+  private getLInfDistance(Lorg/apache/commons/math/linear/OpenMapRealVector;)D
+   L0
+    LINENUMBER 541 L0
+    DCONST_0
+    DSTORE 2
+   L1
+    LINENUMBER 542 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 4
+   L2
+    LINENUMBER 543 L2
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L3
+   L4
+    LINENUMBER 544 L4
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L5
+    LINENUMBER 545 L5
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    ALOAD 1
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getEntry (I)D
+    DSUB
+    INVOKESTATIC org/apache/commons/math/util/FastMath.abs (D)D
+    DSTORE 5
+   L6
+    LINENUMBER 546 L6
+    DLOAD 5
+    DLOAD 2
+    DCMPL
+    IFLE L7
+   L8
+    LINENUMBER 547 L8
+    DLOAD 5
+    DSTORE 2
+   L7
+    LINENUMBER 549 L7
+    GOTO L2
+   L3
+    LINENUMBER 550 L3
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.getEntries ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 4
+   L9
+    LINENUMBER 551 L9
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L10
+   L11
+    LINENUMBER 552 L11
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L12
+    LINENUMBER 553 L12
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ISTORE 5
+   L13
+    LINENUMBER 554 L13
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.containsKey (I)Z
+    IFNE L14
+   L15
+    LINENUMBER 555 L15
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DLOAD 2
+    DCMPL
+    IFLE L14
+   L16
+    LINENUMBER 556 L16
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DSTORE 2
+   L14
+    LINENUMBER 559 L14
+    GOTO L9
+   L10
+    LINENUMBER 560 L10
+    DLOAD 2
+    DRETURN
+   L17
+    LOCALVARIABLE delta D L6 L7 5
+    LOCALVARIABLE key I L13 L14 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L17 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L17 1
+    LOCALVARIABLE max D L1 L17 2
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L2 L17 4
+    MAXSTACK = 4
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getLInfDistance(Lorg/apache/commons/math/linear/RealVector;)D
+   L0
+    LINENUMBER 566 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 567 L1
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/OpenMapRealVector
+    IFEQ L2
+   L3
+    LINENUMBER 568 L3
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/OpenMapRealVector
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.getLInfDistance (Lorg/apache/commons/math/linear/OpenMapRealVector;)D
+    DRETURN
+   L2
+    LINENUMBER 570 L2
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getData ()[D (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getLInfDistance ([D)D
+    DRETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L4 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L4 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getLInfDistance([D)D
+   L0
+    LINENUMBER 576 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 577 L1
+    DCONST_0
+    DSTORE 2
+   L2
+    LINENUMBER 578 L2
+    ICONST_0
+    ISTORE 4
+   L3
+    ILOAD 4
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 579 L5
+    ALOAD 0
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getEntry (I)D
+    ALOAD 1
+    ILOAD 4
+    DALOAD
+    DSUB
+    INVOKESTATIC org/apache/commons/math/util/FastMath.abs (D)D
+    DSTORE 5
+   L6
+    LINENUMBER 580 L6
+    DLOAD 5
+    DLOAD 2
+    DCMPL
+    IFLE L7
+   L8
+    LINENUMBER 581 L8
+    DLOAD 5
+    DSTORE 2
+   L7
+    LINENUMBER 578 L7
+    IINC 4 1
+    GOTO L3
+   L4
+    LINENUMBER 584 L4
+    DLOAD 2
+    DRETURN
+   L9
+    LOCALVARIABLE delta D L6 L7 5
+    LOCALVARIABLE i I L3 L4 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L9 0
+    LOCALVARIABLE v [D L0 L9 1
+    LOCALVARIABLE max D L2 L9 2
+    MAXSTACK = 4
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public isInfinite()Z
+   L0
+    LINENUMBER 589 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    LINENUMBER 590 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 2
+   L2
+    LINENUMBER 591 L2
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L3
+   L4
+    LINENUMBER 592 L4
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L5
+    LINENUMBER 593 L5
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DSTORE 3
+   L6
+    LINENUMBER 594 L6
+    DLOAD 3
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L7
+   L8
+    LINENUMBER 595 L8
+    ICONST_0
+    IRETURN
+   L7
+    LINENUMBER 597 L7
+    DLOAD 3
+    INVOKESTATIC java/lang/Double.isInfinite (D)Z
+    IFEQ L9
+   L10
+    LINENUMBER 598 L10
+    ICONST_1
+    ISTORE 1
+   L9
+    LINENUMBER 600 L9
+    GOTO L2
+   L3
+    LINENUMBER 601 L3
+    ILOAD 1
+    IRETURN
+   L11
+    LOCALVARIABLE value D L6 L9 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L11 0
+    LOCALVARIABLE infiniteFound Z L1 L11 1
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L2 L11 2
+    MAXSTACK = 2
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public isNaN()Z
+   L0
+    LINENUMBER 606 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 1
+   L1
+    LINENUMBER 607 L1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L2
+   L3
+    LINENUMBER 608 L3
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L4
+    LINENUMBER 609 L4
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L1
+   L5
+    LINENUMBER 610 L5
+    ICONST_1
+    IRETURN
+   L2
+    LINENUMBER 613 L2
+    ICONST_0
+    IRETURN
+   L6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L6 0
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L1 L6 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapAdd(D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 619 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.copy ()Lorg/apache/commons/math/linear/OpenMapRealVector;
+    DLOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.mapAddToSelf (D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    LOCALVARIABLE d D L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public mapAddToSelf(D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 625 L0
+    ICONST_0
+    ISTORE 3
+   L1
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 626 L3
+    ALOAD 0
+    ILOAD 3
+    ALOAD 0
+    ILOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getEntry (I)D
+    DLOAD 1
+    DADD
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+   L4
+    LINENUMBER 625 L4
+    IINC 3 1
+    GOTO L1
+   L2
+    LINENUMBER 628 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L5 0
+    LOCALVARIABLE d D L0 L5 1
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public outerProduct([D)Lorg/apache/commons/math/linear/RealMatrix;
+   L0
+    LINENUMBER 634 L0
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 2
+   L1
+    LINENUMBER 635 L1
+    NEW org/apache/commons/math/linear/OpenMapRealMatrix
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealMatrix.<init> (II)V
+    ASTORE 3
+   L2
+    LINENUMBER 636 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 4
+   L3
+    LINENUMBER 637 L3
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L4
+   L5
+    LINENUMBER 638 L5
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L6
+    LINENUMBER 639 L6
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ISTORE 5
+   L7
+    LINENUMBER 640 L7
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DSTORE 6
+   L8
+    LINENUMBER 641 L8
+    ICONST_0
+    ISTORE 8
+   L9
+    ILOAD 8
+    ILOAD 2
+    IF_ICMPGE L10
+   L11
+    LINENUMBER 642 L11
+    ALOAD 3
+    ILOAD 5
+    ILOAD 8
+    DLOAD 6
+    ALOAD 1
+    ILOAD 8
+    DALOAD
+    DMUL
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.setEntry (IID)V (itf)
+   L12
+    LINENUMBER 641 L12
+    IINC 8 1
+    GOTO L9
+   L10
+    LINENUMBER 644 L10
+    GOTO L3
+   L4
+    LINENUMBER 645 L4
+    ALOAD 3
+    ARETURN
+   L13
+    LOCALVARIABLE col I L9 L10 8
+    LOCALVARIABLE row I L7 L10 5
+    LOCALVARIABLE value D L8 L10 6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L13 0
+    LOCALVARIABLE v [D L0 L13 1
+    LOCALVARIABLE n I L1 L13 2
+    LOCALVARIABLE res Lorg/apache/commons/math/linear/RealMatrix; L2 L13 3
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L3 L13 4
+    MAXSTACK = 7
+    MAXLOCALS = 9
+
+  // access flags 0x1
+  public projection(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 650 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 651 L1
+    ALOAD 1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.dotProduct (Lorg/apache/commons/math/linear/RealVector;)D
+    ALOAD 1
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.dotProduct (Lorg/apache/commons/math/linear/RealVector;)D (itf)
+    DDIV
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.mapMultiply (D)Lorg/apache/commons/math/linear/RealVector; (itf)
+    ARETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L2 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L2 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public projection([D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 657 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 658 L1
+    ALOAD 0
+    NEW org/apache/commons/math/linear/OpenMapRealVector
+    DUP
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> ([D)V
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.projection (Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealVector;
+    CHECKCAST org/apache/commons/math/linear/OpenMapRealVector
+    ARETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L2 0
+    LOCALVARIABLE v [D L0 L2 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public setEntry(ID)V
+   L0
+    LINENUMBER 663 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkIndex (I)V
+   L1
+    LINENUMBER 664 L1
+    ALOAD 0
+    DLOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.isDefaultValue (D)Z
+    IFNE L2
+   L3
+    LINENUMBER 665 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 1
+    DLOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.put (ID)D
+    POP2
+    GOTO L4
+   L2
+    LINENUMBER 666 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.containsKey (I)Z
+    IFEQ L4
+   L5
+    LINENUMBER 667 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.remove (I)D
+    POP2
+   L4
+    LINENUMBER 669 L4
+    RETURN
+   L6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L6 0
+    LOCALVARIABLE index I L0 L6 1
+    LOCALVARIABLE value D L0 L6 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public setSubVector(ILorg/apache/commons/math/linear/RealVector;)V
+   L0
+    LINENUMBER 674 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkIndex (I)V
+   L1
+    LINENUMBER 675 L1
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    IADD
+    ICONST_1
+    ISUB
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkIndex (I)V
+   L2
+    LINENUMBER 676 L2
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getData ()[D (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setSubVector (I[D)V
+   L3
+    LINENUMBER 677 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L4 0
+    LOCALVARIABLE index I L0 L4 1
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L4 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public setSubVector(I[D)V
+   L0
+    LINENUMBER 682 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkIndex (I)V
+   L1
+    LINENUMBER 683 L1
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    ARRAYLENGTH
+    IADD
+    ICONST_1
+    ISUB
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkIndex (I)V
+   L2
+    LINENUMBER 684 L2
+    ICONST_0
+    ISTORE 3
+   L3
+    ILOAD 3
+    ALOAD 2
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 685 L5
+    ALOAD 0
+    ILOAD 3
+    ILOAD 1
+    IADD
+    ALOAD 2
+    ILOAD 3
+    DALOAD
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+   L6
+    LINENUMBER 684 L6
+    IINC 3 1
+    GOTO L3
+   L4
+    LINENUMBER 687 L4
+    RETURN
+   L7
+    LOCALVARIABLE i I L3 L4 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L7 0
+    LOCALVARIABLE index I L0 L7 1
+    LOCALVARIABLE v [D L0 L7 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public set(D)V
+   L0
+    LINENUMBER 692 L0
+    ICONST_0
+    ISTORE 3
+   L1
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 693 L3
+    ALOAD 0
+    ILOAD 3
+    DLOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+   L4
+    LINENUMBER 692 L4
+    IINC 3 1
+    GOTO L1
+   L2
+    LINENUMBER 695 L2
+    RETURN
+   L5
+    LOCALVARIABLE i I L1 L2 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L5 0
+    LOCALVARIABLE value D L0 L5 1
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public subtract(Lorg/apache/commons/math/linear/OpenMapRealVector;)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 706 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getDimension ()I
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 707 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.copy ()Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ASTORE 2
+   L2
+    LINENUMBER 708 L2
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.getEntries ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 3
+   L3
+    LINENUMBER 709 L3
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L4
+   L5
+    LINENUMBER 710 L5
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L6
+    LINENUMBER 711 L6
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ISTORE 4
+   L7
+    LINENUMBER 712 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.containsKey (I)Z
+    IFEQ L8
+   L9
+    LINENUMBER 713 L9
+    ALOAD 2
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.get (I)D
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DSUB
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+    GOTO L10
+   L8
+    LINENUMBER 715 L8
+    ALOAD 2
+    ILOAD 4
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DNEG
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+   L10
+    LINENUMBER 717 L10
+    GOTO L3
+   L4
+    LINENUMBER 718 L4
+    ALOAD 2
+    ARETURN
+   L11
+    LOCALVARIABLE key I L7 L10 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L11 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L11 1
+    LOCALVARIABLE res Lorg/apache/commons/math/linear/OpenMapRealVector; L2 L11 2
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L3 L11 3
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public subtract(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 724 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 725 L1
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/OpenMapRealVector
+    IFEQ L2
+   L3
+    LINENUMBER 726 L3
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/OpenMapRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.subtract (Lorg/apache/commons/math/linear/OpenMapRealVector;)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L2
+    LINENUMBER 728 L2
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getData ()[D (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.subtract ([D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L4 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L4 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public subtract([D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 734 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 735 L1
+    NEW org/apache/commons/math/linear/OpenMapRealVector
+    DUP
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.<init> (Lorg/apache/commons/math/linear/OpenMapRealVector;)V
+    ASTORE 2
+   L2
+    LINENUMBER 736 L2
+    ICONST_0
+    ISTORE 3
+   L3
+    ILOAD 3
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 737 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.containsKey (I)Z
+    IFEQ L6
+   L7
+    LINENUMBER 738 L7
+    ALOAD 2
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.get (I)D
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    DSUB
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+    GOTO L8
+   L6
+    LINENUMBER 740 L6
+    ALOAD 2
+    ILOAD 3
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    DNEG
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.setEntry (ID)V
+   L8
+    LINENUMBER 736 L8
+    IINC 3 1
+    GOTO L3
+   L4
+    LINENUMBER 743 L4
+    ALOAD 2
+    ARETURN
+   L9
+    LOCALVARIABLE i I L3 L4 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L9 0
+    LOCALVARIABLE v [D L0 L9 1
+    LOCALVARIABLE res Lorg/apache/commons/math/linear/OpenMapRealVector; L2 L9 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public unitVector()Lorg/apache/commons/math/linear/OpenMapRealVector;
+   L0
+    LINENUMBER 750 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.copy ()Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ASTORE 1
+   L1
+    LINENUMBER 751 L1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.unitize ()V
+   L2
+    LINENUMBER 752 L2
+    ALOAD 1
+    ARETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L3 0
+    LOCALVARIABLE res Lorg/apache/commons/math/linear/OpenMapRealVector; L1 L3 1
+    MAXSTACK = 1
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public unitize()V
+   L0
+    LINENUMBER 758 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getNorm ()D
+    DSTORE 1
+   L1
+    LINENUMBER 759 L1
+    ALOAD 0
+    DLOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.isDefaultValue (D)Z
+    IFEQ L2
+   L3
+    LINENUMBER 760 L3
+    NEW org/apache/commons/math/exception/MathArithmeticException
+    DUP
+    GETSTATIC org/apache/commons/math/exception/util/LocalizedFormats.ZERO_NORM : Lorg/apache/commons/math/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESPECIAL org/apache/commons/math/exception/MathArithmeticException.<init> (Lorg/apache/commons/math/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L2
+    LINENUMBER 762 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 3
+   L4
+    LINENUMBER 763 L4
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L5
+   L6
+    LINENUMBER 764 L6
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L7
+    LINENUMBER 765 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DLOAD 1
+    DDIV
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.put (ID)D
+    POP2
+    GOTO L4
+   L5
+    LINENUMBER 767 L5
+    RETURN
+   L8
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L8 0
+    LOCALVARIABLE norm D L1 L8 1
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L4 L8 3
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public toArray()[D
+   L0
+    LINENUMBER 772 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getData ()[D
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public hashCode()I
+   L0
+    LINENUMBER 783 L0
+    BIPUSH 31
+    ISTORE 1
+   L1
+    LINENUMBER 784 L1
+    ICONST_1
+    ISTORE 2
+   L2
+    LINENUMBER 786 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.epsilon : D
+    INVOKESTATIC java/lang/Double.doubleToLongBits (D)J
+    LSTORE 3
+   L3
+    LINENUMBER 787 L3
+    BIPUSH 31
+    ILOAD 2
+    IMUL
+    LLOAD 3
+    LLOAD 3
+    BIPUSH 32
+    LUSHR
+    LXOR
+    L2I
+    IADD
+    ISTORE 2
+   L4
+    LINENUMBER 788 L4
+    BIPUSH 31
+    ILOAD 2
+    IMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+    IADD
+    ISTORE 2
+   L5
+    LINENUMBER 789 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 5
+   L6
+    LINENUMBER 790 L6
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L7
+   L8
+    LINENUMBER 791 L8
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L9
+    LINENUMBER 792 L9
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    INVOKESTATIC java/lang/Double.doubleToLongBits (D)J
+    LSTORE 3
+   L10
+    LINENUMBER 793 L10
+    BIPUSH 31
+    ILOAD 2
+    IMUL
+    LLOAD 3
+    LLOAD 3
+    BIPUSH 32
+    LSHR
+    LXOR
+    L2I
+    IADD
+    ISTORE 2
+    GOTO L6
+   L7
+    LINENUMBER 795 L7
+    ILOAD 2
+    IRETURN
+   L11
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L11 0
+    LOCALVARIABLE prime I L1 L11 1
+    LOCALVARIABLE result I L2 L11 2
+    LOCALVARIABLE temp J L3 L11 3
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L6 L11 5
+    MAXSTACK = 6
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public equals(Ljava/lang/Object;)Z
+   L0
+    LINENUMBER 806 L0
+    ALOAD 0
+    ALOAD 1
+    IF_ACMPNE L1
+   L2
+    LINENUMBER 807 L2
+    ICONST_1
+    IRETURN
+   L1
+    LINENUMBER 809 L1
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/OpenMapRealVector
+    IFNE L3
+   L4
+    LINENUMBER 810 L4
+    ICONST_0
+    IRETURN
+   L3
+    LINENUMBER 812 L3
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/OpenMapRealVector
+    ASTORE 2
+   L5
+    LINENUMBER 813 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+    ALOAD 2
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.virtualSize : I
+    IF_ICMPEQ L6
+   L7
+    LINENUMBER 814 L7
+    ICONST_0
+    IRETURN
+   L6
+    LINENUMBER 816 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.epsilon : D
+    INVOKESTATIC java/lang/Double.doubleToLongBits (D)J
+    ALOAD 2
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.epsilon : D
+    INVOKESTATIC java/lang/Double.doubleToLongBits (D)J
+    LCMP
+    IFEQ L8
+   L9
+    LINENUMBER 818 L9
+    ICONST_0
+    IRETURN
+   L8
+    LINENUMBER 820 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 3
+   L10
+    LINENUMBER 821 L10
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L11
+   L12
+    LINENUMBER 822 L12
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L13
+    LINENUMBER 823 L13
+    ALOAD 2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getEntry (I)D
+    DSTORE 4
+   L14
+    LINENUMBER 824 L14
+    DLOAD 4
+    INVOKESTATIC java/lang/Double.doubleToLongBits (D)J
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    INVOKESTATIC java/lang/Double.doubleToLongBits (D)J
+    LCMP
+    IFEQ L15
+   L16
+    LINENUMBER 825 L16
+    ICONST_0
+    IRETURN
+   L15
+    LINENUMBER 827 L15
+    GOTO L10
+   L11
+    LINENUMBER 828 L11
+    ALOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector.getEntries ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 3
+   L17
+    LINENUMBER 829 L17
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L18
+   L19
+    LINENUMBER 830 L19
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L20
+    LINENUMBER 831 L20
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DSTORE 4
+   L21
+    LINENUMBER 832 L21
+    DLOAD 4
+    INVOKESTATIC java/lang/Double.doubleToLongBits (D)J
+    ALOAD 0
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getEntry (I)D
+    INVOKESTATIC java/lang/Double.doubleToLongBits (D)J
+    LCMP
+    IFEQ L22
+   L23
+    LINENUMBER 833 L23
+    ICONST_0
+    IRETURN
+   L22
+    LINENUMBER 835 L22
+    GOTO L17
+   L18
+    LINENUMBER 836 L18
+    ICONST_1
+    IRETURN
+   L24
+    LOCALVARIABLE test D L14 L15 4
+    LOCALVARIABLE test D L21 L22 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L24 0
+    LOCALVARIABLE obj Ljava/lang/Object; L0 L24 1
+    LOCALVARIABLE other Lorg/apache/commons/math/linear/OpenMapRealVector; L5 L24 2
+    LOCALVARIABLE iter Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L10 L24 3
+    MAXSTACK = 4
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public getSparsity()D
+   L0
+    LINENUMBER 845 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.size ()I
+    I2D
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getDimension ()I
+    I2D
+    DDIV
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    MAXSTACK = 4
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  // signature ()Ljava/util/Iterator<Lorg/apache/commons/math/linear/RealVector$Entry;>;
+  // declaration: java.util.Iterator<org.apache.commons.math.linear.RealVector$Entry> sparseIterator()
+  public sparseIterator()Ljava/util/Iterator;
+   L0
+    LINENUMBER 851 L0
+    NEW org/apache/commons/math/linear/OpenMapRealVector$OpenMapSparseIterator
+    DUP
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealVector$OpenMapSparseIterator.<init> (Lorg/apache/commons/math/linear/OpenMapRealVector;)V
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x1041
+  public synthetic bridge unitVector()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.unitVector ()Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1041
+  public synthetic bridge projection([D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.projection ([D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    LOCALVARIABLE x0 [D L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge ebeMultiply([D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.ebeMultiply ([D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    LOCALVARIABLE x0 [D L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge ebeDivide([D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.ebeDivide ([D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    LOCALVARIABLE x0 [D L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge copy()Lorg/apache/commons/math/linear/AbstractRealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.copy ()Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1041
+  public synthetic bridge mapAddToSelf(D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    DLOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.mapAddToSelf (D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    LOCALVARIABLE x0 D L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1041
+  public synthetic bridge mapAdd(D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    DLOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.mapAdd (D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    LOCALVARIABLE x0 D L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1041
+  public synthetic bridge subtract(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.subtract (Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    LOCALVARIABLE x0 Lorg/apache/commons/math/linear/RealVector; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge subtract([D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.subtract ([D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    LOCALVARIABLE x0 [D L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge getSubVector(II)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.getSubVector (II)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    LOCALVARIABLE x0 I L0 L1 1
+    LOCALVARIABLE x1 I L0 L1 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1041
+  public synthetic bridge append([D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.append ([D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    LOCALVARIABLE x0 [D L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge append(D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    DLOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.append (D)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    LOCALVARIABLE x0 D L0 L1 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1041
+  public synthetic bridge append(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.append (Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    LOCALVARIABLE x0 Lorg/apache/commons/math/linear/RealVector; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge ebeDivide(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.ebeDivide (Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    LOCALVARIABLE x0 Lorg/apache/commons/math/linear/RealVector; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge ebeMultiply(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.ebeMultiply (Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    LOCALVARIABLE x0 Lorg/apache/commons/math/linear/RealVector; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge copy()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealVector.copy ()Lorg/apache/commons/math/linear/OpenMapRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1008
+  static synthetic access$000(Lorg/apache/commons/math/linear/OpenMapRealVector;)Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+   L0
+    LINENUMBER 33 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealVector.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ARETURN
+   L1
+    LOCALVARIABLE x0 Lorg/apache/commons/math/linear/OpenMapRealVector; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+}
+

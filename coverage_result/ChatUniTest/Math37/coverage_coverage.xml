@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.20098039215686275" branch-rate="0.18823529411764706" lines-covered="41" lines-valid="204" branches-covered="32" branches-valid="170" complexity="4.113636363636363" version="2.0.3" timestamp="1747571740962">
+<coverage line-rate="0.20098039215686275" branch-rate="0.17647058823529413" lines-covered="41" lines-valid="204" branches-covered="30" branches-valid="170" complexity="4.113636363636363" version="2.0.3" timestamp="1751299555716">
 	<sources>
 		<source>src/main/java</source>
 	</sources>
 	<packages>
-		<package name="org.apache.commons.math.complex" line-rate="0.20098039215686275" branch-rate="0.18823529411764706" complexity="4.113636363636363">
+		<package name="org.apache.commons.math.complex" line-rate="0.20098039215686275" branch-rate="0.17647058823529413" complexity="4.113636363636363">
 			<classes>
-				<class name="org.apache.commons.math.complex.Complex" filename="org/apache/commons/math/complex/Complex.java" line-rate="0.20098039215686275" branch-rate="0.18823529411764706" complexity="4.113636363636363">
+				<class name="org.apache.commons.math.complex.Complex" filename="org/apache/commons/math/complex/Complex.java" line-rate="0.20098039215686275" branch-rate="0.17647058823529413" complexity="4.113636363636363">
 					<methods>
 						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
@@ -27,23 +27,23 @@
 						</method>
 						<method name="&lt;init&gt;" signature="(DD)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="98" hits="41" branch="false"/>
-								<line number="99" hits="41" branch="false"/>
-								<line number="100" hits="41" branch="false"/>
-								<line number="102" hits="41" branch="true" condition-coverage="100% (4/4)">
+								<line number="98" hits="80" branch="false"/>
+								<line number="99" hits="80" branch="false"/>
+								<line number="100" hits="80" branch="false"/>
+								<line number="102" hits="80" branch="true" condition-coverage="100% (4/4)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 										<condition number="1" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="103" hits="41" branch="true" condition-coverage="100% (6/6)">
+								<line number="103" hits="80" branch="true" condition-coverage="100% (6/6)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 										<condition number="1" type="jump" coverage="100%"/>
 										<condition number="2" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="105" hits="41" branch="false"/>
+								<line number="105" hits="80" branch="false"/>
 							</lines>
 						</method>
 						<method name="abs" signature="()D" line-rate="0.0" branch-rate="0.0">
@@ -181,7 +181,7 @@
 						</method>
 						<method name="createComplex" signature="(DD)Lorg/apache/commons/math/complex/Complex;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="1178" hits="14" branch="false"/>
+								<line number="1178" hits="34" branch="false"/>
 							</lines>
 						</method>
 						<method name="divide" signature="(D)Lorg/apache/commons/math/complex/Complex;" line-rate="0.0" branch-rate="0.0">
@@ -255,14 +255,14 @@
 								<line number="271" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.75" branch-rate="0.6">
+						<method name="equals" signature="(Ljava/lang/Object;)Z" line-rate="0.75" branch-rate="0.5">
 							<lines>
-								<line number="340" hits="6" branch="true" condition-coverage="100% (2/2)">
+								<line number="340" hits="9" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="341" hits="4" branch="false"/>
+								<line number="341" hits="7" branch="false"/>
 								<line number="343" hits="2" branch="true" condition-coverage="50% (1/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
@@ -275,10 +275,10 @@
 									</conditions>
 								</line>
 								<line number="346" hits="0" branch="false"/>
-								<line number="348" hits="2" branch="true" condition-coverage="50% (2/4)">
+								<line number="348" hits="2" branch="true" condition-coverage="25% (1/4)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
-										<condition number="1" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="0%"/>
 									</conditions>
 								</line>
 								<line number="351" hits="0" branch="false"/>
@@ -312,12 +312,12 @@
 						</method>
 						<method name="getImaginary" signature="()D" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="376" hits="12" branch="false"/>
+								<line number="376" hits="34" branch="false"/>
 							</lines>
 						</method>
 						<method name="getReal" signature="()D" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="385" hits="14" branch="false"/>
+								<line number="385" hits="35" branch="false"/>
 							</lines>
 						</method>
 						<method name="hashCode" signature="()I" line-rate="0.0" branch-rate="0.0">
@@ -336,9 +336,9 @@
 								<line number="409" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="isNaN" signature="()Z" line-rate="1.0" branch-rate="1.0">
+						<method name="isNaN" signature="()Z" line-rate="0.0" branch-rate="1.0">
 							<lines>
-								<line number="396" hits="2" branch="false"/>
+								<line number="396" hits="0" branch="false"/>
 							</lines>
 						</method>
 						<method name="log" signature="()Lorg/apache/commons/math/complex/Complex;" line-rate="0.0" branch-rate="0.0">
@@ -611,61 +611,61 @@
 						</method>
 						<method name="tan" signature="()Lorg/apache/commons/math/complex/Complex;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="1018" hits="10" branch="true" condition-coverage="100% (4/4)">
+								<line number="1018" hits="25" branch="true" condition-coverage="100% (4/4)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 										<condition number="1" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="1019" hits="2" branch="false"/>
-								<line number="1021" hits="8" branch="true" condition-coverage="100% (2/2)">
+								<line number="1019" hits="4" branch="false"/>
+								<line number="1021" hits="21" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="1022" hits="1" branch="false"/>
-								<line number="1024" hits="7" branch="true" condition-coverage="100% (2/2)">
+								<line number="1022" hits="5" branch="false"/>
+								<line number="1024" hits="16" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="1025" hits="1" branch="false"/>
-								<line number="1028" hits="6" branch="false"/>
-								<line number="1029" hits="6" branch="false"/>
-								<line number="1030" hits="6" branch="false"/>
-								<line number="1032" hits="6" branch="false"/>
+								<line number="1025" hits="4" branch="false"/>
+								<line number="1028" hits="12" branch="false"/>
+								<line number="1029" hits="12" branch="false"/>
+								<line number="1030" hits="12" branch="false"/>
+								<line number="1032" hits="12" branch="false"/>
 							</lines>
 						</method>
-						<method name="tanh" signature="()Lorg/apache/commons/math/complex/Complex;" line-rate="1.0" branch-rate="1.0">
+						<method name="tanh" signature="()Lorg/apache/commons/math/complex/Complex;" line-rate="1.0" branch-rate="0.875">
 							<lines>
-								<line number="1069" hits="10" branch="true" condition-coverage="100% (4/4)">
+								<line number="1069" hits="16" branch="true" condition-coverage="75% (3/4)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
-										<condition number="1" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
-								<line number="1070" hits="4" branch="false"/>
-								<line number="1072" hits="6" branch="true" condition-coverage="100% (2/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="100%"/>
-									</conditions>
-								</line>
-								<line number="1073" hits="1" branch="false"/>
-								<line number="1075" hits="5" branch="true" condition-coverage="100% (2/2)">
+								<line number="1070" hits="3" branch="false"/>
+								<line number="1072" hits="13" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="1076" hits="1" branch="false"/>
-								<line number="1078" hits="4" branch="false"/>
-								<line number="1079" hits="4" branch="false"/>
-								<line number="1080" hits="4" branch="false"/>
-								<line number="1082" hits="4" branch="false"/>
+								<line number="1073" hits="3" branch="false"/>
+								<line number="1075" hits="10" branch="true" condition-coverage="100% (2/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="100%"/>
+									</conditions>
+								</line>
+								<line number="1076" hits="2" branch="false"/>
+								<line number="1078" hits="8" branch="false"/>
+								<line number="1079" hits="8" branch="false"/>
+								<line number="1080" hits="8" branch="false"/>
+								<line number="1082" hits="8" branch="false"/>
 							</lines>
 						</method>
-						<method name="toString" signature="()Ljava/lang/String;" line-rate="0.0" branch-rate="1.0">
+						<method name="toString" signature="()Ljava/lang/String;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="1230" hits="0" branch="false"/>
+								<line number="1230" hits="4" branch="false"/>
 							</lines>
 						</method>
 						<method name="valueOf" signature="(D)Lorg/apache/commons/math/complex/Complex;" line-rate="0.0" branch-rate="0.0">
@@ -701,23 +701,23 @@
 						<line number="69" hits="1" branch="false"/>
 						<line number="89" hits="0" branch="false"/>
 						<line number="90" hits="0" branch="false"/>
-						<line number="98" hits="41" branch="false"/>
-						<line number="99" hits="41" branch="false"/>
-						<line number="100" hits="41" branch="false"/>
-						<line number="102" hits="41" branch="true" condition-coverage="100% (4/4)">
+						<line number="98" hits="80" branch="false"/>
+						<line number="99" hits="80" branch="false"/>
+						<line number="100" hits="80" branch="false"/>
+						<line number="102" hits="80" branch="true" condition-coverage="100% (4/4)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 								<condition number="1" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="103" hits="41" branch="true" condition-coverage="100% (6/6)">
+						<line number="103" hits="80" branch="true" condition-coverage="100% (6/6)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 								<condition number="1" type="jump" coverage="100%"/>
 								<condition number="2" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="105" hits="41" branch="false"/>
+						<line number="105" hits="80" branch="false"/>
 						<line number="116" hits="0" branch="true" condition-coverage="0% (0/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="0%"/>
@@ -864,12 +864,12 @@
 						<line number="317" hits="0" branch="false"/>
 						<line number="318" hits="0" branch="false"/>
 						<line number="319" hits="0" branch="false"/>
-						<line number="340" hits="6" branch="true" condition-coverage="100% (2/2)">
+						<line number="340" hits="9" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="341" hits="4" branch="false"/>
+						<line number="341" hits="7" branch="false"/>
 						<line number="343" hits="2" branch="true" condition-coverage="50% (1/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
@@ -882,10 +882,10 @@
 							</conditions>
 						</line>
 						<line number="346" hits="0" branch="false"/>
-						<line number="348" hits="2" branch="true" condition-coverage="50% (2/4)">
+						<line number="348" hits="2" branch="true" condition-coverage="25% (1/4)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
-								<condition number="1" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="0%"/>
 							</conditions>
 						</line>
 						<line number="351" hits="0" branch="false"/>
@@ -896,9 +896,9 @@
 						</line>
 						<line number="364" hits="0" branch="false"/>
 						<line number="366" hits="0" branch="false"/>
-						<line number="376" hits="12" branch="false"/>
-						<line number="385" hits="14" branch="false"/>
-						<line number="396" hits="2" branch="false"/>
+						<line number="376" hits="34" branch="false"/>
+						<line number="385" hits="35" branch="false"/>
+						<line number="396" hits="0" branch="false"/>
 						<line number="409" hits="0" branch="false"/>
 						<line number="438" hits="0" branch="false"/>
 						<line number="439" hits="0" branch="true" condition-coverage="0% (0/4)">
@@ -1061,52 +1061,52 @@
 						<line number="957" hits="0" branch="false"/>
 						<line number="959" hits="0" branch="false"/>
 						<line number="982" hits="0" branch="false"/>
-						<line number="1018" hits="10" branch="true" condition-coverage="100% (4/4)">
+						<line number="1018" hits="25" branch="true" condition-coverage="100% (4/4)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 								<condition number="1" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="1019" hits="2" branch="false"/>
-						<line number="1021" hits="8" branch="true" condition-coverage="100% (2/2)">
+						<line number="1019" hits="4" branch="false"/>
+						<line number="1021" hits="21" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="1022" hits="1" branch="false"/>
-						<line number="1024" hits="7" branch="true" condition-coverage="100% (2/2)">
+						<line number="1022" hits="5" branch="false"/>
+						<line number="1024" hits="16" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="1025" hits="1" branch="false"/>
-						<line number="1028" hits="6" branch="false"/>
-						<line number="1029" hits="6" branch="false"/>
-						<line number="1030" hits="6" branch="false"/>
-						<line number="1032" hits="6" branch="false"/>
-						<line number="1069" hits="10" branch="true" condition-coverage="100% (4/4)">
+						<line number="1025" hits="4" branch="false"/>
+						<line number="1028" hits="12" branch="false"/>
+						<line number="1029" hits="12" branch="false"/>
+						<line number="1030" hits="12" branch="false"/>
+						<line number="1032" hits="12" branch="false"/>
+						<line number="1069" hits="16" branch="true" condition-coverage="75% (3/4)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
-								<condition number="1" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="1070" hits="4" branch="false"/>
-						<line number="1072" hits="6" branch="true" condition-coverage="100% (2/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="100%"/>
-							</conditions>
-						</line>
-						<line number="1073" hits="1" branch="false"/>
-						<line number="1075" hits="5" branch="true" condition-coverage="100% (2/2)">
+						<line number="1070" hits="3" branch="false"/>
+						<line number="1072" hits="13" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="1076" hits="1" branch="false"/>
-						<line number="1078" hits="4" branch="false"/>
-						<line number="1079" hits="4" branch="false"/>
-						<line number="1080" hits="4" branch="false"/>
-						<line number="1082" hits="4" branch="false"/>
+						<line number="1073" hits="3" branch="false"/>
+						<line number="1075" hits="10" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="1076" hits="2" branch="false"/>
+						<line number="1078" hits="8" branch="false"/>
+						<line number="1079" hits="8" branch="false"/>
+						<line number="1080" hits="8" branch="false"/>
+						<line number="1082" hits="8" branch="false"/>
 						<line number="1106" hits="0" branch="false"/>
 						<line number="1133" hits="0" branch="true" condition-coverage="0% (0/2)">
 							<conditions>
@@ -1143,7 +1143,7 @@
 						<line number="1160" hits="0" branch="false"/>
 						<line number="1161" hits="0" branch="false"/>
 						<line number="1164" hits="0" branch="false"/>
-						<line number="1178" hits="14" branch="false"/>
+						<line number="1178" hits="34" branch="false"/>
 						<line number="1190" hits="0" branch="true" condition-coverage="0% (0/4)">
 							<conditions>
 								<condition number="0" type="jump" coverage="0%"/>
@@ -1161,7 +1161,7 @@
 						<line number="1207" hits="0" branch="false"/>
 						<line number="1219" hits="0" branch="false"/>
 						<line number="1224" hits="0" branch="false"/>
-						<line number="1230" hits="0" branch="false"/>
+						<line number="1230" hits="4" branch="false"/>
 					</lines>
 				</class>
 			</classes>

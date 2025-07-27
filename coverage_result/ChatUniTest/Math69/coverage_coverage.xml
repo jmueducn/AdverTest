@@ -1,38 +1,38 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.1388888888888889" branch-rate="0.03333333333333333" lines-covered="10" lines-valid="72" branches-covered="1" branches-valid="30" complexity="2.4615384615384617" version="2.0.3" timestamp="1747571931644">
+<coverage line-rate="0.6944444444444444" branch-rate="0.6666666666666666" lines-covered="50" lines-valid="72" branches-covered="20" branches-valid="30" complexity="2.4615384615384617" version="2.0.3" timestamp="1751301196719">
 	<sources>
 		<source>src/main/java</source>
 	</sources>
 	<packages>
-		<package name="org.apache.commons.math.stat.correlation" line-rate="0.1388888888888889" branch-rate="0.03333333333333333" complexity="2.4615384615384617">
+		<package name="org.apache.commons.math.stat.correlation" line-rate="0.6944444444444444" branch-rate="0.6666666666666666" complexity="2.4615384615384617">
 			<classes>
-				<class name="org.apache.commons.math.stat.correlation.PearsonsCorrelation" filename="org/apache/commons/math/stat/correlation/PearsonsCorrelation.java" line-rate="0.1388888888888889" branch-rate="0.03333333333333333" complexity="2.4615384615384617">
+				<class name="org.apache.commons.math.stat.correlation.PearsonsCorrelation" filename="org/apache/commons/math/stat/correlation/PearsonsCorrelation.java" line-rate="0.6944444444444444" branch-rate="0.6666666666666666" complexity="2.4615384615384617">
 					<methods>
-						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0">
 							<lines>
-								<line number="54" hits="2" branch="false"/>
-								<line number="55" hits="2" branch="false"/>
-								<line number="56" hits="2" branch="false"/>
-								<line number="57" hits="2" branch="false"/>
+								<line number="54" hits="0" branch="false"/>
+								<line number="55" hits="0" branch="false"/>
+								<line number="56" hits="0" branch="false"/>
+								<line number="57" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="&lt;init&gt;" signature="(Lorg/apache/commons/math/linear/RealMatrix;)V" line-rate="0.4" branch-rate="1.0">
+						<method name="&lt;init&gt;" signature="(Lorg/apache/commons/math/linear/RealMatrix;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
 								<line number="77" hits="1" branch="false"/>
 								<line number="78" hits="1" branch="false"/>
-								<line number="79" hits="0" branch="false"/>
-								<line number="80" hits="0" branch="false"/>
-								<line number="81" hits="0" branch="false"/>
+								<line number="79" hits="1" branch="false"/>
+								<line number="80" hits="1" branch="false"/>
+								<line number="81" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="&lt;init&gt;" signature="(Lorg/apache/commons/math/linear/RealMatrix;I)V" line-rate="0.0" branch-rate="1.0">
+						<method name="&lt;init&gt;" signature="(Lorg/apache/commons/math/linear/RealMatrix;I)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="108" hits="0" branch="false"/>
-								<line number="109" hits="0" branch="false"/>
-								<line number="110" hits="0" branch="false"/>
-								<line number="112" hits="0" branch="false"/>
+								<line number="108" hits="5" branch="false"/>
+								<line number="109" hits="5" branch="false"/>
+								<line number="110" hits="5" branch="false"/>
+								<line number="112" hits="5" branch="false"/>
 							</lines>
 						</method>
 						<method name="&lt;init&gt;" signature="(Lorg/apache/commons/math/stat/correlation/Covariance;)V" line-rate="0.0" branch-rate="0.0">
@@ -50,45 +50,45 @@
 								<line number="98" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="&lt;init&gt;" signature="([[D)V" line-rate="0.0" branch-rate="1.0">
+						<method name="&lt;init&gt;" signature="([[D)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="68" hits="0" branch="false"/>
-								<line number="69" hits="0" branch="false"/>
+								<line number="68" hits="1" branch="false"/>
+								<line number="69" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="checkSufficientData" signature="(Lorg/apache/commons/math/linear/RealMatrix;)V" line-rate="0.8" branch-rate="0.25">
+						<method name="checkSufficientData" signature="(Lorg/apache/commons/math/linear/RealMatrix;)V" line-rate="0.8" branch-rate="0.5">
 							<lines>
 								<line number="273" hits="1" branch="false"/>
 								<line number="274" hits="1" branch="false"/>
-								<line number="275" hits="1" branch="true" condition-coverage="25% (1/4)">
+								<line number="275" hits="1" branch="true" condition-coverage="50% (2/4)">
 									<conditions>
 										<condition number="0" type="jump" coverage="50%"/>
-										<condition number="1" type="jump" coverage="0%"/>
+										<condition number="1" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
-								<line number="276" hits="1" branch="false"/>
-								<line number="280" hits="0" branch="false"/>
+								<line number="276" hits="0" branch="false"/>
+								<line number="280" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="computeCorrelationMatrix" signature="(Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/RealMatrix;" line-rate="0.0" branch-rate="0.0">
+						<method name="computeCorrelationMatrix" signature="(Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/RealMatrix;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="187" hits="0" branch="false"/>
-								<line number="188" hits="0" branch="false"/>
-								<line number="189" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="187" hits="1" branch="false"/>
+								<line number="188" hits="1" branch="false"/>
+								<line number="189" hits="4" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="190" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="190" hits="6" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="191" hits="0" branch="false"/>
-								<line number="192" hits="0" branch="false"/>
-								<line number="193" hits="0" branch="false"/>
-								<line number="195" hits="0" branch="false"/>
-								<line number="197" hits="0" branch="false"/>
+								<line number="191" hits="3" branch="false"/>
+								<line number="192" hits="3" branch="false"/>
+								<line number="193" hits="3" branch="false"/>
+								<line number="195" hits="3" branch="false"/>
+								<line number="197" hits="1" branch="false"/>
 							</lines>
 						</method>
 						<method name="computeCorrelationMatrix" signature="([[D)Lorg/apache/commons/math/linear/RealMatrix;" line-rate="0.0" branch-rate="1.0">
@@ -96,45 +96,45 @@
 								<line number="209" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="correlation" signature="([D[D)D" line-rate="0.0" branch-rate="0.0">
+						<method name="correlation" signature="([D[D)D" line-rate="0.8333333333333334" branch-rate="0.6666666666666666">
 							<lines>
-								<line number="225" hits="0" branch="false"/>
-								<line number="226" hits="0" branch="true" condition-coverage="0% (0/4)">
+								<line number="225" hits="3" branch="false"/>
+								<line number="226" hits="3" branch="true" condition-coverage="50% (2/4)">
 									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
-										<condition number="1" type="jump" coverage="0%"/>
+										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="1" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
-								<line number="227" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="227" hits="15" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="228" hits="0" branch="false"/>
-								<line number="230" hits="0" branch="false"/>
+								<line number="228" hits="12" branch="false"/>
+								<line number="230" hits="3" branch="false"/>
 								<line number="233" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="covarianceToCorrelation" signature="(Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/RealMatrix;" line-rate="0.0" branch-rate="0.0">
+						<method name="covarianceToCorrelation" signature="(Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/RealMatrix;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="251" hits="0" branch="false"/>
-								<line number="252" hits="0" branch="false"/>
-								<line number="253" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="251" hits="5" branch="false"/>
+								<line number="252" hits="5" branch="false"/>
+								<line number="253" hits="16" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="254" hits="0" branch="false"/>
-								<line number="255" hits="0" branch="false"/>
-								<line number="256" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="254" hits="11" branch="false"/>
+								<line number="255" hits="11" branch="false"/>
+								<line number="256" hits="18" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="257" hits="0" branch="false"/>
-								<line number="259" hits="0" branch="false"/>
-								<line number="260" hits="0" branch="false"/>
-								<line number="263" hits="0" branch="false"/>
+								<line number="257" hits="7" branch="false"/>
+								<line number="259" hits="7" branch="false"/>
+								<line number="260" hits="7" branch="false"/>
+								<line number="263" hits="5" branch="false"/>
 							</lines>
 						</method>
 						<method name="getCorrelationMatrix" signature="()Lorg/apache/commons/math/linear/RealMatrix;" line-rate="0.0" branch-rate="1.0">
@@ -142,31 +142,31 @@
 								<line number="120" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getCorrelationPValues" signature="()Lorg/apache/commons/math/linear/RealMatrix;" line-rate="0.0" branch-rate="0.0">
+						<method name="getCorrelationPValues" signature="()Lorg/apache/commons/math/linear/RealMatrix;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="161" hits="0" branch="false"/>
-								<line number="162" hits="0" branch="false"/>
-								<line number="163" hits="0" branch="false"/>
-								<line number="164" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="161" hits="3" branch="false"/>
+								<line number="162" hits="2" branch="false"/>
+								<line number="163" hits="2" branch="false"/>
+								<line number="164" hits="8" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="165" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="165" hits="24" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="166" hits="0" branch="true" condition-coverage="0% (0/2)">
+								<line number="166" hits="18" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
-										<condition number="0" type="jump" coverage="0%"/>
+										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="167" hits="0" branch="false"/>
-								<line number="169" hits="0" branch="false"/>
-								<line number="170" hits="0" branch="false"/>
-								<line number="171" hits="0" branch="false"/>
-								<line number="175" hits="0" branch="false"/>
+								<line number="167" hits="6" branch="false"/>
+								<line number="169" hits="12" branch="false"/>
+								<line number="170" hits="12" branch="false"/>
+								<line number="171" hits="12" branch="false"/>
+								<line number="175" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="getCorrelationStandardErrors" signature="()Lorg/apache/commons/math/linear/RealMatrix;" line-rate="0.0" branch-rate="0.0">
@@ -190,17 +190,17 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="54" hits="2" branch="false"/>
-						<line number="55" hits="2" branch="false"/>
-						<line number="56" hits="2" branch="false"/>
-						<line number="57" hits="2" branch="false"/>
-						<line number="68" hits="0" branch="false"/>
-						<line number="69" hits="0" branch="false"/>
+						<line number="54" hits="0" branch="false"/>
+						<line number="55" hits="0" branch="false"/>
+						<line number="56" hits="0" branch="false"/>
+						<line number="57" hits="0" branch="false"/>
+						<line number="68" hits="1" branch="false"/>
+						<line number="69" hits="1" branch="false"/>
 						<line number="77" hits="1" branch="false"/>
 						<line number="78" hits="1" branch="false"/>
-						<line number="79" hits="0" branch="false"/>
-						<line number="80" hits="0" branch="false"/>
-						<line number="81" hits="0" branch="false"/>
+						<line number="79" hits="1" branch="false"/>
+						<line number="80" hits="1" branch="false"/>
+						<line number="81" hits="1" branch="false"/>
 						<line number="91" hits="0" branch="false"/>
 						<line number="92" hits="0" branch="false"/>
 						<line number="93" hits="0" branch="true" condition-coverage="0% (0/2)">
@@ -212,10 +212,10 @@
 						<line number="96" hits="0" branch="false"/>
 						<line number="97" hits="0" branch="false"/>
 						<line number="98" hits="0" branch="false"/>
-						<line number="108" hits="0" branch="false"/>
-						<line number="109" hits="0" branch="false"/>
-						<line number="110" hits="0" branch="false"/>
-						<line number="112" hits="0" branch="false"/>
+						<line number="108" hits="5" branch="false"/>
+						<line number="109" hits="5" branch="false"/>
+						<line number="110" hits="5" branch="false"/>
+						<line number="112" hits="5" branch="false"/>
 						<line number="120" hits="0" branch="false"/>
 						<line number="136" hits="0" branch="false"/>
 						<line number="137" hits="0" branch="false"/>
@@ -232,90 +232,90 @@
 						<line number="140" hits="0" branch="false"/>
 						<line number="141" hits="0" branch="false"/>
 						<line number="144" hits="0" branch="false"/>
-						<line number="161" hits="0" branch="false"/>
-						<line number="162" hits="0" branch="false"/>
-						<line number="163" hits="0" branch="false"/>
-						<line number="164" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="161" hits="3" branch="false"/>
+						<line number="162" hits="2" branch="false"/>
+						<line number="163" hits="2" branch="false"/>
+						<line number="164" hits="8" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="165" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="165" hits="24" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="166" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="166" hits="18" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="167" hits="0" branch="false"/>
-						<line number="169" hits="0" branch="false"/>
-						<line number="170" hits="0" branch="false"/>
-						<line number="171" hits="0" branch="false"/>
-						<line number="175" hits="0" branch="false"/>
-						<line number="187" hits="0" branch="false"/>
-						<line number="188" hits="0" branch="false"/>
-						<line number="189" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="167" hits="6" branch="false"/>
+						<line number="169" hits="12" branch="false"/>
+						<line number="170" hits="12" branch="false"/>
+						<line number="171" hits="12" branch="false"/>
+						<line number="175" hits="2" branch="false"/>
+						<line number="187" hits="1" branch="false"/>
+						<line number="188" hits="1" branch="false"/>
+						<line number="189" hits="4" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="190" hits="0" branch="true" condition-coverage="0% (0/2)">
+						<line number="190" hits="6" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
+								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="191" hits="0" branch="false"/>
-						<line number="192" hits="0" branch="false"/>
-						<line number="193" hits="0" branch="false"/>
-						<line number="195" hits="0" branch="false"/>
-						<line number="197" hits="0" branch="false"/>
+						<line number="191" hits="3" branch="false"/>
+						<line number="192" hits="3" branch="false"/>
+						<line number="193" hits="3" branch="false"/>
+						<line number="195" hits="3" branch="false"/>
+						<line number="197" hits="1" branch="false"/>
 						<line number="209" hits="0" branch="false"/>
-						<line number="225" hits="0" branch="false"/>
-						<line number="226" hits="0" branch="true" condition-coverage="0% (0/4)">
-							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
-								<condition number="1" type="jump" coverage="0%"/>
-							</conditions>
-						</line>
-						<line number="227" hits="0" branch="true" condition-coverage="0% (0/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
-							</conditions>
-						</line>
-						<line number="228" hits="0" branch="false"/>
-						<line number="230" hits="0" branch="false"/>
-						<line number="233" hits="0" branch="false"/>
-						<line number="251" hits="0" branch="false"/>
-						<line number="252" hits="0" branch="false"/>
-						<line number="253" hits="0" branch="true" condition-coverage="0% (0/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
-							</conditions>
-						</line>
-						<line number="254" hits="0" branch="false"/>
-						<line number="255" hits="0" branch="false"/>
-						<line number="256" hits="0" branch="true" condition-coverage="0% (0/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="0%"/>
-							</conditions>
-						</line>
-						<line number="257" hits="0" branch="false"/>
-						<line number="259" hits="0" branch="false"/>
-						<line number="260" hits="0" branch="false"/>
-						<line number="263" hits="0" branch="false"/>
-						<line number="273" hits="1" branch="false"/>
-						<line number="274" hits="1" branch="false"/>
-						<line number="275" hits="1" branch="true" condition-coverage="25% (1/4)">
+						<line number="225" hits="3" branch="false"/>
+						<line number="226" hits="3" branch="true" condition-coverage="50% (2/4)">
 							<conditions>
 								<condition number="0" type="jump" coverage="50%"/>
-								<condition number="1" type="jump" coverage="0%"/>
+								<condition number="1" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="276" hits="1" branch="false"/>
-						<line number="280" hits="0" branch="false"/>
+						<line number="227" hits="15" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="228" hits="12" branch="false"/>
+						<line number="230" hits="3" branch="false"/>
+						<line number="233" hits="0" branch="false"/>
+						<line number="251" hits="5" branch="false"/>
+						<line number="252" hits="5" branch="false"/>
+						<line number="253" hits="16" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="254" hits="11" branch="false"/>
+						<line number="255" hits="11" branch="false"/>
+						<line number="256" hits="18" branch="true" condition-coverage="100% (2/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="100%"/>
+							</conditions>
+						</line>
+						<line number="257" hits="7" branch="false"/>
+						<line number="259" hits="7" branch="false"/>
+						<line number="260" hits="7" branch="false"/>
+						<line number="263" hits="5" branch="false"/>
+						<line number="273" hits="1" branch="false"/>
+						<line number="274" hits="1" branch="false"/>
+						<line number="275" hits="1" branch="true" condition-coverage="50% (2/4)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="1" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="276" hits="0" branch="false"/>
+						<line number="280" hits="1" branch="false"/>
 					</lines>
 				</class>
 			</classes>

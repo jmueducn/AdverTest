@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.12179487179487179" branch-rate="0.1016949152542373" lines-covered="19" lines-valid="156" branches-covered="12" branches-valid="118" complexity="3.6857142857142855" version="2.0.3" timestamp="1747571827152">
+<coverage line-rate="0.1282051282051282" branch-rate="0.09322033898305085" lines-covered="20" lines-valid="156" branches-covered="11" branches-valid="118" complexity="3.6857142857142855" version="2.0.3" timestamp="1751300370448">
 	<sources>
 		<source>src/main/java</source>
 	</sources>
 	<packages>
-		<package name="org.apache.commons.math.complex" line-rate="0.12179487179487179" branch-rate="0.1016949152542373" complexity="3.6857142857142855">
+		<package name="org.apache.commons.math.complex" line-rate="0.1282051282051282" branch-rate="0.09322033898305085" complexity="3.6857142857142855">
 			<classes>
-				<class name="org.apache.commons.math.complex.Complex" filename="org/apache/commons/math/complex/Complex.java" line-rate="0.12179487179487179" branch-rate="0.1016949152542373" complexity="3.6857142857142855">
+				<class name="org.apache.commons.math.complex.Complex" filename="org/apache/commons/math/complex/Complex.java" line-rate="0.1282051282051282" branch-rate="0.09322033898305085" complexity="3.6857142857142855">
 					<methods>
 						<method name="&lt;clinit&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
@@ -21,23 +21,23 @@
 						</method>
 						<method name="&lt;init&gt;" signature="(DD)V" line-rate="1.0" branch-rate="0.8">
 							<lines>
-								<line number="90" hits="25" branch="false"/>
-								<line number="91" hits="25" branch="false"/>
-								<line number="92" hits="25" branch="false"/>
-								<line number="94" hits="25" branch="true" condition-coverage="75% (3/4)">
+								<line number="90" hits="27" branch="false"/>
+								<line number="91" hits="27" branch="false"/>
+								<line number="92" hits="27" branch="false"/>
+								<line number="94" hits="27" branch="true" condition-coverage="75% (3/4)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 										<condition number="1" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
-								<line number="95" hits="25" branch="true" condition-coverage="83% (5/6)">
+								<line number="95" hits="27" branch="true" condition-coverage="83% (5/6)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 										<condition number="1" type="jump" coverage="100%"/>
 										<condition number="2" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
-								<line number="97" hits="25" branch="false"/>
+								<line number="97" hits="27" branch="false"/>
 							</lines>
 						</method>
 						<method name="abs" signature="()D" line-rate="0.0" branch-rate="0.0">
@@ -93,13 +93,13 @@
 								<line number="49" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="add" signature="(Lorg/apache/commons/math/complex/Complex;)Lorg/apache/commons/math/complex/Complex;" line-rate="1.0" branch-rate="1.0">
+						<method name="add" signature="(Lorg/apache/commons/math/complex/Complex;)Lorg/apache/commons/math/complex/Complex;" line-rate="1.0" branch-rate="0.75">
 							<lines>
 								<line number="152" hits="10" branch="false"/>
-								<line number="153" hits="9" branch="true" condition-coverage="100% (4/4)">
+								<line number="153" hits="9" branch="true" condition-coverage="75% (3/4)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
-										<condition number="1" type="jump" coverage="100%"/>
+										<condition number="1" type="jump" coverage="50%"/>
 									</conditions>
 								</line>
 								<line number="154" hits="2" branch="false"/>
@@ -266,12 +266,12 @@
 						</method>
 						<method name="getImaginary" signature="()D" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="302" hits="14" branch="false"/>
+								<line number="302" hits="13" branch="false"/>
 							</lines>
 						</method>
 						<method name="getReal" signature="()D" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="311" hits="14" branch="false"/>
+								<line number="311" hits="13" branch="false"/>
 							</lines>
 						</method>
 						<method name="hashCode" signature="()I" line-rate="0.0" branch-rate="0.0">
@@ -285,14 +285,14 @@
 								<line number="292" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="isInfinite" signature="()Z" line-rate="0.0" branch-rate="1.0">
+						<method name="isInfinite" signature="()Z" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="335" hits="0" branch="false"/>
+								<line number="335" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="isNaN" signature="()Z" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="322" hits="2" branch="false"/>
+								<line number="322" hits="4" branch="false"/>
 							</lines>
 						</method>
 						<method name="log" signature="()Lorg/apache/commons/math/complex/Complex;" line-rate="0.0" branch-rate="0.0">
@@ -523,23 +523,23 @@
 						<line number="60" hits="1" branch="false"/>
 						<line number="63" hits="1" branch="false"/>
 						<line number="66" hits="1" branch="false"/>
-						<line number="90" hits="25" branch="false"/>
-						<line number="91" hits="25" branch="false"/>
-						<line number="92" hits="25" branch="false"/>
-						<line number="94" hits="25" branch="true" condition-coverage="75% (3/4)">
+						<line number="90" hits="27" branch="false"/>
+						<line number="91" hits="27" branch="false"/>
+						<line number="92" hits="27" branch="false"/>
+						<line number="94" hits="27" branch="true" condition-coverage="75% (3/4)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 								<condition number="1" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="95" hits="25" branch="true" condition-coverage="83% (5/6)">
+						<line number="95" hits="27" branch="true" condition-coverage="83% (5/6)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 								<condition number="1" type="jump" coverage="100%"/>
 								<condition number="2" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
-						<line number="97" hits="25" branch="false"/>
+						<line number="97" hits="27" branch="false"/>
 						<line number="110" hits="0" branch="true" condition-coverage="0% (0/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="0%"/>
@@ -574,10 +574,10 @@
 						<line number="128" hits="0" branch="false"/>
 						<line number="129" hits="0" branch="false"/>
 						<line number="152" hits="10" branch="false"/>
-						<line number="153" hits="9" branch="true" condition-coverage="100% (4/4)">
+						<line number="153" hits="9" branch="true" condition-coverage="75% (3/4)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
-								<condition number="1" type="jump" coverage="100%"/>
+								<condition number="1" type="jump" coverage="50%"/>
 							</conditions>
 						</line>
 						<line number="154" hits="2" branch="false"/>
@@ -656,10 +656,10 @@
 						</line>
 						<line number="290" hits="0" branch="false"/>
 						<line number="292" hits="0" branch="false"/>
-						<line number="302" hits="14" branch="false"/>
-						<line number="311" hits="14" branch="false"/>
-						<line number="322" hits="2" branch="false"/>
-						<line number="335" hits="0" branch="false"/>
+						<line number="302" hits="13" branch="false"/>
+						<line number="311" hits="13" branch="false"/>
+						<line number="322" hits="4" branch="false"/>
+						<line number="335" hits="2" branch="false"/>
 						<line number="367" hits="0" branch="false"/>
 						<line number="368" hits="0" branch="true" condition-coverage="0% (0/4)">
 							<conditions>

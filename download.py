@@ -9,7 +9,10 @@ def download(project,n):
         subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1, start_new_session=True).communicate()
 
 
-download("Cli",40)
+download("Beanutils",29)
+download("Dbcp",19)
+download("Fileupload",2)
+download("Hugegraph_common",5)
 
 
 def bugdownload(project,n):
@@ -19,4 +22,7 @@ def bugdownload(project,n):
         subprocess.Popen(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1, start_new_session=True).communicate()
 
 
-bugdownload("Cli",40)
+bugdownload("Beanutils",29)
+bugdownload("Dbcp",19)
+bugdownload("Fileupload",2)
+bugdownload("Hugegraph_common",5)

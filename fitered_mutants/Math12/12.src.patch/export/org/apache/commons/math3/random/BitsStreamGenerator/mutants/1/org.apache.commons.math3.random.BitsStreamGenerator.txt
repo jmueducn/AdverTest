@@ -1,0 +1,438 @@
+// class version 49.0 (49)
+// access flags 0x421
+public abstract class org/apache/commons/math3/random/BitsStreamGenerator implements org/apache/commons/math3/random/RandomGenerator java/io/Serializable {
+
+  // compiled from: BitsStreamGenerator.java
+
+  // access flags 0x1A
+  private final static J serialVersionUID = 20130104
+
+  // access flags 0x2
+  private D nextGaussian
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 40 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 41 L1
+    ALOAD 0
+    DCONST_1
+    PUTFIELD org/apache/commons/math3/random/BitsStreamGenerator.nextGaussian : D
+   L2
+    LINENUMBER 42 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math3/random/BitsStreamGenerator; L0 L3 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x401
+  public abstract setSeed(I)V
+
+  // access flags 0x401
+  public abstract setSeed([I)V
+
+  // access flags 0x401
+  public abstract setSeed(J)V
+
+  // access flags 0x404
+  protected abstract next(I)I
+
+  // access flags 0x1
+  public nextBoolean()Z
+   L0
+    LINENUMBER 66 L0
+    ALOAD 0
+    ICONST_1
+    INVOKEVIRTUAL org/apache/commons/math3/random/BitsStreamGenerator.next (I)I
+    IFEQ L1
+    ICONST_1
+    GOTO L2
+   L1
+    ICONST_0
+   L2
+    IRETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math3/random/BitsStreamGenerator; L0 L3 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public nextBytes([B)V
+   L0
+    LINENUMBER 71 L0
+    ICONST_0
+    ISTORE 2
+   L1
+    LINENUMBER 72 L1
+    ALOAD 1
+    ARRAYLENGTH
+    ICONST_3
+    ISUB
+    ISTORE 3
+   L2
+    LINENUMBER 73 L2
+    ILOAD 2
+    ILOAD 3
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 74 L4
+    ALOAD 0
+    BIPUSH 32
+    INVOKEVIRTUAL org/apache/commons/math3/random/BitsStreamGenerator.next (I)I
+    ISTORE 4
+   L5
+    LINENUMBER 75 L5
+    ALOAD 1
+    ILOAD 2
+    ILOAD 4
+    SIPUSH 255
+    IAND
+    I2B
+    BASTORE
+   L6
+    LINENUMBER 76 L6
+    ALOAD 1
+    ILOAD 2
+    ICONST_1
+    IADD
+    ILOAD 4
+    BIPUSH 8
+    ISHR
+    SIPUSH 255
+    IAND
+    I2B
+    BASTORE
+   L7
+    LINENUMBER 77 L7
+    ALOAD 1
+    ILOAD 2
+    ICONST_2
+    IADD
+    ILOAD 4
+    BIPUSH 16
+    ISHR
+    SIPUSH 255
+    IAND
+    I2B
+    BASTORE
+   L8
+    LINENUMBER 78 L8
+    ALOAD 1
+    ILOAD 2
+    ICONST_3
+    IADD
+    ILOAD 4
+    BIPUSH 24
+    ISHR
+    SIPUSH 255
+    IAND
+    I2B
+    BASTORE
+   L9
+    LINENUMBER 79 L9
+    IINC 2 4
+   L10
+    LINENUMBER 80 L10
+    GOTO L2
+   L3
+    LINENUMBER 81 L3
+    ALOAD 0
+    BIPUSH 32
+    INVOKEVIRTUAL org/apache/commons/math3/random/BitsStreamGenerator.next (I)I
+    ISTORE 4
+   L11
+    LINENUMBER 82 L11
+    ILOAD 2
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L12
+   L13
+    LINENUMBER 83 L13
+    ALOAD 1
+    ILOAD 2
+    IINC 2 1
+    ILOAD 4
+    SIPUSH 255
+    IAND
+    I2B
+    BASTORE
+   L14
+    LINENUMBER 84 L14
+    ILOAD 4
+    BIPUSH 8
+    ISHR
+    ISTORE 4
+    GOTO L11
+   L12
+    LINENUMBER 86 L12
+    RETURN
+   L15
+    LOCALVARIABLE random I L5 L10 4
+    LOCALVARIABLE this Lorg/apache/commons/math3/random/BitsStreamGenerator; L0 L15 0
+    LOCALVARIABLE bytes [B L0 L15 1
+    LOCALVARIABLE i I L1 L15 2
+    LOCALVARIABLE iEnd I L2 L15 3
+    LOCALVARIABLE random I L11 L15 4
+    MAXSTACK = 4
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public nextDouble()D
+   L0
+    LINENUMBER 90 L0
+    ALOAD 0
+    BIPUSH 26
+    INVOKEVIRTUAL org/apache/commons/math3/random/BitsStreamGenerator.next (I)I
+    I2L
+    BIPUSH 26
+    LSHL
+    LSTORE 1
+   L1
+    LINENUMBER 91 L1
+    ALOAD 0
+    BIPUSH 26
+    INVOKEVIRTUAL org/apache/commons/math3/random/BitsStreamGenerator.next (I)I
+    ISTORE 3
+   L2
+    LINENUMBER 92 L2
+    LLOAD 1
+    ILOAD 3
+    I2L
+    LOR
+    L2D
+    LDC 2.220446049250313E-16
+    DMUL
+    DRETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math3/random/BitsStreamGenerator; L0 L3 0
+    LOCALVARIABLE high J L1 L3 1
+    LOCALVARIABLE low I L2 L3 3
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public nextFloat()F
+   L0
+    LINENUMBER 97 L0
+    ALOAD 0
+    BIPUSH 23
+    INVOKEVIRTUAL org/apache/commons/math3/random/BitsStreamGenerator.next (I)I
+    I2F
+    LDC 1.1920929E-7
+    FMUL
+    FRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/random/BitsStreamGenerator; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public nextGaussian()D
+   L0
+    LINENUMBER 104 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/random/BitsStreamGenerator.nextGaussian : D
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L1
+   L2
+    LINENUMBER 106 L2
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/random/BitsStreamGenerator.nextDouble ()D
+    DSTORE 3
+   L3
+    LINENUMBER 107 L3
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/random/BitsStreamGenerator.nextDouble ()D
+    DSTORE 5
+   L4
+    LINENUMBER 108 L4
+    LDC 6.283185307179586
+    DLOAD 3
+    DMUL
+    DSTORE 7
+   L5
+    LINENUMBER 109 L5
+    LDC -2.0
+    DLOAD 5
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.log (D)D
+    DMUL
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    DSTORE 9
+   L6
+    LINENUMBER 110 L6
+    DLOAD 9
+    DLOAD 7
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.cos (D)D
+    DMUL
+    DSTORE 1
+   L7
+    LINENUMBER 111 L7
+    ALOAD 0
+    DLOAD 9
+    DLOAD 7
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sin (D)D
+    DMUL
+    PUTFIELD org/apache/commons/math3/random/BitsStreamGenerator.nextGaussian : D
+   L8
+    LINENUMBER 112 L8
+    GOTO L9
+   L1
+    LINENUMBER 114 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/random/BitsStreamGenerator.nextGaussian : D
+    DSTORE 1
+   L10
+    LINENUMBER 115 L10
+    ALOAD 0
+    LDC NaN
+    PUTFIELD org/apache/commons/math3/random/BitsStreamGenerator.nextGaussian : D
+   L9
+    LINENUMBER 118 L9
+    DLOAD 1
+    DRETURN
+   L11
+    LOCALVARIABLE x D L3 L8 3
+    LOCALVARIABLE y D L4 L8 5
+    LOCALVARIABLE alpha D L5 L8 7
+    LOCALVARIABLE r D L6 L8 9
+    LOCALVARIABLE random D L7 L1 1
+    LOCALVARIABLE this Lorg/apache/commons/math3/random/BitsStreamGenerator; L0 L11 0
+    LOCALVARIABLE random D L10 L11 1
+    MAXSTACK = 5
+    MAXLOCALS = 11
+
+  // access flags 0x1
+  public nextInt()I
+   L0
+    LINENUMBER 124 L0
+    ALOAD 0
+    BIPUSH 32
+    INVOKEVIRTUAL org/apache/commons/math3/random/BitsStreamGenerator.next (I)I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/random/BitsStreamGenerator; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public nextInt(I)I throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 143 L0
+    ILOAD 1
+    IFLE L1
+   L2
+    LINENUMBER 144 L2
+    ILOAD 1
+    ILOAD 1
+    INEG
+    IAND
+    ILOAD 1
+    IF_ICMPNE L3
+   L4
+    LINENUMBER 145 L4
+    ILOAD 1
+    I2L
+    ALOAD 0
+    BIPUSH 31
+    INVOKEVIRTUAL org/apache/commons/math3/random/BitsStreamGenerator.next (I)I
+    I2L
+    LMUL
+    BIPUSH 31
+    LSHR
+    L2I
+    IRETURN
+   L3
+    LINENUMBER 150 L3
+    ALOAD 0
+    BIPUSH 31
+    INVOKEVIRTUAL org/apache/commons/math3/random/BitsStreamGenerator.next (I)I
+    ISTORE 2
+   L5
+    LINENUMBER 151 L5
+    ILOAD 2
+    ILOAD 1
+    IREM
+    ISTORE 3
+   L6
+    LINENUMBER 152 L6
+    ILOAD 2
+    ILOAD 3
+    ISUB
+    ILOAD 1
+    ICONST_1
+    ISUB
+    IADD
+    IFLT L3
+   L7
+    LINENUMBER 153 L7
+    ILOAD 3
+    IRETURN
+   L1
+    LINENUMBER 155 L1
+    NEW org/apache/commons/math3/exception/NotStrictlyPositiveException
+    DUP
+    ILOAD 1
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    INVOKESPECIAL org/apache/commons/math3/exception/NotStrictlyPositiveException.<init> (Ljava/lang/Number;)V
+    ATHROW
+   L8
+    LOCALVARIABLE bits I L5 L1 2
+    LOCALVARIABLE val I L6 L1 3
+    LOCALVARIABLE this Lorg/apache/commons/math3/random/BitsStreamGenerator; L0 L8 0
+    LOCALVARIABLE n I L0 L8 1
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public nextLong()J
+   L0
+    LINENUMBER 160 L0
+    ALOAD 0
+    BIPUSH 32
+    INVOKEVIRTUAL org/apache/commons/math3/random/BitsStreamGenerator.next (I)I
+    I2L
+    BIPUSH 32
+    LSHL
+    LSTORE 1
+   L1
+    LINENUMBER 161 L1
+    ALOAD 0
+    BIPUSH 32
+    INVOKEVIRTUAL org/apache/commons/math3/random/BitsStreamGenerator.next (I)I
+    I2L
+    LDC 4294967295
+    LAND
+    LSTORE 3
+   L2
+    LINENUMBER 162 L2
+    LLOAD 1
+    LLOAD 3
+    LOR
+    LRETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math3/random/BitsStreamGenerator; L0 L3 0
+    LOCALVARIABLE high J L1 L3 1
+    LOCALVARIABLE low J L2 L3 3
+    MAXSTACK = 4
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public clear()V
+   L0
+    LINENUMBER 170 L0
+    ALOAD 0
+    LDC NaN
+    PUTFIELD org/apache/commons/math3/random/BitsStreamGenerator.nextGaussian : D
+   L1
+    LINENUMBER 171 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/random/BitsStreamGenerator; L0 L2 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+}
+

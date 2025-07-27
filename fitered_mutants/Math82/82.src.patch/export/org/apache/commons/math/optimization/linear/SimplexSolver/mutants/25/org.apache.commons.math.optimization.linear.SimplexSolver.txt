@@ -1,0 +1,498 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math/optimization/linear/SimplexSolver extends org/apache/commons/math/optimization/linear/AbstractLinearOptimizer {
+
+  // compiled from: SimplexSolver.java
+
+  // access flags 0x1A
+  private final static D DEFAULT_EPSILON = 1.0E-6
+
+  // access flags 0x14
+  protected final D epsilon
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 42 L0
+    ALOAD 0
+    LDC 1.0E-6
+    INVOKESPECIAL org/apache/commons/math/optimization/linear/SimplexSolver.<init> (D)V
+   L1
+    LINENUMBER 43 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/optimization/linear/SimplexSolver; L0 L2 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public <init>(D)V
+   L0
+    LINENUMBER 49 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/optimization/linear/AbstractLinearOptimizer.<init> ()V
+   L1
+    LINENUMBER 50 L1
+    ALOAD 0
+    DLOAD 1
+    PUTFIELD org/apache/commons/math/optimization/linear/SimplexSolver.epsilon : D
+   L2
+    LINENUMBER 51 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/optimization/linear/SimplexSolver; L0 L3 0
+    LOCALVARIABLE epsilon D L0 L3 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x2
+  private getPivotColumn(Lorg/apache/commons/math/optimization/linear/SimplexTableau;)Ljava/lang/Integer;
+   L0
+    LINENUMBER 59 L0
+    DCONST_0
+    DSTORE 2
+   L1
+    LINENUMBER 60 L1
+    ACONST_NULL
+    ASTORE 4
+   L2
+    LINENUMBER 61 L2
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getNumObjectiveFunctions ()I
+    ISTORE 5
+   L3
+    ILOAD 5
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getWidth ()I
+    ICONST_1
+    ISUB
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 62 L5
+    ALOAD 1
+    ICONST_0
+    ILOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getEntry (II)D
+    DLOAD 2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/linear/SimplexSolver.epsilon : D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.compareTo (DDD)I
+    IFGE L6
+   L7
+    LINENUMBER 63 L7
+    ALOAD 1
+    ICONST_0
+    ILOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getEntry (II)D
+    DSTORE 2
+   L8
+    LINENUMBER 64 L8
+    ILOAD 5
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ASTORE 4
+   L6
+    LINENUMBER 61 L6
+    IINC 5 1
+    GOTO L3
+   L4
+    LINENUMBER 67 L4
+    ALOAD 4
+    ARETURN
+   L9
+    LOCALVARIABLE i I L3 L4 5
+    LOCALVARIABLE this Lorg/apache/commons/math/optimization/linear/SimplexSolver; L0 L9 0
+    LOCALVARIABLE tableau Lorg/apache/commons/math/optimization/linear/SimplexTableau; L0 L9 1
+    LOCALVARIABLE minValue D L1 L9 2
+    LOCALVARIABLE minPos Ljava/lang/Integer; L2 L9 4
+    MAXSTACK = 6
+    MAXLOCALS = 6
+
+  // access flags 0x2
+  private getPivotRow(ILorg/apache/commons/math/optimization/linear/SimplexTableau;)Ljava/lang/Integer;
+   L0
+    LINENUMBER 77 L0
+    LDC 1.7976931348623157E308
+    DSTORE 3
+   L1
+    LINENUMBER 78 L1
+    ACONST_NULL
+    ASTORE 5
+   L2
+    LINENUMBER 79 L2
+    ALOAD 2
+    POP
+    ICONST_0
+    ISTORE 6
+   L3
+    ILOAD 6
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getHeight ()I
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 80 L5
+    ALOAD 2
+    ILOAD 6
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getWidth ()I
+    ICONST_1
+    ISUB
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getEntry (II)D
+    DSTORE 7
+   L6
+    LINENUMBER 81 L6
+    ALOAD 2
+    ILOAD 6
+    ILOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getEntry (II)D
+    DSTORE 9
+   L7
+    LINENUMBER 82 L7
+    DLOAD 9
+    DCONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/linear/SimplexSolver.epsilon : D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.compareTo (DDD)I
+    IFLE L8
+   L9
+    LINENUMBER 83 L9
+    DLOAD 7
+    DLOAD 9
+    DDIV
+    DSTORE 11
+   L10
+    LINENUMBER 84 L10
+    DLOAD 11
+    DLOAD 3
+    DCMPG
+    IFGE L8
+   L11
+    LINENUMBER 85 L11
+    DLOAD 11
+    DSTORE 3
+   L12
+    LINENUMBER 86 L12
+    ILOAD 6
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ASTORE 5
+   L8
+    LINENUMBER 79 L8
+    IINC 6 1
+    GOTO L3
+   L4
+    LINENUMBER 90 L4
+    ALOAD 5
+    ARETURN
+   L13
+    LOCALVARIABLE ratio D L10 L8 11
+    LOCALVARIABLE rhs D L6 L8 7
+    LOCALVARIABLE entry D L7 L8 9
+    LOCALVARIABLE i I L3 L4 6
+    LOCALVARIABLE this Lorg/apache/commons/math/optimization/linear/SimplexSolver; L0 L13 0
+    LOCALVARIABLE col I L0 L13 1
+    LOCALVARIABLE tableau Lorg/apache/commons/math/optimization/linear/SimplexTableau; L0 L13 2
+    LOCALVARIABLE minRatio D L1 L13 3
+    LOCALVARIABLE minRatioPos Ljava/lang/Integer; L2 L13 5
+    MAXSTACK = 6
+    MAXLOCALS = 13
+
+  // access flags 0x4
+  protected doIteration(Lorg/apache/commons/math/optimization/linear/SimplexTableau;)V throws org/apache/commons/math/optimization/OptimizationException 
+   L0
+    LINENUMBER 103 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexSolver.incrementIterationsCounter ()V
+   L1
+    LINENUMBER 105 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/optimization/linear/SimplexSolver.getPivotColumn (Lorg/apache/commons/math/optimization/linear/SimplexTableau;)Ljava/lang/Integer;
+    ASTORE 2
+   L2
+    LINENUMBER 106 L2
+    ALOAD 0
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/optimization/linear/SimplexSolver.getPivotRow (ILorg/apache/commons/math/optimization/linear/SimplexTableau;)Ljava/lang/Integer;
+    ASTORE 3
+   L3
+    LINENUMBER 107 L3
+    ALOAD 3
+    IFNONNULL L4
+   L5
+    LINENUMBER 108 L5
+    NEW org/apache/commons/math/optimization/linear/UnboundedSolutionException
+    DUP
+    INVOKESPECIAL org/apache/commons/math/optimization/linear/UnboundedSolutionException.<init> ()V
+    ATHROW
+   L4
+    LINENUMBER 112 L4
+    ALOAD 1
+    ALOAD 3
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getEntry (II)D
+    DSTORE 4
+   L6
+    LINENUMBER 113 L6
+    ALOAD 1
+    ALOAD 3
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    DLOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.divideRow (ID)V
+   L7
+    LINENUMBER 116 L7
+    ICONST_0
+    ISTORE 6
+   L8
+    ILOAD 6
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getHeight ()I
+    IF_ICMPGE L9
+   L10
+    LINENUMBER 117 L10
+    ILOAD 6
+    ALOAD 3
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    IF_ICMPEQ L11
+   L12
+    LINENUMBER 118 L12
+    ALOAD 1
+    ILOAD 6
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getEntry (II)D
+    DSTORE 7
+   L13
+    LINENUMBER 119 L13
+    ALOAD 1
+    ILOAD 6
+    ALOAD 3
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    DLOAD 7
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.subtractRow (IID)V
+   L11
+    LINENUMBER 116 L11
+    IINC 6 1
+    GOTO L8
+   L9
+    LINENUMBER 122 L9
+    RETURN
+   L14
+    LOCALVARIABLE multiplier D L13 L11 7
+    LOCALVARIABLE i I L8 L9 6
+    LOCALVARIABLE this Lorg/apache/commons/math/optimization/linear/SimplexSolver; L0 L14 0
+    LOCALVARIABLE tableau Lorg/apache/commons/math/optimization/linear/SimplexTableau; L0 L14 1
+    LOCALVARIABLE pivotCol Ljava/lang/Integer; L2 L14 2
+    LOCALVARIABLE pivotRow Ljava/lang/Integer; L3 L14 3
+    LOCALVARIABLE pivotVal D L6 L14 4
+    MAXSTACK = 5
+    MAXLOCALS = 9
+
+  // access flags 0x2
+  private isPhase1Solved(Lorg/apache/commons/math/optimization/linear/SimplexTableau;)Z
+   L0
+    LINENUMBER 130 L0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getNumArtificialVariables ()I
+    IFNE L1
+   L2
+    LINENUMBER 131 L2
+    ICONST_1
+    IRETURN
+   L1
+    LINENUMBER 133 L1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getNumObjectiveFunctions ()I
+    ISTORE 2
+   L3
+    ILOAD 2
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getWidth ()I
+    ICONST_1
+    ISUB
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 134 L5
+    ALOAD 1
+    ICONST_0
+    ILOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getEntry (II)D
+    DCONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/linear/SimplexSolver.epsilon : D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.compareTo (DDD)I
+    IFGE L6
+   L7
+    LINENUMBER 135 L7
+    ICONST_0
+    IRETURN
+   L6
+    LINENUMBER 133 L6
+    IINC 2 1
+    GOTO L3
+   L4
+    LINENUMBER 138 L4
+    ICONST_1
+    IRETURN
+   L8
+    LOCALVARIABLE i I L3 L4 2
+    LOCALVARIABLE this Lorg/apache/commons/math/optimization/linear/SimplexSolver; L0 L8 0
+    LOCALVARIABLE tableau Lorg/apache/commons/math/optimization/linear/SimplexTableau; L0 L8 1
+    MAXSTACK = 6
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public isOptimal(Lorg/apache/commons/math/optimization/linear/SimplexTableau;)Z
+   L0
+    LINENUMBER 147 L0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getNumArtificialVariables ()I
+    IFLE L1
+   L2
+    LINENUMBER 148 L2
+    ICONST_0
+    IRETURN
+   L1
+    LINENUMBER 150 L1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getNumObjectiveFunctions ()I
+    ISTORE 2
+   L3
+    ILOAD 2
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getWidth ()I
+    ICONST_1
+    ISUB
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 151 L5
+    ALOAD 1
+    ICONST_0
+    ILOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getEntry (II)D
+    DCONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/linear/SimplexSolver.epsilon : D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.compareTo (DDD)I
+    IFGE L6
+   L7
+    LINENUMBER 152 L7
+    ICONST_0
+    IRETURN
+   L6
+    LINENUMBER 150 L6
+    IINC 2 1
+    GOTO L3
+   L4
+    LINENUMBER 155 L4
+    ICONST_1
+    IRETURN
+   L8
+    LOCALVARIABLE i I L3 L4 2
+    LOCALVARIABLE this Lorg/apache/commons/math/optimization/linear/SimplexSolver; L0 L8 0
+    LOCALVARIABLE tableau Lorg/apache/commons/math/optimization/linear/SimplexTableau; L0 L8 1
+    MAXSTACK = 6
+    MAXLOCALS = 3
+
+  // access flags 0x4
+  protected solvePhase1(Lorg/apache/commons/math/optimization/linear/SimplexTableau;)V throws org/apache/commons/math/optimization/OptimizationException 
+   L0
+    LINENUMBER 168 L0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getNumArtificialVariables ()I
+    IFNE L1
+   L2
+    LINENUMBER 169 L2
+    RETURN
+   L1
+    LINENUMBER 172 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/optimization/linear/SimplexSolver.isPhase1Solved (Lorg/apache/commons/math/optimization/linear/SimplexTableau;)Z
+    IFNE L3
+   L4
+    LINENUMBER 173 L4
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexSolver.doIteration (Lorg/apache/commons/math/optimization/linear/SimplexTableau;)V
+    GOTO L1
+   L3
+    LINENUMBER 177 L3
+    ALOAD 1
+    ICONST_0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getRhsOffset ()I
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getEntry (II)D
+    DCONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/linear/SimplexSolver.epsilon : D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.equals (DDD)Z
+    IFNE L5
+   L6
+    LINENUMBER 178 L6
+    NEW org/apache/commons/math/optimization/linear/NoFeasibleSolutionException
+    DUP
+    INVOKESPECIAL org/apache/commons/math/optimization/linear/NoFeasibleSolutionException.<init> ()V
+    ATHROW
+   L5
+    LINENUMBER 180 L5
+    RETURN
+   L7
+    LOCALVARIABLE this Lorg/apache/commons/math/optimization/linear/SimplexSolver; L0 L7 0
+    LOCALVARIABLE tableau Lorg/apache/commons/math/optimization/linear/SimplexTableau; L0 L7 1
+    MAXSTACK = 6
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public doOptimize()Lorg/apache/commons/math/optimization/RealPointValuePair; throws org/apache/commons/math/optimization/OptimizationException 
+   L0
+    LINENUMBER 186 L0
+    NEW org/apache/commons/math/optimization/linear/SimplexTableau
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/linear/SimplexSolver.f : Lorg/apache/commons/math/optimization/linear/LinearObjectiveFunction;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/linear/SimplexSolver.constraints : Ljava/util/Collection;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/linear/SimplexSolver.goalType : Lorg/apache/commons/math/optimization/GoalType;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/linear/SimplexSolver.restrictToNonNegative : Z
+    ALOAD 0
+    GETFIELD org/apache/commons/math/optimization/linear/SimplexSolver.epsilon : D
+    INVOKESPECIAL org/apache/commons/math/optimization/linear/SimplexTableau.<init> (Lorg/apache/commons/math/optimization/linear/LinearObjectiveFunction;Ljava/util/Collection;Lorg/apache/commons/math/optimization/GoalType;ZD)V
+    ASTORE 1
+   L1
+    LINENUMBER 188 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexSolver.solvePhase1 (Lorg/apache/commons/math/optimization/linear/SimplexTableau;)V
+   L2
+    LINENUMBER 189 L2
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.discardArtificialVariables ()V
+   L3
+    LINENUMBER 190 L3
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexSolver.isOptimal (Lorg/apache/commons/math/optimization/linear/SimplexTableau;)Z
+    IFNE L4
+   L5
+    LINENUMBER 191 L5
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexSolver.doIteration (Lorg/apache/commons/math/optimization/linear/SimplexTableau;)V
+    GOTO L3
+   L4
+    LINENUMBER 193 L4
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/optimization/linear/SimplexTableau.getSolution ()Lorg/apache/commons/math/optimization/RealPointValuePair;
+    ARETURN
+   L6
+    LOCALVARIABLE this Lorg/apache/commons/math/optimization/linear/SimplexSolver; L0 L6 0
+    LOCALVARIABLE tableau Lorg/apache/commons/math/optimization/linear/SimplexTableau; L1 L6 1
+    MAXSTACK = 8
+    MAXLOCALS = 2
+}
+

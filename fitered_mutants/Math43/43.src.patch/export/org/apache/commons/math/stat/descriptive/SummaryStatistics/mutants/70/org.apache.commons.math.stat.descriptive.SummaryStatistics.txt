@@ -1,0 +1,1684 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math/stat/descriptive/SummaryStatistics implements org/apache/commons/math/stat/descriptive/StatisticalSummary java/io/Serializable {
+
+  // compiled from: SummaryStatistics.java
+
+  // access flags 0x1A
+  private final static J serialVersionUID = -2021321786743555871
+
+  // access flags 0x4
+  protected J n
+
+  // access flags 0x4
+  protected Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment; secondMoment
+
+  // access flags 0x4
+  protected Lorg/apache/commons/math/stat/descriptive/summary/Sum; sum
+
+  // access flags 0x4
+  protected Lorg/apache/commons/math/stat/descriptive/summary/SumOfSquares; sumsq
+
+  // access flags 0x4
+  protected Lorg/apache/commons/math/stat/descriptive/rank/Min; min
+
+  // access flags 0x4
+  protected Lorg/apache/commons/math/stat/descriptive/rank/Max; max
+
+  // access flags 0x4
+  protected Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs; sumLog
+
+  // access flags 0x4
+  protected Lorg/apache/commons/math/stat/descriptive/moment/GeometricMean; geoMean
+
+  // access flags 0x4
+  protected Lorg/apache/commons/math/stat/descriptive/moment/Mean; mean
+
+  // access flags 0x4
+  protected Lorg/apache/commons/math/stat/descriptive/moment/Variance; variance
+
+  // access flags 0x2
+  private Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; sumImpl
+
+  // access flags 0x2
+  private Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; sumsqImpl
+
+  // access flags 0x2
+  private Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; minImpl
+
+  // access flags 0x2
+  private Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; maxImpl
+
+  // access flags 0x2
+  private Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; sumLogImpl
+
+  // access flags 0x2
+  private Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; geoMeanImpl
+
+  // access flags 0x2
+  private Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; meanImpl
+
+  // access flags 0x2
+  private Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; varianceImpl
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 123 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 67 L1
+    ALOAD 0
+    LCONST_0
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.n : J
+   L2
+    LINENUMBER 70 L2
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/moment/SecondMoment
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/moment/SecondMoment.<init> ()V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.secondMoment : Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+   L3
+    LINENUMBER 73 L3
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/summary/Sum
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/summary/Sum.<init> ()V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sum : Lorg/apache/commons/math/stat/descriptive/summary/Sum;
+   L4
+    LINENUMBER 76 L4
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/summary/SumOfSquares
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/summary/SumOfSquares.<init> ()V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsq : Lorg/apache/commons/math/stat/descriptive/summary/SumOfSquares;
+   L5
+    LINENUMBER 79 L5
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/rank/Min
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/rank/Min.<init> ()V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.min : Lorg/apache/commons/math/stat/descriptive/rank/Min;
+   L6
+    LINENUMBER 82 L6
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/rank/Max
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/rank/Max.<init> ()V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.max : Lorg/apache/commons/math/stat/descriptive/rank/Max;
+   L7
+    LINENUMBER 85 L7
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/summary/SumOfLogs
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/summary/SumOfLogs.<init> ()V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLog : Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;
+   L8
+    LINENUMBER 88 L8
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/moment/GeometricMean
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLog : Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/moment/GeometricMean.<init> (Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;)V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMean : Lorg/apache/commons/math/stat/descriptive/moment/GeometricMean;
+   L9
+    LINENUMBER 91 L9
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/moment/Mean
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.secondMoment : Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/moment/Mean.<init> (Lorg/apache/commons/math/stat/descriptive/moment/FirstMoment;)V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.mean : Lorg/apache/commons/math/stat/descriptive/moment/Mean;
+   L10
+    LINENUMBER 94 L10
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/moment/Variance
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.secondMoment : Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/moment/Variance.<init> (Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;)V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.variance : Lorg/apache/commons/math/stat/descriptive/moment/Variance;
+   L11
+    LINENUMBER 97 L11
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sum : Lorg/apache/commons/math/stat/descriptive/summary/Sum;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L12
+    LINENUMBER 100 L12
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsq : Lorg/apache/commons/math/stat/descriptive/summary/SumOfSquares;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsqImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L13
+    LINENUMBER 103 L13
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.min : Lorg/apache/commons/math/stat/descriptive/rank/Min;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.minImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L14
+    LINENUMBER 106 L14
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.max : Lorg/apache/commons/math/stat/descriptive/rank/Max;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.maxImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L15
+    LINENUMBER 109 L15
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLog : Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLogImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L16
+    LINENUMBER 112 L16
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMean : Lorg/apache/commons/math/stat/descriptive/moment/GeometricMean;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMeanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L17
+    LINENUMBER 115 L17
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.mean : Lorg/apache/commons/math/stat/descriptive/moment/Mean;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L18
+    LINENUMBER 118 L18
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.variance : Lorg/apache/commons/math/stat/descriptive/moment/Variance;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.varianceImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L19
+    LINENUMBER 124 L19
+    RETURN
+   L20
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L20 0
+    MAXSTACK = 4
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/stat/descriptive/SummaryStatistics;)V
+   L0
+    LINENUMBER 131 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 67 L1
+    ALOAD 0
+    LCONST_0
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.n : J
+   L2
+    LINENUMBER 70 L2
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/moment/SecondMoment
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/moment/SecondMoment.<init> ()V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.secondMoment : Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+   L3
+    LINENUMBER 73 L3
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/summary/Sum
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/summary/Sum.<init> ()V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sum : Lorg/apache/commons/math/stat/descriptive/summary/Sum;
+   L4
+    LINENUMBER 76 L4
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/summary/SumOfSquares
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/summary/SumOfSquares.<init> ()V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsq : Lorg/apache/commons/math/stat/descriptive/summary/SumOfSquares;
+   L5
+    LINENUMBER 79 L5
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/rank/Min
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/rank/Min.<init> ()V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.min : Lorg/apache/commons/math/stat/descriptive/rank/Min;
+   L6
+    LINENUMBER 82 L6
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/rank/Max
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/rank/Max.<init> ()V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.max : Lorg/apache/commons/math/stat/descriptive/rank/Max;
+   L7
+    LINENUMBER 85 L7
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/summary/SumOfLogs
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/summary/SumOfLogs.<init> ()V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLog : Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;
+   L8
+    LINENUMBER 88 L8
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/moment/GeometricMean
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLog : Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/moment/GeometricMean.<init> (Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;)V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMean : Lorg/apache/commons/math/stat/descriptive/moment/GeometricMean;
+   L9
+    LINENUMBER 91 L9
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/moment/Mean
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.secondMoment : Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/moment/Mean.<init> (Lorg/apache/commons/math/stat/descriptive/moment/FirstMoment;)V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.mean : Lorg/apache/commons/math/stat/descriptive/moment/Mean;
+   L10
+    LINENUMBER 94 L10
+    ALOAD 0
+    NEW org/apache/commons/math/stat/descriptive/moment/Variance
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.secondMoment : Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/moment/Variance.<init> (Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;)V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.variance : Lorg/apache/commons/math/stat/descriptive/moment/Variance;
+   L11
+    LINENUMBER 97 L11
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sum : Lorg/apache/commons/math/stat/descriptive/summary/Sum;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L12
+    LINENUMBER 100 L12
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsq : Lorg/apache/commons/math/stat/descriptive/summary/SumOfSquares;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsqImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L13
+    LINENUMBER 103 L13
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.min : Lorg/apache/commons/math/stat/descriptive/rank/Min;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.minImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L14
+    LINENUMBER 106 L14
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.max : Lorg/apache/commons/math/stat/descriptive/rank/Max;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.maxImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L15
+    LINENUMBER 109 L15
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLog : Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLogImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L16
+    LINENUMBER 112 L16
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMean : Lorg/apache/commons/math/stat/descriptive/moment/GeometricMean;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMeanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L17
+    LINENUMBER 115 L17
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.mean : Lorg/apache/commons/math/stat/descriptive/moment/Mean;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L18
+    LINENUMBER 118 L18
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.variance : Lorg/apache/commons/math/stat/descriptive/moment/Variance;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.varianceImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L19
+    LINENUMBER 132 L19
+    ALOAD 1
+    ALOAD 0
+    INVOKESTATIC org/apache/commons/math/stat/descriptive/SummaryStatistics.copy (Lorg/apache/commons/math/stat/descriptive/SummaryStatistics;Lorg/apache/commons/math/stat/descriptive/SummaryStatistics;)V
+   L20
+    LINENUMBER 133 L20
+    RETURN
+   L21
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L21 0
+    LOCALVARIABLE original Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L21 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getSummary()Lorg/apache/commons/math/stat/descriptive/StatisticalSummary;
+   L0
+    LINENUMBER 141 L0
+    NEW org/apache/commons/math/stat/descriptive/StatisticalSummaryValues
+    DUP
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMean ()D
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getVariance ()D
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getN ()J
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMax ()D
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMin ()D
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getSum ()D
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/StatisticalSummaryValues.<init> (DDJDDD)V
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 14
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public addValue(D)V
+   L0
+    LINENUMBER 150 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    DLOAD 1
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.increment (D)V (itf)
+   L1
+    LINENUMBER 151 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsqImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    DLOAD 1
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.increment (D)V (itf)
+   L2
+    LINENUMBER 152 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.minImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    DLOAD 1
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.increment (D)V (itf)
+   L3
+    LINENUMBER 153 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.maxImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    DLOAD 1
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.increment (D)V (itf)
+   L4
+    LINENUMBER 154 L4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLogImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    DLOAD 1
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.increment (D)V (itf)
+   L5
+    LINENUMBER 155 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.secondMoment : Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+    DLOAD 1
+    POP2
+    POP
+   L6
+    LINENUMBER 158 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.mean : Lorg/apache/commons/math/stat/descriptive/moment/Mean;
+    IF_ACMPEQ L7
+   L8
+    LINENUMBER 159 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    DLOAD 1
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.increment (D)V (itf)
+   L7
+    LINENUMBER 161 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.varianceImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.variance : Lorg/apache/commons/math/stat/descriptive/moment/Variance;
+    IF_ACMPEQ L9
+   L10
+    LINENUMBER 162 L10
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.varianceImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    DLOAD 1
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.increment (D)V (itf)
+   L9
+    LINENUMBER 164 L9
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMeanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMean : Lorg/apache/commons/math/stat/descriptive/moment/GeometricMean;
+    IF_ACMPEQ L11
+   L12
+    LINENUMBER 165 L12
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMeanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    DLOAD 1
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.increment (D)V (itf)
+   L11
+    LINENUMBER 167 L11
+    ALOAD 0
+    DUP
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.n : J
+    LCONST_1
+    LADD
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.n : J
+   L13
+    LINENUMBER 168 L13
+    RETURN
+   L14
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L14 0
+    LOCALVARIABLE value D L0 L14 1
+    MAXSTACK = 5
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getN()J
+   L0
+    LINENUMBER 175 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.n : J
+    LRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getSum()D
+   L0
+    LINENUMBER 183 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.getResult ()D (itf)
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getSumsq()D
+   L0
+    LINENUMBER 194 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsqImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.getResult ()D (itf)
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getMean()D
+   L0
+    LINENUMBER 205 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.getResult ()D (itf)
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getStandardDeviation()D
+   L0
+    LINENUMBER 216 L0
+    LDC NaN
+    DSTORE 1
+   L1
+    LINENUMBER 217 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getN ()J
+    LCONST_0
+    LCMP
+    IFLE L2
+   L3
+    LINENUMBER 218 L3
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getN ()J
+    LCONST_1
+    LCMP
+    IFLE L4
+   L5
+    LINENUMBER 219 L5
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getVariance ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    DSTORE 1
+    GOTO L2
+   L4
+    LINENUMBER 221 L4
+    DCONST_0
+    DSTORE 1
+   L2
+    LINENUMBER 224 L2
+    DLOAD 1
+    DRETURN
+   L6
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L6 0
+    LOCALVARIABLE stdDev D L1 L6 1
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getVariance()D
+   L0
+    LINENUMBER 239 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.varianceImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.getResult ()D (itf)
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getPopulationVariance()D
+   L0
+    LINENUMBER 251 L0
+    NEW org/apache/commons/math/stat/descriptive/moment/Variance
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.secondMoment : Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/moment/Variance.<init> (Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;)V
+    ASTORE 1
+   L1
+    LINENUMBER 252 L1
+    ALOAD 1
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/moment/Variance.setBiasCorrected (Z)V
+   L2
+    LINENUMBER 253 L2
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/moment/Variance.getResult ()D
+    DRETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L3 0
+    LOCALVARIABLE populationVariance Lorg/apache/commons/math/stat/descriptive/moment/Variance; L1 L3 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getMax()D
+   L0
+    LINENUMBER 264 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.maxImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.getResult ()D (itf)
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getMin()D
+   L0
+    LINENUMBER 275 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.minImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.getResult ()D (itf)
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getGeometricMean()D
+   L0
+    LINENUMBER 286 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMeanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.getResult ()D (itf)
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getSumOfLogs()D
+   L0
+    LINENUMBER 298 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLogImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.getResult ()D (itf)
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getSecondMoment()D
+   L0
+    LINENUMBER 313 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.secondMoment : Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/moment/SecondMoment.getResult ()D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public toString()Ljava/lang/String;
+   L0
+    LINENUMBER 324 L0
+    NEW java/lang/StringBuilder
+    DUP
+    INVOKESPECIAL java/lang/StringBuilder.<init> ()V
+    ASTORE 1
+   L1
+    LINENUMBER 325 L1
+    LDC "\n"
+    ASTORE 2
+   L2
+    LINENUMBER 326 L2
+    ALOAD 1
+    LDC "SummaryStatistics:"
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    POP
+   L3
+    LINENUMBER 327 L3
+    ALOAD 1
+    LDC "n: "
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getN ()J
+    INVOKEVIRTUAL java/lang/StringBuilder.append (J)Ljava/lang/StringBuilder;
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    POP
+   L4
+    LINENUMBER 328 L4
+    ALOAD 1
+    LDC "min: "
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMin ()D
+    INVOKEVIRTUAL java/lang/StringBuilder.append (D)Ljava/lang/StringBuilder;
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    POP
+   L5
+    LINENUMBER 329 L5
+    ALOAD 1
+    LDC "max: "
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMax ()D
+    INVOKEVIRTUAL java/lang/StringBuilder.append (D)Ljava/lang/StringBuilder;
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    POP
+   L6
+    LINENUMBER 330 L6
+    ALOAD 1
+    LDC "mean: "
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMean ()D
+    INVOKEVIRTUAL java/lang/StringBuilder.append (D)Ljava/lang/StringBuilder;
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    POP
+   L7
+    LINENUMBER 331 L7
+    ALOAD 1
+    LDC "geometric mean: "
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getGeometricMean ()D
+    INVOKEVIRTUAL java/lang/StringBuilder.append (D)Ljava/lang/StringBuilder;
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    POP
+   L8
+    LINENUMBER 333 L8
+    ALOAD 1
+    LDC "variance: "
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getVariance ()D
+    INVOKEVIRTUAL java/lang/StringBuilder.append (D)Ljava/lang/StringBuilder;
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    POP
+   L9
+    LINENUMBER 334 L9
+    ALOAD 1
+    LDC "sum of squares: "
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getSumsq ()D
+    INVOKEVIRTUAL java/lang/StringBuilder.append (D)Ljava/lang/StringBuilder;
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    POP
+   L10
+    LINENUMBER 335 L10
+    ALOAD 1
+    LDC "standard deviation: "
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getStandardDeviation ()D
+    INVOKEVIRTUAL java/lang/StringBuilder.append (D)Ljava/lang/StringBuilder;
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    POP
+   L11
+    LINENUMBER 337 L11
+    ALOAD 1
+    LDC "sum of logs: "
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getSumOfLogs ()D
+    INVOKEVIRTUAL java/lang/StringBuilder.append (D)Ljava/lang/StringBuilder;
+    ALOAD 2
+    INVOKEVIRTUAL java/lang/StringBuilder.append (Ljava/lang/String;)Ljava/lang/StringBuilder;
+    POP
+   L12
+    LINENUMBER 338 L12
+    ALOAD 1
+    INVOKEVIRTUAL java/lang/StringBuilder.toString ()Ljava/lang/String;
+    ARETURN
+   L13
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L13 0
+    LOCALVARIABLE outBuffer Ljava/lang/StringBuilder; L1 L13 1
+    LOCALVARIABLE endl Ljava/lang/String; L2 L13 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public clear()V
+   L0
+    LINENUMBER 345 L0
+    ALOAD 0
+    LCONST_0
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.n : J
+   L1
+    LINENUMBER 346 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.minImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.clear ()V (itf)
+   L2
+    LINENUMBER 347 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.maxImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.clear ()V (itf)
+   L3
+    LINENUMBER 348 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.clear ()V (itf)
+   L4
+    LINENUMBER 349 L4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLogImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.clear ()V (itf)
+   L5
+    LINENUMBER 350 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsqImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.clear ()V (itf)
+   L6
+    LINENUMBER 351 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMeanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.clear ()V (itf)
+   L7
+    LINENUMBER 352 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.secondMoment : Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/moment/SecondMoment.clear ()V
+   L8
+    LINENUMBER 353 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.mean : Lorg/apache/commons/math/stat/descriptive/moment/Mean;
+    IF_ACMPEQ L9
+   L10
+    LINENUMBER 354 L10
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.clear ()V (itf)
+   L9
+    LINENUMBER 356 L9
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.varianceImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.variance : Lorg/apache/commons/math/stat/descriptive/moment/Variance;
+    IF_ACMPEQ L11
+   L12
+    LINENUMBER 357 L12
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.varianceImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.clear ()V (itf)
+   L11
+    LINENUMBER 359 L11
+    RETURN
+   L13
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L13 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public equals(Ljava/lang/Object;)Z
+   L0
+    LINENUMBER 370 L0
+    ALOAD 1
+    ALOAD 0
+    IF_ACMPNE L1
+   L2
+    LINENUMBER 371 L2
+    ICONST_1
+    IRETURN
+   L1
+    LINENUMBER 373 L1
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/stat/descriptive/SummaryStatistics
+    IFNE L3
+   L4
+    LINENUMBER 374 L4
+    ICONST_0
+    IRETURN
+   L3
+    LINENUMBER 376 L3
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/stat/descriptive/SummaryStatistics
+    ASTORE 2
+   L5
+    LINENUMBER 377 L5
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getGeometricMean ()D
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getGeometricMean ()D
+    INVOKESTATIC org/apache/commons/math/util/Precision.equalsIncludingNaN (DD)Z
+    IFEQ L6
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMax ()D
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMax ()D
+    INVOKESTATIC org/apache/commons/math/util/Precision.equalsIncludingNaN (DD)Z
+    IFEQ L6
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMean ()D
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMean ()D
+    INVOKESTATIC org/apache/commons/math/util/Precision.equalsIncludingNaN (DD)Z
+    IFEQ L6
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMin ()D
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMin ()D
+    INVOKESTATIC org/apache/commons/math/util/Precision.equalsIncludingNaN (DD)Z
+    IFEQ L6
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getN ()J
+    L2F
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getN ()J
+    L2F
+    INVOKESTATIC org/apache/commons/math/util/Precision.equalsIncludingNaN (FF)Z
+    IFEQ L6
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getSum ()D
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getSum ()D
+    INVOKESTATIC org/apache/commons/math/util/Precision.equalsIncludingNaN (DD)Z
+    IFEQ L6
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getSumsq ()D
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getSumsq ()D
+    INVOKESTATIC org/apache/commons/math/util/Precision.equalsIncludingNaN (DD)Z
+    IFEQ L6
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getVariance ()D
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getVariance ()D
+    INVOKESTATIC org/apache/commons/math/util/Precision.equalsIncludingNaN (DD)Z
+    IFEQ L6
+    ICONST_1
+    GOTO L7
+   L6
+    ICONST_0
+   L7
+    IRETURN
+   L8
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L8 0
+    LOCALVARIABLE object Ljava/lang/Object; L0 L8 1
+    LOCALVARIABLE stat Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L5 L8 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public hashCode()I
+   L0
+    LINENUMBER 393 L0
+    BIPUSH 31
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getGeometricMean ()D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.hash (D)I
+    IADD
+    ISTORE 1
+   L1
+    LINENUMBER 394 L1
+    ILOAD 1
+    BIPUSH 31
+    IMUL
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getGeometricMean ()D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.hash (D)I
+    IADD
+    ISTORE 1
+   L2
+    LINENUMBER 395 L2
+    ILOAD 1
+    BIPUSH 31
+    IMUL
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMax ()D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.hash (D)I
+    IADD
+    ISTORE 1
+   L3
+    LINENUMBER 396 L3
+    ILOAD 1
+    BIPUSH 31
+    IMUL
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMean ()D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.hash (D)I
+    IADD
+    ISTORE 1
+   L4
+    LINENUMBER 397 L4
+    ILOAD 1
+    BIPUSH 31
+    IMUL
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getMin ()D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.hash (D)I
+    IADD
+    ISTORE 1
+   L5
+    LINENUMBER 398 L5
+    ILOAD 1
+    BIPUSH 31
+    IMUL
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getN ()J
+    L2D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.hash (D)I
+    IADD
+    ISTORE 1
+   L6
+    LINENUMBER 399 L6
+    ILOAD 1
+    BIPUSH 31
+    IMUL
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getSum ()D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.hash (D)I
+    IADD
+    ISTORE 1
+   L7
+    LINENUMBER 400 L7
+    ILOAD 1
+    BIPUSH 31
+    IMUL
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getSumsq ()D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.hash (D)I
+    IADD
+    ISTORE 1
+   L8
+    LINENUMBER 401 L8
+    ILOAD 1
+    BIPUSH 31
+    IMUL
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getVariance ()D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.hash (D)I
+    IADD
+    ISTORE 1
+   L9
+    LINENUMBER 402 L9
+    ILOAD 1
+    IRETURN
+   L10
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L10 0
+    LOCALVARIABLE result I L1 L10 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getSumImpl()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L0
+    LINENUMBER 412 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setSumImpl(Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;)V
+   L0
+    LINENUMBER 431 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/SummaryStatistics.checkEmpty ()V
+   L1
+    LINENUMBER 432 L1
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L2
+    LINENUMBER 433 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L3 0
+    LOCALVARIABLE sumImpl Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; L0 L3 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getSumsqImpl()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L0
+    LINENUMBER 441 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsqImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setSumsqImpl(Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;)V
+   L0
+    LINENUMBER 460 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/SummaryStatistics.checkEmpty ()V
+   L1
+    LINENUMBER 461 L1
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsqImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L2
+    LINENUMBER 462 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L3 0
+    LOCALVARIABLE sumsqImpl Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; L0 L3 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getMinImpl()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L0
+    LINENUMBER 470 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.minImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setMinImpl(Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;)V
+   L0
+    LINENUMBER 489 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/SummaryStatistics.checkEmpty ()V
+   L1
+    LINENUMBER 490 L1
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.minImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L2
+    LINENUMBER 491 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L3 0
+    LOCALVARIABLE minImpl Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; L0 L3 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getMaxImpl()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L0
+    LINENUMBER 499 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.maxImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setMaxImpl(Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;)V
+   L0
+    LINENUMBER 518 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/SummaryStatistics.checkEmpty ()V
+   L1
+    LINENUMBER 519 L1
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.maxImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L2
+    LINENUMBER 520 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L3 0
+    LOCALVARIABLE maxImpl Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; L0 L3 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getSumLogImpl()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L0
+    LINENUMBER 528 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLogImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setSumLogImpl(Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;)V
+   L0
+    LINENUMBER 547 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/SummaryStatistics.checkEmpty ()V
+   L1
+    LINENUMBER 548 L1
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLogImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L2
+    LINENUMBER 549 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMean : Lorg/apache/commons/math/stat/descriptive/moment/GeometricMean;
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/moment/GeometricMean.setSumLogImpl (Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;)V
+   L3
+    LINENUMBER 550 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L4 0
+    LOCALVARIABLE sumLogImpl Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; L0 L4 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getGeoMeanImpl()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L0
+    LINENUMBER 558 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMeanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setGeoMeanImpl(Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;)V
+   L0
+    LINENUMBER 577 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/SummaryStatistics.checkEmpty ()V
+   L1
+    LINENUMBER 578 L1
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMeanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L2
+    LINENUMBER 579 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L3 0
+    LOCALVARIABLE geoMeanImpl Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; L0 L3 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getMeanImpl()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L0
+    LINENUMBER 587 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setMeanImpl(Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;)V
+   L0
+    LINENUMBER 606 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/SummaryStatistics.checkEmpty ()V
+   L1
+    LINENUMBER 607 L1
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L2
+    LINENUMBER 608 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L3 0
+    LOCALVARIABLE meanImpl Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; L0 L3 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getVarianceImpl()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L0
+    LINENUMBER 616 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.varianceImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setVarianceImpl(Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;)V
+   L0
+    LINENUMBER 635 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/SummaryStatistics.checkEmpty ()V
+   L1
+    LINENUMBER 636 L1
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.varianceImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L2
+    LINENUMBER 637 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L3 0
+    LOCALVARIABLE varianceImpl Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; L0 L3 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x2
+  private checkEmpty()V
+   L0
+    LINENUMBER 643 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.n : J
+    LCONST_0
+    LCMP
+    IFLE L1
+   L2
+    LINENUMBER 644 L2
+    NEW org/apache/commons/math/exception/MathIllegalStateException
+    DUP
+    GETSTATIC org/apache/commons/math/exception/util/LocalizedFormats.VALUES_ADDED_BEFORE_CONFIGURING_STATISTIC : Lorg/apache/commons/math/exception/util/LocalizedFormats;
+    ICONST_1
+    ANEWARRAY java/lang/Object
+    DUP
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.n : J
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    AASTORE
+    INVOKESPECIAL org/apache/commons/math/exception/MathIllegalStateException.<init> (Lorg/apache/commons/math/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L1
+    LINENUMBER 647 L1
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L3 0
+    MAXSTACK = 8
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public copy()Lorg/apache/commons/math/stat/descriptive/SummaryStatistics;
+   L0
+    LINENUMBER 655 L0
+    NEW org/apache/commons/math/stat/descriptive/SummaryStatistics
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/SummaryStatistics.<init> ()V
+    ASTORE 1
+   L1
+    LINENUMBER 656 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math/stat/descriptive/SummaryStatistics.copy (Lorg/apache/commons/math/stat/descriptive/SummaryStatistics;Lorg/apache/commons/math/stat/descriptive/SummaryStatistics;)V
+   L2
+    LINENUMBER 657 L2
+    ALOAD 1
+    ARETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L3 0
+    LOCALVARIABLE result Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L1 L3 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static copy(Lorg/apache/commons/math/stat/descriptive/SummaryStatistics;Lorg/apache/commons/math/stat/descriptive/SummaryStatistics;)V throws org/apache/commons/math/exception/NullArgumentException 
+   L0
+    LINENUMBER 670 L0
+    ALOAD 0
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.checkNotNull (Ljava/lang/Object;)V
+   L1
+    LINENUMBER 671 L1
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.checkNotNull (Ljava/lang/Object;)V
+   L2
+    LINENUMBER 672 L2
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.maxImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.copy ()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; (itf)
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.maxImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L3
+    LINENUMBER 673 L3
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.minImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.copy ()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; (itf)
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.minImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L4
+    LINENUMBER 674 L4
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.copy ()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; (itf)
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L5
+    LINENUMBER 675 L5
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLogImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.copy ()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; (itf)
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLogImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L6
+    LINENUMBER 676 L6
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsqImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.copy ()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; (itf)
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsqImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L7
+    LINENUMBER 677 L7
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.secondMoment : Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/moment/SecondMoment.copy ()Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.secondMoment : Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+   L8
+    LINENUMBER 678 L8
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.n : J
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.n : J
+   L9
+    LINENUMBER 681 L9
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getVarianceImpl ()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INSTANCEOF org/apache/commons/math/stat/descriptive/moment/Variance
+    IFEQ L10
+   L11
+    LINENUMBER 682 L11
+    ALOAD 1
+    NEW org/apache/commons/math/stat/descriptive/moment/Variance
+    DUP
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.secondMoment : Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/moment/Variance.<init> (Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;)V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.varianceImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    GOTO L12
+   L10
+    LINENUMBER 684 L10
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.varianceImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.copy ()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; (itf)
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.varianceImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L12
+    LINENUMBER 686 L12
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INSTANCEOF org/apache/commons/math/stat/descriptive/moment/Mean
+    IFEQ L13
+   L14
+    LINENUMBER 687 L14
+    ALOAD 1
+    NEW org/apache/commons/math/stat/descriptive/moment/Mean
+    DUP
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.secondMoment : Lorg/apache/commons/math/stat/descriptive/moment/SecondMoment;
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/moment/Mean.<init> (Lorg/apache/commons/math/stat/descriptive/moment/FirstMoment;)V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    GOTO L15
+   L13
+    LINENUMBER 689 L13
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.copy ()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; (itf)
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L15
+    LINENUMBER 691 L15
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/stat/descriptive/SummaryStatistics.getGeoMeanImpl ()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INSTANCEOF org/apache/commons/math/stat/descriptive/moment/GeometricMean
+    IFEQ L16
+   L17
+    LINENUMBER 692 L17
+    ALOAD 1
+    NEW org/apache/commons/math/stat/descriptive/moment/GeometricMean
+    DUP
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLogImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    CHECKCAST org/apache/commons/math/stat/descriptive/summary/SumOfLogs
+    INVOKESPECIAL org/apache/commons/math/stat/descriptive/moment/GeometricMean.<init> (Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;)V
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMeanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    GOTO L18
+   L16
+    LINENUMBER 694 L16
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMeanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    INVOKEINTERFACE org/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic.copy ()Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic; (itf)
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMeanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+   L18
+    LINENUMBER 699 L18
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMean : Lorg/apache/commons/math/stat/descriptive/moment/GeometricMean;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMeanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    IF_ACMPNE L19
+   L20
+    LINENUMBER 700 L20
+    ALOAD 1
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMeanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    CHECKCAST org/apache/commons/math/stat/descriptive/moment/GeometricMean
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMean : Lorg/apache/commons/math/stat/descriptive/moment/GeometricMean;
+    GOTO L21
+   L19
+    LINENUMBER 702 L19
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMean : Lorg/apache/commons/math/stat/descriptive/moment/GeometricMean;
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.geoMean : Lorg/apache/commons/math/stat/descriptive/moment/GeometricMean;
+    INVOKESTATIC org/apache/commons/math/stat/descriptive/moment/GeometricMean.copy (Lorg/apache/commons/math/stat/descriptive/moment/GeometricMean;Lorg/apache/commons/math/stat/descriptive/moment/GeometricMean;)V
+   L21
+    LINENUMBER 704 L21
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.max : Lorg/apache/commons/math/stat/descriptive/rank/Max;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.maxImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    IF_ACMPNE L22
+   L23
+    LINENUMBER 705 L23
+    ALOAD 1
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.maxImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    CHECKCAST org/apache/commons/math/stat/descriptive/rank/Max
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.max : Lorg/apache/commons/math/stat/descriptive/rank/Max;
+    GOTO L24
+   L22
+    LINENUMBER 707 L22
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.max : Lorg/apache/commons/math/stat/descriptive/rank/Max;
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.max : Lorg/apache/commons/math/stat/descriptive/rank/Max;
+    INVOKESTATIC org/apache/commons/math/stat/descriptive/rank/Max.copy (Lorg/apache/commons/math/stat/descriptive/rank/Max;Lorg/apache/commons/math/stat/descriptive/rank/Max;)V
+   L24
+    LINENUMBER 709 L24
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.mean : Lorg/apache/commons/math/stat/descriptive/moment/Mean;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    IF_ACMPNE L25
+   L26
+    LINENUMBER 710 L26
+    ALOAD 1
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.meanImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    CHECKCAST org/apache/commons/math/stat/descriptive/moment/Mean
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.mean : Lorg/apache/commons/math/stat/descriptive/moment/Mean;
+    GOTO L27
+   L25
+    LINENUMBER 712 L25
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.mean : Lorg/apache/commons/math/stat/descriptive/moment/Mean;
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.mean : Lorg/apache/commons/math/stat/descriptive/moment/Mean;
+    INVOKESTATIC org/apache/commons/math/stat/descriptive/moment/Mean.copy (Lorg/apache/commons/math/stat/descriptive/moment/Mean;Lorg/apache/commons/math/stat/descriptive/moment/Mean;)V
+   L27
+    LINENUMBER 714 L27
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.min : Lorg/apache/commons/math/stat/descriptive/rank/Min;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.minImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    IF_ACMPNE L28
+   L29
+    LINENUMBER 715 L29
+    ALOAD 1
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.minImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    CHECKCAST org/apache/commons/math/stat/descriptive/rank/Min
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.min : Lorg/apache/commons/math/stat/descriptive/rank/Min;
+    GOTO L30
+   L28
+    LINENUMBER 717 L28
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.min : Lorg/apache/commons/math/stat/descriptive/rank/Min;
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.min : Lorg/apache/commons/math/stat/descriptive/rank/Min;
+    INVOKESTATIC org/apache/commons/math/stat/descriptive/rank/Min.copy (Lorg/apache/commons/math/stat/descriptive/rank/Min;Lorg/apache/commons/math/stat/descriptive/rank/Min;)V
+   L30
+    LINENUMBER 719 L30
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sum : Lorg/apache/commons/math/stat/descriptive/summary/Sum;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    IF_ACMPNE L31
+   L32
+    LINENUMBER 720 L32
+    ALOAD 1
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    CHECKCAST org/apache/commons/math/stat/descriptive/summary/Sum
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sum : Lorg/apache/commons/math/stat/descriptive/summary/Sum;
+    GOTO L33
+   L31
+    LINENUMBER 722 L31
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sum : Lorg/apache/commons/math/stat/descriptive/summary/Sum;
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sum : Lorg/apache/commons/math/stat/descriptive/summary/Sum;
+    INVOKESTATIC org/apache/commons/math/stat/descriptive/summary/Sum.copy (Lorg/apache/commons/math/stat/descriptive/summary/Sum;Lorg/apache/commons/math/stat/descriptive/summary/Sum;)V
+   L33
+    LINENUMBER 724 L33
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.variance : Lorg/apache/commons/math/stat/descriptive/moment/Variance;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.varianceImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    IF_ACMPNE L34
+   L35
+    LINENUMBER 725 L35
+    ALOAD 1
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.varianceImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    CHECKCAST org/apache/commons/math/stat/descriptive/moment/Variance
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.variance : Lorg/apache/commons/math/stat/descriptive/moment/Variance;
+    GOTO L36
+   L34
+    LINENUMBER 727 L34
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.variance : Lorg/apache/commons/math/stat/descriptive/moment/Variance;
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.variance : Lorg/apache/commons/math/stat/descriptive/moment/Variance;
+    INVOKESTATIC org/apache/commons/math/stat/descriptive/moment/Variance.copy (Lorg/apache/commons/math/stat/descriptive/moment/Variance;Lorg/apache/commons/math/stat/descriptive/moment/Variance;)V
+   L36
+    LINENUMBER 729 L36
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLog : Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLogImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    IF_ACMPNE L37
+   L38
+    LINENUMBER 730 L38
+    ALOAD 1
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLogImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    CHECKCAST org/apache/commons/math/stat/descriptive/summary/SumOfLogs
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLog : Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;
+    GOTO L39
+   L37
+    LINENUMBER 732 L37
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLog : Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumLog : Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;
+    INVOKESTATIC org/apache/commons/math/stat/descriptive/summary/SumOfLogs.copy (Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;Lorg/apache/commons/math/stat/descriptive/summary/SumOfLogs;)V
+   L39
+    LINENUMBER 734 L39
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsq : Lorg/apache/commons/math/stat/descriptive/summary/SumOfSquares;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsqImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    IF_ACMPNE L40
+   L41
+    LINENUMBER 735 L41
+    ALOAD 1
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsqImpl : Lorg/apache/commons/math/stat/descriptive/StorelessUnivariateStatistic;
+    CHECKCAST org/apache/commons/math/stat/descriptive/summary/SumOfSquares
+    PUTFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsq : Lorg/apache/commons/math/stat/descriptive/summary/SumOfSquares;
+    GOTO L42
+   L40
+    LINENUMBER 737 L40
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsq : Lorg/apache/commons/math/stat/descriptive/summary/SumOfSquares;
+    ALOAD 1
+    GETFIELD org/apache/commons/math/stat/descriptive/SummaryStatistics.sumsq : Lorg/apache/commons/math/stat/descriptive/summary/SumOfSquares;
+    INVOKESTATIC org/apache/commons/math/stat/descriptive/summary/SumOfSquares.copy (Lorg/apache/commons/math/stat/descriptive/summary/SumOfSquares;Lorg/apache/commons/math/stat/descriptive/summary/SumOfSquares;)V
+   L42
+    LINENUMBER 739 L42
+    RETURN
+   L43
+    LOCALVARIABLE source Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L43 0
+    LOCALVARIABLE dest Lorg/apache/commons/math/stat/descriptive/SummaryStatistics; L0 L43 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+}
+

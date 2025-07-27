@@ -1,0 +1,4485 @@
+// class version 49.0 (49)
+// access flags 0x21
+// signature Lorg/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer<Lorg/apache/commons/math3/analysis/MultivariateFunction;>;Lorg/apache/commons/math3/optimization/MultivariateOptimizer;
+// declaration: org/apache/commons/math3/optimization/direct/CMAESOptimizer extends org.apache.commons.math3.optimization.direct.BaseAbstractMultivariateSimpleBoundsOptimizer<org.apache.commons.math3.analysis.MultivariateFunction> implements org.apache.commons.math3.optimization.MultivariateOptimizer
+public class org/apache/commons/math3/optimization/direct/CMAESOptimizer extends org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer implements org/apache/commons/math3/optimization/MultivariateOptimizer {
+
+  // compiled from: CMAESOptimizer.java
+  // access flags 0x2
+  private INNERCLASS org/apache/commons/math3/optimization/direct/CMAESOptimizer$FitnessFunction org/apache/commons/math3/optimization/direct/CMAESOptimizer FitnessFunction
+  // access flags 0xA
+  private static INNERCLASS org/apache/commons/math3/optimization/direct/CMAESOptimizer$DoubleIndex org/apache/commons/math3/optimization/direct/CMAESOptimizer DoubleIndex
+
+  // access flags 0x19
+  public final static I DEFAULT_CHECKFEASABLECOUNT = 0
+
+  // access flags 0x19
+  public final static D DEFAULT_STOPFITNESS = 0.0
+
+  // access flags 0x19
+  public final static Z DEFAULT_ISACTIVECMA = 1
+
+  // access flags 0x19
+  public final static I DEFAULT_MAXITERATIONS = 30000
+
+  // access flags 0x19
+  public final static I DEFAULT_DIAGONALONLY = 0
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math3/random/RandomGenerator; DEFAULT_RANDOMGENERATOR
+
+  // access flags 0x2
+  private I lambda
+
+  // access flags 0x2
+  private Z isActiveCMA
+
+  // access flags 0x2
+  private I checkFeasableCount
+
+  // access flags 0x2
+  private [[D boundaries
+
+  // access flags 0x2
+  private [D inputSigma
+
+  // access flags 0x2
+  private I dimension
+
+  // access flags 0x2
+  private I diagonalOnly
+
+  // access flags 0x2
+  private Z isMinimize
+
+  // access flags 0x2
+  private Z generateStatistics
+
+  // access flags 0x2
+  private I maxIterations
+
+  // access flags 0x2
+  private D stopFitness
+
+  // access flags 0x2
+  private D stopTolUpX
+
+  // access flags 0x2
+  private D stopTolX
+
+  // access flags 0x2
+  private D stopTolFun
+
+  // access flags 0x2
+  private D stopTolHistFun
+
+  // access flags 0x2
+  private I mu
+
+  // access flags 0x2
+  private D logMu2
+
+  // access flags 0x2
+  private Lorg/apache/commons/math3/linear/RealMatrix; weights
+
+  // access flags 0x2
+  private D mueff
+
+  // access flags 0x2
+  private D sigma
+
+  // access flags 0x2
+  private D cc
+
+  // access flags 0x2
+  private D cs
+
+  // access flags 0x2
+  private D damps
+
+  // access flags 0x2
+  private D ccov1
+
+  // access flags 0x2
+  private D ccovmu
+
+  // access flags 0x2
+  private D chiN
+
+  // access flags 0x2
+  private D ccov1Sep
+
+  // access flags 0x2
+  private D ccovmuSep
+
+  // access flags 0x2
+  private Lorg/apache/commons/math3/linear/RealMatrix; xmean
+
+  // access flags 0x2
+  private Lorg/apache/commons/math3/linear/RealMatrix; pc
+
+  // access flags 0x2
+  private Lorg/apache/commons/math3/linear/RealMatrix; ps
+
+  // access flags 0x2
+  private D normps
+
+  // access flags 0x2
+  private Lorg/apache/commons/math3/linear/RealMatrix; B
+
+  // access flags 0x2
+  private Lorg/apache/commons/math3/linear/RealMatrix; D
+
+  // access flags 0x2
+  private Lorg/apache/commons/math3/linear/RealMatrix; BD
+
+  // access flags 0x2
+  private Lorg/apache/commons/math3/linear/RealMatrix; diagD
+
+  // access flags 0x2
+  private Lorg/apache/commons/math3/linear/RealMatrix; C
+
+  // access flags 0x2
+  private Lorg/apache/commons/math3/linear/RealMatrix; diagC
+
+  // access flags 0x2
+  private I iterations
+
+  // access flags 0x2
+  private [D fitnessHistory
+
+  // access flags 0x2
+  private I historySize
+
+  // access flags 0x2
+  private Lorg/apache/commons/math3/random/RandomGenerator; random
+
+  // access flags 0x2
+  // signature Ljava/util/List<Ljava/lang/Double;>;
+  // declaration: statisticsSigmaHistory extends java.util.List<java.lang.Double>
+  private Ljava/util/List; statisticsSigmaHistory
+
+  // access flags 0x2
+  // signature Ljava/util/List<Lorg/apache/commons/math3/linear/RealMatrix;>;
+  // declaration: statisticsMeanHistory extends java.util.List<org.apache.commons.math3.linear.RealMatrix>
+  private Ljava/util/List; statisticsMeanHistory
+
+  // access flags 0x2
+  // signature Ljava/util/List<Ljava/lang/Double;>;
+  // declaration: statisticsFitnessHistory extends java.util.List<java.lang.Double>
+  private Ljava/util/List; statisticsFitnessHistory
+
+  // access flags 0x2
+  // signature Ljava/util/List<Lorg/apache/commons/math3/linear/RealMatrix;>;
+  // declaration: statisticsDHistory extends java.util.List<org.apache.commons.math3.linear.RealMatrix>
+  private Ljava/util/List; statisticsDHistory
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 246 L0
+    ALOAD 0
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.<init> (I)V
+   L1
+    LINENUMBER 247 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L2 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public <init>(I)V
+   L0
+    LINENUMBER 253 L0
+    ALOAD 0
+    ILOAD 1
+    ACONST_NULL
+    SIPUSH 30000
+    DCONST_0
+    ICONST_1
+    ICONST_0
+    ICONST_0
+    GETSTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.DEFAULT_RANDOMGENERATOR : Lorg/apache/commons/math3/random/RandomGenerator;
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.<init> (I[DIDZIILorg/apache/commons/math3/random/RandomGenerator;Z)V
+   L1
+    LINENUMBER 256 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L2 0
+    LOCALVARIABLE lambda I L0 L2 1
+    MAXSTACK = 11
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>(I[D)V
+   L0
+    LINENUMBER 263 L0
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    SIPUSH 30000
+    DCONST_0
+    ICONST_1
+    ICONST_0
+    ICONST_0
+    GETSTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.DEFAULT_RANDOMGENERATOR : Lorg/apache/commons/math3/random/RandomGenerator;
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.<init> (I[DIDZIILorg/apache/commons/math3/random/RandomGenerator;Z)V
+   L1
+    LINENUMBER 266 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L2 0
+    LOCALVARIABLE lambda I L0 L2 1
+    LOCALVARIABLE inputSigma [D L0 L2 2
+    MAXSTACK = 11
+    MAXLOCALS = 3
+
+  // DEPRECATED
+  // access flags 0x20001
+  public <init>(I[DIDZIILorg/apache/commons/math3/random/RandomGenerator;Z)V
+  @Ljava/lang/Deprecated;()
+   L0
+    LINENUMBER 288 L0
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    ILOAD 3
+    DLOAD 4
+    ILOAD 6
+    ILOAD 7
+    ILOAD 8
+    ALOAD 9
+    ILOAD 10
+    NEW org/apache/commons/math3/optimization/SimpleValueChecker
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/optimization/SimpleValueChecker.<init> ()V
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.<init> (I[DIDZIILorg/apache/commons/math3/random/RandomGenerator;ZLorg/apache/commons/math3/optimization/ConvergenceChecker;)V
+   L1
+    LINENUMBER 291 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L2 0
+    LOCALVARIABLE lambda I L0 L2 1
+    LOCALVARIABLE inputSigma [D L0 L2 2
+    LOCALVARIABLE maxIterations I L0 L2 3
+    LOCALVARIABLE stopFitness D L0 L2 4
+    LOCALVARIABLE isActiveCMA Z L0 L2 6
+    LOCALVARIABLE diagonalOnly I L0 L2 7
+    LOCALVARIABLE checkFeasableCount I L0 L2 8
+    LOCALVARIABLE random Lorg/apache/commons/math3/random/RandomGenerator; L0 L2 9
+    LOCALVARIABLE generateStatistics Z L0 L2 10
+    MAXSTACK = 13
+    MAXLOCALS = 11
+
+  // access flags 0x1
+  // signature (I[DIDZIILorg/apache/commons/math3/random/RandomGenerator;ZLorg/apache/commons/math3/optimization/ConvergenceChecker<Lorg/apache/commons/math3/optimization/PointValuePair;>;)V
+  // declaration: void <init>(int, double[], int, double, boolean, int, int, org.apache.commons.math3.random.RandomGenerator, boolean, org.apache.commons.math3.optimization.ConvergenceChecker<org.apache.commons.math3.optimization.PointValuePair>)
+  public <init>(I[DIDZIILorg/apache/commons/math3/random/RandomGenerator;ZLorg/apache/commons/math3/optimization/ConvergenceChecker;)V
+   L0
+    LINENUMBER 313 L0
+    ALOAD 0
+    ALOAD 11
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/BaseAbstractMultivariateSimpleBoundsOptimizer.<init> (Lorg/apache/commons/math3/optimization/ConvergenceChecker;)V
+   L1
+    LINENUMBER 151 L1
+    ALOAD 0
+    ICONST_0
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagonalOnly : I
+   L2
+    LINENUMBER 153 L2
+    ALOAD 0
+    ICONST_1
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.isMinimize : Z
+   L3
+    LINENUMBER 155 L3
+    ALOAD 0
+    ICONST_0
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.generateStatistics : Z
+   L4
+    LINENUMBER 234 L4
+    ALOAD 0
+    NEW java/util/ArrayList
+    DUP
+    INVOKESPECIAL java/util/ArrayList.<init> ()V
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.statisticsSigmaHistory : Ljava/util/List;
+   L5
+    LINENUMBER 236 L5
+    ALOAD 0
+    NEW java/util/ArrayList
+    DUP
+    INVOKESPECIAL java/util/ArrayList.<init> ()V
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.statisticsMeanHistory : Ljava/util/List;
+   L6
+    LINENUMBER 238 L6
+    ALOAD 0
+    NEW java/util/ArrayList
+    DUP
+    INVOKESPECIAL java/util/ArrayList.<init> ()V
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.statisticsFitnessHistory : Ljava/util/List;
+   L7
+    LINENUMBER 240 L7
+    ALOAD 0
+    NEW java/util/ArrayList
+    DUP
+    INVOKESPECIAL java/util/ArrayList.<init> ()V
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.statisticsDHistory : Ljava/util/List;
+   L8
+    LINENUMBER 314 L8
+    ALOAD 0
+    ILOAD 1
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.lambda : I
+   L9
+    LINENUMBER 315 L9
+    ALOAD 0
+    ALOAD 2
+    IFNONNULL L10
+    ACONST_NULL
+    GOTO L11
+   L10
+    ALOAD 2
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    CHECKCAST [D
+   L11
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.inputSigma : [D
+   L12
+    LINENUMBER 316 L12
+    ALOAD 0
+    ILOAD 3
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.maxIterations : I
+   L13
+    LINENUMBER 317 L13
+    ALOAD 0
+    DLOAD 4
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.stopFitness : D
+   L14
+    LINENUMBER 318 L14
+    ALOAD 0
+    ILOAD 6
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.isActiveCMA : Z
+   L15
+    LINENUMBER 319 L15
+    ALOAD 0
+    ILOAD 7
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagonalOnly : I
+   L16
+    LINENUMBER 320 L16
+    ALOAD 0
+    ILOAD 8
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.checkFeasableCount : I
+   L17
+    LINENUMBER 321 L17
+    ALOAD 0
+    ALOAD 9
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.random : Lorg/apache/commons/math3/random/RandomGenerator;
+   L18
+    LINENUMBER 322 L18
+    ALOAD 0
+    ILOAD 10
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.generateStatistics : Z
+   L19
+    LINENUMBER 323 L19
+    RETURN
+   L20
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L20 0
+    LOCALVARIABLE lambda I L0 L20 1
+    LOCALVARIABLE inputSigma [D L0 L20 2
+    LOCALVARIABLE maxIterations I L0 L20 3
+    LOCALVARIABLE stopFitness D L0 L20 4
+    LOCALVARIABLE isActiveCMA Z L0 L20 6
+    LOCALVARIABLE diagonalOnly I L0 L20 7
+    LOCALVARIABLE checkFeasableCount I L0 L20 8
+    LOCALVARIABLE random Lorg/apache/commons/math3/random/RandomGenerator; L0 L20 9
+    LOCALVARIABLE generateStatistics Z L0 L20 10
+    LOCALVARIABLE checker Lorg/apache/commons/math3/optimization/ConvergenceChecker; L0 L20 11
+    // signature Lorg/apache/commons/math3/optimization/ConvergenceChecker<Lorg/apache/commons/math3/optimization/PointValuePair;>;
+    // declaration: checker extends org.apache.commons.math3.optimization.ConvergenceChecker<org.apache.commons.math3.optimization.PointValuePair>
+    MAXSTACK = 3
+    MAXLOCALS = 12
+
+  // access flags 0x1
+  // signature ()Ljava/util/List<Ljava/lang/Double;>;
+  // declaration: java.util.List<java.lang.Double> getStatisticsSigmaHistory()
+  public getStatisticsSigmaHistory()Ljava/util/List;
+   L0
+    LINENUMBER 329 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.statisticsSigmaHistory : Ljava/util/List;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  // signature ()Ljava/util/List<Lorg/apache/commons/math3/linear/RealMatrix;>;
+  // declaration: java.util.List<org.apache.commons.math3.linear.RealMatrix> getStatisticsMeanHistory()
+  public getStatisticsMeanHistory()Ljava/util/List;
+   L0
+    LINENUMBER 336 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.statisticsMeanHistory : Ljava/util/List;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  // signature ()Ljava/util/List<Ljava/lang/Double;>;
+  // declaration: java.util.List<java.lang.Double> getStatisticsFitnessHistory()
+  public getStatisticsFitnessHistory()Ljava/util/List;
+   L0
+    LINENUMBER 343 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.statisticsFitnessHistory : Ljava/util/List;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  // signature ()Ljava/util/List<Lorg/apache/commons/math3/linear/RealMatrix;>;
+  // declaration: java.util.List<org.apache.commons.math3.linear.RealMatrix> getStatisticsDHistory()
+  public getStatisticsDHistory()Ljava/util/List;
+   L0
+    LINENUMBER 350 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.statisticsDHistory : Ljava/util/List;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x4
+  protected doOptimize()Lorg/apache/commons/math3/optimization/PointValuePair;
+    TRYCATCHBLOCK L0 L1 L2 org/apache/commons/math3/exception/TooManyEvaluationsException
+   L3
+    LINENUMBER 356 L3
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.checkParameters ()V
+   L4
+    LINENUMBER 358 L4
+    ALOAD 0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.getGoalType ()Lorg/apache/commons/math3/optimization/GoalType;
+    GETSTATIC org/apache/commons/math3/optimization/GoalType.MINIMIZE : Lorg/apache/commons/math3/optimization/GoalType;
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/GoalType.equals (Ljava/lang/Object;)Z
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.isMinimize : Z
+   L5
+    LINENUMBER 359 L5
+    NEW org/apache/commons/math3/optimization/direct/CMAESOptimizer$FitnessFunction
+    DUP
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer$FitnessFunction.<init> (Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer;)V
+    ASTORE 1
+   L6
+    LINENUMBER 360 L6
+    ALOAD 1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.getStartPoint ()[D
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer$FitnessFunction.encode ([D)[D
+    ASTORE 2
+   L7
+    LINENUMBER 362 L7
+    ALOAD 0
+    ALOAD 2
+    ARRAYLENGTH
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+   L8
+    LINENUMBER 363 L8
+    ALOAD 0
+    ALOAD 2
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.initializeCMA ([D)V
+   L9
+    LINENUMBER 364 L9
+    ALOAD 0
+    ICONST_0
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.iterations : I
+   L10
+    LINENUMBER 365 L10
+    ALOAD 1
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer$FitnessFunction.value ([D)D
+    DSTORE 3
+   L11
+    LINENUMBER 366 L11
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.fitnessHistory : [D
+    DLOAD 3
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.push ([DD)V
+   L12
+    LINENUMBER 367 L12
+    NEW org/apache/commons/math3/optimization/PointValuePair
+    DUP
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.getStartPoint ()[D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.isMinimize : Z
+    IFEQ L13
+    DLOAD 3
+    GOTO L14
+   L13
+    DLOAD 3
+    DNEG
+   L14
+    INVOKESPECIAL org/apache/commons/math3/optimization/PointValuePair.<init> ([DD)V
+    ASTORE 5
+   L15
+    LINENUMBER 369 L15
+    ACONST_NULL
+    ASTORE 6
+   L16
+    LINENUMBER 374 L16
+    ALOAD 0
+    ICONST_1
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.iterations : I
+   L17
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.iterations : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.maxIterations : I
+    IF_ICMPGT L18
+   L19
+    LINENUMBER 376 L19
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.lambda : I
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.randn1 (II)Lorg/apache/commons/math3/linear/RealMatrix;
+    ASTORE 7
+   L20
+    LINENUMBER 377 L20
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.lambda : I
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.zeros (II)Lorg/apache/commons/math3/linear/RealMatrix;
+    ASTORE 8
+   L21
+    LINENUMBER 378 L21
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.lambda : I
+    NEWARRAY T_DOUBLE
+    ASTORE 9
+   L22
+    LINENUMBER 380 L22
+    ICONST_0
+    ISTORE 10
+   L23
+    ILOAD 10
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.lambda : I
+    IF_ICMPGE L24
+   L25
+    LINENUMBER 381 L25
+    ACONST_NULL
+    ASTORE 11
+   L26
+    LINENUMBER 382 L26
+    ICONST_0
+    ISTORE 12
+   L27
+    ILOAD 12
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.checkFeasableCount : I
+    ICONST_1
+    IADD
+    IF_ICMPGE L28
+   L29
+    LINENUMBER 383 L29
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagonalOnly : I
+    IFGT L30
+   L31
+    LINENUMBER 384 L31
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.xmean : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.BD : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 7
+    ILOAD 10
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnMatrix (I)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ASTORE 11
+    GOTO L32
+   L30
+    LINENUMBER 387 L30
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.xmean : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 7
+    ILOAD 10
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnMatrix (I)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.times (Lorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ASTORE 11
+   L32
+    LINENUMBER 390 L32
+    ILOAD 12
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.checkFeasableCount : I
+    IF_ICMPGE L28
+    ALOAD 1
+    ALOAD 11
+    ICONST_0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumn (I)[D (itf)
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer$FitnessFunction.isFeasible ([D)Z
+    IFEQ L33
+   L34
+    LINENUMBER 391 L34
+    GOTO L28
+   L33
+    LINENUMBER 394 L33
+    ALOAD 7
+    ILOAD 10
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.randn (I)[D
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.setColumn (I[D)V (itf)
+   L35
+    LINENUMBER 382 L35
+    IINC 12 1
+    GOTO L27
+   L28
+    LINENUMBER 396 L28
+    ALOAD 11
+    ICONST_0
+    ALOAD 8
+    ILOAD 10
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.copyColumn (Lorg/apache/commons/math3/linear/RealMatrix;ILorg/apache/commons/math3/linear/RealMatrix;I)V
+   L0
+    LINENUMBER 398 L0
+    ALOAD 9
+    ILOAD 10
+    ALOAD 1
+    ALOAD 8
+    ILOAD 10
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumn (I)[D (itf)
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer$FitnessFunction.value ([D)D
+    DASTORE
+   L1
+    LINENUMBER 401 L1
+    GOTO L36
+   L2
+    LINENUMBER 399 L2
+    ASTORE 12
+   L37
+    LINENUMBER 400 L37
+    GOTO L18
+   L36
+    LINENUMBER 380 L36
+    IINC 10 1
+    GOTO L23
+   L24
+    LINENUMBER 404 L24
+    ALOAD 0
+    ALOAD 9
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.sortedIndices ([D)[I
+    ASTORE 10
+   L38
+    LINENUMBER 406 L38
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.xmean : Lorg/apache/commons/math3/linear/RealMatrix;
+    ASTORE 11
+   L39
+    LINENUMBER 407 L39
+    ALOAD 8
+    ALOAD 10
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mu : I
+    INVOKESTATIC org/apache/commons/math3/util/MathArrays.copyOf ([II)[I
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.selectColumns (Lorg/apache/commons/math3/linear/RealMatrix;[I)Lorg/apache/commons/math3/linear/RealMatrix;
+    ASTORE 12
+   L40
+    LINENUMBER 408 L40
+    ALOAD 0
+    ALOAD 12
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.weights : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.xmean : Lorg/apache/commons/math3/linear/RealMatrix;
+   L41
+    LINENUMBER 409 L41
+    ALOAD 7
+    ALOAD 10
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mu : I
+    INVOKESTATIC org/apache/commons/math3/util/MathArrays.copyOf ([II)[I
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.selectColumns (Lorg/apache/commons/math3/linear/RealMatrix;[I)Lorg/apache/commons/math3/linear/RealMatrix;
+    ASTORE 13
+   L42
+    LINENUMBER 410 L42
+    ALOAD 13
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.weights : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ASTORE 14
+   L43
+    LINENUMBER 411 L43
+    ALOAD 0
+    ALOAD 14
+    ALOAD 11
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.updateEvolutionPaths (Lorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;)Z
+    ISTORE 15
+   L44
+    LINENUMBER 412 L44
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagonalOnly : I
+    IFGT L45
+   L46
+    LINENUMBER 413 L46
+    ALOAD 0
+    ILOAD 15
+    ALOAD 12
+    ALOAD 7
+    ALOAD 10
+    ALOAD 11
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.updateCovariance (ZLorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;[ILorg/apache/commons/math3/linear/RealMatrix;)V
+    GOTO L47
+   L45
+    LINENUMBER 415 L45
+    ALOAD 0
+    ILOAD 15
+    ALOAD 13
+    ALOAD 11
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.updateCovarianceDiagonalOnly (ZLorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;)V
+   L47
+    LINENUMBER 418 L47
+    ALOAD 0
+    DUP
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.normps : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.chiN : D
+    DDIV
+    DCONST_1
+    DSUB
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cs : D
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.damps : D
+    DDIV
+    INVOKESTATIC java/lang/Math.min (DD)D
+    INVOKESTATIC java/lang/Math.exp (D)D
+    DMUL
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+   L48
+    LINENUMBER 419 L48
+    ALOAD 9
+    ALOAD 10
+    ICONST_0
+    IALOAD
+    DALOAD
+    DSTORE 16
+   L49
+    LINENUMBER 420 L49
+    ALOAD 9
+    ALOAD 10
+    ALOAD 10
+    ARRAYLENGTH
+    ICONST_1
+    ISUB
+    IALOAD
+    DALOAD
+    DSTORE 18
+   L50
+    LINENUMBER 421 L50
+    DLOAD 3
+    DLOAD 16
+    DCMPL
+    IFLE L51
+   L52
+    LINENUMBER 422 L52
+    DLOAD 16
+    DSTORE 3
+   L53
+    LINENUMBER 423 L53
+    ALOAD 5
+    ASTORE 6
+   L54
+    LINENUMBER 424 L54
+    NEW org/apache/commons/math3/optimization/PointValuePair
+    DUP
+    ALOAD 1
+    ALOAD 12
+    ICONST_0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumn (I)[D (itf)
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer$FitnessFunction.repairAndDecode ([D)[D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.isMinimize : Z
+    IFEQ L55
+    DLOAD 16
+    GOTO L56
+   L55
+    DLOAD 16
+    DNEG
+   L56
+    INVOKESPECIAL org/apache/commons/math3/optimization/PointValuePair.<init> ([DD)V
+    ASTORE 5
+   L57
+    LINENUMBER 427 L57
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.getConvergenceChecker ()Lorg/apache/commons/math3/optimization/ConvergenceChecker;
+    IFNULL L51
+    ALOAD 6
+    IFNULL L51
+   L58
+    LINENUMBER 428 L58
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.getConvergenceChecker ()Lorg/apache/commons/math3/optimization/ConvergenceChecker;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.iterations : I
+    ALOAD 5
+    ALOAD 6
+    INVOKEINTERFACE org/apache/commons/math3/optimization/ConvergenceChecker.converged (ILjava/lang/Object;Ljava/lang/Object;)Z (itf)
+    IFEQ L51
+   L59
+    LINENUMBER 429 L59
+    GOTO L18
+   L51
+    LINENUMBER 435 L51
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.stopFitness : D
+    DCONST_0
+    DCMPL
+    IFEQ L60
+   L61
+    LINENUMBER 436 L61
+    DLOAD 16
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.isMinimize : Z
+    IFEQ L62
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.stopFitness : D
+    GOTO L63
+   L62
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.stopFitness : D
+    DNEG
+   L63
+    DCMPG
+    IFGE L60
+   L64
+    LINENUMBER 437 L64
+    GOTO L18
+   L60
+    LINENUMBER 440 L60
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagC : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.sqrt (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    ICONST_0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumn (I)[D (itf)
+    ASTORE 20
+   L65
+    LINENUMBER 441 L65
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.pc : Lorg/apache/commons/math3/linear/RealMatrix;
+    ICONST_0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumn (I)[D (itf)
+    ASTORE 21
+   L66
+    LINENUMBER 442 L66
+    ICONST_0
+    ISTORE 22
+   L67
+    ILOAD 22
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    IF_ICMPGE L68
+   L69
+    LINENUMBER 443 L69
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+    ALOAD 21
+    ILOAD 22
+    DALOAD
+    INVOKESTATIC java/lang/Math.abs (D)D
+    ALOAD 20
+    ILOAD 22
+    DALOAD
+    INVOKESTATIC java/lang/Math.max (DD)D
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.stopTolX : D
+    DCMPL
+    IFLE L70
+   L71
+    LINENUMBER 444 L71
+    GOTO L68
+   L70
+    LINENUMBER 446 L70
+    ILOAD 22
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ICONST_1
+    ISUB
+    IF_ICMPLT L72
+   L73
+    LINENUMBER 447 L73
+    GOTO L18
+   L72
+    LINENUMBER 442 L72
+    IINC 22 1
+    GOTO L67
+   L68
+    LINENUMBER 450 L68
+    ICONST_0
+    ISTORE 22
+   L74
+    ILOAD 22
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    IF_ICMPGE L75
+   L76
+    LINENUMBER 451 L76
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+    ALOAD 20
+    ILOAD 22
+    DALOAD
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.stopTolUpX : D
+    DCMPL
+    IFLE L77
+   L78
+    LINENUMBER 452 L78
+    GOTO L18
+   L77
+    LINENUMBER 450 L77
+    IINC 22 1
+    GOTO L74
+   L75
+    LINENUMBER 455 L75
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.fitnessHistory : [D
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.min ([D)D
+    DSTORE 22
+   L79
+    LINENUMBER 456 L79
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.fitnessHistory : [D
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.max ([D)D
+    DSTORE 24
+   L80
+    LINENUMBER 457 L80
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.iterations : I
+    ICONST_2
+    IF_ICMPLE L81
+    DLOAD 24
+    DLOAD 18
+    INVOKESTATIC java/lang/Math.max (DD)D
+    DLOAD 22
+    DLOAD 16
+    INVOKESTATIC java/lang/Math.min (DD)D
+    DSUB
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.stopTolFun : D
+    DCMPG
+    IFGE L81
+   L82
+    LINENUMBER 459 L82
+    GOTO L18
+   L81
+    LINENUMBER 461 L81
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.iterations : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.fitnessHistory : [D
+    ARRAYLENGTH
+    IF_ICMPLE L83
+    DLOAD 24
+    DLOAD 22
+    DSUB
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.stopTolHistFun : D
+    DCMPG
+    IFGE L83
+   L84
+    LINENUMBER 463 L84
+    GOTO L18
+   L83
+    LINENUMBER 466 L83
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.max (Lorg/apache/commons/math3/linear/RealMatrix;)D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.min (Lorg/apache/commons/math3/linear/RealMatrix;)D
+    DDIV
+    LDC 1.0E7
+    DCMPL
+    IFLE L85
+   L86
+    LINENUMBER 467 L86
+    GOTO L18
+   L85
+    LINENUMBER 470 L85
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.getConvergenceChecker ()Lorg/apache/commons/math3/optimization/ConvergenceChecker;
+    IFNULL L87
+   L88
+    LINENUMBER 471 L88
+    NEW org/apache/commons/math3/optimization/PointValuePair
+    DUP
+    ALOAD 12
+    ICONST_0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumn (I)[D (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.isMinimize : Z
+    IFEQ L89
+    DLOAD 16
+    GOTO L90
+   L89
+    DLOAD 16
+    DNEG
+   L90
+    INVOKESPECIAL org/apache/commons/math3/optimization/PointValuePair.<init> ([DD)V
+    ASTORE 26
+   L91
+    LINENUMBER 474 L91
+    ALOAD 6
+    IFNULL L92
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.getConvergenceChecker ()Lorg/apache/commons/math3/optimization/ConvergenceChecker;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.iterations : I
+    ALOAD 26
+    ALOAD 6
+    INVOKEINTERFACE org/apache/commons/math3/optimization/ConvergenceChecker.converged (ILjava/lang/Object;Ljava/lang/Object;)Z (itf)
+    IFEQ L92
+   L93
+    LINENUMBER 476 L93
+    GOTO L18
+   L92
+    LINENUMBER 478 L92
+    ALOAD 26
+    ASTORE 6
+   L87
+    LINENUMBER 481 L87
+    DLOAD 3
+    ALOAD 9
+    ALOAD 10
+    LDC 0.1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.lambda : I
+    I2D
+    LDC 4.0
+    DDIV
+    DADD
+    D2I
+    IALOAD
+    DALOAD
+    DCMPL
+    IFNE L94
+   L95
+    LINENUMBER 482 L95
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+    LDC 0.2
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cs : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.damps : D
+    DDIV
+    DADD
+    INVOKESTATIC java/lang/Math.exp (D)D
+    DMUL
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+   L94
+    LINENUMBER 484 L94
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.iterations : I
+    ICONST_2
+    IF_ICMPLE L96
+    DLOAD 24
+    DLOAD 16
+    INVOKESTATIC java/lang/Math.max (DD)D
+    DLOAD 22
+    DLOAD 16
+    INVOKESTATIC java/lang/Math.min (DD)D
+    DSUB
+    DCONST_0
+    DCMPL
+    IFNE L96
+   L97
+    LINENUMBER 486 L97
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+    LDC 0.2
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cs : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.damps : D
+    DDIV
+    DADD
+    INVOKESTATIC java/lang/Math.exp (D)D
+    DMUL
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+   L96
+    LINENUMBER 489 L96
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.fitnessHistory : [D
+    DLOAD 16
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.push ([DD)V
+   L98
+    LINENUMBER 490 L98
+    ALOAD 1
+    DLOAD 18
+    DLOAD 16
+    DSUB
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer$FitnessFunction.setValueRange (D)V
+   L99
+    LINENUMBER 491 L99
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.generateStatistics : Z
+    IFEQ L100
+   L101
+    LINENUMBER 492 L101
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.statisticsSigmaHistory : Ljava/util/List;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L102
+    LINENUMBER 493 L102
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.statisticsFitnessHistory : Ljava/util/List;
+    DLOAD 16
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L103
+    LINENUMBER 494 L103
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.statisticsMeanHistory : Ljava/util/List;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.xmean : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.transpose ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L104
+    LINENUMBER 495 L104
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.statisticsDHistory : Ljava/util/List;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.transpose ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    LDC 100000.0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L100
+    LINENUMBER 374 L100
+    ALOAD 0
+    DUP
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.iterations : I
+    ICONST_1
+    IADD
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.iterations : I
+    GOTO L17
+   L18
+    LINENUMBER 498 L18
+    ALOAD 5
+    ARETURN
+   L105
+    LOCALVARIABLE i I L27 L28 12
+    LOCALVARIABLE e Lorg/apache/commons/math3/exception/TooManyEvaluationsException; L37 L36 12
+    LOCALVARIABLE arxk Lorg/apache/commons/math3/linear/RealMatrix; L26 L36 11
+    LOCALVARIABLE k I L23 L24 10
+    LOCALVARIABLE i I L67 L68 22
+    LOCALVARIABLE i I L74 L75 22
+    LOCALVARIABLE current Lorg/apache/commons/math3/optimization/PointValuePair; L91 L87 26
+    LOCALVARIABLE arz Lorg/apache/commons/math3/linear/RealMatrix; L20 L100 7
+    LOCALVARIABLE arx Lorg/apache/commons/math3/linear/RealMatrix; L21 L100 8
+    LOCALVARIABLE fitness [D L22 L100 9
+    LOCALVARIABLE arindex [I L38 L100 10
+    LOCALVARIABLE xold Lorg/apache/commons/math3/linear/RealMatrix; L39 L100 11
+    LOCALVARIABLE bestArx Lorg/apache/commons/math3/linear/RealMatrix; L40 L100 12
+    LOCALVARIABLE bestArz Lorg/apache/commons/math3/linear/RealMatrix; L42 L100 13
+    LOCALVARIABLE zmean Lorg/apache/commons/math3/linear/RealMatrix; L43 L100 14
+    LOCALVARIABLE hsig Z L44 L100 15
+    LOCALVARIABLE bestFitness D L49 L100 16
+    LOCALVARIABLE worstFitness D L50 L100 18
+    LOCALVARIABLE sqrtDiagC [D L65 L100 20
+    LOCALVARIABLE pcCol [D L66 L100 21
+    LOCALVARIABLE historyBest D L79 L100 22
+    LOCALVARIABLE historyWorst D L80 L100 24
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L3 L105 0
+    LOCALVARIABLE fitfun Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer$FitnessFunction; L6 L105 1
+    LOCALVARIABLE guess [D L7 L105 2
+    LOCALVARIABLE bestValue D L11 L105 3
+    LOCALVARIABLE optimum Lorg/apache/commons/math3/optimization/PointValuePair; L15 L105 5
+    LOCALVARIABLE lastResult Lorg/apache/commons/math3/optimization/PointValuePair; L16 L105 6
+    MAXSTACK = 10
+    MAXLOCALS = 27
+
+  // access flags 0x2
+  private checkParameters()V
+   L0
+    LINENUMBER 505 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.getStartPoint ()[D
+    ASTORE 1
+   L1
+    LINENUMBER 506 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.getLowerBound ()[D
+    ASTORE 2
+   L2
+    LINENUMBER 507 L2
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.getUpperBound ()[D
+    ASTORE 3
+   L3
+    LINENUMBER 510 L3
+    ICONST_0
+    ISTORE 4
+   L4
+    LINENUMBER 511 L4
+    ICONST_0
+    ISTORE 5
+   L5
+    ILOAD 5
+    ALOAD 2
+    ARRAYLENGTH
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 512 L7
+    ALOAD 2
+    ILOAD 5
+    DALOAD
+    INVOKESTATIC java/lang/Double.isInfinite (D)Z
+    IFEQ L8
+    ALOAD 3
+    ILOAD 5
+    DALOAD
+    INVOKESTATIC java/lang/Double.isInfinite (D)Z
+    IFNE L9
+   L8
+    LINENUMBER 514 L8
+    ICONST_1
+    ISTORE 4
+   L10
+    LINENUMBER 515 L10
+    GOTO L6
+   L9
+    LINENUMBER 511 L9
+    IINC 5 1
+    GOTO L5
+   L6
+    LINENUMBER 519 L6
+    ICONST_0
+    ISTORE 5
+   L11
+    LINENUMBER 520 L11
+    ILOAD 4
+    IFEQ L12
+   L13
+    LINENUMBER 521 L13
+    ICONST_0
+    ISTORE 6
+   L14
+    ILOAD 6
+    ALOAD 2
+    ARRAYLENGTH
+    IF_ICMPGE L15
+   L16
+    LINENUMBER 522 L16
+    ALOAD 2
+    ILOAD 6
+    DALOAD
+    INVOKESTATIC java/lang/Double.isInfinite (D)Z
+    IFNE L17
+    ALOAD 3
+    ILOAD 6
+    DALOAD
+    INVOKESTATIC java/lang/Double.isInfinite (D)Z
+    IFEQ L18
+   L17
+    LINENUMBER 524 L17
+    ICONST_1
+    ISTORE 5
+   L19
+    LINENUMBER 525 L19
+    GOTO L15
+   L18
+    LINENUMBER 521 L18
+    IINC 6 1
+    GOTO L14
+   L15
+    LINENUMBER 529 L15
+    ILOAD 5
+    IFEQ L20
+   L21
+    LINENUMBER 532 L21
+    NEW org/apache/commons/math3/exception/MathUnsupportedOperationException
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/exception/MathUnsupportedOperationException.<init> ()V
+    ATHROW
+   L20
+    LINENUMBER 535 L20
+    ALOAD 0
+    ICONST_2
+    ANEWARRAY [D
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+   L22
+    LINENUMBER 536 L22
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    ICONST_0
+    ALOAD 2
+    AASTORE
+   L23
+    LINENUMBER 537 L23
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    ICONST_1
+    ALOAD 3
+    AASTORE
+   L24
+    LINENUMBER 540 L24
+    ICONST_0
+    ISTORE 6
+   L25
+    ILOAD 6
+    ALOAD 2
+    ARRAYLENGTH
+    IF_ICMPGE L26
+   L27
+    LINENUMBER 541 L27
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    ICONST_1
+    AALOAD
+    ILOAD 6
+    DALOAD
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    ICONST_0
+    AALOAD
+    ILOAD 6
+    DALOAD
+    DSUB
+    INVOKESTATIC java/lang/Double.isInfinite (D)Z
+    IFEQ L28
+   L29
+    LINENUMBER 542 L29
+    LDC 1.7976931348623157E308
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    ICONST_0
+    AALOAD
+    ILOAD 6
+    DALOAD
+    DADD
+    DSTORE 7
+   L30
+    LINENUMBER 543 L30
+    NEW org/apache/commons/math3/exception/NumberIsTooLargeException
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    ICONST_1
+    AALOAD
+    ILOAD 6
+    DALOAD
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    DLOAD 7
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    ICONST_1
+    INVOKESPECIAL org/apache/commons/math3/exception/NumberIsTooLargeException.<init> (Ljava/lang/Number;Ljava/lang/Number;Z)V
+    ASTORE 9
+   L31
+    LINENUMBER 547 L31
+    ALOAD 9
+    INVOKEVIRTUAL org/apache/commons/math3/exception/NumberIsTooLargeException.getContext ()Lorg/apache/commons/math3/exception/util/ExceptionContext;
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.OVERFLOW : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKEVIRTUAL org/apache/commons/math3/exception/util/ExceptionContext.addMessage (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+   L32
+    LINENUMBER 548 L32
+    ALOAD 9
+    INVOKEVIRTUAL org/apache/commons/math3/exception/NumberIsTooLargeException.getContext ()Lorg/apache/commons/math3/exception/util/ExceptionContext;
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.INDEX : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_1
+    ANEWARRAY java/lang/Object
+    DUP
+    ICONST_1
+    ILOAD 6
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    INVOKEVIRTUAL org/apache/commons/math3/exception/util/ExceptionContext.addMessage (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+   L33
+    LINENUMBER 550 L33
+    ALOAD 9
+    ATHROW
+   L28
+    LINENUMBER 540 L28
+    IINC 6 1
+    GOTO L25
+   L26
+    GOTO L34
+   L12
+    LINENUMBER 556 L12
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[D
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+   L34
+    LINENUMBER 559 L34
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.inputSigma : [D
+    IFNULL L35
+   L36
+    LINENUMBER 560 L36
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.inputSigma : [D
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPEQ L37
+   L38
+    LINENUMBER 561 L38
+    NEW org/apache/commons/math3/exception/DimensionMismatchException
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.inputSigma : [D
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKESPECIAL org/apache/commons/math3/exception/DimensionMismatchException.<init> (II)V
+    ATHROW
+   L37
+    LINENUMBER 563 L37
+    ICONST_0
+    ISTORE 6
+   L39
+    ILOAD 6
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L35
+   L40
+    LINENUMBER 564 L40
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.inputSigma : [D
+    ILOAD 6
+    DALOAD
+    DCONST_0
+    DCMPG
+    IFGE L41
+   L42
+    LINENUMBER 565 L42
+    NEW org/apache/commons/math3/exception/NotPositiveException
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.inputSigma : [D
+    ILOAD 6
+    DALOAD
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    INVOKESPECIAL org/apache/commons/math3/exception/NotPositiveException.<init> (Ljava/lang/Number;)V
+    ATHROW
+   L41
+    LINENUMBER 567 L41
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    IFNULL L43
+   L44
+    LINENUMBER 568 L44
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.inputSigma : [D
+    ILOAD 6
+    DALOAD
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    ICONST_1
+    AALOAD
+    ILOAD 6
+    DALOAD
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    ICONST_0
+    AALOAD
+    ILOAD 6
+    DALOAD
+    DSUB
+    DCMPL
+    IFLE L43
+   L45
+    LINENUMBER 569 L45
+    NEW org/apache/commons/math3/exception/OutOfRangeException
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.inputSigma : [D
+    ILOAD 6
+    DALOAD
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    ICONST_0
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    ICONST_1
+    AALOAD
+    ILOAD 6
+    DALOAD
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    ICONST_0
+    AALOAD
+    ILOAD 6
+    DALOAD
+    DSUB
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    INVOKESPECIAL org/apache/commons/math3/exception/OutOfRangeException.<init> (Ljava/lang/Number;Ljava/lang/Number;Ljava/lang/Number;)V
+    ATHROW
+   L43
+    LINENUMBER 563 L43
+    IINC 6 1
+    GOTO L39
+   L35
+    LINENUMBER 574 L35
+    RETURN
+   L46
+    LOCALVARIABLE i I L5 L6 5
+    LOCALVARIABLE i I L14 L15 6
+    LOCALVARIABLE max D L30 L28 7
+    LOCALVARIABLE e Lorg/apache/commons/math3/exception/NumberIsTooLargeException; L31 L28 9
+    LOCALVARIABLE i I L25 L26 6
+    LOCALVARIABLE i I L39 L35 6
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L46 0
+    LOCALVARIABLE init [D L1 L46 1
+    LOCALVARIABLE lB [D L2 L46 2
+    LOCALVARIABLE uB [D L3 L46 3
+    LOCALVARIABLE hasFiniteBounds Z L4 L46 4
+    LOCALVARIABLE hasInfiniteBounds Z L11 L46 5
+    MAXSTACK = 8
+    MAXLOCALS = 10
+
+  // access flags 0x2
+  private initializeCMA([D)V
+   L0
+    LINENUMBER 582 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.lambda : I
+    IFGT L1
+   L2
+    LINENUMBER 583 L2
+    ALOAD 0
+    ICONST_4
+    LDC 3.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    INVOKESTATIC java/lang/Math.log (D)D
+    DMUL
+    D2I
+    IADD
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.lambda : I
+   L1
+    LINENUMBER 586 L1
+    ALOAD 1
+    ARRAYLENGTH
+    ICONST_1
+    MULTIANEWARRAY [[D 2
+    ASTORE 2
+   L3
+    LINENUMBER 587 L3
+    ICONST_0
+    ISTORE 3
+   L4
+    ILOAD 3
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 588 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    IFNONNULL L7
+    DCONST_1
+    GOTO L8
+   L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    ICONST_1
+    AALOAD
+    ILOAD 3
+    DALOAD
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    ICONST_0
+    AALOAD
+    ILOAD 3
+    DALOAD
+    DSUB
+   L8
+    DSTORE 4
+   L9
+    LINENUMBER 589 L9
+    ALOAD 2
+    ILOAD 3
+    AALOAD
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.inputSigma : [D
+    IFNONNULL L10
+    LDC 0.3
+    GOTO L11
+   L10
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.inputSigma : [D
+    ILOAD 3
+    DALOAD
+   L11
+    DLOAD 4
+    DDIV
+    DASTORE
+   L12
+    LINENUMBER 587 L12
+    IINC 3 1
+    GOTO L4
+   L5
+    LINENUMBER 591 L5
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ASTORE 3
+   L13
+    LINENUMBER 592 L13
+    ALOAD 0
+    ALOAD 3
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.max (Lorg/apache/commons/math3/linear/RealMatrix;)D
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+   L14
+    LINENUMBER 595 L14
+    ALOAD 0
+    LDC 1000.0
+    ALOAD 3
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.max (Lorg/apache/commons/math3/linear/RealMatrix;)D
+    DMUL
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.stopTolUpX : D
+   L15
+    LINENUMBER 596 L15
+    ALOAD 0
+    LDC 1.0E-11
+    ALOAD 3
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.max (Lorg/apache/commons/math3/linear/RealMatrix;)D
+    DMUL
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.stopTolX : D
+   L16
+    LINENUMBER 597 L16
+    ALOAD 0
+    LDC 1.0E-12
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.stopTolFun : D
+   L17
+    LINENUMBER 598 L17
+    ALOAD 0
+    LDC 1.0E-13
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.stopTolHistFun : D
+   L18
+    LINENUMBER 601 L18
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.lambda : I
+    ICONST_2
+    IDIV
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mu : I
+   L19
+    LINENUMBER 602 L19
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mu : I
+    I2D
+    LDC 0.5
+    DADD
+    INVOKESTATIC java/lang/Math.log (D)D
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.logMu2 : D
+   L20
+    LINENUMBER 603 L20
+    ALOAD 0
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mu : I
+    I2D
+    DCONST_1
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.sequence (DDD)Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.log (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    LDC -1.0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.logMu2 : D
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarAdd (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.weights : Lorg/apache/commons/math3/linear/RealMatrix;
+   L21
+    LINENUMBER 604 L21
+    DCONST_0
+    DSTORE 4
+   L22
+    LINENUMBER 605 L22
+    DCONST_0
+    DSTORE 6
+   L23
+    LINENUMBER 606 L23
+    ICONST_0
+    ISTORE 8
+   L24
+    ILOAD 8
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mu : I
+    IF_ICMPGE L25
+   L26
+    LINENUMBER 607 L26
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.weights : Lorg/apache/commons/math3/linear/RealMatrix;
+    ILOAD 8
+    ICONST_0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    DSTORE 9
+   L27
+    LINENUMBER 608 L27
+    DLOAD 4
+    DLOAD 9
+    DADD
+    DSTORE 4
+   L28
+    LINENUMBER 609 L28
+    DLOAD 6
+    DLOAD 9
+    DLOAD 9
+    DMUL
+    DADD
+    DSTORE 6
+   L29
+    LINENUMBER 606 L29
+    IINC 8 1
+    GOTO L24
+   L25
+    LINENUMBER 611 L25
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.weights : Lorg/apache/commons/math3/linear/RealMatrix;
+    DCONST_1
+    DLOAD 4
+    DDIV
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.weights : Lorg/apache/commons/math3/linear/RealMatrix;
+   L30
+    LINENUMBER 612 L30
+    ALOAD 0
+    DLOAD 4
+    DLOAD 4
+    DMUL
+    DLOAD 6
+    DDIV
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mueff : D
+   L31
+    LINENUMBER 615 L31
+    ALOAD 0
+    LDC 4.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mueff : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    DDIV
+    DADD
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    LDC 4.0
+    DADD
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mueff : D
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    DDIV
+    DADD
+    DDIV
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cc : D
+   L32
+    LINENUMBER 617 L32
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mueff : D
+    LDC 2.0
+    DADD
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mueff : D
+    DADD
+    LDC 3.0
+    DADD
+    DDIV
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cs : D
+   L33
+    LINENUMBER 618 L33
+    ALOAD 0
+    DCONST_1
+    LDC 2.0
+    DCONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mueff : D
+    DCONST_1
+    DSUB
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    DCONST_1
+    DADD
+    DDIV
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DCONST_1
+    DSUB
+    INVOKESTATIC java/lang/Math.max (DD)D
+    DMUL
+    DADD
+    LDC 0.3
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    LDC 1.0E-6
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.maxIterations : I
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.getMaxEvaluations ()I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.lambda : I
+    IDIV
+    INVOKESTATIC java/lang/Math.min (II)I
+    I2D
+    DADD
+    DDIV
+    DSUB
+    INVOKESTATIC java/lang/Math.max (DD)D
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cs : D
+    DADD
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.damps : D
+   L34
+    LINENUMBER 623 L34
+    ALOAD 0
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    LDC 1.3
+    DADD
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    LDC 1.3
+    DADD
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mueff : D
+    DADD
+    DDIV
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccov1 : D
+   L35
+    LINENUMBER 624 L35
+    ALOAD 0
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccov1 : D
+    DSUB
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mueff : D
+    LDC 2.0
+    DSUB
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mueff : D
+    DDIV
+    DADD
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    LDC 2.0
+    DADD
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    LDC 2.0
+    DADD
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mueff : D
+    DADD
+    DDIV
+    INVOKESTATIC java/lang/Math.min (DD)D
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccovmu : D
+   L36
+    LINENUMBER 626 L36
+    ALOAD 0
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccov1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    LDC 1.5
+    DADD
+    DMUL
+    LDC 3.0
+    DDIV
+    INVOKESTATIC java/lang/Math.min (DD)D
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccov1Sep : D
+   L37
+    LINENUMBER 627 L37
+    ALOAD 0
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccov1 : D
+    DSUB
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccovmu : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    LDC 1.5
+    DADD
+    DMUL
+    LDC 3.0
+    DDIV
+    INVOKESTATIC java/lang/Math.min (DD)D
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccovmuSep : D
+   L38
+    LINENUMBER 628 L38
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DCONST_1
+    DCONST_1
+    LDC 4.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    DMUL
+    DDIV
+    DSUB
+    DCONST_1
+    LDC 21.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    DMUL
+    DDIV
+    DADD
+    DMUL
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.chiN : D
+   L39
+    LINENUMBER 631 L39
+    ALOAD 0
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math3/linear/MatrixUtils.createColumnRealMatrix ([D)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.xmean : Lorg/apache/commons/math3/linear/RealMatrix;
+   L40
+    LINENUMBER 633 L40
+    ALOAD 0
+    ALOAD 3
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+    DDIV
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+   L41
+    LINENUMBER 634 L41
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.square (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagC : Lorg/apache/commons/math3/linear/RealMatrix;
+   L42
+    LINENUMBER 635 L42
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ICONST_1
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.zeros (II)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.pc : Lorg/apache/commons/math3/linear/RealMatrix;
+   L43
+    LINENUMBER 636 L43
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ICONST_1
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.zeros (II)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ps : Lorg/apache/commons/math3/linear/RealMatrix;
+   L44
+    LINENUMBER 637 L44
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ps : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getFrobeniusNorm ()D (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.normps : D
+   L45
+    LINENUMBER 639 L45
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.eye (II)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.B : Lorg/apache/commons/math3/linear/RealMatrix;
+   L46
+    LINENUMBER 640 L46
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ICONST_1
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.ones (II)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.D : Lorg/apache/commons/math3/linear/RealMatrix;
+   L47
+    LINENUMBER 641 L47
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.B : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.transpose ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ICONST_1
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.repmat (Lorg/apache/commons/math3/linear/RealMatrix;II)Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.times (Lorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.BD : Lorg/apache/commons/math3/linear/RealMatrix;
+   L48
+    LINENUMBER 642 L48
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.B : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.D : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.square (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.diag (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.B : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.transpose ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+   L49
+    LINENUMBER 643 L49
+    ALOAD 0
+    BIPUSH 10
+    LDC 30.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.lambda : I
+    I2D
+    DDIV
+    D2I
+    IADD
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.historySize : I
+   L50
+    LINENUMBER 644 L50
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.historySize : I
+    NEWARRAY T_DOUBLE
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.fitnessHistory : [D
+   L51
+    LINENUMBER 645 L51
+    ICONST_0
+    ISTORE 8
+   L52
+    ILOAD 8
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.historySize : I
+    IF_ICMPGE L53
+   L54
+    LINENUMBER 646 L54
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.fitnessHistory : [D
+    ILOAD 8
+    LDC 1.7976931348623157E308
+    DASTORE
+   L55
+    LINENUMBER 645 L55
+    IINC 8 1
+    GOTO L52
+   L53
+    LINENUMBER 648 L53
+    RETURN
+   L56
+    LOCALVARIABLE range D L9 L12 4
+    LOCALVARIABLE i I L4 L5 3
+    LOCALVARIABLE w D L27 L29 9
+    LOCALVARIABLE i I L24 L25 8
+    LOCALVARIABLE i I L52 L53 8
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L56 0
+    LOCALVARIABLE guess [D L0 L56 1
+    LOCALVARIABLE sigmaArray [[D L3 L56 2
+    LOCALVARIABLE insigma Lorg/apache/commons/math3/linear/RealMatrix; L13 L56 3
+    LOCALVARIABLE sumw D L22 L56 4
+    LOCALVARIABLE sumwq D L23 L56 6
+    MAXSTACK = 14
+    MAXLOCALS = 11
+
+  // access flags 0x2
+  private updateEvolutionPaths(Lorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;)Z
+   L0
+    LINENUMBER 659 L0
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ps : Lorg/apache/commons/math3/linear/RealMatrix;
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cs : D
+    DSUB
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.B : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cs : D
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cs : D
+    DSUB
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mueff : D
+    DMUL
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ps : Lorg/apache/commons/math3/linear/RealMatrix;
+   L1
+    LINENUMBER 662 L1
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ps : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getFrobeniusNorm ()D (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.normps : D
+   L2
+    LINENUMBER 663 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.normps : D
+    DCONST_1
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cs : D
+    DSUB
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.iterations : I
+    I2D
+    DMUL
+    INVOKESTATIC java/lang/Math.pow (DD)D
+    DSUB
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DDIV
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.chiN : D
+    DDIV
+    LDC 1.4
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    DCONST_1
+    DADD
+    DDIV
+    DADD
+    DCMPG
+    IFGE L3
+    ICONST_1
+    GOTO L4
+   L3
+    ICONST_0
+   L4
+    ISTORE 3
+   L5
+    LINENUMBER 666 L5
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.pc : Lorg/apache/commons/math3/linear/RealMatrix;
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cc : D
+    DSUB
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.pc : Lorg/apache/commons/math3/linear/RealMatrix;
+   L6
+    LINENUMBER 667 L6
+    ILOAD 3
+    IFEQ L7
+   L8
+    LINENUMBER 668 L8
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.pc : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.xmean : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 2
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.subtract (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cc : D
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cc : D
+    DSUB
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mueff : D
+    DMUL
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+    DDIV
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.pc : Lorg/apache/commons/math3/linear/RealMatrix;
+   L7
+    LINENUMBER 671 L7
+    ILOAD 3
+    IRETURN
+   L9
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L9 0
+    LOCALVARIABLE zmean Lorg/apache/commons/math3/linear/RealMatrix; L0 L9 1
+    LOCALVARIABLE xold Lorg/apache/commons/math3/linear/RealMatrix; L0 L9 2
+    LOCALVARIABLE hsig Z L5 L9 3
+    MAXSTACK = 10
+    MAXLOCALS = 4
+
+  // access flags 0x2
+  private updateCovarianceDiagonalOnly(ZLorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;)V
+   L0
+    LINENUMBER 686 L0
+    ILOAD 1
+    IFEQ L1
+    DCONST_0
+    GOTO L2
+   L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccov1Sep : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cc : D
+    DMUL
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cc : D
+    DSUB
+    DMUL
+   L2
+    DSTORE 4
+   L3
+    LINENUMBER 687 L3
+    DLOAD 4
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccov1Sep : D
+    DSUB
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccovmuSep : D
+    DSUB
+    DADD
+    DSTORE 4
+   L4
+    LINENUMBER 688 L4
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagC : Lorg/apache/commons/math3/linear/RealMatrix;
+    DLOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.pc : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.square (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccov1Sep : D
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagC : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 2
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.square (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.weights : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.times (Lorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccovmuSep : D
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagC : Lorg/apache/commons/math3/linear/RealMatrix;
+   L5
+    LINENUMBER 694 L5
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagC : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.sqrt (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+   L6
+    LINENUMBER 695 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagonalOnly : I
+    ICONST_1
+    IF_ICMPLE L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.iterations : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagonalOnly : I
+    IF_ICMPLE L7
+   L8
+    LINENUMBER 697 L8
+    ALOAD 0
+    ICONST_0
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagonalOnly : I
+   L9
+    LINENUMBER 698 L9
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.eye (II)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.B : Lorg/apache/commons/math3/linear/RealMatrix;
+   L10
+    LINENUMBER 699 L10
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.diag (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.BD : Lorg/apache/commons/math3/linear/RealMatrix;
+   L11
+    LINENUMBER 700 L11
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagC : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.diag (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+   L7
+    LINENUMBER 702 L7
+    RETURN
+   L12
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L12 0
+    LOCALVARIABLE hsig Z L0 L12 1
+    LOCALVARIABLE bestArz Lorg/apache/commons/math3/linear/RealMatrix; L0 L12 2
+    LOCALVARIABLE xold Lorg/apache/commons/math3/linear/RealMatrix; L0 L12 3
+    LOCALVARIABLE oldFac D L3 L12 4
+    MAXSTACK = 6
+    MAXLOCALS = 6
+
+  // access flags 0x2
+  private updateCovariance(ZLorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;[ILorg/apache/commons/math3/linear/RealMatrix;)V
+   L0
+    LINENUMBER 717 L0
+    DCONST_0
+    DSTORE 6
+   L1
+    LINENUMBER 718 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccov1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccovmu : D
+    DADD
+    DCONST_0
+    DCMPL
+    IFLE L2
+   L3
+    LINENUMBER 719 L3
+    ALOAD 2
+    ALOAD 5
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mu : I
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.repmat (Lorg/apache/commons/math3/linear/RealMatrix;II)Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.subtract (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.sigma : D
+    DDIV
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ASTORE 8
+   L4
+    LINENUMBER 721 L4
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.pc : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.pc : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.transpose ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccov1 : D
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ASTORE 9
+   L5
+    LINENUMBER 724 L5
+    ILOAD 1
+    IFEQ L6
+    DCONST_0
+    GOTO L7
+   L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccov1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cc : D
+    DMUL
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.cc : D
+    DSUB
+    DMUL
+   L7
+    DSTORE 10
+   L8
+    LINENUMBER 725 L8
+    DLOAD 10
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccov1 : D
+    DSUB
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccovmu : D
+    DSUB
+    DADD
+    DSTORE 10
+   L9
+    LINENUMBER 726 L9
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.isActiveCMA : Z
+    IFEQ L10
+   L11
+    LINENUMBER 728 L11
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccovmu : D
+    DSUB
+    LDC 0.25
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mueff : D
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    LDC 2.0
+    DADD
+    LDC 1.5
+    INVOKESTATIC java/lang/Math.pow (DD)D
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mueff : D
+    DMUL
+    DADD
+    DDIV
+    DSTORE 6
+   L12
+    LINENUMBER 730 L12
+    LDC 0.66
+    DSTORE 12
+   L13
+    LINENUMBER 733 L13
+    LDC 0.5
+    DSTORE 14
+   L14
+    LINENUMBER 736 L14
+    ALOAD 4
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.reverse ([I)[I
+    ASTORE 16
+   L15
+    LINENUMBER 737 L15
+    ALOAD 3
+    ALOAD 16
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.mu : I
+    INVOKESTATIC org/apache/commons/math3/util/MathArrays.copyOf ([II)[I
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.selectColumns (Lorg/apache/commons/math3/linear/RealMatrix;[I)Lorg/apache/commons/math3/linear/RealMatrix;
+    ASTORE 17
+   L16
+    LINENUMBER 739 L16
+    ALOAD 17
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.square (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.sumRows (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.sqrt (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    ASTORE 18
+   L17
+    LINENUMBER 740 L17
+    ALOAD 0
+    ALOAD 18
+    ICONST_0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRow (I)[D (itf)
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.sortedIndices ([D)[I
+    ASTORE 19
+   L18
+    LINENUMBER 741 L18
+    ALOAD 18
+    ALOAD 19
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.selectColumns (Lorg/apache/commons/math3/linear/RealMatrix;[I)Lorg/apache/commons/math3/linear/RealMatrix;
+    ASTORE 20
+   L19
+    LINENUMBER 742 L19
+    ALOAD 19
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.reverse ([I)[I
+    ASTORE 21
+   L20
+    LINENUMBER 743 L20
+    ALOAD 18
+    ALOAD 21
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.selectColumns (Lorg/apache/commons/math3/linear/RealMatrix;[I)Lorg/apache/commons/math3/linear/RealMatrix;
+    ASTORE 22
+   L21
+    LINENUMBER 744 L21
+    ALOAD 22
+    ALOAD 20
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.divide (Lorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    ASTORE 18
+   L22
+    LINENUMBER 745 L22
+    ALOAD 19
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.inverse ([I)[I
+    ASTORE 23
+   L23
+    LINENUMBER 746 L23
+    ALOAD 18
+    ALOAD 23
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.selectColumns (Lorg/apache/commons/math3/linear/RealMatrix;[I)Lorg/apache/commons/math3/linear/RealMatrix;
+    ASTORE 24
+   L24
+    LINENUMBER 748 L24
+    DCONST_1
+    DLOAD 12
+    DSUB
+    ALOAD 24
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.square (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.weights : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ICONST_0
+    ICONST_0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    DDIV
+    DSTORE 25
+   L25
+    LINENUMBER 750 L25
+    DLOAD 6
+    DLOAD 25
+    DCMPL
+    IFLE L26
+   L27
+    LINENUMBER 751 L27
+    DLOAD 25
+    DSTORE 6
+   L26
+    LINENUMBER 753 L26
+    ALOAD 17
+    ALOAD 24
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ICONST_1
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.repmat (Lorg/apache/commons/math3/linear/RealMatrix;II)Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.times (Lorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    ASTORE 17
+   L28
+    LINENUMBER 754 L28
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.BD : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 17
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ASTORE 27
+   L29
+    LINENUMBER 755 L29
+    ALOAD 27
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.weights : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.diag (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 27
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.transpose ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ASTORE 28
+   L30
+    LINENUMBER 757 L30
+    DLOAD 10
+    DLOAD 14
+    DLOAD 6
+    DMUL
+    DADD
+    DSTORE 10
+   L31
+    LINENUMBER 758 L31
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+    DLOAD 10
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 9
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 8
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccovmu : D
+    DCONST_1
+    DLOAD 14
+    DSUB
+    DLOAD 6
+    DMUL
+    DADD
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.weights : Lorg/apache/commons/math3/linear/RealMatrix;
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.repmat (Lorg/apache/commons/math3/linear/RealMatrix;II)Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 8
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.transpose ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.times (Lorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 28
+    DLOAD 6
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.subtract (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+   L32
+    LINENUMBER 769 L32
+    GOTO L2
+   L10
+    LINENUMBER 771 L10
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+    DLOAD 10
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 9
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 8
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccovmu : D
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.weights : Lorg/apache/commons/math3/linear/RealMatrix;
+    ICONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.repmat (Lorg/apache/commons/math3/linear/RealMatrix;II)Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 8
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.transpose ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.times (Lorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.multiply (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+   L2
+    LINENUMBER 780 L2
+    ALOAD 0
+    DLOAD 6
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer.updateBD (D)V
+   L33
+    LINENUMBER 781 L33
+    RETURN
+   L34
+    LOCALVARIABLE negminresidualvariance D L13 L32 12
+    LOCALVARIABLE negalphaold D L14 L32 14
+    LOCALVARIABLE arReverseIndex [I L15 L32 16
+    LOCALVARIABLE arzneg Lorg/apache/commons/math3/linear/RealMatrix; L16 L32 17
+    LOCALVARIABLE arnorms Lorg/apache/commons/math3/linear/RealMatrix; L17 L32 18
+    LOCALVARIABLE idxnorms [I L18 L32 19
+    LOCALVARIABLE arnormsSorted Lorg/apache/commons/math3/linear/RealMatrix; L19 L32 20
+    LOCALVARIABLE idxReverse [I L20 L32 21
+    LOCALVARIABLE arnormsReverse Lorg/apache/commons/math3/linear/RealMatrix; L21 L32 22
+    LOCALVARIABLE idxInv [I L23 L32 23
+    LOCALVARIABLE arnormsInv Lorg/apache/commons/math3/linear/RealMatrix; L24 L32 24
+    LOCALVARIABLE negcovMax D L25 L32 25
+    LOCALVARIABLE artmp Lorg/apache/commons/math3/linear/RealMatrix; L29 L32 27
+    LOCALVARIABLE Cneg Lorg/apache/commons/math3/linear/RealMatrix; L30 L32 28
+    LOCALVARIABLE arpos Lorg/apache/commons/math3/linear/RealMatrix; L4 L2 8
+    LOCALVARIABLE roneu Lorg/apache/commons/math3/linear/RealMatrix; L5 L2 9
+    LOCALVARIABLE oldFac D L8 L2 10
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L34 0
+    LOCALVARIABLE hsig Z L0 L34 1
+    LOCALVARIABLE bestArx Lorg/apache/commons/math3/linear/RealMatrix; L0 L34 2
+    LOCALVARIABLE arz Lorg/apache/commons/math3/linear/RealMatrix; L0 L34 3
+    LOCALVARIABLE arindex [I L0 L34 4
+    LOCALVARIABLE xold Lorg/apache/commons/math3/linear/RealMatrix; L0 L34 5
+    LOCALVARIABLE negccov D L1 L34 6
+    MAXSTACK = 9
+    MAXLOCALS = 29
+
+  // access flags 0x2
+  private updateBD(D)V
+   L0
+    LINENUMBER 789 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccov1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccovmu : D
+    DADD
+    DLOAD 1
+    DADD
+    DCONST_0
+    DCMPL
+    IFLE L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.iterations : I
+    I2D
+    DCONST_1
+    DREM
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccov1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.ccovmu : D
+    DADD
+    DLOAD 1
+    DADD
+    DDIV
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    I2D
+    DDIV
+    LDC 10.0
+    DDIV
+    DCONST_1
+    DCMPG
+    IFGE L1
+   L2
+    LINENUMBER 792 L2
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+    ICONST_0
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.triu (Lorg/apache/commons/math3/linear/RealMatrix;I)Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+    ICONST_1
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.triu (Lorg/apache/commons/math3/linear/RealMatrix;I)Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.transpose ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+   L3
+    LINENUMBER 794 L3
+    NEW org/apache/commons/math3/linear/EigenDecomposition
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESPECIAL org/apache/commons/math3/linear/EigenDecomposition.<init> (Lorg/apache/commons/math3/linear/RealMatrix;)V
+    ASTORE 3
+   L4
+    LINENUMBER 795 L4
+    ALOAD 0
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math3/linear/EigenDecomposition.getV ()Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.B : Lorg/apache/commons/math3/linear/RealMatrix;
+   L5
+    LINENUMBER 796 L5
+    ALOAD 0
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math3/linear/EigenDecomposition.getD ()Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.D : Lorg/apache/commons/math3/linear/RealMatrix;
+   L6
+    LINENUMBER 797 L6
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.D : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.diag (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+   L7
+    LINENUMBER 798 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.min (Lorg/apache/commons/math3/linear/RealMatrix;)D
+    DCONST_0
+    DCMPG
+    IFGT L8
+   L9
+    LINENUMBER 799 L9
+    ICONST_0
+    ISTORE 4
+   L10
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 800 L12
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    ILOAD 4
+    ICONST_0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    DCONST_0
+    DCMPG
+    IFGE L13
+   L14
+    LINENUMBER 801 L14
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    ILOAD 4
+    ICONST_0
+    DCONST_0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.setEntry (IID)V (itf)
+   L13
+    LINENUMBER 799 L13
+    IINC 4 1
+    GOTO L10
+   L11
+    LINENUMBER 804 L11
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.max (Lorg/apache/commons/math3/linear/RealMatrix;)D
+    LDC 1.0E14
+    DDIV
+    DSTORE 4
+   L15
+    LINENUMBER 805 L15
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.eye (II)Lorg/apache/commons/math3/linear/RealMatrix;
+    DLOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+   L16
+    LINENUMBER 806 L16
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ICONST_1
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.ones (II)Lorg/apache/commons/math3/linear/RealMatrix;
+    DLOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+   L8
+    LINENUMBER 808 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.max (Lorg/apache/commons/math3/linear/RealMatrix;)D
+    LDC 1.0E14
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.min (Lorg/apache/commons/math3/linear/RealMatrix;)D
+    DMUL
+    DCMPL
+    IFLE L17
+   L18
+    LINENUMBER 809 L18
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.max (Lorg/apache/commons/math3/linear/RealMatrix;)D
+    LDC 1.0E14
+    DDIV
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.min (Lorg/apache/commons/math3/linear/RealMatrix;)D
+    DSUB
+    DSTORE 4
+   L19
+    LINENUMBER 810 L19
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.eye (II)Lorg/apache/commons/math3/linear/RealMatrix;
+    DLOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+   L20
+    LINENUMBER 811 L20
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ICONST_1
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.ones (II)Lorg/apache/commons/math3/linear/RealMatrix;
+    DLOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.scalarMultiply (D)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.add (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+   L17
+    LINENUMBER 813 L17
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.C : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.diag (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagC : Lorg/apache/commons/math3/linear/RealMatrix;
+   L21
+    LINENUMBER 814 L21
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.sqrt (Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+   L22
+    LINENUMBER 815 L22
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.B : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.diagD : Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.transpose ()Lorg/apache/commons/math3/linear/RealMatrix; (itf)
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.dimension : I
+    ICONST_1
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.repmat (Lorg/apache/commons/math3/linear/RealMatrix;II)Lorg/apache/commons/math3/linear/RealMatrix;
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.times (Lorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.BD : Lorg/apache/commons/math3/linear/RealMatrix;
+   L1
+    LINENUMBER 817 L1
+    RETURN
+   L23
+    LOCALVARIABLE i I L10 L11 4
+    LOCALVARIABLE tfac D L15 L8 4
+    LOCALVARIABLE tfac D L19 L17 4
+    LOCALVARIABLE eig Lorg/apache/commons/math3/linear/EigenDecomposition; L4 L1 3
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L23 0
+    LOCALVARIABLE negccov D L0 L23 1
+    MAXSTACK = 6
+    MAXLOCALS = 6
+
+  // access flags 0xA
+  private static push([DD)V
+   L0
+    LINENUMBER 826 L0
+    ALOAD 0
+    ARRAYLENGTH
+    ICONST_1
+    ISUB
+    ISTORE 3
+   L1
+    ILOAD 3
+    IFLE L2
+   L3
+    LINENUMBER 827 L3
+    ALOAD 0
+    ILOAD 3
+    ALOAD 0
+    ILOAD 3
+    ICONST_1
+    ISUB
+    DALOAD
+    DASTORE
+   L4
+    LINENUMBER 826 L4
+    IINC 3 -1
+    GOTO L1
+   L2
+    LINENUMBER 829 L2
+    ALOAD 0
+    ICONST_0
+    DLOAD 1
+    DASTORE
+   L5
+    LINENUMBER 830 L5
+    RETURN
+   L6
+    LOCALVARIABLE i I L1 L2 3
+    LOCALVARIABLE vals [D L0 L6 0
+    LOCALVARIABLE val D L0 L6 1
+    MAXSTACK = 5
+    MAXLOCALS = 4
+
+  // access flags 0x2
+  private sortedIndices([D)[I
+   L0
+    LINENUMBER 839 L0
+    ALOAD 1
+    ARRAYLENGTH
+    ANEWARRAY org/apache/commons/math3/optimization/direct/CMAESOptimizer$DoubleIndex
+    ASTORE 2
+   L1
+    LINENUMBER 840 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 841 L4
+    ALOAD 2
+    ILOAD 3
+    NEW org/apache/commons/math3/optimization/direct/CMAESOptimizer$DoubleIndex
+    DUP
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    ILOAD 3
+    INVOKESPECIAL org/apache/commons/math3/optimization/direct/CMAESOptimizer$DoubleIndex.<init> (DI)V
+    AASTORE
+   L5
+    LINENUMBER 840 L5
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 843 L3
+    ALOAD 2
+    INVOKESTATIC java/util/Arrays.sort ([Ljava/lang/Object;)V
+   L6
+    LINENUMBER 844 L6
+    ALOAD 1
+    ARRAYLENGTH
+    NEWARRAY T_INT
+    ASTORE 3
+   L7
+    LINENUMBER 845 L7
+    ICONST_0
+    ISTORE 4
+   L8
+    ILOAD 4
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L9
+   L10
+    LINENUMBER 846 L10
+    ALOAD 3
+    ILOAD 4
+    ALOAD 2
+    ILOAD 4
+    AALOAD
+    INVOKESTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer$DoubleIndex.access$000 (Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer$DoubleIndex;)I
+    IASTORE
+   L11
+    LINENUMBER 845 L11
+    IINC 4 1
+    GOTO L8
+   L9
+    LINENUMBER 848 L9
+    ALOAD 3
+    ARETURN
+   L12
+    LOCALVARIABLE i I L2 L3 3
+    LOCALVARIABLE i I L8 L9 4
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L12 0
+    LOCALVARIABLE doubles [D L0 L12 1
+    LOCALVARIABLE dis [Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer$DoubleIndex; L1 L12 2
+    LOCALVARIABLE indices [I L7 L12 3
+    MAXSTACK = 7
+    MAXLOCALS = 5
+
+  // access flags 0xA
+  private static log(Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1047 L0
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    MULTIANEWARRAY [[D 2
+    ASTORE 1
+   L1
+    LINENUMBER 1048 L1
+    ICONST_0
+    ISTORE 2
+   L2
+    ILOAD 2
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1049 L4
+    ICONST_0
+    ISTORE 3
+   L5
+    ILOAD 3
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 1050 L7
+    ALOAD 1
+    ILOAD 2
+    AALOAD
+    ILOAD 3
+    ALOAD 0
+    ILOAD 2
+    ILOAD 3
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    INVOKESTATIC java/lang/Math.log (D)D
+    DASTORE
+   L8
+    LINENUMBER 1049 L8
+    IINC 3 1
+    GOTO L5
+   L6
+    LINENUMBER 1048 L6
+    IINC 2 1
+    GOTO L2
+   L3
+    LINENUMBER 1053 L3
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 1
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L9
+    LOCALVARIABLE c I L5 L6 3
+    LOCALVARIABLE r I L2 L3 2
+    LOCALVARIABLE m Lorg/apache/commons/math3/linear/RealMatrix; L0 L9 0
+    LOCALVARIABLE d [[D L1 L9 1
+    MAXSTACK = 5
+    MAXLOCALS = 4
+
+  // access flags 0xA
+  private static sqrt(Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1062 L0
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    MULTIANEWARRAY [[D 2
+    ASTORE 1
+   L1
+    LINENUMBER 1063 L1
+    ICONST_0
+    ISTORE 2
+   L2
+    ILOAD 2
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1064 L4
+    ICONST_0
+    ISTORE 3
+   L5
+    ILOAD 3
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 1065 L7
+    ALOAD 1
+    ILOAD 2
+    AALOAD
+    ILOAD 3
+    ALOAD 0
+    ILOAD 2
+    ILOAD 3
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DASTORE
+   L8
+    LINENUMBER 1064 L8
+    IINC 3 1
+    GOTO L5
+   L6
+    LINENUMBER 1063 L6
+    IINC 2 1
+    GOTO L2
+   L3
+    LINENUMBER 1068 L3
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 1
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L9
+    LOCALVARIABLE c I L5 L6 3
+    LOCALVARIABLE r I L2 L3 2
+    LOCALVARIABLE m Lorg/apache/commons/math3/linear/RealMatrix; L0 L9 0
+    LOCALVARIABLE d [[D L1 L9 1
+    MAXSTACK = 5
+    MAXLOCALS = 4
+
+  // access flags 0xA
+  private static square(Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1076 L0
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    MULTIANEWARRAY [[D 2
+    ASTORE 1
+   L1
+    LINENUMBER 1077 L1
+    ICONST_0
+    ISTORE 2
+   L2
+    ILOAD 2
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1078 L4
+    ICONST_0
+    ISTORE 3
+   L5
+    ILOAD 3
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 1079 L7
+    ALOAD 0
+    ILOAD 2
+    ILOAD 3
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    DSTORE 4
+   L8
+    LINENUMBER 1080 L8
+    ALOAD 1
+    ILOAD 2
+    AALOAD
+    ILOAD 3
+    DLOAD 4
+    DLOAD 4
+    DMUL
+    DASTORE
+   L9
+    LINENUMBER 1078 L9
+    IINC 3 1
+    GOTO L5
+   L6
+    LINENUMBER 1077 L6
+    IINC 2 1
+    GOTO L2
+   L3
+    LINENUMBER 1083 L3
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 1
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L10
+    LOCALVARIABLE e D L8 L9 4
+    LOCALVARIABLE c I L5 L6 3
+    LOCALVARIABLE r I L2 L3 2
+    LOCALVARIABLE m Lorg/apache/commons/math3/linear/RealMatrix; L0 L10 0
+    LOCALVARIABLE d [[D L1 L10 1
+    MAXSTACK = 6
+    MAXLOCALS = 6
+
+  // access flags 0xA
+  private static times(Lorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1092 L0
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    MULTIANEWARRAY [[D 2
+    ASTORE 2
+   L1
+    LINENUMBER 1093 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1094 L4
+    ICONST_0
+    ISTORE 4
+   L5
+    ILOAD 4
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 1095 L7
+    ALOAD 2
+    ILOAD 3
+    AALOAD
+    ILOAD 4
+    ALOAD 0
+    ILOAD 3
+    ILOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    ALOAD 1
+    ILOAD 3
+    ILOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    DMUL
+    DASTORE
+   L8
+    LINENUMBER 1094 L8
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 1093 L6
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 1098 L3
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L9
+    LOCALVARIABLE c I L5 L6 4
+    LOCALVARIABLE r I L2 L3 3
+    LOCALVARIABLE m Lorg/apache/commons/math3/linear/RealMatrix; L0 L9 0
+    LOCALVARIABLE n Lorg/apache/commons/math3/linear/RealMatrix; L0 L9 1
+    LOCALVARIABLE d [[D L1 L9 2
+    MAXSTACK = 7
+    MAXLOCALS = 5
+
+  // access flags 0xA
+  private static divide(Lorg/apache/commons/math3/linear/RealMatrix;Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1107 L0
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    MULTIANEWARRAY [[D 2
+    ASTORE 2
+   L1
+    LINENUMBER 1108 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1109 L4
+    ICONST_0
+    ISTORE 4
+   L5
+    ILOAD 4
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 1110 L7
+    ALOAD 2
+    ILOAD 3
+    AALOAD
+    ILOAD 4
+    ALOAD 0
+    ILOAD 3
+    ILOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    ALOAD 1
+    ILOAD 3
+    ILOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    DDIV
+    DASTORE
+   L8
+    LINENUMBER 1109 L8
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 1108 L6
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 1113 L3
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L9
+    LOCALVARIABLE c I L5 L6 4
+    LOCALVARIABLE r I L2 L3 3
+    LOCALVARIABLE m Lorg/apache/commons/math3/linear/RealMatrix; L0 L9 0
+    LOCALVARIABLE n Lorg/apache/commons/math3/linear/RealMatrix; L0 L9 1
+    LOCALVARIABLE d [[D L1 L9 2
+    MAXSTACK = 7
+    MAXLOCALS = 5
+
+  // access flags 0xA
+  private static selectColumns(Lorg/apache/commons/math3/linear/RealMatrix;[I)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1122 L0
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    ALOAD 1
+    ARRAYLENGTH
+    MULTIANEWARRAY [[D 2
+    ASTORE 2
+   L1
+    LINENUMBER 1123 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1124 L4
+    ICONST_0
+    ISTORE 4
+   L5
+    ILOAD 4
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 1125 L7
+    ALOAD 2
+    ILOAD 3
+    AALOAD
+    ILOAD 4
+    ALOAD 0
+    ILOAD 3
+    ALOAD 1
+    ILOAD 4
+    IALOAD
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    DASTORE
+   L8
+    LINENUMBER 1124 L8
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 1123 L6
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 1128 L3
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L9
+    LOCALVARIABLE c I L5 L6 4
+    LOCALVARIABLE r I L2 L3 3
+    LOCALVARIABLE m Lorg/apache/commons/math3/linear/RealMatrix; L0 L9 0
+    LOCALVARIABLE cols [I L0 L9 1
+    LOCALVARIABLE d [[D L1 L9 2
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0xA
+  private static triu(Lorg/apache/commons/math3/linear/RealMatrix;I)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1137 L0
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    MULTIANEWARRAY [[D 2
+    ASTORE 2
+   L1
+    LINENUMBER 1138 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1139 L4
+    ICONST_0
+    ISTORE 4
+   L5
+    ILOAD 4
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 1140 L7
+    ALOAD 2
+    ILOAD 3
+    AALOAD
+    ILOAD 4
+    ILOAD 3
+    ILOAD 4
+    ILOAD 1
+    ISUB
+    IF_ICMPGT L8
+    ALOAD 0
+    ILOAD 3
+    ILOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    GOTO L9
+   L8
+    DCONST_0
+   L9
+    DASTORE
+   L10
+    LINENUMBER 1139 L10
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 1138 L6
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 1143 L3
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L11
+    LOCALVARIABLE c I L5 L6 4
+    LOCALVARIABLE r I L2 L3 3
+    LOCALVARIABLE m Lorg/apache/commons/math3/linear/RealMatrix; L0 L11 0
+    LOCALVARIABLE k I L0 L11 1
+    LOCALVARIABLE d [[D L1 L11 2
+    MAXSTACK = 5
+    MAXLOCALS = 5
+
+  // access flags 0xA
+  private static sumRows(Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1151 L0
+    ICONST_1
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    MULTIANEWARRAY [[D 2
+    ASTORE 1
+   L1
+    LINENUMBER 1152 L1
+    ICONST_0
+    ISTORE 2
+   L2
+    ILOAD 2
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1153 L4
+    DCONST_0
+    DSTORE 3
+   L5
+    LINENUMBER 1154 L5
+    ICONST_0
+    ISTORE 5
+   L6
+    ILOAD 5
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 1155 L8
+    DLOAD 3
+    ALOAD 0
+    ILOAD 5
+    ILOAD 2
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    DADD
+    DSTORE 3
+   L9
+    LINENUMBER 1154 L9
+    IINC 5 1
+    GOTO L6
+   L7
+    LINENUMBER 1157 L7
+    ALOAD 1
+    ICONST_0
+    AALOAD
+    ILOAD 2
+    DLOAD 3
+    DASTORE
+   L10
+    LINENUMBER 1152 L10
+    IINC 2 1
+    GOTO L2
+   L3
+    LINENUMBER 1159 L3
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 1
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L11
+    LOCALVARIABLE r I L6 L7 5
+    LOCALVARIABLE sum D L5 L10 3
+    LOCALVARIABLE c I L2 L3 2
+    LOCALVARIABLE m Lorg/apache/commons/math3/linear/RealMatrix; L0 L11 0
+    LOCALVARIABLE d [[D L1 L11 1
+    MAXSTACK = 5
+    MAXLOCALS = 6
+
+  // access flags 0xA
+  private static diag(Lorg/apache/commons/math3/linear/RealMatrix;)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1168 L0
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    ICONST_1
+    IF_ICMPNE L1
+   L2
+    LINENUMBER 1169 L2
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    MULTIANEWARRAY [[D 2
+    ASTORE 1
+   L3
+    LINENUMBER 1170 L3
+    ICONST_0
+    ISTORE 2
+   L4
+    ILOAD 2
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 1171 L6
+    ALOAD 1
+    ILOAD 2
+    AALOAD
+    ILOAD 2
+    ALOAD 0
+    ILOAD 2
+    ICONST_0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    DASTORE
+   L7
+    LINENUMBER 1170 L7
+    IINC 2 1
+    GOTO L4
+   L5
+    LINENUMBER 1173 L5
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 1
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L1
+    LINENUMBER 1175 L1
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    ICONST_1
+    MULTIANEWARRAY [[D 2
+    ASTORE 1
+   L8
+    LINENUMBER 1176 L8
+    ICONST_0
+    ISTORE 2
+   L9
+    ILOAD 2
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    IF_ICMPGE L10
+   L11
+    LINENUMBER 1177 L11
+    ALOAD 1
+    ILOAD 2
+    AALOAD
+    ICONST_0
+    ALOAD 0
+    ILOAD 2
+    ILOAD 2
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    DASTORE
+   L12
+    LINENUMBER 1176 L12
+    IINC 2 1
+    GOTO L9
+   L10
+    LINENUMBER 1179 L10
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 1
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L13
+    LOCALVARIABLE i I L4 L5 2
+    LOCALVARIABLE d [[D L3 L1 1
+    LOCALVARIABLE i I L9 L10 2
+    LOCALVARIABLE d [[D L8 L13 1
+    LOCALVARIABLE m Lorg/apache/commons/math3/linear/RealMatrix; L0 L13 0
+    MAXSTACK = 5
+    MAXLOCALS = 3
+
+  // access flags 0xA
+  private static copyColumn(Lorg/apache/commons/math3/linear/RealMatrix;ILorg/apache/commons/math3/linear/RealMatrix;I)V
+   L0
+    LINENUMBER 1192 L0
+    ICONST_0
+    ISTORE 4
+   L1
+    ILOAD 4
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 1193 L3
+    ALOAD 2
+    ILOAD 4
+    ILOAD 3
+    ALOAD 0
+    ILOAD 4
+    ILOAD 1
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.setEntry (IID)V (itf)
+   L4
+    LINENUMBER 1192 L4
+    IINC 4 1
+    GOTO L1
+   L2
+    LINENUMBER 1195 L2
+    RETURN
+   L5
+    LOCALVARIABLE i I L1 L2 4
+    LOCALVARIABLE m1 Lorg/apache/commons/math3/linear/RealMatrix; L0 L5 0
+    LOCALVARIABLE col1 I L0 L5 1
+    LOCALVARIABLE m2 Lorg/apache/commons/math3/linear/RealMatrix; L0 L5 2
+    LOCALVARIABLE col2 I L0 L5 3
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0xA
+  private static ones(II)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1203 L0
+    ILOAD 0
+    ILOAD 1
+    MULTIANEWARRAY [[D 2
+    ASTORE 2
+   L1
+    LINENUMBER 1204 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ILOAD 0
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1205 L4
+    ALOAD 2
+    ILOAD 3
+    AALOAD
+    DCONST_1
+    INVOKESTATIC java/util/Arrays.fill ([DD)V
+   L5
+    LINENUMBER 1204 L5
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 1207 L3
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L6
+    LOCALVARIABLE r I L2 L3 3
+    LOCALVARIABLE n I L0 L6 0
+    LOCALVARIABLE m I L0 L6 1
+    LOCALVARIABLE d [[D L1 L6 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0xA
+  private static eye(II)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1216 L0
+    ILOAD 0
+    ILOAD 1
+    MULTIANEWARRAY [[D 2
+    ASTORE 2
+   L1
+    LINENUMBER 1217 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ILOAD 0
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1218 L4
+    ILOAD 3
+    ILOAD 1
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 1219 L6
+    ALOAD 2
+    ILOAD 3
+    AALOAD
+    ILOAD 3
+    DCONST_1
+    DASTORE
+   L5
+    LINENUMBER 1217 L5
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 1222 L3
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L7
+    LOCALVARIABLE r I L2 L3 3
+    LOCALVARIABLE n I L0 L7 0
+    LOCALVARIABLE m I L0 L7 1
+    LOCALVARIABLE d [[D L1 L7 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0xA
+  private static zeros(II)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1231 L0
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ILOAD 0
+    ILOAD 1
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> (II)V
+    ARETURN
+   L1
+    LOCALVARIABLE n I L0 L1 0
+    LOCALVARIABLE m I L0 L1 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0xA
+  private static repmat(Lorg/apache/commons/math3/linear/RealMatrix;II)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1241 L0
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    ISTORE 3
+   L1
+    LINENUMBER 1242 L1
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    ISTORE 4
+   L2
+    LINENUMBER 1243 L2
+    ILOAD 1
+    ILOAD 3
+    IMUL
+    ILOAD 2
+    ILOAD 4
+    IMUL
+    MULTIANEWARRAY [[D 2
+    ASTORE 5
+   L3
+    LINENUMBER 1244 L3
+    ICONST_0
+    ISTORE 6
+   L4
+    ILOAD 6
+    ILOAD 1
+    ILOAD 3
+    IMUL
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 1245 L6
+    ICONST_0
+    ISTORE 7
+   L7
+    ILOAD 7
+    ILOAD 2
+    ILOAD 4
+    IMUL
+    IF_ICMPGE L8
+   L9
+    LINENUMBER 1246 L9
+    ALOAD 5
+    ILOAD 6
+    AALOAD
+    ILOAD 7
+    ALOAD 0
+    ILOAD 6
+    ILOAD 3
+    IREM
+    ILOAD 7
+    ILOAD 4
+    IREM
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    DASTORE
+   L10
+    LINENUMBER 1245 L10
+    IINC 7 1
+    GOTO L7
+   L8
+    LINENUMBER 1244 L8
+    IINC 6 1
+    GOTO L4
+   L5
+    LINENUMBER 1249 L5
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 5
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L11
+    LOCALVARIABLE c I L7 L8 7
+    LOCALVARIABLE r I L4 L5 6
+    LOCALVARIABLE mat Lorg/apache/commons/math3/linear/RealMatrix; L0 L11 0
+    LOCALVARIABLE n I L0 L11 1
+    LOCALVARIABLE m I L0 L11 2
+    LOCALVARIABLE rd I L1 L11 3
+    LOCALVARIABLE cd I L2 L11 4
+    LOCALVARIABLE d [[D L3 L11 5
+    MAXSTACK = 6
+    MAXLOCALS = 8
+
+  // access flags 0xA
+  private static sequence(DDD)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1259 L0
+    DLOAD 2
+    DLOAD 0
+    DSUB
+    DLOAD 4
+    DDIV
+    DCONST_1
+    DADD
+    D2I
+    ISTORE 6
+   L1
+    LINENUMBER 1260 L1
+    ILOAD 6
+    ICONST_1
+    MULTIANEWARRAY [[D 2
+    ASTORE 7
+   L2
+    LINENUMBER 1261 L2
+    DLOAD 0
+    DSTORE 8
+   L3
+    LINENUMBER 1262 L3
+    ICONST_0
+    ISTORE 10
+   L4
+    ILOAD 10
+    ILOAD 6
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 1263 L6
+    ALOAD 7
+    ILOAD 10
+    AALOAD
+    ICONST_0
+    DLOAD 8
+    DASTORE
+   L7
+    LINENUMBER 1264 L7
+    DLOAD 8
+    DLOAD 4
+    DADD
+    DSTORE 8
+   L8
+    LINENUMBER 1262 L8
+    IINC 10 1
+    GOTO L4
+   L5
+    LINENUMBER 1266 L5
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 7
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L9
+    LOCALVARIABLE r I L4 L5 10
+    LOCALVARIABLE start D L0 L9 0
+    LOCALVARIABLE end D L0 L9 2
+    LOCALVARIABLE step D L0 L9 4
+    LOCALVARIABLE size I L1 L9 6
+    LOCALVARIABLE d [[D L2 L9 7
+    LOCALVARIABLE value D L3 L9 8
+    MAXSTACK = 4
+    MAXLOCALS = 11
+
+  // access flags 0xA
+  private static max(Lorg/apache/commons/math3/linear/RealMatrix;)D
+   L0
+    LINENUMBER 1274 L0
+    LDC -1.7976931348623157E308
+    DSTORE 1
+   L1
+    LINENUMBER 1275 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1276 L4
+    ICONST_0
+    ISTORE 4
+   L5
+    ILOAD 4
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 1277 L7
+    ALOAD 0
+    ILOAD 3
+    ILOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    DSTORE 5
+   L8
+    LINENUMBER 1278 L8
+    DLOAD 1
+    DLOAD 5
+    DCMPG
+    IFGE L9
+   L10
+    LINENUMBER 1279 L10
+    DLOAD 5
+    DSTORE 1
+   L9
+    LINENUMBER 1276 L9
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 1275 L6
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 1283 L3
+    DLOAD 1
+    DRETURN
+   L11
+    LOCALVARIABLE e D L8 L9 5
+    LOCALVARIABLE c I L5 L6 4
+    LOCALVARIABLE r I L2 L3 3
+    LOCALVARIABLE m Lorg/apache/commons/math3/linear/RealMatrix; L0 L11 0
+    LOCALVARIABLE max D L1 L11 1
+    MAXSTACK = 4
+    MAXLOCALS = 7
+
+  // access flags 0xA
+  private static min(Lorg/apache/commons/math3/linear/RealMatrix;)D
+   L0
+    LINENUMBER 1291 L0
+    LDC 1.7976931348623157E308
+    DSTORE 1
+   L1
+    LINENUMBER 1292 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1293 L4
+    ICONST_0
+    ISTORE 4
+   L5
+    ILOAD 4
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getColumnDimension ()I (itf)
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 1294 L7
+    ALOAD 0
+    ILOAD 3
+    ILOAD 4
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getEntry (II)D (itf)
+    DSTORE 5
+   L8
+    LINENUMBER 1295 L8
+    DLOAD 1
+    DLOAD 5
+    DCMPL
+    IFLE L9
+   L10
+    LINENUMBER 1296 L10
+    DLOAD 5
+    DSTORE 1
+   L9
+    LINENUMBER 1293 L9
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 1292 L6
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 1300 L3
+    DLOAD 1
+    DRETURN
+   L11
+    LOCALVARIABLE e D L8 L9 5
+    LOCALVARIABLE c I L5 L6 4
+    LOCALVARIABLE r I L2 L3 3
+    LOCALVARIABLE m Lorg/apache/commons/math3/linear/RealMatrix; L0 L11 0
+    LOCALVARIABLE min D L1 L11 1
+    MAXSTACK = 4
+    MAXLOCALS = 7
+
+  // access flags 0xA
+  private static max([D)D
+   L0
+    LINENUMBER 1308 L0
+    LDC -1.7976931348623157E308
+    DSTORE 1
+   L1
+    LINENUMBER 1309 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1310 L4
+    DLOAD 1
+    ALOAD 0
+    ILOAD 3
+    DALOAD
+    DCMPG
+    IFGE L5
+   L6
+    LINENUMBER 1311 L6
+    ALOAD 0
+    ILOAD 3
+    DALOAD
+    DSTORE 1
+   L5
+    LINENUMBER 1309 L5
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 1314 L3
+    DLOAD 1
+    DRETURN
+   L7
+    LOCALVARIABLE r I L2 L3 3
+    LOCALVARIABLE m [D L0 L7 0
+    LOCALVARIABLE max D L1 L7 1
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0xA
+  private static min([D)D
+   L0
+    LINENUMBER 1322 L0
+    LDC 1.7976931348623157E308
+    DSTORE 1
+   L1
+    LINENUMBER 1323 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1324 L4
+    DLOAD 1
+    ALOAD 0
+    ILOAD 3
+    DALOAD
+    DCMPL
+    IFLE L5
+   L6
+    LINENUMBER 1325 L6
+    ALOAD 0
+    ILOAD 3
+    DALOAD
+    DSTORE 1
+   L5
+    LINENUMBER 1323 L5
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 1328 L3
+    DLOAD 1
+    DRETURN
+   L7
+    LOCALVARIABLE r I L2 L3 3
+    LOCALVARIABLE m [D L0 L7 0
+    LOCALVARIABLE min D L1 L7 1
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0xA
+  private static inverse([I)[I
+   L0
+    LINENUMBER 1336 L0
+    ALOAD 0
+    ARRAYLENGTH
+    NEWARRAY T_INT
+    ASTORE 1
+   L1
+    LINENUMBER 1337 L1
+    ICONST_0
+    ISTORE 2
+   L2
+    ILOAD 2
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1338 L4
+    ALOAD 1
+    ALOAD 0
+    ILOAD 2
+    IALOAD
+    ILOAD 2
+    IASTORE
+   L5
+    LINENUMBER 1337 L5
+    IINC 2 1
+    GOTO L2
+   L3
+    LINENUMBER 1340 L3
+    ALOAD 1
+    ARETURN
+   L6
+    LOCALVARIABLE i I L2 L3 2
+    LOCALVARIABLE indices [I L0 L6 0
+    LOCALVARIABLE inverse [I L1 L6 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0xA
+  private static reverse([I)[I
+   L0
+    LINENUMBER 1348 L0
+    ALOAD 0
+    ARRAYLENGTH
+    NEWARRAY T_INT
+    ASTORE 1
+   L1
+    LINENUMBER 1349 L1
+    ICONST_0
+    ISTORE 2
+   L2
+    ILOAD 2
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1350 L4
+    ALOAD 1
+    ILOAD 2
+    ALOAD 0
+    ALOAD 0
+    ARRAYLENGTH
+    ILOAD 2
+    ISUB
+    ICONST_1
+    ISUB
+    IALOAD
+    IASTORE
+   L5
+    LINENUMBER 1349 L5
+    IINC 2 1
+    GOTO L2
+   L3
+    LINENUMBER 1352 L3
+    ALOAD 1
+    ARETURN
+   L6
+    LOCALVARIABLE i I L2 L3 2
+    LOCALVARIABLE indices [I L0 L6 0
+    LOCALVARIABLE reverse [I L1 L6 1
+    MAXSTACK = 5
+    MAXLOCALS = 3
+
+  // access flags 0x2
+  private randn(I)[D
+   L0
+    LINENUMBER 1360 L0
+    ILOAD 1
+    NEWARRAY T_DOUBLE
+    ASTORE 2
+   L1
+    LINENUMBER 1361 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ILOAD 1
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1362 L4
+    ALOAD 2
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.random : Lorg/apache/commons/math3/random/RandomGenerator;
+    INVOKEINTERFACE org/apache/commons/math3/random/RandomGenerator.nextGaussian ()D (itf)
+    DASTORE
+   L5
+    LINENUMBER 1361 L5
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 1364 L3
+    ALOAD 2
+    ARETURN
+   L6
+    LOCALVARIABLE i I L2 L3 3
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L6 0
+    LOCALVARIABLE size I L0 L6 1
+    LOCALVARIABLE randn [D L1 L6 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x2
+  private randn1(II)Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 1373 L0
+    ILOAD 1
+    ILOAD 2
+    MULTIANEWARRAY [[D 2
+    ASTORE 3
+   L1
+    LINENUMBER 1374 L1
+    ICONST_0
+    ISTORE 4
+   L2
+    ILOAD 4
+    ILOAD 1
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1375 L4
+    ICONST_0
+    ISTORE 5
+   L5
+    ILOAD 5
+    ILOAD 2
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 1376 L7
+    ALOAD 3
+    ILOAD 4
+    AALOAD
+    ILOAD 5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.random : Lorg/apache/commons/math3/random/RandomGenerator;
+    INVOKEINTERFACE org/apache/commons/math3/random/RandomGenerator.nextGaussian ()D (itf)
+    DASTORE
+   L8
+    LINENUMBER 1375 L8
+    IINC 5 1
+    GOTO L5
+   L6
+    LINENUMBER 1374 L6
+    IINC 4 1
+    GOTO L2
+   L3
+    LINENUMBER 1379 L3
+    NEW org/apache/commons/math3/linear/Array2DRowRealMatrix
+    DUP
+    ALOAD 3
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math3/linear/Array2DRowRealMatrix.<init> ([[DZ)V
+    ARETURN
+   L9
+    LOCALVARIABLE c I L5 L6 5
+    LOCALVARIABLE r I L2 L3 4
+    LOCALVARIABLE this Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L9 0
+    LOCALVARIABLE size I L0 L9 1
+    LOCALVARIABLE popSize I L0 L9 2
+    LOCALVARIABLE d [[D L1 L9 3
+    MAXSTACK = 4
+    MAXLOCALS = 6
+
+  // access flags 0x1008
+  static synthetic access$100(Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer;)[[D
+   L0
+    LINENUMBER 91 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.boundaries : [[D
+    ARETURN
+   L1
+    LOCALVARIABLE x0 Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1008
+  static synthetic access$200(Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer;)Z
+   L0
+    LINENUMBER 91 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optimization/direct/CMAESOptimizer.isMinimize : Z
+    IRETURN
+   L1
+    LOCALVARIABLE x0 Lorg/apache/commons/math3/optimization/direct/CMAESOptimizer; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x8
+  static <clinit>()V
+   L0
+    LINENUMBER 105 L0
+    NEW org/apache/commons/math3/random/MersenneTwister
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/random/MersenneTwister.<init> ()V
+    PUTSTATIC org/apache/commons/math3/optimization/direct/CMAESOptimizer.DEFAULT_RANDOMGENERATOR : Lorg/apache/commons/math3/random/RandomGenerator;
+    RETURN
+    MAXSTACK = 2
+    MAXLOCALS = 0
+}
+

@@ -1,0 +1,3931 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math/geometry/euclidean/threed/Rotation implements java/io/Serializable {
+
+  // compiled from: Rotation.java
+
+  // access flags 0x19
+  public final static Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; IDENTITY
+
+  // access flags 0x1A
+  private final static J serialVersionUID = -2153622329907944313
+
+  // access flags 0x12
+  private final D q0
+
+  // access flags 0x12
+  private final D q1
+
+  // access flags 0x12
+  private final D q2
+
+  // access flags 0x12
+  private final D q3
+
+  // access flags 0x1
+  public <init>(DDDDZ)V
+   L0
+    LINENUMBER 134 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 136 L1
+    ILOAD 9
+    IFEQ L2
+   L3
+    LINENUMBER 138 L3
+    DCONST_1
+    DLOAD 1
+    DLOAD 1
+    DMUL
+    DLOAD 3
+    DLOAD 3
+    DMUL
+    DADD
+    DLOAD 5
+    DLOAD 5
+    DMUL
+    DADD
+    DLOAD 7
+    DLOAD 7
+    DMUL
+    DADD
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    DDIV
+    DSTORE 10
+   L4
+    LINENUMBER 139 L4
+    DLOAD 1
+    DLOAD 10
+    DMUL
+    DSTORE 1
+   L5
+    LINENUMBER 140 L5
+    DLOAD 3
+    DLOAD 10
+    DMUL
+    DSTORE 3
+   L6
+    LINENUMBER 141 L6
+    DLOAD 5
+    DLOAD 10
+    DMUL
+    DSTORE 5
+   L7
+    LINENUMBER 142 L7
+    DLOAD 7
+    DLOAD 10
+    DMUL
+    DSTORE 7
+   L2
+    LINENUMBER 145 L2
+    ALOAD 0
+    DLOAD 1
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+   L8
+    LINENUMBER 146 L8
+    ALOAD 0
+    DLOAD 3
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+   L9
+    LINENUMBER 147 L9
+    ALOAD 0
+    DLOAD 5
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+   L10
+    LINENUMBER 148 L10
+    ALOAD 0
+    DLOAD 7
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+   L11
+    LINENUMBER 150 L11
+    RETURN
+   L12
+    LOCALVARIABLE inv D L4 L2 10
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L12 0
+    LOCALVARIABLE q0 D L0 L12 1
+    LOCALVARIABLE q1 D L0 L12 3
+    LOCALVARIABLE q2 D L0 L12 5
+    LOCALVARIABLE q3 D L0 L12 7
+    LOCALVARIABLE needsNormalization Z L0 L12 9
+    MAXSTACK = 8
+    MAXLOCALS = 12
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;D)V
+   L0
+    LINENUMBER 173 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 175 L1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getNorm ()D
+    DSTORE 4
+   L2
+    LINENUMBER 176 L2
+    DLOAD 4
+    DCONST_0
+    DCMPL
+    IFNE L3
+   L4
+    LINENUMBER 177 L4
+    GETSTATIC org/apache/commons/math/exception/util/LocalizedFormats.ZERO_NORM_FOR_ROTATION_AXIS : Lorg/apache/commons/math/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESTATIC org/apache/commons/math/MathRuntimeException.createArithmeticException (Lorg/apache/commons/math/exception/util/Localizable;[Ljava/lang/Object;)Ljava/lang/ArithmeticException;
+    ATHROW
+   L3
+    LINENUMBER 180 L3
+    LDC -0.5
+    DLOAD 2
+    DMUL
+    DSTORE 6
+   L5
+    LINENUMBER 181 L5
+    DLOAD 6
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sin (D)D
+    DLOAD 4
+    DDIV
+    DSTORE 8
+   L6
+    LINENUMBER 183 L6
+    ALOAD 0
+    DLOAD 6
+    INVOKESTATIC org/apache/commons/math/util/FastMath.cos (D)D
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+   L7
+    LINENUMBER 184 L7
+    ALOAD 0
+    DLOAD 8
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+   L8
+    LINENUMBER 185 L8
+    ALOAD 0
+    DLOAD 8
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+   L9
+    LINENUMBER 186 L9
+    ALOAD 0
+    DLOAD 8
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+   L10
+    LINENUMBER 188 L10
+    RETURN
+   L11
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L11 0
+    LOCALVARIABLE axis Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L0 L11 1
+    LOCALVARIABLE angle D L0 L11 2
+    LOCALVARIABLE norm D L2 L11 4
+    LOCALVARIABLE halfAngle D L5 L11 6
+    LOCALVARIABLE coeff D L6 L11 8
+    MAXSTACK = 5
+    MAXLOCALS = 10
+
+  // access flags 0x1
+  public <init>([[DD)V throws org/apache/commons/math/geometry/euclidean/threed/NotARotationMatrixException 
+   L0
+    LINENUMBER 221 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 224 L1
+    ALOAD 1
+    ARRAYLENGTH
+    ICONST_3
+    IF_ICMPNE L2
+    ALOAD 1
+    ICONST_0
+    AALOAD
+    ARRAYLENGTH
+    ICONST_3
+    IF_ICMPNE L2
+    ALOAD 1
+    ICONST_1
+    AALOAD
+    ARRAYLENGTH
+    ICONST_3
+    IF_ICMPNE L2
+    ALOAD 1
+    ICONST_2
+    AALOAD
+    ARRAYLENGTH
+    ICONST_3
+    IF_ICMPEQ L3
+   L2
+    LINENUMBER 226 L2
+    NEW org/apache/commons/math/geometry/euclidean/threed/NotARotationMatrixException
+    DUP
+    GETSTATIC org/apache/commons/math/exception/util/LocalizedFormats.ROTATION_MATRIX_DIMENSIONS : Lorg/apache/commons/math/exception/util/LocalizedFormats;
+    ICONST_2
+    ANEWARRAY java/lang/Object
+    DUP
+    ICONST_0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    DUP
+    ICONST_1
+    ALOAD 1
+    ICONST_0
+    AALOAD
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/NotARotationMatrixException.<init> (Lorg/apache/commons/math/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L3
+    LINENUMBER 232 L3
+    ALOAD 0
+    ALOAD 1
+    DLOAD 2
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Rotation.orthogonalizeMatrix ([[DD)[[D
+    ASTORE 4
+   L4
+    LINENUMBER 235 L4
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_0
+    DALOAD
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_1
+    DALOAD
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_2
+    DALOAD
+    DMUL
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_1
+    DALOAD
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_2
+    DALOAD
+    DMUL
+    DSUB
+    DMUL
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_0
+    DALOAD
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_1
+    DALOAD
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_2
+    DALOAD
+    DMUL
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_1
+    DALOAD
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_2
+    DALOAD
+    DMUL
+    DSUB
+    DMUL
+    DSUB
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_0
+    DALOAD
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_1
+    DALOAD
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_2
+    DALOAD
+    DMUL
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_1
+    DALOAD
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_2
+    DALOAD
+    DMUL
+    DSUB
+    DMUL
+    DADD
+    DSTORE 5
+   L5
+    LINENUMBER 238 L5
+    DLOAD 5
+    DCONST_0
+    DCMPG
+    IFGE L6
+   L7
+    LINENUMBER 239 L7
+    NEW org/apache/commons/math/geometry/euclidean/threed/NotARotationMatrixException
+    DUP
+    GETSTATIC org/apache/commons/math/exception/util/LocalizedFormats.CLOSEST_ORTHOGONAL_MATRIX_HAS_NEGATIVE_DETERMINANT : Lorg/apache/commons/math/exception/util/LocalizedFormats;
+    ICONST_1
+    ANEWARRAY java/lang/Object
+    DUP
+    ICONST_0
+    DLOAD 5
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    AASTORE
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/NotARotationMatrixException.<init> (Lorg/apache/commons/math/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L6
+    LINENUMBER 255 L6
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_0
+    DALOAD
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_1
+    DALOAD
+    DADD
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_2
+    DALOAD
+    DADD
+    DSTORE 7
+   L8
+    LINENUMBER 256 L8
+    DLOAD 7
+    LDC -0.19
+    DCMPL
+    IFLT L9
+   L10
+    LINENUMBER 258 L10
+    ALOAD 0
+    LDC 0.5
+    DLOAD 7
+    DCONST_1
+    DADD
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+   L11
+    LINENUMBER 259 L11
+    LDC 0.25
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DDIV
+    DSTORE 9
+   L12
+    LINENUMBER 260 L12
+    ALOAD 0
+    DLOAD 9
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_2
+    DALOAD
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_1
+    DALOAD
+    DSUB
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+   L13
+    LINENUMBER 261 L13
+    ALOAD 0
+    DLOAD 9
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_0
+    DALOAD
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_2
+    DALOAD
+    DSUB
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+   L14
+    LINENUMBER 262 L14
+    ALOAD 0
+    DLOAD 9
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_1
+    DALOAD
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_0
+    DALOAD
+    DSUB
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+   L15
+    LINENUMBER 263 L15
+    GOTO L16
+   L9
+    LINENUMBER 264 L9
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_0
+    DALOAD
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_1
+    DALOAD
+    DSUB
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_2
+    DALOAD
+    DSUB
+    DSTORE 7
+   L17
+    LINENUMBER 265 L17
+    DLOAD 7
+    LDC -0.19
+    DCMPL
+    IFLE L18
+   L19
+    LINENUMBER 267 L19
+    ALOAD 0
+    LDC 0.5
+    DLOAD 7
+    DCONST_1
+    DADD
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+   L20
+    LINENUMBER 268 L20
+    LDC 0.25
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DDIV
+    DSTORE 9
+   L21
+    LINENUMBER 269 L21
+    ALOAD 0
+    DLOAD 9
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_2
+    DALOAD
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_1
+    DALOAD
+    DSUB
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+   L22
+    LINENUMBER 270 L22
+    ALOAD 0
+    DLOAD 9
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_1
+    DALOAD
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_0
+    DALOAD
+    DADD
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+   L23
+    LINENUMBER 271 L23
+    ALOAD 0
+    DLOAD 9
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_2
+    DALOAD
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_0
+    DALOAD
+    DADD
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+   L24
+    LINENUMBER 272 L24
+    GOTO L16
+   L18
+    LINENUMBER 273 L18
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_1
+    DALOAD
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_0
+    DALOAD
+    DSUB
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_2
+    DALOAD
+    DSUB
+    DSTORE 7
+   L25
+    LINENUMBER 274 L25
+    DLOAD 7
+    LDC -0.19
+    DCMPL
+    IFLE L26
+   L27
+    LINENUMBER 276 L27
+    ALOAD 0
+    LDC 0.5
+    DLOAD 7
+    DCONST_1
+    DADD
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+   L28
+    LINENUMBER 277 L28
+    LDC 0.25
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DDIV
+    DSTORE 9
+   L29
+    LINENUMBER 278 L29
+    ALOAD 0
+    DLOAD 9
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_0
+    DALOAD
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_2
+    DALOAD
+    DSUB
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+   L30
+    LINENUMBER 279 L30
+    ALOAD 0
+    DLOAD 9
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_1
+    DALOAD
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_0
+    DALOAD
+    DADD
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+   L31
+    LINENUMBER 280 L31
+    ALOAD 0
+    DLOAD 9
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_1
+    DALOAD
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_2
+    DALOAD
+    DADD
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+   L32
+    LINENUMBER 281 L32
+    GOTO L16
+   L26
+    LINENUMBER 283 L26
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_2
+    DALOAD
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_0
+    DALOAD
+    DSUB
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_1
+    DALOAD
+    DSUB
+    DSTORE 7
+   L33
+    LINENUMBER 284 L33
+    ALOAD 0
+    LDC 0.5
+    DLOAD 7
+    DCONST_1
+    DADD
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+   L34
+    LINENUMBER 285 L34
+    LDC 0.25
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DDIV
+    DSTORE 9
+   L35
+    LINENUMBER 286 L35
+    ALOAD 0
+    DLOAD 9
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_1
+    DALOAD
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_0
+    DALOAD
+    DSUB
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+   L36
+    LINENUMBER 287 L36
+    ALOAD 0
+    DLOAD 9
+    ALOAD 4
+    ICONST_0
+    AALOAD
+    ICONST_2
+    DALOAD
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_0
+    DALOAD
+    DADD
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+   L37
+    LINENUMBER 288 L37
+    ALOAD 0
+    DLOAD 9
+    ALOAD 4
+    ICONST_2
+    AALOAD
+    ICONST_1
+    DALOAD
+    ALOAD 4
+    ICONST_1
+    AALOAD
+    ICONST_2
+    DALOAD
+    DADD
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+   L16
+    LINENUMBER 293 L16
+    RETURN
+   L38
+    LOCALVARIABLE inv D L12 L15 9
+    LOCALVARIABLE inv D L21 L24 9
+    LOCALVARIABLE inv D L29 L32 9
+    LOCALVARIABLE inv D L35 L16 9
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L38 0
+    LOCALVARIABLE m [[D L0 L38 1
+    LOCALVARIABLE threshold D L0 L38 2
+    LOCALVARIABLE ort [[D L4 L38 4
+    LOCALVARIABLE det D L5 L38 5
+    LOCALVARIABLE s D L8 L38 7
+    MAXSTACK = 10
+    MAXLOCALS = 11
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)V
+   L0
+    LINENUMBER 313 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 316 L1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getNormSq ()D
+    DSTORE 5
+   L2
+    LINENUMBER 317 L2
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getNormSq ()D
+    DSTORE 7
+   L3
+    LINENUMBER 318 L3
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getNormSq ()D
+    DSTORE 9
+   L4
+    LINENUMBER 319 L4
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getNormSq ()D
+    DSTORE 11
+   L5
+    LINENUMBER 320 L5
+    DLOAD 5
+    DCONST_0
+    DCMPL
+    IFEQ L6
+    DLOAD 7
+    DCONST_0
+    DCMPL
+    IFEQ L6
+    DLOAD 9
+    DCONST_0
+    DCMPL
+    IFEQ L6
+    DLOAD 11
+    DCONST_0
+    DCMPL
+    IFNE L7
+   L6
+    LINENUMBER 321 L6
+    GETSTATIC org/apache/commons/math/exception/util/LocalizedFormats.ZERO_NORM_FOR_ROTATION_DEFINING_VECTOR : Lorg/apache/commons/math/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESTATIC org/apache/commons/math/MathRuntimeException.createIllegalArgumentException (Lorg/apache/commons/math/exception/util/Localizable;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;
+    ATHROW
+   L7
+    LINENUMBER 325 L7
+    NEW org/apache/commons/math/geometry/euclidean/threed/Vector3D
+    DUP
+    DLOAD 5
+    DLOAD 9
+    DDIV
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    ALOAD 3
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.<init> (DLorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)V
+    ASTORE 3
+   L8
+    LINENUMBER 328 L8
+    ALOAD 1
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.dotProduct (Lorg/apache/commons/math/geometry/Vector;)D
+    DSTORE 13
+   L9
+    LINENUMBER 329 L9
+    ALOAD 3
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.dotProduct (Lorg/apache/commons/math/geometry/Vector;)D
+    DSTORE 15
+   L10
+    LINENUMBER 330 L10
+    DLOAD 13
+    DLOAD 5
+    DDIV
+    DSTORE 17
+   L11
+    LINENUMBER 331 L11
+    DLOAD 15
+    DLOAD 5
+    DDIV
+    DSTORE 19
+   L12
+    LINENUMBER 332 L12
+    DLOAD 7
+    DLOAD 13
+    DLOAD 17
+    DMUL
+    DSUB
+    DLOAD 11
+    DLOAD 15
+    DLOAD 19
+    DMUL
+    DSUB
+    DDIV
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    DSTORE 21
+   L13
+    LINENUMBER 333 L13
+    DLOAD 17
+    DLOAD 21
+    DLOAD 19
+    DMUL
+    DSUB
+    DSTORE 23
+   L14
+    LINENUMBER 334 L14
+    NEW org/apache/commons/math/geometry/euclidean/threed/Vector3D
+    DUP
+    DLOAD 23
+    ALOAD 3
+    DLOAD 21
+    ALOAD 4
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.<init> (DLorg/apache/commons/math/geometry/euclidean/threed/Vector3D;DLorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)V
+    ASTORE 4
+   L15
+    LINENUMBER 337 L15
+    ALOAD 1
+    ASTORE 25
+   L16
+    LINENUMBER 338 L16
+    ALOAD 3
+    ASTORE 26
+   L17
+    LINENUMBER 339 L17
+    ALOAD 3
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.subtract (Lorg/apache/commons/math/geometry/Vector;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 27
+   L18
+    LINENUMBER 340 L18
+    ALOAD 4
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.subtract (Lorg/apache/commons/math/geometry/Vector;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 28
+   L19
+    LINENUMBER 341 L19
+    ALOAD 27
+    ALOAD 28
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.crossProduct (Lorg/apache/commons/math/geometry/Vector;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 29
+   L20
+    LINENUMBER 342 L20
+    ALOAD 1
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.crossProduct (Lorg/apache/commons/math/geometry/Vector;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 30
+   L21
+    LINENUMBER 343 L21
+    ALOAD 29
+    ALOAD 30
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.dotProduct (Lorg/apache/commons/math/geometry/Vector;)D
+    DSTORE 31
+   L22
+    LINENUMBER 344 L22
+    LDC 0.001
+    DSTORE 33
+   L23
+    LINENUMBER 345 L23
+    DLOAD 31
+    LDC 0.001
+    ALOAD 29
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getNorm ()D
+    DMUL
+    ALOAD 30
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getNorm ()D
+    DMUL
+    DCMPG
+    IFGT L24
+   L25
+    LINENUMBER 348 L25
+    ALOAD 3
+    ALOAD 4
+    INVOKESTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.crossProduct (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 35
+   L26
+    LINENUMBER 349 L26
+    ALOAD 35
+    ALOAD 30
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.subtract (Lorg/apache/commons/math/geometry/Vector;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 36
+   L27
+    LINENUMBER 350 L27
+    ALOAD 27
+    ALOAD 36
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.crossProduct (Lorg/apache/commons/math/geometry/Vector;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 29
+   L28
+    LINENUMBER 351 L28
+    ALOAD 1
+    ALOAD 30
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.crossProduct (Lorg/apache/commons/math/geometry/Vector;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 37
+   L29
+    LINENUMBER 352 L29
+    ALOAD 29
+    ALOAD 37
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.dotProduct (Lorg/apache/commons/math/geometry/Vector;)D
+    DSTORE 31
+   L30
+    LINENUMBER 354 L30
+    DLOAD 31
+    LDC 0.001
+    ALOAD 29
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getNorm ()D
+    DMUL
+    ALOAD 37
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getNorm ()D
+    DMUL
+    DCMPG
+    IFGT L24
+   L31
+    LINENUMBER 357 L31
+    ALOAD 28
+    ALOAD 36
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.crossProduct (Lorg/apache/commons/math/geometry/Vector;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 29
+   L32
+    LINENUMBER 358 L32
+    ALOAD 29
+    ALOAD 2
+    ALOAD 30
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.crossProduct (Lorg/apache/commons/math/geometry/Vector;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.dotProduct (Lorg/apache/commons/math/geometry/Vector;)D
+    DSTORE 31
+   L33
+    LINENUMBER 360 L33
+    DLOAD 31
+    DCONST_0
+    DCMPG
+    IFGT L34
+   L35
+    LINENUMBER 363 L35
+    ALOAD 0
+    DCONST_1
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+   L36
+    LINENUMBER 364 L36
+    ALOAD 0
+    DCONST_0
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+   L37
+    LINENUMBER 365 L37
+    ALOAD 0
+    DCONST_0
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+   L38
+    LINENUMBER 366 L38
+    ALOAD 0
+    DCONST_0
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+   L39
+    LINENUMBER 367 L39
+    RETURN
+   L34
+    LINENUMBER 371 L34
+    ALOAD 2
+    ASTORE 25
+   L40
+    LINENUMBER 372 L40
+    ALOAD 4
+    ASTORE 26
+   L24
+    LINENUMBER 379 L24
+    DLOAD 31
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    DSTORE 31
+   L41
+    LINENUMBER 380 L41
+    DCONST_1
+    DLOAD 31
+    DLOAD 31
+    DADD
+    DDIV
+    DSTORE 35
+   L42
+    LINENUMBER 381 L42
+    ALOAD 0
+    DLOAD 35
+    ALOAD 29
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+   L43
+    LINENUMBER 382 L43
+    ALOAD 0
+    DLOAD 35
+    ALOAD 29
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+   L44
+    LINENUMBER 383 L44
+    ALOAD 0
+    DLOAD 35
+    ALOAD 29
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+   L45
+    LINENUMBER 386 L45
+    NEW org/apache/commons/math/geometry/euclidean/threed/Vector3D
+    DUP
+    ALOAD 25
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    ALOAD 25
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    DSUB
+    ALOAD 25
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    ALOAD 25
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DSUB
+    ALOAD 25
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    ALOAD 25
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    DSUB
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.<init> (DDD)V
+    ASTORE 29
+   L46
+    LINENUMBER 389 L46
+    ALOAD 0
+    ALOAD 26
+    ALOAD 29
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.dotProduct (Lorg/apache/commons/math/geometry/Vector;)D
+    LDC 2.0
+    ALOAD 29
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getNormSq ()D
+    DMUL
+    DDIV
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+   L47
+    LINENUMBER 391 L47
+    RETURN
+   L48
+    LOCALVARIABLE v3 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L26 L24 35
+    LOCALVARIABLE v3Su3 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L27 L24 36
+    LOCALVARIABLE u2Prime Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L29 L24 37
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L48 0
+    LOCALVARIABLE u1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L0 L48 1
+    LOCALVARIABLE u2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L0 L48 2
+    LOCALVARIABLE v1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L0 L48 3
+    LOCALVARIABLE v2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L0 L48 4
+    LOCALVARIABLE u1u1 D L2 L48 5
+    LOCALVARIABLE u2u2 D L3 L48 7
+    LOCALVARIABLE v1v1 D L4 L48 9
+    LOCALVARIABLE v2v2 D L5 L48 11
+    LOCALVARIABLE u1u2 D L9 L48 13
+    LOCALVARIABLE v1v2 D L10 L48 15
+    LOCALVARIABLE coeffU D L11 L48 17
+    LOCALVARIABLE coeffV D L12 L48 19
+    LOCALVARIABLE beta D L13 L48 21
+    LOCALVARIABLE alpha D L14 L48 23
+    LOCALVARIABLE uRef Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L16 L48 25
+    LOCALVARIABLE vRef Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L17 L48 26
+    LOCALVARIABLE v1Su1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L18 L48 27
+    LOCALVARIABLE v2Su2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L19 L48 28
+    LOCALVARIABLE k Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L20 L48 29
+    LOCALVARIABLE u3 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L21 L48 30
+    LOCALVARIABLE c D L22 L48 31
+    LOCALVARIABLE inPlaneThreshold D L23 L48 33
+    LOCALVARIABLE inv D L42 L48 35
+    MAXSTACK = 12
+    MAXLOCALS = 38
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)V
+   L0
+    LINENUMBER 406 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 408 L1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getNorm ()D
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getNorm ()D
+    DMUL
+    DSTORE 3
+   L2
+    LINENUMBER 409 L2
+    DLOAD 3
+    DCONST_0
+    DCMPL
+    IFNE L3
+   L4
+    LINENUMBER 410 L4
+    GETSTATIC org/apache/commons/math/exception/util/LocalizedFormats.ZERO_NORM_FOR_ROTATION_DEFINING_VECTOR : Lorg/apache/commons/math/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESTATIC org/apache/commons/math/MathRuntimeException.createIllegalArgumentException (Lorg/apache/commons/math/exception/util/Localizable;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;
+    ATHROW
+   L3
+    LINENUMBER 413 L3
+    ALOAD 1
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.dotProduct (Lorg/apache/commons/math/geometry/Vector;)D
+    DSTORE 5
+   L5
+    LINENUMBER 415 L5
+    DLOAD 5
+    LDC -0.999999999999998
+    DLOAD 3
+    DMUL
+    DCMPG
+    IFGE L6
+   L7
+    LINENUMBER 418 L7
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.orthogonal ()Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 7
+   L8
+    LINENUMBER 419 L8
+    ALOAD 0
+    DCONST_0
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+   L9
+    LINENUMBER 420 L9
+    ALOAD 0
+    ALOAD 7
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    DNEG
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+   L10
+    LINENUMBER 421 L10
+    ALOAD 0
+    ALOAD 7
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    DNEG
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+   L11
+    LINENUMBER 422 L11
+    ALOAD 0
+    ALOAD 7
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    DNEG
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+   L12
+    LINENUMBER 423 L12
+    GOTO L13
+   L6
+    LINENUMBER 426 L6
+    ALOAD 0
+    LDC 0.5
+    DCONST_1
+    DLOAD 5
+    DLOAD 3
+    DDIV
+    DADD
+    DMUL
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+   L14
+    LINENUMBER 427 L14
+    DCONST_1
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DMUL
+    DLOAD 3
+    DMUL
+    DDIV
+    DSTORE 7
+   L15
+    LINENUMBER 428 L15
+    ALOAD 2
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.crossProduct (Lorg/apache/commons/math/geometry/Vector;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 9
+   L16
+    LINENUMBER 429 L16
+    ALOAD 0
+    DLOAD 7
+    ALOAD 9
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+   L17
+    LINENUMBER 430 L17
+    ALOAD 0
+    DLOAD 7
+    ALOAD 9
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+   L18
+    LINENUMBER 431 L18
+    ALOAD 0
+    DLOAD 7
+    ALOAD 9
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    DMUL
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+   L13
+    LINENUMBER 434 L13
+    RETURN
+   L19
+    LOCALVARIABLE w Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L8 L12 7
+    LOCALVARIABLE coeff D L15 L13 7
+    LOCALVARIABLE q Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L16 L13 9
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L19 0
+    LOCALVARIABLE u Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L0 L19 1
+    LOCALVARIABLE v Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L0 L19 2
+    LOCALVARIABLE normProduct D L2 L19 3
+    LOCALVARIABLE dot D L5 L19 5
+    MAXSTACK = 9
+    MAXLOCALS = 10
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder;DDD)V
+   L0
+    LINENUMBER 456 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 457 L1
+    NEW org/apache/commons/math/geometry/euclidean/threed/Rotation
+    DUP
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/RotationOrder.getA1 ()Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    DLOAD 2
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Rotation.<init> (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;D)V
+    ASTORE 8
+   L2
+    LINENUMBER 458 L2
+    NEW org/apache/commons/math/geometry/euclidean/threed/Rotation
+    DUP
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/RotationOrder.getA2 ()Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    DLOAD 4
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Rotation.<init> (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;D)V
+    ASTORE 9
+   L3
+    LINENUMBER 459 L3
+    NEW org/apache/commons/math/geometry/euclidean/threed/Rotation
+    DUP
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/RotationOrder.getA3 ()Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    DLOAD 6
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Rotation.<init> (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;D)V
+    ASTORE 10
+   L4
+    LINENUMBER 460 L4
+    ALOAD 8
+    ALOAD 9
+    ALOAD 10
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyTo (Lorg/apache/commons/math/geometry/euclidean/threed/Rotation;)Lorg/apache/commons/math/geometry/euclidean/threed/Rotation;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyTo (Lorg/apache/commons/math/geometry/euclidean/threed/Rotation;)Lorg/apache/commons/math/geometry/euclidean/threed/Rotation;
+    ASTORE 11
+   L5
+    LINENUMBER 461 L5
+    ALOAD 0
+    ALOAD 11
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+   L6
+    LINENUMBER 462 L6
+    ALOAD 0
+    ALOAD 11
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+   L7
+    LINENUMBER 463 L7
+    ALOAD 0
+    ALOAD 11
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+   L8
+    LINENUMBER 464 L8
+    ALOAD 0
+    ALOAD 11
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    PUTFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+   L9
+    LINENUMBER 465 L9
+    RETURN
+   L10
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L10 0
+    LOCALVARIABLE order Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder; L0 L10 1
+    LOCALVARIABLE alpha1 D L0 L10 2
+    LOCALVARIABLE alpha2 D L0 L10 4
+    LOCALVARIABLE alpha3 D L0 L10 6
+    LOCALVARIABLE r1 Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L2 L10 8
+    LOCALVARIABLE r2 Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L3 L10 9
+    LOCALVARIABLE r3 Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L4 L10 10
+    LOCALVARIABLE composed Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L5 L10 11
+    MAXSTACK = 5
+    MAXLOCALS = 12
+
+  // access flags 0x1
+  public revert()Lorg/apache/commons/math/geometry/euclidean/threed/Rotation;
+   L0
+    LINENUMBER 475 L0
+    NEW org/apache/commons/math/geometry/euclidean/threed/Rotation
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DNEG
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Rotation.<init> (DDDDZ)V
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L1 0
+    MAXSTACK = 11
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getQ0()D
+   L0
+    LINENUMBER 482 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getQ1()D
+   L0
+    LINENUMBER 489 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getQ2()D
+   L0
+    LINENUMBER 496 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getQ3()D
+   L0
+    LINENUMBER 503 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getAxis()Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+   L0
+    LINENUMBER 511 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    DADD
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DADD
+    DSTORE 1
+   L1
+    LINENUMBER 512 L1
+    DLOAD 1
+    DCONST_0
+    DCMPL
+    IFNE L2
+   L3
+    LINENUMBER 513 L3
+    NEW org/apache/commons/math/geometry/euclidean/threed/Vector3D
+    DUP
+    DCONST_1
+    DCONST_0
+    DCONST_0
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.<init> (DDD)V
+    ARETURN
+   L2
+    LINENUMBER 514 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DCONST_0
+    DCMPG
+    IFGE L4
+   L5
+    LINENUMBER 515 L5
+    DCONST_1
+    DLOAD 1
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    DDIV
+    DSTORE 3
+   L6
+    LINENUMBER 516 L6
+    NEW org/apache/commons/math/geometry/euclidean/threed/Vector3D
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DLOAD 3
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DLOAD 3
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DLOAD 3
+    DMUL
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.<init> (DDD)V
+    ARETURN
+   L4
+    LINENUMBER 518 L4
+    LDC -1.0
+    DLOAD 1
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    DDIV
+    DSTORE 3
+   L7
+    LINENUMBER 519 L7
+    NEW org/apache/commons/math/geometry/euclidean/threed/Vector3D
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DLOAD 3
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DLOAD 3
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DLOAD 3
+    DMUL
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.<init> (DDD)V
+    ARETURN
+   L8
+    LOCALVARIABLE inverse D L6 L4 3
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L8 0
+    LOCALVARIABLE squaredSine D L1 L8 1
+    LOCALVARIABLE inverse D L7 L8 3
+    MAXSTACK = 10
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public getAngle()D
+   L0
+    LINENUMBER 527 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    LDC -0.1
+    DCMPG
+    IFLT L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    LDC 0.1
+    DCMPL
+    IFLE L2
+   L1
+    LINENUMBER 528 L1
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    DADD
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DADD
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.asin (D)D
+    DMUL
+    DRETURN
+   L2
+    LINENUMBER 529 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DCONST_0
+    DCMPG
+    IFGE L3
+   L4
+    LINENUMBER 530 L4
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DNEG
+    INVOKESTATIC org/apache/commons/math/util/FastMath.acos (D)D
+    DMUL
+    DRETURN
+   L3
+    LINENUMBER 532 L3
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.acos (D)D
+    DMUL
+    DRETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L5 0
+    MAXSTACK = 8
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getAngles(Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder;)[D throws org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException 
+   L0
+    LINENUMBER 573 L0
+    ALOAD 1
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/RotationOrder.XYZ : Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder;
+    IF_ACMPNE L1
+   L2
+    LINENUMBER 580 L2
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_K : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 2
+   L3
+    LINENUMBER 581 L3
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_I : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyInverseTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 3
+   L4
+    LINENUMBER 582 L4
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    LDC -0.9999999999
+    DCMPG
+    IFLT L5
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    LDC 0.9999999999
+    DCMPL
+    IFLE L6
+   L5
+    LINENUMBER 583 L5
+    NEW org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException
+    DUP
+    ICONST_1
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException.<init> (Z)V
+    ATHROW
+   L6
+    LINENUMBER 585 L6
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    DUP
+    ICONST_0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    DNEG
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    DUP
+    ICONST_1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.asin (D)D
+    DASTORE
+    DUP
+    ICONST_2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    DNEG
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    ARETURN
+   L1
+    LINENUMBER 591 L1
+    ALOAD 1
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/RotationOrder.XZY : Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder;
+    IF_ACMPNE L7
+   L8
+    LINENUMBER 598 L8
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_J : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 2
+   L9
+    LINENUMBER 599 L9
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_I : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyInverseTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 3
+   L10
+    LINENUMBER 600 L10
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    LDC -0.9999999999
+    DCMPG
+    IFLT L11
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    LDC 0.9999999999
+    DCMPL
+    IFLE L12
+   L11
+    LINENUMBER 601 L11
+    NEW org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException
+    DUP
+    ICONST_1
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException.<init> (Z)V
+    ATHROW
+   L12
+    LINENUMBER 603 L12
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    DUP
+    ICONST_0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    DUP
+    ICONST_1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.asin (D)D
+    DNEG
+    DASTORE
+    DUP
+    ICONST_2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    ARETURN
+   L7
+    LINENUMBER 609 L7
+    ALOAD 1
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/RotationOrder.YXZ : Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder;
+    IF_ACMPNE L13
+   L14
+    LINENUMBER 616 L14
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_K : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 2
+   L15
+    LINENUMBER 617 L15
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_J : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyInverseTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 3
+   L16
+    LINENUMBER 618 L16
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    LDC -0.9999999999
+    DCMPG
+    IFLT L17
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    LDC 0.9999999999
+    DCMPL
+    IFLE L18
+   L17
+    LINENUMBER 619 L17
+    NEW org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException
+    DUP
+    ICONST_1
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException.<init> (Z)V
+    ATHROW
+   L18
+    LINENUMBER 621 L18
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    DUP
+    ICONST_0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    DUP
+    ICONST_1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.asin (D)D
+    DNEG
+    DASTORE
+    DUP
+    ICONST_2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    ARETURN
+   L13
+    LINENUMBER 627 L13
+    ALOAD 1
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/RotationOrder.YZX : Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder;
+    IF_ACMPNE L19
+   L20
+    LINENUMBER 634 L20
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_I : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 2
+   L21
+    LINENUMBER 635 L21
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_J : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyInverseTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 3
+   L22
+    LINENUMBER 636 L22
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    LDC -0.9999999999
+    DCMPG
+    IFLT L23
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    LDC 0.9999999999
+    DCMPL
+    IFLE L24
+   L23
+    LINENUMBER 637 L23
+    NEW org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException
+    DUP
+    ICONST_1
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException.<init> (Z)V
+    ATHROW
+   L24
+    LINENUMBER 639 L24
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    DUP
+    ICONST_0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    DNEG
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    DUP
+    ICONST_1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.asin (D)D
+    DASTORE
+    DUP
+    ICONST_2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    DNEG
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    ARETURN
+   L19
+    LINENUMBER 645 L19
+    ALOAD 1
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/RotationOrder.ZXY : Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder;
+    IF_ACMPNE L25
+   L26
+    LINENUMBER 652 L26
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_J : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 2
+   L27
+    LINENUMBER 653 L27
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_K : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyInverseTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 3
+   L28
+    LINENUMBER 654 L28
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    LDC -0.9999999999
+    DCMPG
+    IFLT L29
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    LDC 0.9999999999
+    DCMPL
+    IFLE L30
+   L29
+    LINENUMBER 655 L29
+    NEW org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException
+    DUP
+    ICONST_1
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException.<init> (Z)V
+    ATHROW
+   L30
+    LINENUMBER 657 L30
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    DUP
+    ICONST_0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    DNEG
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    DUP
+    ICONST_1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.asin (D)D
+    DASTORE
+    DUP
+    ICONST_2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    DNEG
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    ARETURN
+   L25
+    LINENUMBER 663 L25
+    ALOAD 1
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/RotationOrder.ZYX : Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder;
+    IF_ACMPNE L31
+   L32
+    LINENUMBER 670 L32
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_I : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 2
+   L33
+    LINENUMBER 671 L33
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_K : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyInverseTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 3
+   L34
+    LINENUMBER 672 L34
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    LDC -0.9999999999
+    DCMPG
+    IFLT L35
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    LDC 0.9999999999
+    DCMPL
+    IFLE L36
+   L35
+    LINENUMBER 673 L35
+    NEW org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException
+    DUP
+    ICONST_1
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException.<init> (Z)V
+    ATHROW
+   L36
+    LINENUMBER 675 L36
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    DUP
+    ICONST_0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    DUP
+    ICONST_1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.asin (D)D
+    DNEG
+    DASTORE
+    DUP
+    ICONST_2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    ARETURN
+   L31
+    LINENUMBER 681 L31
+    ALOAD 1
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/RotationOrder.XYX : Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder;
+    IF_ACMPNE L37
+   L38
+    LINENUMBER 688 L38
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_I : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 2
+   L39
+    LINENUMBER 689 L39
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_I : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyInverseTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 3
+   L40
+    LINENUMBER 690 L40
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    LDC -0.9999999999
+    DCMPG
+    IFLT L41
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    LDC 0.9999999999
+    DCMPL
+    IFLE L42
+   L41
+    LINENUMBER 691 L41
+    NEW org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException
+    DUP
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException.<init> (Z)V
+    ATHROW
+   L42
+    LINENUMBER 693 L42
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    DUP
+    ICONST_0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    DNEG
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    DUP
+    ICONST_1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.acos (D)D
+    DASTORE
+    DUP
+    ICONST_2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    ARETURN
+   L37
+    LINENUMBER 699 L37
+    ALOAD 1
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/RotationOrder.XZX : Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder;
+    IF_ACMPNE L43
+   L44
+    LINENUMBER 706 L44
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_I : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 2
+   L45
+    LINENUMBER 707 L45
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_I : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyInverseTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 3
+   L46
+    LINENUMBER 708 L46
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    LDC -0.9999999999
+    DCMPG
+    IFLT L47
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    LDC 0.9999999999
+    DCMPL
+    IFLE L48
+   L47
+    LINENUMBER 709 L47
+    NEW org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException
+    DUP
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException.<init> (Z)V
+    ATHROW
+   L48
+    LINENUMBER 711 L48
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    DUP
+    ICONST_0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    DUP
+    ICONST_1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.acos (D)D
+    DASTORE
+    DUP
+    ICONST_2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    DNEG
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    ARETURN
+   L43
+    LINENUMBER 717 L43
+    ALOAD 1
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/RotationOrder.YXY : Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder;
+    IF_ACMPNE L49
+   L50
+    LINENUMBER 724 L50
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_J : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 2
+   L51
+    LINENUMBER 725 L51
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_J : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyInverseTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 3
+   L52
+    LINENUMBER 726 L52
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    LDC -0.9999999999
+    DCMPG
+    IFLT L53
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    LDC 0.9999999999
+    DCMPL
+    IFLE L54
+   L53
+    LINENUMBER 727 L53
+    NEW org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException
+    DUP
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException.<init> (Z)V
+    ATHROW
+   L54
+    LINENUMBER 729 L54
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    DUP
+    ICONST_0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    DUP
+    ICONST_1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.acos (D)D
+    DASTORE
+    DUP
+    ICONST_2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    DNEG
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    ARETURN
+   L49
+    LINENUMBER 735 L49
+    ALOAD 1
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/RotationOrder.YZY : Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder;
+    IF_ACMPNE L55
+   L56
+    LINENUMBER 742 L56
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_J : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 2
+   L57
+    LINENUMBER 743 L57
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_J : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyInverseTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 3
+   L58
+    LINENUMBER 744 L58
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    LDC -0.9999999999
+    DCMPG
+    IFLT L59
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    LDC 0.9999999999
+    DCMPL
+    IFLE L60
+   L59
+    LINENUMBER 745 L59
+    NEW org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException
+    DUP
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException.<init> (Z)V
+    ATHROW
+   L60
+    LINENUMBER 747 L60
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    DUP
+    ICONST_0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    DNEG
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    DUP
+    ICONST_1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.acos (D)D
+    DASTORE
+    DUP
+    ICONST_2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    ARETURN
+   L55
+    LINENUMBER 753 L55
+    ALOAD 1
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/RotationOrder.ZXZ : Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder;
+    IF_ACMPNE L61
+   L62
+    LINENUMBER 760 L62
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_K : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 2
+   L63
+    LINENUMBER 761 L63
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_K : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyInverseTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 3
+   L64
+    LINENUMBER 762 L64
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    LDC -0.9999999999
+    DCMPG
+    IFLT L65
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    LDC 0.9999999999
+    DCMPL
+    IFLE L66
+   L65
+    LINENUMBER 763 L65
+    NEW org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException
+    DUP
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException.<init> (Z)V
+    ATHROW
+   L66
+    LINENUMBER 765 L66
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    DUP
+    ICONST_0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    DNEG
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    DUP
+    ICONST_1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.acos (D)D
+    DASTORE
+    DUP
+    ICONST_2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    ARETURN
+   L61
+    LINENUMBER 778 L61
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_K : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 2
+   L67
+    LINENUMBER 779 L67
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/geometry/euclidean/threed/Vector3D.PLUS_K : Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyInverseTo (Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+    ASTORE 3
+   L68
+    LINENUMBER 780 L68
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    LDC -0.9999999999
+    DCMPG
+    IFLT L69
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    LDC 0.9999999999
+    DCMPL
+    IFLE L70
+   L69
+    LINENUMBER 781 L69
+    NEW org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException
+    DUP
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/CardanEulerSingularityException.<init> (Z)V
+    ATHROW
+   L70
+    LINENUMBER 783 L70
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    DUP
+    ICONST_0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    DUP
+    ICONST_1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.acos (D)D
+    DASTORE
+    DUP
+    ICONST_2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    DNEG
+    INVOKESTATIC org/apache/commons/math/util/FastMath.atan2 (DD)D
+    DASTORE
+    ARETURN
+   L71
+    LOCALVARIABLE v1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L3 L1 2
+    LOCALVARIABLE v2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L4 L1 3
+    LOCALVARIABLE v1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L9 L7 2
+    LOCALVARIABLE v2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L10 L7 3
+    LOCALVARIABLE v1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L15 L13 2
+    LOCALVARIABLE v2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L16 L13 3
+    LOCALVARIABLE v1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L21 L19 2
+    LOCALVARIABLE v2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L22 L19 3
+    LOCALVARIABLE v1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L27 L25 2
+    LOCALVARIABLE v2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L28 L25 3
+    LOCALVARIABLE v1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L33 L31 2
+    LOCALVARIABLE v2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L34 L31 3
+    LOCALVARIABLE v1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L39 L37 2
+    LOCALVARIABLE v2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L40 L37 3
+    LOCALVARIABLE v1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L45 L43 2
+    LOCALVARIABLE v2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L46 L43 3
+    LOCALVARIABLE v1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L51 L49 2
+    LOCALVARIABLE v2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L52 L49 3
+    LOCALVARIABLE v1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L57 L55 2
+    LOCALVARIABLE v2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L58 L55 3
+    LOCALVARIABLE v1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L63 L61 2
+    LOCALVARIABLE v2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L64 L61 3
+    LOCALVARIABLE v1 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L67 L71 2
+    LOCALVARIABLE v2 Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L68 L71 3
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L71 0
+    LOCALVARIABLE order Lorg/apache/commons/math/geometry/euclidean/threed/RotationOrder; L0 L71 1
+    MAXSTACK = 7
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public getMatrix()[[D
+   L0
+    LINENUMBER 799 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DMUL
+    DSTORE 1
+   L1
+    LINENUMBER 800 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    DSTORE 3
+   L2
+    LINENUMBER 801 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    DSTORE 5
+   L3
+    LINENUMBER 802 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DSTORE 7
+   L4
+    LINENUMBER 803 L4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    DSTORE 9
+   L5
+    LINENUMBER 804 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    DSTORE 11
+   L6
+    LINENUMBER 805 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DSTORE 13
+   L7
+    LINENUMBER 806 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    DSTORE 15
+   L8
+    LINENUMBER 807 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DSTORE 17
+   L9
+    LINENUMBER 808 L9
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DSTORE 19
+   L10
+    LINENUMBER 811 L10
+    ICONST_3
+    ANEWARRAY [D
+    ASTORE 21
+   L11
+    LINENUMBER 812 L11
+    ALOAD 21
+    ICONST_0
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    AASTORE
+   L12
+    LINENUMBER 813 L12
+    ALOAD 21
+    ICONST_1
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    AASTORE
+   L13
+    LINENUMBER 814 L13
+    ALOAD 21
+    ICONST_2
+    ICONST_3
+    NEWARRAY T_DOUBLE
+    AASTORE
+   L14
+    LINENUMBER 816 L14
+    ALOAD 21
+    ICONST_0
+    AALOAD
+    ICONST_0
+    LDC 2.0
+    DLOAD 1
+    DLOAD 9
+    DADD
+    DMUL
+    DCONST_1
+    DSUB
+    DASTORE
+   L15
+    LINENUMBER 817 L15
+    ALOAD 21
+    ICONST_1
+    AALOAD
+    ICONST_0
+    LDC 2.0
+    DLOAD 11
+    DLOAD 7
+    DSUB
+    DMUL
+    DASTORE
+   L16
+    LINENUMBER 818 L16
+    ALOAD 21
+    ICONST_2
+    AALOAD
+    ICONST_0
+    LDC 2.0
+    DLOAD 13
+    DLOAD 5
+    DADD
+    DMUL
+    DASTORE
+   L17
+    LINENUMBER 820 L17
+    ALOAD 21
+    ICONST_0
+    AALOAD
+    ICONST_1
+    LDC 2.0
+    DLOAD 11
+    DLOAD 7
+    DADD
+    DMUL
+    DASTORE
+   L18
+    LINENUMBER 821 L18
+    ALOAD 21
+    ICONST_1
+    AALOAD
+    ICONST_1
+    LDC 2.0
+    DLOAD 1
+    DLOAD 15
+    DADD
+    DMUL
+    DCONST_1
+    DSUB
+    DASTORE
+   L19
+    LINENUMBER 822 L19
+    ALOAD 21
+    ICONST_2
+    AALOAD
+    ICONST_1
+    LDC 2.0
+    DLOAD 17
+    DLOAD 3
+    DSUB
+    DMUL
+    DASTORE
+   L20
+    LINENUMBER 824 L20
+    ALOAD 21
+    ICONST_0
+    AALOAD
+    ICONST_2
+    LDC 2.0
+    DLOAD 13
+    DLOAD 5
+    DSUB
+    DMUL
+    DASTORE
+   L21
+    LINENUMBER 825 L21
+    ALOAD 21
+    ICONST_1
+    AALOAD
+    ICONST_2
+    LDC 2.0
+    DLOAD 17
+    DLOAD 3
+    DADD
+    DMUL
+    DASTORE
+   L22
+    LINENUMBER 826 L22
+    ALOAD 21
+    ICONST_2
+    AALOAD
+    ICONST_2
+    LDC 2.0
+    DLOAD 1
+    DLOAD 19
+    DADD
+    DMUL
+    DCONST_1
+    DSUB
+    DASTORE
+   L23
+    LINENUMBER 828 L23
+    ALOAD 21
+    ARETURN
+   L24
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L24 0
+    LOCALVARIABLE q0q0 D L1 L24 1
+    LOCALVARIABLE q0q1 D L2 L24 3
+    LOCALVARIABLE q0q2 D L3 L24 5
+    LOCALVARIABLE q0q3 D L4 L24 7
+    LOCALVARIABLE q1q1 D L5 L24 9
+    LOCALVARIABLE q1q2 D L6 L24 11
+    LOCALVARIABLE q1q3 D L7 L24 13
+    LOCALVARIABLE q2q2 D L8 L24 15
+    LOCALVARIABLE q2q3 D L9 L24 17
+    LOCALVARIABLE q3q3 D L10 L24 19
+    LOCALVARIABLE m [[D L11 L24 21
+    MAXSTACK = 8
+    MAXLOCALS = 22
+
+  // access flags 0x1
+  public applyTo(Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+   L0
+    LINENUMBER 838 L0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    DSTORE 2
+   L1
+    LINENUMBER 839 L1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    DSTORE 4
+   L2
+    LINENUMBER 840 L2
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    DSTORE 6
+   L3
+    LINENUMBER 842 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DLOAD 2
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DLOAD 4
+    DMUL
+    DADD
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DLOAD 6
+    DMUL
+    DADD
+    DSTORE 8
+   L4
+    LINENUMBER 844 L4
+    NEW org/apache/commons/math/geometry/euclidean/threed/Vector3D
+    DUP
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DLOAD 2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DLOAD 6
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DLOAD 4
+    DMUL
+    DSUB
+    DSUB
+    DMUL
+    DLOAD 8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    DADD
+    DMUL
+    DLOAD 2
+    DSUB
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DLOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DLOAD 2
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DLOAD 6
+    DMUL
+    DSUB
+    DSUB
+    DMUL
+    DLOAD 8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    DADD
+    DMUL
+    DLOAD 4
+    DSUB
+    LDC 2.0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DLOAD 6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DLOAD 4
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DLOAD 2
+    DMUL
+    DSUB
+    DSUB
+    DMUL
+    DLOAD 8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DADD
+    DMUL
+    DLOAD 6
+    DSUB
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.<init> (DDD)V
+    ARETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L5 0
+    LOCALVARIABLE u Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L0 L5 1
+    LOCALVARIABLE x D L1 L5 2
+    LOCALVARIABLE y D L2 L5 4
+    LOCALVARIABLE z D L3 L5 6
+    LOCALVARIABLE s D L4 L5 8
+    MAXSTACK = 18
+    MAXLOCALS = 10
+
+  // access flags 0x1
+  public applyInverseTo(Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;)Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D;
+   L0
+    LINENUMBER 856 L0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getX ()D
+    DSTORE 2
+   L1
+    LINENUMBER 857 L1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getY ()D
+    DSTORE 4
+   L2
+    LINENUMBER 858 L2
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.getZ ()D
+    DSTORE 6
+   L3
+    LINENUMBER 860 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DLOAD 2
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DLOAD 4
+    DMUL
+    DADD
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DLOAD 6
+    DMUL
+    DADD
+    DSTORE 8
+   L4
+    LINENUMBER 861 L4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DNEG
+    DSTORE 10
+   L5
+    LINENUMBER 863 L5
+    NEW org/apache/commons/math/geometry/euclidean/threed/Vector3D
+    DUP
+    LDC 2.0
+    DLOAD 10
+    DLOAD 2
+    DLOAD 10
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DLOAD 6
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DLOAD 4
+    DMUL
+    DSUB
+    DSUB
+    DMUL
+    DLOAD 8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    DADD
+    DMUL
+    DLOAD 2
+    DSUB
+    LDC 2.0
+    DLOAD 10
+    DLOAD 4
+    DLOAD 10
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DLOAD 2
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DLOAD 6
+    DMUL
+    DSUB
+    DSUB
+    DMUL
+    DLOAD 8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    DADD
+    DMUL
+    DLOAD 4
+    DSUB
+    LDC 2.0
+    DLOAD 10
+    DLOAD 6
+    DLOAD 10
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DLOAD 4
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DLOAD 2
+    DMUL
+    DSUB
+    DSUB
+    DMUL
+    DLOAD 8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DADD
+    DMUL
+    DLOAD 6
+    DSUB
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Vector3D.<init> (DDD)V
+    ARETURN
+   L6
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L6 0
+    LOCALVARIABLE u Lorg/apache/commons/math/geometry/euclidean/threed/Vector3D; L0 L6 1
+    LOCALVARIABLE x D L1 L6 2
+    LOCALVARIABLE y D L2 L6 4
+    LOCALVARIABLE z D L3 L6 6
+    LOCALVARIABLE s D L4 L6 8
+    LOCALVARIABLE m0 D L5 L6 10
+    MAXSTACK = 18
+    MAXLOCALS = 12
+
+  // access flags 0x1
+  public applyTo(Lorg/apache/commons/math/geometry/euclidean/threed/Rotation;)Lorg/apache/commons/math/geometry/euclidean/threed/Rotation;
+   L0
+    LINENUMBER 879 L0
+    NEW org/apache/commons/math/geometry/euclidean/threed/Rotation
+    DUP
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    DADD
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DADD
+    DSUB
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    DADD
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    DSUB
+    DADD
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    DADD
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DSUB
+    DADD
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DADD
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    DSUB
+    DADD
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Rotation.<init> (DDDDZ)V
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L1 0
+    LOCALVARIABLE r Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L1 1
+    MAXSTACK = 16
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public applyInverseTo(Lorg/apache/commons/math/geometry/euclidean/threed/Rotation;)Lorg/apache/commons/math/geometry/euclidean/threed/Rotation;
+   L0
+    LINENUMBER 898 L0
+    NEW org/apache/commons/math/geometry/euclidean/threed/Rotation
+    DUP
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DNEG
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    DADD
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DADD
+    DSUB
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DNEG
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    DADD
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    DSUB
+    DADD
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DNEG
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    DADD
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DSUB
+    DADD
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DNEG
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q0 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q3 : D
+    DMUL
+    DADD
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    DMUL
+    ALOAD 1
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q2 : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/geometry/euclidean/threed/Rotation.q1 : D
+    DMUL
+    DSUB
+    DADD
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Rotation.<init> (DDDDZ)V
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L1 0
+    LOCALVARIABLE r Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L1 1
+    MAXSTACK = 16
+    MAXLOCALS = 2
+
+  // access flags 0x2
+  private orthogonalizeMatrix([[DD)[[D throws org/apache/commons/math/geometry/euclidean/threed/NotARotationMatrixException 
+   L0
+    LINENUMBER 917 L0
+    ALOAD 1
+    ICONST_0
+    AALOAD
+    ASTORE 4
+   L1
+    LINENUMBER 918 L1
+    ALOAD 1
+    ICONST_1
+    AALOAD
+    ASTORE 5
+   L2
+    LINENUMBER 919 L2
+    ALOAD 1
+    ICONST_2
+    AALOAD
+    ASTORE 6
+   L3
+    LINENUMBER 920 L3
+    ALOAD 4
+    ICONST_0
+    DALOAD
+    DSTORE 7
+   L4
+    LINENUMBER 921 L4
+    ALOAD 4
+    ICONST_1
+    DALOAD
+    DSTORE 9
+   L5
+    LINENUMBER 922 L5
+    ALOAD 4
+    ICONST_2
+    DALOAD
+    DSTORE 11
+   L6
+    LINENUMBER 923 L6
+    ALOAD 5
+    ICONST_0
+    DALOAD
+    DSTORE 13
+   L7
+    LINENUMBER 924 L7
+    ALOAD 5
+    ICONST_1
+    DALOAD
+    DSTORE 15
+   L8
+    LINENUMBER 925 L8
+    ALOAD 5
+    ICONST_2
+    DALOAD
+    DSTORE 17
+   L9
+    LINENUMBER 926 L9
+    ALOAD 6
+    ICONST_0
+    DALOAD
+    DSTORE 19
+   L10
+    LINENUMBER 927 L10
+    ALOAD 6
+    ICONST_1
+    DALOAD
+    DSTORE 21
+   L11
+    LINENUMBER 928 L11
+    ALOAD 6
+    ICONST_2
+    DALOAD
+    DSTORE 23
+   L12
+    LINENUMBER 929 L12
+    DCONST_0
+    DSTORE 25
+   L13
+    LINENUMBER 932 L13
+    ICONST_3
+    ICONST_3
+    MULTIANEWARRAY [[D 2
+    ASTORE 29
+   L14
+    LINENUMBER 933 L14
+    ALOAD 29
+    ICONST_0
+    AALOAD
+    ASTORE 30
+   L15
+    LINENUMBER 934 L15
+    ALOAD 29
+    ICONST_1
+    AALOAD
+    ASTORE 31
+   L16
+    LINENUMBER 935 L16
+    ALOAD 29
+    ICONST_2
+    AALOAD
+    ASTORE 32
+   L17
+    LINENUMBER 938 L17
+    ICONST_0
+    ISTORE 33
+   L18
+    LINENUMBER 939 L18
+    IINC 33 1
+    ILOAD 33
+    BIPUSH 11
+    IF_ICMPGE L19
+   L20
+    LINENUMBER 942 L20
+    ALOAD 4
+    ICONST_0
+    DALOAD
+    DLOAD 7
+    DMUL
+    ALOAD 5
+    ICONST_0
+    DALOAD
+    DLOAD 13
+    DMUL
+    DADD
+    ALOAD 6
+    ICONST_0
+    DALOAD
+    DLOAD 19
+    DMUL
+    DADD
+    DSTORE 34
+   L21
+    LINENUMBER 943 L21
+    ALOAD 4
+    ICONST_1
+    DALOAD
+    DLOAD 7
+    DMUL
+    ALOAD 5
+    ICONST_1
+    DALOAD
+    DLOAD 13
+    DMUL
+    DADD
+    ALOAD 6
+    ICONST_1
+    DALOAD
+    DLOAD 19
+    DMUL
+    DADD
+    DSTORE 36
+   L22
+    LINENUMBER 944 L22
+    ALOAD 4
+    ICONST_2
+    DALOAD
+    DLOAD 7
+    DMUL
+    ALOAD 5
+    ICONST_2
+    DALOAD
+    DLOAD 13
+    DMUL
+    DADD
+    ALOAD 6
+    ICONST_2
+    DALOAD
+    DLOAD 19
+    DMUL
+    DADD
+    DSTORE 38
+   L23
+    LINENUMBER 945 L23
+    ALOAD 4
+    ICONST_0
+    DALOAD
+    DLOAD 9
+    DMUL
+    ALOAD 5
+    ICONST_0
+    DALOAD
+    DLOAD 15
+    DMUL
+    DADD
+    ALOAD 6
+    ICONST_0
+    DALOAD
+    DLOAD 21
+    DMUL
+    DADD
+    DSTORE 40
+   L24
+    LINENUMBER 946 L24
+    ALOAD 4
+    ICONST_1
+    DALOAD
+    DLOAD 9
+    DMUL
+    ALOAD 5
+    ICONST_1
+    DALOAD
+    DLOAD 15
+    DMUL
+    DADD
+    ALOAD 6
+    ICONST_1
+    DALOAD
+    DLOAD 21
+    DMUL
+    DADD
+    DSTORE 42
+   L25
+    LINENUMBER 947 L25
+    ALOAD 4
+    ICONST_2
+    DALOAD
+    DLOAD 9
+    DMUL
+    ALOAD 5
+    ICONST_2
+    DALOAD
+    DLOAD 15
+    DMUL
+    DADD
+    ALOAD 6
+    ICONST_2
+    DALOAD
+    DLOAD 21
+    DMUL
+    DADD
+    DSTORE 44
+   L26
+    LINENUMBER 948 L26
+    ALOAD 4
+    ICONST_0
+    DALOAD
+    DLOAD 11
+    DMUL
+    ALOAD 5
+    ICONST_0
+    DALOAD
+    DLOAD 17
+    DMUL
+    DADD
+    ALOAD 6
+    ICONST_0
+    DALOAD
+    DLOAD 23
+    DMUL
+    DADD
+    DSTORE 46
+   L27
+    LINENUMBER 949 L27
+    ALOAD 4
+    ICONST_1
+    DALOAD
+    DLOAD 11
+    DMUL
+    ALOAD 5
+    ICONST_1
+    DALOAD
+    DLOAD 17
+    DMUL
+    DADD
+    ALOAD 6
+    ICONST_1
+    DALOAD
+    DLOAD 23
+    DMUL
+    DADD
+    DSTORE 48
+   L28
+    LINENUMBER 950 L28
+    ALOAD 4
+    ICONST_2
+    DALOAD
+    DLOAD 11
+    DMUL
+    ALOAD 5
+    ICONST_2
+    DALOAD
+    DLOAD 17
+    DMUL
+    DADD
+    ALOAD 6
+    ICONST_2
+    DALOAD
+    DLOAD 23
+    DMUL
+    DADD
+    DSTORE 50
+   L29
+    LINENUMBER 953 L29
+    ALOAD 30
+    ICONST_0
+    DLOAD 7
+    LDC 0.5
+    DLOAD 7
+    DLOAD 34
+    DMUL
+    DLOAD 9
+    DLOAD 36
+    DMUL
+    DADD
+    DLOAD 11
+    DLOAD 38
+    DMUL
+    DADD
+    ALOAD 4
+    ICONST_0
+    DALOAD
+    DSUB
+    DMUL
+    DSUB
+    DASTORE
+   L30
+    LINENUMBER 954 L30
+    ALOAD 30
+    ICONST_1
+    DLOAD 9
+    LDC 0.5
+    DLOAD 7
+    DLOAD 40
+    DMUL
+    DLOAD 9
+    DLOAD 42
+    DMUL
+    DADD
+    DLOAD 11
+    DLOAD 44
+    DMUL
+    DADD
+    ALOAD 4
+    ICONST_1
+    DALOAD
+    DSUB
+    DMUL
+    DSUB
+    DASTORE
+   L31
+    LINENUMBER 955 L31
+    ALOAD 30
+    ICONST_2
+    DLOAD 11
+    LDC 0.5
+    DLOAD 7
+    DLOAD 46
+    DMUL
+    DLOAD 9
+    DLOAD 48
+    DMUL
+    DADD
+    DLOAD 11
+    DLOAD 50
+    DMUL
+    DADD
+    ALOAD 4
+    ICONST_2
+    DALOAD
+    DSUB
+    DMUL
+    DSUB
+    DASTORE
+   L32
+    LINENUMBER 956 L32
+    ALOAD 31
+    ICONST_0
+    DLOAD 13
+    LDC 0.5
+    DLOAD 13
+    DLOAD 34
+    DMUL
+    DLOAD 15
+    DLOAD 36
+    DMUL
+    DADD
+    DLOAD 17
+    DLOAD 38
+    DMUL
+    DADD
+    ALOAD 5
+    ICONST_0
+    DALOAD
+    DSUB
+    DMUL
+    DSUB
+    DASTORE
+   L33
+    LINENUMBER 957 L33
+    ALOAD 31
+    ICONST_1
+    DLOAD 15
+    LDC 0.5
+    DLOAD 13
+    DLOAD 40
+    DMUL
+    DLOAD 15
+    DLOAD 42
+    DMUL
+    DADD
+    DLOAD 17
+    DLOAD 44
+    DMUL
+    DADD
+    ALOAD 5
+    ICONST_1
+    DALOAD
+    DSUB
+    DMUL
+    DSUB
+    DASTORE
+   L34
+    LINENUMBER 958 L34
+    ALOAD 31
+    ICONST_2
+    DLOAD 17
+    LDC 0.5
+    DLOAD 13
+    DLOAD 46
+    DMUL
+    DLOAD 15
+    DLOAD 48
+    DMUL
+    DADD
+    DLOAD 17
+    DLOAD 50
+    DMUL
+    DADD
+    ALOAD 5
+    ICONST_2
+    DALOAD
+    DSUB
+    DMUL
+    DSUB
+    DASTORE
+   L35
+    LINENUMBER 959 L35
+    ALOAD 32
+    ICONST_0
+    DLOAD 19
+    LDC 0.5
+    DLOAD 19
+    DLOAD 34
+    DMUL
+    DLOAD 21
+    DLOAD 36
+    DMUL
+    DADD
+    DLOAD 23
+    DLOAD 38
+    DMUL
+    DADD
+    ALOAD 6
+    ICONST_0
+    DALOAD
+    DSUB
+    DMUL
+    DSUB
+    DASTORE
+   L36
+    LINENUMBER 960 L36
+    ALOAD 32
+    ICONST_1
+    DLOAD 21
+    LDC 0.5
+    DLOAD 19
+    DLOAD 40
+    DMUL
+    DLOAD 21
+    DLOAD 42
+    DMUL
+    DADD
+    DLOAD 23
+    DLOAD 44
+    DMUL
+    DADD
+    ALOAD 6
+    ICONST_1
+    DALOAD
+    DSUB
+    DMUL
+    DSUB
+    DASTORE
+   L37
+    LINENUMBER 961 L37
+    ALOAD 32
+    ICONST_2
+    DLOAD 23
+    LDC 0.5
+    DLOAD 19
+    DLOAD 46
+    DMUL
+    DLOAD 21
+    DLOAD 48
+    DMUL
+    DADD
+    DLOAD 23
+    DLOAD 50
+    DMUL
+    DADD
+    ALOAD 6
+    ICONST_2
+    DALOAD
+    DSUB
+    DMUL
+    DSUB
+    DASTORE
+   L38
+    LINENUMBER 964 L38
+    ALOAD 30
+    ICONST_0
+    DALOAD
+    ALOAD 4
+    ICONST_0
+    DALOAD
+    DSUB
+    DSTORE 52
+   L39
+    LINENUMBER 965 L39
+    ALOAD 30
+    ICONST_1
+    DALOAD
+    ALOAD 4
+    ICONST_1
+    DALOAD
+    DSUB
+    DSTORE 54
+   L40
+    LINENUMBER 966 L40
+    ALOAD 30
+    ICONST_2
+    DALOAD
+    ALOAD 4
+    ICONST_2
+    DALOAD
+    DSUB
+    DSTORE 56
+   L41
+    LINENUMBER 967 L41
+    ALOAD 31
+    ICONST_0
+    DALOAD
+    ALOAD 5
+    ICONST_0
+    DALOAD
+    DSUB
+    DSTORE 58
+   L42
+    LINENUMBER 968 L42
+    ALOAD 31
+    ICONST_1
+    DALOAD
+    ALOAD 5
+    ICONST_1
+    DALOAD
+    DSUB
+    DSTORE 60
+   L43
+    LINENUMBER 969 L43
+    ALOAD 31
+    ICONST_2
+    DALOAD
+    ALOAD 5
+    ICONST_2
+    DALOAD
+    DSUB
+    DSTORE 62
+   L44
+    LINENUMBER 970 L44
+    ALOAD 32
+    ICONST_0
+    DALOAD
+    ALOAD 6
+    ICONST_0
+    DALOAD
+    DSUB
+    DSTORE 64
+   L45
+    LINENUMBER 971 L45
+    ALOAD 32
+    ICONST_1
+    DALOAD
+    ALOAD 6
+    ICONST_1
+    DALOAD
+    DSUB
+    DSTORE 66
+   L46
+    LINENUMBER 972 L46
+    ALOAD 32
+    ICONST_2
+    DALOAD
+    ALOAD 6
+    ICONST_2
+    DALOAD
+    DSUB
+    DSTORE 68
+   L47
+    LINENUMBER 975 L47
+    DLOAD 52
+    DLOAD 52
+    DMUL
+    DLOAD 54
+    DLOAD 54
+    DMUL
+    DADD
+    DLOAD 56
+    DLOAD 56
+    DMUL
+    DADD
+    DLOAD 58
+    DLOAD 58
+    DMUL
+    DADD
+    DLOAD 60
+    DLOAD 60
+    DMUL
+    DADD
+    DLOAD 62
+    DLOAD 62
+    DMUL
+    DADD
+    DLOAD 64
+    DLOAD 64
+    DMUL
+    DADD
+    DLOAD 66
+    DLOAD 66
+    DMUL
+    DADD
+    DLOAD 68
+    DLOAD 68
+    DMUL
+    DADD
+    DSTORE 27
+   L48
+    LINENUMBER 980 L48
+    DLOAD 27
+    DLOAD 25
+    DSUB
+    INVOKESTATIC org/apache/commons/math/util/FastMath.abs (D)D
+    DLOAD 2
+    DCMPG
+    IFGT L49
+   L50
+    LINENUMBER 981 L50
+    ALOAD 29
+    ARETURN
+   L49
+    LINENUMBER 985 L49
+    ALOAD 30
+    ICONST_0
+    DALOAD
+    DSTORE 7
+   L51
+    LINENUMBER 986 L51
+    ALOAD 30
+    ICONST_1
+    DALOAD
+    DSTORE 9
+   L52
+    LINENUMBER 987 L52
+    ALOAD 30
+    ICONST_2
+    DALOAD
+    DSTORE 11
+   L53
+    LINENUMBER 988 L53
+    ALOAD 31
+    ICONST_0
+    DALOAD
+    DSTORE 13
+   L54
+    LINENUMBER 989 L54
+    ALOAD 31
+    ICONST_1
+    DALOAD
+    DSTORE 15
+   L55
+    LINENUMBER 990 L55
+    ALOAD 31
+    ICONST_2
+    DALOAD
+    DSTORE 17
+   L56
+    LINENUMBER 991 L56
+    ALOAD 32
+    ICONST_0
+    DALOAD
+    DSTORE 19
+   L57
+    LINENUMBER 992 L57
+    ALOAD 32
+    ICONST_1
+    DALOAD
+    DSTORE 21
+   L58
+    LINENUMBER 993 L58
+    ALOAD 32
+    ICONST_2
+    DALOAD
+    DSTORE 23
+   L59
+    LINENUMBER 994 L59
+    DLOAD 27
+    DSTORE 25
+   L60
+    LINENUMBER 996 L60
+    GOTO L18
+   L19
+    LINENUMBER 999 L19
+    NEW org/apache/commons/math/geometry/euclidean/threed/NotARotationMatrixException
+    DUP
+    GETSTATIC org/apache/commons/math/exception/util/LocalizedFormats.UNABLE_TO_ORTHOGONOLIZE_MATRIX : Lorg/apache/commons/math/exception/util/LocalizedFormats;
+    ICONST_1
+    ANEWARRAY java/lang/Object
+    DUP
+    ICONST_0
+    ILOAD 33
+    ICONST_1
+    ISUB
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/NotARotationMatrixException.<init> (Lorg/apache/commons/math/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L61
+    LOCALVARIABLE mx00 D L21 L60 34
+    LOCALVARIABLE mx10 D L22 L60 36
+    LOCALVARIABLE mx20 D L23 L60 38
+    LOCALVARIABLE mx01 D L24 L60 40
+    LOCALVARIABLE mx11 D L25 L60 42
+    LOCALVARIABLE mx21 D L26 L60 44
+    LOCALVARIABLE mx02 D L27 L60 46
+    LOCALVARIABLE mx12 D L28 L60 48
+    LOCALVARIABLE mx22 D L29 L60 50
+    LOCALVARIABLE corr00 D L39 L60 52
+    LOCALVARIABLE corr01 D L40 L60 54
+    LOCALVARIABLE corr02 D L41 L60 56
+    LOCALVARIABLE corr10 D L42 L60 58
+    LOCALVARIABLE corr11 D L43 L60 60
+    LOCALVARIABLE corr12 D L44 L60 62
+    LOCALVARIABLE corr20 D L45 L60 64
+    LOCALVARIABLE corr21 D L46 L60 66
+    LOCALVARIABLE corr22 D L47 L60 68
+    LOCALVARIABLE fn1 D L48 L19 27
+    LOCALVARIABLE this Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L61 0
+    LOCALVARIABLE m [[D L0 L61 1
+    LOCALVARIABLE threshold D L0 L61 2
+    LOCALVARIABLE m0 [D L1 L61 4
+    LOCALVARIABLE m1 [D L2 L61 5
+    LOCALVARIABLE m2 [D L3 L61 6
+    LOCALVARIABLE x00 D L4 L61 7
+    LOCALVARIABLE x01 D L5 L61 9
+    LOCALVARIABLE x02 D L6 L61 11
+    LOCALVARIABLE x10 D L7 L61 13
+    LOCALVARIABLE x11 D L8 L61 15
+    LOCALVARIABLE x12 D L9 L61 17
+    LOCALVARIABLE x20 D L10 L61 19
+    LOCALVARIABLE x21 D L11 L61 21
+    LOCALVARIABLE x22 D L12 L61 23
+    LOCALVARIABLE fn D L13 L61 25
+    LOCALVARIABLE o [[D L14 L61 29
+    LOCALVARIABLE o0 [D L15 L61 30
+    LOCALVARIABLE o1 [D L16 L61 31
+    LOCALVARIABLE o2 [D L17 L61 32
+    LOCALVARIABLE i I L18 L61 33
+    MAXSTACK = 12
+    MAXLOCALS = 70
+
+  // access flags 0x9
+  public static distance(Lorg/apache/commons/math/geometry/euclidean/threed/Rotation;Lorg/apache/commons/math/geometry/euclidean/threed/Rotation;)D
+   L0
+    LINENUMBER 1029 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.applyInverseTo (Lorg/apache/commons/math/geometry/euclidean/threed/Rotation;)Lorg/apache/commons/math/geometry/euclidean/threed/Rotation;
+    INVOKEVIRTUAL org/apache/commons/math/geometry/euclidean/threed/Rotation.getAngle ()D
+    DRETURN
+   L1
+    LOCALVARIABLE r1 Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L1 0
+    LOCALVARIABLE r2 Lorg/apache/commons/math/geometry/euclidean/threed/Rotation; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x8
+  static <clinit>()V
+   L0
+    LINENUMBER 98 L0
+    NEW org/apache/commons/math/geometry/euclidean/threed/Rotation
+    DUP
+    DCONST_1
+    DCONST_0
+    DCONST_0
+    DCONST_0
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/geometry/euclidean/threed/Rotation.<init> (DDDDZ)V
+    PUTSTATIC org/apache/commons/math/geometry/euclidean/threed/Rotation.IDENTITY : Lorg/apache/commons/math/geometry/euclidean/threed/Rotation;
+    RETURN
+    MAXSTACK = 11
+    MAXLOCALS = 0
+}
+

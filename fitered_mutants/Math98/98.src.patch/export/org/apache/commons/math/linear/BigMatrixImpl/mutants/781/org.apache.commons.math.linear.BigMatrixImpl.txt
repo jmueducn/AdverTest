@@ -1,0 +1,4950 @@
+// class version 51.0 (51)
+// access flags 0x21
+public class org/apache/commons/math/linear/BigMatrixImpl implements org/apache/commons/math/linear/BigMatrix java/io/Serializable {
+
+  // compiled from: BigMatrixImpl.java
+
+  // access flags 0x1A
+  private final static J serialVersionUID = -1011428905656140431
+
+  // access flags 0x4
+  protected [[Ljava/math/BigDecimal; data
+
+  // access flags 0x4
+  protected [[Ljava/math/BigDecimal; lu
+
+  // access flags 0x4
+  protected [I permutation
+
+  // access flags 0x4
+  protected I parity
+
+  // access flags 0x2
+  private I roundingMode
+
+  // access flags 0x2
+  private I scale
+
+  // access flags 0x1A
+  private final static Ljava/math/BigDecimal; TOO_SMALL
+
+  // access flags 0x18
+  final static Ljava/math/BigDecimal; ZERO
+
+  // access flags 0x18
+  final static Ljava/math/BigDecimal; ONE
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 86 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 56 L1
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+   L2
+    LINENUMBER 61 L2
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L3
+    LINENUMBER 64 L3
+    ALOAD 0
+    ACONST_NULL
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+   L4
+    LINENUMBER 67 L4
+    ALOAD 0
+    ICONST_1
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.parity : I
+   L5
+    LINENUMBER 70 L5
+    ALOAD 0
+    ICONST_4
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.roundingMode : I
+   L6
+    LINENUMBER 73 L6
+    ALOAD 0
+    BIPUSH 64
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.scale : I
+   L7
+    LINENUMBER 87 L7
+    RETURN
+   L8
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L8 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public <init>(II)V
+   L0
+    LINENUMBER 97 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 56 L1
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+   L2
+    LINENUMBER 61 L2
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L3
+    LINENUMBER 64 L3
+    ALOAD 0
+    ACONST_NULL
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+   L4
+    LINENUMBER 67 L4
+    ALOAD 0
+    ICONST_1
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.parity : I
+   L5
+    LINENUMBER 70 L5
+    ALOAD 0
+    ICONST_4
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.roundingMode : I
+   L6
+    LINENUMBER 73 L6
+    ALOAD 0
+    BIPUSH 64
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.scale : I
+   L7
+    LINENUMBER 98 L7
+    ILOAD 1
+    IFLE L8
+    ILOAD 2
+    IFGT L9
+   L8
+    LINENUMBER 99 L8
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I] []
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "row and column dimensions must be positive"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L9
+    LINENUMBER 102 L9
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I] []
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+   L10
+    LINENUMBER 103 L10
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L11
+    LINENUMBER 104 L11
+    RETURN
+   L12
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L12 0
+    LOCALVARIABLE rowDimension I L0 L12 1
+    LOCALVARIABLE columnDimension I L0 L12 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public <init>([[Ljava/math/BigDecimal;)V
+   L0
+    LINENUMBER 118 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 56 L1
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+   L2
+    LINENUMBER 61 L2
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L3
+    LINENUMBER 64 L3
+    ALOAD 0
+    ACONST_NULL
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+   L4
+    LINENUMBER 67 L4
+    ALOAD 0
+    ICONST_1
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.parity : I
+   L5
+    LINENUMBER 70 L5
+    ALOAD 0
+    ICONST_4
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.roundingMode : I
+   L6
+    LINENUMBER 73 L6
+    ALOAD 0
+    BIPUSH 64
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.scale : I
+   L7
+    LINENUMBER 119 L7
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.copyIn ([[Ljava/math/BigDecimal;)V
+   L8
+    LINENUMBER 120 L8
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L9
+    LINENUMBER 121 L9
+    RETURN
+   L10
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L10 0
+    LOCALVARIABLE d [[Ljava/math/BigDecimal; L0 L10 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>([[Ljava/math/BigDecimal;Z)V
+   L0
+    LINENUMBER 138 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 56 L1
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+   L2
+    LINENUMBER 61 L2
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L3
+    LINENUMBER 64 L3
+    ALOAD 0
+    ACONST_NULL
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+   L4
+    LINENUMBER 67 L4
+    ALOAD 0
+    ICONST_1
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.parity : I
+   L5
+    LINENUMBER 70 L5
+    ALOAD 0
+    ICONST_4
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.roundingMode : I
+   L6
+    LINENUMBER 73 L6
+    ALOAD 0
+    BIPUSH 64
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.scale : I
+   L7
+    LINENUMBER 139 L7
+    ILOAD 2
+    IFEQ L8
+   L9
+    LINENUMBER 140 L9
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.copyIn ([[Ljava/math/BigDecimal;)V
+    GOTO L10
+   L8
+    LINENUMBER 142 L8
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I] []
+    ALOAD 1
+    IFNONNULL L11
+   L12
+    LINENUMBER 143 L12
+    NEW java/lang/NullPointerException
+    DUP
+    INVOKESPECIAL java/lang/NullPointerException.<init> ()V
+    ATHROW
+   L11
+    LINENUMBER 145 L11
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I] []
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 3
+   L13
+    LINENUMBER 146 L13
+    ILOAD 3
+    IFNE L14
+   L15
+    LINENUMBER 147 L15
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "Matrix must have at least one row."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L14
+    LINENUMBER 149 L14
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I] []
+    ALOAD 1
+    ICONST_0
+    AALOAD
+    ARRAYLENGTH
+    ISTORE 4
+   L16
+    LINENUMBER 150 L16
+    ILOAD 4
+    IFNE L17
+   L18
+    LINENUMBER 151 L18
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "Matrix must have at least one column."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L17
+    LINENUMBER 153 L17
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I] []
+    ICONST_1
+    ISTORE 5
+   L19
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I I] []
+    ILOAD 5
+    ILOAD 3
+    IF_ICMPGE L20
+   L21
+    LINENUMBER 154 L21
+    ALOAD 1
+    ILOAD 5
+    AALOAD
+    ARRAYLENGTH
+    ILOAD 4
+    IF_ICMPEQ L22
+   L23
+    LINENUMBER 155 L23
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "All input rows must have the same length."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L22
+    LINENUMBER 153 L22
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I I] []
+    IINC 5 1
+    GOTO L19
+   L20
+    LINENUMBER 158 L20
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I I] []
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+   L10
+    LINENUMBER 160 L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I] []
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L24
+    LINENUMBER 161 L24
+    RETURN
+   L25
+    LOCALVARIABLE r I L19 L20 5
+    LOCALVARIABLE nRows I L13 L10 3
+    LOCALVARIABLE nCols I L16 L10 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L25 0
+    LOCALVARIABLE d [[Ljava/math/BigDecimal; L0 L25 1
+    LOCALVARIABLE copyArray Z L0 L25 2
+    MAXSTACK = 3
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public <init>([[D)V
+   L0
+    LINENUMBER 174 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 56 L1
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+   L2
+    LINENUMBER 61 L2
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L3
+    LINENUMBER 64 L3
+    ALOAD 0
+    ACONST_NULL
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+   L4
+    LINENUMBER 67 L4
+    ALOAD 0
+    ICONST_1
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.parity : I
+   L5
+    LINENUMBER 70 L5
+    ALOAD 0
+    ICONST_4
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.roundingMode : I
+   L6
+    LINENUMBER 73 L6
+    ALOAD 0
+    BIPUSH 64
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.scale : I
+   L7
+    LINENUMBER 175 L7
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 2
+   L8
+    LINENUMBER 176 L8
+    ILOAD 2
+    IFNE L9
+   L10
+    LINENUMBER 177 L10
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "Matrix must have at least one row."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L9
+    LINENUMBER 180 L9
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[D I] []
+    ALOAD 1
+    ICONST_0
+    AALOAD
+    ARRAYLENGTH
+    ISTORE 3
+   L11
+    LINENUMBER 181 L11
+    ILOAD 3
+    IFNE L12
+   L13
+    LINENUMBER 182 L13
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "Matrix must have at least one column."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L12
+    LINENUMBER 185 L12
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[D I I] []
+    ICONST_1
+    ISTORE 4
+   L14
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[D I I I] []
+    ILOAD 4
+    ILOAD 2
+    IF_ICMPGE L15
+   L16
+    LINENUMBER 186 L16
+    ALOAD 1
+    ILOAD 4
+    AALOAD
+    ARRAYLENGTH
+    ILOAD 3
+    IF_ICMPEQ L17
+   L18
+    LINENUMBER 187 L18
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "All input rows must have the same length."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L17
+    LINENUMBER 185 L17
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[D I I I] []
+    IINC 4 1
+    GOTO L14
+   L15
+    LINENUMBER 191 L15
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[D I I I] []
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.copyIn ([[D)V
+   L19
+    LINENUMBER 192 L19
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L20
+    LINENUMBER 193 L20
+    RETURN
+   L21
+    LOCALVARIABLE row I L14 L15 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L21 0
+    LOCALVARIABLE d [[D L0 L21 1
+    LOCALVARIABLE nRows I L8 L21 2
+    LOCALVARIABLE nCols I L11 L21 3
+    MAXSTACK = 3
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public <init>([[Ljava/lang/String;)V
+   L0
+    LINENUMBER 204 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 56 L1
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+   L2
+    LINENUMBER 61 L2
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L3
+    LINENUMBER 64 L3
+    ALOAD 0
+    ACONST_NULL
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+   L4
+    LINENUMBER 67 L4
+    ALOAD 0
+    ICONST_1
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.parity : I
+   L5
+    LINENUMBER 70 L5
+    ALOAD 0
+    ICONST_4
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.roundingMode : I
+   L6
+    LINENUMBER 73 L6
+    ALOAD 0
+    BIPUSH 64
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.scale : I
+   L7
+    LINENUMBER 205 L7
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 2
+   L8
+    LINENUMBER 206 L8
+    ILOAD 2
+    IFNE L9
+   L10
+    LINENUMBER 207 L10
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "Matrix must have at least one row."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L9
+    LINENUMBER 210 L9
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/lang/String; I] []
+    ALOAD 1
+    ICONST_0
+    AALOAD
+    ARRAYLENGTH
+    ISTORE 3
+   L11
+    LINENUMBER 211 L11
+    ILOAD 3
+    IFNE L12
+   L13
+    LINENUMBER 212 L13
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "Matrix must have at least one column."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L12
+    LINENUMBER 215 L12
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/lang/String; I I] []
+    ICONST_1
+    ISTORE 4
+   L14
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/lang/String; I I I] []
+    ILOAD 4
+    ILOAD 2
+    IF_ICMPGE L15
+   L16
+    LINENUMBER 216 L16
+    ALOAD 1
+    ILOAD 4
+    AALOAD
+    ARRAYLENGTH
+    ILOAD 3
+    IF_ICMPEQ L17
+   L18
+    LINENUMBER 217 L18
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "All input rows must have the same length."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L17
+    LINENUMBER 215 L17
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/lang/String; I I I] []
+    IINC 4 1
+    GOTO L14
+   L15
+    LINENUMBER 221 L15
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/lang/String; I I I] []
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.copyIn ([[Ljava/lang/String;)V
+   L19
+    LINENUMBER 222 L19
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L20
+    LINENUMBER 223 L20
+    RETURN
+   L21
+    LOCALVARIABLE row I L14 L15 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L21 0
+    LOCALVARIABLE d [[Ljava/lang/String; L0 L21 1
+    LOCALVARIABLE nRows I L8 L21 2
+    LOCALVARIABLE nCols I L11 L21 3
+    MAXSTACK = 3
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public <init>([Ljava/math/BigDecimal;)V
+   L0
+    LINENUMBER 234 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 56 L1
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+   L2
+    LINENUMBER 61 L2
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L3
+    LINENUMBER 64 L3
+    ALOAD 0
+    ACONST_NULL
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+   L4
+    LINENUMBER 67 L4
+    ALOAD 0
+    ICONST_1
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.parity : I
+   L5
+    LINENUMBER 70 L5
+    ALOAD 0
+    ICONST_4
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.roundingMode : I
+   L6
+    LINENUMBER 73 L6
+    ALOAD 0
+    BIPUSH 64
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.scale : I
+   L7
+    LINENUMBER 235 L7
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 2
+   L8
+    LINENUMBER 236 L8
+    ALOAD 0
+    ILOAD 2
+    ICONST_1
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+   L9
+    LINENUMBER 237 L9
+    ICONST_0
+    ISTORE 3
+   L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal; I I] []
+    ILOAD 3
+    ILOAD 2
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 238 L12
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 3
+    AALOAD
+    ICONST_0
+    ALOAD 1
+    ILOAD 3
+    AALOAD
+    AASTORE
+   L13
+    LINENUMBER 237 L13
+    IINC 3 1
+    GOTO L10
+   L11
+    LINENUMBER 240 L11
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal; I I] []
+    RETURN
+   L14
+    LOCALVARIABLE row I L10 L11 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L14 0
+    LOCALVARIABLE v [Ljava/math/BigDecimal; L0 L14 1
+    LOCALVARIABLE nRows I L8 L14 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public copy()Lorg/apache/commons/math/linear/BigMatrix;
+   L0
+    LINENUMBER 248 L0
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.copyOut ()[[Ljava/math/BigDecimal;
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L1 0
+    MAXSTACK = 4
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public add(Lorg/apache/commons/math/linear/BigMatrix;)Lorg/apache/commons/math/linear/BigMatrix; throws java/lang/IllegalArgumentException 
+    TRYCATCHBLOCK L0 L1 L2 java/lang/ClassCastException
+   L0
+    LINENUMBER 260 L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/BigMatrixImpl
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.add (Lorg/apache/commons/math/linear/BigMatrixImpl;)Lorg/apache/commons/math/linear/BigMatrixImpl;
+   L1
+    ARETURN
+   L2
+    LINENUMBER 261 L2
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix] [java/lang/ClassCastException]
+    ASTORE 2
+   L3
+    LINENUMBER 262 L3
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 3
+   L4
+    LINENUMBER 263 L4
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 4
+   L5
+    LINENUMBER 264 L5
+    ILOAD 4
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getColumnDimension ()I (itf)
+    IF_ICMPNE L6
+    ILOAD 3
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getRowDimension ()I (itf)
+    IF_ICMPEQ L7
+   L6
+    LINENUMBER 265 L6
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I] []
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "matrix dimension mismatch"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L7
+    LINENUMBER 267 L7
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I] []
+    ILOAD 3
+    ILOAD 4
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 5
+   L8
+    LINENUMBER 268 L8
+    ICONST_0
+    ISTORE 6
+   L9
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 6
+    ILOAD 3
+    IF_ICMPGE L10
+   L11
+    LINENUMBER 269 L11
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 6
+    AALOAD
+    ASTORE 7
+   L12
+    LINENUMBER 270 L12
+    ALOAD 5
+    ILOAD 6
+    AALOAD
+    ASTORE 8
+   L13
+    LINENUMBER 271 L13
+    ICONST_0
+    ISTORE 9
+   L14
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    ILOAD 9
+    ILOAD 4
+    IF_ICMPGE L15
+   L16
+    LINENUMBER 272 L16
+    ALOAD 8
+    ILOAD 9
+    ALOAD 7
+    ILOAD 9
+    AALOAD
+    ALOAD 1
+    ILOAD 6
+    ILOAD 9
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getEntry (II)Ljava/math/BigDecimal; (itf)
+    INVOKEVIRTUAL java/math/BigDecimal.add (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    AASTORE
+   L17
+    LINENUMBER 271 L17
+    IINC 9 1
+    GOTO L14
+   L15
+    LINENUMBER 268 L15
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    IINC 6 1
+    GOTO L9
+   L10
+    LINENUMBER 275 L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I [[Ljava/math/BigDecimal; I] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 5
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L18
+    LOCALVARIABLE col I L14 L15 9
+    LOCALVARIABLE dataRow [Ljava/math/BigDecimal; L12 L15 7
+    LOCALVARIABLE outDataRow [Ljava/math/BigDecimal; L13 L15 8
+    LOCALVARIABLE row I L9 L10 6
+    LOCALVARIABLE rowCount I L4 L18 3
+    LOCALVARIABLE columnCount I L5 L18 4
+    LOCALVARIABLE outData [[Ljava/math/BigDecimal; L8 L18 5
+    LOCALVARIABLE cce Ljava/lang/ClassCastException; L3 L18 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L18 0
+    LOCALVARIABLE m Lorg/apache/commons/math/linear/BigMatrix; L0 L18 1
+    MAXSTACK = 6
+    MAXLOCALS = 10
+
+  // access flags 0x1
+  public add(Lorg/apache/commons/math/linear/BigMatrixImpl;)Lorg/apache/commons/math/linear/BigMatrixImpl; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 287 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 2
+   L1
+    LINENUMBER 288 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 3
+   L2
+    LINENUMBER 289 L2
+    ILOAD 3
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    IF_ICMPNE L3
+    ILOAD 2
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    IF_ICMPEQ L4
+   L3
+    LINENUMBER 290 L3
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I] []
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "matrix dimension mismatch"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L4
+    LINENUMBER 292 L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I] []
+    ILOAD 2
+    ILOAD 3
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 4
+   L5
+    LINENUMBER 293 L5
+    ICONST_0
+    ISTORE 5
+   L6
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 5
+    ILOAD 2
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 294 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 5
+    AALOAD
+    ASTORE 6
+   L9
+    LINENUMBER 295 L9
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 5
+    AALOAD
+    ASTORE 7
+   L10
+    LINENUMBER 296 L10
+    ALOAD 4
+    ILOAD 5
+    AALOAD
+    ASTORE 8
+   L11
+    LINENUMBER 297 L11
+    ICONST_0
+    ISTORE 9
+   L12
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    ILOAD 9
+    ILOAD 3
+    IF_ICMPGE L13
+   L14
+    LINENUMBER 298 L14
+    ALOAD 8
+    ILOAD 9
+    ALOAD 6
+    ILOAD 9
+    AALOAD
+    ALOAD 7
+    ILOAD 9
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.add (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    AASTORE
+   L15
+    LINENUMBER 297 L15
+    IINC 9 1
+    GOTO L12
+   L13
+    LINENUMBER 293 L13
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    IINC 5 1
+    GOTO L6
+   L7
+    LINENUMBER 301 L7
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I [[Ljava/math/BigDecimal; I] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 4
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L16
+    LOCALVARIABLE col I L12 L13 9
+    LOCALVARIABLE dataRow [Ljava/math/BigDecimal; L9 L13 6
+    LOCALVARIABLE mRow [Ljava/math/BigDecimal; L10 L13 7
+    LOCALVARIABLE outDataRow [Ljava/math/BigDecimal; L11 L13 8
+    LOCALVARIABLE row I L6 L7 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L16 0
+    LOCALVARIABLE m Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L16 1
+    LOCALVARIABLE rowCount I L1 L16 2
+    LOCALVARIABLE columnCount I L2 L16 3
+    LOCALVARIABLE outData [[Ljava/math/BigDecimal; L5 L16 4
+    MAXSTACK = 5
+    MAXLOCALS = 10
+
+  // access flags 0x1
+  public subtract(Lorg/apache/commons/math/linear/BigMatrix;)Lorg/apache/commons/math/linear/BigMatrix; throws java/lang/IllegalArgumentException 
+    TRYCATCHBLOCK L0 L1 L2 java/lang/ClassCastException
+   L0
+    LINENUMBER 313 L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/BigMatrixImpl
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.subtract (Lorg/apache/commons/math/linear/BigMatrixImpl;)Lorg/apache/commons/math/linear/BigMatrixImpl;
+   L1
+    ARETURN
+   L2
+    LINENUMBER 314 L2
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix] [java/lang/ClassCastException]
+    ASTORE 2
+   L3
+    LINENUMBER 315 L3
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 3
+   L4
+    LINENUMBER 316 L4
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 4
+   L5
+    LINENUMBER 317 L5
+    ILOAD 4
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getColumnDimension ()I (itf)
+    IF_ICMPNE L6
+    ILOAD 3
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getRowDimension ()I (itf)
+    IF_ICMPEQ L7
+   L6
+    LINENUMBER 318 L6
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I] []
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "matrix dimension mismatch"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L7
+    LINENUMBER 320 L7
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I] []
+    ILOAD 3
+    ILOAD 4
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 5
+   L8
+    LINENUMBER 321 L8
+    ICONST_0
+    ISTORE 6
+   L9
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 6
+    ILOAD 3
+    IF_ICMPGE L10
+   L11
+    LINENUMBER 322 L11
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 6
+    AALOAD
+    ASTORE 7
+   L12
+    LINENUMBER 323 L12
+    ALOAD 5
+    ILOAD 6
+    AALOAD
+    ASTORE 8
+   L13
+    LINENUMBER 324 L13
+    ICONST_0
+    ISTORE 9
+   L14
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    ILOAD 9
+    ILOAD 4
+    IF_ICMPGE L15
+   L16
+    LINENUMBER 325 L16
+    ALOAD 8
+    ILOAD 9
+    ALOAD 7
+    ILOAD 9
+    AALOAD
+    ALOAD 0
+    ILOAD 6
+    ILOAD 9
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getEntry (II)Ljava/math/BigDecimal;
+    INVOKEVIRTUAL java/math/BigDecimal.subtract (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    AASTORE
+   L17
+    LINENUMBER 324 L17
+    IINC 9 1
+    GOTO L14
+   L15
+    LINENUMBER 321 L15
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    IINC 6 1
+    GOTO L9
+   L10
+    LINENUMBER 328 L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I [[Ljava/math/BigDecimal; I] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 5
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L18
+    LOCALVARIABLE col I L14 L15 9
+    LOCALVARIABLE dataRow [Ljava/math/BigDecimal; L12 L15 7
+    LOCALVARIABLE outDataRow [Ljava/math/BigDecimal; L13 L15 8
+    LOCALVARIABLE row I L9 L10 6
+    LOCALVARIABLE rowCount I L4 L18 3
+    LOCALVARIABLE columnCount I L5 L18 4
+    LOCALVARIABLE outData [[Ljava/math/BigDecimal; L8 L18 5
+    LOCALVARIABLE cce Ljava/lang/ClassCastException; L3 L18 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L18 0
+    LOCALVARIABLE m Lorg/apache/commons/math/linear/BigMatrix; L0 L18 1
+    MAXSTACK = 6
+    MAXLOCALS = 10
+
+  // access flags 0x1
+  public subtract(Lorg/apache/commons/math/linear/BigMatrixImpl;)Lorg/apache/commons/math/linear/BigMatrixImpl; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 340 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 2
+   L1
+    LINENUMBER 341 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 3
+   L2
+    LINENUMBER 342 L2
+    ILOAD 3
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    IF_ICMPNE L3
+    ILOAD 2
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    IF_ICMPEQ L4
+   L3
+    LINENUMBER 343 L3
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I] []
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "matrix dimension mismatch"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L4
+    LINENUMBER 345 L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I] []
+    ILOAD 2
+    ILOAD 3
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 4
+   L5
+    LINENUMBER 346 L5
+    ICONST_0
+    ISTORE 5
+   L6
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 5
+    ILOAD 2
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 347 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 5
+    AALOAD
+    ASTORE 6
+   L9
+    LINENUMBER 348 L9
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 5
+    AALOAD
+    ASTORE 7
+   L10
+    LINENUMBER 349 L10
+    ALOAD 4
+    ILOAD 5
+    AALOAD
+    ASTORE 8
+   L11
+    LINENUMBER 350 L11
+    ICONST_0
+    ISTORE 9
+   L12
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    ILOAD 9
+    ILOAD 3
+    IF_ICMPGE L13
+   L14
+    LINENUMBER 351 L14
+    ALOAD 8
+    ILOAD 9
+    ALOAD 6
+    ILOAD 9
+    AALOAD
+    ALOAD 7
+    ILOAD 9
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.subtract (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    AASTORE
+   L15
+    LINENUMBER 350 L15
+    IINC 9 1
+    GOTO L12
+   L13
+    LINENUMBER 346 L13
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    IINC 5 1
+    GOTO L6
+   L7
+    LINENUMBER 354 L7
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I [[Ljava/math/BigDecimal; I] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 4
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L16
+    LOCALVARIABLE col I L12 L13 9
+    LOCALVARIABLE dataRow [Ljava/math/BigDecimal; L9 L13 6
+    LOCALVARIABLE mRow [Ljava/math/BigDecimal; L10 L13 7
+    LOCALVARIABLE outDataRow [Ljava/math/BigDecimal; L11 L13 8
+    LOCALVARIABLE row I L6 L7 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L16 0
+    LOCALVARIABLE m Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L16 1
+    LOCALVARIABLE rowCount I L1 L16 2
+    LOCALVARIABLE columnCount I L2 L16 3
+    LOCALVARIABLE outData [[Ljava/math/BigDecimal; L5 L16 4
+    MAXSTACK = 5
+    MAXLOCALS = 10
+
+  // access flags 0x1
+  public scalarAdd(Ljava/math/BigDecimal;)Lorg/apache/commons/math/linear/BigMatrix;
+   L0
+    LINENUMBER 364 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 2
+   L1
+    LINENUMBER 365 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 3
+   L2
+    LINENUMBER 366 L2
+    ILOAD 2
+    ILOAD 3
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 4
+   L3
+    LINENUMBER 367 L3
+    ICONST_0
+    ISTORE 5
+   L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 5
+    ILOAD 2
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 368 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 5
+    AALOAD
+    ASTORE 6
+   L7
+    LINENUMBER 369 L7
+    ALOAD 4
+    ILOAD 5
+    AALOAD
+    ASTORE 7
+   L8
+    LINENUMBER 370 L8
+    ICONST_0
+    ISTORE 8
+   L9
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    ILOAD 8
+    ILOAD 3
+    IF_ICMPGE L10
+   L11
+    LINENUMBER 371 L11
+    ALOAD 7
+    ILOAD 8
+    ALOAD 6
+    ILOAD 8
+    AALOAD
+    ALOAD 1
+    INVOKEVIRTUAL java/math/BigDecimal.add (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    AASTORE
+   L12
+    LINENUMBER 370 L12
+    IINC 8 1
+    GOTO L9
+   L10
+    LINENUMBER 367 L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    IINC 5 1
+    GOTO L4
+   L5
+    LINENUMBER 374 L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I I [[Ljava/math/BigDecimal; I] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 4
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L13
+    LOCALVARIABLE col I L9 L10 8
+    LOCALVARIABLE dataRow [Ljava/math/BigDecimal; L7 L10 6
+    LOCALVARIABLE outDataRow [Ljava/math/BigDecimal; L8 L10 7
+    LOCALVARIABLE row I L4 L5 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L13 0
+    LOCALVARIABLE d Ljava/math/BigDecimal; L0 L13 1
+    LOCALVARIABLE rowCount I L1 L13 2
+    LOCALVARIABLE columnCount I L2 L13 3
+    LOCALVARIABLE outData [[Ljava/math/BigDecimal; L3 L13 4
+    MAXSTACK = 4
+    MAXLOCALS = 9
+
+  // access flags 0x1
+  public scalarMultiply(Ljava/math/BigDecimal;)Lorg/apache/commons/math/linear/BigMatrix;
+   L0
+    LINENUMBER 383 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 2
+   L1
+    LINENUMBER 384 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 3
+   L2
+    LINENUMBER 385 L2
+    ILOAD 2
+    ILOAD 3
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 4
+   L3
+    LINENUMBER 386 L3
+    ICONST_0
+    ISTORE 5
+   L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 5
+    ILOAD 2
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 387 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 5
+    AALOAD
+    ASTORE 6
+   L7
+    LINENUMBER 388 L7
+    ALOAD 4
+    ILOAD 5
+    AALOAD
+    ASTORE 7
+   L8
+    LINENUMBER 389 L8
+    ICONST_0
+    ISTORE 8
+   L9
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    ILOAD 8
+    ILOAD 3
+    IF_ICMPGE L10
+   L11
+    LINENUMBER 390 L11
+    ALOAD 7
+    ILOAD 8
+    ALOAD 6
+    ILOAD 8
+    AALOAD
+    ALOAD 1
+    INVOKEVIRTUAL java/math/BigDecimal.multiply (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    AASTORE
+   L12
+    LINENUMBER 389 L12
+    IINC 8 1
+    GOTO L9
+   L10
+    LINENUMBER 386 L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    IINC 5 1
+    GOTO L4
+   L5
+    LINENUMBER 393 L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I I [[Ljava/math/BigDecimal; I] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 4
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L13
+    LOCALVARIABLE col I L9 L10 8
+    LOCALVARIABLE dataRow [Ljava/math/BigDecimal; L7 L10 6
+    LOCALVARIABLE outDataRow [Ljava/math/BigDecimal; L8 L10 7
+    LOCALVARIABLE row I L4 L5 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L13 0
+    LOCALVARIABLE d Ljava/math/BigDecimal; L0 L13 1
+    LOCALVARIABLE rowCount I L1 L13 2
+    LOCALVARIABLE columnCount I L2 L13 3
+    LOCALVARIABLE outData [[Ljava/math/BigDecimal; L3 L13 4
+    MAXSTACK = 4
+    MAXLOCALS = 9
+
+  // access flags 0x1
+  public multiply(Lorg/apache/commons/math/linear/BigMatrix;)Lorg/apache/commons/math/linear/BigMatrix; throws java/lang/IllegalArgumentException 
+    TRYCATCHBLOCK L0 L1 L2 java/lang/ClassCastException
+   L0
+    LINENUMBER 405 L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/BigMatrixImpl
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.multiply (Lorg/apache/commons/math/linear/BigMatrixImpl;)Lorg/apache/commons/math/linear/BigMatrixImpl;
+   L1
+    ARETURN
+   L2
+    LINENUMBER 406 L2
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix] [java/lang/ClassCastException]
+    ASTORE 2
+   L3
+    LINENUMBER 407 L3
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getRowDimension ()I (itf)
+    IF_ICMPEQ L4
+   L5
+    LINENUMBER 408 L5
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "Matrices are not multiplication compatible."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L4
+    LINENUMBER 410 L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException] []
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 3
+   L6
+    LINENUMBER 411 L6
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getColumnDimension ()I (itf)
+    ISTORE 4
+   L7
+    LINENUMBER 412 L7
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 5
+   L8
+    LINENUMBER 413 L8
+    ILOAD 3
+    ILOAD 4
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 6
+   L9
+    LINENUMBER 414 L9
+    ICONST_0
+    ISTORE 7
+   L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 7
+    ILOAD 3
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 415 L12
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 7
+    AALOAD
+    ASTORE 8
+   L13
+    LINENUMBER 416 L13
+    ALOAD 6
+    ILOAD 7
+    AALOAD
+    ASTORE 9
+   L14
+    LINENUMBER 417 L14
+    ICONST_0
+    ISTORE 10
+   L15
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    ILOAD 10
+    ILOAD 4
+    IF_ICMPGE L16
+   L17
+    LINENUMBER 418 L17
+    GETSTATIC org/apache/commons/math/linear/BigMatrixImpl.ZERO : Ljava/math/BigDecimal;
+    ASTORE 11
+   L18
+    LINENUMBER 419 L18
+    ICONST_0
+    ISTORE 12
+   L19
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I java/math/BigDecimal I] []
+    ILOAD 12
+    ILOAD 5
+    IF_ICMPGE L20
+   L21
+    LINENUMBER 420 L21
+    ALOAD 11
+    ALOAD 8
+    ILOAD 12
+    AALOAD
+    ALOAD 1
+    ILOAD 12
+    ILOAD 10
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getEntry (II)Ljava/math/BigDecimal; (itf)
+    INVOKEVIRTUAL java/math/BigDecimal.multiply (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    INVOKEVIRTUAL java/math/BigDecimal.add (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    ASTORE 11
+   L22
+    LINENUMBER 419 L22
+    IINC 12 1
+    GOTO L19
+   L20
+    LINENUMBER 422 L20
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I java/math/BigDecimal I] []
+    ALOAD 9
+    ILOAD 10
+    ALOAD 11
+    AASTORE
+   L23
+    LINENUMBER 417 L23
+    IINC 10 1
+    GOTO L15
+   L16
+    LINENUMBER 414 L16
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    IINC 7 1
+    GOTO L10
+   L11
+    LINENUMBER 425 L11
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix java/lang/ClassCastException I I I [[Ljava/math/BigDecimal; I] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 6
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L24
+    LOCALVARIABLE i I L19 L20 12
+    LOCALVARIABLE sum Ljava/math/BigDecimal; L18 L23 11
+    LOCALVARIABLE col I L15 L16 10
+    LOCALVARIABLE dataRow [Ljava/math/BigDecimal; L13 L16 8
+    LOCALVARIABLE outDataRow [Ljava/math/BigDecimal; L14 L16 9
+    LOCALVARIABLE row I L10 L11 7
+    LOCALVARIABLE nRows I L6 L24 3
+    LOCALVARIABLE nCols I L7 L24 4
+    LOCALVARIABLE nSum I L8 L24 5
+    LOCALVARIABLE outData [[Ljava/math/BigDecimal; L9 L24 6
+    LOCALVARIABLE cce Ljava/lang/ClassCastException; L3 L24 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L24 0
+    LOCALVARIABLE m Lorg/apache/commons/math/linear/BigMatrix; L0 L24 1
+    MAXSTACK = 5
+    MAXLOCALS = 13
+
+  // access flags 0x1
+  public multiply(Lorg/apache/commons/math/linear/BigMatrixImpl;)Lorg/apache/commons/math/linear/BigMatrixImpl; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 437 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    IF_ICMPEQ L1
+   L2
+    LINENUMBER 438 L2
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "Matrices are not multiplication compatible."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 440 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl] []
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 2
+   L3
+    LINENUMBER 441 L3
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 3
+   L4
+    LINENUMBER 442 L4
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 4
+   L5
+    LINENUMBER 443 L5
+    ILOAD 2
+    ILOAD 3
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 5
+   L6
+    LINENUMBER 444 L6
+    ICONST_0
+    ISTORE 6
+   L7
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 6
+    ILOAD 2
+    IF_ICMPGE L8
+   L9
+    LINENUMBER 445 L9
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 6
+    AALOAD
+    ASTORE 7
+   L10
+    LINENUMBER 446 L10
+    ALOAD 5
+    ILOAD 6
+    AALOAD
+    ASTORE 8
+   L11
+    LINENUMBER 447 L11
+    ICONST_0
+    ISTORE 9
+   L12
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    ILOAD 9
+    ILOAD 3
+    IF_ICMPGE L13
+   L14
+    LINENUMBER 448 L14
+    GETSTATIC org/apache/commons/math/linear/BigMatrixImpl.ZERO : Ljava/math/BigDecimal;
+    ASTORE 10
+   L15
+    LINENUMBER 449 L15
+    ICONST_0
+    ISTORE 11
+   L16
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I java/math/BigDecimal I] []
+    ILOAD 11
+    ILOAD 4
+    IF_ICMPGE L17
+   L18
+    LINENUMBER 450 L18
+    ALOAD 10
+    ALOAD 7
+    ILOAD 11
+    AALOAD
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 11
+    AALOAD
+    ILOAD 9
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.multiply (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    INVOKEVIRTUAL java/math/BigDecimal.add (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    ASTORE 10
+   L19
+    LINENUMBER 449 L19
+    IINC 11 1
+    GOTO L16
+   L17
+    LINENUMBER 452 L17
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I java/math/BigDecimal I] []
+    ALOAD 8
+    ILOAD 9
+    ALOAD 10
+    AASTORE
+   L20
+    LINENUMBER 447 L20
+    IINC 9 1
+    GOTO L12
+   L13
+    LINENUMBER 444 L13
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    IINC 6 1
+    GOTO L7
+   L8
+    LINENUMBER 455 L8
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrixImpl I I I [[Ljava/math/BigDecimal; I] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 5
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L21
+    LOCALVARIABLE i I L16 L17 11
+    LOCALVARIABLE sum Ljava/math/BigDecimal; L15 L20 10
+    LOCALVARIABLE col I L12 L13 9
+    LOCALVARIABLE dataRow [Ljava/math/BigDecimal; L10 L13 7
+    LOCALVARIABLE outDataRow [Ljava/math/BigDecimal; L11 L13 8
+    LOCALVARIABLE row I L7 L8 6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L21 0
+    LOCALVARIABLE m Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L21 1
+    LOCALVARIABLE nRows I L3 L21 2
+    LOCALVARIABLE nCols I L4 L21 3
+    LOCALVARIABLE nSum I L5 L21 4
+    LOCALVARIABLE outData [[Ljava/math/BigDecimal; L6 L21 5
+    MAXSTACK = 4
+    MAXLOCALS = 12
+
+  // access flags 0x1
+  public preMultiply(Lorg/apache/commons/math/linear/BigMatrix;)Lorg/apache/commons/math/linear/BigMatrix; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 466 L0
+    ALOAD 1
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.multiply (Lorg/apache/commons/math/linear/BigMatrix;)Lorg/apache/commons/math/linear/BigMatrix; (itf)
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L1 0
+    LOCALVARIABLE m Lorg/apache/commons/math/linear/BigMatrix; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getData()[[Ljava/math/BigDecimal;
+   L0
+    LINENUMBER 477 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.copyOut ()[[Ljava/math/BigDecimal;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getDataAsDoubleArray()[[D
+   L0
+    LINENUMBER 489 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 1
+   L1
+    LINENUMBER 490 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 2
+   L2
+    LINENUMBER 491 L2
+    ILOAD 1
+    ILOAD 2
+    MULTIANEWARRAY [[D 2
+    ASTORE 3
+   L3
+    LINENUMBER 492 L3
+    ICONST_0
+    ISTORE 4
+   L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [[D I] []
+    ILOAD 4
+    ILOAD 1
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 493 L6
+    ICONST_0
+    ISTORE 5
+   L7
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [[D I I] []
+    ILOAD 5
+    ILOAD 2
+    IF_ICMPGE L8
+   L9
+    LINENUMBER 494 L9
+    ALOAD 3
+    ILOAD 4
+    AALOAD
+    ILOAD 5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 4
+    AALOAD
+    ILOAD 5
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.doubleValue ()D
+    DASTORE
+   L10
+    LINENUMBER 493 L10
+    IINC 5 1
+    GOTO L7
+   L8
+    LINENUMBER 492 L8
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [[D I I] []
+    IINC 4 1
+    GOTO L4
+   L5
+    LINENUMBER 497 L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [[D I] []
+    ALOAD 3
+    ARETURN
+   L11
+    LOCALVARIABLE j I L7 L8 5
+    LOCALVARIABLE i I L4 L5 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L11 0
+    LOCALVARIABLE nRows I L1 L11 1
+    LOCALVARIABLE nCols I L2 L11 2
+    LOCALVARIABLE d [[D L3 L11 3
+    MAXSTACK = 4
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public getDataRef()[[Ljava/math/BigDecimal;
+   L0
+    LINENUMBER 508 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getRoundingMode()I
+   L0
+    LINENUMBER 518 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.roundingMode : I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setRoundingMode(I)V
+   L0
+    LINENUMBER 527 L0
+    ALOAD 0
+    ILOAD 1
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.roundingMode : I
+   L1
+    LINENUMBER 528 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L2 0
+    LOCALVARIABLE roundingMode I L0 L2 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getScale()I
+   L0
+    LINENUMBER 537 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.scale : I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setScale(I)V
+   L0
+    LINENUMBER 546 L0
+    ALOAD 0
+    ILOAD 1
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.scale : I
+   L1
+    LINENUMBER 547 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L2 0
+    LOCALVARIABLE scale I L0 L2 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getNorm()Ljava/math/BigDecimal;
+   L0
+    LINENUMBER 556 L0
+    GETSTATIC org/apache/commons/math/linear/BigMatrixImpl.ZERO : Ljava/math/BigDecimal;
+    ASTORE 1
+   L1
+    LINENUMBER 557 L1
+    ICONST_0
+    ISTORE 2
+   L2
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I] []
+    ILOAD 2
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 558 L4
+    GETSTATIC org/apache/commons/math/linear/BigMatrixImpl.ZERO : Ljava/math/BigDecimal;
+    ASTORE 3
+   L5
+    LINENUMBER 559 L5
+    ICONST_0
+    ISTORE 4
+   L6
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I java/math/BigDecimal I] []
+    ILOAD 4
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 560 L8
+    ALOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 4
+    AALOAD
+    ILOAD 2
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.abs ()Ljava/math/BigDecimal;
+    INVOKEVIRTUAL java/math/BigDecimal.add (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    ASTORE 3
+   L9
+    LINENUMBER 559 L9
+    IINC 4 1
+    GOTO L6
+   L7
+    LINENUMBER 562 L7
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I java/math/BigDecimal I] []
+    ALOAD 1
+    ALOAD 3
+    INVOKEVIRTUAL java/math/BigDecimal.max (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    ASTORE 1
+   L10
+    LINENUMBER 557 L10
+    IINC 2 1
+    GOTO L2
+   L3
+    LINENUMBER 564 L3
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I] []
+    ALOAD 1
+    ARETURN
+   L11
+    LOCALVARIABLE row I L6 L7 4
+    LOCALVARIABLE sum Ljava/math/BigDecimal; L5 L10 3
+    LOCALVARIABLE col I L2 L3 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L11 0
+    LOCALVARIABLE maxColSum Ljava/math/BigDecimal; L1 L11 1
+    MAXSTACK = 3
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public getSubMatrix(IIII)Lorg/apache/commons/math/linear/BigMatrix; throws org/apache/commons/math/linear/MatrixIndexException 
+   L0
+    LINENUMBER 582 L0
+    ILOAD 1
+    IFLT L1
+    ILOAD 1
+    ILOAD 2
+    IF_ICMPGT L1
+    ILOAD 2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ARRAYLENGTH
+    IF_ICMPGT L1
+    ILOAD 3
+    IFLT L1
+    ILOAD 3
+    ILOAD 4
+    IF_ICMPGT L1
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ICONST_0
+    AALOAD
+    ARRAYLENGTH
+    IF_ICMPLE L2
+   L1
+    LINENUMBER 585 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I I] []
+    NEW org/apache/commons/math/linear/MatrixIndexException
+    DUP
+    LDC "invalid row or column index selection"
+    INVOKESPECIAL org/apache/commons/math/linear/MatrixIndexException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L2
+    LINENUMBER 588 L2
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I I] []
+    ILOAD 2
+    ILOAD 1
+    ISUB
+    ICONST_1
+    IADD
+    ILOAD 4
+    ILOAD 3
+    ISUB
+    ICONST_1
+    IADD
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 5
+   L3
+    LINENUMBER 590 L3
+    ILOAD 1
+    ISTORE 6
+   L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 6
+    ILOAD 2
+    IF_ICMPGT L5
+   L6
+    LINENUMBER 591 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 6
+    AALOAD
+    ILOAD 3
+    ALOAD 5
+    ILOAD 6
+    ILOAD 1
+    ISUB
+    AALOAD
+    ICONST_0
+    ILOAD 4
+    ILOAD 3
+    ISUB
+    ICONST_1
+    IADD
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L7
+    LINENUMBER 590 L7
+    IINC 6 1
+    GOTO L4
+   L5
+    LINENUMBER 595 L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I I [[Ljava/math/BigDecimal; I] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 5
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L8
+    LOCALVARIABLE i I L4 L5 6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L8 0
+    LOCALVARIABLE startRow I L0 L8 1
+    LOCALVARIABLE endRow I L0 L8 2
+    LOCALVARIABLE startColumn I L0 L8 3
+    LOCALVARIABLE endColumn I L0 L8 4
+    LOCALVARIABLE subMatrixData [[Ljava/math/BigDecimal; L3 L8 5
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getSubMatrix([I[I)Lorg/apache/commons/math/linear/BigMatrix; throws org/apache/commons/math/linear/MatrixIndexException 
+    TRYCATCHBLOCK L0 L1 L2 java/lang/ArrayIndexOutOfBoundsException
+   L3
+    LINENUMBER 611 L3
+    ALOAD 1
+    ARRAYLENGTH
+    ALOAD 2
+    ARRAYLENGTH
+    IMUL
+    IFNE L4
+   L5
+    LINENUMBER 612 L5
+    NEW org/apache/commons/math/linear/MatrixIndexException
+    DUP
+    LDC "selected row and column index arrays must be non-empty"
+    INVOKESPECIAL org/apache/commons/math/linear/MatrixIndexException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L4
+    LINENUMBER 615 L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [I [I] []
+    ALOAD 1
+    ARRAYLENGTH
+    ALOAD 2
+    ARRAYLENGTH
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 3
+   L0
+    LINENUMBER 618 L0
+    ICONST_0
+    ISTORE 4
+   L6
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [I [I [[Ljava/math/BigDecimal; I] []
+    ILOAD 4
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L1
+   L7
+    LINENUMBER 619 L7
+    ALOAD 3
+    ILOAD 4
+    AALOAD
+    ASTORE 5
+   L8
+    LINENUMBER 620 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ALOAD 1
+    ILOAD 4
+    IALOAD
+    AALOAD
+    ASTORE 6
+   L9
+    LINENUMBER 621 L9
+    ICONST_0
+    ISTORE 7
+   L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [I [I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    ILOAD 7
+    ALOAD 2
+    ARRAYLENGTH
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 622 L12
+    ALOAD 5
+    ILOAD 7
+    ALOAD 6
+    ALOAD 2
+    ILOAD 7
+    IALOAD
+    AALOAD
+    AASTORE
+   L13
+    LINENUMBER 621 L13
+    IINC 7 1
+    GOTO L10
+   L11
+    LINENUMBER 618 L11
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [I [I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    IINC 4 1
+    GOTO L6
+   L1
+    LINENUMBER 628 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [I [I [[Ljava/math/BigDecimal; I] []
+    GOTO L14
+   L2
+    LINENUMBER 626 L2
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [I [I [[Ljava/math/BigDecimal;] [java/lang/ArrayIndexOutOfBoundsException]
+    ASTORE 4
+   L15
+    LINENUMBER 627 L15
+    NEW org/apache/commons/math/linear/MatrixIndexException
+    DUP
+    LDC "matrix dimension mismatch"
+    INVOKESPECIAL org/apache/commons/math/linear/MatrixIndexException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L14
+    LINENUMBER 629 L14
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [I [I [[Ljava/math/BigDecimal; I] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 3
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L16
+    LOCALVARIABLE j I L10 L11 7
+    LOCALVARIABLE subI [Ljava/math/BigDecimal; L8 L11 5
+    LOCALVARIABLE dataSelectedI [Ljava/math/BigDecimal; L9 L11 6
+    LOCALVARIABLE i I L6 L1 4
+    LOCALVARIABLE e Ljava/lang/ArrayIndexOutOfBoundsException; L15 L14 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L3 L16 0
+    LOCALVARIABLE selectedRows [I L3 L16 1
+    LOCALVARIABLE selectedColumns [I L3 L16 2
+    LOCALVARIABLE subMatrixData [[Ljava/math/BigDecimal; L0 L16 3
+    MAXSTACK = 5
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public setSubMatrix([[Ljava/math/BigDecimal;II)V throws org/apache/commons/math/linear/MatrixIndexException 
+   L0
+    LINENUMBER 661 L0
+    ILOAD 2
+    IFLT L1
+    ILOAD 3
+    IFGE L2
+   L1
+    LINENUMBER 662 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I] []
+    NEW org/apache/commons/math/linear/MatrixIndexException
+    DUP
+    LDC "invalid row or column index selection"
+    INVOKESPECIAL org/apache/commons/math/linear/MatrixIndexException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L2
+    LINENUMBER 665 L2
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I] []
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 4
+   L3
+    LINENUMBER 666 L3
+    ILOAD 4
+    IFNE L4
+   L5
+    LINENUMBER 667 L5
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "Matrix must have at least one row."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L4
+    LINENUMBER 670 L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I] []
+    ALOAD 1
+    ICONST_0
+    AALOAD
+    ARRAYLENGTH
+    ISTORE 5
+   L6
+    LINENUMBER 671 L6
+    ILOAD 5
+    IFNE L7
+   L8
+    LINENUMBER 672 L8
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "Matrix must have at least one column."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L7
+    LINENUMBER 675 L7
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I I] []
+    ICONST_1
+    ISTORE 6
+   L9
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I I I] []
+    ILOAD 6
+    ILOAD 4
+    IF_ICMPGE L10
+   L11
+    LINENUMBER 676 L11
+    ALOAD 1
+    ILOAD 6
+    AALOAD
+    ARRAYLENGTH
+    ILOAD 5
+    IF_ICMPEQ L12
+   L13
+    LINENUMBER 677 L13
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "All input rows must have the same length."
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L12
+    LINENUMBER 675 L12
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I I I] []
+    IINC 6 1
+    GOTO L9
+   L10
+    LINENUMBER 681 L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I I I] []
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    IFNONNULL L14
+   L15
+    LINENUMBER 682 L15
+    ILOAD 2
+    IFGT L16
+    ILOAD 3
+    IFLE L17
+   L16
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I I I] []
+    NEW org/apache/commons/math/linear/MatrixIndexException
+    DUP
+    LDC "matrix must be initialized to perfom this method"
+    INVOKESPECIAL org/apache/commons/math/linear/MatrixIndexException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L17
+    LINENUMBER 684 L17
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I I I] []
+    ALOAD 0
+    ILOAD 4
+    ILOAD 5
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+   L18
+    LINENUMBER 685 L18
+    ALOAD 1
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ICONST_0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L14
+    LINENUMBER 687 L14
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I I I] []
+    ILOAD 4
+    ILOAD 2
+    IADD
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    IF_ICMPGT L19
+    ILOAD 5
+    ILOAD 3
+    IADD
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    IF_ICMPLE L20
+   L19
+    LINENUMBER 689 L19
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I I I] []
+    NEW org/apache/commons/math/linear/MatrixIndexException
+    DUP
+    LDC "invalid row or column index selection"
+    INVOKESPECIAL org/apache/commons/math/linear/MatrixIndexException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L20
+    LINENUMBER 691 L20
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I I I] []
+    ICONST_0
+    ISTORE 6
+   L21
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I I I] []
+    ILOAD 6
+    ILOAD 4
+    IF_ICMPGE L22
+   L23
+    LINENUMBER 692 L23
+    ALOAD 1
+    ILOAD 6
+    AALOAD
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 2
+    ILOAD 6
+    IADD
+    AALOAD
+    ILOAD 3
+    ILOAD 5
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L24
+    LINENUMBER 691 L24
+    IINC 6 1
+    GOTO L21
+   L22
+    LINENUMBER 694 L22
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; I I I I I] []
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L25
+    LINENUMBER 695 L25
+    RETURN
+   L26
+    LOCALVARIABLE r I L9 L10 6
+    LOCALVARIABLE i I L21 L22 6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L26 0
+    LOCALVARIABLE subMatrix [[Ljava/math/BigDecimal; L0 L26 1
+    LOCALVARIABLE row I L0 L26 2
+    LOCALVARIABLE column I L0 L26 3
+    LOCALVARIABLE nRows I L3 L26 4
+    LOCALVARIABLE nCols I L6 L26 5
+    MAXSTACK = 5
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getRowMatrix(I)Lorg/apache/commons/math/linear/BigMatrix; throws org/apache/commons/math/linear/MatrixIndexException 
+   L0
+    LINENUMBER 706 L0
+    ALOAD 0
+    ILOAD 1
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.isValidCoordinate (II)Z
+    IFNE L1
+   L2
+    LINENUMBER 707 L2
+    NEW org/apache/commons/math/linear/MatrixIndexException
+    DUP
+    LDC "illegal row argument"
+    INVOKESPECIAL org/apache/commons/math/linear/MatrixIndexException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 709 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I] []
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 2
+   L3
+    LINENUMBER 710 L3
+    ICONST_1
+    ILOAD 2
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 3
+   L4
+    LINENUMBER 711 L4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 1
+    AALOAD
+    ICONST_0
+    ALOAD 3
+    ICONST_0
+    AALOAD
+    ICONST_0
+    ILOAD 2
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L5
+    LINENUMBER 712 L5
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 3
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L6 0
+    LOCALVARIABLE row I L0 L6 1
+    LOCALVARIABLE ncols I L3 L6 2
+    LOCALVARIABLE out [[Ljava/math/BigDecimal; L4 L6 3
+    MAXSTACK = 5
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public getColumnMatrix(I)Lorg/apache/commons/math/linear/BigMatrix; throws org/apache/commons/math/linear/MatrixIndexException 
+   L0
+    LINENUMBER 724 L0
+    ALOAD 0
+    ICONST_0
+    ILOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.isValidCoordinate (II)Z
+    IFNE L1
+   L2
+    LINENUMBER 725 L2
+    NEW org/apache/commons/math/linear/MatrixIndexException
+    DUP
+    LDC "illegal column argument"
+    INVOKESPECIAL org/apache/commons/math/linear/MatrixIndexException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 727 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I] []
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 2
+   L3
+    LINENUMBER 728 L3
+    ILOAD 2
+    ICONST_1
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 3
+   L4
+    LINENUMBER 729 L4
+    ICONST_0
+    ISTORE 4
+   L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 4
+    ILOAD 2
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 730 L7
+    ALOAD 3
+    ILOAD 4
+    AALOAD
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 4
+    AALOAD
+    ILOAD 1
+    AALOAD
+    AASTORE
+   L8
+    LINENUMBER 729 L8
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 732 L6
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [[Ljava/math/BigDecimal; I] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 3
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L9
+    LOCALVARIABLE row I L5 L6 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L9 0
+    LOCALVARIABLE column I L0 L9 1
+    LOCALVARIABLE nRows I L3 L9 2
+    LOCALVARIABLE out [[Ljava/math/BigDecimal; L4 L9 3
+    MAXSTACK = 4
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public getRow(I)[Ljava/math/BigDecimal; throws org/apache/commons/math/linear/MatrixIndexException 
+   L0
+    LINENUMBER 746 L0
+    ALOAD 0
+    ILOAD 1
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.isValidCoordinate (II)Z
+    IFNE L1
+   L2
+    LINENUMBER 747 L2
+    NEW org/apache/commons/math/linear/MatrixIndexException
+    DUP
+    LDC "illegal row argument"
+    INVOKESPECIAL org/apache/commons/math/linear/MatrixIndexException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 749 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I] []
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 2
+   L3
+    LINENUMBER 750 L3
+    ILOAD 2
+    ANEWARRAY java/math/BigDecimal
+    ASTORE 3
+   L4
+    LINENUMBER 751 L4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 1
+    AALOAD
+    ICONST_0
+    ALOAD 3
+    ICONST_0
+    ILOAD 2
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L5
+    LINENUMBER 752 L5
+    ALOAD 3
+    ARETURN
+   L6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L6 0
+    LOCALVARIABLE row I L0 L6 1
+    LOCALVARIABLE ncols I L3 L6 2
+    LOCALVARIABLE out [Ljava/math/BigDecimal; L4 L6 3
+    MAXSTACK = 5
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public getRowAsDoubleArray(I)[D throws org/apache/commons/math/linear/MatrixIndexException 
+   L0
+    LINENUMBER 767 L0
+    ALOAD 0
+    ILOAD 1
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.isValidCoordinate (II)Z
+    IFNE L1
+   L2
+    LINENUMBER 768 L2
+    NEW org/apache/commons/math/linear/MatrixIndexException
+    DUP
+    LDC "illegal row argument"
+    INVOKESPECIAL org/apache/commons/math/linear/MatrixIndexException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 770 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I] []
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 2
+   L3
+    LINENUMBER 771 L3
+    ILOAD 2
+    NEWARRAY T_DOUBLE
+    ASTORE 3
+   L4
+    LINENUMBER 772 L4
+    ICONST_0
+    ISTORE 4
+   L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [D I] []
+    ILOAD 4
+    ILOAD 2
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 773 L7
+    ALOAD 3
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 1
+    AALOAD
+    ILOAD 4
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.doubleValue ()D
+    DCONST_1
+    DADD
+    DASTORE
+   L8
+    LINENUMBER 772 L8
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 775 L6
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [D I] []
+    ALOAD 3
+    ARETURN
+   L9
+    LOCALVARIABLE i I L5 L6 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L9 0
+    LOCALVARIABLE row I L0 L9 1
+    LOCALVARIABLE ncols I L3 L9 2
+    LOCALVARIABLE out [D L4 L9 3
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public getColumn(I)[Ljava/math/BigDecimal; throws org/apache/commons/math/linear/MatrixIndexException 
+   L0
+    LINENUMBER 789 L0
+    ALOAD 0
+    ICONST_0
+    ILOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.isValidCoordinate (II)Z
+    IFNE L1
+   L2
+    LINENUMBER 790 L2
+    NEW org/apache/commons/math/linear/MatrixIndexException
+    DUP
+    LDC "illegal column argument"
+    INVOKESPECIAL org/apache/commons/math/linear/MatrixIndexException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 792 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I] []
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 2
+   L3
+    LINENUMBER 793 L3
+    ILOAD 2
+    ANEWARRAY java/math/BigDecimal
+    ASTORE 3
+   L4
+    LINENUMBER 794 L4
+    ICONST_0
+    ISTORE 4
+   L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [Ljava/math/BigDecimal; I] []
+    ILOAD 4
+    ILOAD 2
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 795 L7
+    ALOAD 3
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 4
+    AALOAD
+    ILOAD 1
+    AALOAD
+    AASTORE
+   L8
+    LINENUMBER 794 L8
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 797 L6
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [Ljava/math/BigDecimal; I] []
+    ALOAD 3
+    ARETURN
+   L9
+    LOCALVARIABLE i I L5 L6 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L9 0
+    LOCALVARIABLE col I L0 L9 1
+    LOCALVARIABLE nRows I L3 L9 2
+    LOCALVARIABLE out [Ljava/math/BigDecimal; L4 L9 3
+    MAXSTACK = 4
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public getColumnAsDoubleArray(I)[D throws org/apache/commons/math/linear/MatrixIndexException 
+   L0
+    LINENUMBER 812 L0
+    ALOAD 0
+    ICONST_0
+    ILOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.isValidCoordinate (II)Z
+    IFNE L1
+   L2
+    LINENUMBER 813 L2
+    NEW org/apache/commons/math/linear/MatrixIndexException
+    DUP
+    LDC "illegal column argument"
+    INVOKESPECIAL org/apache/commons/math/linear/MatrixIndexException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 815 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I] []
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 2
+   L3
+    LINENUMBER 816 L3
+    ILOAD 2
+    NEWARRAY T_DOUBLE
+    ASTORE 3
+   L4
+    LINENUMBER 817 L4
+    ICONST_0
+    ISTORE 4
+   L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [D I] []
+    ILOAD 4
+    ILOAD 2
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 818 L7
+    ALOAD 3
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 4
+    AALOAD
+    ILOAD 1
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.doubleValue ()D
+    DASTORE
+   L8
+    LINENUMBER 817 L8
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 820 L6
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [D I] []
+    ALOAD 3
+    ARETURN
+   L9
+    LOCALVARIABLE i I L5 L6 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L9 0
+    LOCALVARIABLE col I L0 L9 1
+    LOCALVARIABLE nrows I L3 L9 2
+    LOCALVARIABLE out [D L4 L9 3
+    MAXSTACK = 4
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public getEntry(II)Ljava/math/BigDecimal; throws org/apache/commons/math/linear/MatrixIndexException 
+    TRYCATCHBLOCK L0 L1 L2 java/lang/ArrayIndexOutOfBoundsException
+   L0
+    LINENUMBER 841 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 1
+    AALOAD
+    ILOAD 2
+    AALOAD
+   L1
+    ARETURN
+   L2
+    LINENUMBER 842 L2
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I] [java/lang/ArrayIndexOutOfBoundsException]
+    ASTORE 3
+   L3
+    LINENUMBER 843 L3
+    NEW org/apache/commons/math/linear/MatrixIndexException
+    DUP
+    LDC "matrix entry does not exist"
+    INVOKESPECIAL org/apache/commons/math/linear/MatrixIndexException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L4
+    LOCALVARIABLE e Ljava/lang/ArrayIndexOutOfBoundsException; L3 L4 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L4 0
+    LOCALVARIABLE row I L0 L4 1
+    LOCALVARIABLE column I L0 L4 2
+    MAXSTACK = 3
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public getEntryAsDouble(II)D throws org/apache/commons/math/linear/MatrixIndexException 
+   L0
+    LINENUMBER 864 L0
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getEntry (II)Ljava/math/BigDecimal;
+    INVOKEVIRTUAL java/math/BigDecimal.doubleValue ()D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L1 0
+    LOCALVARIABLE row I L0 L1 1
+    LOCALVARIABLE column I L0 L1 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public transpose()Lorg/apache/commons/math/linear/BigMatrix;
+   L0
+    LINENUMBER 873 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 1
+   L1
+    LINENUMBER 874 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 2
+   L2
+    LINENUMBER 875 L2
+    ILOAD 2
+    ILOAD 1
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 3
+   L3
+    LINENUMBER 876 L3
+    ICONST_0
+    ISTORE 4
+   L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 4
+    ILOAD 1
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 877 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 4
+    AALOAD
+    ASTORE 5
+   L7
+    LINENUMBER 878 L7
+    ICONST_0
+    ISTORE 6
+   L8
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; I] []
+    ILOAD 6
+    ILOAD 2
+    IF_ICMPGE L9
+   L10
+    LINENUMBER 879 L10
+    ALOAD 3
+    ILOAD 6
+    AALOAD
+    ILOAD 4
+    ALOAD 5
+    ILOAD 6
+    AALOAD
+    AASTORE
+   L11
+    LINENUMBER 878 L11
+    IINC 6 1
+    GOTO L8
+   L9
+    LINENUMBER 876 L9
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; I] []
+    IINC 4 1
+    GOTO L4
+   L5
+    LINENUMBER 882 L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I [[Ljava/math/BigDecimal; I] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 3
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L12
+    LOCALVARIABLE col I L8 L9 6
+    LOCALVARIABLE dataRow [Ljava/math/BigDecimal; L7 L9 5
+    LOCALVARIABLE row I L4 L5 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L12 0
+    LOCALVARIABLE nRows I L1 L12 1
+    LOCALVARIABLE nCols I L2 L12 2
+    LOCALVARIABLE outData [[Ljava/math/BigDecimal; L3 L12 3
+    MAXSTACK = 4
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public inverse()Lorg/apache/commons/math/linear/BigMatrix; throws org/apache/commons/math/linear/InvalidMatrixException 
+   L0
+    LINENUMBER 892 L0
+    ALOAD 0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.createBigIdentityMatrix (I)Lorg/apache/commons/math/linear/BigMatrix;
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.solve (Lorg/apache/commons/math/linear/BigMatrix;)Lorg/apache/commons/math/linear/BigMatrix;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getDeterminant()Ljava/math/BigDecimal; throws org/apache/commons/math/linear/InvalidMatrixException 
+   L0
+    LINENUMBER 902 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.isSquare ()Z
+    IFNE L1
+   L2
+    LINENUMBER 903 L2
+    NEW org/apache/commons/math/linear/InvalidMatrixException
+    DUP
+    LDC "matrix is not square"
+    INVOKESPECIAL org/apache/commons/math/linear/InvalidMatrixException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 905 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl] []
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.isSingular ()Z
+    IFEQ L3
+   L4
+    LINENUMBER 906 L4
+    GETSTATIC org/apache/commons/math/linear/BigMatrixImpl.ZERO : Ljava/math/BigDecimal;
+    ARETURN
+   L3
+    LINENUMBER 908 L3
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl] []
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.parity : I
+    ICONST_1
+    IF_ICMPNE L5
+    GETSTATIC org/apache/commons/math/linear/BigMatrixImpl.ONE : Ljava/math/BigDecimal;
+    GOTO L6
+   L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl] []
+    GETSTATIC org/apache/commons/math/linear/BigMatrixImpl.ONE : Ljava/math/BigDecimal;
+    INVOKEVIRTUAL java/math/BigDecimal.negate ()Ljava/math/BigDecimal;
+   L6
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl] [java/math/BigDecimal]
+    ASTORE 1
+   L7
+    LINENUMBER 909 L7
+    ICONST_0
+    ISTORE 2
+   L8
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I] []
+    ILOAD 2
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    IF_ICMPGE L9
+   L10
+    LINENUMBER 910 L10
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 2
+    AALOAD
+    ILOAD 2
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.multiply (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    ASTORE 1
+   L11
+    LINENUMBER 909 L11
+    IINC 2 1
+    GOTO L8
+   L9
+    LINENUMBER 912 L9
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I] []
+    ALOAD 1
+    ARETURN
+   L12
+    LOCALVARIABLE i I L8 L9 2
+    LOCALVARIABLE det Ljava/math/BigDecimal; L7 L12 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L12 0
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public isSquare()Z
+   L0
+    LINENUMBER 921 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    IF_ICMPNE L1
+    ICONST_1
+    GOTO L2
+   L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl] []
+    ICONST_0
+   L2
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl] [I]
+    IRETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L3 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public isSingular()Z
+    TRYCATCHBLOCK L0 L1 L2 org/apache/commons/math/linear/InvalidMatrixException
+   L3
+    LINENUMBER 929 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    IFNONNULL L4
+   L0
+    LINENUMBER 931 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.luDecompose ()V
+   L5
+    LINENUMBER 932 L5
+    ICONST_0
+   L1
+    IRETURN
+   L2
+    LINENUMBER 933 L2
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl] [org/apache/commons/math/linear/InvalidMatrixException]
+    ASTORE 1
+   L6
+    LINENUMBER 934 L6
+    ICONST_1
+    IRETURN
+   L4
+    LINENUMBER 937 L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl] []
+    ICONST_0
+    IRETURN
+   L7
+    LOCALVARIABLE ex Lorg/apache/commons/math/linear/InvalidMatrixException; L6 L4 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L3 L7 0
+    MAXSTACK = 1
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getRowDimension()I
+   L0
+    LINENUMBER 947 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ARRAYLENGTH
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getColumnDimension()I
+   L0
+    LINENUMBER 956 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ICONST_0
+    AALOAD
+    ARRAYLENGTH
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getTrace()Ljava/math/BigDecimal; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 968 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.isSquare ()Z
+    IFNE L1
+   L2
+    LINENUMBER 969 L2
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "matrix is not square"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 971 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl] []
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ICONST_0
+    AALOAD
+    ICONST_0
+    AALOAD
+    ASTORE 1
+   L3
+    LINENUMBER 972 L3
+    ICONST_1
+    ISTORE 2
+   L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I] []
+    ILOAD 2
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 973 L6
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 2
+    AALOAD
+    ILOAD 2
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.add (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    ASTORE 1
+   L7
+    LINENUMBER 972 L7
+    IINC 2 1
+    GOTO L4
+   L5
+    LINENUMBER 975 L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/math/BigDecimal I] []
+    ALOAD 1
+    ARETURN
+   L8
+    LOCALVARIABLE i I L4 L5 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L8 0
+    LOCALVARIABLE trace Ljava/math/BigDecimal; L3 L8 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public operate([Ljava/math/BigDecimal;)[Ljava/math/BigDecimal; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 986 L0
+    ALOAD 1
+    ARRAYLENGTH
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    IF_ICMPEQ L1
+   L2
+    LINENUMBER 987 L2
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "vector has wrong length"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 989 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal;] []
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 2
+   L3
+    LINENUMBER 990 L3
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 3
+   L4
+    LINENUMBER 991 L4
+    ILOAD 2
+    ANEWARRAY java/math/BigDecimal
+    ASTORE 4
+   L5
+    LINENUMBER 992 L5
+    ICONST_0
+    ISTORE 5
+   L6
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal; I I [Ljava/math/BigDecimal; I] []
+    ILOAD 5
+    ILOAD 2
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 993 L8
+    GETSTATIC org/apache/commons/math/linear/BigMatrixImpl.ZERO : Ljava/math/BigDecimal;
+    ASTORE 6
+   L9
+    LINENUMBER 994 L9
+    ICONST_0
+    ISTORE 7
+   L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal; I I [Ljava/math/BigDecimal; I java/math/BigDecimal I] []
+    ILOAD 7
+    ILOAD 3
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 995 L12
+    ALOAD 6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 5
+    AALOAD
+    ILOAD 7
+    AALOAD
+    ALOAD 1
+    ILOAD 7
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.multiply (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    INVOKEVIRTUAL java/math/BigDecimal.add (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    ASTORE 6
+   L13
+    LINENUMBER 994 L13
+    IINC 7 1
+    GOTO L10
+   L11
+    LINENUMBER 997 L11
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal; I I [Ljava/math/BigDecimal; I java/math/BigDecimal I] []
+    ALOAD 4
+    ILOAD 5
+    ALOAD 6
+    AASTORE
+   L14
+    LINENUMBER 992 L14
+    IINC 5 1
+    GOTO L6
+   L7
+    LINENUMBER 999 L7
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal; I I [Ljava/math/BigDecimal; I] []
+    ALOAD 4
+    ARETURN
+   L15
+    LOCALVARIABLE i I L10 L11 7
+    LOCALVARIABLE sum Ljava/math/BigDecimal; L9 L14 6
+    LOCALVARIABLE row I L6 L7 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L15 0
+    LOCALVARIABLE v [Ljava/math/BigDecimal; L0 L15 1
+    LOCALVARIABLE nRows I L3 L15 2
+    LOCALVARIABLE nCols I L4 L15 3
+    LOCALVARIABLE out [Ljava/math/BigDecimal; L5 L15 4
+    MAXSTACK = 4
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public operate([D)[Ljava/math/BigDecimal; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 1010 L0
+    ALOAD 1
+    ARRAYLENGTH
+    ANEWARRAY java/math/BigDecimal
+    ASTORE 2
+   L1
+    LINENUMBER 1011 L1
+    ICONST_0
+    ISTORE 3
+   L2
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [D [Ljava/math/BigDecimal; I] []
+    ILOAD 3
+    ALOAD 2
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1012 L4
+    ALOAD 2
+    ILOAD 3
+    NEW java/math/BigDecimal
+    DUP
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    INVOKESPECIAL java/math/BigDecimal.<init> (D)V
+    AASTORE
+   L5
+    LINENUMBER 1011 L5
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 1014 L3
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [D [Ljava/math/BigDecimal; I] []
+    ALOAD 0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.operate ([Ljava/math/BigDecimal;)[Ljava/math/BigDecimal;
+    POP
+    ACONST_NULL
+    ARETURN
+   L6
+    LOCALVARIABLE i I L2 L3 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L6 0
+    LOCALVARIABLE v [D L0 L6 1
+    LOCALVARIABLE bd [Ljava/math/BigDecimal; L1 L6 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public preMultiply([Ljava/math/BigDecimal;)[Ljava/math/BigDecimal; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 1025 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 2
+   L1
+    LINENUMBER 1026 L1
+    ALOAD 1
+    ARRAYLENGTH
+    ILOAD 2
+    IF_ICMPEQ L2
+   L3
+    LINENUMBER 1027 L3
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "vector has wrong length"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L2
+    LINENUMBER 1029 L2
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal; I] []
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 3
+   L4
+    LINENUMBER 1030 L4
+    ILOAD 3
+    ANEWARRAY java/math/BigDecimal
+    ASTORE 4
+   L5
+    LINENUMBER 1031 L5
+    ICONST_0
+    ISTORE 5
+   L6
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal; I I [Ljava/math/BigDecimal; I] []
+    ILOAD 5
+    ILOAD 3
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 1032 L8
+    GETSTATIC org/apache/commons/math/linear/BigMatrixImpl.ZERO : Ljava/math/BigDecimal;
+    ASTORE 6
+   L9
+    LINENUMBER 1033 L9
+    ICONST_0
+    ISTORE 7
+   L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal; I I [Ljava/math/BigDecimal; I java/math/BigDecimal I] []
+    ILOAD 7
+    ILOAD 2
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 1034 L12
+    ALOAD 6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 7
+    AALOAD
+    ILOAD 5
+    AALOAD
+    ALOAD 1
+    ILOAD 7
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.multiply (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    INVOKEVIRTUAL java/math/BigDecimal.add (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    ASTORE 6
+   L13
+    LINENUMBER 1033 L13
+    IINC 7 1
+    GOTO L10
+   L11
+    LINENUMBER 1036 L11
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal; I I [Ljava/math/BigDecimal; I java/math/BigDecimal I] []
+    ALOAD 4
+    ILOAD 5
+    ALOAD 6
+    AASTORE
+   L14
+    LINENUMBER 1031 L14
+    IINC 5 1
+    GOTO L6
+   L7
+    LINENUMBER 1038 L7
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal; I I [Ljava/math/BigDecimal; I] []
+    ALOAD 4
+    ARETURN
+   L15
+    LOCALVARIABLE i I L10 L11 7
+    LOCALVARIABLE sum Ljava/math/BigDecimal; L9 L14 6
+    LOCALVARIABLE col I L6 L7 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L15 0
+    LOCALVARIABLE v [Ljava/math/BigDecimal; L0 L15 1
+    LOCALVARIABLE nRows I L1 L15 2
+    LOCALVARIABLE nCols I L4 L15 3
+    LOCALVARIABLE out [Ljava/math/BigDecimal; L5 L15 4
+    MAXSTACK = 4
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public solve([Ljava/math/BigDecimal;)[Ljava/math/BigDecimal; throws java/lang/IllegalArgumentException org/apache/commons/math/linear/InvalidMatrixException 
+   L0
+    LINENUMBER 1053 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 2
+   L1
+    LINENUMBER 1054 L1
+    ALOAD 1
+    ARRAYLENGTH
+    ILOAD 2
+    IF_ICMPEQ L2
+   L3
+    LINENUMBER 1055 L3
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "constant vector has wrong length"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L2
+    LINENUMBER 1057 L2
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal; I] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([Ljava/math/BigDecimal;)V
+    ASTORE 3
+   L4
+    LINENUMBER 1058 L4
+    ALOAD 0
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.solve (Lorg/apache/commons/math/linear/BigMatrix;)Lorg/apache/commons/math/linear/BigMatrix;
+    CHECKCAST org/apache/commons/math/linear/BigMatrixImpl
+    CHECKCAST org/apache/commons/math/linear/BigMatrixImpl
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getDataRef ()[[Ljava/math/BigDecimal;
+    ASTORE 4
+   L5
+    LINENUMBER 1059 L5
+    ILOAD 2
+    ANEWARRAY java/math/BigDecimal
+    ASTORE 5
+   L6
+    LINENUMBER 1060 L6
+    ICONST_0
+    ISTORE 6
+   L7
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal; I org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    ILOAD 6
+    ILOAD 2
+    IF_ICMPGE L8
+   L9
+    LINENUMBER 1061 L9
+    ALOAD 5
+    ILOAD 6
+    ALOAD 4
+    ILOAD 6
+    AALOAD
+    ICONST_0
+    AALOAD
+    AASTORE
+   L10
+    LINENUMBER 1060 L10
+    IINC 6 1
+    GOTO L7
+   L8
+    LINENUMBER 1063 L8
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [Ljava/math/BigDecimal; I org/apache/commons/math/linear/BigMatrixImpl [[Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    ALOAD 5
+    ARETURN
+   L11
+    LOCALVARIABLE row I L7 L8 6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L11 0
+    LOCALVARIABLE b [Ljava/math/BigDecimal; L0 L11 1
+    LOCALVARIABLE nRows I L1 L11 2
+    LOCALVARIABLE bMatrix Lorg/apache/commons/math/linear/BigMatrix; L4 L11 3
+    LOCALVARIABLE solution [[Ljava/math/BigDecimal; L5 L11 4
+    LOCALVARIABLE out [Ljava/math/BigDecimal; L6 L11 5
+    MAXSTACK = 4
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public solve([D)[Ljava/math/BigDecimal; throws java/lang/IllegalArgumentException org/apache/commons/math/linear/InvalidMatrixException 
+   L0
+    LINENUMBER 1078 L0
+    ALOAD 1
+    ARRAYLENGTH
+    ANEWARRAY java/math/BigDecimal
+    ASTORE 2
+   L1
+    LINENUMBER 1079 L1
+    ICONST_0
+    ISTORE 3
+   L2
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [D [Ljava/math/BigDecimal; I] []
+    ILOAD 3
+    ALOAD 2
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 1080 L4
+    ALOAD 2
+    ILOAD 3
+    NEW java/math/BigDecimal
+    DUP
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    INVOKESPECIAL java/math/BigDecimal.<init> (D)V
+    AASTORE
+   L5
+    LINENUMBER 1079 L5
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 1082 L3
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [D [Ljava/math/BigDecimal; I] []
+    ALOAD 0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.solve ([Ljava/math/BigDecimal;)[Ljava/math/BigDecimal;
+    ARETURN
+   L6
+    LOCALVARIABLE i I L2 L3 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L6 0
+    LOCALVARIABLE b [D L0 L6 1
+    LOCALVARIABLE bd [Ljava/math/BigDecimal; L1 L6 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public solve(Lorg/apache/commons/math/linear/BigMatrix;)Lorg/apache/commons/math/linear/BigMatrix; throws java/lang/IllegalArgumentException org/apache/commons/math/linear/InvalidMatrixException 
+   L0
+    LINENUMBER 1097 L0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getRowDimension ()I (itf)
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    IF_ICMPEQ L1
+   L2
+    LINENUMBER 1098 L2
+    NEW java/lang/IllegalArgumentException
+    DUP
+    LDC "Incorrect row dimension"
+    INVOKESPECIAL java/lang/IllegalArgumentException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L1
+    LINENUMBER 1100 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix] []
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.isSquare ()Z
+    IFNE L3
+   L4
+    LINENUMBER 1101 L4
+    NEW org/apache/commons/math/linear/InvalidMatrixException
+    DUP
+    LDC "coefficient matrix is not square"
+    INVOKESPECIAL org/apache/commons/math/linear/InvalidMatrixException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L3
+    LINENUMBER 1103 L3
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix] []
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.isSingular ()Z
+    IFEQ L5
+   L6
+    LINENUMBER 1104 L6
+    NEW org/apache/commons/math/linear/InvalidMatrixException
+    DUP
+    LDC "Matrix is singular."
+    INVOKESPECIAL org/apache/commons/math/linear/InvalidMatrixException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L5
+    LINENUMBER 1107 L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix] []
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 2
+   L7
+    LINENUMBER 1108 L7
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getColumnDimension ()I (itf)
+    ISTORE 3
+   L8
+    LINENUMBER 1109 L8
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getRowDimension ()I (itf)
+    ISTORE 4
+   L9
+    LINENUMBER 1112 L9
+    ILOAD 4
+    ILOAD 3
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 5
+   L10
+    LINENUMBER 1113 L10
+    ICONST_0
+    ISTORE 6
+   L11
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 6
+    ILOAD 4
+    IF_ICMPGE L12
+   L13
+    LINENUMBER 1114 L13
+    ALOAD 5
+    ILOAD 6
+    AALOAD
+    ASTORE 7
+   L14
+    LINENUMBER 1115 L14
+    ICONST_0
+    ISTORE 8
+   L15
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; I] []
+    ILOAD 8
+    ILOAD 3
+    IF_ICMPGE L16
+   L17
+    LINENUMBER 1116 L17
+    ALOAD 7
+    ILOAD 8
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+    ILOAD 6
+    IALOAD
+    ILOAD 8
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getEntry (II)Ljava/math/BigDecimal; (itf)
+    AASTORE
+   L18
+    LINENUMBER 1115 L18
+    IINC 8 1
+    GOTO L15
+   L16
+    LINENUMBER 1113 L16
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; I] []
+    IINC 6 1
+    GOTO L11
+   L12
+    LINENUMBER 1121 L12
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I] []
+    ICONST_0
+    ISTORE 6
+   L19
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 6
+    ILOAD 2
+    IF_ICMPGE L20
+   L21
+    LINENUMBER 1122 L21
+    ILOAD 6
+    ICONST_1
+    IADD
+    ISTORE 7
+   L22
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I I] []
+    ILOAD 7
+    ILOAD 2
+    IF_ICMPGE L23
+   L24
+    LINENUMBER 1123 L24
+    ALOAD 5
+    ILOAD 7
+    AALOAD
+    ASTORE 8
+   L25
+    LINENUMBER 1124 L25
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 7
+    AALOAD
+    ASTORE 9
+   L26
+    LINENUMBER 1125 L26
+    ICONST_0
+    ISTORE 10
+   L27
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    ILOAD 10
+    ILOAD 3
+    IF_ICMPGE L28
+   L29
+    LINENUMBER 1126 L29
+    ALOAD 8
+    ILOAD 10
+    ALOAD 8
+    ILOAD 10
+    AALOAD
+    ALOAD 5
+    ILOAD 6
+    AALOAD
+    ILOAD 10
+    AALOAD
+    ALOAD 9
+    ILOAD 6
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.multiply (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    INVOKEVIRTUAL java/math/BigDecimal.subtract (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    AASTORE
+   L30
+    LINENUMBER 1125 L30
+    IINC 10 1
+    GOTO L27
+   L28
+    LINENUMBER 1122 L28
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    IINC 7 1
+    GOTO L22
+   L23
+    LINENUMBER 1121 L23
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I I] []
+    IINC 6 1
+    GOTO L19
+   L20
+    LINENUMBER 1132 L20
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 2
+    ICONST_1
+    ISUB
+    ISTORE 6
+   L31
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I] []
+    ILOAD 6
+    IFLT L32
+   L33
+    LINENUMBER 1133 L33
+    ALOAD 5
+    ILOAD 6
+    AALOAD
+    ASTORE 7
+   L34
+    LINENUMBER 1134 L34
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 6
+    AALOAD
+    ILOAD 6
+    AALOAD
+    ASTORE 8
+   L35
+    LINENUMBER 1135 L35
+    ICONST_0
+    ISTORE 9
+   L36
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; java/math/BigDecimal I] []
+    ILOAD 9
+    ILOAD 3
+    IF_ICMPGE L37
+   L38
+    LINENUMBER 1136 L38
+    ALOAD 7
+    ILOAD 9
+    ALOAD 7
+    ILOAD 9
+    AALOAD
+    ALOAD 8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.scale : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.roundingMode : I
+    INVOKEVIRTUAL java/math/BigDecimal.divide (Ljava/math/BigDecimal;II)Ljava/math/BigDecimal;
+    AASTORE
+   L39
+    LINENUMBER 1135 L39
+    IINC 9 1
+    GOTO L36
+   L37
+    LINENUMBER 1138 L37
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; java/math/BigDecimal I] []
+    ICONST_0
+    ISTORE 9
+   L40
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; java/math/BigDecimal I] []
+    ILOAD 9
+    ILOAD 6
+    IF_ICMPGE L41
+   L42
+    LINENUMBER 1139 L42
+    ALOAD 5
+    ILOAD 9
+    AALOAD
+    ASTORE 10
+   L43
+    LINENUMBER 1140 L43
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 9
+    AALOAD
+    ASTORE 11
+   L44
+    LINENUMBER 1141 L44
+    ICONST_0
+    ISTORE 12
+   L45
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; java/math/BigDecimal I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    ILOAD 12
+    ILOAD 3
+    IF_ICMPGE L46
+   L47
+    LINENUMBER 1142 L47
+    ALOAD 10
+    ILOAD 12
+    ALOAD 10
+    ILOAD 12
+    AALOAD
+    ALOAD 5
+    ILOAD 6
+    AALOAD
+    ILOAD 12
+    AALOAD
+    ALOAD 11
+    ILOAD 6
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.multiply (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    INVOKEVIRTUAL java/math/BigDecimal.subtract (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    AASTORE
+   L48
+    LINENUMBER 1141 L48
+    IINC 12 1
+    GOTO L45
+   L46
+    LINENUMBER 1138 L46
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; java/math/BigDecimal I [Ljava/math/BigDecimal; [Ljava/math/BigDecimal; I] []
+    IINC 9 1
+    GOTO L40
+   L41
+    LINENUMBER 1132 L41
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I [Ljava/math/BigDecimal; java/math/BigDecimal I] []
+    IINC 6 -1
+    GOTO L31
+   L32
+    LINENUMBER 1147 L32
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl org/apache/commons/math/linear/BigMatrix I I I [[Ljava/math/BigDecimal; I] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 5
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;Z)V
+    ARETURN
+   L49
+    LOCALVARIABLE col I L15 L16 8
+    LOCALVARIABLE bpRow [Ljava/math/BigDecimal; L14 L16 7
+    LOCALVARIABLE row I L11 L12 6
+    LOCALVARIABLE j I L27 L28 10
+    LOCALVARIABLE bpI [Ljava/math/BigDecimal; L25 L28 8
+    LOCALVARIABLE luI [Ljava/math/BigDecimal; L26 L28 9
+    LOCALVARIABLE i I L22 L23 7
+    LOCALVARIABLE col I L19 L20 6
+    LOCALVARIABLE j I L36 L37 9
+    LOCALVARIABLE j I L45 L46 12
+    LOCALVARIABLE bpI [Ljava/math/BigDecimal; L43 L46 10
+    LOCALVARIABLE luI [Ljava/math/BigDecimal; L44 L46 11
+    LOCALVARIABLE i I L40 L41 9
+    LOCALVARIABLE bpCol [Ljava/math/BigDecimal; L34 L41 7
+    LOCALVARIABLE luDiag Ljava/math/BigDecimal; L35 L41 8
+    LOCALVARIABLE col I L31 L32 6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L49 0
+    LOCALVARIABLE b Lorg/apache/commons/math/linear/BigMatrix; L0 L49 1
+    LOCALVARIABLE nCol I L7 L49 2
+    LOCALVARIABLE nColB I L8 L49 3
+    LOCALVARIABLE nRowB I L9 L49 4
+    LOCALVARIABLE bp [[Ljava/math/BigDecimal; L10 L49 5
+    MAXSTACK = 6
+    MAXLOCALS = 13
+
+  // access flags 0x1
+  public luDecompose()V throws org/apache/commons/math/linear/InvalidMatrixException 
+   L0
+    LINENUMBER 1171 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 1
+   L1
+    LINENUMBER 1172 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 2
+   L2
+    LINENUMBER 1173 L2
+    ILOAD 1
+    ILOAD 2
+    IF_ICMPEQ L3
+   L4
+    LINENUMBER 1174 L4
+    NEW org/apache/commons/math/linear/InvalidMatrixException
+    DUP
+    LDC "LU decomposition requires that the matrix be square."
+    INVOKESPECIAL org/apache/commons/math/linear/InvalidMatrixException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L3
+    LINENUMBER 1176 L3
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I] []
+    ALOAD 0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getData ()[[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L5
+    LINENUMBER 1179 L5
+    ALOAD 0
+    ILOAD 1
+    NEWARRAY T_INT
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+   L6
+    LINENUMBER 1180 L6
+    ICONST_0
+    ISTORE 3
+   L7
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I] []
+    ILOAD 3
+    ILOAD 1
+    IF_ICMPGE L8
+   L9
+    LINENUMBER 1181 L9
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+    ILOAD 3
+    ILOAD 3
+    IASTORE
+   L10
+    LINENUMBER 1180 L10
+    IINC 3 1
+    GOTO L7
+   L8
+    LINENUMBER 1183 L8
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I] []
+    ALOAD 0
+    ICONST_1
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.parity : I
+   L11
+    LINENUMBER 1186 L11
+    ICONST_0
+    ISTORE 3
+   L12
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I] []
+    ILOAD 3
+    ILOAD 2
+    IF_ICMPGE L13
+   L14
+    LINENUMBER 1188 L14
+    GETSTATIC org/apache/commons/math/linear/BigMatrixImpl.ZERO : Ljava/math/BigDecimal;
+    ASTORE 4
+   L15
+    LINENUMBER 1191 L15
+    ICONST_0
+    ISTORE 5
+   L16
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I] []
+    ILOAD 5
+    ILOAD 3
+    IF_ICMPGE L17
+   L18
+    LINENUMBER 1192 L18
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 5
+    AALOAD
+    ASTORE 6
+   L19
+    LINENUMBER 1193 L19
+    ALOAD 6
+    ILOAD 3
+    AALOAD
+    ASTORE 4
+   L20
+    LINENUMBER 1194 L20
+    ICONST_0
+    ISTORE 7
+   L21
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I [Ljava/math/BigDecimal; I] []
+    ILOAD 7
+    ILOAD 5
+    IF_ICMPGE L22
+   L23
+    LINENUMBER 1195 L23
+    ALOAD 4
+    ALOAD 6
+    ILOAD 7
+    AALOAD
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 7
+    AALOAD
+    ILOAD 3
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.multiply (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    INVOKEVIRTUAL java/math/BigDecimal.subtract (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    ASTORE 4
+   L24
+    LINENUMBER 1194 L24
+    IINC 7 1
+    GOTO L21
+   L22
+    LINENUMBER 1197 L22
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I [Ljava/math/BigDecimal; I] []
+    ALOAD 6
+    ILOAD 3
+    ALOAD 4
+    AASTORE
+   L25
+    LINENUMBER 1191 L25
+    IINC 5 1
+    GOTO L16
+   L17
+    LINENUMBER 1201 L17
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I] []
+    ILOAD 3
+    ISTORE 5
+   L26
+    LINENUMBER 1202 L26
+    GETSTATIC org/apache/commons/math/linear/BigMatrixImpl.ZERO : Ljava/math/BigDecimal;
+    ASTORE 6
+   L27
+    LINENUMBER 1203 L27
+    ILOAD 3
+    ISTORE 7
+   L28
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I java/math/BigDecimal I] []
+    ILOAD 7
+    ILOAD 1
+    IF_ICMPGE L29
+   L30
+    LINENUMBER 1204 L30
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 7
+    AALOAD
+    ASTORE 8
+   L31
+    LINENUMBER 1205 L31
+    ALOAD 8
+    ILOAD 3
+    AALOAD
+    ASTORE 4
+   L32
+    LINENUMBER 1206 L32
+    ICONST_0
+    ISTORE 9
+   L33
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I java/math/BigDecimal I [Ljava/math/BigDecimal; I] []
+    ILOAD 9
+    ILOAD 3
+    IF_ICMPGE L34
+   L35
+    LINENUMBER 1207 L35
+    ALOAD 4
+    ALOAD 8
+    ILOAD 9
+    AALOAD
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 9
+    AALOAD
+    ILOAD 3
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.multiply (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    INVOKEVIRTUAL java/math/BigDecimal.subtract (Ljava/math/BigDecimal;)Ljava/math/BigDecimal;
+    ASTORE 4
+   L36
+    LINENUMBER 1206 L36
+    IINC 9 1
+    GOTO L33
+   L34
+    LINENUMBER 1209 L34
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I java/math/BigDecimal I [Ljava/math/BigDecimal; I] []
+    ALOAD 8
+    ILOAD 3
+    ALOAD 4
+    AASTORE
+   L37
+    LINENUMBER 1212 L37
+    ALOAD 4
+    INVOKEVIRTUAL java/math/BigDecimal.abs ()Ljava/math/BigDecimal;
+    ALOAD 6
+    INVOKEVIRTUAL java/math/BigDecimal.compareTo (Ljava/math/BigDecimal;)I
+    ICONST_1
+    IF_ICMPNE L38
+   L39
+    LINENUMBER 1213 L39
+    ALOAD 4
+    INVOKEVIRTUAL java/math/BigDecimal.abs ()Ljava/math/BigDecimal;
+    ASTORE 6
+   L40
+    LINENUMBER 1214 L40
+    ILOAD 7
+    ISTORE 5
+   L38
+    LINENUMBER 1203 L38
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I java/math/BigDecimal I [Ljava/math/BigDecimal; I] []
+    IINC 7 1
+    GOTO L28
+   L29
+    LINENUMBER 1219 L29
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I java/math/BigDecimal I] []
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 5
+    AALOAD
+    ILOAD 3
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.abs ()Ljava/math/BigDecimal;
+    GETSTATIC org/apache/commons/math/linear/BigMatrixImpl.TOO_SMALL : Ljava/math/BigDecimal;
+    INVOKEVIRTUAL java/math/BigDecimal.compareTo (Ljava/math/BigDecimal;)I
+    IFGT L41
+   L42
+    LINENUMBER 1220 L42
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L43
+    LINENUMBER 1221 L43
+    NEW org/apache/commons/math/linear/InvalidMatrixException
+    DUP
+    LDC "matrix is singular"
+    INVOKESPECIAL org/apache/commons/math/linear/InvalidMatrixException.<init> (Ljava/lang/String;)V
+    ATHROW
+   L41
+    LINENUMBER 1225 L41
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I java/math/BigDecimal I] []
+    ILOAD 5
+    ILOAD 3
+    IF_ICMPEQ L44
+   L45
+    LINENUMBER 1226 L45
+    GETSTATIC org/apache/commons/math/linear/BigMatrixImpl.ZERO : Ljava/math/BigDecimal;
+    ASTORE 7
+   L46
+    LINENUMBER 1227 L46
+    ICONST_0
+    ISTORE 8
+   L47
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I java/math/BigDecimal java/math/BigDecimal I] []
+    ILOAD 8
+    ILOAD 2
+    IF_ICMPGE L48
+   L49
+    LINENUMBER 1228 L49
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 5
+    AALOAD
+    ILOAD 8
+    AALOAD
+    ASTORE 7
+   L50
+    LINENUMBER 1229 L50
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 5
+    AALOAD
+    ILOAD 8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 3
+    AALOAD
+    ILOAD 8
+    AALOAD
+    AASTORE
+   L51
+    LINENUMBER 1230 L51
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 3
+    AALOAD
+    ILOAD 8
+    ALOAD 7
+    AASTORE
+   L52
+    LINENUMBER 1227 L52
+    IINC 8 1
+    GOTO L47
+   L48
+    LINENUMBER 1232 L48
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I java/math/BigDecimal java/math/BigDecimal I] []
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+    ILOAD 5
+    IALOAD
+    ISTORE 8
+   L53
+    LINENUMBER 1233 L53
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+    ILOAD 5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+    ILOAD 3
+    IALOAD
+    IASTORE
+   L54
+    LINENUMBER 1234 L54
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+    ILOAD 3
+    ILOAD 8
+    IASTORE
+   L55
+    LINENUMBER 1235 L55
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.parity : I
+    INEG
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.parity : I
+   L44
+    LINENUMBER 1239 L44
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I java/math/BigDecimal] []
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 3
+    AALOAD
+    ILOAD 3
+    AALOAD
+    ASTORE 7
+   L56
+    LINENUMBER 1240 L56
+    ILOAD 3
+    ICONST_1
+    IADD
+    ISTORE 8
+   L57
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I java/math/BigDecimal java/math/BigDecimal I] []
+    ILOAD 8
+    ILOAD 1
+    IF_ICMPGE L58
+   L59
+    LINENUMBER 1241 L59
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    ILOAD 8
+    AALOAD
+    ASTORE 9
+   L60
+    LINENUMBER 1242 L60
+    ALOAD 9
+    ILOAD 3
+    ALOAD 9
+    ILOAD 3
+    AALOAD
+    ALOAD 7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.scale : I
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.roundingMode : I
+    INVOKEVIRTUAL java/math/BigDecimal.divide (Ljava/math/BigDecimal;II)Ljava/math/BigDecimal;
+    AASTORE
+   L61
+    LINENUMBER 1240 L61
+    IINC 8 1
+    GOTO L57
+   L58
+    LINENUMBER 1186 L58
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I java/math/BigDecimal I java/math/BigDecimal java/math/BigDecimal I] []
+    IINC 3 1
+    GOTO L12
+   L13
+    LINENUMBER 1247 L13
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I] []
+    RETURN
+   L62
+    LOCALVARIABLE row I L7 L8 3
+    LOCALVARIABLE i I L21 L22 7
+    LOCALVARIABLE luRow [Ljava/math/BigDecimal; L19 L25 6
+    LOCALVARIABLE row I L16 L17 5
+    LOCALVARIABLE i I L33 L34 9
+    LOCALVARIABLE luRow [Ljava/math/BigDecimal; L31 L38 8
+    LOCALVARIABLE row I L28 L29 7
+    LOCALVARIABLE i I L47 L48 8
+    LOCALVARIABLE tmp Ljava/math/BigDecimal; L46 L44 7
+    LOCALVARIABLE temp I L53 L44 8
+    LOCALVARIABLE luRow [Ljava/math/BigDecimal; L60 L61 9
+    LOCALVARIABLE row I L57 L58 8
+    LOCALVARIABLE sum Ljava/math/BigDecimal; L15 L58 4
+    LOCALVARIABLE max I L26 L58 5
+    LOCALVARIABLE largest Ljava/math/BigDecimal; L27 L58 6
+    LOCALVARIABLE luDiag Ljava/math/BigDecimal; L56 L58 7
+    LOCALVARIABLE col I L12 L13 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L62 0
+    LOCALVARIABLE nRows I L1 L62 1
+    LOCALVARIABLE nCols I L2 L62 2
+    MAXSTACK = 6
+    MAXLOCALS = 10
+
+  // access flags 0x1
+  public toString()Ljava/lang/String;
+   L0
+    LINENUMBER 1254 L0
+    NEW java/lang/StringBuffer
+    DUP
+    INVOKESPECIAL java/lang/StringBuffer.<init> ()V
+    ASTORE 1
+   L1
+    LINENUMBER 1255 L1
+    ALOAD 1
+    LDC "BigMatrixImpl{"
+    INVOKEVIRTUAL java/lang/StringBuffer.append (Ljava/lang/String;)Ljava/lang/StringBuffer;
+    POP
+   L2
+    LINENUMBER 1256 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    IFNULL L3
+   L4
+    LINENUMBER 1257 L4
+    ICONST_0
+    ISTORE 2
+   L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/StringBuffer I] []
+    ILOAD 2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L6
+    LINENUMBER 1258 L6
+    ILOAD 2
+    IFLE L7
+   L8
+    LINENUMBER 1259 L8
+    ALOAD 1
+    LDC ","
+    INVOKEVIRTUAL java/lang/StringBuffer.append (Ljava/lang/String;)Ljava/lang/StringBuffer;
+    POP
+   L7
+    LINENUMBER 1261 L7
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/StringBuffer I] []
+    ALOAD 1
+    LDC "{"
+    INVOKEVIRTUAL java/lang/StringBuffer.append (Ljava/lang/String;)Ljava/lang/StringBuffer;
+    POP
+   L9
+    LINENUMBER 1262 L9
+    ICONST_0
+    ISTORE 3
+   L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/StringBuffer I I] []
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ICONST_0
+    AALOAD
+    ARRAYLENGTH
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 1263 L12
+    ILOAD 3
+    IFLE L13
+   L14
+    LINENUMBER 1264 L14
+    ALOAD 1
+    LDC ","
+    INVOKEVIRTUAL java/lang/StringBuffer.append (Ljava/lang/String;)Ljava/lang/StringBuffer;
+    POP
+   L13
+    LINENUMBER 1266 L13
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/StringBuffer I I] []
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 2
+    AALOAD
+    ILOAD 3
+    AALOAD
+    INVOKEVIRTUAL java/lang/StringBuffer.append (Ljava/lang/Object;)Ljava/lang/StringBuffer;
+    POP
+   L15
+    LINENUMBER 1262 L15
+    IINC 3 1
+    GOTO L10
+   L11
+    LINENUMBER 1268 L11
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/StringBuffer I I] []
+    ALOAD 1
+    LDC "}"
+    INVOKEVIRTUAL java/lang/StringBuffer.append (Ljava/lang/String;)Ljava/lang/StringBuffer;
+    POP
+   L16
+    LINENUMBER 1257 L16
+    IINC 2 1
+    GOTO L5
+   L3
+    LINENUMBER 1271 L3
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/StringBuffer] []
+    ALOAD 1
+    LDC "}"
+    INVOKEVIRTUAL java/lang/StringBuffer.append (Ljava/lang/String;)Ljava/lang/StringBuffer;
+    POP
+   L17
+    LINENUMBER 1272 L17
+    ALOAD 1
+    INVOKEVIRTUAL java/lang/StringBuffer.toString ()Ljava/lang/String;
+    ARETURN
+   L18
+    LOCALVARIABLE j I L10 L11 3
+    LOCALVARIABLE i I L5 L3 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L18 0
+    LOCALVARIABLE res Ljava/lang/StringBuffer; L1 L18 1
+    MAXSTACK = 3
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public equals(Ljava/lang/Object;)Z
+   L0
+    LINENUMBER 1285 L0
+    ALOAD 1
+    ALOAD 0
+    IF_ACMPNE L1
+   L2
+    LINENUMBER 1286 L2
+    ICONST_1
+    IRETURN
+   L1
+    LINENUMBER 1288 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/Object] []
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/BigMatrixImpl
+    IFNE L3
+   L4
+    LINENUMBER 1289 L4
+    ICONST_0
+    IRETURN
+   L3
+    LINENUMBER 1291 L3
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/Object] []
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/BigMatrix
+    ASTORE 2
+   L5
+    LINENUMBER 1292 L5
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 3
+   L6
+    LINENUMBER 1293 L6
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 4
+   L7
+    LINENUMBER 1294 L7
+    ALOAD 2
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getColumnDimension ()I (itf)
+    ILOAD 4
+    IF_ICMPNE L8
+    ALOAD 2
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getRowDimension ()I (itf)
+    ILOAD 3
+    IF_ICMPEQ L9
+   L8
+    LINENUMBER 1295 L8
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/Object org/apache/commons/math/linear/BigMatrix I I] []
+    ICONST_0
+    IRETURN
+   L9
+    LINENUMBER 1297 L9
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/Object org/apache/commons/math/linear/BigMatrix I I] []
+    ICONST_0
+    ISTORE 5
+   L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/Object org/apache/commons/math/linear/BigMatrix I I I] []
+    ILOAD 5
+    ILOAD 3
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 1298 L12
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 5
+    AALOAD
+    ASTORE 6
+   L13
+    LINENUMBER 1299 L13
+    ICONST_0
+    ISTORE 7
+   L14
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/Object org/apache/commons/math/linear/BigMatrix I I I [Ljava/math/BigDecimal; I] []
+    ILOAD 7
+    ILOAD 4
+    IF_ICMPGE L15
+   L16
+    LINENUMBER 1300 L16
+    ALOAD 6
+    ILOAD 7
+    AALOAD
+    ALOAD 2
+    ILOAD 5
+    ILOAD 7
+    INVOKEINTERFACE org/apache/commons/math/linear/BigMatrix.getEntry (II)Ljava/math/BigDecimal; (itf)
+    INVOKEVIRTUAL java/math/BigDecimal.equals (Ljava/lang/Object;)Z
+    IFNE L17
+   L18
+    LINENUMBER 1301 L18
+    ICONST_0
+    IRETURN
+   L17
+    LINENUMBER 1299 L17
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/Object org/apache/commons/math/linear/BigMatrix I I I [Ljava/math/BigDecimal; I] []
+    IINC 7 1
+    GOTO L14
+   L15
+    LINENUMBER 1297 L15
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/Object org/apache/commons/math/linear/BigMatrix I I I [Ljava/math/BigDecimal; I] []
+    IINC 5 1
+    GOTO L10
+   L11
+    LINENUMBER 1305 L11
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl java/lang/Object org/apache/commons/math/linear/BigMatrix I I I] []
+    ICONST_1
+    IRETURN
+   L19
+    LOCALVARIABLE col I L14 L15 7
+    LOCALVARIABLE dataRow [Ljava/math/BigDecimal; L13 L15 6
+    LOCALVARIABLE row I L10 L11 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L19 0
+    LOCALVARIABLE object Ljava/lang/Object; L0 L19 1
+    LOCALVARIABLE m Lorg/apache/commons/math/linear/BigMatrix; L5 L19 2
+    LOCALVARIABLE nRows I L6 L19 3
+    LOCALVARIABLE nCols I L7 L19 4
+    MAXSTACK = 4
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public hashCode()I
+   L0
+    LINENUMBER 1314 L0
+    BIPUSH 7
+    ISTORE 1
+   L1
+    LINENUMBER 1315 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 2
+   L2
+    LINENUMBER 1316 L2
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 3
+   L3
+    LINENUMBER 1317 L3
+    ILOAD 1
+    BIPUSH 31
+    IMUL
+    ILOAD 2
+    IADD
+    ISTORE 1
+   L4
+    LINENUMBER 1318 L4
+    ILOAD 1
+    BIPUSH 31
+    IMUL
+    ILOAD 3
+    IADD
+    ISTORE 1
+   L5
+    LINENUMBER 1319 L5
+    ICONST_0
+    ISTORE 4
+   L6
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I I] []
+    ILOAD 4
+    ILOAD 2
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 1320 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 4
+    AALOAD
+    ASTORE 5
+   L9
+    LINENUMBER 1321 L9
+    ICONST_0
+    ISTORE 6
+   L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I I [Ljava/math/BigDecimal; I] []
+    ILOAD 6
+    ILOAD 3
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 1322 L12
+    ILOAD 1
+    BIPUSH 31
+    IMUL
+    BIPUSH 11
+    ILOAD 4
+    ICONST_1
+    IADD
+    IMUL
+    BIPUSH 17
+    ILOAD 6
+    ICONST_1
+    IADD
+    IMUL
+    IADD
+    ALOAD 5
+    ILOAD 6
+    AALOAD
+    INVOKEVIRTUAL java/math/BigDecimal.hashCode ()I
+    IMUL
+    IADD
+    ISTORE 1
+   L13
+    LINENUMBER 1321 L13
+    IINC 6 1
+    GOTO L10
+   L11
+    LINENUMBER 1319 L11
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I I [Ljava/math/BigDecimal; I] []
+    IINC 4 1
+    GOTO L6
+   L7
+    LINENUMBER 1326 L7
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I I] []
+    ILOAD 1
+    IRETURN
+   L14
+    LOCALVARIABLE col I L10 L11 6
+    LOCALVARIABLE dataRow [Ljava/math/BigDecimal; L9 L11 5
+    LOCALVARIABLE row I L6 L7 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L14 0
+    LOCALVARIABLE ret I L1 L14 1
+    LOCALVARIABLE nRows I L2 L14 2
+    LOCALVARIABLE nCols I L3 L14 3
+    MAXSTACK = 5
+    MAXLOCALS = 7
+
+  // access flags 0x4
+  protected getLUMatrix()Lorg/apache/commons/math/linear/BigMatrix; throws org/apache/commons/math/linear/InvalidMatrixException 
+   L0
+    LINENUMBER 1359 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    IFNONNULL L1
+   L2
+    LINENUMBER 1360 L2
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.luDecompose ()V
+   L1
+    LINENUMBER 1362 L1
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl] []
+    NEW org/apache/commons/math/linear/BigMatrixImpl
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+    INVOKESPECIAL org/apache/commons/math/linear/BigMatrixImpl.<init> ([[Ljava/math/BigDecimal;)V
+    ARETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L3 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x4
+  protected getPermutation()[I
+   L0
+    LINENUMBER 1378 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+    ARRAYLENGTH
+    NEWARRAY T_INT
+    ASTORE 1
+   L1
+    LINENUMBER 1379 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+    ICONST_0
+    ALOAD 1
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.permutation : [I
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L2
+    LINENUMBER 1380 L2
+    ALOAD 1
+    ARETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L3 0
+    LOCALVARIABLE out [I L1 L3 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x2
+  private copyOut()[[Ljava/math/BigDecimal;
+   L0
+    LINENUMBER 1391 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 1
+   L1
+    LINENUMBER 1392 L1
+    ILOAD 1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    ASTORE 2
+   L2
+    LINENUMBER 1394 L2
+    ICONST_0
+    ISTORE 3
+   L3
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I [[Ljava/math/BigDecimal; I] []
+    ILOAD 3
+    ILOAD 1
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 1395 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 3
+    AALOAD
+    ICONST_0
+    ALOAD 2
+    ILOAD 3
+    AALOAD
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 3
+    AALOAD
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L6
+    LINENUMBER 1394 L6
+    IINC 3 1
+    GOTO L3
+   L4
+    LINENUMBER 1397 L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I [[Ljava/math/BigDecimal; I] []
+    ALOAD 2
+    ARETURN
+   L7
+    LOCALVARIABLE i I L3 L4 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L7 0
+    LOCALVARIABLE nRows I L1 L7 1
+    LOCALVARIABLE out [[Ljava/math/BigDecimal; L2 L7 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x2
+  private copyIn([[Ljava/math/BigDecimal;)V
+   L0
+    LINENUMBER 1411 L0
+    ALOAD 0
+    ALOAD 1
+    ICONST_0
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.setSubMatrix ([[Ljava/math/BigDecimal;II)V
+   L1
+    LINENUMBER 1412 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L2 0
+    LOCALVARIABLE in [[Ljava/math/BigDecimal; L0 L2 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x2
+  private copyIn([[D)V
+   L0
+    LINENUMBER 1420 L0
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 2
+   L1
+    LINENUMBER 1421 L1
+    ALOAD 1
+    ICONST_0
+    AALOAD
+    ARRAYLENGTH
+    ISTORE 3
+   L2
+    LINENUMBER 1422 L2
+    ALOAD 0
+    ILOAD 2
+    ILOAD 3
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+   L3
+    LINENUMBER 1423 L3
+    ICONST_0
+    ISTORE 4
+   L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[D I I I] []
+    ILOAD 4
+    ILOAD 2
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 1424 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 4
+    AALOAD
+    ASTORE 5
+   L7
+    LINENUMBER 1425 L7
+    ALOAD 1
+    ILOAD 4
+    AALOAD
+    ASTORE 6
+   L8
+    LINENUMBER 1426 L8
+    ICONST_0
+    ISTORE 7
+   L9
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[D I I I [Ljava/math/BigDecimal; [D I] []
+    ILOAD 7
+    ILOAD 3
+    IF_ICMPGE L10
+   L11
+    LINENUMBER 1427 L11
+    ALOAD 5
+    ILOAD 7
+    NEW java/math/BigDecimal
+    DUP
+    ALOAD 6
+    ILOAD 7
+    DALOAD
+    INVOKESPECIAL java/math/BigDecimal.<init> (D)V
+    AASTORE
+   L12
+    LINENUMBER 1426 L12
+    IINC 7 1
+    GOTO L9
+   L10
+    LINENUMBER 1423 L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[D I I I [Ljava/math/BigDecimal; [D I] []
+    IINC 4 1
+    GOTO L4
+   L5
+    LINENUMBER 1430 L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[D I I I] []
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L13
+    LINENUMBER 1431 L13
+    RETURN
+   L14
+    LOCALVARIABLE j I L9 L10 7
+    LOCALVARIABLE dataI [Ljava/math/BigDecimal; L7 L10 5
+    LOCALVARIABLE inI [D L8 L10 6
+    LOCALVARIABLE i I L4 L5 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L14 0
+    LOCALVARIABLE in [[D L0 L14 1
+    LOCALVARIABLE nRows I L1 L14 2
+    LOCALVARIABLE nCols I L2 L14 3
+    MAXSTACK = 6
+    MAXLOCALS = 8
+
+  // access flags 0x2
+  private copyIn([[Ljava/lang/String;)V
+   L0
+    LINENUMBER 1440 L0
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 2
+   L1
+    LINENUMBER 1441 L1
+    ALOAD 1
+    ICONST_0
+    AALOAD
+    ARRAYLENGTH
+    ISTORE 3
+   L2
+    LINENUMBER 1442 L2
+    ALOAD 0
+    ILOAD 2
+    ILOAD 3
+    MULTIANEWARRAY [[Ljava/math/BigDecimal; 2
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+   L3
+    LINENUMBER 1443 L3
+    ICONST_0
+    ISTORE 4
+   L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/lang/String; I I I] []
+    ILOAD 4
+    ILOAD 2
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 1444 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/BigMatrixImpl.data : [[Ljava/math/BigDecimal;
+    ILOAD 4
+    AALOAD
+    ASTORE 5
+   L7
+    LINENUMBER 1445 L7
+    ALOAD 1
+    ILOAD 4
+    AALOAD
+    ASTORE 6
+   L8
+    LINENUMBER 1446 L8
+    ICONST_0
+    ISTORE 7
+   L9
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/lang/String; I I I [Ljava/math/BigDecimal; [Ljava/lang/String; I] []
+    ILOAD 7
+    ILOAD 3
+    IF_ICMPGE L10
+   L11
+    LINENUMBER 1447 L11
+    ALOAD 5
+    ILOAD 7
+    NEW java/math/BigDecimal
+    DUP
+    ALOAD 6
+    ILOAD 7
+    AALOAD
+    INVOKESPECIAL java/math/BigDecimal.<init> (Ljava/lang/String;)V
+    AASTORE
+   L12
+    LINENUMBER 1446 L12
+    IINC 7 1
+    GOTO L9
+   L10
+    LINENUMBER 1443 L10
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/lang/String; I I I [Ljava/math/BigDecimal; [Ljava/lang/String; I] []
+    IINC 4 1
+    GOTO L4
+   L5
+    LINENUMBER 1450 L5
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl [[Ljava/lang/String; I I I] []
+    ALOAD 0
+    ACONST_NULL
+    CHECKCAST [[Ljava/math/BigDecimal;
+    PUTFIELD org/apache/commons/math/linear/BigMatrixImpl.lu : [[Ljava/math/BigDecimal;
+   L13
+    LINENUMBER 1451 L13
+    RETURN
+   L14
+    LOCALVARIABLE j I L9 L10 7
+    LOCALVARIABLE dataI [Ljava/math/BigDecimal; L7 L10 5
+    LOCALVARIABLE inI [Ljava/lang/String; L8 L10 6
+    LOCALVARIABLE i I L4 L5 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L14 0
+    LOCALVARIABLE in [[Ljava/lang/String; L0 L14 1
+    LOCALVARIABLE nRows I L1 L14 2
+    LOCALVARIABLE nCols I L2 L14 3
+    MAXSTACK = 6
+    MAXLOCALS = 8
+
+  // access flags 0x2
+  private isValidCoordinate(II)Z
+   L0
+    LINENUMBER 1461 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getRowDimension ()I
+    ISTORE 3
+   L1
+    LINENUMBER 1462 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/BigMatrixImpl.getColumnDimension ()I
+    ISTORE 4
+   L2
+    LINENUMBER 1463 L2
+    ILOAD 1
+    IFLT L3
+    ILOAD 1
+    ILOAD 3
+    IF_ICMPGE L3
+    ILOAD 2
+    IFLT L3
+    ILOAD 2
+    ILOAD 4
+    IF_ICMPGE L3
+    ICONST_1
+    GOTO L4
+   L3
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I I] []
+    ICONST_0
+   L4
+   FRAME FULL [org/apache/commons/math/linear/BigMatrixImpl I I I I] [I]
+    IRETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/BigMatrixImpl; L0 L5 0
+    LOCALVARIABLE row I L0 L5 1
+    LOCALVARIABLE col I L0 L5 2
+    LOCALVARIABLE nRows I L1 L5 3
+    LOCALVARIABLE nCols I L2 L5 4
+    MAXSTACK = 2
+    MAXLOCALS = 5
+
+  // access flags 0x8
+  static <clinit>()V
+   L0
+    LINENUMBER 76 L0
+    NEW java/math/BigDecimal
+    DUP
+    LDC 1.0E-11
+    INVOKESPECIAL java/math/BigDecimal.<init> (D)V
+    PUTSTATIC org/apache/commons/math/linear/BigMatrixImpl.TOO_SMALL : Ljava/math/BigDecimal;
+   L1
+    LINENUMBER 79 L1
+    NEW java/math/BigDecimal
+    DUP
+    ICONST_0
+    INVOKESPECIAL java/math/BigDecimal.<init> (I)V
+    PUTSTATIC org/apache/commons/math/linear/BigMatrixImpl.ZERO : Ljava/math/BigDecimal;
+   L2
+    LINENUMBER 81 L2
+    NEW java/math/BigDecimal
+    DUP
+    ICONST_1
+    INVOKESPECIAL java/math/BigDecimal.<init> (I)V
+    PUTSTATIC org/apache/commons/math/linear/BigMatrixImpl.ONE : Ljava/math/BigDecimal;
+    RETURN
+    MAXSTACK = 4
+    MAXLOCALS = 0
+}
+

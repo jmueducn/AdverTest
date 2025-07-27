@@ -1221,20 +1221,7 @@ def llm_based_fix(test_class_code, error_messages, test_class_infos, base_dir, t
         # print(f"```java\n{formatted_test_method_code}\n```")
         # print("-" * 40)
 
-    # 处理类级别的错误
-    if class_level_errors:
-        print("\n检测到类级别的错误:")
-        for error in class_level_errors:
-            print(f"  第 {error['line']} 行: {error['message']}")
-        print("类代码（可能在导入或字段声明中）:")
-        # 假设类级别错误在前面几行，可以打印前20行作为示例
-        class_code_snippet = code_lines[:20]
-        class_error_lines = {error['line'] for error in class_level_errors if error['line'] <= 20}
-        formatted_class_code = format_code_with_line_numbers(class_code_snippet, 0, class_error_lines)
-        #print(f"```java\n{formatted_class_code}\n```")
-        #print("-" * 40)
-
-    # 如果没有错误映射到任何测试方法，也没有类级别的错误
+    
     if not detailed_affected_test_methods and not class_level_errors:
         print("没有错误映射到任何测试方法或类级别。")
         return 0, test_class_code, error_messages, test_class_infos
@@ -1336,6 +1323,7 @@ Please fix the error and return the whole fixed unit test. You can use Junit 4, 
             "constructor":{constructor},
             "Other_methods":{methodstr}
             })
+            # ----------------------
             # corrected_test_method_unitest = chain.invoke({
             #     "error_type": "compilation",
             #     "unit_test": tmc,
@@ -1346,8 +1334,8 @@ Please fix the error and return the whole fixed unit test. You can use Junit 4, 
             # })
             # 更新测试方法代码
             #print("wtf:",corrected_test_method)
-            #pure_methods = extract_pure_test_method(corrected_test_method)
             pure_methods = extract_pure_test_method(corrected_test_method)
+            #pure_methods = extract_pure_test_method(corrected_test_method_unitest)
             #print(f"生成的测试方法 for {tested_method_name} 已生成。")
             if pure_methods:
                 for new_test_method_name, pure_method in pure_methods:
@@ -1417,6 +1405,31 @@ public class {test_class_name} {{
 {updated_test_methods_code}
 }}
 """
+    # 处理类级别的错误
+    if class_level_errors:
+        print("\n检测到类级别的错误:")
+        for error in class_level_errors:
+            print(f"  第 {error['line']} 行: {error['message']}")
+        print("类代码（可能在导入或字段声明中）:")
+        # 先把整段代码拆成行列表
+        lines = test_class_code.splitlines()
+
+        # 按行号从大到小删除，防止下标错位
+        for err in sorted(class_level_errors, key=lambda e: e['line'], reverse=True):
+            idx = err['line'] - 1          # 行号转索引
+            if 0 <= idx < len(lines):
+                del lines[idx]
+
+        # 重新拼接为字符串
+        updated_code = '\n'.join(lines)
+        # 假设类级别错误在前面几行，可以打印前20行作为示例
+        # class_code_snippet = code_lines[:20]
+        # class_error_lines = {error['line'] for error in class_level_errors if error['line'] <= 20}
+        # formatted_class_code = format_code_with_line_numbers(class_code_snippet, 0, class_error_lines)
+        #print(f"```java\n{formatted_class_code}\n```")
+        #print("-" * 40)
+
+    # 如果没有错误映射到任何测试方法，也没有类级别的错误
     result,_ = update_test_class_info(updated_code,test_class_infos)
     if result == 0:
         return 0, updated_code, error_messages, test_class_infos

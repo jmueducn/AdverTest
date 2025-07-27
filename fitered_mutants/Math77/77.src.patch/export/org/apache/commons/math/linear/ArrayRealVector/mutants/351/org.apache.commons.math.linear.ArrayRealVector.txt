@@ -1,0 +1,4180 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math/linear/ArrayRealVector extends org/apache/commons/math/linear/AbstractRealVector implements java/io/Serializable {
+
+  // compiled from: ArrayRealVector.java
+  // access flags 0x409
+  public static abstract INNERCLASS org/apache/commons/math/linear/RealVector$Entry org/apache/commons/math/linear/RealVector Entry
+
+  // access flags 0x1A
+  private final static Ljava/lang/String; NON_FITTING_POSITION_AND_SIZE_MESSAGE = "position {0} and size {1} don't fit to the size of the input array {2}"
+
+  // access flags 0x1A
+  private final static J serialVersionUID = -1097961340710804027
+
+  // access flags 0x1A
+  private final static Lorg/apache/commons/math/linear/RealVectorFormat; DEFAULT_FORMAT
+
+  // access flags 0x4
+  protected [D data
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 56 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 57 L1
+    ALOAD 0
+    ICONST_0
+    NEWARRAY T_DOUBLE
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L2
+    LINENUMBER 58 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L3 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public <init>(I)V
+   L0
+    LINENUMBER 64 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 65 L1
+    ALOAD 0
+    ILOAD 1
+    NEWARRAY T_DOUBLE
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L2
+    LINENUMBER 66 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L3 0
+    LOCALVARIABLE size I L0 L3 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>(ID)V
+   L0
+    LINENUMBER 73 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 74 L1
+    ALOAD 0
+    ILOAD 1
+    NEWARRAY T_DOUBLE
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L2
+    LINENUMBER 75 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    DLOAD 2
+    INVOKESTATIC java/util/Arrays.fill ([DD)V
+   L3
+    LINENUMBER 76 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L4 0
+    LOCALVARIABLE size I L0 L4 1
+    LOCALVARIABLE preset D L0 L4 2
+    MAXSTACK = 3
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public <init>([D)V
+   L0
+    LINENUMBER 82 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 83 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L2
+    LINENUMBER 84 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L3 0
+    LOCALVARIABLE d [D L0 L3 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>([DZ)V throws java/lang/NullPointerException java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 101 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 102 L1
+    ALOAD 1
+    IFNONNULL L2
+   L3
+    LINENUMBER 103 L3
+    NEW java/lang/NullPointerException
+    DUP
+    INVOKESPECIAL java/lang/NullPointerException.<init> ()V
+    ATHROW
+   L2
+    LINENUMBER 105 L2
+    ALOAD 1
+    ARRAYLENGTH
+    IFNE L4
+   L5
+    LINENUMBER 106 L5
+    LDC "vector must have at least one element"
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESTATIC org/apache/commons/math/MathRuntimeException.createIllegalArgumentException (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;
+    ATHROW
+   L4
+    LINENUMBER 108 L4
+    ALOAD 0
+    ILOAD 2
+    IFEQ L6
+    ALOAD 1
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    GOTO L7
+   L6
+    ALOAD 1
+   L7
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L8
+    LINENUMBER 109 L8
+    RETURN
+   L9
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L9 0
+    LOCALVARIABLE d [D L0 L9 1
+    LOCALVARIABLE copyArray Z L0 L9 2
+    MAXSTACK = 2
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public <init>([DII)V
+   L0
+    LINENUMBER 117 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 118 L1
+    ALOAD 1
+    ARRAYLENGTH
+    ILOAD 2
+    ILOAD 3
+    IADD
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 119 L3
+    LDC "position {0} and size {1} don't fit to the size of the input array {2}"
+    ICONST_3
+    ANEWARRAY java/lang/Object
+    DUP
+    ICONST_0
+    ILOAD 2
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    DUP
+    ICONST_1
+    ILOAD 3
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    DUP
+    ICONST_2
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    INVOKESTATIC org/apache/commons/math/MathRuntimeException.createIllegalArgumentException (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;
+    ATHROW
+   L2
+    LINENUMBER 122 L2
+    ALOAD 0
+    ILOAD 3
+    NEWARRAY T_DOUBLE
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L4
+    LINENUMBER 123 L4
+    ALOAD 1
+    ILOAD 2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ICONST_0
+    ILOAD 3
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L5
+    LINENUMBER 124 L5
+    RETURN
+   L6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L6 0
+    LOCALVARIABLE d [D L0 L6 1
+    LOCALVARIABLE pos I L0 L6 2
+    LOCALVARIABLE size I L0 L6 3
+    MAXSTACK = 5
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public <init>([Ljava/lang/Double;)V
+   L0
+    LINENUMBER 130 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 131 L1
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    NEWARRAY T_DOUBLE
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L2
+    LINENUMBER 132 L2
+    ICONST_0
+    ISTORE 2
+   L3
+    ILOAD 2
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 133 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 2
+    ALOAD 1
+    ILOAD 2
+    AALOAD
+    INVOKEVIRTUAL java/lang/Double.doubleValue ()D
+    DASTORE
+   L6
+    LINENUMBER 132 L6
+    IINC 2 1
+    GOTO L3
+   L4
+    LINENUMBER 135 L4
+    RETURN
+   L7
+    LOCALVARIABLE i I L3 L4 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L7 0
+    LOCALVARIABLE d [Ljava/lang/Double; L0 L7 1
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public <init>([Ljava/lang/Double;II)V
+   L0
+    LINENUMBER 143 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 144 L1
+    ALOAD 1
+    ARRAYLENGTH
+    ILOAD 2
+    ILOAD 3
+    IADD
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 145 L3
+    LDC "position {0} and size {1} don't fit to the size of the input array {2}"
+    ICONST_3
+    ANEWARRAY java/lang/Object
+    DUP
+    ICONST_0
+    ILOAD 2
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    DUP
+    ICONST_1
+    ILOAD 3
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    DUP
+    ICONST_2
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    INVOKESTATIC org/apache/commons/math/MathRuntimeException.createIllegalArgumentException (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;
+    ATHROW
+   L2
+    LINENUMBER 148 L2
+    ALOAD 0
+    ILOAD 3
+    NEWARRAY T_DOUBLE
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L4
+    LINENUMBER 149 L4
+    ILOAD 2
+    ISTORE 4
+   L5
+    ILOAD 4
+    ILOAD 2
+    ILOAD 3
+    IADD
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 150 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 4
+    ILOAD 2
+    ISUB
+    ALOAD 1
+    ILOAD 4
+    AALOAD
+    INVOKEVIRTUAL java/lang/Double.doubleValue ()D
+    DASTORE
+   L8
+    LINENUMBER 149 L8
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 152 L6
+    RETURN
+   L9
+    LOCALVARIABLE i I L5 L6 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L9 0
+    LOCALVARIABLE d [Ljava/lang/Double; L0 L9 1
+    LOCALVARIABLE pos I L0 L9 2
+    LOCALVARIABLE size I L0 L9 3
+    MAXSTACK = 5
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/linear/RealVector;)V
+   L0
+    LINENUMBER 158 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 159 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    NEWARRAY T_DOUBLE
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L2
+    LINENUMBER 160 L2
+    ICONST_0
+    ISTORE 2
+   L3
+    ILOAD 2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 161 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 2
+    ALOAD 1
+    ILOAD 2
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getEntry (I)D (itf)
+    DASTORE
+   L6
+    LINENUMBER 160 L6
+    IINC 2 1
+    GOTO L3
+   L4
+    LINENUMBER 163 L4
+    RETURN
+   L7
+    LOCALVARIABLE i I L3 L4 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L7 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L7 1
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/linear/ArrayRealVector;)V
+   L0
+    LINENUMBER 170 L0
+    ALOAD 0
+    ALOAD 1
+    ICONST_1
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> (Lorg/apache/commons/math/linear/ArrayRealVector;Z)V
+   L1
+    LINENUMBER 171 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L2 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/ArrayRealVector; L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/linear/ArrayRealVector;Z)V
+   L0
+    LINENUMBER 178 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 179 L1
+    ALOAD 0
+    ILOAD 2
+    IFEQ L2
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    GOTO L3
+   L2
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L3
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L4
+    LINENUMBER 180 L4
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 1
+    LOCALVARIABLE deep Z L0 L5 2
+    MAXSTACK = 2
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/linear/ArrayRealVector;Lorg/apache/commons/math/linear/ArrayRealVector;)V
+   L0
+    LINENUMBER 187 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 188 L1
+    ALOAD 0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    ALOAD 2
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IADD
+    NEWARRAY T_DOUBLE
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L2
+    LINENUMBER 189 L2
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ICONST_0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L3
+    LINENUMBER 190 L3
+    ALOAD 2
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    ALOAD 2
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L4
+    LINENUMBER 191 L4
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    LOCALVARIABLE v1 Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 1
+    LOCALVARIABLE v2 Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 2
+    MAXSTACK = 5
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/linear/ArrayRealVector;Lorg/apache/commons/math/linear/RealVector;)V
+   L0
+    LINENUMBER 198 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 199 L1
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    ISTORE 3
+   L2
+    LINENUMBER 200 L2
+    ALOAD 2
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    ISTORE 4
+   L3
+    LINENUMBER 201 L3
+    ALOAD 0
+    ILOAD 3
+    ILOAD 4
+    IADD
+    NEWARRAY T_DOUBLE
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L4
+    LINENUMBER 202 L4
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ICONST_0
+    ILOAD 3
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L5
+    LINENUMBER 203 L5
+    ICONST_0
+    ISTORE 5
+   L6
+    ILOAD 5
+    ILOAD 4
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 204 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    ILOAD 5
+    IADD
+    ALOAD 2
+    ILOAD 5
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getEntry (I)D (itf)
+    DASTORE
+   L9
+    LINENUMBER 203 L9
+    IINC 5 1
+    GOTO L6
+   L7
+    LINENUMBER 206 L7
+    RETURN
+   L10
+    LOCALVARIABLE i I L6 L7 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L10 0
+    LOCALVARIABLE v1 Lorg/apache/commons/math/linear/ArrayRealVector; L0 L10 1
+    LOCALVARIABLE v2 Lorg/apache/commons/math/linear/RealVector; L0 L10 2
+    LOCALVARIABLE l1 I L2 L10 3
+    LOCALVARIABLE l2 I L3 L10 4
+    MAXSTACK = 5
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/linear/RealVector;Lorg/apache/commons/math/linear/ArrayRealVector;)V
+   L0
+    LINENUMBER 213 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 214 L1
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    ISTORE 3
+   L2
+    LINENUMBER 215 L2
+    ALOAD 2
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    ISTORE 4
+   L3
+    LINENUMBER 216 L3
+    ALOAD 0
+    ILOAD 3
+    ILOAD 4
+    IADD
+    NEWARRAY T_DOUBLE
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L4
+    LINENUMBER 217 L4
+    ICONST_0
+    ISTORE 5
+   L5
+    ILOAD 5
+    ILOAD 3
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 218 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 5
+    ALOAD 1
+    ILOAD 5
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getEntry (I)D (itf)
+    DASTORE
+   L8
+    LINENUMBER 217 L8
+    IINC 5 1
+    GOTO L5
+   L6
+    LINENUMBER 220 L6
+    ALOAD 2
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    ILOAD 4
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L9
+    LINENUMBER 221 L9
+    RETURN
+   L10
+    LOCALVARIABLE i I L5 L6 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L10 0
+    LOCALVARIABLE v1 Lorg/apache/commons/math/linear/RealVector; L0 L10 1
+    LOCALVARIABLE v2 Lorg/apache/commons/math/linear/ArrayRealVector; L0 L10 2
+    LOCALVARIABLE l1 I L2 L10 3
+    LOCALVARIABLE l2 I L3 L10 4
+    MAXSTACK = 5
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/linear/ArrayRealVector;[D)V
+   L0
+    LINENUMBER 228 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 229 L1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.getDimension ()I
+    ISTORE 3
+   L2
+    LINENUMBER 230 L2
+    ALOAD 2
+    ARRAYLENGTH
+    ISTORE 4
+   L3
+    LINENUMBER 231 L3
+    ALOAD 0
+    ILOAD 3
+    ILOAD 4
+    IADD
+    NEWARRAY T_DOUBLE
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L4
+    LINENUMBER 232 L4
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ICONST_0
+    ILOAD 3
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L5
+    LINENUMBER 233 L5
+    ALOAD 2
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    ILOAD 4
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L6
+    LINENUMBER 234 L6
+    RETURN
+   L7
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L7 0
+    LOCALVARIABLE v1 Lorg/apache/commons/math/linear/ArrayRealVector; L0 L7 1
+    LOCALVARIABLE v2 [D L0 L7 2
+    LOCALVARIABLE l1 I L2 L7 3
+    LOCALVARIABLE l2 I L3 L7 4
+    MAXSTACK = 5
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public <init>([DLorg/apache/commons/math/linear/ArrayRealVector;)V
+   L0
+    LINENUMBER 241 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 242 L1
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 3
+   L2
+    LINENUMBER 243 L2
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.getDimension ()I
+    ISTORE 4
+   L3
+    LINENUMBER 244 L3
+    ALOAD 0
+    ILOAD 3
+    ILOAD 4
+    IADD
+    NEWARRAY T_DOUBLE
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L4
+    LINENUMBER 245 L4
+    ALOAD 1
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ICONST_0
+    ILOAD 3
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L5
+    LINENUMBER 246 L5
+    ALOAD 2
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    ILOAD 4
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L6
+    LINENUMBER 247 L6
+    RETURN
+   L7
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L7 0
+    LOCALVARIABLE v1 [D L0 L7 1
+    LOCALVARIABLE v2 Lorg/apache/commons/math/linear/ArrayRealVector; L0 L7 2
+    LOCALVARIABLE l1 I L2 L7 3
+    LOCALVARIABLE l2 I L3 L7 4
+    MAXSTACK = 5
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public <init>([D[D)V
+   L0
+    LINENUMBER 254 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealVector.<init> ()V
+   L1
+    LINENUMBER 255 L1
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 3
+   L2
+    LINENUMBER 256 L2
+    ALOAD 2
+    ARRAYLENGTH
+    ISTORE 4
+   L3
+    LINENUMBER 257 L3
+    ALOAD 0
+    ILOAD 3
+    ILOAD 4
+    IADD
+    NEWARRAY T_DOUBLE
+    PUTFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+   L4
+    LINENUMBER 258 L4
+    ALOAD 1
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ICONST_0
+    ILOAD 3
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L5
+    LINENUMBER 259 L5
+    ALOAD 2
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    ILOAD 4
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L6
+    LINENUMBER 260 L6
+    RETURN
+   L7
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L7 0
+    LOCALVARIABLE v1 [D L0 L7 1
+    LOCALVARIABLE v2 [D L0 L7 2
+    LOCALVARIABLE l1 I L2 L7 3
+    LOCALVARIABLE l2 I L3 L7 4
+    MAXSTACK = 5
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public copy()Lorg/apache/commons/math/linear/AbstractRealVector;
+   L0
+    LINENUMBER 264 L0
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 0
+    ICONST_1
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> (Lorg/apache/commons/math/linear/ArrayRealVector;Z)V
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    MAXSTACK = 4
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public add(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealVector; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 270 L0
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/ArrayRealVector
+    IFEQ L1
+   L2
+    LINENUMBER 271 L2
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.add (Lorg/apache/commons/math/linear/ArrayRealVector;)Lorg/apache/commons/math/linear/ArrayRealVector;
+    ARETURN
+   L1
+    LINENUMBER 273 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (Lorg/apache/commons/math/linear/RealVector;)V
+   L3
+    LINENUMBER 274 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ASTORE 2
+   L4
+    LINENUMBER 275 L4
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.sparseIterator ()Ljava/util/Iterator; (itf)
+    ASTORE 3
+   L5
+    LINENUMBER 277 L5
+    ALOAD 3
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L6
+    ALOAD 3
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/linear/RealVector$Entry
+    DUP
+    ASTORE 4
+   L7
+    IFNULL L6
+   L8
+    LINENUMBER 278 L8
+    ALOAD 2
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/linear/RealVector$Entry.getIndex ()I
+    DUP2
+    DALOAD
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/linear/RealVector$Entry.getValue ()D
+    DADD
+    DASTORE
+    GOTO L5
+   L6
+    LINENUMBER 280 L6
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> ([DZ)V
+    ARETURN
+   L9
+    LOCALVARIABLE e Lorg/apache/commons/math/linear/RealVector$Entry; L7 L6 4
+    LOCALVARIABLE out [D L4 L9 2
+    LOCALVARIABLE it Ljava/util/Iterator; L5 L9 3
+    // signature Ljava/util/Iterator<Lorg/apache/commons/math/linear/RealVector$Entry;>;
+    // declaration: it extends java.util.Iterator<org.apache.commons.math.linear.RealVector$Entry>
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L9 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L9 1
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public add([D)Lorg/apache/commons/math/linear/RealVector; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 287 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 288 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ASTORE 2
+   L2
+    LINENUMBER 289 L2
+    ICONST_0
+    ISTORE 3
+   L3
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 290 L5
+    ALOAD 2
+    ILOAD 3
+    DUP2
+    DALOAD
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    DADD
+    DASTORE
+   L6
+    LINENUMBER 289 L6
+    IINC 3 1
+    GOTO L3
+   L4
+    LINENUMBER 292 L4
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> ([DZ)V
+    ARETURN
+   L7
+    LOCALVARIABLE i I L3 L4 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L7 0
+    LOCALVARIABLE v [D L0 L7 1
+    LOCALVARIABLE out [D L2 L7 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public add(Lorg/apache/commons/math/linear/ArrayRealVector;)Lorg/apache/commons/math/linear/ArrayRealVector; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 303 L0
+    ALOAD 0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.add ([D)Lorg/apache/commons/math/linear/RealVector;
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public subtract(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealVector; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 309 L0
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/ArrayRealVector
+    IFEQ L1
+   L2
+    LINENUMBER 310 L2
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.subtract (Lorg/apache/commons/math/linear/ArrayRealVector;)Lorg/apache/commons/math/linear/ArrayRealVector;
+    ARETURN
+   L1
+    LINENUMBER 312 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (Lorg/apache/commons/math/linear/RealVector;)V
+   L3
+    LINENUMBER 313 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ASTORE 2
+   L4
+    LINENUMBER 314 L4
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.sparseIterator ()Ljava/util/Iterator; (itf)
+    ASTORE 3
+   L5
+    LINENUMBER 316 L5
+    ALOAD 3
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L6
+    ALOAD 3
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/linear/RealVector$Entry
+    DUP
+    ASTORE 4
+   L7
+    IFNULL L6
+   L8
+    LINENUMBER 317 L8
+    ALOAD 2
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/linear/RealVector$Entry.getIndex ()I
+    DUP2
+    DALOAD
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/linear/RealVector$Entry.getValue ()D
+    DSUB
+    DASTORE
+    GOTO L5
+   L6
+    LINENUMBER 319 L6
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> ([DZ)V
+    ARETURN
+   L9
+    LOCALVARIABLE e Lorg/apache/commons/math/linear/RealVector$Entry; L7 L6 4
+    LOCALVARIABLE out [D L4 L9 2
+    LOCALVARIABLE it Ljava/util/Iterator; L5 L9 3
+    // signature Ljava/util/Iterator<Lorg/apache/commons/math/linear/RealVector$Entry;>;
+    // declaration: it extends java.util.Iterator<org.apache.commons.math.linear.RealVector$Entry>
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L9 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L9 1
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public subtract([D)Lorg/apache/commons/math/linear/RealVector; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 326 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 327 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ASTORE 2
+   L2
+    LINENUMBER 328 L2
+    ICONST_0
+    ISTORE 3
+   L3
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 329 L5
+    ALOAD 2
+    ILOAD 3
+    DUP2
+    DALOAD
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    DSUB
+    DASTORE
+   L6
+    LINENUMBER 328 L6
+    IINC 3 1
+    GOTO L3
+   L4
+    LINENUMBER 331 L4
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> ([DZ)V
+    ARETURN
+   L7
+    LOCALVARIABLE i I L3 L4 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L7 0
+    LOCALVARIABLE v [D L0 L7 1
+    LOCALVARIABLE out [D L2 L7 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public subtract(Lorg/apache/commons/math/linear/ArrayRealVector;)Lorg/apache/commons/math/linear/ArrayRealVector; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 342 L0
+    ALOAD 0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.subtract ([D)Lorg/apache/commons/math/linear/RealVector;
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapAddToSelf(D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 347 L0
+    ICONST_0
+    ISTORE 3
+   L1
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 348 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    DALOAD
+    DLOAD 1
+    DADD
+    DASTORE
+   L4
+    LINENUMBER 347 L4
+    IINC 3 1
+    GOTO L1
+   L2
+    LINENUMBER 350 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    LOCALVARIABLE d D L0 L5 1
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public mapSubtractToSelf(D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 355 L0
+    ICONST_0
+    ISTORE 3
+   L1
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 356 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    DALOAD
+    DLOAD 1
+    DSUB
+    DASTORE
+   L4
+    LINENUMBER 355 L4
+    IINC 3 1
+    GOTO L1
+   L2
+    LINENUMBER 358 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    LOCALVARIABLE d D L0 L5 1
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public mapMultiplyToSelf(D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 363 L0
+    ICONST_0
+    ISTORE 3
+   L1
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 364 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    DALOAD
+    DLOAD 1
+    DMUL
+    DASTORE
+   L4
+    LINENUMBER 363 L4
+    IINC 3 1
+    GOTO L1
+   L2
+    LINENUMBER 366 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    LOCALVARIABLE d D L0 L5 1
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public mapDivideToSelf(D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 371 L0
+    ICONST_0
+    ISTORE 3
+   L1
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 372 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    DALOAD
+    DLOAD 1
+    DDIV
+    DASTORE
+   L4
+    LINENUMBER 371 L4
+    IINC 3 1
+    GOTO L1
+   L2
+    LINENUMBER 374 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    LOCALVARIABLE d D L0 L5 1
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public mapPowToSelf(D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 379 L0
+    ICONST_0
+    ISTORE 3
+   L1
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 380 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    DALOAD
+    DLOAD 1
+    INVOKESTATIC java/lang/Math.pow (DD)D
+    DASTORE
+   L4
+    LINENUMBER 379 L4
+    IINC 3 1
+    GOTO L1
+   L2
+    LINENUMBER 382 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    LOCALVARIABLE d D L0 L5 1
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public mapExpToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 387 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 388 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.exp (D)D
+    DASTORE
+   L4
+    LINENUMBER 387 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 390 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapExpm1ToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 395 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 396 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.expm1 (D)D
+    DASTORE
+   L4
+    LINENUMBER 395 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 398 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapLogToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 403 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 404 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.log (D)D
+    DASTORE
+   L4
+    LINENUMBER 403 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 406 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapLog10ToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 411 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 412 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.log10 (D)D
+    DASTORE
+   L4
+    LINENUMBER 411 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 414 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapLog1pToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 419 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 420 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.log1p (D)D
+    DASTORE
+   L4
+    LINENUMBER 419 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 422 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapCoshToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 427 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 428 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.cosh (D)D
+    DASTORE
+   L4
+    LINENUMBER 427 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 430 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapSinhToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 435 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 436 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.sinh (D)D
+    DASTORE
+   L4
+    LINENUMBER 435 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 438 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapTanhToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 443 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 444 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.tanh (D)D
+    DASTORE
+   L4
+    LINENUMBER 443 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 446 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapCosToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 451 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 452 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.cos (D)D
+    DASTORE
+   L4
+    LINENUMBER 451 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 454 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapSinToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 459 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 460 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.sin (D)D
+    DASTORE
+   L4
+    LINENUMBER 459 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 462 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapTanToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 467 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 468 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.tan (D)D
+    DASTORE
+   L4
+    LINENUMBER 467 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 470 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapAcosToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 475 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 476 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.acos (D)D
+    DASTORE
+   L4
+    LINENUMBER 475 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 478 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapAsinToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 483 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 484 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.asin (D)D
+    DASTORE
+   L4
+    LINENUMBER 483 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 486 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapAtanToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 491 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 492 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.atan (D)D
+    DASTORE
+   L4
+    LINENUMBER 491 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 494 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapInvToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 499 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 500 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DCONST_1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    DMUL
+    DASTORE
+   L4
+    LINENUMBER 499 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 502 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 6
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapAbsToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 507 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 508 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DASTORE
+   L4
+    LINENUMBER 507 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 510 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapSqrtToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 515 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 516 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DASTORE
+   L4
+    LINENUMBER 515 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 518 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapCbrtToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 523 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 524 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.cbrt (D)D
+    DASTORE
+   L4
+    LINENUMBER 523 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 526 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapCeilToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 531 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 532 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.ceil (D)D
+    DASTORE
+   L4
+    LINENUMBER 531 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 534 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapFloorToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 539 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 540 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.floor (D)D
+    DASTORE
+   L4
+    LINENUMBER 539 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 542 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapRintToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 547 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 548 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.rint (D)D
+    DASTORE
+   L4
+    LINENUMBER 547 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 550 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapSignumToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 555 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 556 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.signum (D)D
+    DASTORE
+   L4
+    LINENUMBER 555 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 558 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public mapUlpToSelf()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 563 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 564 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Math.ulp (D)D
+    DASTORE
+   L4
+    LINENUMBER 563 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 566 L2
+    ALOAD 0
+    ARETURN
+   L5
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public ebeMultiply(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealVector; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 572 L0
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/ArrayRealVector
+    IFEQ L1
+   L2
+    LINENUMBER 573 L2
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.ebeMultiply (Lorg/apache/commons/math/linear/ArrayRealVector;)Lorg/apache/commons/math/linear/ArrayRealVector;
+    ARETURN
+   L1
+    LINENUMBER 575 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (Lorg/apache/commons/math/linear/RealVector;)V
+   L3
+    LINENUMBER 576 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ASTORE 2
+   L4
+    LINENUMBER 577 L4
+    ICONST_0
+    ISTORE 3
+   L5
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 578 L7
+    ALOAD 2
+    ILOAD 3
+    DUP2
+    DALOAD
+    ALOAD 1
+    ILOAD 3
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getEntry (I)D (itf)
+    DMUL
+    DASTORE
+   L8
+    LINENUMBER 577 L8
+    IINC 3 1
+    GOTO L5
+   L6
+    LINENUMBER 580 L6
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> ([DZ)V
+    ARETURN
+   L9
+    LOCALVARIABLE i I L5 L6 3
+    LOCALVARIABLE out [D L4 L9 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L9 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L9 1
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public ebeMultiply([D)Lorg/apache/commons/math/linear/RealVector; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 587 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 588 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ASTORE 2
+   L2
+    LINENUMBER 589 L2
+    ICONST_0
+    ISTORE 3
+   L3
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 590 L5
+    ALOAD 2
+    ILOAD 3
+    DUP2
+    DALOAD
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    DMUL
+    DASTORE
+   L6
+    LINENUMBER 589 L6
+    IINC 3 1
+    GOTO L3
+   L4
+    LINENUMBER 592 L4
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> ([DZ)V
+    ARETURN
+   L7
+    LOCALVARIABLE i I L3 L4 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L7 0
+    LOCALVARIABLE v [D L0 L7 1
+    LOCALVARIABLE out [D L2 L7 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public ebeMultiply(Lorg/apache/commons/math/linear/ArrayRealVector;)Lorg/apache/commons/math/linear/ArrayRealVector; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 603 L0
+    ALOAD 0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.ebeMultiply ([D)Lorg/apache/commons/math/linear/RealVector;
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public ebeDivide(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealVector; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 609 L0
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/ArrayRealVector
+    IFEQ L1
+   L2
+    LINENUMBER 610 L2
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.ebeDivide (Lorg/apache/commons/math/linear/ArrayRealVector;)Lorg/apache/commons/math/linear/ArrayRealVector;
+    ARETURN
+   L1
+    LINENUMBER 612 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (Lorg/apache/commons/math/linear/RealVector;)V
+   L3
+    LINENUMBER 613 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ASTORE 2
+   L4
+    LINENUMBER 614 L4
+    ICONST_0
+    ISTORE 3
+   L5
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 615 L7
+    ALOAD 2
+    ILOAD 3
+    DUP2
+    DALOAD
+    ALOAD 1
+    ILOAD 3
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getEntry (I)D (itf)
+    DDIV
+    DASTORE
+   L8
+    LINENUMBER 614 L8
+    IINC 3 1
+    GOTO L5
+   L6
+    LINENUMBER 617 L6
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> ([DZ)V
+    ARETURN
+   L9
+    LOCALVARIABLE i I L5 L6 3
+    LOCALVARIABLE out [D L4 L9 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L9 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L9 1
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public ebeDivide([D)Lorg/apache/commons/math/linear/RealVector; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 624 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 625 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ASTORE 2
+   L2
+    LINENUMBER 626 L2
+    ICONST_0
+    ISTORE 3
+   L3
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 627 L5
+    ALOAD 2
+    ILOAD 3
+    DUP2
+    DALOAD
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    DDIV
+    DASTORE
+   L6
+    LINENUMBER 626 L6
+    IINC 3 1
+    GOTO L3
+   L4
+    LINENUMBER 629 L4
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 2
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> ([DZ)V
+    ARETURN
+   L7
+    LOCALVARIABLE i I L3 L4 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L7 0
+    LOCALVARIABLE v [D L0 L7 1
+    LOCALVARIABLE out [D L2 L7 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public ebeDivide(Lorg/apache/commons/math/linear/ArrayRealVector;)Lorg/apache/commons/math/linear/ArrayRealVector; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 640 L0
+    ALOAD 0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.ebeDivide ([D)Lorg/apache/commons/math/linear/RealVector;
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getData()[D
+   L0
+    LINENUMBER 645 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getDataRef()[D
+   L0
+    LINENUMBER 654 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public dotProduct(Lorg/apache/commons/math/linear/RealVector;)D throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 660 L0
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/ArrayRealVector
+    IFEQ L1
+   L2
+    LINENUMBER 661 L2
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.dotProduct (Lorg/apache/commons/math/linear/ArrayRealVector;)D
+    DRETURN
+   L1
+    LINENUMBER 663 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (Lorg/apache/commons/math/linear/RealVector;)V
+   L3
+    LINENUMBER 664 L3
+    DCONST_0
+    DSTORE 2
+   L4
+    LINENUMBER 665 L4
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.sparseIterator ()Ljava/util/Iterator; (itf)
+    ASTORE 4
+   L5
+    LINENUMBER 667 L5
+    ALOAD 4
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L6
+    ALOAD 4
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/linear/RealVector$Entry
+    DUP
+    ASTORE 5
+   L7
+    IFNULL L6
+   L8
+    LINENUMBER 668 L8
+    DLOAD 2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/linear/RealVector$Entry.getIndex ()I
+    DALOAD
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/linear/RealVector$Entry.getValue ()D
+    DMUL
+    DADD
+    DSTORE 2
+    GOTO L5
+   L6
+    LINENUMBER 670 L6
+    DLOAD 2
+    DRETURN
+   L9
+    LOCALVARIABLE e Lorg/apache/commons/math/linear/RealVector$Entry; L7 L6 5
+    LOCALVARIABLE dot D L4 L9 2
+    LOCALVARIABLE it Ljava/util/Iterator; L5 L9 4
+    // signature Ljava/util/Iterator<Lorg/apache/commons/math/linear/RealVector$Entry;>;
+    // declaration: it extends java.util.Iterator<org.apache.commons.math.linear.RealVector$Entry>
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L9 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L9 1
+    MAXSTACK = 6
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public dotProduct([D)D throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 677 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 678 L1
+    DCONST_0
+    DSTORE 2
+   L2
+    LINENUMBER 679 L2
+    ICONST_0
+    ISTORE 4
+   L3
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 680 L5
+    DLOAD 2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 4
+    DALOAD
+    ALOAD 1
+    ILOAD 4
+    DALOAD
+    DMUL
+    DADD
+    DSTORE 2
+   L6
+    LINENUMBER 679 L6
+    IINC 4 1
+    GOTO L3
+   L4
+    LINENUMBER 682 L4
+    DLOAD 2
+    DRETURN
+   L7
+    LOCALVARIABLE i I L3 L4 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L7 0
+    LOCALVARIABLE v [D L0 L7 1
+    LOCALVARIABLE dot D L2 L7 2
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public dotProduct(Lorg/apache/commons/math/linear/ArrayRealVector;)D throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 693 L0
+    ALOAD 0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.dotProduct ([D)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getNorm()D
+   L0
+    LINENUMBER 699 L0
+    DCONST_0
+    DSTORE 1
+   L1
+    LINENUMBER 700 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ASTORE 3
+   L2
+    ALOAD 3
+    ARRAYLENGTH
+    ISTORE 4
+   L3
+    ICONST_0
+    ISTORE 5
+   L4
+    ILOAD 5
+    ILOAD 4
+    IF_ICMPGE L5
+    ALOAD 3
+    ILOAD 5
+    DALOAD
+    DSTORE 6
+   L6
+    LINENUMBER 701 L6
+    DLOAD 1
+    DLOAD 6
+    DLOAD 6
+    DMUL
+    DADD
+    DSTORE 1
+   L7
+    LINENUMBER 700 L7
+    IINC 5 1
+    GOTO L4
+   L5
+    LINENUMBER 703 L5
+    DLOAD 1
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DRETURN
+   L8
+    LOCALVARIABLE a D L6 L7 6
+    LOCALVARIABLE arr$ [D L2 L5 3
+    LOCALVARIABLE len$ I L3 L5 4
+    LOCALVARIABLE i$ I L4 L5 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L8 0
+    LOCALVARIABLE sum D L1 L8 1
+    MAXSTACK = 6
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public getL1Norm()D
+   L0
+    LINENUMBER 709 L0
+    DCONST_0
+    DSTORE 1
+   L1
+    LINENUMBER 710 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ASTORE 3
+   L2
+    ALOAD 3
+    ARRAYLENGTH
+    ISTORE 4
+   L3
+    ICONST_0
+    ISTORE 5
+   L4
+    ILOAD 5
+    ILOAD 4
+    IF_ICMPGE L5
+    ALOAD 3
+    ILOAD 5
+    DALOAD
+    DSTORE 6
+   L6
+    LINENUMBER 711 L6
+    DLOAD 1
+    DLOAD 6
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DADD
+    DSTORE 1
+   L7
+    LINENUMBER 710 L7
+    IINC 5 1
+    GOTO L4
+   L5
+    LINENUMBER 713 L5
+    DLOAD 1
+    DRETURN
+   L8
+    LOCALVARIABLE a D L6 L7 6
+    LOCALVARIABLE arr$ [D L2 L5 3
+    LOCALVARIABLE len$ I L3 L5 4
+    LOCALVARIABLE i$ I L4 L5 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L8 0
+    LOCALVARIABLE sum D L1 L8 1
+    MAXSTACK = 4
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public getLInfNorm()D
+   L0
+    LINENUMBER 719 L0
+    DCONST_0
+    DSTORE 1
+   L1
+    LINENUMBER 720 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ASTORE 3
+   L2
+    ALOAD 3
+    ARRAYLENGTH
+    ISTORE 4
+   L3
+    ICONST_0
+    ISTORE 5
+   L4
+    ILOAD 5
+    ILOAD 4
+    IF_ICMPGE L5
+    ALOAD 3
+    ILOAD 5
+    DALOAD
+    DSTORE 6
+   L6
+    LINENUMBER 721 L6
+    DLOAD 1
+    DLOAD 6
+    INVOKESTATIC java/lang/Math.abs (D)D
+    INVOKESTATIC java/lang/Math.max (DD)D
+    DSTORE 1
+   L7
+    LINENUMBER 720 L7
+    IINC 5 1
+    GOTO L4
+   L5
+    LINENUMBER 723 L5
+    DLOAD 1
+    DRETURN
+   L8
+    LOCALVARIABLE a D L6 L7 6
+    LOCALVARIABLE arr$ [D L2 L5 3
+    LOCALVARIABLE len$ I L3 L5 4
+    LOCALVARIABLE i$ I L4 L5 5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L8 0
+    LOCALVARIABLE max D L1 L8 1
+    MAXSTACK = 4
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public getDistance(Lorg/apache/commons/math/linear/RealVector;)D throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 729 L0
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/ArrayRealVector
+    IFEQ L1
+   L2
+    LINENUMBER 730 L2
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.getDistance (Lorg/apache/commons/math/linear/ArrayRealVector;)D
+    DRETURN
+   L1
+    LINENUMBER 732 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (Lorg/apache/commons/math/linear/RealVector;)V
+   L3
+    LINENUMBER 733 L3
+    DCONST_0
+    DSTORE 2
+   L4
+    LINENUMBER 734 L4
+    ICONST_0
+    ISTORE 4
+   L5
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 735 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 4
+    DALOAD
+    ALOAD 1
+    ILOAD 4
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getEntry (I)D (itf)
+    DSUB
+    DSTORE 5
+   L8
+    LINENUMBER 736 L8
+    DLOAD 2
+    DLOAD 5
+    DLOAD 5
+    DMUL
+    DADD
+    DSTORE 2
+   L9
+    LINENUMBER 734 L9
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 738 L6
+    DLOAD 2
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DRETURN
+   L10
+    LOCALVARIABLE delta D L8 L9 5
+    LOCALVARIABLE i I L5 L6 4
+    LOCALVARIABLE sum D L4 L10 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L10 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L10 1
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getDistance([D)D throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 745 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 746 L1
+    DCONST_0
+    DSTORE 2
+   L2
+    LINENUMBER 747 L2
+    ICONST_0
+    ISTORE 4
+   L3
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 748 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 4
+    DALOAD
+    ALOAD 1
+    ILOAD 4
+    DALOAD
+    DSUB
+    DSTORE 5
+   L6
+    LINENUMBER 749 L6
+    DLOAD 2
+    DLOAD 5
+    DLOAD 5
+    DMUL
+    DADD
+    DSTORE 2
+   L7
+    LINENUMBER 747 L7
+    IINC 4 1
+    GOTO L3
+   L4
+    LINENUMBER 751 L4
+    DLOAD 2
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DRETURN
+   L8
+    LOCALVARIABLE delta D L6 L7 5
+    LOCALVARIABLE i I L3 L4 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L8 0
+    LOCALVARIABLE v [D L0 L8 1
+    LOCALVARIABLE sum D L2 L8 2
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getDistance(Lorg/apache/commons/math/linear/ArrayRealVector;)D throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 769 L0
+    ALOAD 0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.getDistance ([D)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getL1Distance(Lorg/apache/commons/math/linear/RealVector;)D throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 775 L0
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/ArrayRealVector
+    IFEQ L1
+   L2
+    LINENUMBER 776 L2
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.getL1Distance (Lorg/apache/commons/math/linear/ArrayRealVector;)D
+    DRETURN
+   L1
+    LINENUMBER 778 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (Lorg/apache/commons/math/linear/RealVector;)V
+   L3
+    LINENUMBER 779 L3
+    DCONST_0
+    DSTORE 2
+   L4
+    LINENUMBER 780 L4
+    ICONST_0
+    ISTORE 4
+   L5
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 781 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 4
+    DALOAD
+    ALOAD 1
+    ILOAD 4
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getEntry (I)D (itf)
+    DSUB
+    DSTORE 5
+   L8
+    LINENUMBER 782 L8
+    DLOAD 2
+    DLOAD 5
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DADD
+    DSTORE 2
+   L9
+    LINENUMBER 780 L9
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 784 L6
+    DLOAD 2
+    DRETURN
+   L10
+    LOCALVARIABLE delta D L8 L9 5
+    LOCALVARIABLE i I L5 L6 4
+    LOCALVARIABLE sum D L4 L10 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L10 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L10 1
+    MAXSTACK = 4
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getL1Distance([D)D throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 791 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 792 L1
+    DCONST_0
+    DSTORE 2
+   L2
+    LINENUMBER 793 L2
+    ICONST_0
+    ISTORE 4
+   L3
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 794 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 4
+    DALOAD
+    ALOAD 1
+    ILOAD 4
+    DALOAD
+    DSUB
+    DSTORE 5
+   L6
+    LINENUMBER 795 L6
+    DLOAD 2
+    DLOAD 5
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DADD
+    DSTORE 2
+   L7
+    LINENUMBER 793 L7
+    IINC 4 1
+    GOTO L3
+   L4
+    LINENUMBER 797 L4
+    DLOAD 2
+    DRETURN
+   L8
+    LOCALVARIABLE delta D L6 L7 5
+    LOCALVARIABLE i I L3 L4 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L8 0
+    LOCALVARIABLE v [D L0 L8 1
+    LOCALVARIABLE sum D L2 L8 2
+    MAXSTACK = 4
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getL1Distance(Lorg/apache/commons/math/linear/ArrayRealVector;)D throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 815 L0
+    ALOAD 0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.getL1Distance ([D)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getLInfDistance(Lorg/apache/commons/math/linear/RealVector;)D throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 821 L0
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/ArrayRealVector
+    IFEQ L1
+   L2
+    LINENUMBER 822 L2
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.getLInfDistance (Lorg/apache/commons/math/linear/ArrayRealVector;)D
+    DRETURN
+   L1
+    LINENUMBER 824 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (Lorg/apache/commons/math/linear/RealVector;)V
+   L3
+    LINENUMBER 825 L3
+    DCONST_0
+    DSTORE 2
+   L4
+    LINENUMBER 826 L4
+    ICONST_0
+    ISTORE 4
+   L5
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 827 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 4
+    DALOAD
+    ALOAD 1
+    ILOAD 4
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getEntry (I)D (itf)
+    DSUB
+    DSTORE 5
+   L8
+    LINENUMBER 828 L8
+    DLOAD 2
+    DLOAD 5
+    INVOKESTATIC java/lang/Math.abs (D)D
+    INVOKESTATIC java/lang/Math.max (DD)D
+    DSTORE 2
+   L9
+    LINENUMBER 826 L9
+    IINC 4 1
+    GOTO L5
+   L6
+    LINENUMBER 830 L6
+    DLOAD 2
+    DRETURN
+   L10
+    LOCALVARIABLE delta D L8 L9 5
+    LOCALVARIABLE i I L5 L6 4
+    LOCALVARIABLE max D L4 L10 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L10 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L10 1
+    MAXSTACK = 4
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getLInfDistance([D)D throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 837 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 838 L1
+    DCONST_0
+    DSTORE 2
+   L2
+    LINENUMBER 839 L2
+    ICONST_0
+    ISTORE 4
+   L3
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 840 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 4
+    DALOAD
+    ALOAD 1
+    ILOAD 4
+    DALOAD
+    DSUB
+    DSTORE 5
+   L6
+    LINENUMBER 841 L6
+    DLOAD 2
+    DLOAD 5
+    INVOKESTATIC java/lang/Math.abs (D)D
+    INVOKESTATIC java/lang/Math.max (DD)D
+    DSTORE 2
+   L7
+    LINENUMBER 839 L7
+    IINC 4 1
+    GOTO L3
+   L4
+    LINENUMBER 843 L4
+    DLOAD 2
+    DRETURN
+   L8
+    LOCALVARIABLE delta D L6 L7 5
+    LOCALVARIABLE i I L3 L4 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L8 0
+    LOCALVARIABLE v [D L0 L8 1
+    LOCALVARIABLE max D L2 L8 2
+    MAXSTACK = 4
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getLInfDistance(Lorg/apache/commons/math/linear/ArrayRealVector;)D throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 861 L0
+    ALOAD 0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.getLInfDistance ([D)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public unitVector()Lorg/apache/commons/math/linear/RealVector; throws java/lang/ArithmeticException 
+   L0
+    LINENUMBER 866 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.getNorm ()D
+    DSTORE 1
+   L1
+    LINENUMBER 867 L1
+    DLOAD 1
+    DCONST_0
+    DCMPL
+    IFNE L2
+   L3
+    LINENUMBER 868 L3
+    LDC "zero norm"
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESTATIC org/apache/commons/math/MathRuntimeException.createArithmeticException (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/ArithmeticException;
+    ATHROW
+   L2
+    LINENUMBER 870 L2
+    ALOAD 0
+    DLOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.mapDivide (D)Lorg/apache/commons/math/linear/RealVector;
+    ARETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L4 0
+    LOCALVARIABLE norm D L1 L4 1
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public unitize()V throws java/lang/ArithmeticException 
+   L0
+    LINENUMBER 875 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.getNorm ()D
+    DSTORE 1
+   L1
+    LINENUMBER 876 L1
+    DLOAD 1
+    DCONST_0
+    DCMPL
+    IFNE L2
+   L3
+    LINENUMBER 877 L3
+    LDC "cannot normalize a zero norm vector"
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESTATIC org/apache/commons/math/MathRuntimeException.createArithmeticException (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/ArithmeticException;
+    ATHROW
+   L2
+    LINENUMBER 879 L2
+    ALOAD 0
+    DLOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.mapDivideToSelf (D)Lorg/apache/commons/math/linear/RealVector;
+    POP
+   L4
+    LINENUMBER 880 L4
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    LOCALVARIABLE norm D L1 L5 1
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public projection(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 884 L0
+    ALOAD 1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.dotProduct (Lorg/apache/commons/math/linear/RealVector;)D
+    ALOAD 1
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.dotProduct (Lorg/apache/commons/math/linear/RealVector;)D (itf)
+    DDIV
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.mapMultiply (D)Lorg/apache/commons/math/linear/RealVector; (itf)
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L1 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public projection([D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 889 L0
+    ALOAD 0
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 1
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> ([DZ)V
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.projection (Lorg/apache/commons/math/linear/ArrayRealVector;)Lorg/apache/commons/math/linear/ArrayRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE v [D L0 L1 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public projection(Lorg/apache/commons/math/linear/ArrayRealVector;)Lorg/apache/commons/math/linear/ArrayRealVector;
+   L0
+    LINENUMBER 898 L0
+    ALOAD 1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.dotProduct (Lorg/apache/commons/math/linear/ArrayRealVector;)D
+    ALOAD 1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.dotProduct (Lorg/apache/commons/math/linear/ArrayRealVector;)D
+    DDIV
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.mapMultiply (D)Lorg/apache/commons/math/linear/RealVector;
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public outerProduct(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealMatrix; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 904 L0
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/ArrayRealVector
+    IFEQ L1
+   L2
+    LINENUMBER 905 L2
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.outerProduct (Lorg/apache/commons/math/linear/ArrayRealVector;)Lorg/apache/commons/math/linear/RealMatrix;
+    ARETURN
+   L1
+    LINENUMBER 907 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (Lorg/apache/commons/math/linear/RealVector;)V
+   L3
+    LINENUMBER 908 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    ISTORE 2
+   L4
+    LINENUMBER 909 L4
+    ILOAD 2
+    ILOAD 2
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.createRealMatrix (II)Lorg/apache/commons/math/linear/RealMatrix;
+    ASTORE 3
+   L5
+    LINENUMBER 910 L5
+    ICONST_0
+    ISTORE 4
+   L6
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 911 L8
+    ICONST_0
+    ISTORE 5
+   L9
+    ILOAD 5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L10
+   L11
+    LINENUMBER 912 L11
+    ALOAD 3
+    ILOAD 4
+    ILOAD 5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 4
+    DALOAD
+    ALOAD 1
+    ILOAD 5
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getEntry (I)D (itf)
+    DMUL
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.setEntry (IID)V (itf)
+   L12
+    LINENUMBER 911 L12
+    IINC 5 1
+    GOTO L9
+   L10
+    LINENUMBER 910 L10
+    IINC 4 1
+    GOTO L6
+   L7
+    LINENUMBER 915 L7
+    ALOAD 3
+    ARETURN
+   L13
+    LOCALVARIABLE j I L9 L10 5
+    LOCALVARIABLE i I L6 L7 4
+    LOCALVARIABLE m I L4 L13 2
+    LOCALVARIABLE out Lorg/apache/commons/math/linear/RealMatrix; L5 L13 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L13 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L13 1
+    MAXSTACK = 7
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public outerProduct(Lorg/apache/commons/math/linear/ArrayRealVector;)Lorg/apache/commons/math/linear/RealMatrix; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 927 L0
+    ALOAD 0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.outerProduct ([D)Lorg/apache/commons/math/linear/RealMatrix;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public outerProduct([D)Lorg/apache/commons/math/linear/RealMatrix; throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 933 L0
+    ALOAD 0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 934 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    ISTORE 2
+   L2
+    LINENUMBER 935 L2
+    ILOAD 2
+    ILOAD 2
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.createRealMatrix (II)Lorg/apache/commons/math/linear/RealMatrix;
+    ASTORE 3
+   L3
+    LINENUMBER 936 L3
+    ICONST_0
+    ISTORE 4
+   L4
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 937 L6
+    ICONST_0
+    ISTORE 5
+   L7
+    ILOAD 5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L8
+   L9
+    LINENUMBER 938 L9
+    ALOAD 3
+    ILOAD 4
+    ILOAD 5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 4
+    DALOAD
+    ALOAD 1
+    ILOAD 5
+    DALOAD
+    DMUL
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.setEntry (IID)V (itf)
+   L10
+    LINENUMBER 937 L10
+    IINC 5 1
+    GOTO L7
+   L8
+    LINENUMBER 936 L8
+    IINC 4 1
+    GOTO L4
+   L5
+    LINENUMBER 941 L5
+    ALOAD 3
+    ARETURN
+   L11
+    LOCALVARIABLE j I L7 L8 5
+    LOCALVARIABLE i I L4 L5 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L11 0
+    LOCALVARIABLE v [D L0 L11 1
+    LOCALVARIABLE m I L2 L11 2
+    LOCALVARIABLE out Lorg/apache/commons/math/linear/RealMatrix; L3 L11 3
+    MAXSTACK = 7
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public getEntry(I)D throws org/apache/commons/math/linear/MatrixIndexException 
+   L0
+    LINENUMBER 946 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DALOAD
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE index I L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getDimension()I
+   L0
+    LINENUMBER 951 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public append(Lorg/apache/commons/math/linear/RealVector;)Lorg/apache/commons/math/linear/RealVector;
+    TRYCATCHBLOCK L0 L1 L2 java/lang/ClassCastException
+   L0
+    LINENUMBER 957 L0
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> (Lorg/apache/commons/math/linear/ArrayRealVector;Lorg/apache/commons/math/linear/ArrayRealVector;)V
+   L1
+    ARETURN
+   L2
+    LINENUMBER 958 L2
+    ASTORE 2
+   L3
+    LINENUMBER 959 L3
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> (Lorg/apache/commons/math/linear/ArrayRealVector;Lorg/apache/commons/math/linear/RealVector;)V
+    ARETURN
+   L4
+    LOCALVARIABLE cce Ljava/lang/ClassCastException; L3 L4 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L4 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L4 1
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public append(Lorg/apache/commons/math/linear/ArrayRealVector;)Lorg/apache/commons/math/linear/ArrayRealVector;
+   L0
+    LINENUMBER 969 L0
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> (Lorg/apache/commons/math/linear/ArrayRealVector;Lorg/apache/commons/math/linear/ArrayRealVector;)V
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public append(D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 974 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    ICONST_1
+    IADD
+    NEWARRAY T_DOUBLE
+    ASTORE 3
+   L1
+    LINENUMBER 975 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ICONST_0
+    ALOAD 3
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L2
+    LINENUMBER 976 L2
+    ALOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    DLOAD 1
+    DASTORE
+   L3
+    LINENUMBER 977 L3
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 3
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> ([DZ)V
+    ARETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L4 0
+    LOCALVARIABLE in D L0 L4 1
+    LOCALVARIABLE out [D L1 L4 3
+    MAXSTACK = 5
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public append([D)Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 982 L0
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> (Lorg/apache/commons/math/linear/ArrayRealVector;[D)V
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    LOCALVARIABLE in [D L0 L1 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getSubVector(II)Lorg/apache/commons/math/linear/RealVector;
+    TRYCATCHBLOCK L0 L1 L2 java/lang/IndexOutOfBoundsException
+   L3
+    LINENUMBER 987 L3
+    NEW org/apache/commons/math/linear/ArrayRealVector
+    DUP
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/ArrayRealVector.<init> (I)V
+    ASTORE 3
+   L0
+    LINENUMBER 989 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 3
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ICONST_0
+    ILOAD 2
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L1
+    LINENUMBER 993 L1
+    GOTO L4
+   L2
+    LINENUMBER 990 L2
+    ASTORE 4
+   L5
+    LINENUMBER 991 L5
+    ALOAD 0
+    ILOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkIndex (I)V
+   L6
+    LINENUMBER 992 L6
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    IADD
+    ICONST_1
+    ISUB
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkIndex (I)V
+   L4
+    LINENUMBER 994 L4
+    ALOAD 3
+    ARETURN
+   L7
+    LOCALVARIABLE e Ljava/lang/IndexOutOfBoundsException; L5 L4 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L3 L7 0
+    LOCALVARIABLE index I L3 L7 1
+    LOCALVARIABLE n I L3 L7 2
+    LOCALVARIABLE out Lorg/apache/commons/math/linear/ArrayRealVector; L0 L7 3
+    MAXSTACK = 5
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public setEntry(ID)V
+    TRYCATCHBLOCK L0 L1 L2 java/lang/IndexOutOfBoundsException
+   L0
+    LINENUMBER 1000 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    DLOAD 2
+    DASTORE
+   L1
+    LINENUMBER 1003 L1
+    GOTO L3
+   L2
+    LINENUMBER 1001 L2
+    ASTORE 4
+   L4
+    LINENUMBER 1002 L4
+    ALOAD 0
+    ILOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkIndex (I)V
+   L3
+    LINENUMBER 1004 L3
+    RETURN
+   L5
+    LOCALVARIABLE e Ljava/lang/IndexOutOfBoundsException; L4 L3 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L5 0
+    LOCALVARIABLE index I L0 L5 1
+    LOCALVARIABLE value D L0 L5 2
+    MAXSTACK = 4
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public setSubVector(ILorg/apache/commons/math/linear/RealVector;)V
+    TRYCATCHBLOCK L0 L1 L2 java/lang/ClassCastException
+    TRYCATCHBLOCK L0 L3 L4 java/lang/IndexOutOfBoundsException
+   L0
+    LINENUMBER 1010 L0
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    CHECKCAST org/apache/commons/math/linear/ArrayRealVector
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.set (ILorg/apache/commons/math/linear/ArrayRealVector;)V
+   L1
+    LINENUMBER 1015 L1
+    GOTO L3
+   L2
+    LINENUMBER 1011 L2
+    ASTORE 3
+   L5
+    LINENUMBER 1012 L5
+    ILOAD 1
+    ISTORE 4
+   L6
+    ILOAD 4
+    ILOAD 1
+    ALOAD 2
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    IADD
+    IF_ICMPGE L3
+   L7
+    LINENUMBER 1013 L7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 4
+    ALOAD 2
+    ILOAD 4
+    ILOAD 1
+    ISUB
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getEntry (I)D (itf)
+    DASTORE
+   L8
+    LINENUMBER 1012 L8
+    IINC 4 1
+    GOTO L6
+   L3
+    LINENUMBER 1019 L3
+    GOTO L9
+   L4
+    LINENUMBER 1016 L4
+    ASTORE 3
+   L10
+    LINENUMBER 1017 L10
+    ALOAD 0
+    ILOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkIndex (I)V
+   L11
+    LINENUMBER 1018 L11
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    IADD
+    ICONST_1
+    ISUB
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkIndex (I)V
+   L9
+    LINENUMBER 1020 L9
+    RETURN
+   L12
+    LOCALVARIABLE i I L6 L3 4
+    LOCALVARIABLE cce Ljava/lang/ClassCastException; L5 L3 3
+    LOCALVARIABLE e Ljava/lang/IndexOutOfBoundsException; L10 L9 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L12 0
+    LOCALVARIABLE index I L0 L12 1
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L12 2
+    MAXSTACK = 5
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public setSubVector(I[D)V
+    TRYCATCHBLOCK L0 L1 L2 java/lang/IndexOutOfBoundsException
+   L0
+    LINENUMBER 1025 L0
+    ALOAD 2
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 1
+    ALOAD 2
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L1
+    LINENUMBER 1029 L1
+    GOTO L3
+   L2
+    LINENUMBER 1026 L2
+    ASTORE 3
+   L4
+    LINENUMBER 1027 L4
+    ALOAD 0
+    ILOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkIndex (I)V
+   L5
+    LINENUMBER 1028 L5
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    ARRAYLENGTH
+    IADD
+    ICONST_1
+    ISUB
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkIndex (I)V
+   L3
+    LINENUMBER 1030 L3
+    RETURN
+   L6
+    LOCALVARIABLE e Ljava/lang/IndexOutOfBoundsException; L4 L3 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L6 0
+    LOCALVARIABLE index I L0 L6 1
+    LOCALVARIABLE v [D L0 L6 2
+    MAXSTACK = 5
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public set(ILorg/apache/commons/math/linear/ArrayRealVector;)V throws org/apache/commons/math/linear/MatrixIndexException 
+   L0
+    LINENUMBER 1042 L0
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.setSubVector (I[D)V
+   L1
+    LINENUMBER 1043 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L2 0
+    LOCALVARIABLE index I L0 L2 1
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/ArrayRealVector; L0 L2 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public set(D)V
+   L0
+    LINENUMBER 1047 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    DLOAD 1
+    INVOKESTATIC java/util/Arrays.fill ([DD)V
+   L1
+    LINENUMBER 1048 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L2 0
+    LOCALVARIABLE value D L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public toArray()[D
+   L0
+    LINENUMBER 1052 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public toString()Ljava/lang/String;
+   L0
+    LINENUMBER 1058 L0
+    GETSTATIC org/apache/commons/math/linear/ArrayRealVector.DEFAULT_FORMAT : Lorg/apache/commons/math/linear/RealVectorFormat;
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/RealVectorFormat.format (Ljava/lang/Object;)Ljava/lang/String;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x4
+  protected checkVectorDimensions(Lorg/apache/commons/math/linear/RealVector;)V throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 1069 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.checkVectorDimensions (I)V
+   L1
+    LINENUMBER 1070 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L2 0
+    LOCALVARIABLE v Lorg/apache/commons/math/linear/RealVector; L0 L2 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x4
+  protected checkVectorDimensions(I)V throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 1081 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    ILOAD 1
+    IF_ICMPEQ L1
+   L2
+    LINENUMBER 1082 L2
+    LDC "vector length mismatch: got {0} but expected {1}"
+    ICONST_2
+    ANEWARRAY java/lang/Object
+    DUP
+    ICONST_0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    DUP
+    ICONST_1
+    ILOAD 1
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    INVOKESTATIC org/apache/commons/math/MathRuntimeException.createIllegalArgumentException (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;
+    ATHROW
+   L1
+    LINENUMBER 1086 L1
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L3 0
+    LOCALVARIABLE n I L0 L3 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public isNaN()Z
+   L0
+    LINENUMBER 1093 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ASTORE 1
+   L1
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 2
+   L2
+    ICONST_0
+    ISTORE 3
+   L3
+    ILOAD 3
+    ILOAD 2
+    IF_ICMPGE L4
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    DSTORE 4
+   L5
+    LINENUMBER 1094 L5
+    DLOAD 4
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L6
+   L7
+    LINENUMBER 1095 L7
+    ICONST_1
+    IRETURN
+   L6
+    LINENUMBER 1093 L6
+    IINC 3 1
+    GOTO L3
+   L4
+    LINENUMBER 1098 L4
+    ICONST_0
+    IRETURN
+   L8
+    LOCALVARIABLE v D L5 L6 4
+    LOCALVARIABLE arr$ [D L1 L4 1
+    LOCALVARIABLE len$ I L2 L4 2
+    LOCALVARIABLE i$ I L3 L4 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L8 0
+    MAXSTACK = 2
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public isInfinite()Z
+   L0
+    LINENUMBER 1109 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.isNaN ()Z
+    IFEQ L1
+   L2
+    LINENUMBER 1110 L2
+    ICONST_0
+    IRETURN
+   L1
+    LINENUMBER 1113 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ASTORE 1
+   L3
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 2
+   L4
+    ICONST_0
+    ISTORE 3
+   L5
+    ILOAD 3
+    ILOAD 2
+    IF_ICMPGE L6
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    DSTORE 4
+   L7
+    LINENUMBER 1114 L7
+    DLOAD 4
+    INVOKESTATIC java/lang/Double.isInfinite (D)Z
+    IFEQ L8
+   L9
+    LINENUMBER 1115 L9
+    ICONST_1
+    IRETURN
+   L8
+    LINENUMBER 1113 L8
+    IINC 3 1
+    GOTO L5
+   L6
+    LINENUMBER 1119 L6
+    ICONST_0
+    IRETURN
+   L10
+    LOCALVARIABLE v D L7 L8 4
+    LOCALVARIABLE arr$ [D L3 L6 1
+    LOCALVARIABLE len$ I L4 L6 2
+    LOCALVARIABLE i$ I L5 L6 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L10 0
+    MAXSTACK = 2
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public equals(Ljava/lang/Object;)Z
+   L0
+    LINENUMBER 1145 L0
+    ALOAD 0
+    ALOAD 1
+    IF_ACMPNE L1
+   L2
+    LINENUMBER 1146 L2
+    ICONST_1
+    IRETURN
+   L1
+    LINENUMBER 1149 L1
+    ALOAD 1
+    IFNULL L3
+    ALOAD 1
+    INSTANCEOF org/apache/commons/math/linear/RealVector
+    IFNE L4
+   L3
+    LINENUMBER 1150 L3
+    ICONST_0
+    IRETURN
+   L4
+    LINENUMBER 1154 L4
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/RealVector
+    ASTORE 2
+   L5
+    LINENUMBER 1155 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    ALOAD 2
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getDimension ()I (itf)
+    IF_ICMPEQ L6
+   L7
+    LINENUMBER 1156 L7
+    ICONST_0
+    IRETURN
+   L6
+    LINENUMBER 1159 L6
+    ALOAD 2
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.isNaN ()Z (itf)
+    IFEQ L8
+   L9
+    LINENUMBER 1160 L9
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.isNaN ()Z
+    IRETURN
+   L8
+    LINENUMBER 1163 L8
+    ICONST_0
+    ISTORE 3
+   L10
+    ILOAD 3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ARRAYLENGTH
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 1164 L12
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    ILOAD 3
+    DALOAD
+    ALOAD 2
+    ILOAD 3
+    INVOKEINTERFACE org/apache/commons/math/linear/RealVector.getEntry (I)D (itf)
+    DCMPL
+    IFEQ L13
+   L14
+    LINENUMBER 1165 L14
+    ICONST_0
+    IRETURN
+   L13
+    LINENUMBER 1163 L13
+    IINC 3 1
+    GOTO L10
+   L11
+    LINENUMBER 1168 L11
+    ICONST_1
+    IRETURN
+   L15
+    LOCALVARIABLE i I L10 L11 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L15 0
+    LOCALVARIABLE other Ljava/lang/Object; L0 L15 1
+    LOCALVARIABLE rhs Lorg/apache/commons/math/linear/RealVector; L5 L15 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public hashCode()I
+   L0
+    LINENUMBER 1178 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.isNaN ()Z
+    IFEQ L1
+   L2
+    LINENUMBER 1179 L2
+    BIPUSH 9
+    IRETURN
+   L1
+    LINENUMBER 1181 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/ArrayRealVector.data : [D
+    INVOKESTATIC org/apache/commons/math/util/MathUtils.hash ([D)I
+    IRETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L3 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1041
+  public synthetic bridge copy()Lorg/apache/commons/math/linear/RealVector;
+   L0
+    LINENUMBER 31 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/ArrayRealVector.copy ()Lorg/apache/commons/math/linear/AbstractRealVector;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/ArrayRealVector; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x8
+  static <clinit>()V
+   L0
+    LINENUMBER 41 L0
+    INVOKESTATIC org/apache/commons/math/linear/RealVectorFormat.getInstance ()Lorg/apache/commons/math/linear/RealVectorFormat;
+    PUTSTATIC org/apache/commons/math/linear/ArrayRealVector.DEFAULT_FORMAT : Lorg/apache/commons/math/linear/RealVectorFormat;
+    RETURN
+    MAXSTACK = 1
+    MAXLOCALS = 0
+}
+

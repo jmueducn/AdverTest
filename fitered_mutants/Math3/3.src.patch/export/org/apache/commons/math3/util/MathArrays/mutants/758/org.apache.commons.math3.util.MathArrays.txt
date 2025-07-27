@@ -1,0 +1,3799 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math3/util/MathArrays {
+
+  // compiled from: MathArrays.java
+  // access flags 0x1008
+  static synthetic INNERCLASS org/apache/commons/math3/util/MathArrays$3 org/apache/commons/math3/util/MathArrays null
+  // access flags 0x4019
+  public final static enum INNERCLASS org/apache/commons/math3/util/MathArrays$OrderDirection org/apache/commons/math3/util/MathArrays OrderDirection
+  // access flags 0x609
+  public static abstract INNERCLASS org/apache/commons/math3/util/MathArrays$Function org/apache/commons/math3/util/MathArrays Function
+  // access flags 0x8
+  static INNERCLASS org/apache/commons/math3/util/MathArrays$2 null null
+  // access flags 0x8
+  static INNERCLASS org/apache/commons/math3/util/MathArrays$1 null null
+
+  // access flags 0x1A
+  private final static I SPLIT_FACTOR = 134217729
+
+  // access flags 0x2
+  private <init>()V
+   L0
+    LINENUMBER 52 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+    RETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/util/MathArrays; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static scale(D[D)[D
+   L0
+    LINENUMBER 86 L0
+    ALOAD 2
+    ARRAYLENGTH
+    NEWARRAY T_DOUBLE
+    ASTORE 3
+   L1
+    LINENUMBER 87 L1
+    ICONST_0
+    ISTORE 4
+   L2
+    ILOAD 4
+    ALOAD 2
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 88 L4
+    ALOAD 3
+    ILOAD 4
+    ALOAD 2
+    ILOAD 4
+    DALOAD
+    DLOAD 0
+    DMUL
+    DASTORE
+   L5
+    LINENUMBER 87 L5
+    IINC 4 1
+    GOTO L2
+   L3
+    LINENUMBER 90 L3
+    ALOAD 3
+    ARETURN
+   L6
+    LOCALVARIABLE i I L2 L3 4
+    LOCALVARIABLE val D L0 L6 0
+    LOCALVARIABLE arr [D L0 L6 2
+    LOCALVARIABLE newArr [D L1 L6 3
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0x9
+  public static scaleInPlace(D[D)V
+   L0
+    LINENUMBER 103 L0
+    ICONST_0
+    ISTORE 3
+   L1
+    ILOAD 3
+    ALOAD 2
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 104 L3
+    ALOAD 2
+    ILOAD 3
+    DUP2
+    DALOAD
+    DLOAD 0
+    DMUL
+    DASTORE
+   L4
+    LINENUMBER 103 L4
+    IINC 3 1
+    GOTO L1
+   L2
+    LINENUMBER 106 L2
+    RETURN
+   L5
+    LOCALVARIABLE i I L1 L2 3
+    LOCALVARIABLE val D L0 L5 0
+    LOCALVARIABLE arr [D L0 L5 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static ebeAdd([D[D)[D throws org/apache/commons/math3/exception/DimensionMismatchException 
+   L0
+    LINENUMBER 120 L0
+    ALOAD 0
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPEQ L1
+   L2
+    LINENUMBER 121 L2
+    NEW org/apache/commons/math3/exception/DimensionMismatchException
+    DUP
+    ALOAD 0
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKESPECIAL org/apache/commons/math3/exception/DimensionMismatchException.<init> (II)V
+    ATHROW
+   L1
+    LINENUMBER 124 L1
+    ALOAD 0
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ASTORE 2
+   L3
+    LINENUMBER 125 L3
+    ICONST_0
+    ISTORE 3
+   L4
+    ILOAD 3
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 126 L6
+    ALOAD 2
+    ILOAD 3
+    DUP2
+    DALOAD
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    DADD
+    DASTORE
+   L7
+    LINENUMBER 125 L7
+    IINC 3 1
+    GOTO L4
+   L5
+    LINENUMBER 128 L5
+    ALOAD 2
+    ARETURN
+   L8
+    LOCALVARIABLE i I L4 L5 3
+    LOCALVARIABLE a [D L0 L8 0
+    LOCALVARIABLE b [D L0 L8 1
+    LOCALVARIABLE result [D L3 L8 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static ebeSubtract([D[D)[D throws org/apache/commons/math3/exception/DimensionMismatchException 
+   L0
+    LINENUMBER 142 L0
+    ALOAD 0
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPEQ L1
+   L2
+    LINENUMBER 143 L2
+    NEW org/apache/commons/math3/exception/DimensionMismatchException
+    DUP
+    ALOAD 0
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKESPECIAL org/apache/commons/math3/exception/DimensionMismatchException.<init> (II)V
+    ATHROW
+   L1
+    LINENUMBER 146 L1
+    ALOAD 0
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ASTORE 2
+   L3
+    LINENUMBER 147 L3
+    ICONST_0
+    ISTORE 3
+   L4
+    ILOAD 3
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 148 L6
+    ALOAD 2
+    ILOAD 3
+    DUP2
+    DALOAD
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    DSUB
+    DASTORE
+   L7
+    LINENUMBER 147 L7
+    IINC 3 1
+    GOTO L4
+   L5
+    LINENUMBER 150 L5
+    ALOAD 2
+    ARETURN
+   L8
+    LOCALVARIABLE i I L4 L5 3
+    LOCALVARIABLE a [D L0 L8 0
+    LOCALVARIABLE b [D L0 L8 1
+    LOCALVARIABLE result [D L3 L8 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static ebeMultiply([D[D)[D throws org/apache/commons/math3/exception/DimensionMismatchException 
+   L0
+    LINENUMBER 164 L0
+    ALOAD 0
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPEQ L1
+   L2
+    LINENUMBER 165 L2
+    NEW org/apache/commons/math3/exception/DimensionMismatchException
+    DUP
+    ALOAD 0
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKESPECIAL org/apache/commons/math3/exception/DimensionMismatchException.<init> (II)V
+    ATHROW
+   L1
+    LINENUMBER 168 L1
+    ALOAD 0
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ASTORE 2
+   L3
+    LINENUMBER 169 L3
+    ICONST_0
+    ISTORE 3
+   L4
+    ILOAD 3
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 170 L6
+    ALOAD 2
+    ILOAD 3
+    DUP2
+    DALOAD
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    DMUL
+    DASTORE
+   L7
+    LINENUMBER 169 L7
+    IINC 3 1
+    GOTO L4
+   L5
+    LINENUMBER 172 L5
+    ALOAD 2
+    ARETURN
+   L8
+    LOCALVARIABLE i I L4 L5 3
+    LOCALVARIABLE a [D L0 L8 0
+    LOCALVARIABLE b [D L0 L8 1
+    LOCALVARIABLE result [D L3 L8 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static ebeDivide([D[D)[D throws org/apache/commons/math3/exception/DimensionMismatchException 
+   L0
+    LINENUMBER 186 L0
+    ALOAD 0
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPEQ L1
+   L2
+    LINENUMBER 187 L2
+    NEW org/apache/commons/math3/exception/DimensionMismatchException
+    DUP
+    ALOAD 0
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKESPECIAL org/apache/commons/math3/exception/DimensionMismatchException.<init> (II)V
+    ATHROW
+   L1
+    LINENUMBER 190 L1
+    ALOAD 0
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ASTORE 2
+   L3
+    LINENUMBER 191 L3
+    ICONST_0
+    ISTORE 3
+   L4
+    ILOAD 3
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 192 L6
+    ALOAD 2
+    ILOAD 3
+    DUP2
+    DALOAD
+    ALOAD 1
+    ILOAD 3
+    DALOAD
+    DDIV
+    DASTORE
+   L7
+    LINENUMBER 191 L7
+    IINC 3 1
+    GOTO L4
+   L5
+    LINENUMBER 194 L5
+    ALOAD 2
+    ARETURN
+   L8
+    LOCALVARIABLE i I L4 L5 3
+    LOCALVARIABLE a [D L0 L8 0
+    LOCALVARIABLE b [D L0 L8 1
+    LOCALVARIABLE result [D L3 L8 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static distance1([D[D)D
+   L0
+    LINENUMBER 205 L0
+    DCONST_0
+    DSTORE 2
+   L1
+    LINENUMBER 206 L1
+    ICONST_0
+    ISTORE 4
+   L2
+    ILOAD 4
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 207 L4
+    DLOAD 2
+    ALOAD 0
+    ILOAD 4
+    DALOAD
+    ALOAD 1
+    ILOAD 4
+    DALOAD
+    DSUB
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.abs (D)D
+    DADD
+    DSTORE 2
+   L5
+    LINENUMBER 206 L5
+    IINC 4 1
+    GOTO L2
+   L3
+    LINENUMBER 209 L3
+    DLOAD 2
+    DRETURN
+   L6
+    LOCALVARIABLE i I L2 L3 4
+    LOCALVARIABLE p1 [D L0 L6 0
+    LOCALVARIABLE p2 [D L0 L6 1
+    LOCALVARIABLE sum D L1 L6 2
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0x9
+  public static distance1([I[I)I
+   L0
+    LINENUMBER 220 L0
+    ICONST_0
+    ISTORE 2
+   L1
+    LINENUMBER 221 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 222 L4
+    ILOAD 2
+    ALOAD 0
+    ILOAD 3
+    IALOAD
+    ALOAD 1
+    ILOAD 3
+    IALOAD
+    ISUB
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.abs (I)I
+    IADD
+    ISTORE 2
+   L5
+    LINENUMBER 221 L5
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 224 L3
+    ILOAD 2
+    IRETURN
+   L6
+    LOCALVARIABLE i I L2 L3 3
+    LOCALVARIABLE p1 [I L0 L6 0
+    LOCALVARIABLE p2 [I L0 L6 1
+    LOCALVARIABLE sum I L1 L6 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  public static distance([D[D)D
+   L0
+    LINENUMBER 235 L0
+    DCONST_0
+    DSTORE 2
+   L1
+    LINENUMBER 236 L1
+    ICONST_0
+    ISTORE 4
+   L2
+    ILOAD 4
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 237 L4
+    ALOAD 0
+    ILOAD 4
+    DALOAD
+    ALOAD 1
+    ILOAD 4
+    DALOAD
+    DSUB
+    DSTORE 5
+   L5
+    LINENUMBER 238 L5
+    DLOAD 2
+    DLOAD 5
+    DLOAD 5
+    DMUL
+    DADD
+    DSTORE 2
+   L6
+    LINENUMBER 236 L6
+    IINC 4 1
+    GOTO L2
+   L3
+    LINENUMBER 240 L3
+    DLOAD 2
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    DRETURN
+   L7
+    LOCALVARIABLE dp D L5 L6 5
+    LOCALVARIABLE i I L2 L3 4
+    LOCALVARIABLE p1 [D L0 L7 0
+    LOCALVARIABLE p2 [D L0 L7 1
+    LOCALVARIABLE sum D L1 L7 2
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x9
+  public static distance([I[I)D
+   L0
+    LINENUMBER 251 L0
+    DCONST_0
+    DSTORE 2
+   L1
+    LINENUMBER 252 L1
+    ICONST_0
+    ISTORE 4
+   L2
+    ILOAD 4
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 253 L4
+    ALOAD 0
+    ILOAD 4
+    IALOAD
+    ALOAD 1
+    ILOAD 4
+    IALOAD
+    ISUB
+    I2D
+    DSTORE 5
+   L5
+    LINENUMBER 254 L5
+    DLOAD 2
+    DLOAD 5
+    DLOAD 5
+    DMUL
+    DADD
+    DSTORE 2
+   L6
+    LINENUMBER 252 L6
+    IINC 4 1
+    GOTO L2
+   L3
+    LINENUMBER 256 L3
+    DLOAD 2
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    DRETURN
+   L7
+    LOCALVARIABLE dp D L5 L6 5
+    LOCALVARIABLE i I L2 L3 4
+    LOCALVARIABLE p1 [I L0 L7 0
+    LOCALVARIABLE p2 [I L0 L7 1
+    LOCALVARIABLE sum D L1 L7 2
+    MAXSTACK = 6
+    MAXLOCALS = 7
+
+  // access flags 0x9
+  public static distanceInf([D[D)D
+   L0
+    LINENUMBER 267 L0
+    DCONST_0
+    DSTORE 2
+   L1
+    LINENUMBER 268 L1
+    ICONST_0
+    ISTORE 4
+   L2
+    ILOAD 4
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 269 L4
+    DLOAD 2
+    ALOAD 0
+    ILOAD 4
+    DALOAD
+    ALOAD 1
+    ILOAD 4
+    DALOAD
+    DSUB
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.abs (D)D
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.max (DD)D
+    DSTORE 2
+   L5
+    LINENUMBER 268 L5
+    IINC 4 1
+    GOTO L2
+   L3
+    LINENUMBER 271 L3
+    DLOAD 2
+    DRETURN
+   L6
+    LOCALVARIABLE i I L2 L3 4
+    LOCALVARIABLE p1 [D L0 L6 0
+    LOCALVARIABLE p2 [D L0 L6 1
+    LOCALVARIABLE max D L1 L6 2
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0x9
+  public static distanceInf([I[I)I
+   L0
+    LINENUMBER 282 L0
+    ICONST_0
+    ISTORE 2
+   L1
+    LINENUMBER 283 L1
+    ICONST_0
+    ISTORE 3
+   L2
+    ILOAD 3
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 284 L4
+    ILOAD 2
+    ALOAD 0
+    ILOAD 3
+    IALOAD
+    ALOAD 1
+    ILOAD 3
+    IALOAD
+    ISUB
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.abs (I)I
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.max (II)I
+    ISTORE 2
+   L5
+    LINENUMBER 283 L5
+    IINC 3 1
+    GOTO L2
+   L3
+    LINENUMBER 286 L3
+    ILOAD 2
+    IRETURN
+   L6
+    LOCALVARIABLE i I L2 L3 3
+    LOCALVARIABLE p1 [I L0 L6 0
+    LOCALVARIABLE p2 [I L0 L6 1
+    LOCALVARIABLE max I L1 L6 2
+    MAXSTACK = 4
+    MAXLOCALS = 4
+
+  // access flags 0x9
+  // signature <T::Ljava/lang/Comparable<-TT;>;>([TT;Lorg/apache/commons/math3/util/MathArrays$OrderDirection;Z)Z
+  // declaration: boolean isMonotonic<T extends java.lang.Comparable<? super T>>(T[], org.apache.commons.math3.util.MathArrays$OrderDirection, boolean)
+  public static isMonotonic([Ljava/lang/Comparable;Lorg/apache/commons/math3/util/MathArrays$OrderDirection;Z)Z
+   L0
+    LINENUMBER 311 L0
+    ALOAD 0
+    ICONST_0
+    AALOAD
+    ASTORE 3
+   L1
+    LINENUMBER 312 L1
+    ALOAD 0
+    ARRAYLENGTH
+    ISTORE 4
+   L2
+    LINENUMBER 313 L2
+    ICONST_1
+    ISTORE 5
+   L3
+    ILOAD 5
+    ILOAD 4
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 315 L5
+    GETSTATIC org/apache/commons/math3/util/MathArrays$3.$SwitchMap$org$apache$commons$math3$util$MathArrays$OrderDirection : [I
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math3/util/MathArrays$OrderDirection.ordinal ()I
+    IALOAD
+    LOOKUPSWITCH
+      1: L6
+      2: L7
+      default: L8
+   L6
+    LINENUMBER 317 L6
+    ALOAD 3
+    ALOAD 0
+    ILOAD 5
+    AALOAD
+    INVOKEINTERFACE java/lang/Comparable.compareTo (Ljava/lang/Object;)I (itf)
+    ISTORE 6
+   L9
+    LINENUMBER 318 L9
+    ILOAD 2
+    IFEQ L10
+   L11
+    LINENUMBER 319 L11
+    ILOAD 6
+    IFLT L12
+   L13
+    LINENUMBER 320 L13
+    ICONST_0
+    IRETURN
+   L10
+    LINENUMBER 323 L10
+    ILOAD 6
+    IFLE L12
+   L14
+    LINENUMBER 324 L14
+    ICONST_0
+    IRETURN
+   L7
+    LINENUMBER 329 L7
+    ALOAD 0
+    ILOAD 5
+    AALOAD
+    ALOAD 3
+    INVOKEINTERFACE java/lang/Comparable.compareTo (Ljava/lang/Object;)I (itf)
+    ISTORE 6
+   L15
+    LINENUMBER 330 L15
+    ILOAD 2
+    IFEQ L16
+   L17
+    LINENUMBER 331 L17
+    ILOAD 6
+    IFLT L12
+   L18
+    LINENUMBER 332 L18
+    ICONST_0
+    IRETURN
+   L16
+    LINENUMBER 335 L16
+    ILOAD 6
+    IFLE L12
+   L19
+    LINENUMBER 336 L19
+    ICONST_0
+    IRETURN
+   L8
+    LINENUMBER 342 L8
+    NEW org/apache/commons/math3/exception/MathInternalError
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/exception/MathInternalError.<init> ()V
+    ATHROW
+   L12
+    LINENUMBER 345 L12
+    ALOAD 0
+    ILOAD 5
+    AALOAD
+    ASTORE 3
+   L20
+    LINENUMBER 313 L20
+    IINC 5 1
+    GOTO L3
+   L4
+    LINENUMBER 347 L4
+    ICONST_1
+    IRETURN
+   L21
+    LOCALVARIABLE comp I L9 L20 6
+    LOCALVARIABLE i I L3 L4 5
+    LOCALVARIABLE val [Ljava/lang/Comparable; L0 L21 0
+    // signature [TT;
+    // declaration: val extends T[]
+    LOCALVARIABLE dir Lorg/apache/commons/math3/util/MathArrays$OrderDirection; L0 L21 1
+    LOCALVARIABLE strict Z L0 L21 2
+    LOCALVARIABLE previous Ljava/lang/Comparable; L1 L21 3
+    // signature TT;
+    // declaration: previous extends T
+    LOCALVARIABLE max I L2 L21 4
+    MAXSTACK = 3
+    MAXLOCALS = 7
+
+  // access flags 0x9
+  public static isMonotonic([DLorg/apache/commons/math3/util/MathArrays$OrderDirection;Z)Z
+   L0
+    LINENUMBER 359 L0
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ICONST_0
+    INVOKESTATIC org/apache/commons/math3/util/MathArrays.checkOrder ([DLorg/apache/commons/math3/util/MathArrays$OrderDirection;ZZ)Z
+    IRETURN
+   L1
+    LOCALVARIABLE val [D L0 L1 0
+    LOCALVARIABLE dir Lorg/apache/commons/math3/util/MathArrays$OrderDirection; L0 L1 1
+    LOCALVARIABLE strict Z L0 L1 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static checkOrder([DLorg/apache/commons/math3/util/MathArrays$OrderDirection;ZZ)Z throws org/apache/commons/math3/exception/NonMonotonicSequenceException 
+   L0
+    LINENUMBER 376 L0
+    ALOAD 0
+    ICONST_0
+    DALOAD
+    DSTORE 4
+   L1
+    LINENUMBER 377 L1
+    ALOAD 0
+    ARRAYLENGTH
+    ISTORE 6
+   L2
+    LINENUMBER 381 L2
+    ICONST_1
+    ISTORE 7
+   L3
+    ILOAD 7
+    ILOAD 6
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 382 L5
+    GETSTATIC org/apache/commons/math3/util/MathArrays$3.$SwitchMap$org$apache$commons$math3$util$MathArrays$OrderDirection : [I
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math3/util/MathArrays$OrderDirection.ordinal ()I
+    IALOAD
+    LOOKUPSWITCH
+      1: L6
+      2: L7
+      default: L8
+   L6
+    LINENUMBER 384 L6
+    ILOAD 2
+    IFEQ L9
+   L10
+    LINENUMBER 385 L10
+    ALOAD 0
+    ILOAD 7
+    DALOAD
+    DLOAD 4
+    DCMPG
+    IFGT L11
+   L12
+    LINENUMBER 386 L12
+    GOTO L4
+   L9
+    LINENUMBER 389 L9
+    ALOAD 0
+    ILOAD 7
+    DALOAD
+    DLOAD 4
+    DCMPG
+    IFGE L11
+   L13
+    LINENUMBER 390 L13
+    GOTO L4
+   L7
+    LINENUMBER 395 L7
+    ILOAD 2
+    IFEQ L14
+   L15
+    LINENUMBER 396 L15
+    ALOAD 0
+    ILOAD 7
+    DALOAD
+    DLOAD 4
+    DCMPL
+    IFLT L11
+   L16
+    LINENUMBER 397 L16
+    GOTO L4
+   L14
+    LINENUMBER 400 L14
+    ALOAD 0
+    ILOAD 7
+    DALOAD
+    DLOAD 4
+    DCMPL
+    IFLE L11
+   L17
+    LINENUMBER 401 L17
+    GOTO L4
+   L8
+    LINENUMBER 407 L8
+    NEW org/apache/commons/math3/exception/MathInternalError
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/exception/MathInternalError.<init> ()V
+    ATHROW
+   L11
+    LINENUMBER 410 L11
+    ALOAD 0
+    ILOAD 7
+    DALOAD
+    DSTORE 4
+   L18
+    LINENUMBER 381 L18
+    IINC 7 1
+    GOTO L3
+   L4
+    LINENUMBER 413 L4
+    ILOAD 7
+    ILOAD 6
+    IF_ICMPNE L19
+   L20
+    LINENUMBER 415 L20
+    ICONST_1
+    IRETURN
+   L19
+    LINENUMBER 419 L19
+    ILOAD 3
+    IFEQ L21
+   L22
+    LINENUMBER 420 L22
+    NEW org/apache/commons/math3/exception/NonMonotonicSequenceException
+    DUP
+    ALOAD 0
+    ILOAD 7
+    DALOAD
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    DLOAD 4
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    ILOAD 7
+    ALOAD 1
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math3/exception/NonMonotonicSequenceException.<init> (Ljava/lang/Number;Ljava/lang/Number;ILorg/apache/commons/math3/util/MathArrays$OrderDirection;Z)V
+    ATHROW
+   L21
+    LINENUMBER 422 L21
+    ICONST_0
+    IRETURN
+   L23
+    LOCALVARIABLE val [D L0 L23 0
+    LOCALVARIABLE dir Lorg/apache/commons/math3/util/MathArrays$OrderDirection; L0 L23 1
+    LOCALVARIABLE strict Z L0 L23 2
+    LOCALVARIABLE abort Z L0 L23 3
+    LOCALVARIABLE previous D L1 L23 4
+    LOCALVARIABLE max I L2 L23 6
+    LOCALVARIABLE index I L3 L23 7
+    MAXSTACK = 7
+    MAXLOCALS = 8
+
+  // access flags 0x9
+  public static checkOrder([DLorg/apache/commons/math3/util/MathArrays$OrderDirection;Z)V throws org/apache/commons/math3/exception/NonMonotonicSequenceException 
+   L0
+    LINENUMBER 437 L0
+    ALOAD 0
+    ALOAD 1
+    ILOAD 2
+    ICONST_1
+    INVOKESTATIC org/apache/commons/math3/util/MathArrays.checkOrder ([DLorg/apache/commons/math3/util/MathArrays$OrderDirection;ZZ)Z
+    POP
+   L1
+    LINENUMBER 438 L1
+    RETURN
+   L2
+    LOCALVARIABLE val [D L0 L2 0
+    LOCALVARIABLE dir Lorg/apache/commons/math3/util/MathArrays$OrderDirection; L0 L2 1
+    LOCALVARIABLE strict Z L0 L2 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static checkOrder([D)V throws org/apache/commons/math3/exception/NonMonotonicSequenceException 
+   L0
+    LINENUMBER 448 L0
+    ALOAD 0
+    GETSTATIC org/apache/commons/math3/util/MathArrays$OrderDirection.INCREASING : Lorg/apache/commons/math3/util/MathArrays$OrderDirection;
+    ICONST_1
+    INVOKESTATIC org/apache/commons/math3/util/MathArrays.checkOrder ([DLorg/apache/commons/math3/util/MathArrays$OrderDirection;Z)V
+   L1
+    LINENUMBER 449 L1
+    RETURN
+   L2
+    LOCALVARIABLE val [D L0 L2 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static checkRectangular([[J)V throws org/apache/commons/math3/exception/NullArgumentException org/apache/commons/math3/exception/DimensionMismatchException 
+   L0
+    LINENUMBER 461 L0
+    ALOAD 0
+    INVOKESTATIC org/apache/commons/math3/util/MathUtils.checkNotNull (Ljava/lang/Object;)V
+   L1
+    LINENUMBER 462 L1
+    ICONST_1
+    ISTORE 1
+   L2
+    ILOAD 1
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L3
+   L4
+    LINENUMBER 463 L4
+    ALOAD 0
+    ILOAD 1
+    AALOAD
+    ARRAYLENGTH
+    ALOAD 0
+    ICONST_0
+    AALOAD
+    ARRAYLENGTH
+    IF_ICMPEQ L5
+   L6
+    LINENUMBER 464 L6
+    NEW org/apache/commons/math3/exception/DimensionMismatchException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.DIFFERENT_ROWS_LENGTHS : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ALOAD 0
+    ILOAD 1
+    AALOAD
+    ARRAYLENGTH
+    ALOAD 0
+    ICONST_0
+    AALOAD
+    ARRAYLENGTH
+    INVOKESPECIAL org/apache/commons/math3/exception/DimensionMismatchException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;II)V
+    ATHROW
+   L5
+    LINENUMBER 462 L5
+    IINC 1 1
+    GOTO L2
+   L3
+    LINENUMBER 469 L3
+    RETURN
+   L7
+    LOCALVARIABLE i I L2 L3 1
+    LOCALVARIABLE in [[J L0 L7 0
+    MAXSTACK = 6
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static checkPositive([D)V throws org/apache/commons/math3/exception/NotStrictlyPositiveException 
+   L0
+    LINENUMBER 481 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 482 L3
+    ALOAD 0
+    ILOAD 1
+    DALOAD
+    DCONST_0
+    DCMPG
+    IFGT L4
+   L5
+    LINENUMBER 483 L5
+    NEW org/apache/commons/math3/exception/NotStrictlyPositiveException
+    DUP
+    ALOAD 0
+    ILOAD 1
+    DALOAD
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    INVOKESPECIAL org/apache/commons/math3/exception/NotStrictlyPositiveException.<init> (Ljava/lang/Number;)V
+    ATHROW
+   L4
+    LINENUMBER 481 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 486 L2
+    RETURN
+   L6
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE in [D L0 L6 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static checkNonNegative([J)V throws org/apache/commons/math3/exception/NotPositiveException 
+   L0
+    LINENUMBER 497 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 498 L3
+    ALOAD 0
+    ILOAD 1
+    LALOAD
+    LCONST_0
+    LCMP
+    IFGE L4
+   L5
+    LINENUMBER 499 L5
+    NEW org/apache/commons/math3/exception/NotPositiveException
+    DUP
+    ALOAD 0
+    ILOAD 1
+    LALOAD
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKESPECIAL org/apache/commons/math3/exception/NotPositiveException.<init> (Ljava/lang/Number;)V
+    ATHROW
+   L4
+    LINENUMBER 497 L4
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 502 L2
+    RETURN
+   L6
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE in [J L0 L6 0
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x9
+  public static checkNonNegative([[J)V throws org/apache/commons/math3/exception/NotPositiveException 
+   L0
+    LINENUMBER 513 L0
+    ICONST_0
+    ISTORE 1
+   L1
+    ILOAD 1
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L2
+   L3
+    LINENUMBER 514 L3
+    ICONST_0
+    ISTORE 2
+   L4
+    ILOAD 2
+    ALOAD 0
+    ILOAD 1
+    AALOAD
+    ARRAYLENGTH
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 515 L6
+    ALOAD 0
+    ILOAD 1
+    AALOAD
+    ILOAD 2
+    LALOAD
+    LCONST_0
+    LCMP
+    IFGE L7
+   L8
+    LINENUMBER 516 L8
+    NEW org/apache/commons/math3/exception/NotPositiveException
+    DUP
+    ALOAD 0
+    ILOAD 1
+    AALOAD
+    ILOAD 2
+    LALOAD
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    INVOKESPECIAL org/apache/commons/math3/exception/NotPositiveException.<init> (Ljava/lang/Number;)V
+    ATHROW
+   L7
+    LINENUMBER 514 L7
+    IINC 2 1
+    GOTO L4
+   L5
+    LINENUMBER 513 L5
+    IINC 1 1
+    GOTO L1
+   L2
+    LINENUMBER 520 L2
+    RETURN
+   L9
+    LOCALVARIABLE j I L4 L5 2
+    LOCALVARIABLE i I L1 L2 1
+    LOCALVARIABLE in [[J L0 L9 0
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static safeNorm([D)D
+   L0
+    LINENUMBER 583 L0
+    LDC 3.834E-20
+    DSTORE 1
+   L1
+    LINENUMBER 584 L1
+    LDC 1.304E19
+    DSTORE 3
+   L2
+    LINENUMBER 585 L2
+    DCONST_0
+    DSTORE 5
+   L3
+    LINENUMBER 586 L3
+    DCONST_0
+    DSTORE 7
+   L4
+    LINENUMBER 587 L4
+    DCONST_0
+    DSTORE 9
+   L5
+    LINENUMBER 588 L5
+    DCONST_0
+    DSTORE 11
+   L6
+    LINENUMBER 589 L6
+    DCONST_0
+    DSTORE 13
+   L7
+    LINENUMBER 590 L7
+    ALOAD 0
+    ARRAYLENGTH
+    I2D
+    DSTORE 15
+   L8
+    LINENUMBER 591 L8
+    DLOAD 3
+    DLOAD 15
+    DDIV
+    DSTORE 17
+   L9
+    LINENUMBER 592 L9
+    ICONST_0
+    ISTORE 19
+   L10
+    ILOAD 19
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L11
+   L12
+    LINENUMBER 593 L12
+    ALOAD 0
+    ILOAD 19
+    DALOAD
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DSTORE 20
+   L13
+    LINENUMBER 594 L13
+    DLOAD 20
+    DLOAD 1
+    DCMPG
+    IFLT L14
+    DLOAD 20
+    DLOAD 17
+    DCMPL
+    IFLE L15
+   L14
+    LINENUMBER 595 L14
+    DLOAD 20
+    DLOAD 1
+    DCMPL
+    IFLE L16
+   L17
+    LINENUMBER 596 L17
+    DLOAD 20
+    DLOAD 11
+    DCMPL
+    IFLE L18
+   L19
+    LINENUMBER 597 L19
+    DLOAD 11
+    DLOAD 20
+    DDIV
+    DSTORE 22
+   L20
+    LINENUMBER 598 L20
+    DCONST_1
+    DLOAD 5
+    DLOAD 22
+    DMUL
+    DLOAD 22
+    DMUL
+    DADD
+    DSTORE 5
+   L21
+    LINENUMBER 599 L21
+    DLOAD 20
+    DSTORE 11
+   L22
+    LINENUMBER 600 L22
+    GOTO L23
+   L18
+    LINENUMBER 601 L18
+    DLOAD 20
+    DLOAD 11
+    DDIV
+    DSTORE 22
+   L24
+    LINENUMBER 602 L24
+    DLOAD 5
+    DLOAD 22
+    DLOAD 22
+    DMUL
+    DADD
+    DSTORE 5
+   L25
+    LINENUMBER 603 L25
+    GOTO L23
+   L16
+    LINENUMBER 605 L16
+    DLOAD 20
+    DLOAD 13
+    DCMPL
+    IFLE L26
+   L27
+    LINENUMBER 606 L27
+    DLOAD 13
+    DLOAD 20
+    DDIV
+    DSTORE 22
+   L28
+    LINENUMBER 607 L28
+    DCONST_1
+    DLOAD 9
+    DLOAD 22
+    DMUL
+    DLOAD 22
+    DMUL
+    DADD
+    DSTORE 9
+   L29
+    LINENUMBER 608 L29
+    DLOAD 20
+    DSTORE 13
+   L30
+    LINENUMBER 609 L30
+    GOTO L23
+   L26
+    LINENUMBER 610 L26
+    DLOAD 20
+    DCONST_0
+    DCMPL
+    IFEQ L23
+   L31
+    LINENUMBER 611 L31
+    DLOAD 20
+    DLOAD 13
+    DDIV
+    DSTORE 22
+   L32
+    LINENUMBER 612 L32
+    DLOAD 9
+    DLOAD 22
+    DLOAD 22
+    DMUL
+    DADD
+    DSTORE 9
+   L33
+    LINENUMBER 613 L33
+    GOTO L23
+   L15
+    LINENUMBER 617 L15
+    DLOAD 7
+    DLOAD 20
+    DLOAD 20
+    DMUL
+    DADD
+    DSTORE 7
+   L23
+    LINENUMBER 592 L23
+    IINC 19 1
+    GOTO L10
+   L11
+    LINENUMBER 621 L11
+    DLOAD 5
+    DCONST_0
+    DCMPL
+    IFEQ L34
+   L35
+    LINENUMBER 622 L35
+    DLOAD 11
+    DLOAD 5
+    DLOAD 7
+    DLOAD 11
+    DDIV
+    DLOAD 11
+    DDIV
+    DADD
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DMUL
+    DSTORE 19
+   L36
+    GOTO L37
+   L34
+    LINENUMBER 624 L34
+    DLOAD 7
+    DCONST_0
+    DCMPL
+    IFNE L38
+   L39
+    LINENUMBER 625 L39
+    DLOAD 13
+    DLOAD 9
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DMUL
+    DSTORE 19
+   L40
+    GOTO L37
+   L38
+    LINENUMBER 627 L38
+    DLOAD 7
+    DLOAD 13
+    DCMPL
+    IFLT L41
+   L42
+    LINENUMBER 628 L42
+    DLOAD 7
+    DCONST_1
+    DLOAD 13
+    DLOAD 7
+    DDIV
+    DLOAD 13
+    DLOAD 9
+    DMUL
+    DMUL
+    DADD
+    DMUL
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DSTORE 19
+   L43
+    GOTO L37
+   L41
+    LINENUMBER 630 L41
+    DLOAD 13
+    DLOAD 7
+    DLOAD 13
+    DDIV
+    DLOAD 13
+    DLOAD 9
+    DMUL
+    DADD
+    DMUL
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DSTORE 19
+   L37
+    LINENUMBER 634 L37
+    DLOAD 19
+    DRETURN
+   L44
+    LOCALVARIABLE r D L20 L22 22
+    LOCALVARIABLE r D L24 L25 22
+    LOCALVARIABLE r D L28 L30 22
+    LOCALVARIABLE r D L32 L33 22
+    LOCALVARIABLE xabs D L13 L23 20
+    LOCALVARIABLE i I L10 L11 19
+    LOCALVARIABLE norm D L36 L34 19
+    LOCALVARIABLE norm D L40 L38 19
+    LOCALVARIABLE norm D L43 L41 19
+    LOCALVARIABLE v [D L0 L44 0
+    LOCALVARIABLE rdwarf D L1 L44 1
+    LOCALVARIABLE rgiant D L2 L44 3
+    LOCALVARIABLE s1 D L3 L44 5
+    LOCALVARIABLE s2 D L4 L44 7
+    LOCALVARIABLE s3 D L5 L44 9
+    LOCALVARIABLE x1max D L6 L44 11
+    LOCALVARIABLE x3max D L7 L44 13
+    LOCALVARIABLE floatn D L8 L44 15
+    LOCALVARIABLE agiant D L9 L44 17
+    LOCALVARIABLE norm D L37 L44 19
+    MAXSTACK = 10
+    MAXLOCALS = 24
+
+  // access flags 0x89
+  public static varargs sortInPlace([D[[D)V throws org/apache/commons/math3/exception/DimensionMismatchException org/apache/commons/math3/exception/NullArgumentException 
+   L0
+    LINENUMBER 655 L0
+    ALOAD 0
+    GETSTATIC org/apache/commons/math3/util/MathArrays$OrderDirection.INCREASING : Lorg/apache/commons/math3/util/MathArrays$OrderDirection;
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math3/util/MathArrays.sortInPlace ([DLorg/apache/commons/math3/util/MathArrays$OrderDirection;[[D)V
+   L1
+    LINENUMBER 656 L1
+    RETURN
+   L2
+    LOCALVARIABLE x [D L0 L2 0
+    LOCALVARIABLE yList [[D L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x89
+  public static varargs sortInPlace([DLorg/apache/commons/math3/util/MathArrays$OrderDirection;[[D)V throws org/apache/commons/math3/exception/NullArgumentException org/apache/commons/math3/exception/DimensionMismatchException 
+   L0
+    LINENUMBER 682 L0
+    ALOAD 0
+    IFNONNULL L1
+   L2
+    LINENUMBER 683 L2
+    NEW org/apache/commons/math3/exception/NullArgumentException
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/exception/NullArgumentException.<init> ()V
+    ATHROW
+   L1
+    LINENUMBER 686 L1
+    ALOAD 2
+    ARRAYLENGTH
+    ISTORE 3
+   L3
+    LINENUMBER 687 L3
+    ALOAD 0
+    ARRAYLENGTH
+    ISTORE 4
+   L4
+    LINENUMBER 689 L4
+    ICONST_0
+    ISTORE 5
+   L5
+    ILOAD 5
+    ILOAD 3
+    IF_ICMPGE L6
+   L7
+    LINENUMBER 690 L7
+    ALOAD 2
+    ILOAD 5
+    AALOAD
+    ASTORE 6
+   L8
+    LINENUMBER 691 L8
+    ALOAD 6
+    IFNONNULL L9
+   L10
+    LINENUMBER 692 L10
+    NEW org/apache/commons/math3/exception/NullArgumentException
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/exception/NullArgumentException.<init> ()V
+    ATHROW
+   L9
+    LINENUMBER 694 L9
+    ALOAD 6
+    ARRAYLENGTH
+    ILOAD 4
+    IF_ICMPEQ L11
+   L12
+    LINENUMBER 695 L12
+    NEW org/apache/commons/math3/exception/DimensionMismatchException
+    DUP
+    ALOAD 6
+    ARRAYLENGTH
+    ILOAD 4
+    INVOKESPECIAL org/apache/commons/math3/exception/DimensionMismatchException.<init> (II)V
+    ATHROW
+   L11
+    LINENUMBER 689 L11
+    IINC 5 1
+    GOTO L5
+   L6
+    LINENUMBER 700 L6
+    NEW java/util/ArrayList
+    DUP
+    ILOAD 4
+    INVOKESPECIAL java/util/ArrayList.<init> (I)V
+    ASTORE 5
+   L13
+    LINENUMBER 702 L13
+    ICONST_0
+    ISTORE 6
+   L14
+    ILOAD 6
+    ILOAD 4
+    IF_ICMPGE L15
+   L16
+    LINENUMBER 703 L16
+    ALOAD 5
+    NEW org/apache/commons/math3/util/Pair
+    DUP
+    ALOAD 0
+    ILOAD 6
+    DALOAD
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    ILOAD 6
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    INVOKESPECIAL org/apache/commons/math3/util/Pair.<init> (Ljava/lang/Object;Ljava/lang/Object;)V
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L17
+    LINENUMBER 702 L17
+    IINC 6 1
+    GOTO L14
+   L15
+    LINENUMBER 707 L15
+    ALOAD 1
+    GETSTATIC org/apache/commons/math3/util/MathArrays$OrderDirection.INCREASING : Lorg/apache/commons/math3/util/MathArrays$OrderDirection;
+    IF_ACMPNE L18
+    NEW org/apache/commons/math3/util/MathArrays$1
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/util/MathArrays$1.<init> ()V
+    GOTO L19
+   L18
+    NEW org/apache/commons/math3/util/MathArrays$2
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/util/MathArrays$2.<init> ()V
+   L19
+    ASTORE 6
+   L20
+    LINENUMBER 722 L20
+    ALOAD 5
+    ALOAD 6
+    INVOKESTATIC java/util/Collections.sort (Ljava/util/List;Ljava/util/Comparator;)V
+   L21
+    LINENUMBER 727 L21
+    ILOAD 4
+    NEWARRAY T_INT
+    ASTORE 7
+   L22
+    LINENUMBER 728 L22
+    ICONST_0
+    ISTORE 8
+   L23
+    ILOAD 8
+    ILOAD 4
+    IF_ICMPGE L24
+   L25
+    LINENUMBER 729 L25
+    ALOAD 5
+    ILOAD 8
+    INVOKEINTERFACE java/util/List.get (I)Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math3/util/Pair
+    ASTORE 9
+   L26
+    LINENUMBER 730 L26
+    ALOAD 0
+    ILOAD 8
+    ALOAD 9
+    INVOKEVIRTUAL org/apache/commons/math3/util/Pair.getKey ()Ljava/lang/Object;
+    CHECKCAST java/lang/Double
+    INVOKEVIRTUAL java/lang/Double.doubleValue ()D
+    DASTORE
+   L27
+    LINENUMBER 731 L27
+    ALOAD 7
+    ILOAD 8
+    ALOAD 9
+    INVOKEVIRTUAL org/apache/commons/math3/util/Pair.getValue ()Ljava/lang/Object;
+    CHECKCAST java/lang/Integer
+    INVOKEVIRTUAL java/lang/Integer.intValue ()I
+    IASTORE
+   L28
+    LINENUMBER 728 L28
+    IINC 8 1
+    GOTO L23
+   L24
+    LINENUMBER 736 L24
+    ICONST_0
+    ISTORE 8
+   L29
+    ILOAD 8
+    ILOAD 3
+    IF_ICMPGE L30
+   L31
+    LINENUMBER 738 L31
+    ALOAD 2
+    ILOAD 8
+    AALOAD
+    ASTORE 9
+   L32
+    LINENUMBER 739 L32
+    ALOAD 9
+    INVOKEVIRTUAL [D.clone ()Ljava/lang/Object;
+    CHECKCAST [D
+    ASTORE 10
+   L33
+    LINENUMBER 741 L33
+    ICONST_0
+    ISTORE 11
+   L34
+    ILOAD 11
+    ILOAD 4
+    IF_ICMPGE L35
+   L36
+    LINENUMBER 742 L36
+    ALOAD 9
+    ILOAD 11
+    ALOAD 10
+    ALOAD 7
+    ILOAD 11
+    IALOAD
+    DALOAD
+    DASTORE
+   L37
+    LINENUMBER 741 L37
+    IINC 11 1
+    GOTO L34
+   L35
+    LINENUMBER 736 L35
+    IINC 8 1
+    GOTO L29
+   L30
+    LINENUMBER 745 L30
+    RETURN
+   L38
+    LOCALVARIABLE y [D L8 L11 6
+    LOCALVARIABLE j I L5 L6 5
+    LOCALVARIABLE i I L14 L15 6
+    LOCALVARIABLE e Lorg/apache/commons/math3/util/Pair; L26 L28 9
+    // signature Lorg/apache/commons/math3/util/Pair<Ljava/lang/Double;Ljava/lang/Integer;>;
+    // declaration: e extends org.apache.commons.math3.util.Pair<java.lang.Double, java.lang.Integer>
+    LOCALVARIABLE i I L23 L24 8
+    LOCALVARIABLE i I L34 L35 11
+    LOCALVARIABLE yInPlace [D L32 L35 9
+    LOCALVARIABLE yOrig [D L33 L35 10
+    LOCALVARIABLE j I L29 L30 8
+    LOCALVARIABLE x [D L0 L38 0
+    LOCALVARIABLE dir Lorg/apache/commons/math3/util/MathArrays$OrderDirection; L0 L38 1
+    LOCALVARIABLE yList [[D L0 L38 2
+    LOCALVARIABLE yListLen I L3 L38 3
+    LOCALVARIABLE len I L4 L38 4
+    LOCALVARIABLE list Ljava/util/List; L13 L38 5
+    // signature Ljava/util/List<Lorg/apache/commons/math3/util/Pair<Ljava/lang/Double;Ljava/lang/Integer;>;>;
+    // declaration: list extends java.util.List<org.apache.commons.math3.util.Pair<java.lang.Double, java.lang.Integer>>
+    LOCALVARIABLE comp Ljava/util/Comparator; L20 L38 6
+    // signature Ljava/util/Comparator<Lorg/apache/commons/math3/util/Pair<Ljava/lang/Double;Ljava/lang/Integer;>;>;
+    // declaration: comp extends java.util.Comparator<org.apache.commons.math3.util.Pair<java.lang.Double, java.lang.Integer>>
+    LOCALVARIABLE indices [I L22 L38 7
+    MAXSTACK = 5
+    MAXLOCALS = 12
+
+  // access flags 0x9
+  public static copyOf([I)[I
+   L0
+    LINENUMBER 754 L0
+    ALOAD 0
+    ALOAD 0
+    ARRAYLENGTH
+    INVOKESTATIC org/apache/commons/math3/util/MathArrays.copyOf ([II)[I
+    ARETURN
+   L1
+    LOCALVARIABLE source [I L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static copyOf([D)[D
+   L0
+    LINENUMBER 764 L0
+    ALOAD 0
+    ALOAD 0
+    ARRAYLENGTH
+    INVOKESTATIC org/apache/commons/math3/util/MathArrays.copyOf ([DI)[D
+    ARETURN
+   L1
+    LOCALVARIABLE source [D L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x9
+  public static copyOf([II)[I
+   L0
+    LINENUMBER 777 L0
+    ILOAD 1
+    NEWARRAY T_INT
+    ASTORE 2
+   L1
+    LINENUMBER 778 L1
+    ALOAD 0
+    ICONST_0
+    ALOAD 2
+    ICONST_0
+    ILOAD 1
+    ALOAD 0
+    ARRAYLENGTH
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.min (II)I
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L2
+    LINENUMBER 779 L2
+    ALOAD 2
+    ARETURN
+   L3
+    LOCALVARIABLE source [I L0 L3 0
+    LOCALVARIABLE len I L0 L3 1
+    LOCALVARIABLE output [I L1 L3 2
+    MAXSTACK = 6
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static copyOf([DI)[D
+   L0
+    LINENUMBER 792 L0
+    ILOAD 1
+    NEWARRAY T_DOUBLE
+    ASTORE 2
+   L1
+    LINENUMBER 793 L1
+    ALOAD 0
+    ICONST_0
+    ALOAD 2
+    ICONST_0
+    ILOAD 1
+    ALOAD 0
+    ARRAYLENGTH
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.min (II)I
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L2
+    LINENUMBER 794 L2
+    ALOAD 2
+    ARETURN
+   L3
+    LOCALVARIABLE source [D L0 L3 0
+    LOCALVARIABLE len I L0 L3 1
+    LOCALVARIABLE output [D L1 L3 2
+    MAXSTACK = 6
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static linearCombination([D[D)D throws org/apache/commons/math3/exception/DimensionMismatchException 
+   L0
+    LINENUMBER 816 L0
+    ALOAD 0
+    ARRAYLENGTH
+    ISTORE 2
+   L1
+    LINENUMBER 817 L1
+    ILOAD 2
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPEQ L2
+   L3
+    LINENUMBER 818 L3
+    NEW org/apache/commons/math3/exception/DimensionMismatchException
+    DUP
+    ILOAD 2
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKESPECIAL org/apache/commons/math3/exception/DimensionMismatchException.<init> (II)V
+    ATHROW
+   L2
+    LINENUMBER 821 L2
+    ILOAD 2
+    ICONST_1
+    IF_ICMPNE L4
+   L5
+    LINENUMBER 823 L5
+    ALOAD 0
+    ICONST_0
+    DALOAD
+    ALOAD 1
+    ICONST_0
+    DALOAD
+    DMUL
+    DRETURN
+   L4
+    LINENUMBER 826 L4
+    ILOAD 2
+    NEWARRAY T_DOUBLE
+    ASTORE 3
+   L6
+    LINENUMBER 827 L6
+    DCONST_0
+    DSTORE 4
+   L7
+    LINENUMBER 829 L7
+    ICONST_0
+    ISTORE 6
+   L8
+    ILOAD 6
+    ILOAD 2
+    IF_ICMPGE L9
+   L10
+    LINENUMBER 830 L10
+    ALOAD 0
+    ILOAD 6
+    DALOAD
+    DSTORE 7
+   L11
+    LINENUMBER 831 L11
+    LDC 1.34217729E8
+    DLOAD 7
+    DMUL
+    DSTORE 9
+   L12
+    LINENUMBER 832 L12
+    DLOAD 9
+    DLOAD 9
+    DLOAD 7
+    DSUB
+    DSUB
+    DSTORE 11
+   L13
+    LINENUMBER 833 L13
+    DLOAD 7
+    DLOAD 11
+    DSUB
+    DSTORE 13
+   L14
+    LINENUMBER 835 L14
+    ALOAD 1
+    ILOAD 6
+    DALOAD
+    DSTORE 15
+   L15
+    LINENUMBER 836 L15
+    LDC 1.34217729E8
+    DLOAD 15
+    DMUL
+    DSTORE 17
+   L16
+    LINENUMBER 837 L16
+    DLOAD 17
+    DLOAD 17
+    DLOAD 15
+    DSUB
+    DSUB
+    DSTORE 19
+   L17
+    LINENUMBER 838 L17
+    DLOAD 15
+    DLOAD 19
+    DSUB
+    DSTORE 21
+   L18
+    LINENUMBER 839 L18
+    ALOAD 3
+    ILOAD 6
+    DLOAD 7
+    DLOAD 15
+    DMUL
+    DASTORE
+   L19
+    LINENUMBER 840 L19
+    DLOAD 13
+    DLOAD 21
+    DMUL
+    ALOAD 3
+    ILOAD 6
+    DALOAD
+    DLOAD 11
+    DLOAD 19
+    DMUL
+    DSUB
+    DLOAD 13
+    DLOAD 19
+    DMUL
+    DSUB
+    DLOAD 11
+    DLOAD 21
+    DMUL
+    DSUB
+    DSUB
+    DSTORE 23
+   L20
+    LINENUMBER 844 L20
+    DLOAD 4
+    DLOAD 23
+    DADD
+    DSTORE 4
+   L21
+    LINENUMBER 829 L21
+    IINC 6 1
+    GOTO L8
+   L9
+    LINENUMBER 848 L9
+    ALOAD 3
+    ICONST_0
+    DALOAD
+    DSTORE 6
+   L22
+    LINENUMBER 849 L22
+    ALOAD 3
+    ICONST_1
+    DALOAD
+    DSTORE 8
+   L23
+    LINENUMBER 850 L23
+    DLOAD 6
+    DLOAD 8
+    DADD
+    DSTORE 10
+   L24
+    LINENUMBER 851 L24
+    DLOAD 10
+    DLOAD 8
+    DSUB
+    DSTORE 12
+   L25
+    LINENUMBER 852 L25
+    DLOAD 8
+    DLOAD 10
+    DLOAD 12
+    DSUB
+    DSUB
+    DLOAD 6
+    DLOAD 12
+    DSUB
+    DADD
+    DSTORE 14
+   L26
+    LINENUMBER 854 L26
+    ILOAD 2
+    ICONST_1
+    ISUB
+    ISTORE 16
+   L27
+    LINENUMBER 855 L27
+    ICONST_1
+    ISTORE 17
+   L28
+    ILOAD 17
+    ILOAD 16
+    IF_ICMPGE L29
+   L30
+    LINENUMBER 856 L30
+    ALOAD 3
+    ILOAD 17
+    ICONST_1
+    IADD
+    DALOAD
+    DSTORE 8
+   L31
+    LINENUMBER 857 L31
+    DLOAD 10
+    DLOAD 8
+    DADD
+    DSTORE 18
+   L32
+    LINENUMBER 858 L32
+    DLOAD 18
+    DLOAD 8
+    DSUB
+    DSTORE 12
+   L33
+    LINENUMBER 859 L33
+    DLOAD 14
+    DLOAD 8
+    DLOAD 18
+    DLOAD 12
+    DSUB
+    DSUB
+    DLOAD 10
+    DLOAD 12
+    DSUB
+    DADD
+    DADD
+    DSTORE 14
+   L34
+    LINENUMBER 860 L34
+    DLOAD 18
+    DSTORE 10
+   L35
+    LINENUMBER 855 L35
+    IINC 17 1
+    GOTO L28
+   L29
+    LINENUMBER 863 L29
+    DLOAD 10
+    DLOAD 4
+    DLOAD 14
+    DADD
+    DADD
+    DSTORE 17
+   L36
+    LINENUMBER 865 L36
+    DLOAD 17
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L37
+   L38
+    LINENUMBER 868 L38
+    DCONST_0
+    DSTORE 17
+   L39
+    LINENUMBER 869 L39
+    ICONST_0
+    ISTORE 19
+   L40
+    ILOAD 19
+    ILOAD 2
+    IF_ICMPGE L37
+   L41
+    LINENUMBER 870 L41
+    DLOAD 17
+    ALOAD 0
+    ILOAD 19
+    DALOAD
+    ALOAD 1
+    ILOAD 19
+    DALOAD
+    DMUL
+    DADD
+    DSTORE 17
+   L42
+    LINENUMBER 869 L42
+    IINC 19 1
+    GOTO L40
+   L37
+    LINENUMBER 874 L37
+    DLOAD 17
+    DRETURN
+   L43
+    LOCALVARIABLE ai D L11 L21 7
+    LOCALVARIABLE ca D L12 L21 9
+    LOCALVARIABLE aHigh D L13 L21 11
+    LOCALVARIABLE aLow D L14 L21 13
+    LOCALVARIABLE bi D L15 L21 15
+    LOCALVARIABLE cb D L16 L21 17
+    LOCALVARIABLE bHigh D L17 L21 19
+    LOCALVARIABLE bLow D L18 L21 21
+    LOCALVARIABLE prodLow D L20 L21 23
+    LOCALVARIABLE i I L8 L9 6
+    LOCALVARIABLE sHighCur D L32 L35 18
+    LOCALVARIABLE i I L28 L29 17
+    LOCALVARIABLE i I L40 L37 19
+    LOCALVARIABLE a [D L0 L43 0
+    LOCALVARIABLE b [D L0 L43 1
+    LOCALVARIABLE len I L1 L43 2
+    LOCALVARIABLE prodHigh [D L6 L43 3
+    LOCALVARIABLE prodLowSum D L7 L43 4
+    LOCALVARIABLE prodHighCur D L22 L43 6
+    LOCALVARIABLE prodHighNext D L23 L43 8
+    LOCALVARIABLE sHighPrev D L24 L43 10
+    LOCALVARIABLE sPrime D L25 L43 12
+    LOCALVARIABLE sLowSum D L26 L43 14
+    LOCALVARIABLE lenMinusOne I L27 L43 16
+    LOCALVARIABLE result D L36 L43 17
+    MAXSTACK = 8
+    MAXLOCALS = 25
+
+  // access flags 0x9
+  public static linearCombination(DDDD)D
+   L0
+    LINENUMBER 913 L0
+    LDC 1.34217729E8
+    DLOAD 0
+    DMUL
+    DSTORE 8
+   L1
+    LINENUMBER 914 L1
+    DLOAD 8
+    DLOAD 8
+    DLOAD 0
+    DSUB
+    DSUB
+    DSTORE 10
+   L2
+    LINENUMBER 915 L2
+    DLOAD 0
+    DLOAD 10
+    DSUB
+    DSTORE 12
+   L3
+    LINENUMBER 916 L3
+    LDC 1.34217729E8
+    DLOAD 2
+    DMUL
+    DSTORE 14
+   L4
+    LINENUMBER 917 L4
+    DLOAD 14
+    DLOAD 14
+    DLOAD 2
+    DSUB
+    DSUB
+    DSTORE 16
+   L5
+    LINENUMBER 918 L5
+    DLOAD 2
+    DLOAD 16
+    DSUB
+    DSTORE 18
+   L6
+    LINENUMBER 921 L6
+    DLOAD 0
+    DLOAD 2
+    DMUL
+    DSTORE 20
+   L7
+    LINENUMBER 922 L7
+    DLOAD 12
+    DLOAD 18
+    DMUL
+    DLOAD 20
+    DLOAD 10
+    DLOAD 16
+    DMUL
+    DSUB
+    DLOAD 12
+    DLOAD 16
+    DMUL
+    DSUB
+    DLOAD 10
+    DLOAD 18
+    DMUL
+    DSUB
+    DSUB
+    DSTORE 22
+   L8
+    LINENUMBER 925 L8
+    LDC 1.34217729E8
+    DLOAD 4
+    DMUL
+    DSTORE 24
+   L9
+    LINENUMBER 926 L9
+    DLOAD 24
+    DLOAD 24
+    DLOAD 4
+    DSUB
+    DSUB
+    DSTORE 26
+   L10
+    LINENUMBER 927 L10
+    DLOAD 4
+    DLOAD 26
+    DSUB
+    DSTORE 28
+   L11
+    LINENUMBER 928 L11
+    LDC 1.34217729E8
+    DLOAD 6
+    DMUL
+    DSTORE 30
+   L12
+    LINENUMBER 929 L12
+    DLOAD 30
+    DLOAD 30
+    DLOAD 6
+    DSUB
+    DSUB
+    DSTORE 32
+   L13
+    LINENUMBER 930 L13
+    DLOAD 6
+    DLOAD 32
+    DSUB
+    DSTORE 34
+   L14
+    LINENUMBER 933 L14
+    DLOAD 4
+    DLOAD 6
+    DMUL
+    DSTORE 36
+   L15
+    LINENUMBER 934 L15
+    DLOAD 28
+    DLOAD 34
+    DMUL
+    DLOAD 36
+    DLOAD 26
+    DLOAD 32
+    DMUL
+    DSUB
+    DLOAD 28
+    DLOAD 32
+    DMUL
+    DSUB
+    DLOAD 26
+    DLOAD 34
+    DMUL
+    DSUB
+    DSUB
+    DSTORE 38
+   L16
+    LINENUMBER 937 L16
+    DLOAD 20
+    DLOAD 36
+    DADD
+    DSTORE 40
+   L17
+    LINENUMBER 938 L17
+    DLOAD 40
+    DLOAD 36
+    DSUB
+    DSTORE 42
+   L18
+    LINENUMBER 939 L18
+    DLOAD 36
+    DLOAD 40
+    DLOAD 42
+    DSUB
+    DSUB
+    DLOAD 20
+    DLOAD 42
+    DSUB
+    DADD
+    DSTORE 44
+   L19
+    LINENUMBER 943 L19
+    DLOAD 40
+    DLOAD 22
+    DLOAD 38
+    DADD
+    DLOAD 44
+    DADD
+    DADD
+    DSTORE 46
+   L20
+    LINENUMBER 945 L20
+    DLOAD 46
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L21
+   L22
+    LINENUMBER 948 L22
+    DLOAD 0
+    DLOAD 2
+    DMUL
+    DLOAD 4
+    DLOAD 6
+    DMUL
+    DADD
+    DSTORE 46
+   L21
+    LINENUMBER 951 L21
+    DLOAD 46
+    DRETURN
+   L23
+    LOCALVARIABLE a1 D L0 L23 0
+    LOCALVARIABLE b1 D L0 L23 2
+    LOCALVARIABLE a2 D L0 L23 4
+    LOCALVARIABLE b2 D L0 L23 6
+    LOCALVARIABLE ca1 D L1 L23 8
+    LOCALVARIABLE a1High D L2 L23 10
+    LOCALVARIABLE a1Low D L3 L23 12
+    LOCALVARIABLE cb1 D L4 L23 14
+    LOCALVARIABLE b1High D L5 L23 16
+    LOCALVARIABLE b1Low D L6 L23 18
+    LOCALVARIABLE prod1High D L7 L23 20
+    LOCALVARIABLE prod1Low D L8 L23 22
+    LOCALVARIABLE ca2 D L9 L23 24
+    LOCALVARIABLE a2High D L10 L23 26
+    LOCALVARIABLE a2Low D L11 L23 28
+    LOCALVARIABLE cb2 D L12 L23 30
+    LOCALVARIABLE b2High D L13 L23 32
+    LOCALVARIABLE b2Low D L14 L23 34
+    LOCALVARIABLE prod2High D L15 L23 36
+    LOCALVARIABLE prod2Low D L16 L23 38
+    LOCALVARIABLE s12High D L17 L23 40
+    LOCALVARIABLE s12Prime D L18 L23 42
+    LOCALVARIABLE s12Low D L19 L23 44
+    LOCALVARIABLE result D L20 L23 46
+    MAXSTACK = 8
+    MAXLOCALS = 48
+
+  // access flags 0x9
+  public static linearCombination(DDDDDD)D
+   L0
+    LINENUMBER 993 L0
+    LDC 1.34217729E8
+    DLOAD 0
+    DMUL
+    DSTORE 12
+   L1
+    LINENUMBER 994 L1
+    DLOAD 12
+    DLOAD 12
+    DLOAD 0
+    DSUB
+    DSUB
+    DSTORE 14
+   L2
+    LINENUMBER 995 L2
+    DLOAD 0
+    DLOAD 14
+    DSUB
+    DSTORE 16
+   L3
+    LINENUMBER 996 L3
+    LDC 1.34217729E8
+    DLOAD 2
+    DMUL
+    DSTORE 18
+   L4
+    LINENUMBER 997 L4
+    DLOAD 18
+    DLOAD 18
+    DLOAD 2
+    DSUB
+    DSUB
+    DSTORE 20
+   L5
+    LINENUMBER 998 L5
+    DLOAD 2
+    DLOAD 20
+    DSUB
+    DSTORE 22
+   L6
+    LINENUMBER 1001 L6
+    DLOAD 0
+    DLOAD 2
+    DMUL
+    DSTORE 24
+   L7
+    LINENUMBER 1002 L7
+    DLOAD 16
+    DLOAD 22
+    DMUL
+    DLOAD 24
+    DLOAD 14
+    DLOAD 20
+    DMUL
+    DSUB
+    DLOAD 16
+    DLOAD 20
+    DMUL
+    DSUB
+    DLOAD 14
+    DLOAD 22
+    DMUL
+    DSUB
+    DSUB
+    DSTORE 26
+   L8
+    LINENUMBER 1005 L8
+    LDC 1.34217729E8
+    DLOAD 4
+    DMUL
+    DSTORE 28
+   L9
+    LINENUMBER 1006 L9
+    DLOAD 28
+    DLOAD 28
+    DLOAD 4
+    DSUB
+    DSUB
+    DSTORE 30
+   L10
+    LINENUMBER 1007 L10
+    DLOAD 4
+    DLOAD 30
+    DSUB
+    DSTORE 32
+   L11
+    LINENUMBER 1008 L11
+    LDC 1.34217729E8
+    DLOAD 6
+    DMUL
+    DSTORE 34
+   L12
+    LINENUMBER 1009 L12
+    DLOAD 34
+    DLOAD 34
+    DLOAD 6
+    DSUB
+    DSUB
+    DSTORE 36
+   L13
+    LINENUMBER 1010 L13
+    DLOAD 6
+    DLOAD 36
+    DSUB
+    DSTORE 38
+   L14
+    LINENUMBER 1013 L14
+    DLOAD 4
+    DLOAD 6
+    DMUL
+    DSTORE 40
+   L15
+    LINENUMBER 1014 L15
+    DLOAD 32
+    DLOAD 38
+    DMUL
+    DLOAD 40
+    DLOAD 30
+    DLOAD 36
+    DMUL
+    DSUB
+    DLOAD 32
+    DLOAD 36
+    DMUL
+    DSUB
+    DLOAD 30
+    DLOAD 38
+    DMUL
+    DSUB
+    DSUB
+    DSTORE 42
+   L16
+    LINENUMBER 1017 L16
+    LDC 1.34217729E8
+    DLOAD 8
+    DMUL
+    DSTORE 44
+   L17
+    LINENUMBER 1018 L17
+    DLOAD 44
+    DLOAD 44
+    DLOAD 8
+    DSUB
+    DSUB
+    DSTORE 46
+   L18
+    LINENUMBER 1019 L18
+    DLOAD 8
+    DLOAD 46
+    DSUB
+    DSTORE 48
+   L19
+    LINENUMBER 1020 L19
+    LDC 1.34217729E8
+    DLOAD 10
+    DMUL
+    DSTORE 50
+   L20
+    LINENUMBER 1021 L20
+    DLOAD 50
+    DLOAD 50
+    DLOAD 10
+    DSUB
+    DSUB
+    DSTORE 52
+   L21
+    LINENUMBER 1022 L21
+    DLOAD 10
+    DLOAD 52
+    DSUB
+    DSTORE 54
+   L22
+    LINENUMBER 1025 L22
+    DLOAD 8
+    DLOAD 10
+    DMUL
+    DSTORE 56
+   L23
+    LINENUMBER 1026 L23
+    DLOAD 48
+    DLOAD 54
+    DMUL
+    DLOAD 56
+    DLOAD 46
+    DLOAD 52
+    DMUL
+    DSUB
+    DLOAD 48
+    DLOAD 52
+    DMUL
+    DSUB
+    DLOAD 46
+    DLOAD 54
+    DMUL
+    DSUB
+    DSUB
+    DSTORE 58
+   L24
+    LINENUMBER 1029 L24
+    DLOAD 24
+    DLOAD 40
+    DADD
+    DSTORE 60
+   L25
+    LINENUMBER 1030 L25
+    DLOAD 60
+    DLOAD 40
+    DSUB
+    DSTORE 62
+   L26
+    LINENUMBER 1031 L26
+    DLOAD 40
+    DLOAD 60
+    DLOAD 62
+    DSUB
+    DSUB
+    DLOAD 24
+    DLOAD 62
+    DSUB
+    DADD
+    DSTORE 64
+   L27
+    LINENUMBER 1034 L27
+    DLOAD 60
+    DLOAD 56
+    DADD
+    DSTORE 66
+   L28
+    LINENUMBER 1035 L28
+    DLOAD 66
+    DLOAD 56
+    DSUB
+    DSTORE 68
+   L29
+    LINENUMBER 1036 L29
+    DLOAD 56
+    DLOAD 66
+    DLOAD 68
+    DSUB
+    DSUB
+    DLOAD 60
+    DLOAD 68
+    DSUB
+    DADD
+    DSTORE 70
+   L30
+    LINENUMBER 1040 L30
+    DLOAD 66
+    DLOAD 26
+    DLOAD 42
+    DADD
+    DLOAD 58
+    DADD
+    DLOAD 64
+    DADD
+    DLOAD 70
+    DADD
+    DADD
+    DSTORE 72
+   L31
+    LINENUMBER 1042 L31
+    DLOAD 72
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L32
+   L33
+    LINENUMBER 1045 L33
+    DLOAD 0
+    DLOAD 2
+    DMUL
+    DLOAD 4
+    DLOAD 6
+    DMUL
+    DADD
+    DLOAD 8
+    DLOAD 10
+    DMUL
+    DADD
+    DSTORE 72
+   L32
+    LINENUMBER 1048 L32
+    DLOAD 72
+    DRETURN
+   L34
+    LOCALVARIABLE a1 D L0 L34 0
+    LOCALVARIABLE b1 D L0 L34 2
+    LOCALVARIABLE a2 D L0 L34 4
+    LOCALVARIABLE b2 D L0 L34 6
+    LOCALVARIABLE a3 D L0 L34 8
+    LOCALVARIABLE b3 D L0 L34 10
+    LOCALVARIABLE ca1 D L1 L34 12
+    LOCALVARIABLE a1High D L2 L34 14
+    LOCALVARIABLE a1Low D L3 L34 16
+    LOCALVARIABLE cb1 D L4 L34 18
+    LOCALVARIABLE b1High D L5 L34 20
+    LOCALVARIABLE b1Low D L6 L34 22
+    LOCALVARIABLE prod1High D L7 L34 24
+    LOCALVARIABLE prod1Low D L8 L34 26
+    LOCALVARIABLE ca2 D L9 L34 28
+    LOCALVARIABLE a2High D L10 L34 30
+    LOCALVARIABLE a2Low D L11 L34 32
+    LOCALVARIABLE cb2 D L12 L34 34
+    LOCALVARIABLE b2High D L13 L34 36
+    LOCALVARIABLE b2Low D L14 L34 38
+    LOCALVARIABLE prod2High D L15 L34 40
+    LOCALVARIABLE prod2Low D L16 L34 42
+    LOCALVARIABLE ca3 D L17 L34 44
+    LOCALVARIABLE a3High D L18 L34 46
+    LOCALVARIABLE a3Low D L19 L34 48
+    LOCALVARIABLE cb3 D L20 L34 50
+    LOCALVARIABLE b3High D L21 L34 52
+    LOCALVARIABLE b3Low D L22 L34 54
+    LOCALVARIABLE prod3High D L23 L34 56
+    LOCALVARIABLE prod3Low D L24 L34 58
+    LOCALVARIABLE s12High D L25 L34 60
+    LOCALVARIABLE s12Prime D L26 L34 62
+    LOCALVARIABLE s12Low D L27 L34 64
+    LOCALVARIABLE s123High D L28 L34 66
+    LOCALVARIABLE s123Prime D L29 L34 68
+    LOCALVARIABLE s123Low D L30 L34 70
+    LOCALVARIABLE result D L31 L34 72
+    MAXSTACK = 8
+    MAXLOCALS = 74
+
+  // access flags 0x9
+  public static linearCombination(DDDDDDDD)D
+   L0
+    LINENUMBER 1095 L0
+    LDC 1.34217729E8
+    DLOAD 0
+    DMUL
+    DSTORE 16
+   L1
+    LINENUMBER 1096 L1
+    DLOAD 16
+    DLOAD 16
+    DLOAD 0
+    DSUB
+    DSUB
+    DSTORE 18
+   L2
+    LINENUMBER 1097 L2
+    DLOAD 0
+    DLOAD 18
+    DSUB
+    DSTORE 20
+   L3
+    LINENUMBER 1098 L3
+    LDC 1.34217729E8
+    DLOAD 2
+    DMUL
+    DSTORE 22
+   L4
+    LINENUMBER 1099 L4
+    DLOAD 22
+    DLOAD 22
+    DLOAD 2
+    DSUB
+    DSUB
+    DSTORE 24
+   L5
+    LINENUMBER 1100 L5
+    DLOAD 2
+    DLOAD 24
+    DSUB
+    DSTORE 26
+   L6
+    LINENUMBER 1103 L6
+    DLOAD 0
+    DLOAD 2
+    DMUL
+    DSTORE 28
+   L7
+    LINENUMBER 1104 L7
+    DLOAD 20
+    DLOAD 26
+    DMUL
+    DLOAD 28
+    DLOAD 18
+    DLOAD 24
+    DMUL
+    DSUB
+    DLOAD 20
+    DLOAD 24
+    DMUL
+    DSUB
+    DLOAD 18
+    DLOAD 26
+    DMUL
+    DSUB
+    DSUB
+    DSTORE 30
+   L8
+    LINENUMBER 1107 L8
+    LDC 1.34217729E8
+    DLOAD 4
+    DMUL
+    DSTORE 32
+   L9
+    LINENUMBER 1108 L9
+    DLOAD 32
+    DLOAD 32
+    DLOAD 4
+    DSUB
+    DSUB
+    DSTORE 34
+   L10
+    LINENUMBER 1109 L10
+    DLOAD 4
+    DLOAD 34
+    DSUB
+    DSTORE 36
+   L11
+    LINENUMBER 1110 L11
+    LDC 1.34217729E8
+    DLOAD 6
+    DMUL
+    DSTORE 38
+   L12
+    LINENUMBER 1111 L12
+    DLOAD 38
+    DLOAD 38
+    DLOAD 6
+    DSUB
+    DSUB
+    DSTORE 40
+   L13
+    LINENUMBER 1112 L13
+    DLOAD 6
+    DLOAD 40
+    DSUB
+    DSTORE 42
+   L14
+    LINENUMBER 1115 L14
+    DLOAD 4
+    DLOAD 6
+    DMUL
+    DSTORE 44
+   L15
+    LINENUMBER 1116 L15
+    DLOAD 36
+    DLOAD 42
+    DMUL
+    DLOAD 44
+    DLOAD 34
+    DLOAD 40
+    DMUL
+    DSUB
+    DLOAD 36
+    DLOAD 40
+    DMUL
+    DSUB
+    DLOAD 34
+    DLOAD 42
+    DMUL
+    DSUB
+    DSUB
+    DSTORE 46
+   L16
+    LINENUMBER 1119 L16
+    LDC 1.34217729E8
+    DLOAD 8
+    DMUL
+    DSTORE 48
+   L17
+    LINENUMBER 1120 L17
+    DLOAD 48
+    DLOAD 48
+    DLOAD 8
+    DSUB
+    DSUB
+    DSTORE 50
+   L18
+    LINENUMBER 1121 L18
+    DLOAD 8
+    DLOAD 50
+    DSUB
+    DSTORE 52
+   L19
+    LINENUMBER 1122 L19
+    LDC 1.34217729E8
+    DLOAD 10
+    DMUL
+    DSTORE 54
+   L20
+    LINENUMBER 1123 L20
+    DLOAD 54
+    DLOAD 54
+    DLOAD 10
+    DSUB
+    DSUB
+    DSTORE 56
+   L21
+    LINENUMBER 1124 L21
+    DLOAD 10
+    DLOAD 56
+    DSUB
+    DSTORE 58
+   L22
+    LINENUMBER 1127 L22
+    DLOAD 8
+    DLOAD 10
+    DMUL
+    DSTORE 60
+   L23
+    LINENUMBER 1128 L23
+    DLOAD 52
+    DLOAD 58
+    DMUL
+    DLOAD 60
+    DLOAD 50
+    DLOAD 56
+    DMUL
+    DSUB
+    DLOAD 52
+    DLOAD 56
+    DMUL
+    DSUB
+    DLOAD 50
+    DLOAD 58
+    DMUL
+    DSUB
+    DSUB
+    DSTORE 62
+   L24
+    LINENUMBER 1131 L24
+    LDC 1.34217729E8
+    DLOAD 12
+    DMUL
+    DSTORE 64
+   L25
+    LINENUMBER 1132 L25
+    DLOAD 64
+    DLOAD 64
+    DLOAD 12
+    DSUB
+    DSUB
+    DSTORE 66
+   L26
+    LINENUMBER 1133 L26
+    DLOAD 12
+    DLOAD 66
+    DSUB
+    DSTORE 68
+   L27
+    LINENUMBER 1134 L27
+    LDC 1.34217729E8
+    DLOAD 14
+    DMUL
+    DSTORE 70
+   L28
+    LINENUMBER 1135 L28
+    DLOAD 70
+    DLOAD 70
+    DLOAD 14
+    DSUB
+    DSUB
+    DSTORE 72
+   L29
+    LINENUMBER 1136 L29
+    DLOAD 14
+    DLOAD 72
+    DSUB
+    DSTORE 74
+   L30
+    LINENUMBER 1139 L30
+    DLOAD 12
+    DLOAD 14
+    DMUL
+    DSTORE 76
+   L31
+    LINENUMBER 1140 L31
+    DLOAD 68
+    DLOAD 74
+    DMUL
+    DLOAD 76
+    DLOAD 66
+    DLOAD 72
+    DMUL
+    DSUB
+    DLOAD 68
+    DLOAD 72
+    DMUL
+    DSUB
+    DLOAD 66
+    DLOAD 74
+    DMUL
+    DSUB
+    DSUB
+    DSTORE 78
+   L32
+    LINENUMBER 1143 L32
+    DLOAD 28
+    DLOAD 44
+    DADD
+    DSTORE 80
+   L33
+    LINENUMBER 1144 L33
+    DLOAD 80
+    DLOAD 44
+    DSUB
+    DSTORE 82
+   L34
+    LINENUMBER 1145 L34
+    DLOAD 44
+    DLOAD 80
+    DLOAD 82
+    DSUB
+    DSUB
+    DLOAD 28
+    DLOAD 82
+    DSUB
+    DADD
+    DSTORE 84
+   L35
+    LINENUMBER 1148 L35
+    DLOAD 80
+    DLOAD 60
+    DADD
+    DSTORE 86
+   L36
+    LINENUMBER 1149 L36
+    DLOAD 86
+    DLOAD 60
+    DSUB
+    DSTORE 88
+   L37
+    LINENUMBER 1150 L37
+    DLOAD 60
+    DLOAD 86
+    DLOAD 88
+    DSUB
+    DSUB
+    DLOAD 80
+    DLOAD 88
+    DSUB
+    DADD
+    DSTORE 90
+   L38
+    LINENUMBER 1153 L38
+    DLOAD 86
+    DLOAD 76
+    DADD
+    DSTORE 92
+   L39
+    LINENUMBER 1154 L39
+    DLOAD 92
+    DLOAD 76
+    DSUB
+    DSTORE 94
+   L40
+    LINENUMBER 1155 L40
+    DLOAD 76
+    DLOAD 92
+    DLOAD 94
+    DSUB
+    DSUB
+    DLOAD 86
+    DLOAD 94
+    DSUB
+    DSUB
+    DSTORE 96
+   L41
+    LINENUMBER 1159 L41
+    DLOAD 92
+    DLOAD 30
+    DLOAD 46
+    DADD
+    DLOAD 62
+    DADD
+    DLOAD 78
+    DADD
+    DLOAD 84
+    DADD
+    DLOAD 90
+    DADD
+    DLOAD 96
+    DADD
+    DADD
+    DSTORE 98
+   L42
+    LINENUMBER 1161 L42
+    DLOAD 98
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L43
+   L44
+    LINENUMBER 1164 L44
+    DLOAD 0
+    DLOAD 2
+    DMUL
+    DLOAD 4
+    DLOAD 6
+    DMUL
+    DADD
+    DLOAD 8
+    DLOAD 10
+    DMUL
+    DADD
+    DLOAD 12
+    DLOAD 14
+    DMUL
+    DADD
+    DSTORE 98
+   L43
+    LINENUMBER 1167 L43
+    DLOAD 98
+    DRETURN
+   L45
+    LOCALVARIABLE a1 D L0 L45 0
+    LOCALVARIABLE b1 D L0 L45 2
+    LOCALVARIABLE a2 D L0 L45 4
+    LOCALVARIABLE b2 D L0 L45 6
+    LOCALVARIABLE a3 D L0 L45 8
+    LOCALVARIABLE b3 D L0 L45 10
+    LOCALVARIABLE a4 D L0 L45 12
+    LOCALVARIABLE b4 D L0 L45 14
+    LOCALVARIABLE ca1 D L1 L45 16
+    LOCALVARIABLE a1High D L2 L45 18
+    LOCALVARIABLE a1Low D L3 L45 20
+    LOCALVARIABLE cb1 D L4 L45 22
+    LOCALVARIABLE b1High D L5 L45 24
+    LOCALVARIABLE b1Low D L6 L45 26
+    LOCALVARIABLE prod1High D L7 L45 28
+    LOCALVARIABLE prod1Low D L8 L45 30
+    LOCALVARIABLE ca2 D L9 L45 32
+    LOCALVARIABLE a2High D L10 L45 34
+    LOCALVARIABLE a2Low D L11 L45 36
+    LOCALVARIABLE cb2 D L12 L45 38
+    LOCALVARIABLE b2High D L13 L45 40
+    LOCALVARIABLE b2Low D L14 L45 42
+    LOCALVARIABLE prod2High D L15 L45 44
+    LOCALVARIABLE prod2Low D L16 L45 46
+    LOCALVARIABLE ca3 D L17 L45 48
+    LOCALVARIABLE a3High D L18 L45 50
+    LOCALVARIABLE a3Low D L19 L45 52
+    LOCALVARIABLE cb3 D L20 L45 54
+    LOCALVARIABLE b3High D L21 L45 56
+    LOCALVARIABLE b3Low D L22 L45 58
+    LOCALVARIABLE prod3High D L23 L45 60
+    LOCALVARIABLE prod3Low D L24 L45 62
+    LOCALVARIABLE ca4 D L25 L45 64
+    LOCALVARIABLE a4High D L26 L45 66
+    LOCALVARIABLE a4Low D L27 L45 68
+    LOCALVARIABLE cb4 D L28 L45 70
+    LOCALVARIABLE b4High D L29 L45 72
+    LOCALVARIABLE b4Low D L30 L45 74
+    LOCALVARIABLE prod4High D L31 L45 76
+    LOCALVARIABLE prod4Low D L32 L45 78
+    LOCALVARIABLE s12High D L33 L45 80
+    LOCALVARIABLE s12Prime D L34 L45 82
+    LOCALVARIABLE s12Low D L35 L45 84
+    LOCALVARIABLE s123High D L36 L45 86
+    LOCALVARIABLE s123Prime D L37 L45 88
+    LOCALVARIABLE s123Low D L38 L45 90
+    LOCALVARIABLE s1234High D L39 L45 92
+    LOCALVARIABLE s1234Prime D L40 L45 94
+    LOCALVARIABLE s1234Low D L41 L45 96
+    LOCALVARIABLE result D L42 L45 98
+    MAXSTACK = 8
+    MAXLOCALS = 100
+
+  // access flags 0x9
+  public static equals([F[F)Z
+   L0
+    LINENUMBER 1181 L0
+    ALOAD 0
+    IFNULL L1
+    ALOAD 1
+    IFNONNULL L2
+   L1
+    LINENUMBER 1182 L1
+    ALOAD 0
+    IFNONNULL L3
+    ICONST_1
+    GOTO L4
+   L3
+    ICONST_0
+   L4
+    ALOAD 1
+    IFNONNULL L5
+    ICONST_1
+    GOTO L6
+   L5
+    ICONST_0
+   L6
+    IXOR
+    IFNE L7
+    ICONST_1
+    GOTO L8
+   L7
+    ICONST_0
+   L8
+    IRETURN
+   L2
+    LINENUMBER 1184 L2
+    ALOAD 0
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPEQ L9
+   L10
+    LINENUMBER 1185 L10
+    ICONST_0
+    IRETURN
+   L9
+    LINENUMBER 1187 L9
+    ICONST_0
+    ISTORE 2
+   L11
+    ILOAD 2
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L12
+   L13
+    LINENUMBER 1188 L13
+    ALOAD 0
+    ILOAD 2
+    FALOAD
+    ALOAD 1
+    ILOAD 2
+    FALOAD
+    INVOKESTATIC org/apache/commons/math3/util/Precision.equals (FF)Z
+    IFNE L14
+   L15
+    LINENUMBER 1189 L15
+    ICONST_0
+    IRETURN
+   L14
+    LINENUMBER 1187 L14
+    IINC 2 1
+    GOTO L11
+   L12
+    LINENUMBER 1192 L12
+    ICONST_1
+    IRETURN
+   L16
+    LOCALVARIABLE i I L11 L12 2
+    LOCALVARIABLE x [F L0 L16 0
+    LOCALVARIABLE y [F L0 L16 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static equalsIncludingNaN([F[F)Z
+   L0
+    LINENUMBER 1207 L0
+    ALOAD 0
+    IFNULL L1
+    ALOAD 1
+    IFNONNULL L2
+   L1
+    LINENUMBER 1208 L1
+    ALOAD 0
+    IFNONNULL L3
+    ICONST_1
+    GOTO L4
+   L3
+    ICONST_0
+   L4
+    ALOAD 1
+    IFNONNULL L5
+    ICONST_1
+    GOTO L6
+   L5
+    ICONST_0
+   L6
+    IXOR
+    IFNE L7
+    ICONST_1
+    GOTO L8
+   L7
+    ICONST_0
+   L8
+    IRETURN
+   L2
+    LINENUMBER 1210 L2
+    ALOAD 0
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPEQ L9
+   L10
+    LINENUMBER 1211 L10
+    ICONST_0
+    IRETURN
+   L9
+    LINENUMBER 1213 L9
+    ICONST_0
+    ISTORE 2
+   L11
+    ILOAD 2
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L12
+   L13
+    LINENUMBER 1214 L13
+    ALOAD 0
+    ILOAD 2
+    FALOAD
+    ALOAD 1
+    ILOAD 2
+    FALOAD
+    INVOKESTATIC org/apache/commons/math3/util/Precision.equalsIncludingNaN (FF)Z
+    IFNE L14
+   L15
+    LINENUMBER 1215 L15
+    ICONST_0
+    IRETURN
+   L14
+    LINENUMBER 1213 L14
+    IINC 2 1
+    GOTO L11
+   L12
+    LINENUMBER 1218 L12
+    ICONST_1
+    IRETURN
+   L16
+    LOCALVARIABLE i I L11 L12 2
+    LOCALVARIABLE x [F L0 L16 0
+    LOCALVARIABLE y [F L0 L16 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static equals([D[D)Z
+   L0
+    LINENUMBER 1232 L0
+    ALOAD 0
+    IFNULL L1
+    ALOAD 1
+    IFNONNULL L2
+   L1
+    LINENUMBER 1233 L1
+    ALOAD 0
+    IFNONNULL L3
+    ICONST_1
+    GOTO L4
+   L3
+    ICONST_0
+   L4
+    ALOAD 1
+    IFNONNULL L5
+    ICONST_1
+    GOTO L6
+   L5
+    ICONST_0
+   L6
+    IXOR
+    IFNE L7
+    ICONST_1
+    GOTO L8
+   L7
+    ICONST_0
+   L8
+    IRETURN
+   L2
+    LINENUMBER 1235 L2
+    ALOAD 0
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPEQ L9
+   L10
+    LINENUMBER 1236 L10
+    ICONST_0
+    IRETURN
+   L9
+    LINENUMBER 1238 L9
+    ICONST_0
+    ISTORE 2
+   L11
+    ILOAD 2
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L12
+   L13
+    LINENUMBER 1239 L13
+    ALOAD 0
+    ILOAD 2
+    DALOAD
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/Precision.equals (DD)Z
+    IFNE L14
+   L15
+    LINENUMBER 1240 L15
+    ICONST_0
+    IRETURN
+   L14
+    LINENUMBER 1238 L14
+    IINC 2 1
+    GOTO L11
+   L12
+    LINENUMBER 1243 L12
+    ICONST_1
+    IRETURN
+   L16
+    LOCALVARIABLE i I L11 L12 2
+    LOCALVARIABLE x [D L0 L16 0
+    LOCALVARIABLE y [D L0 L16 1
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static equalsIncludingNaN([D[D)Z
+   L0
+    LINENUMBER 1258 L0
+    ALOAD 0
+    IFNULL L1
+    ALOAD 1
+    IFNONNULL L2
+   L1
+    LINENUMBER 1259 L1
+    ALOAD 0
+    IFNONNULL L3
+    ICONST_1
+    GOTO L4
+   L3
+    ICONST_0
+   L4
+    ALOAD 1
+    IFNONNULL L5
+    ICONST_1
+    GOTO L6
+   L5
+    ICONST_0
+   L6
+    IXOR
+    IFNE L7
+    ICONST_1
+    GOTO L8
+   L7
+    ICONST_0
+   L8
+    IRETURN
+   L2
+    LINENUMBER 1261 L2
+    ALOAD 0
+    ARRAYLENGTH
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPEQ L9
+   L10
+    LINENUMBER 1262 L10
+    ICONST_0
+    IRETURN
+   L9
+    LINENUMBER 1264 L9
+    ICONST_0
+    ISTORE 2
+   L11
+    ILOAD 2
+    ALOAD 0
+    ARRAYLENGTH
+    IF_ICMPGE L12
+   L13
+    LINENUMBER 1265 L13
+    ALOAD 0
+    ILOAD 2
+    DALOAD
+    ALOAD 1
+    ILOAD 2
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/Precision.equalsIncludingNaN (DD)Z
+    IFNE L14
+   L15
+    LINENUMBER 1266 L15
+    ICONST_0
+    IRETURN
+   L14
+    LINENUMBER 1264 L14
+    IINC 2 1
+    GOTO L11
+   L12
+    LINENUMBER 1269 L12
+    ICONST_1
+    IRETURN
+   L16
+    LOCALVARIABLE i I L11 L12 2
+    LOCALVARIABLE x [D L0 L16 0
+    LOCALVARIABLE y [D L0 L16 1
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  public static normalizeArray([DD)[D throws org/apache/commons/math3/exception/MathIllegalArgumentException org/apache/commons/math3/exception/MathArithmeticException 
+   L0
+    LINENUMBER 1296 L0
+    DLOAD 1
+    INVOKESTATIC java/lang/Double.isInfinite (D)Z
+    IFEQ L1
+   L2
+    LINENUMBER 1297 L2
+    NEW org/apache/commons/math3/exception/MathIllegalArgumentException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.NORMALIZE_INFINITE : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESPECIAL org/apache/commons/math3/exception/MathIllegalArgumentException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L1
+    LINENUMBER 1299 L1
+    DLOAD 1
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L3
+   L4
+    LINENUMBER 1300 L4
+    NEW org/apache/commons/math3/exception/MathIllegalArgumentException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.NORMALIZE_NAN : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESPECIAL org/apache/commons/math3/exception/MathIllegalArgumentException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L3
+    LINENUMBER 1302 L3
+    DCONST_0
+    DSTORE 3
+   L5
+    LINENUMBER 1303 L5
+    ALOAD 0
+    ARRAYLENGTH
+    ISTORE 5
+   L6
+    LINENUMBER 1304 L6
+    ILOAD 5
+    NEWARRAY T_DOUBLE
+    ASTORE 6
+   L7
+    LINENUMBER 1305 L7
+    ICONST_0
+    ISTORE 7
+   L8
+    ILOAD 7
+    ILOAD 5
+    IF_ICMPGE L9
+   L10
+    LINENUMBER 1306 L10
+    ALOAD 0
+    ILOAD 7
+    DALOAD
+    INVOKESTATIC java/lang/Double.isInfinite (D)Z
+    IFEQ L11
+   L12
+    LINENUMBER 1307 L12
+    NEW org/apache/commons/math3/exception/MathIllegalArgumentException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.INFINITE_ARRAY_ELEMENT : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_2
+    ANEWARRAY java/lang/Object
+    DUP
+    ICONST_0
+    ALOAD 0
+    ILOAD 7
+    DALOAD
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    AASTORE
+    DUP
+    ICONST_1
+    ILOAD 7
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    INVOKESPECIAL org/apache/commons/math3/exception/MathIllegalArgumentException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L11
+    LINENUMBER 1309 L11
+    ALOAD 0
+    ILOAD 7
+    DALOAD
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFNE L13
+   L14
+    LINENUMBER 1310 L14
+    DLOAD 3
+    ALOAD 0
+    ILOAD 7
+    DALOAD
+    DADD
+    DSTORE 3
+   L13
+    LINENUMBER 1305 L13
+    IINC 7 1
+    GOTO L8
+   L9
+    LINENUMBER 1313 L9
+    DLOAD 3
+    DCONST_0
+    DCMPL
+    IFNE L15
+   L16
+    LINENUMBER 1314 L16
+    NEW org/apache/commons/math3/exception/MathArithmeticException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.ARRAY_SUMS_TO_ZERO : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESPECIAL org/apache/commons/math3/exception/MathArithmeticException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;[Ljava/lang/Object;)V
+    ATHROW
+   L15
+    LINENUMBER 1316 L15
+    ICONST_0
+    ISTORE 7
+   L17
+    ILOAD 7
+    ILOAD 5
+    IF_ICMPGE L18
+   L19
+    LINENUMBER 1317 L19
+    ALOAD 0
+    ILOAD 7
+    DALOAD
+    INVOKESTATIC java/lang/Double.isNaN (D)Z
+    IFEQ L20
+   L21
+    LINENUMBER 1318 L21
+    ALOAD 6
+    ILOAD 7
+    LDC NaN
+    DASTORE
+    GOTO L22
+   L20
+    LINENUMBER 1320 L20
+    ALOAD 6
+    ILOAD 7
+    ALOAD 0
+    ILOAD 7
+    DALOAD
+    DLOAD 1
+    DMUL
+    DLOAD 3
+    DDIV
+    DASTORE
+   L22
+    LINENUMBER 1316 L22
+    IINC 7 1
+    GOTO L17
+   L18
+    LINENUMBER 1323 L18
+    ALOAD 6
+    ARETURN
+   L23
+    LOCALVARIABLE i I L8 L9 7
+    LOCALVARIABLE i I L17 L18 7
+    LOCALVARIABLE values [D L0 L23 0
+    LOCALVARIABLE normalizedSum D L0 L23 1
+    LOCALVARIABLE sum D L5 L23 3
+    LOCALVARIABLE len I L6 L23 5
+    LOCALVARIABLE out [D L7 L23 6
+    MAXSTACK = 8
+    MAXLOCALS = 8
+
+  // access flags 0x9
+  // signature <T:Ljava/lang/Object;>(Lorg/apache/commons/math3/Field<TT;>;I)[TT;
+  // declaration: T[] buildArray<T>(org.apache.commons.math3.Field<T>, int)
+  public static buildArray(Lorg/apache/commons/math3/Field;I)[Ljava/lang/Object;
+   L0
+    LINENUMBER 1338 L0
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/Field.getRuntimeClass ()Ljava/lang/Class; (itf)
+    ILOAD 1
+    INVOKESTATIC java/lang/reflect/Array.newInstance (Ljava/lang/Class;I)Ljava/lang/Object;
+    CHECKCAST [Ljava/lang/Object;
+    CHECKCAST [Ljava/lang/Object;
+    ASTORE 2
+   L1
+    LINENUMBER 1339 L1
+    ALOAD 2
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/Field.getZero ()Ljava/lang/Object; (itf)
+    INVOKESTATIC java/util/Arrays.fill ([Ljava/lang/Object;Ljava/lang/Object;)V
+   L2
+    LINENUMBER 1340 L2
+    ALOAD 2
+    ARETURN
+   L3
+    LOCALVARIABLE field Lorg/apache/commons/math3/Field; L0 L3 0
+    // signature Lorg/apache/commons/math3/Field<TT;>;
+    // declaration: field extends org.apache.commons.math3.Field<T>
+    LOCALVARIABLE length I L0 L3 1
+    LOCALVARIABLE array [Ljava/lang/Object; L1 L3 2
+    // signature [TT;
+    // declaration: array extends T[]
+    MAXSTACK = 2
+    MAXLOCALS = 3
+
+  // access flags 0x9
+  // signature <T:Ljava/lang/Object;>(Lorg/apache/commons/math3/Field<TT;>;II)[[TT;
+  // declaration: T[][] buildArray<T>(org.apache.commons.math3.Field<T>, int, int)
+  public static buildArray(Lorg/apache/commons/math3/Field;II)[[Ljava/lang/Object;
+   L0
+    LINENUMBER 1358 L0
+    ILOAD 2
+    IFGE L1
+   L2
+    LINENUMBER 1359 L2
+    ALOAD 0
+    ICONST_0
+    INVOKESTATIC org/apache/commons/math3/util/MathArrays.buildArray (Lorg/apache/commons/math3/Field;I)[Ljava/lang/Object;
+    ASTORE 4
+   L3
+    LINENUMBER 1360 L3
+    ALOAD 4
+    INVOKEVIRTUAL java/lang/Object.getClass ()Ljava/lang/Class;
+    ILOAD 1
+    INVOKESTATIC java/lang/reflect/Array.newInstance (Ljava/lang/Class;I)Ljava/lang/Object;
+    CHECKCAST [[Ljava/lang/Object;
+    CHECKCAST [[Ljava/lang/Object;
+    ASTORE 3
+   L4
+    LINENUMBER 1361 L4
+    GOTO L5
+   L1
+    LINENUMBER 1362 L1
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/Field.getRuntimeClass ()Ljava/lang/Class; (itf)
+    ICONST_2
+    NEWARRAY T_INT
+    DUP
+    ICONST_0
+    ILOAD 1
+    IASTORE
+    DUP
+    ICONST_1
+    ILOAD 2
+    IASTORE
+    INVOKESTATIC java/lang/reflect/Array.newInstance (Ljava/lang/Class;[I)Ljava/lang/Object;
+    CHECKCAST [[Ljava/lang/Object;
+    CHECKCAST [[Ljava/lang/Object;
+    ASTORE 3
+   L6
+    LINENUMBER 1366 L6
+    ICONST_0
+    ISTORE 4
+   L7
+    ILOAD 4
+    ILOAD 1
+    IF_ICMPGE L5
+   L8
+    LINENUMBER 1367 L8
+    ALOAD 3
+    ILOAD 4
+    AALOAD
+    ALOAD 0
+    INVOKEINTERFACE org/apache/commons/math3/Field.getZero ()Ljava/lang/Object; (itf)
+    INVOKESTATIC java/util/Arrays.fill ([Ljava/lang/Object;Ljava/lang/Object;)V
+   L9
+    LINENUMBER 1366 L9
+    IINC 4 1
+    GOTO L7
+   L5
+    LINENUMBER 1370 L5
+    ALOAD 3
+    ARETURN
+   L10
+    LOCALVARIABLE dummyRow [Ljava/lang/Object; L3 L4 4
+    // signature [TT;
+    // declaration: dummyRow extends T[]
+    LOCALVARIABLE array [[Ljava/lang/Object; L4 L1 3
+    // signature [[TT;
+    // declaration: array extends T[][]
+    LOCALVARIABLE i I L7 L5 4
+    LOCALVARIABLE field Lorg/apache/commons/math3/Field; L0 L10 0
+    // signature Lorg/apache/commons/math3/Field<TT;>;
+    // declaration: field extends org.apache.commons.math3.Field<T>
+    LOCALVARIABLE rows I L0 L10 1
+    LOCALVARIABLE columns I L0 L10 2
+    LOCALVARIABLE array [[Ljava/lang/Object; L6 L10 3
+    // signature [[TT;
+    // declaration: array extends T[][]
+    MAXSTACK = 5
+    MAXLOCALS = 5
+
+  // access flags 0x9
+  public static convolve([D[D)[D throws org/apache/commons/math3/exception/NullArgumentException org/apache/commons/math3/exception/NoDataException 
+   L0
+    LINENUMBER 1398 L0
+    ALOAD 0
+    INVOKESTATIC org/apache/commons/math3/util/MathUtils.checkNotNull (Ljava/lang/Object;)V
+   L1
+    LINENUMBER 1399 L1
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math3/util/MathUtils.checkNotNull (Ljava/lang/Object;)V
+   L2
+    LINENUMBER 1401 L2
+    ALOAD 0
+    ARRAYLENGTH
+    ISTORE 2
+   L3
+    LINENUMBER 1402 L3
+    ALOAD 1
+    ARRAYLENGTH
+    ISTORE 3
+   L4
+    LINENUMBER 1404 L4
+    ILOAD 2
+    IFEQ L5
+    ILOAD 3
+    IFNE L6
+   L5
+    LINENUMBER 1405 L5
+    NEW org/apache/commons/math3/exception/NoDataException
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/exception/NoDataException.<init> ()V
+    ATHROW
+   L6
+    LINENUMBER 1409 L6
+    ILOAD 2
+    ILOAD 3
+    IADD
+    ICONST_1
+    ISUB
+    ISTORE 4
+   L7
+    LINENUMBER 1410 L7
+    ILOAD 4
+    NEWARRAY T_DOUBLE
+    ASTORE 5
+   L8
+    LINENUMBER 1413 L8
+    ICONST_0
+    ISTORE 6
+   L9
+    ILOAD 6
+    ILOAD 4
+    IF_ICMPGE L10
+   L11
+    LINENUMBER 1414 L11
+    DCONST_0
+    DSTORE 7
+   L12
+    LINENUMBER 1415 L12
+    ICONST_0
+    ILOAD 6
+    ICONST_1
+    IADD
+    ILOAD 2
+    ISUB
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.max (II)I
+    ISTORE 9
+   L13
+    LINENUMBER 1416 L13
+    ILOAD 6
+    ILOAD 9
+    ISUB
+    ISTORE 10
+   L14
+    LINENUMBER 1417 L14
+    ILOAD 9
+    ILOAD 3
+    IF_ICMPGE L15
+    ILOAD 10
+    IFLT L15
+   L16
+    LINENUMBER 1418 L16
+    DLOAD 7
+    ALOAD 0
+    ILOAD 10
+    IINC 10 -1
+    DALOAD
+    ALOAD 1
+    ILOAD 9
+    IINC 9 1
+    DALOAD
+    DMUL
+    DADD
+    DSTORE 7
+    GOTO L14
+   L15
+    LINENUMBER 1420 L15
+    ALOAD 5
+    ILOAD 6
+    DLOAD 7
+    DASTORE
+   L17
+    LINENUMBER 1413 L17
+    IINC 6 1
+    GOTO L9
+   L10
+    LINENUMBER 1423 L10
+    ALOAD 5
+    ARETURN
+   L18
+    LOCALVARIABLE yn D L12 L17 7
+    LOCALVARIABLE k I L13 L17 9
+    LOCALVARIABLE j I L14 L17 10
+    LOCALVARIABLE n I L9 L10 6
+    LOCALVARIABLE x [D L0 L18 0
+    LOCALVARIABLE h [D L0 L18 1
+    LOCALVARIABLE xLen I L3 L18 2
+    LOCALVARIABLE hLen I L4 L18 3
+    LOCALVARIABLE totalLength I L7 L18 4
+    LOCALVARIABLE y [D L8 L18 5
+    MAXSTACK = 6
+    MAXLOCALS = 11
+}
+

@@ -1,0 +1,324 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math/distribution/PoissonDistributionImpl extends org/apache/commons/math/distribution/AbstractIntegerDistribution implements org/apache/commons/math/distribution/PoissonDistribution java/io/Serializable {
+
+  // compiled from: PoissonDistributionImpl.java
+
+  // access flags 0x19
+  public final static I DEFAULT_MAX_ITERATIONS = 10000000
+
+  // access flags 0x19
+  public final static D DEFAULT_EPSILON = 1.0E-12
+
+  // access flags 0x1A
+  private final static J serialVersionUID = -3349935121172596109
+
+  // access flags 0x2
+  private Lorg/apache/commons/math/distribution/NormalDistribution; normal
+
+  // access flags 0x2
+  private D mean
+
+  // access flags 0x2
+  private I maxIterations
+
+  // access flags 0x2
+  private D epsilon
+
+  // access flags 0x1
+  public <init>(D)V
+   L0
+    LINENUMBER 80 L0
+    ALOAD 0
+    DLOAD 1
+    LDC 1.0E-12
+    LDC 10000000
+    INVOKESPECIAL org/apache/commons/math/distribution/PoissonDistributionImpl.<init> (DDI)V
+   L1
+    LINENUMBER 81 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/distribution/PoissonDistributionImpl; L0 L2 0
+    LOCALVARIABLE p D L0 L2 1
+    MAXSTACK = 6
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public <init>(DDI)V
+   L0
+    LINENUMBER 92 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/distribution/AbstractIntegerDistribution.<init> ()V
+   L1
+    LINENUMBER 65 L1
+    ALOAD 0
+    LDC 10000000
+    PUTFIELD org/apache/commons/math/distribution/PoissonDistributionImpl.maxIterations : I
+   L2
+    LINENUMBER 70 L2
+    ALOAD 0
+    LDC 1.0E-12
+    PUTFIELD org/apache/commons/math/distribution/PoissonDistributionImpl.epsilon : D
+   L3
+    LINENUMBER 93 L3
+    DLOAD 1
+    DCONST_0
+    DCMPG
+    IFGT L4
+   L5
+    LINENUMBER 94 L5
+    NEW org/apache/commons/math/exception/NotStrictlyPositiveException
+    DUP
+    GETSTATIC org/apache/commons/math/exception/util/LocalizedFormats.MEAN : Lorg/apache/commons/math/exception/util/LocalizedFormats;
+    DLOAD 1
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    INVOKESPECIAL org/apache/commons/math/exception/NotStrictlyPositiveException.<init> (Lorg/apache/commons/math/exception/util/Localizable;Ljava/lang/Number;)V
+    ATHROW
+   L4
+    LINENUMBER 96 L4
+    ALOAD 0
+    DLOAD 1
+    PUTFIELD org/apache/commons/math/distribution/PoissonDistributionImpl.mean : D
+   L6
+    LINENUMBER 97 L6
+    ALOAD 0
+    NEW org/apache/commons/math/distribution/NormalDistributionImpl
+    DUP
+    DLOAD 1
+    DLOAD 1
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    INVOKESPECIAL org/apache/commons/math/distribution/NormalDistributionImpl.<init> (DD)V
+    PUTFIELD org/apache/commons/math/distribution/PoissonDistributionImpl.normal : Lorg/apache/commons/math/distribution/NormalDistribution;
+   L7
+    LINENUMBER 98 L7
+    ALOAD 0
+    DLOAD 3
+    PUTFIELD org/apache/commons/math/distribution/PoissonDistributionImpl.epsilon : D
+   L8
+    LINENUMBER 99 L8
+    ALOAD 0
+    ILOAD 5
+    POP
+    POP
+   L9
+    LINENUMBER 100 L9
+    RETURN
+   L10
+    LOCALVARIABLE this Lorg/apache/commons/math/distribution/PoissonDistributionImpl; L0 L10 0
+    LOCALVARIABLE p D L0 L10 1
+    LOCALVARIABLE epsilon D L0 L10 3
+    LOCALVARIABLE maxIterations I L0 L10 5
+    MAXSTACK = 7
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public <init>(DD)V
+   L0
+    LINENUMBER 110 L0
+    ALOAD 0
+    DLOAD 1
+    DLOAD 3
+    LDC 10000000
+    INVOKESPECIAL org/apache/commons/math/distribution/PoissonDistributionImpl.<init> (DDI)V
+   L1
+    LINENUMBER 111 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/distribution/PoissonDistributionImpl; L0 L2 0
+    LOCALVARIABLE p D L0 L2 1
+    LOCALVARIABLE epsilon D L0 L2 3
+    MAXSTACK = 6
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public <init>(DI)V
+   L0
+    LINENUMBER 121 L0
+    ALOAD 0
+    DLOAD 1
+    LDC 1.0E-12
+    ILOAD 3
+    INVOKESPECIAL org/apache/commons/math/distribution/PoissonDistributionImpl.<init> (DDI)V
+   L1
+    LINENUMBER 122 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/distribution/PoissonDistributionImpl; L0 L2 0
+    LOCALVARIABLE p D L0 L2 1
+    LOCALVARIABLE maxIterations I L0 L2 3
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public getMean()D
+   L0
+    LINENUMBER 130 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/distribution/PoissonDistributionImpl.mean : D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/distribution/PoissonDistributionImpl; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public probability(I)D
+   L0
+    LINENUMBER 142 L0
+    ILOAD 1
+    IFLT L1
+    ILOAD 1
+    LDC 2147483647
+    IF_ICMPNE L2
+   L1
+    LINENUMBER 143 L1
+    DCONST_0
+    DSTORE 2
+   L3
+    GOTO L4
+   L2
+    LINENUMBER 144 L2
+    ILOAD 1
+    IFNE L5
+   L6
+    LINENUMBER 145 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/distribution/PoissonDistributionImpl.mean : D
+    DNEG
+    INVOKESTATIC org/apache/commons/math/util/FastMath.exp (D)D
+    DSTORE 2
+   L7
+    GOTO L4
+   L5
+    LINENUMBER 147 L5
+    ILOAD 1
+    I2D
+    INVOKESTATIC org/apache/commons/math/distribution/SaddlePointExpansion.getStirlingError (D)D
+    DNEG
+    ILOAD 1
+    I2D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/distribution/PoissonDistributionImpl.mean : D
+    INVOKESTATIC org/apache/commons/math/distribution/SaddlePointExpansion.getDeviancePart (DD)D
+    DSUB
+    INVOKESTATIC org/apache/commons/math/util/FastMath.exp (D)D
+    LDC 6.283185307179586
+    ILOAD 1
+    I2D
+    DMUL
+    INVOKESTATIC org/apache/commons/math/util/FastMath.sqrt (D)D
+    DDIV
+    DSTORE 2
+   L4
+    LINENUMBER 151 L4
+    DLOAD 2
+    DRETURN
+   L8
+    LOCALVARIABLE ret D L3 L2 2
+    LOCALVARIABLE ret D L7 L5 2
+    LOCALVARIABLE this Lorg/apache/commons/math/distribution/PoissonDistributionImpl; L0 L8 0
+    LOCALVARIABLE x I L0 L8 1
+    LOCALVARIABLE ret D L4 L8 2
+    MAXSTACK = 6
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public cumulativeProbability(I)D throws org/apache/commons/math/MathException 
+   L0
+    LINENUMBER 165 L0
+    ILOAD 1
+    IFGE L1
+   L2
+    LINENUMBER 166 L2
+    DCONST_0
+    DRETURN
+   L1
+    LINENUMBER 168 L1
+    ILOAD 1
+    LDC 2147483647
+    IF_ICMPNE L3
+   L4
+    LINENUMBER 169 L4
+    DCONST_1
+    DRETURN
+   L3
+    LINENUMBER 171 L3
+    ILOAD 1
+    I2D
+    DCONST_1
+    DADD
+    ALOAD 0
+    GETFIELD org/apache/commons/math/distribution/PoissonDistributionImpl.mean : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/distribution/PoissonDistributionImpl.epsilon : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/distribution/PoissonDistributionImpl.maxIterations : I
+    INVOKESTATIC org/apache/commons/math/special/Gamma.regularizedGammaQ (DDDI)D
+    DRETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/distribution/PoissonDistributionImpl; L0 L5 0
+    LOCALVARIABLE x I L0 L5 1
+    MAXSTACK = 7
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public normalApproximateProbability(I)D throws org/apache/commons/math/MathException 
+   L0
+    LINENUMBER 191 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/distribution/PoissonDistributionImpl.normal : Lorg/apache/commons/math/distribution/NormalDistribution;
+    ILOAD 1
+    I2D
+    LDC 0.5
+    DADD
+    INVOKEINTERFACE org/apache/commons/math/distribution/NormalDistribution.cumulativeProbability (D)D (itf)
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/distribution/PoissonDistributionImpl; L0 L1 0
+    LOCALVARIABLE x I L0 L1 1
+    MAXSTACK = 5
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public sample()I throws org/apache/commons/math/MathException 
+   L0
+    LINENUMBER 213 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/distribution/PoissonDistributionImpl.randomData : Lorg/apache/commons/math/random/RandomDataImpl;
+    ALOAD 0
+    GETFIELD org/apache/commons/math/distribution/PoissonDistributionImpl.mean : D
+    INVOKEVIRTUAL org/apache/commons/math/random/RandomDataImpl.nextPoisson (D)J
+    LDC 2147483647
+    INVOKESTATIC org/apache/commons/math/util/FastMath.min (JJ)J
+    L2I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/distribution/PoissonDistributionImpl; L0 L1 0
+    MAXSTACK = 4
+    MAXLOCALS = 1
+
+  // access flags 0x4
+  protected getDomainLowerBound(D)I
+   L0
+    LINENUMBER 226 L0
+    ICONST_0
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/distribution/PoissonDistributionImpl; L0 L1 0
+    LOCALVARIABLE p D L0 L1 1
+    MAXSTACK = 1
+    MAXLOCALS = 3
+
+  // access flags 0x4
+  protected getDomainUpperBound(D)I
+   L0
+    LINENUMBER 239 L0
+    LDC 2147483647
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/distribution/PoissonDistributionImpl; L0 L1 0
+    LOCALVARIABLE p D L0 L1 1
+    MAXSTACK = 1
+    MAXLOCALS = 3
+}
+

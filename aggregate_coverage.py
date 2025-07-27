@@ -12,7 +12,7 @@ def main():
     parser = argparse.ArgumentParser(
         description="根据已生成的 coverage_report.json，汇总一个项目组下所有实例的覆盖率报告并输出聚合结果")
     parser.add_argument('gen_method',
-                        choices=['ChatUniTest', 'Evosuite', 'ourmethod'],
+                        
                         help="测试用例生成方法，对应 coverage_result 下的子目录")
     parser.add_argument('project_prefix',
                         help="项目组前缀，如 Chart、Cli")
@@ -49,7 +49,12 @@ def main():
         report_path = os.path.join(inst_dir, args.report_name)
         if not os.path.isfile(report_path):
             print(f"[WARN] 缺少报告，跳过: {report_path}", file=sys.stderr)
+            #report_path = os.path.join("coverage_result/ourgen/noiter/Math%s"%(i), args.report_name)
             continue
+            if not os.path.isfile(report_path):
+                print(f"[WARN] 缺少报告，跳过: {report_path}", file=sys.stderr)
+                #report_path = os.path.join("coverage_result/nomut/Math%s"%(i), args.report_name)
+                continue
         with open(report_path, 'r', encoding='utf-8') as f:
             try:
                 data = json.load(f)

@@ -110,7 +110,8 @@ class Deepseek(LLM):
               **kwargs: Any) -> str:
         client = OpenAI(
             #api_key="sk-dd1a5c029f5e43129d4f7908d7aa85aa", old
-            api_key="sk-57b8f4f1eba845faa56a0dbd25857ad7",
+            #api_key="sk-57b8f4f1eba845faa56a0dbd25857ad7",
+            api_key="sk-5e9f30c6f826437891f3beaa58d6c184",
             base_url="https://api.deepseek.com"
         )
         response = client.chat.completions.create(

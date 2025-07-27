@@ -1,0 +1,518 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math3/linear/RectangularCholeskyDecomposition {
+
+  // compiled from: RectangularCholeskyDecomposition.java
+
+  // access flags 0x12
+  private final Lorg/apache/commons/math3/linear/RealMatrix; root
+
+  // access flags 0x2
+  private I rank
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math3/linear/RealMatrix;D)V throws org/apache/commons/math3/linear/NonPositiveDefiniteMatrixException 
+   L0
+    LINENUMBER 63 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 65 L1
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getRowDimension ()I (itf)
+    ISTORE 4
+   L2
+    LINENUMBER 66 L2
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.getData ()[[D (itf)
+    ASTORE 5
+   L3
+    LINENUMBER 67 L3
+    ILOAD 4
+    ILOAD 4
+    MULTIANEWARRAY [[D 2
+    ASTORE 6
+   L4
+    LINENUMBER 69 L4
+    ILOAD 4
+    NEWARRAY T_INT
+    ASTORE 7
+   L5
+    LINENUMBER 70 L5
+    ICONST_0
+    ISTORE 8
+   L6
+    ILOAD 8
+    ILOAD 4
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 71 L8
+    ALOAD 7
+    ILOAD 8
+    ILOAD 8
+    IASTORE
+   L9
+    LINENUMBER 70 L9
+    IINC 8 1
+    GOTO L6
+   L7
+    LINENUMBER 74 L7
+    ICONST_0
+    ISTORE 8
+   L10
+    LINENUMBER 75 L10
+    ICONST_1
+    ISTORE 9
+   L11
+    ILOAD 9
+    IFNE L12
+   L13
+    LINENUMBER 78 L13
+    ILOAD 8
+    ISTORE 10
+   L14
+    LINENUMBER 79 L14
+    ILOAD 8
+    ICONST_1
+    IADD
+    ISTORE 11
+   L15
+    ILOAD 11
+    ILOAD 4
+    IF_ICMPGE L16
+   L17
+    LINENUMBER 80 L17
+    ALOAD 7
+    ILOAD 11
+    IALOAD
+    ISTORE 12
+   L18
+    LINENUMBER 81 L18
+    ALOAD 7
+    ILOAD 10
+    IALOAD
+    ISTORE 13
+   L19
+    LINENUMBER 82 L19
+    ALOAD 5
+    ILOAD 12
+    AALOAD
+    ILOAD 12
+    DALOAD
+    ALOAD 5
+    ILOAD 13
+    AALOAD
+    ILOAD 13
+    DALOAD
+    DCMPL
+    IFLE L20
+   L21
+    LINENUMBER 83 L21
+    ILOAD 11
+    ISTORE 10
+   L20
+    LINENUMBER 79 L20
+    IINC 11 1
+    GOTO L15
+   L16
+    LINENUMBER 89 L16
+    ILOAD 10
+    ILOAD 8
+    IF_ICMPEQ L22
+   L23
+    LINENUMBER 90 L23
+    ALOAD 7
+    ILOAD 8
+    IALOAD
+    ISTORE 11
+   L24
+    LINENUMBER 91 L24
+    ALOAD 7
+    ILOAD 8
+    ALOAD 7
+    ILOAD 10
+    IALOAD
+    IASTORE
+   L25
+    LINENUMBER 92 L25
+    ALOAD 7
+    ILOAD 10
+    ILOAD 11
+    IASTORE
+   L26
+    LINENUMBER 93 L26
+    ALOAD 6
+    ILOAD 8
+    AALOAD
+    ASTORE 12
+   L27
+    LINENUMBER 94 L27
+    ALOAD 6
+    ILOAD 8
+    ALOAD 6
+    ILOAD 10
+    AALOAD
+    AASTORE
+   L28
+    LINENUMBER 95 L28
+    ALOAD 6
+    ILOAD 10
+    ALOAD 12
+    AASTORE
+   L22
+    LINENUMBER 99 L22
+    ALOAD 7
+    ILOAD 8
+    IALOAD
+    ISTORE 11
+   L29
+    LINENUMBER 100 L29
+    ALOAD 5
+    ILOAD 11
+    AALOAD
+    ILOAD 11
+    DALOAD
+    DLOAD 2
+    DCMPG
+    IFGE L30
+   L31
+    LINENUMBER 102 L31
+    ILOAD 8
+    IFNE L32
+   L33
+    LINENUMBER 103 L33
+    NEW org/apache/commons/math3/linear/NonPositiveDefiniteMatrixException
+    DUP
+    ALOAD 5
+    ILOAD 11
+    AALOAD
+    ILOAD 11
+    DALOAD
+    ILOAD 11
+    DLOAD 2
+    INVOKESPECIAL org/apache/commons/math3/linear/NonPositiveDefiniteMatrixException.<init> (DID)V
+    ATHROW
+   L32
+    LINENUMBER 107 L32
+    ILOAD 8
+    ISTORE 12
+   L34
+    ILOAD 12
+    ILOAD 4
+    IF_ICMPGE L35
+   L36
+    LINENUMBER 108 L36
+    ALOAD 5
+    ALOAD 7
+    ILOAD 12
+    IALOAD
+    AALOAD
+    ALOAD 7
+    ILOAD 12
+    IALOAD
+    DALOAD
+    DLOAD 2
+    DNEG
+    DCMPG
+    IFGE L37
+   L38
+    LINENUMBER 111 L38
+    NEW org/apache/commons/math3/linear/NonPositiveDefiniteMatrixException
+    DUP
+    ALOAD 5
+    ALOAD 7
+    ILOAD 12
+    IALOAD
+    AALOAD
+    ALOAD 7
+    ILOAD 12
+    IALOAD
+    DALOAD
+    ILOAD 12
+    DLOAD 2
+    INVOKESPECIAL org/apache/commons/math3/linear/NonPositiveDefiniteMatrixException.<init> (DID)V
+    ATHROW
+   L37
+    LINENUMBER 107 L37
+    IINC 12 1
+    GOTO L34
+   L35
+    LINENUMBER 117 L35
+    IINC 8 1
+   L39
+    LINENUMBER 118 L39
+    ICONST_0
+    ISTORE 9
+    GOTO L40
+   L30
+    LINENUMBER 123 L30
+    ALOAD 5
+    ILOAD 11
+    AALOAD
+    ILOAD 11
+    DALOAD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.sqrt (D)D
+    DSTORE 12
+   L41
+    LINENUMBER 124 L41
+    ALOAD 6
+    ILOAD 8
+    AALOAD
+    ILOAD 8
+    DLOAD 12
+    DASTORE
+   L42
+    LINENUMBER 125 L42
+    DCONST_1
+    DLOAD 12
+    DDIV
+    DSTORE 14
+   L43
+    LINENUMBER 126 L43
+    DCONST_1
+    ALOAD 5
+    ILOAD 11
+    AALOAD
+    ILOAD 11
+    DALOAD
+    DDIV
+    DSTORE 16
+   L44
+    LINENUMBER 127 L44
+    ILOAD 8
+    ICONST_1
+    IADD
+    ISTORE 18
+   L45
+    ILOAD 18
+    ILOAD 4
+    IF_ICMPGE L46
+   L47
+    LINENUMBER 128 L47
+    ALOAD 7
+    ILOAD 18
+    IALOAD
+    ISTORE 19
+   L48
+    LINENUMBER 129 L48
+    DLOAD 14
+    ALOAD 5
+    ILOAD 19
+    AALOAD
+    ILOAD 11
+    DALOAD
+    DMUL
+    DSTORE 20
+   L49
+    LINENUMBER 130 L49
+    ALOAD 6
+    ILOAD 18
+    AALOAD
+    ILOAD 8
+    DLOAD 20
+    DASTORE
+   L50
+    LINENUMBER 131 L50
+    ALOAD 5
+    ILOAD 19
+    AALOAD
+    ILOAD 19
+    DUP2
+    DALOAD
+    ALOAD 5
+    ILOAD 19
+    AALOAD
+    ILOAD 11
+    DALOAD
+    ALOAD 5
+    ILOAD 19
+    AALOAD
+    ILOAD 11
+    DALOAD
+    DMUL
+    DLOAD 16
+    DMUL
+    DSUB
+    DASTORE
+   L51
+    LINENUMBER 132 L51
+    ILOAD 8
+    ICONST_1
+    IADD
+    ISTORE 22
+   L52
+    ILOAD 22
+    ILOAD 18
+    IF_ICMPGE L53
+   L54
+    LINENUMBER 133 L54
+    ALOAD 7
+    ILOAD 22
+    IALOAD
+    ISTORE 23
+   L55
+    LINENUMBER 134 L55
+    ALOAD 5
+    ILOAD 19
+    AALOAD
+    ILOAD 23
+    DALOAD
+    DLOAD 20
+    ALOAD 6
+    ILOAD 22
+    AALOAD
+    ILOAD 8
+    DALOAD
+    DMUL
+    DSUB
+    DSTORE 24
+   L56
+    LINENUMBER 135 L56
+    ALOAD 5
+    ILOAD 19
+    AALOAD
+    ILOAD 23
+    DLOAD 24
+    DASTORE
+   L57
+    LINENUMBER 136 L57
+    ALOAD 5
+    ILOAD 23
+    AALOAD
+    ILOAD 19
+    DLOAD 24
+    DASTORE
+   L58
+    LINENUMBER 132 L58
+    IINC 22 1
+    GOTO L52
+   L53
+    LINENUMBER 127 L53
+    IINC 18 1
+    GOTO L45
+   L46
+    LINENUMBER 141 L46
+    IINC 8 1
+    ILOAD 8
+    ILOAD 4
+    IF_ICMPGE L59
+    ICONST_1
+    GOTO L60
+   L59
+    ICONST_0
+   L60
+    ISTORE 9
+   L40
+    LINENUMBER 143 L40
+    GOTO L11
+   L12
+    LINENUMBER 146 L12
+    ALOAD 0
+    ILOAD 8
+    PUTFIELD org/apache/commons/math3/linear/RectangularCholeskyDecomposition.rank : I
+   L61
+    LINENUMBER 147 L61
+    ALOAD 0
+    ILOAD 4
+    ILOAD 8
+    INVOKESTATIC org/apache/commons/math3/linear/MatrixUtils.createRealMatrix (II)Lorg/apache/commons/math3/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math3/linear/RectangularCholeskyDecomposition.root : Lorg/apache/commons/math3/linear/RealMatrix;
+   L62
+    LINENUMBER 148 L62
+    ICONST_0
+    ISTORE 9
+   L63
+    ILOAD 9
+    ILOAD 4
+    IF_ICMPGE L64
+   L65
+    LINENUMBER 149 L65
+    ICONST_0
+    ISTORE 10
+   L66
+    ILOAD 10
+    ILOAD 8
+    IF_ICMPGE L67
+   L68
+    LINENUMBER 150 L68
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/linear/RectangularCholeskyDecomposition.root : Lorg/apache/commons/math3/linear/RealMatrix;
+    ALOAD 7
+    ILOAD 9
+    IALOAD
+    ILOAD 10
+    ALOAD 6
+    ILOAD 9
+    AALOAD
+    ILOAD 10
+    DALOAD
+    INVOKEINTERFACE org/apache/commons/math3/linear/RealMatrix.setEntry (IID)V (itf)
+   L69
+    LINENUMBER 149 L69
+    IINC 10 1
+    GOTO L66
+   L67
+    LINENUMBER 148 L67
+    IINC 9 1
+    GOTO L63
+   L64
+    LINENUMBER 154 L64
+    RETURN
+   L70
+    LOCALVARIABLE i I L6 L7 8
+    LOCALVARIABLE ii I L18 L20 12
+    LOCALVARIABLE isr I L19 L20 13
+    LOCALVARIABLE i I L15 L16 11
+    LOCALVARIABLE tmpIndex I L24 L22 11
+    LOCALVARIABLE tmpRow [D L27 L22 12
+    LOCALVARIABLE i I L34 L35 12
+    LOCALVARIABLE ij I L55 L58 23
+    LOCALVARIABLE f D L56 L58 24
+    LOCALVARIABLE j I L52 L53 22
+    LOCALVARIABLE ii I L48 L53 19
+    LOCALVARIABLE e D L49 L53 20
+    LOCALVARIABLE i I L45 L46 18
+    LOCALVARIABLE sqrt D L41 L40 12
+    LOCALVARIABLE inverse D L43 L40 14
+    LOCALVARIABLE inverse2 D L44 L40 16
+    LOCALVARIABLE swapR I L14 L40 10
+    LOCALVARIABLE ir I L29 L40 11
+    LOCALVARIABLE loop Z L11 L12 9
+    LOCALVARIABLE j I L66 L67 10
+    LOCALVARIABLE i I L63 L64 9
+    LOCALVARIABLE this Lorg/apache/commons/math3/linear/RectangularCholeskyDecomposition; L0 L70 0
+    LOCALVARIABLE matrix Lorg/apache/commons/math3/linear/RealMatrix; L0 L70 1
+    LOCALVARIABLE small D L0 L70 2
+    LOCALVARIABLE order I L2 L70 4
+    LOCALVARIABLE c [[D L3 L70 5
+    LOCALVARIABLE b [[D L4 L70 6
+    LOCALVARIABLE index [I L5 L70 7
+    LOCALVARIABLE r I L10 L70 8
+    MAXSTACK = 8
+    MAXLOCALS = 26
+
+  // access flags 0x1
+  public getRootMatrix()Lorg/apache/commons/math3/linear/RealMatrix;
+   L0
+    LINENUMBER 163 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/linear/RectangularCholeskyDecomposition.root : Lorg/apache/commons/math3/linear/RealMatrix;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/linear/RectangularCholeskyDecomposition; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getRank()I
+   L0
+    LINENUMBER 174 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/linear/RectangularCholeskyDecomposition.rank : I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/linear/RectangularCholeskyDecomposition; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+}
+

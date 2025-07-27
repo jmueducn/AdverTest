@@ -69,7 +69,7 @@ def extract_coverage_entries(methods, xml_path):
 def main():
     parser = argparse.ArgumentParser(
         description="生成所有方法的总覆盖率报告（支持多方法累加, 精确行/分支统计）")
-    parser.add_argument('gen_method', choices=['ChatUniTest', 'Evosuite', 'ourmethod'])
+    parser.add_argument('gen_method')
     parser.add_argument('project_name')
     parser.add_argument('project_id')
     parser.add_argument('--meta-dir', default='metainfo')

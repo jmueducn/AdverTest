@@ -223,7 +223,7 @@ def bug_detection_outside(project,projid,fixed_dir='./defects4j_fixed',bug_dir='
     bug_dir = bug_dir + '/%s/%s_%s_bug' % (project,project,projid+1)
     cmd_compile_fixed = 'defects4j compile -w %s' % (fixed_dir)
     cmd_compile_bug = 'defects4j compile -w %s' % (bug_dir)
-    archive_name = './output/ChatUniTest/%s/%s%s.tar.bz2' %(project,project,projid+1)
+    archive_name = './output/ourmethod/%s/ablation_no_iter/%s%s.tar.bz2' %(project,project,projid+1)
     number_fixed = -1
     number_bug = -1
     compilable_fix=0
@@ -400,22 +400,23 @@ def mutant_test(method,project,bot,top,mutant_path,mutant_tested_path):
     print("test_pass:",test_pass)
     print("dead:",dead,"mutant id:",list)
 def test_coverage(project,projid,fixed_dir='./defects4j_fixed',bug_dir='./defects4j_bug'):
-    archive_name = './output/ChatUniTest/%s/%s%s.tar.bz2' %(project,project,projid+1)
+    archive_name = './output/ourmethod/%s/ablation_no_iter/%s%s.tar.bz2' %(project,project,projid+1)
     test_cmd='timeout 500 defects4j coverage -w ./defects4j_fixed/%s/%s_%s_fixed -s %s' % (project,project,projid+1,archive_name) 
     # 运行命令并获取输出
     log_test = subprocess.Popen(test_cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, bufsize=-1, start_new_session=True)
     log_test = log_test.communicate()
-    copy_coverage_result('./defects4j_fixed/%s/%s_%s_fixed' % (project,project,projid+1),'./coverage_result/ChatUniTest/%s%s'%(project,projid+1))
+    copy_coverage_result('./defects4j_fixed/%s/%s_%s_fixed' % (project,project,projid+1),'./coverage_result/ourgen/noiter/%s%s'%(project,projid+1))
 def rotation_test(max,name):
     for i in range(0,max):
         try:
-            del_coverage_result('./defects4j_fixed/%s/%s_%s_fixed' % (name,name,i+1))
-            #result,nf,nb,_,_ = bug_detection_outside(name,i,fixed_dir='./defects4j_fixed',bug_dir='./defects4j_bug')
+            
+            result,nf,nb,_,_ = bug_detection_evosuite(name,i,fixed_dir='./defects4j_fixed',bug_dir='./defects4j_bug')
+            #del_coverage_result('./defects4j_fixed/%s/%s_%s_fixed' % (name,name,i+1))
             #copy_coverage_result('./defects4j_fixed/%s/%s_%s_fixed' % (name,name,i+1),'./coverage_result/ChatUniTest/%s%s'%(name,i+1))
-            test_coverage(name,i)
+            #test_coverage(name,i)
         # Log the result (expected to be either 0 or 1)
-            #evosuite_logger.info(f"Project {name} test {i+1}: result = {result},number_fixed =  {nf},number_bug = {nb}")
-            evosuite_logger.info(f"Project {name} test {i+1}: coverage result saved")
+            evosuite_logger.info(f"Project {name} test {i+1}: result = {result},number_fixed =  {nf},number_bug = {nb}")
+            #evosuite_logger.info(f"Project {name} test {i+1}: coverage result saved")
         except Exception as e:
             # Log any errors that occur during the function call
             evosuite_logger.error(f"Project {name} test {i+1}: encountered an error: {e}")
@@ -424,22 +425,25 @@ if __name__ == "__main__":
     # 配置第一个 logger，用于记录 evosuite 相关的日志
     evosuite_logger = logging.getLogger("evosuite_logger")
     evosuite_logger.setLevel(logging.INFO)
-    evosuite_handler = logging.FileHandler("cut_unified_515.log")
+    evosuite_handler = logging.FileHandler("evosuite_new.log")
     evosuite_formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
     evosuite_handler.setFormatter(evosuite_formatter)
     evosuite_logger.addHandler(evosuite_handler)
     #rotation_test(4,'Gson')
-    rotation_test(26,'Chart')
-    rotation_test(40,'Cli')
-    rotation_test(47,'Compress')
+    # rotation_test(26,'Chart')
+    # rotation_test(40,'Cli')
+    # rotation_test(47,'Compress')
 
-    rotation_test(16,'Csv')
+    # rotation_test(16,'Csv')
 
-    rotation_test(18,'Gson')
+    # rotation_test(18,'Gson')
 
-    rotation_test(22,'JxPath')
+    # rotation_test(22,'JxPath')
 
-    rotation_test(106,'Math')
+    # rotation_test(106,'Math')
+    rotation_test(30,'Beanutils')
+    rotation_test(20,'Dbcp')
+    rotation_test(2,'Fileupload')
 
 
     

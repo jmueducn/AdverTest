@@ -1,0 +1,542 @@
+// class version 49.0 (49)
+// access flags 0x421
+// signature Lorg/apache/commons/math/analysis/solvers/AbstractUnivariateRealSolver;Lorg/apache/commons/math/analysis/solvers/BracketedUnivariateRealSolver<Lorg/apache/commons/math/analysis/UnivariateRealFunction;>;
+// declaration: org/apache/commons/math/analysis/solvers/BaseSecantSolver extends org.apache.commons.math.analysis.solvers.AbstractUnivariateRealSolver implements org.apache.commons.math.analysis.solvers.BracketedUnivariateRealSolver<org.apache.commons.math.analysis.UnivariateRealFunction>
+public abstract class org/apache/commons/math/analysis/solvers/BaseSecantSolver extends org/apache/commons/math/analysis/solvers/AbstractUnivariateRealSolver implements org/apache/commons/math/analysis/solvers/BracketedUnivariateRealSolver {
+
+  // compiled from: BaseSecantSolver.java
+  // access flags 0x1008
+  static synthetic INNERCLASS org/apache/commons/math/analysis/solvers/BaseSecantSolver$1 org/apache/commons/math/analysis/solvers/BaseSecantSolver null
+  // access flags 0x401C
+  protected final static enum INNERCLASS org/apache/commons/math/analysis/solvers/BaseSecantSolver$Method org/apache/commons/math/analysis/solvers/BaseSecantSolver Method
+
+  // access flags 0x1C
+  protected final static D DEFAULT_ABSOLUTE_ACCURACY = 1.0E-6
+
+  // access flags 0x2
+  private Lorg/apache/commons/math/analysis/solvers/AllowedSolution; allowed
+
+  // access flags 0x12
+  private final Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver$Method; method
+
+  // access flags 0x4
+  protected <init>(DLorg/apache/commons/math/analysis/solvers/BaseSecantSolver$Method;)V
+   L0
+    LINENUMBER 69 L0
+    ALOAD 0
+    DLOAD 1
+    INVOKESPECIAL org/apache/commons/math/analysis/solvers/AbstractUnivariateRealSolver.<init> (D)V
+   L1
+    LINENUMBER 70 L1
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/analysis/solvers/AllowedSolution.ANY_SIDE : Lorg/apache/commons/math/analysis/solvers/AllowedSolution;
+    PUTFIELD org/apache/commons/math/analysis/solvers/BaseSecantSolver.allowed : Lorg/apache/commons/math/analysis/solvers/AllowedSolution;
+   L2
+    LINENUMBER 71 L2
+    ALOAD 0
+    ALOAD 3
+    PUTFIELD org/apache/commons/math/analysis/solvers/BaseSecantSolver.method : Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver$Method;
+   L3
+    LINENUMBER 72 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver; L0 L4 0
+    LOCALVARIABLE absoluteAccuracy D L0 L4 1
+    LOCALVARIABLE method Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver$Method; L0 L4 3
+    MAXSTACK = 3
+    MAXLOCALS = 4
+
+  // access flags 0x4
+  protected <init>(DDLorg/apache/commons/math/analysis/solvers/BaseSecantSolver$Method;)V
+   L0
+    LINENUMBER 84 L0
+    ALOAD 0
+    DLOAD 1
+    DLOAD 3
+    INVOKESPECIAL org/apache/commons/math/analysis/solvers/AbstractUnivariateRealSolver.<init> (DD)V
+   L1
+    LINENUMBER 85 L1
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/analysis/solvers/AllowedSolution.ANY_SIDE : Lorg/apache/commons/math/analysis/solvers/AllowedSolution;
+    PUTFIELD org/apache/commons/math/analysis/solvers/BaseSecantSolver.allowed : Lorg/apache/commons/math/analysis/solvers/AllowedSolution;
+   L2
+    LINENUMBER 86 L2
+    ALOAD 0
+    ALOAD 5
+    PUTFIELD org/apache/commons/math/analysis/solvers/BaseSecantSolver.method : Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver$Method;
+   L3
+    LINENUMBER 87 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver; L0 L4 0
+    LOCALVARIABLE relativeAccuracy D L0 L4 1
+    LOCALVARIABLE absoluteAccuracy D L0 L4 3
+    LOCALVARIABLE method Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver$Method; L0 L4 5
+    MAXSTACK = 5
+    MAXLOCALS = 6
+
+  // access flags 0x4
+  protected <init>(DDDLorg/apache/commons/math/analysis/solvers/BaseSecantSolver$Method;)V
+   L0
+    LINENUMBER 101 L0
+    ALOAD 0
+    DLOAD 1
+    DLOAD 3
+    DLOAD 5
+    INVOKESPECIAL org/apache/commons/math/analysis/solvers/AbstractUnivariateRealSolver.<init> (DDD)V
+   L1
+    LINENUMBER 102 L1
+    ALOAD 0
+    GETSTATIC org/apache/commons/math/analysis/solvers/AllowedSolution.ANY_SIDE : Lorg/apache/commons/math/analysis/solvers/AllowedSolution;
+    PUTFIELD org/apache/commons/math/analysis/solvers/BaseSecantSolver.allowed : Lorg/apache/commons/math/analysis/solvers/AllowedSolution;
+   L2
+    LINENUMBER 103 L2
+    ALOAD 0
+    ALOAD 7
+    PUTFIELD org/apache/commons/math/analysis/solvers/BaseSecantSolver.method : Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver$Method;
+   L3
+    LINENUMBER 104 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver; L0 L4 0
+    LOCALVARIABLE relativeAccuracy D L0 L4 1
+    LOCALVARIABLE absoluteAccuracy D L0 L4 3
+    LOCALVARIABLE functionValueAccuracy D L0 L4 5
+    LOCALVARIABLE method Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver$Method; L0 L4 7
+    MAXSTACK = 7
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public solve(ILorg/apache/commons/math/analysis/UnivariateRealFunction;DDLorg/apache/commons/math/analysis/solvers/AllowedSolution;)D
+   L0
+    LINENUMBER 110 L0
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    DLOAD 3
+    DLOAD 5
+    DLOAD 3
+    LDC 0.5
+    DLOAD 5
+    DLOAD 3
+    DSUB
+    DMUL
+    DADD
+    ALOAD 7
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BaseSecantSolver.solve (ILorg/apache/commons/math/analysis/UnivariateRealFunction;DDDLorg/apache/commons/math/analysis/solvers/AllowedSolution;)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver; L0 L1 0
+    LOCALVARIABLE maxEval I L0 L1 1
+    LOCALVARIABLE f Lorg/apache/commons/math/analysis/UnivariateRealFunction; L0 L1 2
+    LOCALVARIABLE min D L0 L1 3
+    LOCALVARIABLE max D L0 L1 5
+    LOCALVARIABLE allowedSolution Lorg/apache/commons/math/analysis/solvers/AllowedSolution; L0 L1 7
+    MAXSTACK = 15
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public solve(ILorg/apache/commons/math/analysis/UnivariateRealFunction;DDDLorg/apache/commons/math/analysis/solvers/AllowedSolution;)D
+   L0
+    LINENUMBER 117 L0
+    ALOAD 0
+    ALOAD 9
+    PUTFIELD org/apache/commons/math/analysis/solvers/BaseSecantSolver.allowed : Lorg/apache/commons/math/analysis/solvers/AllowedSolution;
+   L1
+    LINENUMBER 118 L1
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    DLOAD 3
+    DLOAD 5
+    DLOAD 7
+    INVOKESPECIAL org/apache/commons/math/analysis/solvers/AbstractUnivariateRealSolver.solve (ILorg/apache/commons/math/analysis/UnivariateRealFunction;DDD)D
+    DRETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver; L0 L2 0
+    LOCALVARIABLE maxEval I L0 L2 1
+    LOCALVARIABLE f Lorg/apache/commons/math/analysis/UnivariateRealFunction; L0 L2 2
+    LOCALVARIABLE min D L0 L2 3
+    LOCALVARIABLE max D L0 L2 5
+    LOCALVARIABLE startValue D L0 L2 7
+    LOCALVARIABLE allowedSolution Lorg/apache/commons/math/analysis/solvers/AllowedSolution; L0 L2 9
+    MAXSTACK = 9
+    MAXLOCALS = 10
+
+  // access flags 0x1
+  public solve(ILorg/apache/commons/math/analysis/UnivariateRealFunction;DDD)D
+   L0
+    LINENUMBER 125 L0
+    ALOAD 0
+    ILOAD 1
+    ALOAD 2
+    DLOAD 3
+    DLOAD 5
+    DLOAD 7
+    GETSTATIC org/apache/commons/math/analysis/solvers/AllowedSolution.ANY_SIDE : Lorg/apache/commons/math/analysis/solvers/AllowedSolution;
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BaseSecantSolver.solve (ILorg/apache/commons/math/analysis/UnivariateRealFunction;DDDLorg/apache/commons/math/analysis/solvers/AllowedSolution;)D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver; L0 L1 0
+    LOCALVARIABLE maxEval I L0 L1 1
+    LOCALVARIABLE f Lorg/apache/commons/math/analysis/UnivariateRealFunction; L0 L1 2
+    LOCALVARIABLE min D L0 L1 3
+    LOCALVARIABLE max D L0 L1 5
+    LOCALVARIABLE startValue D L0 L1 7
+    MAXSTACK = 10
+    MAXLOCALS = 9
+
+  // access flags 0x14
+  protected final doSolve()D
+   L0
+    LINENUMBER 131 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BaseSecantSolver.getMin ()D
+    DSTORE 1
+   L1
+    LINENUMBER 132 L1
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BaseSecantSolver.getMax ()D
+    DSTORE 3
+   L2
+    LINENUMBER 133 L2
+    ALOAD 0
+    DLOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BaseSecantSolver.computeObjectiveValue (D)D
+    DSTORE 5
+   L3
+    LINENUMBER 134 L3
+    ALOAD 0
+    DLOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BaseSecantSolver.computeObjectiveValue (D)D
+    DSTORE 7
+   L4
+    LINENUMBER 139 L4
+    DLOAD 5
+    DCONST_0
+    DCMPL
+    IFNE L5
+   L6
+    LINENUMBER 140 L6
+    DLOAD 1
+    DRETURN
+   L5
+    LINENUMBER 142 L5
+    DLOAD 7
+    DCONST_0
+    DCMPL
+    IFNE L7
+   L8
+    LINENUMBER 143 L8
+    DLOAD 3
+    DRETURN
+   L7
+    LINENUMBER 147 L7
+    ALOAD 0
+    DLOAD 1
+    DLOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BaseSecantSolver.verifyBracketing (DD)V
+   L9
+    LINENUMBER 150 L9
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BaseSecantSolver.getFunctionValueAccuracy ()D
+    DSTORE 9
+   L10
+    LINENUMBER 151 L10
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BaseSecantSolver.getAbsoluteAccuracy ()D
+    DSTORE 11
+   L11
+    LINENUMBER 152 L11
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BaseSecantSolver.getRelativeAccuracy ()D
+    DSTORE 13
+   L12
+    LINENUMBER 156 L12
+    ICONST_0
+    ISTORE 15
+   L13
+    LINENUMBER 161 L13
+    DLOAD 3
+    DLOAD 7
+    DLOAD 3
+    DLOAD 1
+    DSUB
+    DMUL
+    DLOAD 7
+    DLOAD 5
+    DSUB
+    DDIV
+    DSUB
+    DSTORE 16
+   L14
+    LINENUMBER 162 L14
+    ALOAD 0
+    DLOAD 16
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BaseSecantSolver.computeObjectiveValue (D)D
+    DSTORE 18
+   L15
+    LINENUMBER 167 L15
+    DLOAD 18
+    DCONST_0
+    DCMPL
+    IFNE L16
+   L17
+    LINENUMBER 168 L17
+    DLOAD 16
+    DRETURN
+   L16
+    LINENUMBER 172 L16
+    DLOAD 7
+    DLOAD 18
+    DMUL
+    DCONST_0
+    DCMPG
+    IFGE L18
+   L19
+    LINENUMBER 175 L19
+    DLOAD 3
+    DSTORE 1
+   L20
+    LINENUMBER 176 L20
+    DLOAD 7
+    DSTORE 5
+   L21
+    LINENUMBER 177 L21
+    ILOAD 15
+    IFNE L22
+    ICONST_1
+    GOTO L23
+   L22
+    ICONST_0
+   L23
+    ISTORE 15
+    GOTO L24
+   L18
+    LINENUMBER 179 L18
+    GETSTATIC org/apache/commons/math/analysis/solvers/BaseSecantSolver$1.$SwitchMap$org$apache$commons$math$analysis$solvers$BaseSecantSolver$Method : [I
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BaseSecantSolver.method : Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver$Method;
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/BaseSecantSolver$Method.ordinal ()I
+    IALOAD
+    TABLESWITCH
+      1: L25
+      2: L26
+      3: L27
+      default: L28
+   L25
+    LINENUMBER 181 L25
+    DLOAD 5
+    LDC 0.5
+    DMUL
+    DSTORE 5
+   L29
+    LINENUMBER 182 L29
+    GOTO L24
+   L26
+    LINENUMBER 184 L26
+    DLOAD 5
+    DLOAD 7
+    DLOAD 7
+    DLOAD 18
+    DADD
+    DDIV
+    DMUL
+    DSTORE 5
+   L30
+    LINENUMBER 185 L30
+    GOTO L24
+   L27
+    LINENUMBER 189 L27
+    DLOAD 16
+    DLOAD 3
+    DCMPL
+    IFNE L24
+   L31
+    LINENUMBER 190 L31
+    NEW org/apache/commons/math/exception/ConvergenceException
+    DUP
+    INVOKESPECIAL org/apache/commons/math/exception/ConvergenceException.<init> ()V
+    ATHROW
+   L28
+    LINENUMBER 195 L28
+    NEW org/apache/commons/math/exception/MathInternalError
+    DUP
+    INVOKESPECIAL org/apache/commons/math/exception/MathInternalError.<init> ()V
+    ATHROW
+   L24
+    LINENUMBER 199 L24
+    DLOAD 16
+    DSTORE 3
+   L32
+    LINENUMBER 200 L32
+    DLOAD 18
+    DSTORE 7
+   L33
+    LINENUMBER 205 L33
+    DLOAD 7
+    INVOKESTATIC org/apache/commons/math/util/FastMath.abs (D)D
+    DLOAD 9
+    DCMPG
+    IFGT L34
+   L35
+    LINENUMBER 206 L35
+    GETSTATIC org/apache/commons/math/analysis/solvers/BaseSecantSolver$1.$SwitchMap$org$apache$commons$math$analysis$solvers$AllowedSolution : [I
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BaseSecantSolver.allowed : Lorg/apache/commons/math/analysis/solvers/AllowedSolution;
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/AllowedSolution.ordinal ()I
+    IALOAD
+    TABLESWITCH
+      1: L36
+      2: L37
+      3: L38
+      4: L39
+      5: L40
+      default: L41
+   L36
+    LINENUMBER 208 L36
+    DLOAD 3
+    DRETURN
+   L37
+    LINENUMBER 210 L37
+    ILOAD 15
+    IFEQ L34
+   L42
+    LINENUMBER 211 L42
+    DLOAD 3
+    DRETURN
+   L38
+    LINENUMBER 215 L38
+    ILOAD 15
+    IFNE L34
+   L43
+    LINENUMBER 216 L43
+    DLOAD 3
+    DRETURN
+   L39
+    LINENUMBER 220 L39
+    DLOAD 7
+    DCONST_0
+    DCMPG
+    IFGT L34
+   L44
+    LINENUMBER 221 L44
+    DLOAD 3
+    DRETURN
+   L40
+    LINENUMBER 225 L40
+    DLOAD 7
+    DCONST_0
+    DCMPL
+    IFLT L34
+   L45
+    LINENUMBER 226 L45
+    DLOAD 3
+    DRETURN
+   L41
+    LINENUMBER 230 L41
+    NEW org/apache/commons/math/exception/MathInternalError
+    DUP
+    INVOKESPECIAL org/apache/commons/math/exception/MathInternalError.<init> ()V
+    ATHROW
+   L34
+    LINENUMBER 236 L34
+    DLOAD 3
+    DLOAD 1
+    DSUB
+    INVOKESTATIC org/apache/commons/math/util/FastMath.abs (D)D
+    DLOAD 13
+    DLOAD 3
+    INVOKESTATIC org/apache/commons/math/util/FastMath.abs (D)D
+    DDIV
+    DLOAD 11
+    INVOKESTATIC org/apache/commons/math/util/FastMath.max (DD)D
+    DCMPG
+    IFGE L46
+   L47
+    LINENUMBER 238 L47
+    GETSTATIC org/apache/commons/math/analysis/solvers/BaseSecantSolver$1.$SwitchMap$org$apache$commons$math$analysis$solvers$AllowedSolution : [I
+    ALOAD 0
+    GETFIELD org/apache/commons/math/analysis/solvers/BaseSecantSolver.allowed : Lorg/apache/commons/math/analysis/solvers/AllowedSolution;
+    INVOKEVIRTUAL org/apache/commons/math/analysis/solvers/AllowedSolution.ordinal ()I
+    IALOAD
+    TABLESWITCH
+      1: L48
+      2: L49
+      3: L50
+      4: L51
+      5: L52
+      default: L53
+   L48
+    LINENUMBER 240 L48
+    DLOAD 3
+    DRETURN
+   L49
+    LINENUMBER 242 L49
+    ILOAD 15
+    IFEQ L54
+    DLOAD 3
+    GOTO L55
+   L54
+    DLOAD 1
+   L55
+    DRETURN
+   L50
+    LINENUMBER 244 L50
+    ILOAD 15
+    IFEQ L56
+    DLOAD 1
+    GOTO L57
+   L56
+    DLOAD 3
+   L57
+    DRETURN
+   L51
+    LINENUMBER 246 L51
+    DLOAD 7
+    DCONST_0
+    DCMPG
+    IFGT L58
+    DLOAD 3
+    GOTO L59
+   L58
+    DLOAD 1
+   L59
+    DRETURN
+   L52
+    LINENUMBER 248 L52
+    DLOAD 7
+    DCONST_0
+    DCMPL
+    IFLT L60
+    DLOAD 3
+    GOTO L61
+   L60
+    DLOAD 1
+   L61
+    DRETURN
+   L53
+    LINENUMBER 250 L53
+    NEW org/apache/commons/math/exception/MathInternalError
+    DUP
+    INVOKESPECIAL org/apache/commons/math/exception/MathInternalError.<init> ()V
+    ATHROW
+   L46
+    LINENUMBER 253 L46
+    GOTO L13
+   L62
+    LOCALVARIABLE x D L14 L46 16
+    LOCALVARIABLE fx D L15 L46 18
+    LOCALVARIABLE this Lorg/apache/commons/math/analysis/solvers/BaseSecantSolver; L0 L62 0
+    LOCALVARIABLE x0 D L1 L62 1
+    LOCALVARIABLE x1 D L2 L62 3
+    LOCALVARIABLE f0 D L3 L62 5
+    LOCALVARIABLE f1 D L4 L62 7
+    LOCALVARIABLE ftol D L10 L62 9
+    LOCALVARIABLE atol D L11 L62 11
+    LOCALVARIABLE rtol D L12 L62 13
+    LOCALVARIABLE inverted Z L13 L62 15
+    MAXSTACK = 8
+    MAXLOCALS = 20
+}
+

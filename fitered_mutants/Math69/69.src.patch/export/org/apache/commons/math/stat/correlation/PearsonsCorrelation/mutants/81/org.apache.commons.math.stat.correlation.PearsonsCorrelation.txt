@@ -1,0 +1,704 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math/stat/correlation/PearsonsCorrelation {
+
+  // compiled from: PearsonsCorrelation.java
+
+  // access flags 0x12
+  private final Lorg/apache/commons/math/linear/RealMatrix; correlationMatrix
+
+  // access flags 0x12
+  private final I nObs
+
+  // access flags 0x1
+  public <init>()V
+   L0
+    LINENUMBER 54 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 55 L1
+    ALOAD 0
+    ACONST_NULL
+    PUTFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.correlationMatrix : Lorg/apache/commons/math/linear/RealMatrix;
+   L2
+    LINENUMBER 56 L2
+    ALOAD 0
+    ICONST_0
+    PUTFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.nObs : I
+   L3
+    LINENUMBER 57 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/correlation/PearsonsCorrelation; L0 L4 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public <init>([[D)V
+   L0
+    LINENUMBER 68 L0
+    ALOAD 0
+    NEW org/apache/commons/math/linear/BlockRealMatrix
+    DUP
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/BlockRealMatrix.<init> ([[D)V
+    INVOKESPECIAL org/apache/commons/math/stat/correlation/PearsonsCorrelation.<init> (Lorg/apache/commons/math/linear/RealMatrix;)V
+   L1
+    LINENUMBER 69 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/correlation/PearsonsCorrelation; L0 L2 0
+    LOCALVARIABLE data [[D L0 L2 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/linear/RealMatrix;)V
+   L0
+    LINENUMBER 77 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 78 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/stat/correlation/PearsonsCorrelation.checkSufficientData (Lorg/apache/commons/math/linear/RealMatrix;)V
+   L2
+    LINENUMBER 79 L2
+    ALOAD 0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getRowDimension ()I (itf)
+    PUTFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.nObs : I
+   L3
+    LINENUMBER 80 L3
+    ALOAD 0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/stat/correlation/PearsonsCorrelation.computeCorrelationMatrix (Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.correlationMatrix : Lorg/apache/commons/math/linear/RealMatrix;
+   L4
+    LINENUMBER 81 L4
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/correlation/PearsonsCorrelation; L0 L5 0
+    LOCALVARIABLE matrix Lorg/apache/commons/math/linear/RealMatrix; L0 L5 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/stat/correlation/Covariance;)V
+   L0
+    LINENUMBER 91 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 92 L1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/stat/correlation/Covariance.getCovarianceMatrix ()Lorg/apache/commons/math/linear/RealMatrix;
+    ASTORE 2
+   L2
+    LINENUMBER 93 L2
+    ALOAD 2
+    IFNONNULL L3
+   L4
+    LINENUMBER 94 L4
+    LDC "covariance matrix is null"
+    ICONST_0
+    ANEWARRAY java/lang/Object
+    INVOKESTATIC org/apache/commons/math/MathRuntimeException.createIllegalArgumentException (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;
+    ATHROW
+   L3
+    LINENUMBER 96 L3
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/stat/correlation/Covariance.getN ()I
+    PUTFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.nObs : I
+   L5
+    LINENUMBER 97 L5
+    ALOAD 0
+    ALOAD 0
+    ALOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/stat/correlation/PearsonsCorrelation.covarianceToCorrelation (Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.correlationMatrix : Lorg/apache/commons/math/linear/RealMatrix;
+   L6
+    LINENUMBER 98 L6
+    RETURN
+   L7
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/correlation/PearsonsCorrelation; L0 L7 0
+    LOCALVARIABLE covariance Lorg/apache/commons/math/stat/correlation/Covariance; L0 L7 1
+    LOCALVARIABLE covarianceMatrix Lorg/apache/commons/math/linear/RealMatrix; L2 L7 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/linear/RealMatrix;I)V
+   L0
+    LINENUMBER 108 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 109 L1
+    ALOAD 0
+    ILOAD 2
+    PUTFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.nObs : I
+   L2
+    LINENUMBER 110 L2
+    ALOAD 0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/stat/correlation/PearsonsCorrelation.covarianceToCorrelation (Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/RealMatrix;
+    PUTFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.correlationMatrix : Lorg/apache/commons/math/linear/RealMatrix;
+   L3
+    LINENUMBER 112 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/correlation/PearsonsCorrelation; L0 L4 0
+    LOCALVARIABLE covarianceMatrix Lorg/apache/commons/math/linear/RealMatrix; L0 L4 1
+    LOCALVARIABLE numberOfObservations I L0 L4 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getCorrelationMatrix()Lorg/apache/commons/math/linear/RealMatrix;
+   L0
+    LINENUMBER 120 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.correlationMatrix : Lorg/apache/commons/math/linear/RealMatrix;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/correlation/PearsonsCorrelation; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getCorrelationStandardErrors()Lorg/apache/commons/math/linear/RealMatrix;
+   L0
+    LINENUMBER 136 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.correlationMatrix : Lorg/apache/commons/math/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getColumnDimension ()I (itf)
+    ISTORE 1
+   L1
+    LINENUMBER 137 L1
+    ILOAD 1
+    ILOAD 1
+    MULTIANEWARRAY [[D 2
+    ASTORE 2
+   L2
+    LINENUMBER 138 L2
+    ICONST_0
+    ISTORE 3
+   L3
+    ILOAD 3
+    ILOAD 1
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 139 L5
+    ICONST_0
+    ISTORE 4
+   L6
+    ILOAD 4
+    ILOAD 1
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 140 L8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.correlationMatrix : Lorg/apache/commons/math/linear/RealMatrix;
+    ILOAD 3
+    ILOAD 4
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getEntry (II)D (itf)
+    DSTORE 5
+   L9
+    LINENUMBER 141 L9
+    ALOAD 2
+    ILOAD 3
+    AALOAD
+    ILOAD 4
+    DCONST_1
+    DLOAD 5
+    DLOAD 5
+    DMUL
+    DSUB
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.nObs : I
+    ICONST_2
+    ISUB
+    I2D
+    DDIV
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DASTORE
+   L10
+    LINENUMBER 139 L10
+    IINC 4 1
+    GOTO L6
+   L7
+    LINENUMBER 138 L7
+    IINC 3 1
+    GOTO L3
+   L4
+    LINENUMBER 144 L4
+    NEW org/apache/commons/math/linear/BlockRealMatrix
+    DUP
+    ALOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/BlockRealMatrix.<init> ([[D)V
+    ARETURN
+   L11
+    LOCALVARIABLE r D L9 L10 5
+    LOCALVARIABLE j I L6 L7 4
+    LOCALVARIABLE i I L3 L4 3
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/correlation/PearsonsCorrelation; L0 L11 0
+    LOCALVARIABLE nVars I L1 L11 1
+    LOCALVARIABLE out [[D L2 L11 2
+    MAXSTACK = 8
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getCorrelationPValues()Lorg/apache/commons/math/linear/RealMatrix; throws org/apache/commons/math/MathException 
+   L0
+    LINENUMBER 161 L0
+    NEW org/apache/commons/math/distribution/TDistributionImpl
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.nObs : I
+    ICONST_2
+    ISUB
+    I2D
+    INVOKESPECIAL org/apache/commons/math/distribution/TDistributionImpl.<init> (D)V
+    ASTORE 1
+   L1
+    LINENUMBER 162 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.correlationMatrix : Lorg/apache/commons/math/linear/RealMatrix;
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getColumnDimension ()I (itf)
+    ISTORE 2
+   L2
+    LINENUMBER 163 L2
+    ILOAD 2
+    ILOAD 2
+    MULTIANEWARRAY [[D 2
+    ASTORE 3
+   L3
+    LINENUMBER 164 L3
+    ICONST_0
+    ISTORE 4
+   L4
+    ILOAD 4
+    ILOAD 2
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 165 L6
+    ICONST_0
+    ISTORE 5
+   L7
+    ILOAD 5
+    ILOAD 2
+    IF_ICMPGE L8
+   L9
+    LINENUMBER 166 L9
+    ILOAD 4
+    ILOAD 5
+    IF_ICMPNE L10
+   L11
+    LINENUMBER 167 L11
+    ALOAD 3
+    ILOAD 4
+    AALOAD
+    ILOAD 5
+    DCONST_0
+    DASTORE
+    GOTO L12
+   L10
+    LINENUMBER 169 L10
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.correlationMatrix : Lorg/apache/commons/math/linear/RealMatrix;
+    ILOAD 4
+    ILOAD 5
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getEntry (II)D (itf)
+    DSTORE 6
+   L13
+    LINENUMBER 170 L13
+    DLOAD 6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/stat/correlation/PearsonsCorrelation.nObs : I
+    ICONST_2
+    ISUB
+    I2D
+    DCONST_1
+    DLOAD 6
+    DLOAD 6
+    DMUL
+    DSUB
+    DDIV
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DMUL
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DSTORE 8
+   L14
+    LINENUMBER 171 L14
+    ALOAD 3
+    ILOAD 4
+    AALOAD
+    ILOAD 5
+    LDC 2.0
+    ALOAD 1
+    DLOAD 8
+    DNEG
+    DUP2_X1
+    POP2
+    POP
+    DMUL
+    DASTORE
+   L12
+    LINENUMBER 165 L12
+    IINC 5 1
+    GOTO L7
+   L8
+    LINENUMBER 164 L8
+    IINC 4 1
+    GOTO L4
+   L5
+    LINENUMBER 175 L5
+    NEW org/apache/commons/math/linear/BlockRealMatrix
+    DUP
+    ALOAD 3
+    INVOKESPECIAL org/apache/commons/math/linear/BlockRealMatrix.<init> ([[D)V
+    ARETURN
+   L15
+    LOCALVARIABLE r D L13 L12 6
+    LOCALVARIABLE t D L14 L12 8
+    LOCALVARIABLE j I L7 L8 5
+    LOCALVARIABLE i I L4 L5 4
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/correlation/PearsonsCorrelation; L0 L15 0
+    LOCALVARIABLE tDistribution Lorg/apache/commons/math/distribution/TDistribution; L1 L15 1
+    LOCALVARIABLE nVars I L2 L15 2
+    LOCALVARIABLE out [[D L3 L15 3
+    MAXSTACK = 10
+    MAXLOCALS = 10
+
+  // access flags 0x1
+  public computeCorrelationMatrix(Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/RealMatrix;
+   L0
+    LINENUMBER 187 L0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getColumnDimension ()I (itf)
+    ISTORE 2
+   L1
+    LINENUMBER 188 L1
+    NEW org/apache/commons/math/linear/BlockRealMatrix
+    DUP
+    ILOAD 2
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/BlockRealMatrix.<init> (II)V
+    ASTORE 3
+   L2
+    LINENUMBER 189 L2
+    ICONST_0
+    ISTORE 4
+   L3
+    ILOAD 4
+    ILOAD 2
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 190 L5
+    ICONST_0
+    ISTORE 5
+   L6
+    ILOAD 5
+    ILOAD 4
+    IF_ICMPGE L7
+   L8
+    LINENUMBER 191 L8
+    ALOAD 0
+    ALOAD 1
+    ILOAD 4
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getColumn (I)[D (itf)
+    ALOAD 1
+    ILOAD 5
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getColumn (I)[D (itf)
+    INVOKEVIRTUAL org/apache/commons/math/stat/correlation/PearsonsCorrelation.correlation ([D[D)D
+    DSTORE 6
+   L9
+    LINENUMBER 192 L9
+    ALOAD 3
+    ILOAD 4
+    ILOAD 5
+    DLOAD 6
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.setEntry (IID)V (itf)
+   L10
+    LINENUMBER 193 L10
+    ALOAD 3
+    ILOAD 5
+    ILOAD 4
+    DLOAD 6
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.setEntry (IID)V (itf)
+   L11
+    LINENUMBER 190 L11
+    IINC 5 1
+    GOTO L6
+   L7
+    LINENUMBER 195 L7
+    ALOAD 3
+    ILOAD 4
+    ILOAD 4
+    DCONST_1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.setEntry (IID)V (itf)
+   L12
+    LINENUMBER 189 L12
+    IINC 4 1
+    GOTO L3
+   L4
+    LINENUMBER 197 L4
+    ALOAD 3
+    ARETURN
+   L13
+    LOCALVARIABLE corr D L9 L11 6
+    LOCALVARIABLE j I L6 L7 5
+    LOCALVARIABLE i I L3 L4 4
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/correlation/PearsonsCorrelation; L0 L13 0
+    LOCALVARIABLE matrix Lorg/apache/commons/math/linear/RealMatrix; L0 L13 1
+    LOCALVARIABLE nVars I L1 L13 2
+    LOCALVARIABLE outMatrix Lorg/apache/commons/math/linear/RealMatrix; L2 L13 3
+    MAXSTACK = 5
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public computeCorrelationMatrix([[D)Lorg/apache/commons/math/linear/RealMatrix;
+   L0
+    LINENUMBER 209 L0
+    ALOAD 0
+    NEW org/apache/commons/math/linear/BlockRealMatrix
+    DUP
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/BlockRealMatrix.<init> ([[D)V
+    INVOKEVIRTUAL org/apache/commons/math/stat/correlation/PearsonsCorrelation.computeCorrelationMatrix (Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/RealMatrix;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/correlation/PearsonsCorrelation; L0 L1 0
+    LOCALVARIABLE data [[D L0 L1 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public correlation([D[D)D throws java/lang/IllegalArgumentException 
+   L0
+    LINENUMBER 225 L0
+    NEW org/apache/commons/math/stat/regression/SimpleRegression
+    DUP
+    INVOKESPECIAL org/apache/commons/math/stat/regression/SimpleRegression.<init> ()V
+    ASTORE 3
+   L1
+    LINENUMBER 226 L1
+    ALOAD 1
+    ARRAYLENGTH
+    ALOAD 2
+    ARRAYLENGTH
+    IF_ICMPNE L2
+    ALOAD 1
+    ARRAYLENGTH
+    ICONST_1
+    IF_ICMPLE L2
+   L3
+    LINENUMBER 227 L3
+    ICONST_0
+    ISTORE 4
+   L4
+    ILOAD 4
+    ALOAD 1
+    ARRAYLENGTH
+    IF_ICMPGE L5
+   L6
+    LINENUMBER 228 L6
+    ALOAD 3
+    ALOAD 1
+    ILOAD 4
+    DALOAD
+    ALOAD 2
+    ILOAD 4
+    DALOAD
+    INVOKEVIRTUAL org/apache/commons/math/stat/regression/SimpleRegression.addData (DD)V
+   L7
+    LINENUMBER 227 L7
+    IINC 4 1
+    GOTO L4
+   L5
+    LINENUMBER 230 L5
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/stat/regression/SimpleRegression.getR ()D
+    DRETURN
+   L2
+    LINENUMBER 233 L2
+    LDC "invalid array dimensions. xArray has size {0}; yArray has {1} elements"
+    ICONST_2
+    ANEWARRAY java/lang/Object
+    DUP
+    ICONST_0
+    ALOAD 1
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    DUP
+    ICONST_1
+    ALOAD 2
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    INVOKESTATIC org/apache/commons/math/MathRuntimeException.createIllegalArgumentException (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;
+    ATHROW
+   L8
+    LOCALVARIABLE i I L4 L5 4
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/correlation/PearsonsCorrelation; L0 L8 0
+    LOCALVARIABLE xArray [D L0 L8 1
+    LOCALVARIABLE yArray [D L0 L8 2
+    LOCALVARIABLE regression Lorg/apache/commons/math/stat/regression/SimpleRegression; L1 L8 3
+    MAXSTACK = 5
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public covarianceToCorrelation(Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/RealMatrix;
+   L0
+    LINENUMBER 251 L0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getColumnDimension ()I (itf)
+    ISTORE 2
+   L1
+    LINENUMBER 252 L1
+    NEW org/apache/commons/math/linear/BlockRealMatrix
+    DUP
+    ILOAD 2
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/BlockRealMatrix.<init> (II)V
+    ASTORE 3
+   L2
+    LINENUMBER 253 L2
+    ICONST_0
+    ISTORE 4
+   L3
+    ILOAD 4
+    ILOAD 2
+    IF_ICMPGE L4
+   L5
+    LINENUMBER 254 L5
+    ALOAD 1
+    ILOAD 4
+    ILOAD 4
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getEntry (II)D (itf)
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DSTORE 5
+   L6
+    LINENUMBER 255 L6
+    ALOAD 3
+    ILOAD 4
+    ILOAD 4
+    DCONST_1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.setEntry (IID)V (itf)
+   L7
+    LINENUMBER 256 L7
+    ICONST_0
+    ISTORE 7
+   L8
+    ILOAD 7
+    ILOAD 4
+    IF_ICMPGE L9
+   L10
+    LINENUMBER 257 L10
+    ALOAD 1
+    ILOAD 4
+    ILOAD 7
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getEntry (II)D (itf)
+    DLOAD 5
+    ALOAD 1
+    ILOAD 7
+    ILOAD 7
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getEntry (II)D (itf)
+    INVOKESTATIC java/lang/Math.sqrt (D)D
+    DMUL
+    DDIV
+    DSTORE 8
+   L11
+    LINENUMBER 259 L11
+    ALOAD 3
+    ILOAD 4
+    ILOAD 7
+    DLOAD 8
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.setEntry (IID)V (itf)
+   L12
+    LINENUMBER 260 L12
+    ALOAD 3
+    ILOAD 7
+    ILOAD 4
+    DLOAD 8
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.setEntry (IID)V (itf)
+   L13
+    LINENUMBER 256 L13
+    IINC 7 1
+    GOTO L8
+   L9
+    LINENUMBER 253 L9
+    IINC 4 1
+    GOTO L3
+   L4
+    LINENUMBER 263 L4
+    ALOAD 3
+    ARETURN
+   L14
+    LOCALVARIABLE entry D L11 L13 8
+    LOCALVARIABLE j I L8 L9 7
+    LOCALVARIABLE sigma D L6 L9 5
+    LOCALVARIABLE i I L3 L4 4
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/correlation/PearsonsCorrelation; L0 L14 0
+    LOCALVARIABLE covarianceMatrix Lorg/apache/commons/math/linear/RealMatrix; L0 L14 1
+    LOCALVARIABLE nVars I L1 L14 2
+    LOCALVARIABLE outMatrix Lorg/apache/commons/math/linear/RealMatrix; L2 L14 3
+    MAXSTACK = 7
+    MAXLOCALS = 10
+
+  // access flags 0x2
+  private checkSufficientData(Lorg/apache/commons/math/linear/RealMatrix;)V
+   L0
+    LINENUMBER 273 L0
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getRowDimension ()I (itf)
+    ISTORE 2
+   L1
+    LINENUMBER 274 L1
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getColumnDimension ()I (itf)
+    ISTORE 3
+   L2
+    LINENUMBER 275 L2
+    ILOAD 2
+    ICONST_2
+    IF_ICMPLT L3
+    ILOAD 3
+    ICONST_2
+    IF_ICMPGE L4
+   L3
+    LINENUMBER 276 L3
+    LDC "insufficient data: only {0} rows and {1} columns."
+    ICONST_2
+    ANEWARRAY java/lang/Object
+    DUP
+    ICONST_0
+    ILOAD 2
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    DUP
+    ICONST_1
+    ILOAD 3
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    AASTORE
+    INVOKESTATIC org/apache/commons/math/MathRuntimeException.createIllegalArgumentException (Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/IllegalArgumentException;
+    ATHROW
+   L4
+    LINENUMBER 280 L4
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/stat/correlation/PearsonsCorrelation; L0 L5 0
+    LOCALVARIABLE matrix Lorg/apache/commons/math/linear/RealMatrix; L0 L5 1
+    LOCALVARIABLE nRows I L1 L5 2
+    LOCALVARIABLE nCols I L2 L5 3
+    MAXSTACK = 5
+    MAXLOCALS = 4
+}
+

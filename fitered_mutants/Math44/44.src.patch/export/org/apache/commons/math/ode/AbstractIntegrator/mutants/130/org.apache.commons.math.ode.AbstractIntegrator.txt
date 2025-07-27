@@ -1,0 +1,1020 @@
+// class version 49.0 (49)
+// access flags 0x421
+public abstract class org/apache/commons/math/ode/AbstractIntegrator implements org/apache/commons/math/ode/FirstOrderIntegrator {
+
+  // compiled from: AbstractIntegrator.java
+  // access flags 0x0
+  INNERCLASS org/apache/commons/math/ode/AbstractIntegrator$1 null null
+
+  // access flags 0x4
+  // signature Ljava/util/Collection<Lorg/apache/commons/math/ode/sampling/StepHandler;>;
+  // declaration: stepHandlers extends java.util.Collection<org.apache.commons.math.ode.sampling.StepHandler>
+  protected Ljava/util/Collection; stepHandlers
+
+  // access flags 0x4
+  protected D stepStart
+
+  // access flags 0x4
+  protected D stepSize
+
+  // access flags 0x4
+  protected Z isLastStep
+
+  // access flags 0x4
+  protected Z resetOccurred
+
+  // access flags 0x2
+  // signature Ljava/util/Collection<Lorg/apache/commons/math/ode/events/EventState;>;
+  // declaration: eventsStates extends java.util.Collection<org.apache.commons.math.ode.events.EventState>
+  private Ljava/util/Collection; eventsStates
+
+  // access flags 0x2
+  private Z statesInitialized
+
+  // access flags 0x12
+  private final Ljava/lang/String; name
+
+  // access flags 0x2
+  private Lorg/apache/commons/math/util/Incrementor; evaluations
+
+  // access flags 0x82
+  private transient Lorg/apache/commons/math/ode/ExpandableStatefulODE; expandable
+
+  // access flags 0x1
+  public <init>(Ljava/lang/String;)V
+   L0
+    LINENUMBER 85 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 86 L1
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math/ode/AbstractIntegrator.name : Ljava/lang/String;
+   L2
+    LINENUMBER 87 L2
+    ALOAD 0
+    NEW java/util/ArrayList
+    DUP
+    INVOKESPECIAL java/util/ArrayList.<init> ()V
+    PUTFIELD org/apache/commons/math/ode/AbstractIntegrator.stepHandlers : Ljava/util/Collection;
+   L3
+    LINENUMBER 88 L3
+    ALOAD 0
+    LDC NaN
+    PUTFIELD org/apache/commons/math/ode/AbstractIntegrator.stepStart : D
+   L4
+    LINENUMBER 89 L4
+    ALOAD 0
+    LDC NaN
+    PUTFIELD org/apache/commons/math/ode/AbstractIntegrator.stepSize : D
+   L5
+    LINENUMBER 90 L5
+    ALOAD 0
+    NEW java/util/ArrayList
+    DUP
+    INVOKESPECIAL java/util/ArrayList.<init> ()V
+    PUTFIELD org/apache/commons/math/ode/AbstractIntegrator.eventsStates : Ljava/util/Collection;
+   L6
+    LINENUMBER 91 L6
+    ALOAD 0
+    ICONST_0
+    PUTFIELD org/apache/commons/math/ode/AbstractIntegrator.statesInitialized : Z
+   L7
+    LINENUMBER 92 L7
+    ALOAD 0
+    NEW org/apache/commons/math/util/Incrementor
+    DUP
+    INVOKESPECIAL org/apache/commons/math/util/Incrementor.<init> ()V
+    PUTFIELD org/apache/commons/math/ode/AbstractIntegrator.evaluations : Lorg/apache/commons/math/util/Incrementor;
+   L8
+    LINENUMBER 93 L8
+    ALOAD 0
+    ICONST_M1
+    INVOKEVIRTUAL org/apache/commons/math/ode/AbstractIntegrator.setMaxEvaluations (I)V
+   L9
+    LINENUMBER 94 L9
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/ode/AbstractIntegrator.resetEvaluations ()V
+   L10
+    LINENUMBER 95 L10
+    RETURN
+   L11
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L11 0
+    LOCALVARIABLE name Ljava/lang/String; L0 L11 1
+    MAXSTACK = 3
+    MAXLOCALS = 2
+
+  // access flags 0x4
+  protected <init>()V
+   L0
+    LINENUMBER 100 L0
+    ALOAD 0
+    ACONST_NULL
+    INVOKESPECIAL org/apache/commons/math/ode/AbstractIntegrator.<init> (Ljava/lang/String;)V
+   L1
+    LINENUMBER 101 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L2 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getName()Ljava/lang/String;
+   L0
+    LINENUMBER 105 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.name : Ljava/lang/String;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public addStepHandler(Lorg/apache/commons/math/ode/sampling/StepHandler;)V
+   L0
+    LINENUMBER 110 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.stepHandlers : Ljava/util/Collection;
+    ALOAD 1
+    INVOKEINTERFACE java/util/Collection.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L1
+    LINENUMBER 111 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L2 0
+    LOCALVARIABLE handler Lorg/apache/commons/math/ode/sampling/StepHandler; L0 L2 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  // signature ()Ljava/util/Collection<Lorg/apache/commons/math/ode/sampling/StepHandler;>;
+  // declaration: java.util.Collection<org.apache.commons.math.ode.sampling.StepHandler> getStepHandlers()
+  public getStepHandlers()Ljava/util/Collection;
+   L0
+    LINENUMBER 115 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.stepHandlers : Ljava/util/Collection;
+    INVOKESTATIC java/util/Collections.unmodifiableCollection (Ljava/util/Collection;)Ljava/util/Collection;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public clearStepHandlers()V
+   L0
+    LINENUMBER 120 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.stepHandlers : Ljava/util/Collection;
+    INVOKEINTERFACE java/util/Collection.clear ()V (itf)
+   L1
+    LINENUMBER 121 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L2 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public addEventHandler(Lorg/apache/commons/math/ode/events/EventHandler;DDI)V
+   L0
+    LINENUMBER 128 L0
+    ALOAD 0
+    ALOAD 1
+    DLOAD 2
+    DLOAD 4
+    ILOAD 6
+    NEW org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver
+    DUP
+    DLOAD 4
+    ICONST_5
+    INVOKESPECIAL org/apache/commons/math/analysis/solvers/BracketingNthOrderBrentSolver.<init> (DI)V
+    INVOKEVIRTUAL org/apache/commons/math/ode/AbstractIntegrator.addEventHandler (Lorg/apache/commons/math/ode/events/EventHandler;DDILorg/apache/commons/math/analysis/solvers/UnivariateRealSolver;)V
+   L1
+    LINENUMBER 131 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L2 0
+    LOCALVARIABLE handler Lorg/apache/commons/math/ode/events/EventHandler; L0 L2 1
+    LOCALVARIABLE maxCheckInterval D L0 L2 2
+    LOCALVARIABLE convergence D L0 L2 4
+    LOCALVARIABLE maxIterationCount I L0 L2 6
+    MAXSTACK = 12
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public addEventHandler(Lorg/apache/commons/math/ode/events/EventHandler;DDILorg/apache/commons/math/analysis/solvers/UnivariateRealSolver;)V
+   L0
+    LINENUMBER 139 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.eventsStates : Ljava/util/Collection;
+    NEW org/apache/commons/math/ode/events/EventState
+    DUP
+    ALOAD 1
+    DLOAD 2
+    DLOAD 4
+    ILOAD 6
+    ALOAD 7
+    INVOKESPECIAL org/apache/commons/math/ode/events/EventState.<init> (Lorg/apache/commons/math/ode/events/EventHandler;DDILorg/apache/commons/math/analysis/solvers/UnivariateRealSolver;)V
+    INVOKEINTERFACE java/util/Collection.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L1
+    LINENUMBER 141 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L2 0
+    LOCALVARIABLE handler Lorg/apache/commons/math/ode/events/EventHandler; L0 L2 1
+    LOCALVARIABLE maxCheckInterval D L0 L2 2
+    LOCALVARIABLE convergence D L0 L2 4
+    LOCALVARIABLE maxIterationCount I L0 L2 6
+    LOCALVARIABLE solver Lorg/apache/commons/math/analysis/solvers/UnivariateRealSolver; L0 L2 7
+    MAXSTACK = 10
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  // signature ()Ljava/util/Collection<Lorg/apache/commons/math/ode/events/EventHandler;>;
+  // declaration: java.util.Collection<org.apache.commons.math.ode.events.EventHandler> getEventHandlers()
+  public getEventHandlers()Ljava/util/Collection;
+   L0
+    LINENUMBER 145 L0
+    NEW java/util/ArrayList
+    DUP
+    INVOKESPECIAL java/util/ArrayList.<init> ()V
+    ASTORE 1
+   L1
+    LINENUMBER 146 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.eventsStates : Ljava/util/Collection;
+    INVOKEINTERFACE java/util/Collection.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 2
+   L2
+    ALOAD 2
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L3
+    ALOAD 2
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/ode/events/EventState
+    ASTORE 3
+   L4
+    LINENUMBER 147 L4
+    ALOAD 1
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/EventState.getEventHandler ()Lorg/apache/commons/math/ode/events/EventHandler;
+    INVOKEINTERFACE java/util/List.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L5
+    LINENUMBER 148 L5
+    GOTO L2
+   L3
+    LINENUMBER 149 L3
+    ALOAD 1
+    INVOKESTATIC java/util/Collections.unmodifiableCollection (Ljava/util/Collection;)Ljava/util/Collection;
+    ARETURN
+   L6
+    LOCALVARIABLE state Lorg/apache/commons/math/ode/events/EventState; L4 L5 3
+    LOCALVARIABLE i$ Ljava/util/Iterator; L2 L3 2
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L6 0
+    LOCALVARIABLE list Ljava/util/List; L1 L6 1
+    // signature Ljava/util/List<Lorg/apache/commons/math/ode/events/EventHandler;>;
+    // declaration: list extends java.util.List<org.apache.commons.math.ode.events.EventHandler>
+    MAXSTACK = 2
+    MAXLOCALS = 4
+
+  // access flags 0x1
+  public clearEventHandlers()V
+   L0
+    LINENUMBER 154 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.eventsStates : Ljava/util/Collection;
+    INVOKEINTERFACE java/util/Collection.clear ()V (itf)
+   L1
+    LINENUMBER 155 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L2 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getCurrentStepStart()D
+   L0
+    LINENUMBER 159 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.stepStart : D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getCurrentSignedStepsize()D
+   L0
+    LINENUMBER 164 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.stepSize : D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setMaxEvaluations(I)V
+   L0
+    LINENUMBER 169 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.evaluations : Lorg/apache/commons/math/util/Incrementor;
+    ILOAD 1
+    IFGE L1
+    LDC 2147483647
+    GOTO L2
+   L1
+    ILOAD 1
+   L2
+    INVOKEVIRTUAL org/apache/commons/math/util/Incrementor.setMaximalCount (I)V
+   L3
+    LINENUMBER 170 L3
+    RETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L4 0
+    LOCALVARIABLE maxEvaluations I L0 L4 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getMaxEvaluations()I
+   L0
+    LINENUMBER 174 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.evaluations : Lorg/apache/commons/math/util/Incrementor;
+    INVOKEVIRTUAL org/apache/commons/math/util/Incrementor.getMaximalCount ()I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getEvaluations()I
+   L0
+    LINENUMBER 179 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.evaluations : Lorg/apache/commons/math/util/Incrementor;
+    INVOKEVIRTUAL org/apache/commons/math/util/Incrementor.getCount ()I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x4
+  protected resetEvaluations()V
+   L0
+    LINENUMBER 185 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.evaluations : Lorg/apache/commons/math/util/Incrementor;
+    INVOKEVIRTUAL org/apache/commons/math/util/Incrementor.resetCount ()V
+   L1
+    LINENUMBER 186 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L2 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x4
+  protected setEquations(Lorg/apache/commons/math/ode/ExpandableStatefulODE;)V
+   L0
+    LINENUMBER 192 L0
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math/ode/AbstractIntegrator.expandable : Lorg/apache/commons/math/ode/ExpandableStatefulODE;
+   L1
+    LINENUMBER 193 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L2 0
+    LOCALVARIABLE equations Lorg/apache/commons/math/ode/ExpandableStatefulODE; L0 L2 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public integrate(Lorg/apache/commons/math/ode/FirstOrderDifferentialEquations;D[DD[D)D throws org/apache/commons/math/exception/MathIllegalStateException org/apache/commons/math/exception/MathIllegalArgumentException 
+   L0
+    LINENUMBER 200 L0
+    ALOAD 4
+    ARRAYLENGTH
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/ode/FirstOrderDifferentialEquations.getDimension ()I (itf)
+    IF_ICMPEQ L1
+   L2
+    LINENUMBER 201 L2
+    NEW org/apache/commons/math/exception/DimensionMismatchException
+    DUP
+    ALOAD 4
+    ARRAYLENGTH
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/ode/FirstOrderDifferentialEquations.getDimension ()I (itf)
+    INVOKESPECIAL org/apache/commons/math/exception/DimensionMismatchException.<init> (II)V
+    ATHROW
+   L1
+    LINENUMBER 203 L1
+    ALOAD 7
+    ARRAYLENGTH
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/ode/FirstOrderDifferentialEquations.getDimension ()I (itf)
+    IF_ICMPEQ L3
+   L4
+    LINENUMBER 204 L4
+    NEW org/apache/commons/math/exception/DimensionMismatchException
+    DUP
+    ALOAD 7
+    ARRAYLENGTH
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/ode/FirstOrderDifferentialEquations.getDimension ()I (itf)
+    INVOKESPECIAL org/apache/commons/math/exception/DimensionMismatchException.<init> (II)V
+    ATHROW
+   L3
+    LINENUMBER 208 L3
+    NEW org/apache/commons/math/ode/ExpandableStatefulODE
+    DUP
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/ode/ExpandableStatefulODE.<init> (Lorg/apache/commons/math/ode/FirstOrderDifferentialEquations;)V
+    ASTORE 8
+   L5
+    LINENUMBER 209 L5
+    ALOAD 8
+    DLOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/ode/ExpandableStatefulODE.setTime (D)V
+   L6
+    LINENUMBER 210 L6
+    ALOAD 8
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/ode/ExpandableStatefulODE.setPrimaryState ([D)V
+   L7
+    LINENUMBER 213 L7
+    ALOAD 0
+    ALOAD 8
+    DLOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/ode/AbstractIntegrator.integrate (Lorg/apache/commons/math/ode/ExpandableStatefulODE;D)V
+   L8
+    LINENUMBER 216 L8
+    ALOAD 8
+    INVOKEVIRTUAL org/apache/commons/math/ode/ExpandableStatefulODE.getPrimaryState ()[D
+    ICONST_0
+    ALOAD 7
+    ICONST_0
+    ALOAD 7
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L9
+    LINENUMBER 217 L9
+    ALOAD 8
+    INVOKEVIRTUAL org/apache/commons/math/ode/ExpandableStatefulODE.getTime ()D
+    DRETURN
+   L10
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L10 0
+    LOCALVARIABLE equations Lorg/apache/commons/math/ode/FirstOrderDifferentialEquations; L0 L10 1
+    LOCALVARIABLE t0 D L0 L10 2
+    LOCALVARIABLE y0 [D L0 L10 4
+    LOCALVARIABLE t D L0 L10 5
+    LOCALVARIABLE y [D L0 L10 7
+    LOCALVARIABLE expandableODE Lorg/apache/commons/math/ode/ExpandableStatefulODE; L5 L10 8
+    MAXSTACK = 5
+    MAXLOCALS = 9
+
+  // access flags 0x401
+  public abstract integrate(Lorg/apache/commons/math/ode/ExpandableStatefulODE;D)V throws org/apache/commons/math/exception/MathIllegalStateException org/apache/commons/math/exception/MathIllegalArgumentException 
+
+  // access flags 0x1
+  public computeDerivatives(D[D[D)V throws org/apache/commons/math/exception/MaxCountExceededException 
+   L0
+    LINENUMBER 249 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.evaluations : Lorg/apache/commons/math/util/Incrementor;
+    INVOKEVIRTUAL org/apache/commons/math/util/Incrementor.incrementCount ()V
+   L1
+    LINENUMBER 250 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.expandable : Lorg/apache/commons/math/ode/ExpandableStatefulODE;
+    DLOAD 1
+    ALOAD 3
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/ode/ExpandableStatefulODE.computeDerivatives (D[D[D)V
+   L2
+    LINENUMBER 251 L2
+    RETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L3 0
+    LOCALVARIABLE t D L0 L3 1
+    LOCALVARIABLE y [D L0 L3 3
+    LOCALVARIABLE yDot [D L0 L3 4
+    MAXSTACK = 5
+    MAXLOCALS = 5
+
+  // access flags 0x4
+  protected setStateInitialized(Z)V
+   L0
+    LINENUMBER 261 L0
+    ALOAD 0
+    ILOAD 1
+    PUTFIELD org/apache/commons/math/ode/AbstractIntegrator.statesInitialized : Z
+   L1
+    LINENUMBER 262 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L2 0
+    LOCALVARIABLE stateInitialized Z L0 L2 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x4
+  protected acceptStep(Lorg/apache/commons/math/ode/sampling/AbstractStepInterpolator;[D[DD)D throws org/apache/commons/math/exception/MathIllegalStateException 
+   L0
+    LINENUMBER 278 L0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.getGlobalPreviousTime ()D
+    DSTORE 6
+   L1
+    LINENUMBER 279 L1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.getGlobalCurrentTime ()D
+    DSTORE 8
+   L2
+    LINENUMBER 282 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.statesInitialized : Z
+    IFNE L3
+   L4
+    LINENUMBER 283 L4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.eventsStates : Ljava/util/Collection;
+    INVOKEINTERFACE java/util/Collection.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 10
+   L5
+    ALOAD 10
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L6
+    ALOAD 10
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/ode/events/EventState
+    ASTORE 11
+   L7
+    LINENUMBER 284 L7
+    ALOAD 11
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/EventState.reinitializeBegin (Lorg/apache/commons/math/ode/sampling/StepInterpolator;)V
+   L8
+    LINENUMBER 285 L8
+    GOTO L5
+   L6
+    LINENUMBER 286 L6
+    ALOAD 0
+    ICONST_1
+    PUTFIELD org/apache/commons/math/ode/AbstractIntegrator.statesInitialized : Z
+   L3
+    LINENUMBER 290 L3
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.isForward ()Z
+    IFEQ L9
+    ICONST_1
+    GOTO L10
+   L9
+    ICONST_M1
+   L10
+    ISTORE 10
+   L11
+    LINENUMBER 291 L11
+    NEW java/util/TreeSet
+    DUP
+    NEW org/apache/commons/math/ode/AbstractIntegrator$1
+    DUP
+    ALOAD 0
+    ILOAD 10
+    INVOKESPECIAL org/apache/commons/math/ode/AbstractIntegrator$1.<init> (Lorg/apache/commons/math/ode/AbstractIntegrator;I)V
+    INVOKESPECIAL java/util/TreeSet.<init> (Ljava/util/Comparator;)V
+    ASTORE 11
+   L12
+    LINENUMBER 300 L12
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.eventsStates : Ljava/util/Collection;
+    INVOKEINTERFACE java/util/Collection.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 12
+   L13
+    ALOAD 12
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L14
+    ALOAD 12
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/ode/events/EventState
+    ASTORE 13
+   L15
+    LINENUMBER 301 L15
+    ALOAD 13
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/EventState.evaluateStep (Lorg/apache/commons/math/ode/sampling/StepInterpolator;)Z
+    IFEQ L16
+   L17
+    LINENUMBER 303 L17
+    ALOAD 11
+    ALOAD 13
+    INVOKEINTERFACE java/util/SortedSet.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L16
+    LINENUMBER 305 L16
+    GOTO L13
+   L14
+    LINENUMBER 307 L14
+    ALOAD 11
+    INVOKEINTERFACE java/util/SortedSet.isEmpty ()Z (itf)
+    IFNE L18
+   L19
+    LINENUMBER 310 L19
+    ALOAD 11
+    INVOKEINTERFACE java/util/SortedSet.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 12
+   L20
+    LINENUMBER 311 L20
+    ALOAD 12
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/ode/events/EventState
+    ASTORE 13
+   L21
+    LINENUMBER 312 L21
+    ALOAD 12
+    INVOKEINTERFACE java/util/Iterator.remove ()V (itf)
+   L22
+    LINENUMBER 315 L22
+    ALOAD 13
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/EventState.getEventTime ()D
+    DSTORE 14
+   L23
+    LINENUMBER 316 L23
+    ALOAD 1
+    DLOAD 6
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.setSoftPreviousTime (D)V
+   L24
+    LINENUMBER 317 L24
+    ALOAD 1
+    DLOAD 14
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.setSoftCurrentTime (D)V
+   L25
+    LINENUMBER 320 L25
+    ALOAD 1
+    DLOAD 14
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.setInterpolatedTime (D)V
+   L26
+    LINENUMBER 321 L26
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.getInterpolatedState ()[D
+    ASTORE 16
+   L27
+    LINENUMBER 322 L27
+    ALOAD 13
+    DLOAD 14
+    ALOAD 16
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/EventState.stepAccepted (D[D)V
+   L28
+    LINENUMBER 323 L28
+    ALOAD 0
+    ALOAD 13
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/EventState.stop ()Z
+    PUTFIELD org/apache/commons/math/ode/AbstractIntegrator.isLastStep : Z
+   L29
+    LINENUMBER 326 L29
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.stepHandlers : Ljava/util/Collection;
+    INVOKEINTERFACE java/util/Collection.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 17
+   L30
+    ALOAD 17
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L31
+    ALOAD 17
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/ode/sampling/StepHandler
+    ASTORE 18
+   L32
+    LINENUMBER 327 L32
+    ALOAD 18
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.isLastStep : Z
+    INVOKEINTERFACE org/apache/commons/math/ode/sampling/StepHandler.handleStep (Lorg/apache/commons/math/ode/sampling/StepInterpolator;Z)V (itf)
+   L33
+    LINENUMBER 328 L33
+    GOTO L30
+   L31
+    LINENUMBER 330 L31
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.isLastStep : Z
+    IFEQ L34
+   L35
+    LINENUMBER 332 L35
+    ALOAD 16
+    ICONST_0
+    ALOAD 2
+    ICONST_0
+    ALOAD 2
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L36
+    LINENUMBER 333 L36
+    ALOAD 11
+    INVOKEINTERFACE java/util/SortedSet.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 17
+   L37
+    ALOAD 17
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L38
+    ALOAD 17
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/ode/events/EventState
+    ASTORE 18
+   L39
+    LINENUMBER 334 L39
+    ALOAD 18
+    DLOAD 14
+    ALOAD 16
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/EventState.stepAccepted (D[D)V
+   L40
+    LINENUMBER 335 L40
+    GOTO L37
+   L38
+    LINENUMBER 336 L38
+    DLOAD 14
+    DRETURN
+   L34
+    LINENUMBER 339 L34
+    ALOAD 13
+    DLOAD 14
+    ALOAD 16
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/EventState.reset (D[D)Z
+    IFEQ L41
+   L42
+    LINENUMBER 342 L42
+    ALOAD 16
+    ICONST_0
+    ALOAD 2
+    ICONST_0
+    ALOAD 2
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L43
+    LINENUMBER 343 L43
+    ALOAD 0
+    DLOAD 14
+    ALOAD 2
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/ode/AbstractIntegrator.computeDerivatives (D[D[D)V
+   L44
+    LINENUMBER 344 L44
+    ALOAD 0
+    ICONST_1
+    PUTFIELD org/apache/commons/math/ode/AbstractIntegrator.resetOccurred : Z
+   L45
+    LINENUMBER 345 L45
+    ALOAD 11
+    INVOKEINTERFACE java/util/SortedSet.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 17
+   L46
+    ALOAD 17
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L47
+    ALOAD 17
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/ode/events/EventState
+    ASTORE 18
+   L48
+    LINENUMBER 346 L48
+    ALOAD 18
+    DLOAD 14
+    ALOAD 16
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/EventState.stepAccepted (D[D)V
+   L49
+    LINENUMBER 347 L49
+    GOTO L46
+   L47
+    LINENUMBER 348 L47
+    DLOAD 14
+    DRETURN
+   L41
+    LINENUMBER 352 L41
+    DLOAD 14
+    DSTORE 6
+   L50
+    LINENUMBER 353 L50
+    ALOAD 1
+    DLOAD 14
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.setSoftPreviousTime (D)V
+   L51
+    LINENUMBER 354 L51
+    ALOAD 1
+    DLOAD 8
+    POP2
+    POP
+   L52
+    LINENUMBER 357 L52
+    ALOAD 13
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/EventState.evaluateStep (Lorg/apache/commons/math/ode/sampling/StepInterpolator;)Z
+    IFEQ L53
+   L54
+    LINENUMBER 359 L54
+    ALOAD 11
+    ALOAD 13
+    INVOKEINTERFACE java/util/SortedSet.add (Ljava/lang/Object;)Z (itf)
+    POP
+   L53
+    LINENUMBER 362 L53
+    GOTO L14
+   L18
+    LINENUMBER 364 L18
+    ALOAD 1
+    DLOAD 8
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.setInterpolatedTime (D)V
+   L55
+    LINENUMBER 365 L55
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.getInterpolatedState ()[D
+    ASTORE 12
+   L56
+    LINENUMBER 366 L56
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.eventsStates : Ljava/util/Collection;
+    INVOKEINTERFACE java/util/Collection.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 13
+   L57
+    ALOAD 13
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L58
+    ALOAD 13
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/ode/events/EventState
+    ASTORE 14
+   L59
+    LINENUMBER 367 L59
+    ALOAD 14
+    DLOAD 8
+    ALOAD 12
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/EventState.stepAccepted (D[D)V
+   L60
+    LINENUMBER 368 L60
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.isLastStep : Z
+    IFNE L61
+    ALOAD 14
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/EventState.stop ()Z
+    IFEQ L62
+   L61
+    ICONST_1
+    GOTO L63
+   L62
+    ICONST_0
+   L63
+    PUTFIELD org/apache/commons/math/ode/AbstractIntegrator.isLastStep : Z
+   L64
+    LINENUMBER 369 L64
+    GOTO L57
+   L58
+    LINENUMBER 370 L58
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.isLastStep : Z
+    IFNE L65
+    DLOAD 8
+    DLOAD 4
+    ICONST_1
+    INVOKESTATIC org/apache/commons/math/util/Precision.equals (DDI)Z
+    IFEQ L66
+   L65
+    ICONST_1
+    GOTO L67
+   L66
+    ICONST_0
+   L67
+    PUTFIELD org/apache/commons/math/ode/AbstractIntegrator.isLastStep : Z
+   L68
+    LINENUMBER 373 L68
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.stepHandlers : Ljava/util/Collection;
+    INVOKEINTERFACE java/util/Collection.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 13
+   L69
+    ALOAD 13
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L70
+    ALOAD 13
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/ode/sampling/StepHandler
+    ASTORE 14
+   L71
+    LINENUMBER 374 L71
+    ALOAD 14
+    ALOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/AbstractIntegrator.isLastStep : Z
+    INVOKEINTERFACE org/apache/commons/math/ode/sampling/StepHandler.handleStep (Lorg/apache/commons/math/ode/sampling/StepInterpolator;Z)V (itf)
+   L72
+    LINENUMBER 375 L72
+    GOTO L69
+   L70
+    LINENUMBER 377 L70
+    DLOAD 8
+    DRETURN
+   L73
+    LOCALVARIABLE state Lorg/apache/commons/math/ode/events/EventState; L7 L8 11
+    LOCALVARIABLE i$ Ljava/util/Iterator; L5 L6 10
+    LOCALVARIABLE state Lorg/apache/commons/math/ode/events/EventState; L15 L16 13
+    LOCALVARIABLE i$ Ljava/util/Iterator; L13 L14 12
+    LOCALVARIABLE handler Lorg/apache/commons/math/ode/sampling/StepHandler; L32 L33 18
+    LOCALVARIABLE i$ Ljava/util/Iterator; L30 L31 17
+    LOCALVARIABLE remaining Lorg/apache/commons/math/ode/events/EventState; L39 L40 18
+    LOCALVARIABLE i$ Ljava/util/Iterator; L37 L38 17
+    LOCALVARIABLE remaining Lorg/apache/commons/math/ode/events/EventState; L48 L49 18
+    LOCALVARIABLE i$ Ljava/util/Iterator; L46 L47 17
+    LOCALVARIABLE iterator Ljava/util/Iterator; L20 L53 12
+    // signature Ljava/util/Iterator<Lorg/apache/commons/math/ode/events/EventState;>;
+    // declaration: iterator extends java.util.Iterator<org.apache.commons.math.ode.events.EventState>
+    LOCALVARIABLE currentEvent Lorg/apache/commons/math/ode/events/EventState; L21 L53 13
+    LOCALVARIABLE eventT D L23 L53 14
+    LOCALVARIABLE eventY [D L27 L53 16
+    LOCALVARIABLE state Lorg/apache/commons/math/ode/events/EventState; L59 L64 14
+    LOCALVARIABLE i$ Ljava/util/Iterator; L57 L58 13
+    LOCALVARIABLE handler Lorg/apache/commons/math/ode/sampling/StepHandler; L71 L72 14
+    LOCALVARIABLE i$ Ljava/util/Iterator; L69 L70 13
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L73 0
+    LOCALVARIABLE interpolator Lorg/apache/commons/math/ode/sampling/AbstractStepInterpolator; L0 L73 1
+    LOCALVARIABLE y [D L0 L73 2
+    LOCALVARIABLE yDot [D L0 L73 3
+    LOCALVARIABLE tEnd D L0 L73 4
+    LOCALVARIABLE previousT D L1 L73 6
+    LOCALVARIABLE currentT D L2 L73 8
+    LOCALVARIABLE orderingSign I L11 L73 10
+    LOCALVARIABLE occuringEvents Ljava/util/SortedSet; L12 L73 11
+    // signature Ljava/util/SortedSet<Lorg/apache/commons/math/ode/events/EventState;>;
+    // declaration: occuringEvents extends java.util.SortedSet<org.apache.commons.math.ode.events.EventState>
+    LOCALVARIABLE currentY [D L56 L73 12
+    MAXSTACK = 6
+    MAXLOCALS = 19
+
+  // access flags 0x4
+  protected sanityChecks(Lorg/apache/commons/math/ode/ExpandableStatefulODE;D)V throws org/apache/commons/math/exception/NumberIsTooSmallException 
+   L0
+    LINENUMBER 389 L0
+    LDC 1000.0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/ode/ExpandableStatefulODE.getTime ()D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.abs (D)D
+    DLOAD 2
+    INVOKESTATIC org/apache/commons/math/util/FastMath.abs (D)D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.max (DD)D
+    INVOKESTATIC org/apache/commons/math/util/FastMath.ulp (D)D
+    DMUL
+    DSTORE 4
+   L1
+    LINENUMBER 391 L1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/ode/ExpandableStatefulODE.getTime ()D
+    DLOAD 2
+    DSUB
+    INVOKESTATIC org/apache/commons/math/util/FastMath.abs (D)D
+    DSTORE 6
+   L2
+    LINENUMBER 392 L2
+    DLOAD 6
+    DLOAD 4
+    DCMPG
+    IFGT L3
+   L4
+    LINENUMBER 393 L4
+    NEW org/apache/commons/math/exception/NumberIsTooSmallException
+    DUP
+    GETSTATIC org/apache/commons/math/exception/util/LocalizedFormats.TOO_SMALL_INTEGRATION_INTERVAL : Lorg/apache/commons/math/exception/util/LocalizedFormats;
+    DLOAD 6
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    DLOAD 4
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/exception/NumberIsTooSmallException.<init> (Lorg/apache/commons/math/exception/util/Localizable;Ljava/lang/Number;Ljava/lang/Number;Z)V
+    ATHROW
+   L3
+    LINENUMBER 397 L3
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/AbstractIntegrator; L0 L5 0
+    LOCALVARIABLE equations Lorg/apache/commons/math/ode/ExpandableStatefulODE; L0 L5 1
+    LOCALVARIABLE t D L0 L5 2
+    LOCALVARIABLE threshold D L1 L5 4
+    LOCALVARIABLE dt D L2 L5 6
+    MAXSTACK = 6
+    MAXLOCALS = 8
+}
+

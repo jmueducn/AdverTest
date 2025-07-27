@@ -10,9 +10,9 @@ def copy_and_rename_chart(chart_index, new_filename):
     - new_filename: str，新文件名（例如："chart1.tar.bz2"）
     """
     # 构造源文件路径
-    src = f"./defects4j_fixed/Csv/Csv_{chart_index}_fixed/gentest.tar.bz2"
+    src = f"/data3/fyx/data3/cpy/MutAGENTest/src/defects4j_fixed/Math/Math_{chart_index}_fixed/gentest.tar.bz2"
     # 目标目录
-    dst_dir = "./output/ourmethod/Csv/2025-5-18"
+    dst_dir = "./output/pit/Math"
     # 如果目标目录不存在，则创建它
     os.makedirs(dst_dir, exist_ok=True)
     # 构造目标文件路径
@@ -29,6 +29,6 @@ def copy_and_rename_chart(chart_index, new_filename):
 
 if __name__ == '__main__':
     # 示例：复制 chart 序号为 1 的文件，并将其重命名为 "chart1.tar.bz2"
-    for i in range(0,16):
-        new_name = 'Csv%d.tar.bz2'%(i+1)
+    for i in range(0,106):
+        new_name = 'Math%d.tar.bz2'%(i+1)
         copy_and_rename_chart(i+1, new_name)

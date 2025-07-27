@@ -1,0 +1,498 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math3/distribution/FDistribution extends org/apache/commons/math3/distribution/AbstractRealDistribution {
+
+  // compiled from: FDistribution.java
+
+  // access flags 0x19
+  public final static D DEFAULT_INVERSE_ABSOLUTE_ACCURACY = 1.0E-9
+
+  // access flags 0x1A
+  private final static J serialVersionUID = -8516354193418641566
+
+  // access flags 0x12
+  private final D numeratorDegreesOfFreedom
+
+  // access flags 0x12
+  private final D denominatorDegreesOfFreedom
+
+  // access flags 0x12
+  private final D solverAbsoluteAccuracy
+
+  // access flags 0x2
+  private D numericalVariance
+
+  // access flags 0x2
+  private Z numericalVarianceIsCalculated
+
+  // access flags 0x1
+  public <init>(DD)V throws org/apache/commons/math3/exception/NotStrictlyPositiveException 
+   L0
+    LINENUMBER 65 L0
+    ALOAD 0
+    DLOAD 1
+    DLOAD 3
+    LDC 1.0E-9
+    INVOKESPECIAL org/apache/commons/math3/distribution/FDistribution.<init> (DDD)V
+   L1
+    LINENUMBER 67 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L2 0
+    LOCALVARIABLE numeratorDegreesOfFreedom D L0 L2 1
+    LOCALVARIABLE denominatorDegreesOfFreedom D L0 L2 3
+    MAXSTACK = 7
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public <init>(DDD)V throws org/apache/commons/math3/exception/NotStrictlyPositiveException 
+   L0
+    LINENUMBER 86 L0
+    ALOAD 0
+    NEW org/apache/commons/math3/random/Well19937c
+    DUP
+    INVOKESPECIAL org/apache/commons/math3/random/Well19937c.<init> ()V
+    DLOAD 1
+    DLOAD 3
+    DLOAD 5
+    INVOKESPECIAL org/apache/commons/math3/distribution/FDistribution.<init> (Lorg/apache/commons/math3/random/RandomGenerator;DDD)V
+   L1
+    LINENUMBER 88 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L2 0
+    LOCALVARIABLE numeratorDegreesOfFreedom D L0 L2 1
+    LOCALVARIABLE denominatorDegreesOfFreedom D L0 L2 3
+    LOCALVARIABLE inverseCumAccuracy D L0 L2 5
+    MAXSTACK = 8
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math3/random/RandomGenerator;DDD)V throws org/apache/commons/math3/exception/NotStrictlyPositiveException 
+   L0
+    LINENUMBER 108 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math3/distribution/AbstractRealDistribution.<init> (Lorg/apache/commons/math3/random/RandomGenerator;)V
+   L1
+    LINENUMBER 49 L1
+    ALOAD 0
+    LDC NaN
+    PUTFIELD org/apache/commons/math3/distribution/FDistribution.numericalVariance : D
+   L2
+    LINENUMBER 51 L2
+    ALOAD 0
+    ICONST_0
+    PUTFIELD org/apache/commons/math3/distribution/FDistribution.numericalVarianceIsCalculated : Z
+   L3
+    LINENUMBER 110 L3
+    DLOAD 2
+    DCONST_0
+    DCMPG
+    IFGT L4
+   L5
+    LINENUMBER 111 L5
+    NEW org/apache/commons/math3/exception/NotStrictlyPositiveException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.DEGREES_OF_FREEDOM : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    DLOAD 2
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    INVOKESPECIAL org/apache/commons/math3/exception/NotStrictlyPositiveException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;Ljava/lang/Number;)V
+    ATHROW
+   L4
+    LINENUMBER 114 L4
+    DLOAD 4
+    DCONST_0
+    DCMPG
+    IFGT L6
+   L7
+    LINENUMBER 115 L7
+    NEW org/apache/commons/math3/exception/NotStrictlyPositiveException
+    DUP
+    GETSTATIC org/apache/commons/math3/exception/util/LocalizedFormats.DEGREES_OF_FREEDOM : Lorg/apache/commons/math3/exception/util/LocalizedFormats;
+    DLOAD 4
+    INVOKESTATIC java/lang/Double.valueOf (D)Ljava/lang/Double;
+    INVOKESPECIAL org/apache/commons/math3/exception/NotStrictlyPositiveException.<init> (Lorg/apache/commons/math3/exception/util/Localizable;Ljava/lang/Number;)V
+    ATHROW
+   L6
+    LINENUMBER 118 L6
+    ALOAD 0
+    DLOAD 2
+    PUTFIELD org/apache/commons/math3/distribution/FDistribution.numeratorDegreesOfFreedom : D
+   L8
+    LINENUMBER 119 L8
+    ALOAD 0
+    DLOAD 4
+    PUTFIELD org/apache/commons/math3/distribution/FDistribution.denominatorDegreesOfFreedom : D
+   L9
+    LINENUMBER 120 L9
+    ALOAD 0
+    DLOAD 6
+    PUTFIELD org/apache/commons/math3/distribution/FDistribution.solverAbsoluteAccuracy : D
+   L10
+    LINENUMBER 121 L10
+    RETURN
+   L11
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L11 0
+    LOCALVARIABLE rng Lorg/apache/commons/math3/random/RandomGenerator; L0 L11 1
+    LOCALVARIABLE numeratorDegreesOfFreedom D L0 L11 2
+    LOCALVARIABLE denominatorDegreesOfFreedom D L0 L11 4
+    LOCALVARIABLE inverseCumAccuracy D L0 L11 6
+    MAXSTACK = 5
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public density(D)D
+   L0
+    LINENUMBER 129 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/FDistribution.numeratorDegreesOfFreedom : D
+    LDC 2.0
+    DDIV
+    DSTORE 3
+   L1
+    LINENUMBER 130 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/FDistribution.denominatorDegreesOfFreedom : D
+    LDC 2.0
+    DDIV
+    DSTORE 5
+   L2
+    LINENUMBER 131 L2
+    DLOAD 1
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.log (D)D
+    DSTORE 7
+   L3
+    LINENUMBER 132 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/FDistribution.numeratorDegreesOfFreedom : D
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.log (D)D
+    DSTORE 9
+   L4
+    LINENUMBER 133 L4
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/FDistribution.denominatorDegreesOfFreedom : D
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.log (D)D
+    DSTORE 11
+   L5
+    LINENUMBER 134 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/FDistribution.numeratorDegreesOfFreedom : D
+    DLOAD 1
+    DMUL
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/FDistribution.denominatorDegreesOfFreedom : D
+    DADD
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.log (D)D
+    DSTORE 13
+   L6
+    LINENUMBER 136 L6
+    DLOAD 3
+    DLOAD 9
+    DMUL
+    DLOAD 3
+    DLOAD 7
+    DMUL
+    DADD
+    DLOAD 7
+    DSUB
+    DLOAD 5
+    DLOAD 11
+    DMUL
+    DADD
+    DLOAD 3
+    DLOAD 13
+    DMUL
+    DSUB
+    DLOAD 5
+    DLOAD 13
+    DMUL
+    DSUB
+    DLOAD 3
+    DLOAD 5
+    INVOKESTATIC org/apache/commons/math3/special/Beta.logBeta (DD)D
+    DSUB
+    INVOKESTATIC org/apache/commons/math3/util/FastMath.exp (D)D
+    DRETURN
+   L7
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L7 0
+    LOCALVARIABLE x D L0 L7 1
+    LOCALVARIABLE nhalf D L1 L7 3
+    LOCALVARIABLE mhalf D L2 L7 5
+    LOCALVARIABLE logx D L3 L7 7
+    LOCALVARIABLE logn D L4 L7 9
+    LOCALVARIABLE logm D L5 L7 11
+    LOCALVARIABLE lognxm D L6 L7 13
+    MAXSTACK = 6
+    MAXLOCALS = 15
+
+  // access flags 0x1
+  public cumulativeProbability(D)D
+   L0
+    LINENUMBER 154 L0
+    DLOAD 1
+    DCONST_0
+    DCMPG
+    IFGT L1
+   L2
+    LINENUMBER 155 L2
+    DCONST_0
+    DSTORE 3
+   L3
+    GOTO L4
+   L1
+    LINENUMBER 157 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/FDistribution.numeratorDegreesOfFreedom : D
+    DSTORE 5
+   L5
+    LINENUMBER 158 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/FDistribution.denominatorDegreesOfFreedom : D
+    DSTORE 7
+   L6
+    LINENUMBER 160 L6
+    DLOAD 5
+    DLOAD 1
+    DMUL
+    DLOAD 7
+    DLOAD 5
+    DLOAD 1
+    DMUL
+    DADD
+    DDIV
+    LDC 0.5
+    DLOAD 5
+    DMUL
+    LDC 0.5
+    DLOAD 7
+    DMUL
+    INVOKESTATIC org/apache/commons/math3/special/Beta.regularizedBeta (DDD)D
+    DSTORE 3
+   L4
+    LINENUMBER 164 L4
+    DLOAD 3
+    DRETURN
+   L7
+    LOCALVARIABLE ret D L3 L1 3
+    LOCALVARIABLE n D L5 L4 5
+    LOCALVARIABLE m D L6 L4 7
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L7 0
+    LOCALVARIABLE x D L0 L7 1
+    LOCALVARIABLE ret D L4 L7 3
+    MAXSTACK = 8
+    MAXLOCALS = 9
+
+  // access flags 0x1
+  public getNumeratorDegreesOfFreedom()D
+   L0
+    LINENUMBER 173 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/FDistribution.numeratorDegreesOfFreedom : D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getDenominatorDegreesOfFreedom()D
+   L0
+    LINENUMBER 182 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/FDistribution.denominatorDegreesOfFreedom : D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x4
+  protected getSolverAbsoluteAccuracy()D
+   L0
+    LINENUMBER 188 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/FDistribution.solverAbsoluteAccuracy : D
+    POP2
+    DCONST_0
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getNumericalMean()D
+   L0
+    LINENUMBER 201 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/distribution/FDistribution.getDenominatorDegreesOfFreedom ()D
+    DSTORE 1
+   L1
+    LINENUMBER 203 L1
+    DLOAD 1
+    LDC 2.0
+    DCMPL
+    IFLE L2
+   L3
+    LINENUMBER 204 L3
+    DLOAD 1
+    DLOAD 1
+    LDC 2.0
+    DSUB
+    DDIV
+    DRETURN
+   L2
+    LINENUMBER 207 L2
+    LDC NaN
+    DRETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L4 0
+    LOCALVARIABLE denominatorDF D L1 L4 1
+    MAXSTACK = 6
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getNumericalVariance()D
+   L0
+    LINENUMBER 224 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/FDistribution.numericalVarianceIsCalculated : Z
+    IFNE L1
+   L2
+    LINENUMBER 225 L2
+    ALOAD 0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/distribution/FDistribution.calculateNumericalVariance ()D
+    PUTFIELD org/apache/commons/math3/distribution/FDistribution.numericalVariance : D
+   L3
+    LINENUMBER 226 L3
+    ALOAD 0
+    ICONST_1
+    PUTFIELD org/apache/commons/math3/distribution/FDistribution.numericalVarianceIsCalculated : Z
+   L1
+    LINENUMBER 228 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/distribution/FDistribution.numericalVariance : D
+    DRETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L4 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x4
+  protected calculateNumericalVariance()D
+   L0
+    LINENUMBER 237 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/distribution/FDistribution.getDenominatorDegreesOfFreedom ()D
+    DSTORE 1
+   L1
+    LINENUMBER 239 L1
+    DLOAD 1
+    LDC 4.0
+    DCMPL
+    IFLE L2
+   L3
+    LINENUMBER 240 L3
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/distribution/FDistribution.getNumeratorDegreesOfFreedom ()D
+    DSTORE 3
+   L4
+    LINENUMBER 241 L4
+    DLOAD 1
+    LDC 2.0
+    DSUB
+    DSTORE 5
+   L5
+    LINENUMBER 243 L5
+    LDC 2.0
+    DLOAD 1
+    DLOAD 1
+    DMUL
+    DMUL
+    DLOAD 3
+    DLOAD 1
+    DADD
+    LDC 2.0
+    DSUB
+    DMUL
+    DLOAD 3
+    DLOAD 5
+    DLOAD 5
+    DMUL
+    DMUL
+    DLOAD 1
+    LDC 4.0
+    DSUB
+    DMUL
+    DDIV
+    DRETURN
+   L2
+    LINENUMBER 247 L2
+    LDC NaN
+    DRETURN
+   L6
+    LOCALVARIABLE numeratorDF D L4 L2 3
+    LOCALVARIABLE denomDFMinusTwo D L5 L2 5
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L6 0
+    LOCALVARIABLE denominatorDF D L1 L6 1
+    MAXSTACK = 8
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public getSupportLowerBound()D
+   L0
+    LINENUMBER 258 L0
+    DCONST_0
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getSupportUpperBound()D
+   L0
+    LINENUMBER 270 L0
+    LDC Infinity
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public isSupportLowerBoundInclusive()Z
+   L0
+    LINENUMBER 275 L0
+    ICONST_0
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public isSupportUpperBoundInclusive()Z
+   L0
+    LINENUMBER 280 L0
+    ICONST_0
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public isSupportConnected()Z
+   L0
+    LINENUMBER 291 L0
+    ICONST_1
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/distribution/FDistribution; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+}
+

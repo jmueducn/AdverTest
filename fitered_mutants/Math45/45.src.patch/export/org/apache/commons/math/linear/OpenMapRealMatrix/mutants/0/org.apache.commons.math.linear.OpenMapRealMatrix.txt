@@ -1,0 +1,897 @@
+// class version 49.0 (49)
+// access flags 0x21
+public class org/apache/commons/math/linear/OpenMapRealMatrix extends org/apache/commons/math/linear/AbstractRealMatrix implements org/apache/commons/math/linear/SparseRealMatrix java/io/Serializable {
+
+  // compiled from: OpenMapRealMatrix.java
+  // access flags 0x1
+  public INNERCLASS org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator org/apache/commons/math/util/OpenIntToDoubleHashMap Iterator
+
+  // access flags 0x1A
+  private final static J serialVersionUID = -5962461716457143437
+
+  // access flags 0x12
+  private final I rows
+
+  // access flags 0x12
+  private final I columns
+
+  // access flags 0x12
+  private final Lorg/apache/commons/math/util/OpenIntToDoubleHashMap; entries
+
+  // access flags 0x1
+  public <init>(II)V
+   L0
+    LINENUMBER 49 L0
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealMatrix.<init> (II)V
+   L1
+    LINENUMBER 50 L1
+    ILOAD 1
+    I2L
+    LSTORE 3
+   L2
+    LINENUMBER 51 L2
+    ILOAD 2
+    I2L
+    LSTORE 5
+   L3
+    LINENUMBER 52 L3
+    LLOAD 3
+    LLOAD 5
+    LMUL
+    LDC 2147483647
+    LCMP
+    POP
+    GOTO L4
+   L5
+    LINENUMBER 53 L5
+    NEW org/apache/commons/math/exception/NumberIsTooLargeException
+    DUP
+    LLOAD 3
+    LLOAD 5
+    LMUL
+    INVOKESTATIC java/lang/Long.valueOf (J)Ljava/lang/Long;
+    LDC 2147483647
+    INVOKESTATIC java/lang/Integer.valueOf (I)Ljava/lang/Integer;
+    ICONST_0
+    INVOKESPECIAL org/apache/commons/math/exception/NumberIsTooLargeException.<init> (Ljava/lang/Number;Ljava/lang/Number;Z)V
+    ATHROW
+   L4
+    LINENUMBER 55 L4
+    ALOAD 0
+    ILOAD 1
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealMatrix.rows : I
+   L6
+    LINENUMBER 56 L6
+    ALOAD 0
+    ILOAD 2
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealMatrix.columns : I
+   L7
+    LINENUMBER 57 L7
+    ALOAD 0
+    NEW org/apache/commons/math/util/OpenIntToDoubleHashMap
+    DUP
+    DCONST_0
+    INVOKESPECIAL org/apache/commons/math/util/OpenIntToDoubleHashMap.<init> (D)V
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+   L8
+    LINENUMBER 58 L8
+    RETURN
+   L9
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L9 0
+    LOCALVARIABLE rowDimension I L0 L9 1
+    LOCALVARIABLE columnDimension I L0 L9 2
+    LOCALVARIABLE lRow J L2 L9 3
+    LOCALVARIABLE lCol J L3 L9 5
+    MAXSTACK = 5
+    MAXLOCALS = 7
+
+  // access flags 0x1
+  public <init>(Lorg/apache/commons/math/linear/OpenMapRealMatrix;)V
+   L0
+    LINENUMBER 65 L0
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealMatrix.<init> ()V
+   L1
+    LINENUMBER 66 L1
+    ALOAD 0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.rows : I
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealMatrix.rows : I
+   L2
+    LINENUMBER 67 L2
+    ALOAD 0
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.columns : I
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealMatrix.columns : I
+   L3
+    LINENUMBER 68 L3
+    ALOAD 0
+    NEW org/apache/commons/math/util/OpenIntToDoubleHashMap
+    DUP
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKESPECIAL org/apache/commons/math/util/OpenIntToDoubleHashMap.<init> (Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;)V
+    PUTFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+   L4
+    LINENUMBER 69 L4
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L5 0
+    LOCALVARIABLE matrix Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L5 1
+    MAXSTACK = 4
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public copy()Lorg/apache/commons/math/linear/OpenMapRealMatrix;
+   L0
+    LINENUMBER 74 L0
+    NEW org/apache/commons/math/linear/OpenMapRealMatrix
+    DUP
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealMatrix.<init> (Lorg/apache/commons/math/linear/OpenMapRealMatrix;)V
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L1 0
+    MAXSTACK = 3
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public createMatrix(II)Lorg/apache/commons/math/linear/OpenMapRealMatrix;
+   L0
+    LINENUMBER 80 L0
+    NEW org/apache/commons/math/linear/OpenMapRealMatrix
+    DUP
+    ILOAD 1
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealMatrix.<init> (II)V
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L1 0
+    LOCALVARIABLE rowDimension I L0 L1 1
+    LOCALVARIABLE columnDimension I L0 L1 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getColumnDimension()I
+   L0
+    LINENUMBER 86 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.columns : I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public add(Lorg/apache/commons/math/linear/OpenMapRealMatrix;)Lorg/apache/commons/math/linear/OpenMapRealMatrix;
+   L0
+    LINENUMBER 100 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.checkAdditionCompatible (Lorg/apache/commons/math/linear/AnyMatrix;Lorg/apache/commons/math/linear/AnyMatrix;)V
+   L1
+    LINENUMBER 102 L1
+    NEW org/apache/commons/math/linear/OpenMapRealMatrix
+    DUP
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealMatrix.<init> (Lorg/apache/commons/math/linear/OpenMapRealMatrix;)V
+    ASTORE 2
+   L2
+    LINENUMBER 103 L2
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 3
+   L3
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L4
+   L5
+    LINENUMBER 104 L5
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L6
+    LINENUMBER 105 L6
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.columns : I
+    IDIV
+    ISTORE 4
+   L7
+    LINENUMBER 106 L7
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.columns : I
+    IMUL
+    ISUB
+    ISTORE 5
+   L8
+    LINENUMBER 107 L8
+    ALOAD 2
+    ILOAD 4
+    ILOAD 5
+    ALOAD 0
+    ILOAD 4
+    ILOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealMatrix.getEntry (II)D
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DADD
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealMatrix.setEntry (IID)V
+   L9
+    LINENUMBER 108 L9
+    GOTO L3
+   L4
+    LINENUMBER 110 L4
+    ALOAD 2
+    ARETURN
+   L10
+    LOCALVARIABLE row I L7 L9 4
+    LOCALVARIABLE col I L8 L9 5
+    LOCALVARIABLE iterator Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L3 L4 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L10 0
+    LOCALVARIABLE m Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L10 1
+    LOCALVARIABLE out Lorg/apache/commons/math/linear/OpenMapRealMatrix; L2 L10 2
+    MAXSTACK = 7
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public subtract(Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/OpenMapRealMatrix;
+    TRYCATCHBLOCK L0 L1 L2 java/lang/ClassCastException
+   L0
+    LINENUMBER 118 L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/OpenMapRealMatrix
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealMatrix.subtract (Lorg/apache/commons/math/linear/OpenMapRealMatrix;)Lorg/apache/commons/math/linear/OpenMapRealMatrix;
+   L1
+    ARETURN
+   L2
+    LINENUMBER 119 L2
+    ASTORE 2
+   L3
+    LINENUMBER 120 L3
+    ALOAD 0
+    ALOAD 1
+    INVOKESPECIAL org/apache/commons/math/linear/AbstractRealMatrix.subtract (Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/RealMatrix;
+    CHECKCAST org/apache/commons/math/linear/OpenMapRealMatrix
+    ARETURN
+   L4
+    LOCALVARIABLE cce Ljava/lang/ClassCastException; L3 L4 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L4 0
+    LOCALVARIABLE m Lorg/apache/commons/math/linear/RealMatrix; L0 L4 1
+    MAXSTACK = 2
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public subtract(Lorg/apache/commons/math/linear/OpenMapRealMatrix;)Lorg/apache/commons/math/linear/OpenMapRealMatrix;
+   L0
+    LINENUMBER 134 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.checkAdditionCompatible (Lorg/apache/commons/math/linear/AnyMatrix;Lorg/apache/commons/math/linear/AnyMatrix;)V
+   L1
+    LINENUMBER 136 L1
+    NEW org/apache/commons/math/linear/OpenMapRealMatrix
+    DUP
+    ALOAD 0
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealMatrix.<init> (Lorg/apache/commons/math/linear/OpenMapRealMatrix;)V
+    ASTORE 2
+   L2
+    LINENUMBER 137 L2
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 3
+   L3
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L4
+   L5
+    LINENUMBER 138 L5
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L6
+    LINENUMBER 139 L6
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.columns : I
+    IDIV
+    ISTORE 4
+   L7
+    LINENUMBER 140 L7
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ILOAD 4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.columns : I
+    IMUL
+    ISUB
+    ISTORE 5
+   L8
+    LINENUMBER 141 L8
+    ALOAD 2
+    ILOAD 4
+    ILOAD 5
+    ALOAD 0
+    ILOAD 4
+    ILOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealMatrix.getEntry (II)D
+    ALOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DSUB
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealMatrix.setEntry (IID)V
+   L9
+    LINENUMBER 142 L9
+    GOTO L3
+   L4
+    LINENUMBER 144 L4
+    ALOAD 2
+    ARETURN
+   L10
+    LOCALVARIABLE row I L7 L9 4
+    LOCALVARIABLE col I L8 L9 5
+    LOCALVARIABLE iterator Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L3 L4 3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L10 0
+    LOCALVARIABLE m Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L10 1
+    LOCALVARIABLE out Lorg/apache/commons/math/linear/OpenMapRealMatrix; L2 L10 2
+    MAXSTACK = 7
+    MAXLOCALS = 6
+
+  // access flags 0x1
+  public multiply(Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/RealMatrix;
+    TRYCATCHBLOCK L0 L1 L2 java/lang/ClassCastException
+   L0
+    LINENUMBER 151 L0
+    ALOAD 0
+    ALOAD 1
+    CHECKCAST org/apache/commons/math/linear/OpenMapRealMatrix
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealMatrix.multiply (Lorg/apache/commons/math/linear/OpenMapRealMatrix;)Lorg/apache/commons/math/linear/OpenMapRealMatrix;
+   L1
+    ARETURN
+   L2
+    LINENUMBER 152 L2
+    ASTORE 2
+   L3
+    LINENUMBER 155 L3
+    ALOAD 0
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.checkMultiplicationCompatible (Lorg/apache/commons/math/linear/AnyMatrix;Lorg/apache/commons/math/linear/AnyMatrix;)V
+   L4
+    LINENUMBER 157 L4
+    ALOAD 1
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getColumnDimension ()I (itf)
+    ISTORE 3
+   L5
+    LINENUMBER 158 L5
+    NEW org/apache/commons/math/linear/BlockRealMatrix
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.rows : I
+    ILOAD 3
+    INVOKESPECIAL org/apache/commons/math/linear/BlockRealMatrix.<init> (II)V
+    ASTORE 4
+   L6
+    LINENUMBER 159 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 5
+   L7
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L8
+   L9
+    LINENUMBER 160 L9
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L10
+    LINENUMBER 161 L10
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DSTORE 6
+   L11
+    LINENUMBER 162 L11
+    ALOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ISTORE 8
+   L12
+    LINENUMBER 163 L12
+    ILOAD 8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.columns : I
+    IDIV
+    ISTORE 9
+   L13
+    LINENUMBER 164 L13
+    ILOAD 8
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.columns : I
+    IREM
+    ISTORE 10
+   L14
+    LINENUMBER 165 L14
+    ICONST_0
+    ISTORE 11
+   L15
+    ILOAD 11
+    ILOAD 3
+    IF_ICMPGE L16
+   L17
+    LINENUMBER 166 L17
+    ALOAD 4
+    ILOAD 9
+    ILOAD 11
+    DLOAD 6
+    ALOAD 1
+    ILOAD 10
+    ILOAD 11
+    INVOKEINTERFACE org/apache/commons/math/linear/RealMatrix.getEntry (II)D (itf)
+    DMUL
+    INVOKEVIRTUAL org/apache/commons/math/linear/BlockRealMatrix.addToEntry (IID)V
+   L18
+    LINENUMBER 165 L18
+    IINC 11 1
+    GOTO L15
+   L16
+    LINENUMBER 168 L16
+    GOTO L7
+   L8
+    LINENUMBER 170 L8
+    ALOAD 4
+    ARETURN
+   L19
+    LOCALVARIABLE j I L15 L16 11
+    LOCALVARIABLE value D L11 L16 6
+    LOCALVARIABLE key I L12 L16 8
+    LOCALVARIABLE i I L13 L16 9
+    LOCALVARIABLE k I L14 L16 10
+    LOCALVARIABLE iterator Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L7 L8 5
+    LOCALVARIABLE outCols I L5 L19 3
+    LOCALVARIABLE out Lorg/apache/commons/math/linear/BlockRealMatrix; L6 L19 4
+    LOCALVARIABLE cce Ljava/lang/ClassCastException; L3 L19 2
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L19 0
+    LOCALVARIABLE m Lorg/apache/commons/math/linear/RealMatrix; L0 L19 1
+    MAXSTACK = 8
+    MAXLOCALS = 12
+
+  // access flags 0x1
+  public multiply(Lorg/apache/commons/math/linear/OpenMapRealMatrix;)Lorg/apache/commons/math/linear/OpenMapRealMatrix;
+   L0
+    LINENUMBER 185 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.checkMultiplicationCompatible (Lorg/apache/commons/math/linear/AnyMatrix;Lorg/apache/commons/math/linear/AnyMatrix;)V
+   L1
+    LINENUMBER 187 L1
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealMatrix.getColumnDimension ()I
+    ISTORE 2
+   L2
+    LINENUMBER 188 L2
+    NEW org/apache/commons/math/linear/OpenMapRealMatrix
+    DUP
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.rows : I
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealMatrix.<init> (II)V
+    ASTORE 3
+   L3
+    LINENUMBER 189 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.iterator ()Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator;
+    ASTORE 4
+   L4
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.hasNext ()Z
+    IFEQ L5
+   L6
+    LINENUMBER 190 L6
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.advance ()V
+   L7
+    LINENUMBER 191 L7
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.value ()D
+    DSTORE 5
+   L8
+    LINENUMBER 192 L8
+    ALOAD 4
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator.key ()I
+    ISTORE 7
+   L9
+    LINENUMBER 193 L9
+    ILOAD 7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.columns : I
+    IDIV
+    ISTORE 8
+   L10
+    LINENUMBER 194 L10
+    ILOAD 7
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.columns : I
+    IREM
+    ISTORE 9
+   L11
+    LINENUMBER 195 L11
+    ICONST_0
+    ISTORE 10
+   L12
+    ILOAD 10
+    ILOAD 2
+    IF_ICMPGE L13
+   L14
+    LINENUMBER 196 L14
+    ALOAD 1
+    ILOAD 9
+    ILOAD 10
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealMatrix.computeKey (II)I
+    ISTORE 11
+   L15
+    LINENUMBER 197 L15
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 11
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.containsKey (I)Z
+    IFEQ L16
+   L17
+    LINENUMBER 198 L17
+    ALOAD 3
+    ILOAD 8
+    ILOAD 10
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealMatrix.computeKey (II)I
+    ISTORE 12
+   L18
+    LINENUMBER 199 L18
+    ALOAD 3
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 12
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.get (I)D
+    DLOAD 5
+    ALOAD 1
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 11
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.get (I)D
+    DMUL
+    DADD
+    DSTORE 13
+   L19
+    LINENUMBER 201 L19
+    DLOAD 13
+    DCONST_0
+    DCMPL
+    IFNE L20
+   L21
+    LINENUMBER 202 L21
+    ALOAD 3
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 12
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.remove (I)D
+    POP2
+    GOTO L16
+   L20
+    LINENUMBER 204 L20
+    ALOAD 3
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 12
+    DLOAD 13
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.put (ID)D
+    POP2
+   L16
+    LINENUMBER 195 L16
+    IINC 10 1
+    GOTO L12
+   L13
+    LINENUMBER 208 L13
+    GOTO L4
+   L5
+    LINENUMBER 210 L5
+    ALOAD 3
+    ARETURN
+   L22
+    LOCALVARIABLE outKey I L18 L16 12
+    LOCALVARIABLE outValue D L19 L16 13
+    LOCALVARIABLE rightKey I L15 L16 11
+    LOCALVARIABLE j I L12 L13 10
+    LOCALVARIABLE value D L8 L13 5
+    LOCALVARIABLE key I L9 L13 7
+    LOCALVARIABLE i I L10 L13 8
+    LOCALVARIABLE k I L11 L13 9
+    LOCALVARIABLE iterator Lorg/apache/commons/math/util/OpenIntToDoubleHashMap$Iterator; L4 L5 4
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L22 0
+    LOCALVARIABLE m Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L22 1
+    LOCALVARIABLE outCols I L2 L22 2
+    LOCALVARIABLE out Lorg/apache/commons/math/linear/OpenMapRealMatrix; L3 L22 3
+    MAXSTACK = 6
+    MAXLOCALS = 15
+
+  // access flags 0x1
+  public getEntry(II)D
+   L0
+    LINENUMBER 216 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.checkRowIndex (Lorg/apache/commons/math/linear/AnyMatrix;I)V
+   L1
+    LINENUMBER 217 L1
+    ALOAD 0
+    ILOAD 2
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.checkColumnIndex (Lorg/apache/commons/math/linear/AnyMatrix;I)V
+   L2
+    LINENUMBER 218 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealMatrix.computeKey (II)I
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.get (I)D
+    DRETURN
+   L3
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L3 0
+    LOCALVARIABLE row I L0 L3 1
+    LOCALVARIABLE column I L0 L3 2
+    MAXSTACK = 4
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getRowDimension()I
+   L0
+    LINENUMBER 224 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.rows : I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setEntry(IID)V
+   L0
+    LINENUMBER 230 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.checkRowIndex (Lorg/apache/commons/math/linear/AnyMatrix;I)V
+   L1
+    LINENUMBER 231 L1
+    ALOAD 0
+    ILOAD 2
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.checkColumnIndex (Lorg/apache/commons/math/linear/AnyMatrix;I)V
+   L2
+    LINENUMBER 232 L2
+    DLOAD 3
+    DCONST_0
+    DCMPL
+    IFNE L3
+   L4
+    LINENUMBER 233 L4
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealMatrix.computeKey (II)I
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.remove (I)D
+    POP2
+    GOTO L5
+   L3
+    LINENUMBER 235 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealMatrix.computeKey (II)I
+    DLOAD 3
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.put (ID)D
+    POP2
+   L5
+    LINENUMBER 237 L5
+    RETURN
+   L6
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L6 0
+    LOCALVARIABLE row I L0 L6 1
+    LOCALVARIABLE column I L0 L6 2
+    LOCALVARIABLE value D L0 L6 3
+    MAXSTACK = 4
+    MAXLOCALS = 5
+
+  // access flags 0x1
+  public addToEntry(IID)V
+   L0
+    LINENUMBER 242 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.checkRowIndex (Lorg/apache/commons/math/linear/AnyMatrix;I)V
+   L1
+    LINENUMBER 243 L1
+    ALOAD 0
+    ILOAD 2
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.checkColumnIndex (Lorg/apache/commons/math/linear/AnyMatrix;I)V
+   L2
+    LINENUMBER 244 L2
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealMatrix.computeKey (II)I
+    ISTORE 5
+   L3
+    LINENUMBER 245 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.get (I)D
+    DLOAD 3
+    DADD
+    DSTORE 6
+   L4
+    LINENUMBER 246 L4
+    DLOAD 6
+    DCONST_0
+    DCMPL
+    IFNE L5
+   L6
+    LINENUMBER 247 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.remove (I)D
+    POP2
+    GOTO L7
+   L5
+    LINENUMBER 249 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 5
+    DLOAD 6
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.put (ID)D
+    POP2
+   L7
+    LINENUMBER 251 L7
+    RETURN
+   L8
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L8 0
+    LOCALVARIABLE row I L0 L8 1
+    LOCALVARIABLE column I L0 L8 2
+    LOCALVARIABLE increment D L0 L8 3
+    LOCALVARIABLE key I L3 L8 5
+    LOCALVARIABLE value D L4 L8 6
+    MAXSTACK = 4
+    MAXLOCALS = 8
+
+  // access flags 0x1
+  public multiplyEntry(IID)V
+   L0
+    LINENUMBER 256 L0
+    ALOAD 0
+    ILOAD 1
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.checkRowIndex (Lorg/apache/commons/math/linear/AnyMatrix;I)V
+   L1
+    LINENUMBER 257 L1
+    ALOAD 0
+    ILOAD 2
+    INVOKESTATIC org/apache/commons/math/linear/MatrixUtils.checkColumnIndex (Lorg/apache/commons/math/linear/AnyMatrix;I)V
+   L2
+    LINENUMBER 258 L2
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    INVOKESPECIAL org/apache/commons/math/linear/OpenMapRealMatrix.computeKey (II)I
+    ISTORE 5
+   L3
+    LINENUMBER 259 L3
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.get (I)D
+    DLOAD 3
+    DMUL
+    DSTORE 6
+   L4
+    LINENUMBER 260 L4
+    DLOAD 6
+    DCONST_0
+    DCMPL
+    IFNE L5
+   L6
+    LINENUMBER 261 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 5
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.remove (I)D
+    POP2
+    GOTO L7
+   L5
+    LINENUMBER 263 L5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.entries : Lorg/apache/commons/math/util/OpenIntToDoubleHashMap;
+    ILOAD 5
+    DLOAD 6
+    INVOKEVIRTUAL org/apache/commons/math/util/OpenIntToDoubleHashMap.put (ID)D
+    POP2
+   L7
+    LINENUMBER 265 L7
+    RETURN
+   L8
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L8 0
+    LOCALVARIABLE row I L0 L8 1
+    LOCALVARIABLE column I L0 L8 2
+    LOCALVARIABLE factor D L0 L8 3
+    LOCALVARIABLE key I L3 L8 5
+    LOCALVARIABLE value D L4 L8 6
+    MAXSTACK = 4
+    MAXLOCALS = 8
+
+  // access flags 0x2
+  private computeKey(II)I
+   L0
+    LINENUMBER 274 L0
+    ILOAD 1
+    ALOAD 0
+    GETFIELD org/apache/commons/math/linear/OpenMapRealMatrix.columns : I
+    IMUL
+    ILOAD 2
+    IADD
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L1 0
+    LOCALVARIABLE row I L0 L1 1
+    LOCALVARIABLE column I L0 L1 2
+    MAXSTACK = 2
+    MAXLOCALS = 3
+
+  // access flags 0x1041
+  public synthetic bridge subtract(Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/RealMatrix;
+   L0
+    LINENUMBER 31 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealMatrix.subtract (Lorg/apache/commons/math/linear/RealMatrix;)Lorg/apache/commons/math/linear/OpenMapRealMatrix;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L1 0
+    LOCALVARIABLE x0 Lorg/apache/commons/math/linear/RealMatrix; L0 L1 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x1041
+  public synthetic bridge copy()Lorg/apache/commons/math/linear/RealMatrix;
+   L0
+    LINENUMBER 31 L0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealMatrix.copy ()Lorg/apache/commons/math/linear/OpenMapRealMatrix;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L1 0
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1041
+  public synthetic bridge createMatrix(II)Lorg/apache/commons/math/linear/RealMatrix;
+   L0
+    LINENUMBER 31 L0
+    ALOAD 0
+    ILOAD 1
+    ILOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/linear/OpenMapRealMatrix.createMatrix (II)Lorg/apache/commons/math/linear/OpenMapRealMatrix;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/linear/OpenMapRealMatrix; L0 L1 0
+    LOCALVARIABLE x0 I L0 L1 1
+    LOCALVARIABLE x1 I L0 L1 2
+    MAXSTACK = 3
+    MAXLOCALS = 3
+}
+

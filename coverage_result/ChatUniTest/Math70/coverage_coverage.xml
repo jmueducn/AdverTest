@@ -1,111 +1,111 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.9130434782608695" branch-rate="1.0" lines-covered="21" lines-valid="23" branches-covered="6" branches-valid="6" complexity="1.8333333333333333" version="2.0.3" timestamp="1747571939060">
+<coverage line-rate="0.9130434782608695" branch-rate="0.8333333333333334" lines-covered="21" lines-valid="23" branches-covered="5" branches-valid="6" complexity="1.8333333333333333" version="2.0.3" timestamp="1751301248226">
 	<sources>
 		<source>src/main/java</source>
 	</sources>
 	<packages>
-		<package name="org.apache.commons.math.analysis.solvers" line-rate="0.9130434782608695" branch-rate="1.0" complexity="1.8333333333333333">
+		<package name="org.apache.commons.math.analysis.solvers" line-rate="0.9130434782608695" branch-rate="0.8333333333333334" complexity="1.8333333333333333">
 			<classes>
-				<class name="org.apache.commons.math.analysis.solvers.BisectionSolver" filename="org/apache/commons/math/analysis/solvers/BisectionSolver.java" line-rate="0.9130434782608695" branch-rate="1.0" complexity="1.8333333333333333">
+				<class name="org.apache.commons.math.analysis.solvers.BisectionSolver" filename="org/apache/commons/math/analysis/solvers/BisectionSolver.java" line-rate="0.9130434782608695" branch-rate="0.8333333333333334" complexity="1.8333333333333333">
 					<methods>
 						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="52" hits="26" branch="false"/>
-								<line number="53" hits="26" branch="false"/>
+								<line number="52" hits="4" branch="false"/>
+								<line number="53" hits="4" branch="false"/>
 							</lines>
 						</method>
 						<method name="&lt;init&gt;" signature="(Lorg/apache/commons/math/analysis/UnivariateRealFunction;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="44" hits="1" branch="false"/>
-								<line number="45" hits="1" branch="false"/>
+								<line number="44" hits="23" branch="false"/>
+								<line number="45" hits="23" branch="false"/>
 							</lines>
 						</method>
-						<method name="solve" signature="(DD)D" line-rate="0.0" branch-rate="1.0">
+						<method name="solve" signature="(DD)D" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="66" hits="0" branch="false"/>
+								<line number="66" hits="19" branch="false"/>
 							</lines>
 						</method>
-						<method name="solve" signature="(DDD)D" line-rate="0.0" branch-rate="1.0">
+						<method name="solve" signature="(DDD)D" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="59" hits="0" branch="false"/>
+								<line number="59" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="solve" signature="(Lorg/apache/commons/math/analysis/UnivariateRealFunction;DD)D" line-rate="1.0" branch-rate="1.0">
+						<method name="solve" signature="(Lorg/apache/commons/math/analysis/UnivariateRealFunction;DD)D" line-rate="0.9375" branch-rate="0.8333333333333334">
 							<lines>
-								<line number="79" hits="23" branch="false"/>
-								<line number="80" hits="23" branch="false"/>
-								<line number="85" hits="20" branch="false"/>
-								<line number="86" hits="328" branch="true" condition-coverage="100% (2/2)">
+								<line number="79" hits="27" branch="false"/>
+								<line number="80" hits="27" branch="false"/>
+								<line number="85" hits="24" branch="false"/>
+								<line number="86" hits="432" branch="true" condition-coverage="50% (1/2)">
+									<conditions>
+										<condition number="0" type="jump" coverage="50%"/>
+									</conditions>
+								</line>
+								<line number="87" hits="432" branch="false"/>
+								<line number="88" hits="432" branch="false"/>
+								<line number="89" hits="431" branch="false"/>
+								<line number="91" hits="431" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="87" hits="326" branch="false"/>
-								<line number="88" hits="326" branch="false"/>
-								<line number="89" hits="324" branch="false"/>
-								<line number="91" hits="324" branch="true" condition-coverage="100% (2/2)">
+								<line number="93" hits="126" branch="false"/>
+								<line number="96" hits="305" branch="false"/>
+								<line number="99" hits="431" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="93" hits="28" branch="false"/>
-								<line number="96" hits="296" branch="false"/>
-								<line number="99" hits="324" branch="true" condition-coverage="100% (2/2)">
-									<conditions>
-										<condition number="0" type="jump" coverage="100%"/>
-									</conditions>
-								</line>
-								<line number="100" hits="16" branch="false"/>
-								<line number="101" hits="16" branch="false"/>
-								<line number="102" hits="16" branch="false"/>
-								<line number="104" hits="308" branch="false"/>
-								<line number="107" hits="2" branch="false"/>
+								<line number="100" hits="23" branch="false"/>
+								<line number="101" hits="23" branch="false"/>
+								<line number="102" hits="23" branch="false"/>
+								<line number="104" hits="408" branch="false"/>
+								<line number="107" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="solve" signature="(Lorg/apache/commons/math/analysis/UnivariateRealFunction;DDD)D" line-rate="1.0" branch-rate="1.0">
+						<method name="solve" signature="(Lorg/apache/commons/math/analysis/UnivariateRealFunction;DDD)D" line-rate="0.0" branch-rate="1.0">
 							<lines>
-								<line number="72" hits="7" branch="false"/>
+								<line number="72" hits="0" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="44" hits="1" branch="false"/>
-						<line number="45" hits="1" branch="false"/>
-						<line number="52" hits="26" branch="false"/>
-						<line number="53" hits="26" branch="false"/>
-						<line number="59" hits="0" branch="false"/>
-						<line number="66" hits="0" branch="false"/>
-						<line number="72" hits="7" branch="false"/>
-						<line number="79" hits="23" branch="false"/>
-						<line number="80" hits="23" branch="false"/>
-						<line number="85" hits="20" branch="false"/>
-						<line number="86" hits="328" branch="true" condition-coverage="100% (2/2)">
+						<line number="44" hits="23" branch="false"/>
+						<line number="45" hits="23" branch="false"/>
+						<line number="52" hits="4" branch="false"/>
+						<line number="53" hits="4" branch="false"/>
+						<line number="59" hits="1" branch="false"/>
+						<line number="66" hits="19" branch="false"/>
+						<line number="72" hits="0" branch="false"/>
+						<line number="79" hits="27" branch="false"/>
+						<line number="80" hits="27" branch="false"/>
+						<line number="85" hits="24" branch="false"/>
+						<line number="86" hits="432" branch="true" condition-coverage="50% (1/2)">
+							<conditions>
+								<condition number="0" type="jump" coverage="50%"/>
+							</conditions>
+						</line>
+						<line number="87" hits="432" branch="false"/>
+						<line number="88" hits="432" branch="false"/>
+						<line number="89" hits="431" branch="false"/>
+						<line number="91" hits="431" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="87" hits="326" branch="false"/>
-						<line number="88" hits="326" branch="false"/>
-						<line number="89" hits="324" branch="false"/>
-						<line number="91" hits="324" branch="true" condition-coverage="100% (2/2)">
+						<line number="93" hits="126" branch="false"/>
+						<line number="96" hits="305" branch="false"/>
+						<line number="99" hits="431" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="93" hits="28" branch="false"/>
-						<line number="96" hits="296" branch="false"/>
-						<line number="99" hits="324" branch="true" condition-coverage="100% (2/2)">
-							<conditions>
-								<condition number="0" type="jump" coverage="100%"/>
-							</conditions>
-						</line>
-						<line number="100" hits="16" branch="false"/>
-						<line number="101" hits="16" branch="false"/>
-						<line number="102" hits="16" branch="false"/>
-						<line number="104" hits="308" branch="false"/>
-						<line number="107" hits="2" branch="false"/>
+						<line number="100" hits="23" branch="false"/>
+						<line number="101" hits="23" branch="false"/>
+						<line number="102" hits="23" branch="false"/>
+						<line number="104" hits="408" branch="false"/>
+						<line number="107" hits="0" branch="false"/>
 					</lines>
 				</class>
 			</classes>

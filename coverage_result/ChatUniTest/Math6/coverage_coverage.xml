@@ -1,22 +1,22 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.017391304347826087" branch-rate="0.008517887563884156" lines-covered="20" lines-valid="1150" branches-covered="5" branches-valid="587" complexity="4.0" version="2.0.3" timestamp="1747571545637">
+<coverage line-rate="0.022608695652173914" branch-rate="0.010221465076660987" lines-covered="26" lines-valid="1150" branches-covered="6" branches-valid="587" complexity="4.0" version="2.0.3" timestamp="1751297101155">
 	<sources>
 		<source>src/main/java</source>
 	</sources>
 	<packages>
-		<package name="org.apache.commons.math3.optim" line-rate="0.6666666666666666" branch-rate="0.8333333333333334" complexity="1.3846153846153846">
+		<package name="org.apache.commons.math3.optim" line-rate="0.8666666666666667" branch-rate="1.0" complexity="1.3846153846153846">
 			<classes>
-				<class name="org.apache.commons.math3.optim.BaseOptimizer" filename="org/apache/commons/math3/optim/BaseOptimizer.java" line-rate="0.6538461538461539" branch-rate="0.8333333333333334" complexity="1.3846153846153846">
+				<class name="org.apache.commons.math3.optim.BaseOptimizer" filename="org/apache/commons/math3/optim/BaseOptimizer.java" line-rate="0.8846153846153846" branch-rate="1.0" complexity="1.3846153846153846">
 					<methods>
 						<method name="&lt;init&gt;" signature="(Lorg/apache/commons/math3/optim/ConvergenceChecker;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="47" hits="8" branch="false"/>
-								<line number="48" hits="8" branch="false"/>
-								<line number="50" hits="8" branch="false"/>
-								<line number="51" hits="8" branch="false"/>
-								<line number="52" hits="8" branch="false"/>
+								<line number="47" hits="25" branch="false"/>
+								<line number="48" hits="25" branch="false"/>
+								<line number="50" hits="25" branch="false"/>
+								<line number="51" hits="25" branch="false"/>
+								<line number="52" hits="25" branch="false"/>
 							</lines>
 						</method>
 						<method name="getConvergenceChecker" signature="()Lorg/apache/commons/math3/optim/ConvergenceChecker;" line-rate="0.0" branch-rate="1.0">
@@ -24,63 +24,63 @@
 								<line number="102" hits="0" branch="false"/>
 							</lines>
 						</method>
-						<method name="getEvaluations" signature="()I" line-rate="0.0" branch-rate="1.0">
+						<method name="getEvaluations" signature="()I" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="72" hits="0" branch="false"/>
+								<line number="72" hits="1" branch="false"/>
 							</lines>
 						</method>
-						<method name="getIterations" signature="()I" line-rate="0.0" branch-rate="1.0">
+						<method name="getIterations" signature="()I" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="93" hits="0" branch="false"/>
+								<line number="93" hits="2" branch="false"/>
 							</lines>
 						</method>
 						<method name="getMaxEvaluations" signature="()I" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="60" hits="1" branch="false"/>
+								<line number="60" hits="3" branch="false"/>
 							</lines>
 						</method>
 						<method name="getMaxIterations" signature="()I" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="81" hits="1" branch="false"/>
+								<line number="81" hits="4" branch="false"/>
 							</lines>
 						</method>
 						<method name="incrementEvaluationCount" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="162" hits="2" branch="false"/>
-								<line number="163" hits="2" branch="false"/>
+								<line number="162" hits="7" branch="false"/>
+								<line number="163" hits="4" branch="false"/>
 							</lines>
 						</method>
 						<method name="incrementIterationCount" signature="()V" line-rate="0.0" branch-rate="1.0">
 							<lines>
-								<line number="173" hits="0" branch="false"/>
-								<line number="174" hits="0" branch="false"/>
+								<line number="173" hits="-2147483637" branch="false"/>
+								<line number="174" hits="-2147483637" branch="false"/>
 							</lines>
 						</method>
-						<method name="optimize" signature="([Lorg/apache/commons/math3/optim/OptimizationData;)Ljava/lang/Object;" line-rate="0.0" branch-rate="1.0">
+						<method name="optimize" signature="([Lorg/apache/commons/math3/optim/OptimizationData;)Ljava/lang/Object;" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="137" hits="0" branch="false"/>
-								<line number="140" hits="0" branch="false"/>
-								<line number="141" hits="0" branch="false"/>
-								<line number="143" hits="0" branch="false"/>
+								<line number="137" hits="3" branch="false"/>
+								<line number="140" hits="3" branch="false"/>
+								<line number="141" hits="3" branch="false"/>
+								<line number="143" hits="3" branch="false"/>
 							</lines>
 						</method>
-						<method name="parseOptimizationData" signature="([Lorg/apache/commons/math3/optim/OptimizationData;)V" line-rate="1.0" branch-rate="0.8333333333333334">
+						<method name="parseOptimizationData" signature="([Lorg/apache/commons/math3/optim/OptimizationData;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="190" hits="7" branch="true" condition-coverage="100% (2/2)">
+								<line number="190" hits="8" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
-								<line number="191" hits="3" branch="true" condition-coverage="100% (2/2)">
+								<line number="191" hits="4" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
 										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
 								<line number="192" hits="2" branch="false"/>
 								<line number="193" hits="2" branch="false"/>
-								<line number="195" hits="1" branch="true" condition-coverage="50% (1/2)">
+								<line number="195" hits="2" branch="true" condition-coverage="100% (2/2)">
 									<conditions>
-										<condition number="0" type="jump" coverage="50%"/>
+										<condition number="0" type="jump" coverage="100%"/>
 									</conditions>
 								</line>
 								<line number="196" hits="1" branch="false"/>
@@ -90,39 +90,39 @@
 						</method>
 					</methods>
 					<lines>
-						<line number="47" hits="8" branch="false"/>
-						<line number="48" hits="8" branch="false"/>
-						<line number="50" hits="8" branch="false"/>
-						<line number="51" hits="8" branch="false"/>
-						<line number="52" hits="8" branch="false"/>
-						<line number="60" hits="1" branch="false"/>
-						<line number="72" hits="0" branch="false"/>
-						<line number="81" hits="1" branch="false"/>
-						<line number="93" hits="0" branch="false"/>
+						<line number="47" hits="25" branch="false"/>
+						<line number="48" hits="25" branch="false"/>
+						<line number="50" hits="25" branch="false"/>
+						<line number="51" hits="25" branch="false"/>
+						<line number="52" hits="25" branch="false"/>
+						<line number="60" hits="3" branch="false"/>
+						<line number="72" hits="1" branch="false"/>
+						<line number="81" hits="4" branch="false"/>
+						<line number="93" hits="2" branch="false"/>
 						<line number="102" hits="0" branch="false"/>
-						<line number="137" hits="0" branch="false"/>
-						<line number="140" hits="0" branch="false"/>
-						<line number="141" hits="0" branch="false"/>
-						<line number="143" hits="0" branch="false"/>
-						<line number="162" hits="2" branch="false"/>
-						<line number="163" hits="2" branch="false"/>
-						<line number="173" hits="0" branch="false"/>
-						<line number="174" hits="0" branch="false"/>
-						<line number="190" hits="7" branch="true" condition-coverage="100% (2/2)">
+						<line number="137" hits="3" branch="false"/>
+						<line number="140" hits="3" branch="false"/>
+						<line number="141" hits="3" branch="false"/>
+						<line number="143" hits="3" branch="false"/>
+						<line number="162" hits="7" branch="false"/>
+						<line number="163" hits="4" branch="false"/>
+						<line number="173" hits="-2147483637" branch="false"/>
+						<line number="174" hits="-2147483637" branch="false"/>
+						<line number="190" hits="8" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
-						<line number="191" hits="3" branch="true" condition-coverage="100% (2/2)">
+						<line number="191" hits="4" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
 								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
 						<line number="192" hits="2" branch="false"/>
 						<line number="193" hits="2" branch="false"/>
-						<line number="195" hits="1" branch="true" condition-coverage="50% (1/2)">
+						<line number="195" hits="2" branch="true" condition-coverage="100% (2/2)">
 							<conditions>
-								<condition number="0" type="jump" coverage="50%"/>
+								<condition number="0" type="jump" coverage="100%"/>
 							</conditions>
 						</line>
 						<line number="196" hits="1" branch="false"/>
@@ -136,7 +136,7 @@
 					<lines>
 					</lines>
 				</class>
-				<class name="org.apache.commons.math3.optim.BaseOptimizer$MaxEvalCallback" filename="org/apache/commons/math3/optim/BaseOptimizer.java" line-rate="0.5" branch-rate="1.0" complexity="1.3846153846153846">
+				<class name="org.apache.commons.math3.optim.BaseOptimizer$MaxEvalCallback" filename="org/apache/commons/math3/optim/BaseOptimizer.java" line-rate="1.0" branch-rate="1.0" complexity="1.3846153846153846">
 					<methods>
 						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
 							<lines>
@@ -144,40 +144,40 @@
 						</method>
 						<method name="&lt;init&gt;" signature="(Lorg/apache/commons/math3/optim/BaseOptimizer$1;)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="206" hits="16" branch="false"/>
-							</lines>
-						</method>
-						<method name="trigger" signature="(I)V" line-rate="0.0" branch-rate="1.0">
-							<lines>
-								<line number="213" hits="0" branch="false"/>
-							</lines>
-						</method>
-					</methods>
-					<lines>
-						<line number="206" hits="16" branch="false"/>
-						<line number="213" hits="0" branch="false"/>
-					</lines>
-				</class>
-				<class name="org.apache.commons.math3.optim.BaseOptimizer$MaxIterCallback" filename="org/apache/commons/math3/optim/BaseOptimizer.java" line-rate="1.0" branch-rate="1.0" complexity="1.3846153846153846">
-					<methods>
-						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
-							<lines>
-							</lines>
-						</method>
-						<method name="&lt;init&gt;" signature="(Lorg/apache/commons/math3/optim/BaseOptimizer$1;)V" line-rate="1.0" branch-rate="1.0">
-							<lines>
-								<line number="221" hits="19" branch="false"/>
+								<line number="206" hits="50" branch="false"/>
 							</lines>
 						</method>
 						<method name="trigger" signature="(I)V" line-rate="1.0" branch-rate="1.0">
 							<lines>
-								<line number="228" hits="2" branch="false"/>
+								<line number="213" hits="3" branch="false"/>
 							</lines>
 						</method>
 					</methods>
 					<lines>
-						<line number="221" hits="19" branch="false"/>
-						<line number="228" hits="2" branch="false"/>
+						<line number="206" hits="50" branch="false"/>
+						<line number="213" hits="3" branch="false"/>
+					</lines>
+				</class>
+				<class name="org.apache.commons.math3.optim.BaseOptimizer$MaxIterCallback" filename="org/apache/commons/math3/optim/BaseOptimizer.java" line-rate="0.5" branch-rate="1.0" complexity="1.3846153846153846">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+							</lines>
+						</method>
+						<method name="&lt;init&gt;" signature="(Lorg/apache/commons/math3/optim/BaseOptimizer$1;)V" line-rate="1.0" branch-rate="1.0">
+							<lines>
+								<line number="221" hits="50" branch="false"/>
+							</lines>
+						</method>
+						<method name="trigger" signature="(I)V" line-rate="0.0" branch-rate="1.0">
+							<lines>
+								<line number="228" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="221" hits="50" branch="false"/>
+						<line number="228" hits="0" branch="false"/>
 					</lines>
 				</class>
 			</classes>

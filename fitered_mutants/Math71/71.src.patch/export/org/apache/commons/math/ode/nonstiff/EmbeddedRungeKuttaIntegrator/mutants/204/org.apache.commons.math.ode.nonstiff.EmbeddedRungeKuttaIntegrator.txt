@@ -1,0 +1,1116 @@
+// class version 49.0 (49)
+// access flags 0x421
+public abstract class org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator extends org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator {
+
+  // compiled from: EmbeddedRungeKuttaIntegrator.java
+
+  // access flags 0x12
+  private final Z fsal
+
+  // access flags 0x12
+  private final [D c
+
+  // access flags 0x12
+  private final [[D a
+
+  // access flags 0x12
+  private final [D b
+
+  // access flags 0x12
+  private final Lorg/apache/commons/math/ode/nonstiff/RungeKuttaStepInterpolator; prototype
+
+  // access flags 0x12
+  private final D exp
+
+  // access flags 0x2
+  private D safety
+
+  // access flags 0x2
+  private D minReduction
+
+  // access flags 0x2
+  private D maxGrowth
+
+  // access flags 0x4
+  protected <init>(Ljava/lang/String;Z[D[[D[DLorg/apache/commons/math/ode/nonstiff/RungeKuttaStepInterpolator;DDDD)V
+   L0
+    LINENUMBER 116 L0
+    ALOAD 0
+    ALOAD 1
+    DLOAD 7
+    DLOAD 9
+    DLOAD 11
+    DLOAD 13
+    INVOKESPECIAL org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.<init> (Ljava/lang/String;DDDD)V
+   L1
+    LINENUMBER 118 L1
+    ALOAD 0
+    ILOAD 2
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.fsal : Z
+   L2
+    LINENUMBER 119 L2
+    ALOAD 0
+    ALOAD 3
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.c : [D
+   L3
+    LINENUMBER 120 L3
+    ALOAD 0
+    ALOAD 4
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.a : [[D
+   L4
+    LINENUMBER 121 L4
+    ALOAD 0
+    ALOAD 5
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.b : [D
+   L5
+    LINENUMBER 122 L5
+    ALOAD 0
+    ALOAD 6
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.prototype : Lorg/apache/commons/math/ode/nonstiff/RungeKuttaStepInterpolator;
+   L6
+    LINENUMBER 124 L6
+    ALOAD 0
+    LDC -1.0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.getOrder ()I
+    I2D
+    DDIV
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.exp : D
+   L7
+    LINENUMBER 127 L7
+    ALOAD 0
+    LDC 0.9
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.setSafety (D)V
+   L8
+    LINENUMBER 128 L8
+    ALOAD 0
+    LDC 0.2
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.setMinReduction (D)V
+   L9
+    LINENUMBER 129 L9
+    ALOAD 0
+    LDC 10.0
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.setMaxGrowth (D)V
+   L10
+    LINENUMBER 131 L10
+    RETURN
+   L11
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator; L0 L11 0
+    LOCALVARIABLE name Ljava/lang/String; L0 L11 1
+    LOCALVARIABLE fsal Z L0 L11 2
+    LOCALVARIABLE c [D L0 L11 3
+    LOCALVARIABLE a [[D L0 L11 4
+    LOCALVARIABLE b [D L0 L11 5
+    LOCALVARIABLE prototype Lorg/apache/commons/math/ode/nonstiff/RungeKuttaStepInterpolator; L0 L11 6
+    LOCALVARIABLE minStep D L0 L11 7
+    LOCALVARIABLE maxStep D L0 L11 9
+    LOCALVARIABLE scalAbsoluteTolerance D L0 L11 11
+    LOCALVARIABLE scalRelativeTolerance D L0 L11 13
+    MAXSTACK = 10
+    MAXLOCALS = 15
+
+  // access flags 0x4
+  protected <init>(Ljava/lang/String;Z[D[[D[DLorg/apache/commons/math/ode/nonstiff/RungeKuttaStepInterpolator;DD[D[D)V
+   L0
+    LINENUMBER 154 L0
+    ALOAD 0
+    ALOAD 1
+    DLOAD 7
+    DLOAD 9
+    ALOAD 11
+    ALOAD 12
+    INVOKESPECIAL org/apache/commons/math/ode/nonstiff/AdaptiveStepsizeIntegrator.<init> (Ljava/lang/String;DD[D[D)V
+   L1
+    LINENUMBER 156 L1
+    ALOAD 0
+    ILOAD 2
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.fsal : Z
+   L2
+    LINENUMBER 157 L2
+    ALOAD 0
+    ALOAD 3
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.c : [D
+   L3
+    LINENUMBER 158 L3
+    ALOAD 0
+    ALOAD 4
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.a : [[D
+   L4
+    LINENUMBER 159 L4
+    ALOAD 0
+    ALOAD 5
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.b : [D
+   L5
+    LINENUMBER 160 L5
+    ALOAD 0
+    ALOAD 6
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.prototype : Lorg/apache/commons/math/ode/nonstiff/RungeKuttaStepInterpolator;
+   L6
+    LINENUMBER 162 L6
+    ALOAD 0
+    LDC -1.0
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.getOrder ()I
+    I2D
+    DDIV
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.exp : D
+   L7
+    LINENUMBER 165 L7
+    ALOAD 0
+    LDC 0.9
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.setSafety (D)V
+   L8
+    LINENUMBER 166 L8
+    ALOAD 0
+    LDC 0.2
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.setMinReduction (D)V
+   L9
+    LINENUMBER 167 L9
+    ALOAD 0
+    LDC 10.0
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.setMaxGrowth (D)V
+   L10
+    LINENUMBER 169 L10
+    RETURN
+   L11
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator; L0 L11 0
+    LOCALVARIABLE name Ljava/lang/String; L0 L11 1
+    LOCALVARIABLE fsal Z L0 L11 2
+    LOCALVARIABLE c [D L0 L11 3
+    LOCALVARIABLE a [[D L0 L11 4
+    LOCALVARIABLE b [D L0 L11 5
+    LOCALVARIABLE prototype Lorg/apache/commons/math/ode/nonstiff/RungeKuttaStepInterpolator; L0 L11 6
+    LOCALVARIABLE minStep D L0 L11 7
+    LOCALVARIABLE maxStep D L0 L11 9
+    LOCALVARIABLE vecAbsoluteTolerance [D L0 L11 11
+    LOCALVARIABLE vecRelativeTolerance [D L0 L11 12
+    MAXSTACK = 8
+    MAXLOCALS = 13
+
+  // access flags 0x401
+  public abstract getOrder()I
+
+  // access flags 0x1
+  public getSafety()D
+   L0
+    LINENUMBER 180 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.safety : D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setSafety(D)V
+   L0
+    LINENUMBER 187 L0
+    ALOAD 0
+    DLOAD 1
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.safety : D
+   L1
+    LINENUMBER 188 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator; L0 L2 0
+    LOCALVARIABLE safety D L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public integrate(Lorg/apache/commons/math/ode/FirstOrderDifferentialEquations;D[DD[D)D throws org/apache/commons/math/ode/DerivativeException org/apache/commons/math/ode/IntegratorException 
+   L0
+    LINENUMBER 197 L0
+    ALOAD 0
+    ALOAD 1
+    DLOAD 2
+    ALOAD 4
+    DLOAD 5
+    ALOAD 7
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.sanityChecks (Lorg/apache/commons/math/ode/FirstOrderDifferentialEquations;D[DD[D)V
+   L1
+    LINENUMBER 198 L1
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.setEquations (Lorg/apache/commons/math/ode/FirstOrderDifferentialEquations;)V
+   L2
+    LINENUMBER 199 L2
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.resetEvaluations ()V
+   L3
+    LINENUMBER 200 L3
+    DLOAD 5
+    DLOAD 2
+    DCMPL
+    IFLE L4
+    ICONST_1
+    GOTO L5
+   L4
+    ICONST_0
+   L5
+    ISTORE 8
+   L6
+    LINENUMBER 203 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.c : [D
+    ARRAYLENGTH
+    ICONST_1
+    IADD
+    ISTORE 9
+   L7
+    LINENUMBER 204 L7
+    ALOAD 7
+    ALOAD 4
+    IF_ACMPEQ L8
+   L9
+    LINENUMBER 205 L9
+    ALOAD 4
+    ICONST_0
+    ALOAD 7
+    ICONST_0
+    ALOAD 4
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L8
+    LINENUMBER 207 L8
+    ILOAD 9
+    ALOAD 4
+    ARRAYLENGTH
+    MULTIANEWARRAY [[D 2
+    ASTORE 10
+   L10
+    LINENUMBER 208 L10
+    ALOAD 4
+    ARRAYLENGTH
+    NEWARRAY T_DOUBLE
+    ASTORE 11
+   L11
+    LINENUMBER 212 L11
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.requiresDenseOutput ()Z
+    IFNE L12
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.eventsHandlersManager : Lorg/apache/commons/math/ode/events/CombinedEventsManager;
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/CombinedEventsManager.isEmpty ()Z
+    IFNE L13
+   L12
+    LINENUMBER 213 L12
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.prototype : Lorg/apache/commons/math/ode/nonstiff/RungeKuttaStepInterpolator;
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/RungeKuttaStepInterpolator.copy ()Lorg/apache/commons/math/ode/sampling/StepInterpolator;
+    CHECKCAST org/apache/commons/math/ode/nonstiff/RungeKuttaStepInterpolator
+    ASTORE 13
+   L14
+    LINENUMBER 214 L14
+    ALOAD 13
+    ALOAD 0
+    ALOAD 11
+    ALOAD 10
+    ILOAD 8
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/RungeKuttaStepInterpolator.reinitialize (Lorg/apache/commons/math/ode/AbstractIntegrator;[D[[DZ)V
+   L15
+    LINENUMBER 215 L15
+    ALOAD 13
+    ASTORE 12
+   L16
+    LINENUMBER 216 L16
+    GOTO L17
+   L13
+    LINENUMBER 217 L13
+    NEW org/apache/commons/math/ode/sampling/DummyStepInterpolator
+    DUP
+    ALOAD 11
+    ALOAD 10
+    ILOAD 9
+    ICONST_1
+    ISUB
+    AALOAD
+    ILOAD 8
+    INVOKESPECIAL org/apache/commons/math/ode/sampling/DummyStepInterpolator.<init> ([D[DZ)V
+    ASTORE 12
+   L17
+    LINENUMBER 219 L17
+    ALOAD 12
+    DLOAD 2
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.storeTime (D)V
+   L18
+    LINENUMBER 222 L18
+    ALOAD 0
+    DLOAD 2
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepStart : D
+   L19
+    LINENUMBER 223 L19
+    DCONST_0
+    DSTORE 13
+   L20
+    LINENUMBER 224 L20
+    ICONST_1
+    ISTORE 15
+   L21
+    LINENUMBER 225 L21
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepHandlers : Ljava/util/Collection;
+    INVOKEINTERFACE java/util/Collection.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 16
+   L22
+    ALOAD 16
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L23
+    ALOAD 16
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/ode/sampling/StepHandler
+    ASTORE 17
+   L24
+    LINENUMBER 226 L24
+    ALOAD 17
+    INVOKEINTERFACE org/apache/commons/math/ode/sampling/StepHandler.reset ()V (itf)
+   L25
+    LINENUMBER 227 L25
+    GOTO L22
+   L23
+    LINENUMBER 228 L23
+    ALOAD 0
+    DLOAD 2
+    DLOAD 5
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.eventsHandlersManager : Lorg/apache/commons/math/ode/events/CombinedEventsManager;
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.addEndTimeChecker (DDLorg/apache/commons/math/ode/events/CombinedEventsManager;)Lorg/apache/commons/math/ode/events/CombinedEventsManager;
+    ASTORE 16
+   L26
+    LINENUMBER 229 L26
+    ICONST_0
+    ISTORE 17
+   L27
+    LINENUMBER 232 L27
+    ILOAD 17
+    IFNE L28
+   L29
+    LINENUMBER 234 L29
+    ALOAD 12
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.shift ()V
+   L30
+    LINENUMBER 236 L30
+    DCONST_0
+    DSTORE 18
+   L31
+    LINENUMBER 237 L31
+    ICONST_1
+    ISTORE 20
+   L32
+    ILOAD 20
+    IFEQ L33
+   L34
+    LINENUMBER 239 L34
+    ILOAD 15
+    IFNE L35
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.fsal : Z
+    IFNE L36
+   L35
+    LINENUMBER 241 L35
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepStart : D
+    ALOAD 7
+    ALOAD 10
+    ICONST_0
+    AALOAD
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.computeDerivatives (D[D[D)V
+   L36
+    LINENUMBER 244 L36
+    ILOAD 15
+    IFEQ L37
+   L38
+    LINENUMBER 245 L38
+    ALOAD 4
+    ARRAYLENGTH
+    NEWARRAY T_DOUBLE
+    ASTORE 21
+   L39
+    LINENUMBER 246 L39
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.vecAbsoluteTolerance : [D
+    IFNONNULL L40
+   L41
+    LINENUMBER 247 L41
+    ICONST_0
+    ISTORE 22
+   L42
+    ILOAD 22
+    ALOAD 21
+    ARRAYLENGTH
+    IF_ICMPGE L43
+   L44
+    LINENUMBER 248 L44
+    ALOAD 21
+    ILOAD 22
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.scalAbsoluteTolerance : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.scalRelativeTolerance : D
+    ALOAD 7
+    ILOAD 22
+    DALOAD
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DMUL
+    DADD
+    DASTORE
+   L45
+    LINENUMBER 247 L45
+    IINC 22 1
+    GOTO L42
+   L43
+    GOTO L46
+   L40
+    LINENUMBER 251 L40
+    ICONST_0
+    ISTORE 22
+   L47
+    ILOAD 22
+    ALOAD 21
+    ARRAYLENGTH
+    IF_ICMPGE L46
+   L48
+    LINENUMBER 252 L48
+    ALOAD 21
+    ILOAD 22
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.vecAbsoluteTolerance : [D
+    ILOAD 22
+    DALOAD
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.vecRelativeTolerance : [D
+    ILOAD 22
+    DALOAD
+    ALOAD 7
+    ILOAD 22
+    DALOAD
+    INVOKESTATIC java/lang/Math.abs (D)D
+    DMUL
+    DADD
+    DASTORE
+   L49
+    LINENUMBER 251 L49
+    IINC 22 1
+    GOTO L47
+   L46
+    LINENUMBER 255 L46
+    ALOAD 0
+    ALOAD 1
+    ILOAD 8
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.getOrder ()I
+    ALOAD 21
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepStart : D
+    ALOAD 7
+    ALOAD 10
+    ICONST_0
+    AALOAD
+    ALOAD 11
+    ALOAD 10
+    ICONST_1
+    AALOAD
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.initializeStep (Lorg/apache/commons/math/ode/FirstOrderDifferentialEquations;ZI[DD[D[D[D[D)D
+    DSTORE 13
+   L50
+    LINENUMBER 257 L50
+    ICONST_0
+    ISTORE 15
+   L37
+    LINENUMBER 260 L37
+    ALOAD 0
+    DLOAD 13
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepSize : D
+   L51
+    LINENUMBER 263 L51
+    ICONST_1
+    ISTORE 21
+   L52
+    ILOAD 21
+    ILOAD 9
+    IF_ICMPGE L53
+   L54
+    LINENUMBER 265 L54
+    ICONST_0
+    ISTORE 22
+   L55
+    ILOAD 22
+    ALOAD 4
+    ARRAYLENGTH
+    IF_ICMPGE L56
+   L57
+    LINENUMBER 266 L57
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.a : [[D
+    ILOAD 21
+    ICONST_1
+    ISUB
+    AALOAD
+    ICONST_0
+    DALOAD
+    ALOAD 10
+    ICONST_0
+    AALOAD
+    ILOAD 22
+    DALOAD
+    DMUL
+    DSTORE 23
+   L58
+    LINENUMBER 267 L58
+    ICONST_1
+    ISTORE 25
+   L59
+    ILOAD 25
+    ILOAD 21
+    IF_ICMPGE L60
+   L61
+    LINENUMBER 268 L61
+    DLOAD 23
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.a : [[D
+    ILOAD 21
+    ICONST_1
+    ISUB
+    AALOAD
+    ILOAD 25
+    DALOAD
+    ALOAD 10
+    ILOAD 25
+    AALOAD
+    ILOAD 22
+    DALOAD
+    DMUL
+    DADD
+    DSTORE 23
+   L62
+    LINENUMBER 267 L62
+    IINC 25 1
+    GOTO L59
+   L60
+    LINENUMBER 270 L60
+    ALOAD 11
+    ILOAD 22
+    ALOAD 7
+    ILOAD 22
+    DALOAD
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepSize : D
+    DLOAD 23
+    DMUL
+    DADD
+    DASTORE
+   L63
+    LINENUMBER 265 L63
+    IINC 22 1
+    GOTO L55
+   L56
+    LINENUMBER 273 L56
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepStart : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.c : [D
+    ILOAD 21
+    ICONST_1
+    ISUB
+    DALOAD
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepSize : D
+    DMUL
+    DADD
+    ALOAD 11
+    ALOAD 10
+    ILOAD 21
+    AALOAD
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.computeDerivatives (D[D[D)V
+   L64
+    LINENUMBER 263 L64
+    IINC 21 1
+    GOTO L52
+   L53
+    LINENUMBER 278 L53
+    ICONST_0
+    ISTORE 21
+   L65
+    ILOAD 21
+    ALOAD 4
+    ARRAYLENGTH
+    IF_ICMPGE L66
+   L67
+    LINENUMBER 279 L67
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.b : [D
+    ICONST_0
+    DALOAD
+    ALOAD 10
+    ICONST_0
+    AALOAD
+    ILOAD 21
+    DALOAD
+    DMUL
+    DSTORE 22
+   L68
+    LINENUMBER 280 L68
+    ICONST_1
+    ISTORE 24
+   L69
+    ILOAD 24
+    ILOAD 9
+    IF_ICMPGE L70
+   L71
+    LINENUMBER 281 L71
+    DLOAD 22
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.b : [D
+    ILOAD 24
+    DALOAD
+    ALOAD 10
+    ILOAD 24
+    AALOAD
+    ILOAD 21
+    DALOAD
+    DMUL
+    DADD
+    DSTORE 22
+   L72
+    LINENUMBER 280 L72
+    IINC 24 1
+    GOTO L69
+   L70
+    LINENUMBER 283 L70
+    ALOAD 11
+    ILOAD 21
+    ALOAD 7
+    ILOAD 21
+    DALOAD
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepSize : D
+    DLOAD 22
+    DMUL
+    DADD
+    DASTORE
+   L73
+    LINENUMBER 278 L73
+    IINC 21 1
+    GOTO L65
+   L66
+    LINENUMBER 287 L66
+    ALOAD 0
+    ALOAD 10
+    ALOAD 7
+    ALOAD 11
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepSize : D
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.estimateError ([[D[D[DD)D
+    DSTORE 18
+   L74
+    LINENUMBER 288 L74
+    DLOAD 18
+    DCONST_1
+    DCMPG
+    IFGT L75
+   L76
+    LINENUMBER 291 L76
+    ALOAD 12
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepStart : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepSize : D
+    DADD
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.storeTime (D)V
+   L77
+    LINENUMBER 292 L77
+    ALOAD 16
+    ALOAD 12
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/CombinedEventsManager.evaluateStep (Lorg/apache/commons/math/ode/sampling/StepInterpolator;)Z
+    IFEQ L78
+   L79
+    LINENUMBER 293 L79
+    ALOAD 16
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/CombinedEventsManager.getEventTime ()D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepStart : D
+    DSUB
+    DSTORE 21
+   L80
+    LINENUMBER 294 L80
+    DLOAD 21
+    INVOKESTATIC java/lang/Math.abs (D)D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepStart : D
+    INVOKESTATIC java/lang/Math.ulp (D)D
+    DCMPG
+    IFGT L81
+   L82
+    LINENUMBER 300 L82
+    ALOAD 12
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepStart : D
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.storeTime (D)V
+   L83
+    LINENUMBER 301 L83
+    ALOAD 7
+    ICONST_0
+    ALOAD 11
+    ICONST_0
+    ALOAD 4
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L84
+    LINENUMBER 302 L84
+    DCONST_0
+    DSTORE 13
+   L85
+    LINENUMBER 303 L85
+    ALOAD 0
+    DCONST_0
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepSize : D
+   L86
+    LINENUMBER 304 L86
+    ICONST_0
+    ISTORE 20
+    GOTO L87
+   L81
+    LINENUMBER 307 L81
+    DLOAD 21
+    DSTORE 13
+   L87
+    LINENUMBER 309 L87
+    GOTO L32
+   L78
+    LINENUMBER 311 L78
+    ICONST_0
+    ISTORE 20
+    GOTO L32
+   L75
+    LINENUMBER 316 L75
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.maxGrowth : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.minReduction : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.safety : D
+    DLOAD 18
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.exp : D
+    INVOKESTATIC java/lang/Math.pow (DD)D
+    DMUL
+    INVOKESTATIC java/lang/Math.max (DD)D
+    POP2
+    POP2
+    DCONST_0
+    DSTORE 21
+   L88
+    LINENUMBER 319 L88
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepSize : D
+    DLOAD 21
+    DMUL
+    ILOAD 8
+    ICONST_0
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.filterStep (DZZ)D
+    DSTORE 13
+   L89
+    LINENUMBER 320 L89
+    GOTO L32
+   L33
+    LINENUMBER 325 L33
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepStart : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepSize : D
+    DADD
+    DSTORE 20
+   L90
+    LINENUMBER 326 L90
+    ALOAD 11
+    ICONST_0
+    ALOAD 7
+    ICONST_0
+    ALOAD 4
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L91
+    LINENUMBER 327 L91
+    ALOAD 16
+    DLOAD 20
+    ALOAD 7
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/CombinedEventsManager.stepAccepted (D[D)V
+   L92
+    LINENUMBER 328 L92
+    ALOAD 16
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/CombinedEventsManager.stop ()Z
+    ISTORE 17
+   L93
+    LINENUMBER 331 L93
+    ALOAD 12
+    DLOAD 20
+    INVOKEVIRTUAL org/apache/commons/math/ode/sampling/AbstractStepInterpolator.storeTime (D)V
+   L94
+    LINENUMBER 332 L94
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepHandlers : Ljava/util/Collection;
+    INVOKEINTERFACE java/util/Collection.iterator ()Ljava/util/Iterator; (itf)
+    ASTORE 22
+   L95
+    ALOAD 22
+    INVOKEINTERFACE java/util/Iterator.hasNext ()Z (itf)
+    IFEQ L96
+    ALOAD 22
+    INVOKEINTERFACE java/util/Iterator.next ()Ljava/lang/Object; (itf)
+    CHECKCAST org/apache/commons/math/ode/sampling/StepHandler
+    ASTORE 23
+   L97
+    LINENUMBER 333 L97
+    ALOAD 23
+    ALOAD 12
+    ILOAD 17
+    INVOKEINTERFACE org/apache/commons/math/ode/sampling/StepHandler.handleStep (Lorg/apache/commons/math/ode/sampling/StepInterpolator;Z)V (itf)
+   L98
+    LINENUMBER 334 L98
+    GOTO L95
+   L96
+    LINENUMBER 335 L96
+    ALOAD 0
+    DLOAD 20
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepStart : D
+   L99
+    LINENUMBER 337 L99
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.fsal : Z
+    IFEQ L100
+   L101
+    LINENUMBER 339 L101
+    ALOAD 10
+    ILOAD 9
+    ICONST_1
+    ISUB
+    AALOAD
+    ICONST_0
+    ALOAD 10
+    ICONST_0
+    AALOAD
+    ICONST_0
+    ALOAD 4
+    ARRAYLENGTH
+    INVOKESTATIC java/lang/System.arraycopy (Ljava/lang/Object;ILjava/lang/Object;II)V
+   L100
+    LINENUMBER 342 L100
+    ALOAD 16
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepStart : D
+    ALOAD 7
+    INVOKEVIRTUAL org/apache/commons/math/ode/events/CombinedEventsManager.reset (D[D)Z
+    IFEQ L102
+    ILOAD 17
+    IFNE L102
+   L103
+    LINENUMBER 345 L103
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepStart : D
+    ALOAD 7
+    ALOAD 10
+    ICONST_0
+    AALOAD
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.computeDerivatives (D[D[D)V
+   L102
+    LINENUMBER 348 L102
+    ILOAD 17
+    IFNE L104
+   L105
+    LINENUMBER 352 L105
+    ALOAD 0
+    ALOAD 0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepSize : D
+    ILOAD 8
+    ICONST_1
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.filterStep (DZZ)D
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepSize : D
+   L106
+    LINENUMBER 355 L106
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.maxGrowth : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.minReduction : D
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.safety : D
+    DLOAD 18
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.exp : D
+    INVOKESTATIC java/lang/Math.pow (DD)D
+    DMUL
+    INVOKESTATIC java/lang/Math.max (DD)D
+    INVOKESTATIC java/lang/Math.min (DD)D
+    DSTORE 22
+   L107
+    LINENUMBER 358 L107
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepSize : D
+    DLOAD 22
+    DMUL
+    DSTORE 24
+   L108
+    LINENUMBER 359 L108
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepStart : D
+    DLOAD 24
+    DADD
+    DSTORE 26
+   L109
+    LINENUMBER 360 L109
+    ILOAD 8
+    IFEQ L110
+    DLOAD 26
+    DLOAD 5
+    DCMPL
+    IFLT L111
+    ICONST_1
+    GOTO L112
+   L111
+    ICONST_0
+    GOTO L112
+   L110
+    DLOAD 26
+    DLOAD 5
+    DCMPG
+    IFGT L113
+    ICONST_1
+    GOTO L112
+   L113
+    ICONST_0
+   L112
+    ISTORE 28
+   L114
+    LINENUMBER 361 L114
+    ALOAD 0
+    DLOAD 24
+    ILOAD 8
+    ILOAD 28
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.filterStep (DZZ)D
+    DSTORE 13
+   L104
+    LINENUMBER 364 L104
+    GOTO L27
+   L28
+    LINENUMBER 366 L28
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.stepStart : D
+    DSTORE 18
+   L115
+    LINENUMBER 367 L115
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.resetInternalState ()V
+   L116
+    LINENUMBER 368 L116
+    DLOAD 18
+    DRETURN
+   L117
+    LOCALVARIABLE rki Lorg/apache/commons/math/ode/nonstiff/RungeKuttaStepInterpolator; L14 L16 13
+    LOCALVARIABLE interpolator Lorg/apache/commons/math/ode/sampling/AbstractStepInterpolator; L16 L13 12
+    LOCALVARIABLE handler Lorg/apache/commons/math/ode/sampling/StepHandler; L24 L25 17
+    LOCALVARIABLE i$ Ljava/util/Iterator; L22 L23 16
+    LOCALVARIABLE i I L42 L43 22
+    LOCALVARIABLE i I L47 L46 22
+    LOCALVARIABLE scale [D L39 L37 21
+    LOCALVARIABLE l I L59 L60 25
+    LOCALVARIABLE sum D L58 L63 23
+    LOCALVARIABLE j I L55 L56 22
+    LOCALVARIABLE k I L52 L53 21
+    LOCALVARIABLE l I L69 L70 24
+    LOCALVARIABLE sum D L68 L73 22
+    LOCALVARIABLE j I L65 L66 21
+    LOCALVARIABLE dt D L80 L87 21
+    LOCALVARIABLE factor D L88 L89 21
+    LOCALVARIABLE loop Z L32 L33 20
+    LOCALVARIABLE handler Lorg/apache/commons/math/ode/sampling/StepHandler; L97 L98 23
+    LOCALVARIABLE i$ Ljava/util/Iterator; L95 L96 22
+    LOCALVARIABLE factor D L107 L104 22
+    LOCALVARIABLE scaledH D L108 L104 24
+    LOCALVARIABLE nextT D L109 L104 26
+    LOCALVARIABLE nextIsLast Z L114 L104 28
+    LOCALVARIABLE error D L31 L104 18
+    LOCALVARIABLE nextStep D L90 L104 20
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator; L0 L117 0
+    LOCALVARIABLE equations Lorg/apache/commons/math/ode/FirstOrderDifferentialEquations; L0 L117 1
+    LOCALVARIABLE t0 D L0 L117 2
+    LOCALVARIABLE y0 [D L0 L117 4
+    LOCALVARIABLE t D L0 L117 5
+    LOCALVARIABLE y [D L0 L117 7
+    LOCALVARIABLE forward Z L6 L117 8
+    LOCALVARIABLE stages I L7 L117 9
+    LOCALVARIABLE yDotK [[D L10 L117 10
+    LOCALVARIABLE yTmp [D L11 L117 11
+    LOCALVARIABLE interpolator Lorg/apache/commons/math/ode/sampling/AbstractStepInterpolator; L17 L117 12
+    LOCALVARIABLE hNew D L20 L117 13
+    LOCALVARIABLE firstTime Z L21 L117 15
+    LOCALVARIABLE manager Lorg/apache/commons/math/ode/events/CombinedEventsManager; L26 L117 16
+    LOCALVARIABLE lastStep Z L27 L117 17
+    LOCALVARIABLE stopTime D L115 L117 18
+    MAXSTACK = 12
+    MAXLOCALS = 29
+
+  // access flags 0x1
+  public getMinReduction()D
+   L0
+    LINENUMBER 376 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.minReduction : D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setMinReduction(D)V
+   L0
+    LINENUMBER 383 L0
+    ALOAD 0
+    DLOAD 1
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.minReduction : D
+   L1
+    LINENUMBER 384 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator; L0 L2 0
+    LOCALVARIABLE minReduction D L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x1
+  public getMaxGrowth()D
+   L0
+    LINENUMBER 390 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.maxGrowth : D
+    DRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator; L0 L1 0
+    MAXSTACK = 2
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public setMaxGrowth(D)V
+   L0
+    LINENUMBER 397 L0
+    ALOAD 0
+    DLOAD 1
+    PUTFIELD org/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator.maxGrowth : D
+   L1
+    LINENUMBER 398 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math/ode/nonstiff/EmbeddedRungeKuttaIntegrator; L0 L2 0
+    LOCALVARIABLE maxGrowth D L0 L2 1
+    MAXSTACK = 3
+    MAXLOCALS = 3
+
+  // access flags 0x404
+  protected abstract estimateError([[D[D[DD)D
+}
+

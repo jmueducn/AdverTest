@@ -1,0 +1,297 @@
+// class version 49.0 (49)
+// access flags 0x421
+// signature <PAIR:Ljava/lang/Object;>Ljava/lang/Object;
+// declaration: org/apache/commons/math3/optim/BaseOptimizer<PAIR>
+public abstract class org/apache/commons/math3/optim/BaseOptimizer {
+
+  // compiled from: BaseOptimizer.java
+  // access flags 0x1008
+  static synthetic INNERCLASS org/apache/commons/math3/optim/BaseOptimizer$1 org/apache/commons/math3/optim/BaseOptimizer null
+  // access flags 0xA
+  private static INNERCLASS org/apache/commons/math3/optim/BaseOptimizer$MaxIterCallback org/apache/commons/math3/optim/BaseOptimizer MaxIterCallback
+  // access flags 0xA
+  private static INNERCLASS org/apache/commons/math3/optim/BaseOptimizer$MaxEvalCallback org/apache/commons/math3/optim/BaseOptimizer MaxEvalCallback
+  // access flags 0x609
+  public static abstract INNERCLASS org/apache/commons/math3/util/Incrementor$MaxCountExceededCallback org/apache/commons/math3/util/Incrementor MaxCountExceededCallback
+
+  // access flags 0x14
+  protected final Lorg/apache/commons/math3/util/Incrementor; evaluations
+
+  // access flags 0x14
+  protected final Lorg/apache/commons/math3/util/Incrementor; iterations
+
+  // access flags 0x2
+  // signature Lorg/apache/commons/math3/optim/ConvergenceChecker<TPAIR;>;
+  // declaration: checker extends org.apache.commons.math3.optim.ConvergenceChecker<PAIR>
+  private Lorg/apache/commons/math3/optim/ConvergenceChecker; checker
+
+  // access flags 0x4
+  // signature (Lorg/apache/commons/math3/optim/ConvergenceChecker<TPAIR;>;)V
+  // declaration: void <init>(org.apache.commons.math3.optim.ConvergenceChecker<PAIR>)
+  protected <init>(Lorg/apache/commons/math3/optim/ConvergenceChecker;)V
+   L0
+    LINENUMBER 47 L0
+    ALOAD 0
+    INVOKESPECIAL java/lang/Object.<init> ()V
+   L1
+    LINENUMBER 48 L1
+    ALOAD 0
+    ALOAD 1
+    PUTFIELD org/apache/commons/math3/optim/BaseOptimizer.checker : Lorg/apache/commons/math3/optim/ConvergenceChecker;
+   L2
+    LINENUMBER 50 L2
+    ALOAD 0
+    NEW org/apache/commons/math3/util/Incrementor
+    DUP
+    ICONST_0
+    NEW org/apache/commons/math3/optim/BaseOptimizer$MaxEvalCallback
+    DUP
+    ACONST_NULL
+    INVOKESPECIAL org/apache/commons/math3/optim/BaseOptimizer$MaxEvalCallback.<init> (Lorg/apache/commons/math3/optim/BaseOptimizer$1;)V
+    INVOKESPECIAL org/apache/commons/math3/util/Incrementor.<init> (ILorg/apache/commons/math3/util/Incrementor$MaxCountExceededCallback;)V
+    PUTFIELD org/apache/commons/math3/optim/BaseOptimizer.evaluations : Lorg/apache/commons/math3/util/Incrementor;
+   L3
+    LINENUMBER 51 L3
+    ALOAD 0
+    NEW org/apache/commons/math3/util/Incrementor
+    DUP
+    LDC 2147483647
+    NEW org/apache/commons/math3/optim/BaseOptimizer$MaxIterCallback
+    DUP
+    ACONST_NULL
+    INVOKESPECIAL org/apache/commons/math3/optim/BaseOptimizer$MaxIterCallback.<init> (Lorg/apache/commons/math3/optim/BaseOptimizer$1;)V
+    INVOKESPECIAL org/apache/commons/math3/util/Incrementor.<init> (ILorg/apache/commons/math3/util/Incrementor$MaxCountExceededCallback;)V
+    PUTFIELD org/apache/commons/math3/optim/BaseOptimizer.iterations : Lorg/apache/commons/math3/util/Incrementor;
+   L4
+    LINENUMBER 52 L4
+    RETURN
+   L5
+    LOCALVARIABLE this Lorg/apache/commons/math3/optim/BaseOptimizer; L0 L5 0
+    // signature Lorg/apache/commons/math3/optim/BaseOptimizer<TPAIR;>;
+    // declaration: this extends org.apache.commons.math3.optim.BaseOptimizer<PAIR>
+    LOCALVARIABLE checker Lorg/apache/commons/math3/optim/ConvergenceChecker; L0 L5 1
+    // signature Lorg/apache/commons/math3/optim/ConvergenceChecker<TPAIR;>;
+    // declaration: checker extends org.apache.commons.math3.optim.ConvergenceChecker<PAIR>
+    MAXSTACK = 7
+    MAXLOCALS = 2
+
+  // access flags 0x1
+  public getMaxEvaluations()I
+   L0
+    LINENUMBER 60 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optim/BaseOptimizer.evaluations : Lorg/apache/commons/math3/util/Incrementor;
+    INVOKEVIRTUAL org/apache/commons/math3/util/Incrementor.getMaximalCount ()I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optim/BaseOptimizer; L0 L1 0
+    // signature Lorg/apache/commons/math3/optim/BaseOptimizer<TPAIR;>;
+    // declaration: this extends org.apache.commons.math3.optim.BaseOptimizer<PAIR>
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getEvaluations()I
+   L0
+    LINENUMBER 72 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optim/BaseOptimizer.evaluations : Lorg/apache/commons/math3/util/Incrementor;
+    INVOKEVIRTUAL org/apache/commons/math3/util/Incrementor.getCount ()I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optim/BaseOptimizer; L0 L1 0
+    // signature Lorg/apache/commons/math3/optim/BaseOptimizer<TPAIR;>;
+    // declaration: this extends org.apache.commons.math3.optim.BaseOptimizer<PAIR>
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getMaxIterations()I
+   L0
+    LINENUMBER 81 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optim/BaseOptimizer.iterations : Lorg/apache/commons/math3/util/Incrementor;
+    INVOKEVIRTUAL org/apache/commons/math3/util/Incrementor.getMaximalCount ()I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optim/BaseOptimizer; L0 L1 0
+    // signature Lorg/apache/commons/math3/optim/BaseOptimizer<TPAIR;>;
+    // declaration: this extends org.apache.commons.math3.optim.BaseOptimizer<PAIR>
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  public getIterations()I
+   L0
+    LINENUMBER 93 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optim/BaseOptimizer.iterations : Lorg/apache/commons/math3/util/Incrementor;
+    INVOKEVIRTUAL org/apache/commons/math3/util/Incrementor.getCount ()I
+    IRETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optim/BaseOptimizer; L0 L1 0
+    // signature Lorg/apache/commons/math3/optim/BaseOptimizer<TPAIR;>;
+    // declaration: this extends org.apache.commons.math3.optim.BaseOptimizer<PAIR>
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x1
+  // signature ()Lorg/apache/commons/math3/optim/ConvergenceChecker<TPAIR;>;
+  // declaration: org.apache.commons.math3.optim.ConvergenceChecker<PAIR> getConvergenceChecker()
+  public getConvergenceChecker()Lorg/apache/commons/math3/optim/ConvergenceChecker;
+   L0
+    LINENUMBER 102 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optim/BaseOptimizer.checker : Lorg/apache/commons/math3/optim/ConvergenceChecker;
+    ARETURN
+   L1
+    LOCALVARIABLE this Lorg/apache/commons/math3/optim/BaseOptimizer; L0 L1 0
+    // signature Lorg/apache/commons/math3/optim/BaseOptimizer<TPAIR;>;
+    // declaration: this extends org.apache.commons.math3.optim.BaseOptimizer<PAIR>
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x81
+  // signature ([Lorg/apache/commons/math3/optim/OptimizationData;)TPAIR;
+  // declaration: PAIR optimize(org.apache.commons.math3.optim.OptimizationData[])
+  public varargs optimize([Lorg/apache/commons/math3/optim/OptimizationData;)Ljava/lang/Object; throws org/apache/commons/math3/exception/TooManyEvaluationsException org/apache/commons/math3/exception/TooManyIterationsException 
+   L0
+    LINENUMBER 137 L0
+    ALOAD 0
+    ALOAD 1
+    INVOKEVIRTUAL org/apache/commons/math3/optim/BaseOptimizer.parseOptimizationData ([Lorg/apache/commons/math3/optim/OptimizationData;)V
+   L1
+    LINENUMBER 140 L1
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optim/BaseOptimizer.evaluations : Lorg/apache/commons/math3/util/Incrementor;
+    INVOKEVIRTUAL org/apache/commons/math3/util/Incrementor.resetCount ()V
+   L2
+    LINENUMBER 141 L2
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optim/BaseOptimizer.iterations : Lorg/apache/commons/math3/util/Incrementor;
+    INVOKEVIRTUAL org/apache/commons/math3/util/Incrementor.resetCount ()V
+   L3
+    LINENUMBER 143 L3
+    ALOAD 0
+    INVOKEVIRTUAL org/apache/commons/math3/optim/BaseOptimizer.doOptimize ()Ljava/lang/Object;
+    ARETURN
+   L4
+    LOCALVARIABLE this Lorg/apache/commons/math3/optim/BaseOptimizer; L0 L4 0
+    // signature Lorg/apache/commons/math3/optim/BaseOptimizer<TPAIR;>;
+    // declaration: this extends org.apache.commons.math3.optim.BaseOptimizer<PAIR>
+    LOCALVARIABLE optData [Lorg/apache/commons/math3/optim/OptimizationData; L0 L4 1
+    MAXSTACK = 2
+    MAXLOCALS = 2
+
+  // access flags 0x404
+  // signature ()TPAIR;
+  // declaration: PAIR doOptimize()
+  protected abstract doOptimize()Ljava/lang/Object;
+
+  // access flags 0x4
+  protected incrementEvaluationCount()V throws org/apache/commons/math3/exception/TooManyEvaluationsException 
+   L0
+    LINENUMBER 162 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optim/BaseOptimizer.evaluations : Lorg/apache/commons/math3/util/Incrementor;
+    INVOKEVIRTUAL org/apache/commons/math3/util/Incrementor.incrementCount ()V
+   L1
+    LINENUMBER 163 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/optim/BaseOptimizer; L0 L2 0
+    // signature Lorg/apache/commons/math3/optim/BaseOptimizer<TPAIR;>;
+    // declaration: this extends org.apache.commons.math3.optim.BaseOptimizer<PAIR>
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x4
+  protected incrementIterationCount()V throws org/apache/commons/math3/exception/TooManyIterationsException 
+   L0
+    LINENUMBER 173 L0
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optim/BaseOptimizer.iterations : Lorg/apache/commons/math3/util/Incrementor;
+    INVOKEVIRTUAL org/apache/commons/math3/util/Incrementor.incrementCount ()V
+   L1
+    LINENUMBER 174 L1
+    RETURN
+   L2
+    LOCALVARIABLE this Lorg/apache/commons/math3/optim/BaseOptimizer; L0 L2 0
+    // signature Lorg/apache/commons/math3/optim/BaseOptimizer<TPAIR;>;
+    // declaration: this extends org.apache.commons.math3.optim.BaseOptimizer<PAIR>
+    MAXSTACK = 1
+    MAXLOCALS = 1
+
+  // access flags 0x84
+  protected varargs parseOptimizationData([Lorg/apache/commons/math3/optim/OptimizationData;)V
+   L0
+    LINENUMBER 190 L0
+    ALOAD 1
+    ASTORE 2
+   L1
+    ALOAD 2
+    ARRAYLENGTH
+    ISTORE 3
+   L2
+    ICONST_0
+    ISTORE 4
+   L3
+    ILOAD 4
+    ILOAD 3
+    POP2
+    ALOAD 2
+    ILOAD 4
+    AALOAD
+    ASTORE 5
+   L4
+    LINENUMBER 191 L4
+    ALOAD 5
+    INSTANCEOF org/apache/commons/math3/optim/MaxEval
+    IFEQ L5
+   L6
+    LINENUMBER 192 L6
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optim/BaseOptimizer.evaluations : Lorg/apache/commons/math3/util/Incrementor;
+    ALOAD 5
+    CHECKCAST org/apache/commons/math3/optim/MaxEval
+    INVOKEVIRTUAL org/apache/commons/math3/optim/MaxEval.getMaxEval ()I
+    INVOKEVIRTUAL org/apache/commons/math3/util/Incrementor.setMaximalCount (I)V
+   L7
+    LINENUMBER 193 L7
+    GOTO L8
+   L5
+    LINENUMBER 195 L5
+    ALOAD 5
+    INSTANCEOF org/apache/commons/math3/optim/MaxIter
+    IFEQ L8
+   L9
+    LINENUMBER 196 L9
+    ALOAD 0
+    GETFIELD org/apache/commons/math3/optim/BaseOptimizer.iterations : Lorg/apache/commons/math3/util/Incrementor;
+    ALOAD 5
+    CHECKCAST org/apache/commons/math3/optim/MaxIter
+    INVOKEVIRTUAL org/apache/commons/math3/optim/MaxIter.getMaxIter ()I
+    INVOKEVIRTUAL org/apache/commons/math3/util/Incrementor.setMaximalCount (I)V
+   L10
+    LINENUMBER 197 L10
+    GOTO L8
+   L8
+    LINENUMBER 190 L8
+    IINC 4 1
+    GOTO L3
+   L11
+    LINENUMBER 200 L11
+    RETURN
+   L12
+    LOCALVARIABLE data Lorg/apache/commons/math3/optim/OptimizationData; L4 L8 5
+    LOCALVARIABLE arr$ [Lorg/apache/commons/math3/optim/OptimizationData; L1 L11 2
+    LOCALVARIABLE len$ I L2 L11 3
+    LOCALVARIABLE i$ I L3 L11 4
+    LOCALVARIABLE this Lorg/apache/commons/math3/optim/BaseOptimizer; L0 L12 0
+    // signature Lorg/apache/commons/math3/optim/BaseOptimizer<TPAIR;>;
+    // declaration: this extends org.apache.commons.math3.optim.BaseOptimizer<PAIR>
+    LOCALVARIABLE optData [Lorg/apache/commons/math3/optim/OptimizationData; L0 L12 1
+    MAXSTACK = 2
+    MAXLOCALS = 6
+}
+

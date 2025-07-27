@@ -12,7 +12,9 @@ from testIniGenPrompt import *
 from extract import *
 # this fucking project_id naming is also meaningless...
 
-def initial_generate_mutant_def4j(project,project_id,savepath,llm,d4j_path = '../mutantsgen/Wukong/defects4j',
+def initial_generate_mutant_def4j(project,project_id,savepath,llm,
+d4j_path = '../mutantsgen/Wukong/defects4j',
+#d4j_path = '/home/changpy/data2/datasets/GrowingBugRepository',
                                 d4jbug_path = './defects4j_fixed'):
     """
     d4j_path : The installation path for Defects4J
@@ -42,11 +44,14 @@ def initial_generate_mutant_def4j(project,project_id,savepath,llm,d4j_path = '..
             continue
         fixed_bug = d4jbug_path + "/%s/%s_" % (project,project) +str(project_id+1)+"_fixed/"+patch_content[2][6:]
         fixed_bug=fixed_bug.strip()
+        if project  =='Hugegraph_common':
+            fixed_bug = fixed_bug.replace('org/apache','com/baidu')
+            fixed_bug
         print(fixed_bug)
         try:
             liness = open(fixed_bug, "r").read().strip().splitlines()
         except Exception as e:
-            print("fucked up2")
+            print(f"fucked up2,{e}")
             continue
 
         patch_lines=[]
@@ -444,7 +449,9 @@ def extract_constructors_and_lines(java_file_path):
                 'end_line': max_line
             })
     return constructors
-def initial_generate_testcase_def4j(project,project_id,llm,d4j_path = '../mutantsgen/Wukong/defects4j',
+def initial_generate_testcase_def4j(project,project_id,llm,
+                                    d4j_path = '../mutantsgen/Wukong/defects4j',
+                                    #d4j_path = '/home/changpy/data2/datasets/GrowingBugRepository',
                                 d4jbug_path = './defects4j_fixed'):
     id=0
     print("..............................................................",project,project_id+1,"......................................................................")
@@ -482,7 +489,46 @@ def initial_generate_testcase_def4j(project,project_id,llm,d4j_path = '../mutant
             return whole_process_TCIGen(fixed_bug, base_dir, llm, 0, affected_methods)
         else:
             return whole_process_TCIGen(fixed_bug, base_dir, llm, 1)
-     
+def affected_method_finding(project,project_id,
+                                    d4j_path = '../mutantsgen/Wukong/defects4j',
+                                    #d4j_path = '/home/changpy/data2/datasets/GrowingBugRepository',
+                                d4jbug_path = './defects4j_fixed'):
+    id=0
+    print("..............................................................",project,project_id+1,"......................................................................")
+    folder_path = d4j_path + '/framework/projects/%s/patches/' % (project)
+    all_files = os.listdir(folder_path)
+    patch_files = [file for file in all_files if file.endswith('src.patch')]
+    dd=0
+    for patch_file in patch_files:
+        if int(patch_file.split('.')[0])!=project_id+1:
+            continue
+        dd+=1
+        patch_path=os.path.join(folder_path, patch_file)
+        print(dd,"****************************",patch_path)
+        try:
+            with open(patch_path, 'r',errors='ignore') as patch:
+                patch_content = patch.readlines()  
+        except Exception as e:
+            print("fucked up1")
+            continue
+        fixed_bug = d4jbug_path + "/%s/%s_" % (project,project) +str(project_id+1)+"_fixed/"+patch_content[2][6:]
+        fixed_bug = fixed_bug.strip()
+        base_dir = d4jbug_path + "/%s/%s_" % (project,project) +str(project_id+1)+"_fixed"
+        base_dir = base_dir.strip()
+        
+        methods  = extract_methods_and_lines(fixed_bug)
+        affected_methods = find_affected_methods(patch_path, methods)
+        print(affected_methods)
+        if affected_methods is None:
+            constructors = extract_constructors_and_lines(fixed_bug)
+            affected_methods = find_affected_methods(patch_path, constructors)
+           
+            print("successfully found affected constructors!!!!!!",affected_methods)
+            affected_methods = ["<init>"]
+        if affected_methods is not None:
+            return affected_methods
+        else:
+            return None
 
 def running_mutants(project,project_id,mutant_path,mutant_tested_path,d4jbug_path = './defects4j_fixed'):
     print(project," start....................................................................")
