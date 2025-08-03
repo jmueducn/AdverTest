@@ -20,8 +20,8 @@ class GPT(LLM):
               run_manager: Optional[CallbackManagerForLLMRun] = True,
               **kwargs: Any) -> str:
         client = OpenAI(
-            api_key="sk-xH1z4mEnCJSx1Yhkm9GmYog49lfUDF89Il1VUXHWIXarJ7za",
-            base_url="https://key.wenwen-ai.com/v1"
+            api_key="yourapikey",
+            base_url="https://api.openai.com"
         )
         response = client.chat.completions.create(
             model = self.mymodel,  
@@ -48,9 +48,8 @@ class Deepseek(LLM):
               run_manager: Optional[CallbackManagerForLLMRun] = True,
               **kwargs: Any) -> str:
         client = OpenAI(
-            #api_key="sk-dd1a5c029f5e43129d4f7908d7aa85aa", old
-            #api_key="sk-57b8f4f1eba845faa56a0dbd25857ad7",
-            api_key="sk-5e9f30c6f826437891f3beaa58d6c184",
+        
+            api_key="your api",
             base_url="https://api.deepseek.com"
         )
         response = client.chat.completions.create(
