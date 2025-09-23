@@ -795,6 +795,7 @@ def compile_and_run(test_class_code, test_class_infos, test_dir, base_dir):
             return test_class_code,0, "Overtime, no more methods to delete."
     if not stdout:
         print("Compilation Failed, extract error messages.")
+        print(stderr)
         errors = extract_errors(stderr)
         display_errors(errors)
         return test_class_code,0, errors
@@ -803,7 +804,6 @@ def compile_and_run(test_class_code, test_class_infos, test_dir, base_dir):
         return test_class_code,1, stdout
 def rule_based_fix(test_class_code, error_messages, test_class_infos, base_dir, test_dir, depth):
     
-    # 最大递归深度，防止无限循环
     MAX_DEPTH = 10
     if depth >= MAX_DEPTH:
         print(f"Reached maximum recursion depth ({MAX_DEPTH}). Cannot fix further.")
@@ -811,28 +811,28 @@ def rule_based_fix(test_class_code, error_messages, test_class_infos, base_dir, 
         return 0, test_class_code, error_messages, test_class_infos
 
     updated_code_lines = test_class_code.split('\n')
-    modifications_made = False  # 标记是否进行了修改 / Flag to track if any modifications were made
+    modifications_made = False  #  Flag to track if any modifications were made
 
     for error in error_messages:
         error_msg = error['message']
         line_num = error['line']
 
-        # Debug: 打印正在处理的错误 / Debug: Print the error being processed
+        # Debug:  Debug: Print the error being processed
         print(f"Processing error at line {line_num}: {error_msg}")
-        print(f"正在处理第 {line_num} 行的错误: {error_msg}")
+        
 
-        # 1. 处理缺少分号的错误 / Handle missing semicolon errors
+        # 1.  / Handle missing semicolon errors
         if ("expected ';'" in error_msg or "missing ';'" in error_msg or
             "预期';'" in error_msg or "缺少';'" in error_msg or "需要';'" in error_msg) :
             if 0 < line_num <= len(updated_code_lines):
                 line = updated_code_lines[line_num - 1].rstrip()
-                # 确保该行不是以 '{' 或 '}' 结尾 / Ensure the line does not end with '{' or '}'
+                # / Ensure the line does not end with '{' or '}'
                 if not line.endswith(';') and not line.endswith('{') and not line.endswith('}'):
                     updated_code_lines[line_num - 1] = line + ';'
                     print(f"Added missing semicolon at line {line_num}. 在第 {line_num} 行添加缺少的分号。")
                     modifications_made = True
 
-        # 2. 处理缺少闭合大括号的错误 / Handle missing closing bracket errors
+        # 2. Handle missing closing bracket errors
         elif ("reached end of file while parsing" in error_msg or
               "reached end of input while parsing" in error_msg or
               "解析时已到达文件结尾" in error_msg or
@@ -848,7 +848,7 @@ def rule_based_fix(test_class_code, error_messages, test_class_infos, base_dir, 
                 print(f"Added {missing_brackets} missing closing bracket(s) at the end of the file. 在文件末尾添加了 {missing_brackets} 个缺失的闭合大括号。")
                 modifications_made = True
 
-        # 3. 处理“不是语句”的错误，这可能表示缺少分号或不完整的语句 / Handle "not a statement" errors which might indicate missing semicolons or incomplete statements
+        # 3.  Handle "not a statement" errors which might indicate missing semicolons or incomplete statements
         elif ("not a statement" in error_msg or "不是语句" in error_msg):
             if 0 < line_num <= len(updated_code_lines):
                 line = updated_code_lines[line_num - 1].rstrip()
@@ -858,12 +858,12 @@ def rule_based_fix(test_class_code, error_messages, test_class_infos, base_dir, 
                     print(f"Added missing semicolon at line {line_num} to fix 'not a statement' error. 在第 {line_num} 行添加缺少的分号以修复“不是语句”错误。")
                     modifications_made = True
 
-        # 4. 处理方法声明无效或非法类型开始的错误 / Handle invalid method declarations or illegal start of type errors
+        # 4.  Handle invalid method declarations or illegal start of type errors
         elif ("invalid method declaration" in error_msg or
               "illegal start of type" in error_msg or
               "非法的类型开始" in error_msg or
               "无效的方法声明" in error_msg):
-            # 尝试通过平衡大括号来修复不匹配的问题 / Attempt to fix mismatched brackets by balancing them
+            #  Attempt to fix mismatched brackets by balancing them
             open_brackets = test_class_code.count('{')
             close_brackets = test_class_code.count('}')
             if open_brackets > close_brackets:
@@ -886,19 +886,19 @@ def rule_based_fix(test_class_code, error_messages, test_class_infos, base_dir, 
                         line = parts[0] + parts[1] 
                         updated_code_lines[line_num-1] = line   
             
-        # 添加更多错误处理情况，如需要 / Add more error handling cases as needed
+        # Add more error handling cases as needed
 
-    # 如果没有进行任何修改，则没有可应用的基于规则的修复 / If no modifications were made, there's nothing to fix
+    #  If no modifications were made, there's nothing to fix
     if not modifications_made:
         print("No applicable rule-based fixes found for the given errors. 未找到适用的基于规则的修复。")
         return 0, test_class_code, error_messages, test_class_infos
 
-    # 重新组装更新后的代码 / Reassemble the updated code
+    #  Reassemble the updated code
     updated_code = '\n'.join(updated_code_lines)
     result,_ = update_test_class_info(updated_code,test_class_infos)
     if result == 0:
         return 0, updated_code, error_messages, test_class_infos
-    # 尝试编译更新后的代码 / Attempt to compile the updated code
+    #  Attempt to compile the updated code
     updated_code,flag, compile_output = compile_and_run(updated_code, test_class_infos, test_dir, base_dir)
 
     if flag == 1:
@@ -1257,12 +1257,12 @@ Please fix the error and return the whole fixed unit test. You can use Junit 4, 
             print(f"LLM fix for '{test_method_name}' failed: {e}")
             continue
 
-    # 重新组装更新后的测试类代码
+  
     updated_test_methods_code = ""
     for test_method in test_class_infos['test_methods']:
         pure_test_method = test_method.get('pure_test_method', "")
         if pure_test_method:
-            # 统一缩进
+            
             indented_test_method = '\n'.join(['    ' + line for line in pure_test_method.split('\n')])
             updated_test_methods_code += f"{indented_test_method}\n\n"
 
@@ -1364,7 +1364,7 @@ def delete_bad_code(test_class_code, error_messages, test_class_infos, base_dir,
     #  If error_messages is None, set it to an empty list
     if error_messages is None:
         print("No error messages provided. Nothing to fix.")
-        print("未提供错误信息。无需修复。")
+      
         return 0, test_class_code, error_messages, test_class_infos
 
     updated_code_lines = test_class_code.split('\n')
