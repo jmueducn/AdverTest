@@ -3,7 +3,7 @@ import shutil
 
 def copy_and_rename_chart(chart_index, new_filename):
 
-    src = f"/data3/fyx/data3/cpy/MutAGENTest/src/defects4j_fixed/Math/Math_{chart_index}_fixed/gentest.tar.bz2"
+    src = f"/data3/abc/data3/def/MutAGENTest/src/defects4j_fixed/Math/Math_{chart_index}_fixed/gentest.tar.bz2"
     # Target directory where the file will be copied
     dst_dir = "./output/pit/Math"
 
