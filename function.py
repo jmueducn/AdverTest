@@ -282,7 +282,7 @@ def extract_constructors_and_lines(java_file_path):
     return constructors
 def initial_generate_testcase_def4j(project,project_id,llm,
                                     d4j_path = '../mutantsgen/Wukong/defects4j',
-                                    #d4j_path = '/home/changpy/data2/datasets/GrowingBugRepository',
+                                    
                                 d4jbug_path = './defects4j_fixed'):
     id=0
     print("..............................................................",project,project_id+1,"......................................................................")
@@ -322,7 +322,7 @@ def initial_generate_testcase_def4j(project,project_id,llm,
             return whole_process_TCIGen(fixed_bug, base_dir, llm, 1)
 def affected_method_finding(project,project_id,
                                     d4j_path = '../mutantsgen/Wukong/defects4j',
-                                    #d4j_path = '/home/changpy/data2/datasets/GrowingBugRepository',
+                                    
                                 d4jbug_path = './defects4j_fixed'):
     id=0
     print("..............................................................",project,project_id+1,"......................................................................")
