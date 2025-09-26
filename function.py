@@ -10,7 +10,6 @@ import javalang
 import shutil
 from testIniGenPrompt import *
 from extract import *
-# this fucking project_id naming is also meaningless...
 
 def initial_generate_mutant_def4j(project,project_id,savepath,llm,
 d4j_path = '../mutantsgen/Wukong/defects4j',
