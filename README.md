@@ -33,8 +33,11 @@ For growingbugs, do the same.
 
 ## Baselines:
 Evosuite and Randoop: we use what defects4j provide: check https://defects4j.org/html_doc/gen_tests.html for more details.
+
 ChatUniTest: https://github.com/ZJU-ACES-ISE/ChatUniTest/tree/python
+
 HITS: https://github.com/eecshope/HITS
+
 You can follow the instruction in their github repository.
 
 ## Coverage Analysis: 
