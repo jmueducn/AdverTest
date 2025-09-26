@@ -19,10 +19,12 @@ You can do this either by download.py or you can write your script yourself. Mak
 
 After you successfully download the projects, you will still need to modify
 this file: defects4j.build.xml (defects4j/framework/projects/defects4j.build.xml),add dependency for generated 
+```
     <property name="mock-junit.jar" value="xxxx"/>
     <property name="objnesis.jar" value="xxxx"/>
     <property name="mockito.jar" value="xxxx"/>
     <property name="byte-buddy.jar" value="xxxx"/>
+```
     (these is in the repository's lib folder, you will need to fill in the value by the path of the corresponding property)
 
 For growingbugs, do the same.
