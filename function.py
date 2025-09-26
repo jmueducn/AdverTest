@@ -13,7 +13,6 @@ from extract import *
 
 def initial_generate_mutant_def4j(project,project_id,savepath,llm,
 d4j_path = '../mutantsgen/Wukong/defects4j',
-#d4j_path = '/home/changpy/data2/datasets/GrowingBugRepository',
                                 d4jbug_path = './defects4j_fixed'):
     """
     d4j_path : The installation path for Defects4J
