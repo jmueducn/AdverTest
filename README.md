@@ -25,7 +25,9 @@ this file: defects4j.build.xml (defects4j/framework/projects/defects4j.build.xml
     <property name="mockito.jar" value="xxxx"/>
     <property name="byte-buddy.jar" value="xxxx"/>
 ```
-    (these is in the repository's lib folder, you will need to fill in the value by the path of the corresponding property)
+
+
+    (these are in the repository's lib folder, you will need to fill in the value by the path of the corresponding property)
 
 For growingbugs, do the same.
 
