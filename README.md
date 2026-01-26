@@ -5,7 +5,7 @@ AdverTest is a mutation-guided, dual-agent framework where a **Test Generation A
 
 AdverTest expects:
 
-Java 8 (OpenJDK 1.8). Set JAVA_HOME and ensure java -version reports 1.8. (This is what defects4j 2.0.1 expect)
+Java 8 (OpenJDK 1.8). Set JAVA_HOME and ensure java -version reports 1.8. (This is what defects4j 2.X.X expect)
 
 ## Datasets:
 Defects4J v2.0.1: https://github.com/rjust/defects4j/tree/v2.0.1
