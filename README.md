@@ -8,7 +8,7 @@ AdverTest expects:
 Java 8 (OpenJDK 1.8). Set JAVA_HOME and ensure java -version reports 1.8. (This is what defects4j 2.X.X expect)
 
 ## Datasets:
-Defects4J v2.0.1: https://github.com/rjust/defects4j/tree/v2.0.1
+Defects4J v2.1.0: https://github.com/rjust/defects4j/tree/v2.1.0
 GrowingBugs https://github.com/liuhuigmail/GrowingBugRepository
 You will need reference to these website to get the datasets and corretly install it.
 
