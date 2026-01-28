@@ -28,6 +28,9 @@ this file: defects4j.build.xml (defects4j/framework/projects/defects4j.build.xml
     <property name="byte-buddy.jar" value="xxxx"/>
 ```
 
+you need to first Add these Property Definitions
+Then  Update compile.gen.tests Classpath and Update run.gen.tests Classpath(in the file!)
+
 
     (these are in the repository's lib folder, you will need to fill in the value by the path of the corresponding property)
 
