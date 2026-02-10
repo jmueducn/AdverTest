@@ -58,7 +58,7 @@ def run_one_case(proj,projid,mutants_raw,mutants_tested,llm,ms_standard=70,cover
     last_M = 0
     while 1:
         
-        if mutation_score>= ms_standard:
+        if cnt_T > cnt_M:
             MT_ENHANCE(proj,projid,mutants_raw,mutants_tested,uncovered,llm)
             cnt_M += 1
             last_M = 1
@@ -99,15 +99,7 @@ def run_one_case(proj,projid,mutants_raw,mutants_tested,llm,ms_standard=70,cover
     result = bug_detection_ourgen(proj,projid)
     print("bug detection result",result)
     return result
-#defects4j
-# llm = deepseek(api_key="your api-key")
-# generate_mutant('Chart',0,'./',llm)
 
-# llm = StarChat(model_path='path')
-# generate_mutant('Chart',0,'./',llm)
-
-# llm = CodeLlama13B(model_path='path')
-# generate_mutant('Chart',0,'./',llm)
 
 
 def process_project(projid):
