@@ -26,7 +26,7 @@ initial_generate_testcase()  ->  initial_generate_mutant()
 
 ### System
 - Java JDK 8+
-- [Defects4J v2.0.1](https://github.com/rjust/defects4j) (install and add to `PATH`)
+- [Defects4J v2.1.0](https://github.com/rjust/defects4j/tree/v2.1.0) (install and add to `PATH`)
 - Ant / Maven (for Defects4J builds)
 - Git
 
@@ -53,18 +53,43 @@ export LLM_MODEL="deepseek-chat"
 
 ### 2.1 Install Defects4J
 
-Follow the [Defects4J installation guide](https://github.com/rjust/defects4j#setting-up-defects4j). Ensure `defects4j` is on your `PATH`.
+Follow the [Defects4J installation guide](https://github.com/rjust/defects4j#setting-up-defects4j) to install **v2.1.0**. Ensure `defects4j` is on your `PATH`.
 
-### 2.2 Add JUnit/Mockito JARs to Defects4J
-
-Edit `defects4j/framework/projects/defects4j.build.xml` and add these properties pointing to the JARs in `lib/`:
-
-```xml
-<property name="mock-junit.jar" value="/path/to/lib/mockito-junit-jupiter-4.11.0.jar"/>
-<property name="objnesis.jar" value="/path/to/lib/objenesis-3.2.jar"/>
-<property name="mockito.jar" value="/path/to/lib/mockito-core-4.11.0.jar"/>
-<property name="byte-buddy.jar" value="/path/to/lib/byte-buddy-1.14.4.jar"/>
+```bash
+git clone https://github.com/rjust/defects4j.git
+cd defects4j
+git checkout v2.1.0
+cpanm --installdeps .
+./init.sh
+export PATH=$PATH:$(pwd)/framework/bin
 ```
+
+### 2.2 Apply Defects4J Patch
+
+Apply the included patch to add JUnit 5, Mockito, and other required changes to Defects4J:
+
+```bash
+cd /path/to/defects4j
+git apply /path/to/defects4j_setup.patch
+```
+
+This patch makes the following changes:
+
+1. **`framework/projects/defects4j.build.xml`** -- Adds 7 JAR dependencies to the build classpath (compilation and test execution):
+
+   ```xml
+   <property name="junit5-api.jar" value="/path/to/lib/junit-jupiter-api-5.9.3.jar"/>
+   <property name="junit5-engine.jar" value="/path/to/lib/junit-jupiter-engine-5.9.3.jar"/>
+   <property name="junit5-platform.jar" value="/path/to/lib/junit-platform-commons-1.9.3.jar"/>
+   <property name="mock-junit.jar" value="/path/to/lib/mockito-junit-jupiter-4.11.0.jar"/>
+   <property name="objnesis.jar" value="/path/to/lib/objenesis-3.2.jar"/>
+   <property name="mockito.jar" value="/path/to/lib/mockito-core-4.11.0.jar"/>
+   <property name="byte-buddy.jar" value="/path/to/lib/byte-buddy-1.14.4.jar"/>
+   ```
+
+   **Important:** After applying the patch, update the JAR paths in `defects4j.build.xml` to point to the absolute path of the `lib/` directory in your replication package.
+
+2. **`framework/core/Utils.pm`** -- Adds `-m` flag to tar extraction to prevent permission errors (`Cannot utime: Operation not permitted`) when the working directory is not owned by the current user.
 
 ### 2.3 Download Defects4J Projects
 
