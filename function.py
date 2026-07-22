@@ -10,9 +10,8 @@ import javalang
 import shutil
 from testIniGenPrompt import *
 from extract import *
-
 def initial_generate_mutant_def4j(project,project_id,savepath,llm,
-d4j_path = '../mutantsgen/Wukong/defects4j',
+d4j_path = './defects4j',
                                 d4jbug_path = './defects4j_fixed'):
     """
     d4j_path : The installation path for Defects4J
@@ -38,18 +37,15 @@ d4j_path = '../mutantsgen/Wukong/defects4j',
             with open(patch_path, 'r',errors='ignore') as patch:
                 patch_content = patch.readlines()  
         except Exception as e:
-            print("fucked up1")
+            print("patch parsing error")
             continue
         fixed_bug = d4jbug_path + "/%s/%s_" % (project,project) +str(project_id+1)+"_fixed/"+patch_content[2][6:]
         fixed_bug=fixed_bug.strip()
-        if project  =='Hugegraph_common':
-            fixed_bug = fixed_bug.replace('org/apache','com/baidu')
-            fixed_bug
         print(fixed_bug)
         try:
             liness = open(fixed_bug, "r").read().strip().splitlines()
         except Exception as e:
-            print(f"fucked up2,{e}")
+            print(f"patch parsing error: {e}")
             continue
 
         patch_lines=[]
@@ -281,9 +277,8 @@ def extract_constructors_and_lines(java_file_path):
             })
     return constructors
 def initial_generate_testcase_def4j(project,project_id,llm,
-                                    d4j_path = '../mutantsgen/Wukong/defects4j',
-                                    
-                                d4jbug_path = './defects4j_fixed'):
+                                    d4j_path = './defects4j',
+                                                                    d4jbug_path = './defects4j_fixed'):
     id=0
     print("..............................................................",project,project_id+1,"......................................................................")
     folder_path = d4j_path + '/framework/projects/%s/patches/' % (project)
@@ -300,7 +295,7 @@ def initial_generate_testcase_def4j(project,project_id,llm,
             with open(patch_path, 'r',errors='ignore') as patch:
                 patch_content = patch.readlines()  
         except Exception as e:
-            print("fucked up1")
+            print("patch parsing error")
             continue
         fixed_bug = d4jbug_path + "/%s/%s_" % (project,project) +str(project_id+1)+"_fixed/"+patch_content[2][6:]
         fixed_bug = fixed_bug.strip()
@@ -321,9 +316,8 @@ def initial_generate_testcase_def4j(project,project_id,llm,
         else:
             return whole_process_TCIGen(fixed_bug, base_dir, llm, 1)
 def affected_method_finding(project,project_id,
-                                    d4j_path = '../mutantsgen/Wukong/defects4j',
-                                    
-                                d4jbug_path = './defects4j_fixed'):
+                                    d4j_path = './defects4j',
+                                                                    d4jbug_path = './defects4j_fixed'):
     id=0
     print("..............................................................",project,project_id+1,"......................................................................")
     folder_path = d4j_path + '/framework/projects/%s/patches/' % (project)
@@ -340,7 +334,7 @@ def affected_method_finding(project,project_id,
             with open(patch_path, 'r',errors='ignore') as patch:
                 patch_content = patch.readlines()  
         except Exception as e:
-            print("fucked up1")
+            print("patch parsing error")
             continue
         fixed_bug = d4jbug_path + "/%s/%s_" % (project,project) +str(project_id+1)+"_fixed/"+patch_content[2][6:]
         fixed_bug = fixed_bug.strip()

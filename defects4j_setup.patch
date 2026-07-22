@@ -1,0 +1,106 @@
+diff --git a/framework/core/Utils.pm b/framework/core/Utils.pm
+old mode 100644
+new mode 100755
+index 63124652..bbb9542b
+--- a/framework/core/Utils.pm
++++ b/framework/core/Utils.pm
+@@ -668,7 +668,11 @@ sub extract_test_suite {
+         return 0;;
+     }
+     # Extract external test suite into test directory
+-    exec_cmd("mkdir -p $test_dir && rm -rf $test_dir/* && tar -xjf $test_suite -C $test_dir",
++    # NOTE: Use `-m` to avoid preserving mtimes. When the working directory is not owned by the
++    # current user (but writable via group/ACL), GNU tar may fail with:
++    #   "tar: .: Cannot utime: Operation not permitted"
++    # which breaks coverage/test runs.
++    exec_cmd("mkdir -p $test_dir && rm -rf $test_dir/* && tar -xjmf $test_suite -C $test_dir",
+             "Extract test suite") or return 0;
+     return 1;
+ }
+diff --git a/framework/projects/defects4j.build.xml b/framework/projects/defects4j.build.xml
+old mode 100644
+new mode 100755
+index 92f559cb..1250e4b8
+--- a/framework/projects/defects4j.build.xml
++++ b/framework/projects/defects4j.build.xml
+@@ -47,8 +47,14 @@ project-specific build file ("project_id"/"project_id".build.xml) for the
+ 
+     <!-- Dependencies used by all projects -->
+     <property name="junit.jar"  value="${d4j.home}/framework/projects/lib/junit-4.11.jar"/>
++    <property name="junit5-api.jar" value="/path/to/lib/junit-jupiter-api-5.9.3.jar"/>
++    <property name="junit5-engine.jar" value="/path/to/lib/junit-jupiter-engine-5.9.3.jar"/>
++    <property name="junit5-platform.jar" value="/path/to/lib/junit-platform-commons-1.9.3.jar"/>
++    <property name="mock-junit.jar" value="/path/to/lib/mockito-junit-jupiter-4.11.0.jar"/>
++    <property name="objnesis.jar" value="/path/to/lib/objenesis-3.2.jar"/>
++    <property name="mockito.jar" value="/path/to/lib/mockito-core-4.11.0.jar"/>
++    <property name="byte-buddy.jar" value="/path/to/lib/byte-buddy-1.14.4.jar"/>
+     <property name="cobertura.jar" value="${d4j.home}/framework/projects/lib/cobertura-2.0.3.jar"/>
+-
+     <!-- Location of libraries of test generation tool-->
+     <property name="d4j.dir.lib.testgen.gen" value="${d4j.home}/framework/lib/test_generation/generation"/>
+     <!-- Location of runtime libraries of test generation tools-->
+@@ -82,6 +88,7 @@ project-specific build file ("project_id"/"project_id".build.xml) for the
+     <import file="${d4j.dir.projects}/${d4j.project.id}/${d4j.project.id}.build.xml"/>
+ 
+ 
++
+ <!--
+      Check whether all properties and paths are configured
+ -->
+@@ -124,7 +131,7 @@ project-specific build file ("project_id"/"project_id".build.xml) for the
+         <!-- fail build in case we are running all classes, but there are none in the fileset -->
+         <if> <not> <isset property="test.entry.class" /> </not> <then>
+             <pathconvert refid="all.manual.tests" property="fileset.notempty" setonempty="false" />
+-            <fail unless="fileset.notempty" message="Fileset of tests to run is empty!" />
++            <fail unless="fileset.notempty" message="Test is running with empty fileset" />
+         </then> </if>
+     </target>
+ 
+@@ -263,10 +270,23 @@ project-specific build file ("project_id"/"project_id".build.xml) for the
+                debug="true"
+                deprecation="false"
+                optimize="false">
+-               <compilerarg line="-Xmaxerrs 1" />
+                <classpath>
+                     <pathelement path="${junit.jar}" />
+                     <path refid="d4j.test.classpath" />
++                    <pathelement path="${junit5-api.jar}" />
++                    <path refid="d4j.test.classpath" />
++                    <pathelement path="${junit5-engine.jar}" />
++                    <path refid="d4j.test.classpath" />
++                    <pathelement path="${junit5-platform.jar}" />
++                    <path refid="d4j.test.classpath" />
++                    <pathelement path="${mock-junit.jar}" />
++                    <path refid="d4j.test.classpath" />
++                    <pathelement path="${mockito.jar}" />
++                    <path refid="d4j.test.classpath" />
++                    <pathelement path="${objnesis.jar}" />
++                    <path refid="d4j.test.classpath" />
++                    <pathelement path="${byte-buddy.jar}" />
++                    <path refid="d4j.test.classpath" />
+                     <pathelement path="${classes.dir}" />
+                     <!-- Add dependencies to runtime libraries of test generation tools -->
+                     <path refid="d4j.lib.testgen.rt"/>
+@@ -286,7 +306,7 @@ project-specific build file ("project_id"/"project_id".build.xml) for the
+         <echo message="classes.dir: ${classes.dir}" />
+         <echo message="build.home: ${build.home}" />
+ 
+-        <junit printsummary="no" haltonfailure="no" haltonerror="no" fork="yes" forkmode="perBatch" showOutput="true">
++        <junit>
+             <classpath>
+                 <!-- Make sure that instrumented classes appear at the beginning of the
+                      classpath -->
+@@ -295,6 +315,13 @@ project-specific build file ("project_id"/"project_id".build.xml) for the
+                 <pathelement path="${formatter.jar}" />
+                 <pathelement path="${junit.jar}" />
+                 <pathelement path="${classes.dir}" />
++                <pathelement path="${junit5-api.jar}" />  
++                <pathelement path="${junit5-engine.jar}" />  
++                <pathelement path="${junit5-platform.jar}" />  
++                <pathelement path="${mock-junit.jar}" />
++                <pathelement path="${mockito.jar}" />
++                <pathelement path="${objnesis.jar}" />
++                <pathelement path="${byte-buddy.jar}" />
+                 <path refid="d4j.test.classpath"/>
+                 <!-- Add dependencies to code coverage tools -->
+                 <pathelement path="${cobertura.jar}" />

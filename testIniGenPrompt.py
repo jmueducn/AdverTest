@@ -8,7 +8,7 @@ import traceback
 import signal
 import config
 from langchain.prompts import ChatPromptTemplate
-from model import GPT  
+from model import GPT, Deepseek
 from extract import extract_method  
 from compress import generate_tar_bz2
 from config import error_logger
@@ -579,10 +579,10 @@ The focal method is {focal_method} in the focal class {class_name}, and their in
     return test_class_json
 def assemble_test_class(json_data,imports,package,simple_mode=0,real_str=""):
     """
-    根据生成的 JSON 数据拼合成完整的 JUnit 测试类代码。
+    Assemble complete JUnit test class code from generated JSON data.
     """
     if "error" in json_data:
-        print(f"错误: {json_data['error']}")
+        print(f"Error: {json_data['error']}")
         return ""
     class_name = json_data.get("class_name", "UnknownClass")
     test_class_name = json_data.get("test_class_name", f"{class_name}Test")
@@ -645,7 +645,7 @@ public class {test_class_name} {{
 def extract_errors(javac_output):
     error_lines = []
     error_pattern = re.compile(
-        r'\[javac\]\s+(.+?):(\d+):\s*(错误|error):\s*(.+)'
+        r'\[javac\]\s+(.+?):(\d+):\s*error:\s*(.+)'
     )
     try:
         for line in javac_output.splitlines():
@@ -653,8 +653,8 @@ def extract_errors(javac_output):
             if match:
                 file_path = match.group(1).strip()
                 line_num = int(match.group(2))
-                error_type = match.group(3).strip()
-                message = match.group(4).strip()
+                error_type = "error"
+                message = match.group(3).strip()
             
                 error_info = {
                 'file': file_path,
@@ -672,7 +672,7 @@ def display_errors(errors):
         print("No Compile Errors Found.")
         return
     
-    print("Extracted Error Messages：\n")
+    print("Extracted Error Messages:\n")
     for error in errors:
         print(f"File: {error['file']}")
         print(f"Line: {error['line']}")
@@ -723,12 +723,12 @@ def delete_last_test_method_and_regenerate(test_class_code, test_class_infos, im
         error_logger.info(f"No more methods to delete and")
         return test_class_code,-1
 
-    # 删除最后一个测试方法
+    # Delete the last test method
     removed = test_class_infos['test_methods'].pop()
     print(f"Remove {removed['test_method_name']} Due to Timeout")
     error_logger.info(f"Remove {removed['test_method_name']} Due to Timeout")
 
-    # 重新组装测试类
+    # Reassemble test class
     new_code = assemble_test_class(
         test_class_infos,
         imports,
@@ -753,7 +753,7 @@ def compile_and_run(test_class_code, test_class_infos, test_dir, base_dir):
     stdout =0 
     stderr =0
     try:
-        stdout, stderr = process.communicate(timeout=500)  # 使用 communicate 方法等待进程完成
+        stdout, stderr = process.communicate(timeout=500)
         process.wait()
     except subprocess.TimeoutExpired:
         print(f"Timeout, Try to Delete the last test method..., {base_dir}")
@@ -783,19 +783,18 @@ def compile_and_run(test_class_code, test_class_infos, test_dir, base_dir):
         file = os.path.join(test_dir, f"{test_class_infos['test_class_name']}.java")
         imports = extract_method(file)[0].get('imports', [])
         pkg = extract_method(file)[0].get('package', [])
-            # 重新生成代码
+            # Regenerate code
         new_code, flag = delete_last_test_method_and_regenerate(
                 test_class_code, test_class_infos, imports, pkg
             )
         test_class_code = new_code
         if flag == 0:
             test_class_code = new_code
-            return compile_and_run(new_code, test_class_infos, test_dir, base_dir)  # 继续重试
+            return compile_and_run(new_code, test_class_infos, test_dir, base_dir)
         else:
             return test_class_code,0, "Overtime, no more methods to delete."
     if not stdout:
         print("Compilation Failed, extract error messages.")
-        print(stderr)
         errors = extract_errors(stderr)
         display_errors(errors)
         return test_class_code,0, errors
@@ -804,6 +803,7 @@ def compile_and_run(test_class_code, test_class_infos, test_dir, base_dir):
         return test_class_code,1, stdout
 def rule_based_fix(test_class_code, error_messages, test_class_infos, base_dir, test_dir, depth):
     
+    # Max recursion depth to prevent infinite loops
     MAX_DEPTH = 10
     if depth >= MAX_DEPTH:
         print(f"Reached maximum recursion depth ({MAX_DEPTH}). Cannot fix further.")
@@ -811,33 +811,26 @@ def rule_based_fix(test_class_code, error_messages, test_class_infos, base_dir, 
         return 0, test_class_code, error_messages, test_class_infos
 
     updated_code_lines = test_class_code.split('\n')
-    modifications_made = False  #  Flag to track if any modifications were made
+    modifications_made = False
 
     for error in error_messages:
         error_msg = error['message']
         line_num = error['line']
 
-        # Debug:  Debug: Print the error being processed
         print(f"Processing error at line {line_num}: {error_msg}")
-        
 
-        # 1.  / Handle missing semicolon errors
-        if ("expected ';'" in error_msg or "missing ';'" in error_msg or
-            "预期';'" in error_msg or "缺少';'" in error_msg or "需要';'" in error_msg) :
+        # Handle missing semicolon errors
+        if ("expected ';'" in error_msg or "missing ';'" in error_msg):
             if 0 < line_num <= len(updated_code_lines):
                 line = updated_code_lines[line_num - 1].rstrip()
-                # / Ensure the line does not end with '{' or '}'
                 if not line.endswith(';') and not line.endswith('{') and not line.endswith('}'):
                     updated_code_lines[line_num - 1] = line + ';'
-                    print(f"Added missing semicolon at line {line_num}. 在第 {line_num} 行添加缺少的分号。")
+                    print(f"Added missing semicolon at line {line_num}.")
                     modifications_made = True
 
-        # 2. Handle missing closing bracket errors
+        # Handle missing closing bracket errors
         elif ("reached end of file while parsing" in error_msg or
-              "reached end of input while parsing" in error_msg or
-              "解析时已到达文件结尾" in error_msg or
-              "在解析时到达输入末尾" in error_msg):
-            # 统计大括号的数量 / Count the number of opening and closing brackets
+              "reached end of input while parsing" in error_msg):
             open_brackets = test_class_code.count('{')
             close_brackets = test_class_code.count('}')
             missing_brackets = open_brackets - close_brackets
@@ -845,37 +838,32 @@ def rule_based_fix(test_class_code, error_messages, test_class_infos, base_dir, 
             if missing_brackets > 0:
                 for _ in range(missing_brackets):
                     updated_code_lines.append('}')
-                print(f"Added {missing_brackets} missing closing bracket(s) at the end of the file. 在文件末尾添加了 {missing_brackets} 个缺失的闭合大括号。")
+                print(f"Added {missing_brackets} missing closing bracket(s) at end of file.")
                 modifications_made = True
 
-        # 3.  Handle "not a statement" errors which might indicate missing semicolons or incomplete statements
-        elif ("not a statement" in error_msg or "不是语句" in error_msg):
+        # Handle "not a statement" errors
+        elif ("not a statement" in error_msg):
             if 0 < line_num <= len(updated_code_lines):
                 line = updated_code_lines[line_num - 1].rstrip()
-                # 确保该行不是以 '{' 或 '}' 结尾 / Ensure the line does not end with '{' or '}'
                 if not line.endswith(';') and not line.endswith('{') and not line.endswith('}'):
                     updated_code_lines[line_num - 1] = line + ';'
-                    print(f"Added missing semicolon at line {line_num} to fix 'not a statement' error. 在第 {line_num} 行添加缺少的分号以修复“不是语句”错误。")
+                    print(f"Added missing semicolon at line {line_num} to fix 'not a statement' error.")
                     modifications_made = True
 
-        # 4.  Handle invalid method declarations or illegal start of type errors
+        # Handle invalid method declarations or illegal start of type errors
         elif ("invalid method declaration" in error_msg or
-              "illegal start of type" in error_msg or
-              "非法的类型开始" in error_msg or
-              "无效的方法声明" in error_msg):
-            #  Attempt to fix mismatched brackets by balancing them
+              "illegal start of type" in error_msg):
             open_brackets = test_class_code.count('{')
             close_brackets = test_class_code.count('}')
             if open_brackets > close_brackets:
                 updated_code_lines.append('}')
-                print("Added a missing closing bracket at the end of the file to fix syntax error. 在文件末尾添加了缺失的闭合大括号以修复语法错误。")
+                print("Added a missing closing bracket at end of file to fix syntax error.")
                 modifications_made = True
             if "..." in updated_code_lines[line_num-1]:
                 print("removing meaningless ... inside the code")
                 modifications_made = True
                 updated_code_lines[line_num-1] = updated_code_lines[line_num - 1].replace("...", "")
-        elif ("中定义了方法" in error_msg 
-              ):
+        elif ("method defined in" in error_msg):
             if 0 < line_num <= len(updated_code_lines):
                 line = updated_code_lines[line_num - 1].rstrip()
                 if("public void" in line):
@@ -886,29 +874,23 @@ def rule_based_fix(test_class_code, error_messages, test_class_infos, base_dir, 
                         line = parts[0] + parts[1] 
                         updated_code_lines[line_num-1] = line   
             
-        # Add more error handling cases as needed
-
-    #  If no modifications were made, there's nothing to fix
     if not modifications_made:
-        print("No applicable rule-based fixes found for the given errors. 未找到适用的基于规则的修复。")
+        print("No applicable rule-based fixes found for the given errors.")
         return 0, test_class_code, error_messages, test_class_infos
 
-    #  Reassemble the updated code
+    # Reassemble the updated code
     updated_code = '\n'.join(updated_code_lines)
     result,_ = update_test_class_info(updated_code,test_class_infos)
     if result == 0:
         return 0, updated_code, error_messages, test_class_infos
-    #  Attempt to compile the updated code
+    # Attempt to compile the updated code
     updated_code,flag, compile_output = compile_and_run(updated_code, test_class_infos, test_dir, base_dir)
 
     if flag == 1:
-        print("Rule-based fixes succeeded. The test class now compiles successfully. 基于规则的修复成功。测试类现在成功编译。")
+        print("Rule-based fixes succeeded. The test class now compiles successfully.")
         return 1, updated_code, compile_output, test_class_infos
     else:
-        print("Rule-based fixes did not resolve all compilation errors. Attempting further fixes... 基于规则的修复未能解决所有编译错误。尝试进一步修复...")
-        # / Extract new errors from the compilation output
-        #new_error_messages = extract_errors(compile_output)
-        # / Recursively attempt to fix the new errors
+        print("Rule-based fixes did not resolve all compilation errors. Attempting further fixes...")
         return rule_based_fix(updated_code, compile_output, test_class_infos, base_dir, test_dir, depth + 1)
 
     
@@ -1098,7 +1080,7 @@ def llm_based_fix(test_class_code, error_messages, test_class_infos, base_dir, t
                 'end': method_end
             })
         else:
-            print(f"无法提取测试方法名，方法起始于第 {info['start'] + 1} 行。")
+            print(f"Unable to extract test method name, method starts at line {info['start'] + 1}.")
 
     
     for test_method_info in detailed_affected_test_methods:
@@ -1161,7 +1143,7 @@ def llm_based_fix(test_class_code, error_messages, test_class_infos, base_dir, t
         - When using reflection because private/protected variable/methods was used, Please notice that do not use ReflectiontestUtils because it is from spring framework. Our Program is not necessarily run at Spring framework. Use java.lang.reflect package Instead.
         - If you need to use Mockito, please make sure it is mocked correctly so that it will not cause the test procedure to hang.
         
-        Hint：If you see the "symbol not found error",
+        Hint: If you see the "symbol not found error",
         basically it is caused by using undefined variables, we only extract the test method, so the definition in test class outside the method will be missing.
         Please make sure you use only the in-method defined variables.Or re-define the variable inside the method.
         You should follow the output format.
@@ -1189,7 +1171,7 @@ The error message is:
 ```
 {error_message}
 ```
-Hint：If you see the "symbol not found error",
+Hint: If you see the "symbol not found error",
 basically it is caused by using undefined variables, we only extract the test METHOD, so the definition in test class outside the method will be missing.
 Please make sure you use only the in-method defined variables.Or re-define the variable inside the method.
 The unit test is testing the method {method_name} in the class {class_name},
@@ -1229,7 +1211,7 @@ Please fix the error and return the whole fixed unit test. You can use Junit 4, 
             #     "method_code": tested_method_code
             # })
             # 
-            #print("wtf:",corrected_test_method)
+            #print("corrected:",corrected_test_method)
             pure_methods = extract_pure_test_method(corrected_test_method)
             #pure_methods = extract_pure_test_method(corrected_test_method_unitest)
             #print(f"Generated Test Method for {tested_method_name} .")
@@ -1242,7 +1224,7 @@ Please fix the error and return the whole fixed unit test. You can use Junit 4, 
               )
                     if original_test_method:
                         test_class_infos['test_methods'].remove(original_test_method)
-                        print(f"Delete the original test method '{test_method_name}'。")
+                        print(f"Deleted the original test method '{test_method_name}'.")
               
               
                     test_class_infos['test_methods'].append({
@@ -1250,19 +1232,19 @@ Please fix the error and return the whole fixed unit test. You can use Junit 4, 
                   "test_method_name": new_test_method_name,
                   "pure_test_method": pure_method.strip()
               })
-                    print(f"Fixed test method added: '{new_test_method_name}'。")
+                    print(f"Fixed test method added: '{new_test_method_name}'.")
             else:
                 print(f"Unable to Extract Pure Test Method for {tested_method_name}.")
         except Exception as e:
             print(f"LLM fix for '{test_method_name}' failed: {e}")
             continue
 
-  
+    # Reassemble updated test class code
     updated_test_methods_code = ""
     for test_method in test_class_infos['test_methods']:
         pure_test_method = test_method.get('pure_test_method', "")
         if pure_test_method:
-            
+            # Normalize indentation
             indented_test_method = '\n'.join(['    ' + line for line in pure_test_method.split('\n')])
             updated_test_methods_code += f"{indented_test_method}\n\n"
 
@@ -1364,7 +1346,7 @@ def delete_bad_code(test_class_code, error_messages, test_class_infos, base_dir,
     #  If error_messages is None, set it to an empty list
     if error_messages is None:
         print("No error messages provided. Nothing to fix.")
-      
+        print("No error messages provided. Nothing to fix.")
         return 0, test_class_code, error_messages, test_class_infos
 
     updated_code_lines = test_class_code.split('\n')
@@ -1560,10 +1542,10 @@ def whole_process_TCIGen(file_path,base_dir,llm,Whole_class=1,Method_name_list =
         print("Test class compilation failed. No archive file generated.")
         return 0,test_class_path
 if __name__ == "__main__":
-    file_path = './defects4j_fixed/Compress/Chart_1_fixed/source/org/jfree/data/time/Day.java'
-    base_dir = './defects4j_fixed/Compress/Chart_1_fixed'
-    
-    llm = GPT(api_key=os.getenv("OPENAI_API_KEY"), model="gpt-3.5-turbo")
+    file_path = './defects4j_fixed/Chart/Chart_1_fixed/source/org/jfree/data/time/Day.java'
+    base_dir = './defects4j_fixed/Chart/Chart_1_fixed'
+
+    llm = Deepseek(api_key=os.getenv("DEEPSEEK_API_KEY"), model="deepseek-chat")
     methods = ["previous"]
     whole_process_TCIGen(file_path,base_dir,llm,0,methods)
     
