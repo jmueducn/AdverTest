@@ -294,15 +294,15 @@ The different behavior can be tested by monitoring ......., so ......
                         "pure_test_method": pure_method.strip()
                         })
                 else:
-                    print(f"无法提取纯粹的测试方法 for {method_name}.")
+                    print(f"Unable to extract pure test method for {method_name}.")
             
 
             except ValueError as ve:
-                print(f"提示模板格式错误 for {method_name}: {ve}")
+                print(f"Prompt template format error for {method_name}: {ve}")
                 continue
             except Exception as e:
-                print(f"调用 LLM 失败 for {method_name}: {e}")
-                traceback.print_exc()  # 打印完整的错误栈
+                print(f"LLM call failed for {method_name}: {e}")
+                traceback.print_exc()
                 continue
         if test_methods == []:
             for test_method_name, pure_method in pure_test_methods:
@@ -414,10 +414,10 @@ def TC_ENHANCE(proj,id,base_dir,test_file,mutants_dir,LLM):
     return tc_enhance(test_file,mutants_file,LLM,rbase_dir)
 
 if __name__ == "__main__":
-    test_file = "/home/xxx/data3/MutAGENTest/src/defects4j_fixed/Compress/Compress_31_fixed/gentest/org/apache/commons/compress/archivers/tar/tests/TarUtilsTest.java"
+    test_file = "./defects4j_fixed/Compress/Compress_31_fixed/gentest/org/apache/commons/compress/archivers/tar/tests/TarUtilsTest.java"
     mutants_file = "./Mutants/GPT3.5/tested/Compress/Compress_31_test.json"
     base_dir = "./defects4j_fixed/Compress/Compress_31_fixed"
-    llm =   Deepseek(api_key=os.getenv("OPENAI_API_KEY"), model="deepseek-chat")
+    llm =   Deepseek(api_key=os.getenv("DEEPSEEK_API_KEY"), model="deepseek-chat")
 
     tc_enhance(test_file,mutants_file,llm,base_dir)
     # should be changed to (PROJ,ID,BASE_DIR,Mutants_dir,LLM)

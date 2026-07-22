@@ -1,5 +1,6 @@
 from langchain import ConversationChain
 from langchain.memory import ConversationBufferMemory
+import os
 from model import *
 from function import *
 from coverage import *
@@ -12,7 +13,7 @@ from config import our_method_logger
 
 
 
-llm = Deepseek(api_key="your api-key",model="deepseek-chat")
+llm = Deepseek(api_key=os.getenv("DEEPSEEK_API_KEY"), model="deepseek-chat")
 ms_standard = 70
 coverage_threshold = 100
 projname = 'Math'
@@ -58,7 +59,7 @@ def run_one_case(proj,projid,mutants_raw,mutants_tested,llm,ms_standard=70,cover
     last_M = 0
     while 1:
         
-        if cnt_T > cnt_M:
+        if mutation_score>= ms_standard:
             MT_ENHANCE(proj,projid,mutants_raw,mutants_tested,uncovered,llm)
             cnt_M += 1
             last_M = 1
@@ -99,7 +100,15 @@ def run_one_case(proj,projid,mutants_raw,mutants_tested,llm,ms_standard=70,cover
     result = bug_detection_ourgen(proj,projid)
     print("bug detection result",result)
     return result
+#defects4j
+# llm = deepseek(api_key="your api-key")
+# generate_mutant('Chart',0,'./',llm)
 
+# llm = StarChat(model_path='path')
+# generate_mutant('Chart',0,'./',llm)
+
+# llm = CodeLlama13B(model_path='path')
+# generate_mutant('Chart',0,'./',llm)
 
 
 def process_project(projid):
@@ -115,8 +124,9 @@ def process_project(projid):
         our_method_logger.info(f'Project name: {projname}, Project ID: {projid+1}, Result: error {e}')
         print(f'Project name: {projname}, Project ID: {projid+1}, Result: error {e}')
 
+# Adjust max_workers and range for your needs (e.g., range(0, 106) for all Math bugs)
 with ThreadPoolExecutor(max_workers=1) as executor:
-    futures = [executor.submit(process_project, i) for i in range(1,2)]
+    futures = [executor.submit(process_project, i) for i in range(0, 106)]
     for future in as_completed(futures):
         future.result()  
     
