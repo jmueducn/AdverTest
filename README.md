@@ -1,6 +1,6 @@
 # AdverTest: Replication Package
 
-Replication package for paper **Test vs Mutant: Adversarial LLM Agents for Robust Unit Test Generation**. (Accepted by ISSTA 2026)
+Replication package for paper **Test vs Mutant: Adversarial LLM Agents for Robust Unit Test Generation**. (Accepted by **ISSTA 2026**)
 ## Pipeline Overview
 
 ```
