@@ -1,7 +1,6 @@
 # AdverTest: Replication Package
 
-Replication package for **AdverTest**, an LLM-based mutation testing and test generation framework. AdverTest uses large language models to automatically generate unit tests and code mutants, then iteratively enhances them to maximize mutation score and code coverage.
-
+Replication package for paper **Test vs Mutant: Adversarial LLM Agents for Robust Unit Test Generation**. (Accepted by ISSTA 2026)
 ## Pipeline Overview
 
 ```
